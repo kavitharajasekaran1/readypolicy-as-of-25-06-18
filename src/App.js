@@ -11,6 +11,14 @@ import MainPanel from './MainPanel';
 import SecondPanel from './SecondPanel';
 import ThirdPanel from './ThirdPanel';
 import FourthPanel from './FourthPanel'
+import FifthPanel from './FifthPanel'
+import SixthPanel from './SixthPanel'
+import SeventhPanel from './SeventhPanel'
+import EightPanel from './EightPanel'
+import NinePanel from './NinePanel'
+import TenPanel from './TenPanel'
+import EleventhPanel from './EleventhPanel'
+
 
 
 
@@ -20,7 +28,15 @@ let NavigationRouteId = {
     MainPanel: "MainPanel",
     SecondPanel: "SecondPanel",
     ThirdPanel:"ThirdPanel",
-    FourthPanel:"FourthPanel"
+    FourthPanel:"FourthPanel",
+    FifthPanel:"FifthPanel",
+    SixthPanel:"SixthPanel",
+    SeventhPanel:"SeventhPanel",
+    EightPanel:"EightPanel",
+    NinePanel:"NinePanel",
+    TenPanel:"TenPanel",
+    EleventhPanel:"EleventhPanel"
+
 
 };
 
@@ -42,14 +58,19 @@ export default class App extends RX.Component {
         this._onPressBack = this._onPressBack.bind(this);
         this._onPressForward = this._onPressForward.bind(this);
         this._onPressForth = this._onPressForth.bind(this);
-
-
-
+        this._onPressFifth = this._onPressFifth.bind(this);
+        this._onPressSixth = this._onPressSixth.bind(this);
+        this._onPressSeven = this._onPressSeven.bind(this);
+        this._onPressEight = this._onPressEight.bind(this);
+        this._onPressNine = this._onPressNine.bind(this);
+        this._onPressTen = this._onPressTen.bind(this);
+        this._onPressEleven = this._onPressEleven.bind(this);
     }
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.MainPanel,
+
+            routeId: NavigationRouteId.EleventhPanel,
             sceneConfigType: "Fade"
         }]);
     }
@@ -82,6 +103,26 @@ export default class App extends RX.Component {
             case NavigationRouteId.FourthPanel:
                 return <FourthPanel onNavigateForth={ this._onPressForth }/>;
 
+            case NavigationRouteId.FifthPanel:
+                return <FifthPanel onNavigateFifth={ this._onPressFifth }/>;
+
+            case NavigationRouteId.SixthPanel:
+                return <SixthPanel onNavigateSixth={ this._onPressSixth }/>;
+
+            case NavigationRouteId.SeventhPanel:
+                return <SeventhPanel onNavigateSeven={ this._onPressSeven }/>;
+
+            case NavigationRouteId.EightPanel:
+                return <EightPanel onNavigateEight={ this._onPressEight }/>;
+
+            case NavigationRouteId.NinePanel:
+                return <NinePanel onNavigateNine={ this._onPressNine }/>;
+
+            case NavigationRouteId.TenPanel:
+                return <TenPanel onNavigateTen={ this._onPressTen }/>;
+
+            case NavigationRouteId.EleventhPanel:
+                return <EleventhPanel onNavigateEleven={ this._onPressEleven }/>;
         }
 
         return null;
@@ -107,8 +148,78 @@ export default class App extends RX.Component {
             }
         });
     }
-
     _onPressForth() {
+        // this._navigator.pop();
+        this._navigator.push({
+            routeId: NavigationRouteId.FifthPanel,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+    _onPressFifth() {
+        // this._navigator.pop();
+        this._navigator.push({
+            routeId: NavigationRouteId.SixthPanel,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+    _onPressSixth() {
+        // this._navigator.pop();
+        this._navigator.push({
+            routeId: NavigationRouteId.SeventhPanel,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+    _onPressSeven() {
+        // this._navigator.pop();
+        this._navigator.push({
+            routeId: NavigationRouteId.EightPanel,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+    _onPressEight() {
+        // this._navigator.pop();
+        this._navigator.push({
+            routeId: NavigationRouteId.NinePanel,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+    _onPressNine() {
+        // this._navigator.pop();
+        this._navigator.push({
+            routeId: NavigationRouteId.TenPanel,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+
+    _onPressTen() {
+        // this._navigator.pop();
+        this._navigator.push({
+            routeId: NavigationRouteId.EleventhPanel,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+    _onPressEleven() {
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.MainPanel,
