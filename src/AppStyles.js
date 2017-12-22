@@ -238,6 +238,10 @@ module.exports = {
     }),
     contain: RX.Styles.createViewStyle({
         backgroundColor:'#FFFFFF',
+    }),
+    Text:RX.Styles.createTextStyle({
+        fontSize:15,
+        color:'#000000'
     })
 }
 

@@ -188,7 +188,7 @@ const _styles = {
     }),
 };
 
-export default class SecondPanel  extends RX.Component {
+export default class QuotesSelection  extends RX.Component {
 
     _progressTimerToken;
 
@@ -241,7 +241,7 @@ export default class SecondPanel  extends RX.Component {
                             <div>NIL</div>
                         </RX.Text>
                         <RX.View style={_styles.nextBtn}>
-                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateBack }>
+                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
                                 <RX.Text style={ _styles.buybuttonText }>
                                     Rs.1,322*
                                 </RX.Text>
@@ -269,7 +269,7 @@ export default class SecondPanel  extends RX.Component {
                             <div>NIL</div>
                         </RX.Text>
                         <RX.View style={_styles.nextBtn}>
-                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateBack }>
+                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
                                 <RX.Text style={ _styles.buybuttonText }>
                                     Rs.1,634*
                                 </RX.Text>
@@ -296,7 +296,7 @@ export default class SecondPanel  extends RX.Component {
                             <div>NIL</div>
                         </RX.Text>
                         <RX.View style={_styles.nextBtn}>
-                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateBack }>
+                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
                                 <RX.Text style={ _styles.buybuttonText }>
                                     Rs.1,834*
                                 </RX.Text>
@@ -323,7 +323,7 @@ export default class SecondPanel  extends RX.Component {
                             <div>NIL</div>
                         </RX.Text>
                         <RX.View style={_styles.nextBtn}>
-                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateBack }>
+                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
                                 <RX.Text style={ _styles.buybuttonText }>
                                     Rs.1,934*
                                 </RX.Text>
@@ -350,7 +350,7 @@ export default class SecondPanel  extends RX.Component {
                             <div>NIL</div>
                         </RX.Text>
                         <RX.View style={_styles.nextBtn}>
-                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateBack }>
+                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
                                 <RX.Text style={ _styles.buybuttonText }>
                                     Rs.1,834*
                                 </RX.Text>

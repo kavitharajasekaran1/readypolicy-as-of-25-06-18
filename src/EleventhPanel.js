@@ -43,7 +43,17 @@ export default class EightPanel extends RX.Component{
 
         animation.start();
     }
+    _onChangeVar = (e) => {
+        // this.setState({ Model: ''});
+        this.setState({ joke:'' });
+        fetch('https://icanhazdadjoke.com/',{headers:{Accept:'text/plain'}}).then(r => r.text())
+            .then(joke => this.setState({joke}),e=>this.setState({joke:'could not get'}))
 
+        // this.setState({ Model: string});
+
+        console.log(e,"joke");
+    }
+    state={joke:'Testing'};
 
 
     render() {
@@ -59,7 +69,9 @@ export default class EightPanel extends RX.Component{
                         </RX.Text>
                     </RX.Button>
                 </RX.View>
-
+                <RX.Text style={styling.Text }>
+                    {this.state.joke}
+                </RX.Text>
                 <form>
                     <FormGroup
                         controlId="formBasicText"
@@ -82,16 +94,7 @@ export default class EightPanel extends RX.Component{
 
         );
     }
-    _onChangeVar = () => {
-        // this.setState({ Model: ''});
-        this.setState({ joke:'' });
-        fetch('https://icanhazdadjoke.com/',{headers:{Accept:'text/plain'}}).then(r => r.text())
-            .then(joke => this.setState({joke}),e=>this.setState({joke:'could not get'}))
 
-        // this.setState({ Model: string});
-
-        console.log(joke,"joke");
-    }
 
     _onChangeReg = () => {
         this.setState({ Model: this.state.Model });

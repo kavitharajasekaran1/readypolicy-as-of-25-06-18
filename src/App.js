@@ -15,7 +15,7 @@ import FifthPanel from './FifthPanel'
 import QuotesSelection from './QuotesSelection'
 import SeventhPanel from './SeventhPanel'
 import EightPanel from './EightPanel'
-import NinePanel from './NinePanel'
+import MyPolicy from './MyPolicy'
 import InsuranceAddons from './InsuranceAddons'
 import EleventhPanel from './EleventhPanel'
 
@@ -69,7 +69,6 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-
             routeId: NavigationRouteId.EleventhPanel,
             sceneConfigType: "Fade"
         }]);
@@ -107,7 +106,7 @@ export default class App extends RX.Component {
                 return <FifthPanel onNavigateFifth={ this._onPressFifth }/>;
 
             case NavigationRouteId.QuotesSelection:
-                return <SixthPanel onNavigateSixth={ this._onPressSixth }/>;
+                return <QuotesSelection onNavigateSixth={ this._onPressSixth }/>;
 
             case NavigationRouteId.SeventhPanel:
                 return <SeventhPanel onNavigateSeven={ this._onPressSeven }/>;
@@ -115,7 +114,7 @@ export default class App extends RX.Component {
             case NavigationRouteId.EightPanel:
                 return <EightPanel onNavigateEight={ this._onPressEight }/>;
 
-            case NavigationRouteId.NinePanel:
+            case NavigationRouteId.MyPolicy:
                 return <MyPolicy onNavigateNine={ this._onPressNine }/>;
 
             case NavigationRouteId.InsuranceAddons:

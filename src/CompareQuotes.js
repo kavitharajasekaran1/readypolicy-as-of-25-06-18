@@ -141,7 +141,7 @@ const styles = {
     })
 };
 
-export default class ThirdPanel extends RX.Component{
+export default class CompareQuotes extends RX.Component{
     constructor(props) {
         super(props);
         this._translationValue = RX.Animated.createValue(-100);
@@ -259,12 +259,11 @@ export default class ThirdPanel extends RX.Component{
 
 
                 </RX.View>
-                <RX.View style={ styles.clientNorm }>
-                </RX.View>
+                <RX.View style={ styles.clientNorm }></RX.View>
 
-                <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateSixth }>
+                <RX.Button style={ styles.roundButton }  onPress={ this.props.onNavigateBack }>
                     <RX.Text style={ styles.buttonText }>
-                        Next
+                        NEXT
                     </RX.Text>
                 </RX.Button>
 
