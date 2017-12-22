@@ -3,7 +3,6 @@
  */
 
 import React from 'react';
-import {createClass} from 'react';
 import RX from 'reactxp';
 import styling from './AppStyles';
 import {Nav,NavItem,NavDropdown,MenuItem,Grid,Row,Col,Form,FormGroup,ControlLabel,FormControl,Checkbox} from 'react-bootstrap';
@@ -18,6 +17,8 @@ const _styles = {
         backgroundColor: '#ffffff'
     }),
 };
+
+
 
 export default class EightPanel extends RX.Component{
     constructor(props) {
@@ -44,23 +45,6 @@ export default class EightPanel extends RX.Component{
     }
 
 
-    getInitialState() {
-        return {
-            value: 10,
-        };
-    }
-
-    getValidationState() {
-        const length = this.state.value.length;
-        if (length > 10) return 'success';
-        else if (length > 5) return 'warning';
-        else if (length > 0) return 'error';
-        return null;
-    }
-
-    handleChange(e) {
-        this.setState({ value: e.target.value });
-    }
 
     render() {
         return (
@@ -79,24 +63,41 @@ export default class EightPanel extends RX.Component{
                 <form>
                     <FormGroup
                         controlId="formBasicText"
-                        validationState={this.getValidationState.bind()}
+
                     >
-                        <ControlLabel>Working example with validation</ControlLabel>
-                        <FormControl
+                        <ControlLabel>Input</ControlLabel>
+                        {/*<RX.TextInput
                             type="text"
-                            value={this.state.value}
                             placeholder="Enter text"
-                            onChange={this.props.handleChange}
-                        />
+                            value={ this.state.Model }
+                            onChange={this.handleChange}
+                        />*/}
                         <FormControl.Feedback />
-                        <HelpBlock>Validation is based on string length.</HelpBlock>
                     </FormGroup>
                 </form>
 
 
-                <Button bsStyle="danger">Primary</Button>
+                <RX.Button bsStyle="danger" onPress={()=> this._onChangeVar() }>Primary</RX.Button>
             </RX.ScrollView>
 
         );
+    }
+    _onChangeVar = () => {
+        // this.setState({ Model: ''});
+        this.setState({ joke:'' });
+        fetch('https://icanhazdadjoke.com/',{headers:{Accept:'text/plain'}}).then(r => r.text())
+            .then(joke => this.setState({joke}),e=>this.setState({joke:'could not get'}))
+
+        // this.setState({ Model: string});
+
+        console.log(joke,"joke");
+    }
+
+    _onChangeReg = () => {
+        this.setState({ Model: this.state.Model });
+    }
+
+    handleChange() {
+        this.setState({ Model:'' });
     }
 }
