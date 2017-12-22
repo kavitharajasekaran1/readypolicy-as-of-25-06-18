@@ -10270,7 +10270,7 @@ value:true});
 
 exports.default=hasClass;
 function hasClass(element,className){
-if(element.classList)return!!className&&element.classList.contains(className);else return(" "+element.className+" ").indexOf(" "+className+" ")!==-1;
+if(element.classList)return!!className&&element.classList.contains(className);else return(" "+(element.className.baseVal||element.className)+" ").indexOf(" "+className+" ")!==-1;
 }
 module.exports=exports["default"];
 
@@ -10508,7 +10508,7 @@ value:true});
 
 
 exports.default=function(recalc){
-if(!size||recalc){
+if(!size&&size!==0||recalc){
 if(_inDOM2.default){
 var scrollDiv=document.createElement('div');
 
@@ -17159,7 +17159,7 @@ exports.clearImmediate=clearImmediate;
 /* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/var/www/html/readypolicy-master/src/MainPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/ubuntu/Desktop/readypolicy/src/MainPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -17448,7 +17448,7 @@ _react2.default.createElement(_reactxp2.default.Text,{style:styles.buttonText,__
 /* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/var/www/html/readypolicy-master/src/ToggleSwitch.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/ubuntu/Desktop/readypolicy/src/ToggleSwitch.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -17567,7 +17567,7 @@ this.props.onChange(!this.props.value);
 /* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/var/www/html/readypolicy-master/src/App.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/ubuntu/Desktop/readypolicy/src/App.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -17577,16 +17577,16 @@ var _reactxp=__webpack_require__(13);var _reactxp2=_interopRequireDefault(_react
 var _reactxpNavigation=__webpack_require__(575);
 
 var _MainPanel=__webpack_require__(277);var _MainPanel2=_interopRequireDefault(_MainPanel);
-var _SecondPanel=__webpack_require__(626);var _SecondPanel2=_interopRequireDefault(_SecondPanel);
+var _CompareQuotes=__webpack_require__(620);var _CompareQuotes2=_interopRequireDefault(_CompareQuotes);
 var _ThirdPanel=__webpack_require__(630);var _ThirdPanel2=_interopRequireDefault(_ThirdPanel);
-var _FourthPanel=__webpack_require__(623);var _FourthPanel2=_interopRequireDefault(_FourthPanel);
-var _FifthPanel=__webpack_require__(622);var _FifthPanel2=_interopRequireDefault(_FifthPanel);
-var _SixthPanel=__webpack_require__(628);var _SixthPanel2=_interopRequireDefault(_SixthPanel);
-var _SeventhPanel=__webpack_require__(627);var _SeventhPanel2=_interopRequireDefault(_SeventhPanel);
-var _EightPanel=__webpack_require__(620);var _EightPanel2=_interopRequireDefault(_EightPanel);
-var _NinePanel=__webpack_require__(624);var _NinePanel2=_interopRequireDefault(_NinePanel);
-var _TenPanel=__webpack_require__(629);var _TenPanel2=_interopRequireDefault(_TenPanel);
-var _EleventhPanel=__webpack_require__(621);var _EleventhPanel2=_interopRequireDefault(_EleventhPanel);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
+var _FourthPanel=__webpack_require__(624);var _FourthPanel2=_interopRequireDefault(_FourthPanel);
+var _FifthPanel=__webpack_require__(623);var _FifthPanel2=_interopRequireDefault(_FifthPanel);
+var _QuotesSelection=__webpack_require__(628);var _QuotesSelection2=_interopRequireDefault(_QuotesSelection);
+var _SeventhPanel=__webpack_require__(629);var _SeventhPanel2=_interopRequireDefault(_SeventhPanel);
+var _EightPanel=__webpack_require__(621);var _EightPanel2=_interopRequireDefault(_EightPanel);
+var _NinePanel=__webpack_require__(626);var _NinePanel2=_interopRequireDefault(_NinePanel);
+var _InsuranceAddons=__webpack_require__(625);var _InsuranceAddons2=_interopRequireDefault(_InsuranceAddons);
+var _EleventhPanel=__webpack_require__(622);var _EleventhPanel2=_interopRequireDefault(_EleventhPanel);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
 
 
 
@@ -17595,15 +17595,15 @@ var _EleventhPanel=__webpack_require__(621);var _EleventhPanel2=_interopRequireD
 
 var NavigationRouteId={
 MainPanel:"MainPanel",
-SecondPanel:"SecondPanel",
+CompareQuotes:"CompareQuotes",
 ThirdPanel:"ThirdPanel",
 FourthPanel:"FourthPanel",
 FifthPanel:"FifthPanel",
-SixthPanel:"SixthPanel",
+QuotesSelection:"QuotesSelection",
 SeventhPanel:"SeventhPanel",
 EightPanel:"EightPanel",
-NinePanel:"NinePanel",
-TenPanel:"TenPanel",
+MyPolicy:"MyPolicy",
+InsuranceAddons:"InsuranceAddons",
 EleventhPanel:"EleventhPanel"};
 
 
@@ -17663,8 +17663,8 @@ switch(navigatorRoute.routeId){
 case NavigationRouteId.MainPanel:
 return _react2.default.createElement(_MainPanel2.default,{onPressNavigate:this._onPressNavigate,__source:{fileName:_jsxFileName,lineNumber:95}});
 
-case NavigationRouteId.SecondPanel:
-return _react2.default.createElement(_SecondPanel2.default,{onNavigateBack:this._onPressBack,__source:{fileName:_jsxFileName,lineNumber:98}});
+case NavigationRouteId.CompareQuotes:
+return _react2.default.createElement(_CompareQuotes2.default,{onNavigateBack:this._onPressBack,__source:{fileName:_jsxFileName,lineNumber:98}});
 
 case NavigationRouteId.ThirdPanel:
 return _react2.default.createElement(_ThirdPanel2.default,{onNavigateForward:this._onPressForward,__source:{fileName:_jsxFileName,lineNumber:101}});
@@ -17675,8 +17675,8 @@ return _react2.default.createElement(_FourthPanel2.default,{onNavigateForth:this
 case NavigationRouteId.FifthPanel:
 return _react2.default.createElement(_FifthPanel2.default,{onNavigateFifth:this._onPressFifth,__source:{fileName:_jsxFileName,lineNumber:107}});
 
-case NavigationRouteId.SixthPanel:
-return _react2.default.createElement(_SixthPanel2.default,{onNavigateSixth:this._onPressSixth,__source:{fileName:_jsxFileName,lineNumber:110}});
+case NavigationRouteId.QuotesSelection:
+return _react2.default.createElement(SixthPanel,{onNavigateSixth:this._onPressSixth,__source:{fileName:_jsxFileName,lineNumber:110}});
 
 case NavigationRouteId.SeventhPanel:
 return _react2.default.createElement(_SeventhPanel2.default,{onNavigateSeven:this._onPressSeven,__source:{fileName:_jsxFileName,lineNumber:113}});
@@ -17685,10 +17685,10 @@ case NavigationRouteId.EightPanel:
 return _react2.default.createElement(_EightPanel2.default,{onNavigateEight:this._onPressEight,__source:{fileName:_jsxFileName,lineNumber:116}});
 
 case NavigationRouteId.NinePanel:
-return _react2.default.createElement(_NinePanel2.default,{onNavigateNine:this._onPressNine,__source:{fileName:_jsxFileName,lineNumber:119}});
+return _react2.default.createElement(MyPolicy,{onNavigateNine:this._onPressNine,__source:{fileName:_jsxFileName,lineNumber:119}});
 
-case NavigationRouteId.TenPanel:
-return _react2.default.createElement(_TenPanel2.default,{onNavigateTen:this._onPressTen,__source:{fileName:_jsxFileName,lineNumber:122}});
+case NavigationRouteId.InsuranceAddons:
+return _react2.default.createElement(_InsuranceAddons2.default,{onNavigateTen:this._onPressTen,__source:{fileName:_jsxFileName,lineNumber:122}});
 
 case NavigationRouteId.EleventhPanel:
 return _react2.default.createElement(_EleventhPanel2.default,{onNavigateEleven:this._onPressEleven,__source:{fileName:_jsxFileName,lineNumber:125}});}
@@ -17699,7 +17699,7 @@ return null;
 
 {
 this._navigator.push({
-routeId:NavigationRouteId.SecondPanel,
+routeId:NavigationRouteId.CompareQuotes,
 sceneConfigType:"FloatFromRight",
 customSceneConfig:{
 hideShadow:true}});
@@ -17730,7 +17730,7 @@ hideShadow:true}});
 {
 
 this._navigator.push({
-routeId:NavigationRouteId.SixthPanel,
+routeId:NavigationRouteId.QuotesSelection,
 sceneConfigType:"FloatFromRight",
 customSceneConfig:{
 hideShadow:true}});
@@ -17760,7 +17760,7 @@ hideShadow:true}});
 {
 
 this._navigator.push({
-routeId:NavigationRouteId.NinePanel,
+routeId:NavigationRouteId.MyPolicy,
 sceneConfigType:"FloatFromRight",
 customSceneConfig:{
 hideShadow:true}});
@@ -17781,7 +17781,7 @@ hideShadow:true}});
 {
 
 this._navigator.push({
-routeId:NavigationRouteId.EleventhPanel,
+routeId:NavigationRouteId.InsuranceAddons,
 sceneConfigType:"FloatFromRight",
 customSceneConfig:{
 hideShadow:true}});
@@ -18777,7 +18777,7 @@ var _hasClass2=_interopRequireDefault(_hasClass);
 function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}
 
 function addClass(element,className){
-if(element.classList)element.classList.add(className);else if(!(0,_hasClass2.default)(element))element.className=element.className+' '+className;
+if(element.classList)element.classList.add(className);else if(!(0,_hasClass2.default)(element,className))if(typeof element.className==='string')element.className=element.className+' '+className;else element.setAttribute('class',(element.className&&element.className.baseVal||'')+' '+className);
 }
 module.exports=exports['default'];
 
@@ -18819,8 +18819,12 @@ exports.default={addClass:_addClass2.default,removeClass:_removeClass2.default,h
 "use strict";
 
 
+function replaceClassName(origClass,classToRemove){
+return origClass.replace(new RegExp('(^|\\s)'+classToRemove+'(?:\\s|$)','g'),'$1').replace(/\s+/g,' ').replace(/^\s*|\s*$/g,'');
+}
+
 module.exports=function removeClass(element,className){
-if(element.classList)element.classList.remove(className);else element.className=element.className.replace(new RegExp('(^|\\s)'+className+'(?:\\s|$)','g'),'$1').replace(/\s+/g,' ').replace(/^\s*|\s*$/g,'');
+if(element.classList)element.classList.remove(className);else if(typeof element.className==='string')element.className=replaceClassName(element.className,className);else element.setAttribute('class',replaceClassName(element.className&&element.className.baseVal||'',className));
 };
 
 /***/ }),
@@ -58629,7 +58633,296 @@ return Object.prototype.hasOwnProperty.call(obj,prop);
 /* 620 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/var/www/html/readypolicy-master/src/EightPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/ubuntu/Desktop/readypolicy/src/CompareQuotes.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+
+
+
+var _react=__webpack_require__(0);var _react2=_interopRequireDefault(_react);
+var _reactxp=__webpack_require__(13);var _reactxp2=_interopRequireDefault(_reactxp);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
+var styles={
+scroll:_reactxp2.default.Styles.createScrollViewStyle({
+alignSelf:'stretch',
+backgroundColor:'#f5fcff'}),
+
+container:_reactxp2.default.Styles.createViewStyle({
+justifyContent:'center',
+alignItems:'center',
+backgroundColor:'#1a153b',
+padding:5}),
+
+helloWorld:_reactxp2.default.Styles.createTextStyle({
+fontSize:48,
+fontWeight:'bold',
+marginBottom:28}),
+
+welcome:_reactxp2.default.Styles.createTextStyle({
+fontSize:40,
+color:'white'}),
+
+instructions:_reactxp2.default.Styles.createTextStyle({
+fontSize:16,
+color:'#aaa',
+marginBottom:16}),
+
+docLink:_reactxp2.default.Styles.createLinkStyle({
+fontSize:16,
+color:'blue',
+marginBottom:16}),
+
+roundButton:_reactxp2.default.Styles.createViewStyle({
+margin:16,
+borderRadius:16,
+backgroundColor:'#7d88a9'}),
+
+buttonText:_reactxp2.default.Styles.createTextStyle({
+fontSize:16,
+marginVertical:6,
+marginHorizontal:12,
+color:'white'}),
+
+client:_reactxp2.default.Styles.createViewStyle({
+justifyContent:'center',
+alignItems:'left',
+backgroundColor:'#ffffff',
+padding:5,
+flex:1,
+flexDirection:'row'}),
+
+
+
+clientNorm:_reactxp2.default.Styles.createViewStyle({
+justifyContent:'center',
+alignItems:'left',
+backgroundColor:'#ffffff',
+padding:5,
+flex:1,
+flexDirection:'row'}),
+
+
+
+clientName:_reactxp2.default.Styles.createViewStyle({
+justifyContent:'center',
+alignItems:'left',
+backgroundColor:'#ffffff',
+padding:5,
+flex:1,
+flexDirection:'row'}),
+
+
+
+clientText:_reactxp2.default.Styles.createViewStyle({
+color:'#413a6f',
+fontSize:'10'}),
+
+
+
+clientTexted:_reactxp2.default.Styles.createViewStyle({
+color:'#413a6f',
+fontSize:'10',
+marginTop:'39'}),
+
+
+
+clientNcb:_reactxp2.default.Styles.createViewStyle({
+color:'#413a6f',
+fontSize:'10',
+marginTop:42}),
+
+
+
+subText:_reactxp2.default.Styles.createViewStyle({
+color:'#fa774d',
+fontSize:'10',
+marginTop:42}),
+
+
+
+
+subPer:_reactxp2.default.Styles.createViewStyle({
+color:'#546e7a',
+fontSize:'10',
+marginTop:42}),
+
+
+
+
+imageAlign:_reactxp2.default.Styles.createViewStyle({
+marginLeft:100}),
+
+imageAlignement:_reactxp2.default.Styles.createViewStyle({
+marginLeft:100,
+marginTop:168}),
+
+imageAligned:_reactxp2.default.Styles.createViewStyle({
+marginLeft:105}),
+
+
+
+
+
+
+
+
+
+
+
+
+
+image:_reactxp2.default.Styles.createViewStyle({
+height:100,
+width:100,
+backgroundColor:'#FFFFFF',
+marginTop:10})};var
+
+
+
+ThirdPanel=function(_RX$Component){_inherits(ThirdPanel,_RX$Component);
+function ThirdPanel(props){_classCallCheck(this,ThirdPanel);var _this=_possibleConstructorReturn(this,(ThirdPanel.__proto__||Object.getPrototypeOf(ThirdPanel)).call(this,
+props));
+_this._translationValue=_reactxp2.default.Animated.createValue(-100);
+_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({
+transform:[
+{
+translateY:_this._translationValue}]});return _this;
+
+
+
+}_createClass(ThirdPanel,[{key:'componentDidMount',value:function componentDidMount()
+
+{
+var animation=_reactxp2.default.Animated.timing(this._translationValue,{
+toValue:0,
+easing:_reactxp2.default.Animated.Easing.OutBack(),
+duration:500});
+
+
+
+animation.start();
+}},{key:'render',value:function render()
+
+{
+return(
+_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.scroll,__source:{fileName:_jsxFileName,lineNumber:170}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.container,__source:{fileName:_jsxFileName,lineNumber:171}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.welcome,__source:{fileName:_jsxFileName,lineNumber:172}},'Compare Quotes')),
+
+
+
+
+
+
+
+
+
+_react2.default.createElement(_reactxp2.default.View,{style:styles.client,__source:{fileName:_jsxFileName,lineNumber:182}},
+_react2.default.createElement(_reactxp2.default.View,{style:[styles.imageAlignement],__source:{fileName:_jsxFileName,lineNumber:183}},
+
+
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTexted],__source:{fileName:_jsxFileName,lineNumber:186}},'Insured Declared Value'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:187}},'NCB'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:188}},'Cashless Garage'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:189}},'Advance Cash'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:190}},'TP Permium'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:191}},'Zero Depreciation'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:192}},'Already Included Addons'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:193}},'Own Damage'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:194}},'Owner / Driver PA Cover'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:195}},'Unnamed Passenger Cover')),
+
+
+
+_react2.default.createElement(_reactxp2.default.View,{style:[styles.imageAlign],__source:{fileName:_jsxFileName,lineNumber:199}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Bharti.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:200}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:201}},'Bharati Insurance'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:202}},'3,21,402'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:203}},'10%'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:204}},'Nil'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:205}},'Nil'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:206}},'Nil'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:207}},'2 Claims Per Year'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:208}},'NIL'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:209}},'N/A'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:210}},'Accessible'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:211}},'N/A')),
+
+
+_react2.default.createElement(_reactxp2.default.View,{style:[styles.imageAlign],__source:{fileName:_jsxFileName,lineNumber:214}},
+
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/ergo.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:216}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:217}},'Ergo Insurance'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:218}},'3,17,402'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:219}},'15%'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:220}},'3 Garages Near You'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:221}},'3,45,000'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:222}},'3,45,000'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:223}},'1 Claims Per Year'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:224}},'NIL'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:225}},'NIL'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:226}},'Accessible'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:227}},'N/A')),
+
+_react2.default.createElement(_reactxp2.default.View,{style:[styles.imageAlign],__source:{fileName:_jsxFileName,lineNumber:229}},
+
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/oriental.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:231}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:232}},'Oriental Insurance'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:233}},'3,10,402'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:234}},'20%'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:235}},'2 Garages Near You'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:236}},'Nil'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:237}},'3.60,000'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:238}},'3 Claims Per Year'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:239}},'NIL'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:240}},'N/A'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:241}},'Accessible'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:242}},'N/A')),
+
+_react2.default.createElement(_reactxp2.default.View,{style:[styles.imageAligned],__source:{fileName:_jsxFileName,lineNumber:244}},
+
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/united.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:246}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:247}},'United Insurance'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:248}},'3,08,402'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:249}},'25%'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:250}},'NIL'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:251}},'Nil'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:252}},'3,55,789'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:253}},'1 Claims Per Year'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:254}},'NIL'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:255}},'N/A'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:256}},'Accessible'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:257}},'N/A'))),
+
+
+
+
+_react2.default.createElement(_reactxp2.default.View,{style:styles.clientNorm,__source:{fileName:_jsxFileName,lineNumber:262}}),
+
+
+_react2.default.createElement(_reactxp2.default.Button,{style:styles.roundButton,onPress:this.props.onNavigateSixth,__source:{fileName:_jsxFileName,lineNumber:265}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.buttonText,__source:{fileName:_jsxFileName,lineNumber:266}},'Next'))));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}}]);return ThirdPanel;}(_reactxp2.default.Component);exports.default=ThirdPanel;
+
+/***/ }),
+/* 621 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/ubuntu/Desktop/readypolicy/src/EightPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -58743,15 +59036,14 @@ this.setState({toggleValue:newValue});
 }}]);return EightPanel;}(_reactxp2.default.Component);exports.default=EightPanel;
 
 /***/ }),
-/* 621 */
+/* 622 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/var/www/html/readypolicy-master/src/EleventhPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/ubuntu/Desktop/readypolicy/src/EleventhPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
 var _react=__webpack_require__(0);var _react2=_interopRequireDefault(_react);
-
 var _reactxp=__webpack_require__(13);var _reactxp2=_interopRequireDefault(_reactxp);
 var _AppStyles=__webpack_require__(163);var _AppStyles2=_interopRequireDefault(_AppStyles);
 var _reactBootstrap=__webpack_require__(256);
@@ -58767,92 +59059,94 @@ backgroundColor:'#ffffff'})};var
 
 
 
+
+
 EightPanel=function(_RX$Component){_inherits(EightPanel,_RX$Component);
 function EightPanel(props){_classCallCheck(this,EightPanel);var _this=_possibleConstructorReturn(this,(EightPanel.__proto__||Object.getPrototypeOf(EightPanel)).call(this,
-props));
-_this._translationValue=_reactxp2.default.Animated.createValue(-100);
-_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({
-transform:[
+props));_this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_onChangeVar=function(){
+
+_this.setState({joke:''});
+fetch('https://icanhazdadjoke.com/',{headers:{Accept:'text/plain'}}).then(function(r){return r.text();}).
+then(function(joke){return _this.setState({joke:joke});},function(e){return _this.setState({joke:'could not get'});});
+
+
+
+console.log(joke,"joke");
+};_this.
+
+_onChangeReg=function(){
+_this.setState({Model:_this.state.Model});
+};_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(EightPanel,[{key:'componentDidMount',value:function componentDidMount(){var animation=_reactxp2.default.Animated.timing(this._translationValue,{toValue:0,easing:_reactxp2.default.Animated.Easing.OutBack(),duration:500});animation.start();}},{key:'render',value:function render(){var _this2=this;return _react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:51}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:52}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:53}},'Eleventh Page'),_react2.default.createElement(_reactxp2.default.Button,{style:_Button2.default,onPress:this.props.onNavigateEleven,__source:{fileName:_jsxFileName,lineNumber:56}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buttonText,__source:{fileName:_jsxFileName,lineNumber:57}},'Go Back'))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:63}},_react2.default.createElement(_reactBootstrap.FormGroup,{controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:64}},_react2.default.createElement(_reactBootstrap.ControlLabel,{__source:{fileName:_jsxFileName,lineNumber:68}},'Input'),_react2.default.createElement(_reactBootstrap.FormControl.Feedback,{__source:{fileName:_jsxFileName,lineNumber:75}}))),_react2.default.createElement(_reactxp2.default.Button,{bsStyle:'danger',onPress:function onPress(){return _this2._onChangeVar();},__source:{fileName:_jsxFileName,lineNumber:80}},'Primary'));}},{key:'handleChange',value:function handleChange()
+
 {
-translateY:_this._translationValue}]});return _this;
-
-
-
-}_createClass(EightPanel,[{key:'componentDidMount',value:function componentDidMount()
-
-{
-var animation=_reactxp2.default.Animated.timing(this._translationValue,{
-toValue:0,
-easing:_reactxp2.default.Animated.Easing.OutBack(),
-duration:500});
-
-
-
-animation.start();
-}},{key:'getInitialState',value:function getInitialState()
-
-
-{
-return{
-value:10};
-
-}},{key:'getValidationState',value:function getValidationState()
-
-{
-var length=this.state.value.length;
-if(length>10)return'success';else
-if(length>5)return'warning';else
-if(length>0)return'error';
-return null;
-}},{key:'handleChange',value:function handleChange(
-
-e){
-this.setState({value:e.target.value});
-}},{key:'render',value:function render()
-
-{
-return(
-_react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:67}},
-_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:68}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:69}},'Eleventh Page'),
-
-
-_react2.default.createElement(_reactxp2.default.Button,{style:_Button2.default,onPress:this.props.onNavigateEleven,__source:{fileName:_jsxFileName,lineNumber:72}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buttonText,__source:{fileName:_jsxFileName,lineNumber:73}},'Go Back'))),
-
-
-
-
-
-_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:79}},
-_react2.default.createElement(_reactBootstrap.FormGroup,{
-controlId:'formBasicText',
-validationState:this.getValidationState.bind(),__source:{fileName:_jsxFileName,lineNumber:80}},
-
-_react2.default.createElement(_reactBootstrap.ControlLabel,{__source:{fileName:_jsxFileName,lineNumber:84}},'Working example with validation'),
-_react2.default.createElement(_reactBootstrap.FormControl,{
-type:'text',
-value:this.state.value,
-placeholder:'Enter text',
-onChange:this.props.handleChange,__source:{fileName:_jsxFileName,lineNumber:85}}),
-
-_react2.default.createElement(_reactBootstrap.FormControl.Feedback,{__source:{fileName:_jsxFileName,lineNumber:91}}),
-_react2.default.createElement(HelpBlock,{__source:{fileName:_jsxFileName,lineNumber:92}},'Validation is based on string length.'))),
-
-
-
-
-_react2.default.createElement(_Button2.default,{bsStyle:'danger',__source:{fileName:_jsxFileName,lineNumber:97}},'Primary')));
-
-
-
+this.setState({Model:''});
 }}]);return EightPanel;}(_reactxp2.default.Component);exports.default=EightPanel;
 
 /***/ }),
-/* 622 */
+/* 623 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/var/www/html/readypolicy-master/src/FifthPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/ubuntu/Desktop/readypolicy/src/FifthPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -59083,10 +59377,10 @@ this.setState({toggleValue:newValue});
 }}]);return FourthPanel;}(_reactxp2.default.Component);exports.default=FourthPanel;
 
 /***/ }),
-/* 623 */
+/* 624 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/var/www/html/readypolicy-master/src/FourthPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/ubuntu/Desktop/readypolicy/src/FourthPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -59295,10 +59589,212 @@ _react2.default.createElement(_reactxp2.default.Text,{style:styles.buybuttonText
 }}]);return FourthPanel;}(_reactxp2.default.Component);exports.default=FourthPanel;
 
 /***/ }),
-/* 624 */
+/* 625 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/var/www/html/readypolicy-master/src/NinePanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/ubuntu/Desktop/readypolicy/src/InsuranceAddons.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+
+
+
+var _react=__webpack_require__(0);var _react2=_interopRequireDefault(_react);
+var _reactxp=__webpack_require__(13);var _reactxp2=_interopRequireDefault(_reactxp);
+var _reactBootstrap=__webpack_require__(256);
+var _Button=__webpack_require__(258);var _Button2=_interopRequireDefault(_Button);
+var _AppStyles=__webpack_require__(163);var _AppStyles2=_interopRequireDefault(_AppStyles);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
+
+
+
+
+var _styles={
+scroll:_reactxp2.default.Styles.createScrollViewStyle({
+alignSelf:'stretch',
+backgroundColor:'#f1f1f1'})};var
+
+
+
+
+
+
+EightPanel=function(_RX$Component){_inherits(EightPanel,_RX$Component);
+function EightPanel(props){_classCallCheck(this,EightPanel);var _this=_possibleConstructorReturn(this,(EightPanel.__proto__||Object.getPrototypeOf(EightPanel)).call(this,
+props));
+_this._translationValue=_reactxp2.default.Animated.createValue(-100);
+_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({
+transform:[
+{
+translateY:_this._translationValue}]});return _this;
+
+
+
+}_createClass(EightPanel,[{key:'componentDidMount',value:function componentDidMount()
+
+{
+var animation=_reactxp2.default.Animated.timing(this._translationValue,{
+toValue:0,
+easing:_reactxp2.default.Animated.Easing.OutBack(),
+duration:500});
+
+
+
+animation.start();
+}},{key:'render',value:function render()
+
+{
+return(
+_react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:50}},
+_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:51}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:52}},'New Car Insurance')),
+
+
+
+_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.flute,__source:{fileName:_jsxFileName,lineNumber:56}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.head,__source:{fileName:_jsxFileName,lineNumber:57}},'Addons and Accessories')),
+
+
+
+_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:61}},
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',style:_AppStyles2.default.contain,__source:{fileName:_jsxFileName,lineNumber:62}},
+_react2.default.createElement(_reactBootstrap.Col,{md:10,mdOffset:2,className:'hidden-xs',__source:{fileName:_jsxFileName,lineNumber:63}},
+_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:64}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:64}},'24X7 Road Side Assistance')),
+_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:65}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:65}},'Zero Deprication')),
+_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:66}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:66}},'Engine Protection Cover')),
+_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:67}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:67}},'NCB Protactor')),
+_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:68}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:68}},'Key and Lock Replacements')),
+_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:69}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:69}},'Consumables')),
+_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:70}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:70}},'External Accessories-Electrical'))),
+
+_react2.default.createElement(_reactBootstrap.Col,{xs:10,xsOffset:2,className:'hidden-lg',__source:{fileName:_jsxFileName,lineNumber:72}},
+_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:73}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:73}},'24X7 Road Side Assistance')),
+_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:74}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:74}},'Zero Deprication')),
+_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:75}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:75}},'Engine Protection Cover')),
+_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:76}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:76}},'NCB Protactor')),
+_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:77}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:77}},'Key and Lock Replacements')),
+_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:78}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:78}},'Consumables')),
+_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:79}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:79}},'External Accessories-Electrical'))))),
+
+
+
+
+
+_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.flute,__source:{fileName:_jsxFileName,lineNumber:85}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.head,__source:{fileName:_jsxFileName,lineNumber:86}},'Additional Covers')),
+
+
+
+_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:90}},
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',style:_AppStyles2.default.contain,__source:{fileName:_jsxFileName,lineNumber:91}},
+_react2.default.createElement(_reactBootstrap.Col,{md:10,mdOffset:2,className:'hidden-xs',__source:{fileName:_jsxFileName,lineNumber:92}},
+_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:93}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:93}},'24X7 Road Side Assistance')),
+_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:94}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:94}},'Zero Deprication'))),
+
+_react2.default.createElement(_reactBootstrap.Col,{xs:10,xsOffset:2,className:'hidden-lg',__source:{fileName:_jsxFileName,lineNumber:96}},
+_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:97}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:97}},'24X7 Road Side Assistance')),
+_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:98}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:98}},'Zero Deprication'))))),
+
+
+
+
+
+
+
+_react2.default.createElement(_Button2.default,{bsStyle:'danger',onClick:this.props.onNavigateTen,__source:{fileName:_jsxFileName,lineNumber:106}},'Next'),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_react2.default.createElement(_reactxp2.default.Button,{style:_Button2.default,onPress:this.props.onNavigateTen,__source:{fileName:_jsxFileName,lineNumber:189}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buttonText,__source:{fileName:_jsxFileName,lineNumber:190}},'Go Back'))));
+
+
+
+
+
+
+}}]);return EightPanel;}(_reactxp2.default.Component);exports.default=EightPanel;
+
+/***/ }),
+/* 626 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/ubuntu/Desktop/readypolicy/src/NinePanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -59447,10 +59943,10 @@ _react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.
 }}]);return EightPanel;}(_reactxp2.default.Component);exports.default=EightPanel;
 
 /***/ }),
-/* 625 */
+/* 627 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/var/www/html/readypolicy-master/src/ProgressIndicator.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/ubuntu/Desktop/readypolicy/src/ProgressIndicator.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -59492,10 +59988,10 @@ d:path,__source:{fileName:_jsxFileName,lineNumber:34}})));
 }}]);return ProgressIndicator;}(_reactxp2.default.Component);exports.default=ProgressIndicator;
 
 /***/ }),
-/* 626 */
+/* 628 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/var/www/html/readypolicy-master/src/SecondPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/ubuntu/Desktop/readypolicy/src/QuotesSelection.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -59506,7 +60002,7 @@ var _MainPanel=__webpack_require__(277);var _MainPanel2=_interopRequireDefault(_
 
 var _reactxpVideo=__webpack_require__(579);var _reactxpVideo2=_interopRequireDefault(_reactxpVideo);
 
-var _ProgressIndicator=__webpack_require__(625);var _ProgressIndicator2=_interopRequireDefault(_ProgressIndicator);
+var _ProgressIndicator=__webpack_require__(627);var _ProgressIndicator2=_interopRequireDefault(_ProgressIndicator);
 var _ToggleSwitch=__webpack_require__(278);var _ToggleSwitch2=_interopRequireDefault(_ToggleSwitch);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
 
 var _styles={
@@ -59893,10 +60389,10 @@ this.setState({toggleValue:newValue});
 }}]);return SecondPanel;}(_reactxp2.default.Component);exports.default=SecondPanel;
 
 /***/ }),
-/* 627 */
+/* 629 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/var/www/html/readypolicy-master/src/SeventhPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(0);var _react2=_interopRequireDefault(_react);
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/ubuntu/Desktop/readypolicy/src/SeventhPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(0);var _react2=_interopRequireDefault(_react);
 var _reactxp=__webpack_require__(13);var _reactxp2=_interopRequireDefault(_reactxp);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
 
 var styles={
@@ -59956,501 +60452,10 @@ _react2.default.createElement(_reactxp2.default.Text,{style:styles.buttonText,__
 SeventhPanel;
 
 /***/ }),
-/* 628 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/var/www/html/readypolicy-master/src/SixthPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
-
-
-
-var _react=__webpack_require__(0);var _react2=_interopRequireDefault(_react);
-var _reactxp=__webpack_require__(13);var _reactxp2=_interopRequireDefault(_reactxp);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
-var styles={
-scroll:_reactxp2.default.Styles.createScrollViewStyle({
-alignSelf:'stretch',
-backgroundColor:'#f5fcff'}),
-
-container:_reactxp2.default.Styles.createViewStyle({
-justifyContent:'center',
-alignItems:'center',
-backgroundColor:'#1a153b',
-padding:5}),
-
-helloWorld:_reactxp2.default.Styles.createTextStyle({
-fontSize:48,
-fontWeight:'bold',
-marginBottom:28}),
-
-welcome:_reactxp2.default.Styles.createTextStyle({
-fontSize:40,
-color:'white'}),
-
-instructions:_reactxp2.default.Styles.createTextStyle({
-fontSize:16,
-color:'#aaa',
-marginBottom:16}),
-
-docLink:_reactxp2.default.Styles.createLinkStyle({
-fontSize:16,
-color:'blue',
-marginBottom:16}),
-
-roundButton:_reactxp2.default.Styles.createViewStyle({
-margin:16,
-borderRadius:16,
-backgroundColor:'#7d88a9'}),
-
-buttonText:_reactxp2.default.Styles.createTextStyle({
-fontSize:16,
-marginVertical:6,
-marginHorizontal:12,
-color:'white'}),
-
-client:_reactxp2.default.Styles.createViewStyle({
-justifyContent:'center',
-alignItems:'left',
-backgroundColor:'#ffffff',
-padding:5,
-flex:1,
-flexDirection:'row'}),
-
-
-
-clientNorm:_reactxp2.default.Styles.createViewStyle({
-justifyContent:'center',
-alignItems:'left',
-backgroundColor:'#ffffff',
-padding:5,
-flex:1,
-flexDirection:'row'}),
-
-
-
-clientName:_reactxp2.default.Styles.createViewStyle({
-justifyContent:'center',
-alignItems:'left',
-backgroundColor:'#ffffff',
-padding:5,
-flex:1,
-flexDirection:'row'}),
-
-
-
-clientText:_reactxp2.default.Styles.createViewStyle({
-color:'#413a6f',
-fontSize:'10'}),
-
-
-
-clientTexted:_reactxp2.default.Styles.createViewStyle({
-color:'#413a6f',
-fontSize:'10',
-marginTop:'39'}),
-
-
-
-clientNcb:_reactxp2.default.Styles.createViewStyle({
-color:'#413a6f',
-fontSize:'10',
-marginTop:42}),
-
-
-
-subText:_reactxp2.default.Styles.createViewStyle({
-color:'#fa774d',
-fontSize:'10',
-marginTop:42}),
-
-
-
-
-subPer:_reactxp2.default.Styles.createViewStyle({
-color:'#546e7a',
-fontSize:'10',
-marginTop:42}),
-
-
-
-
-imageAlign:_reactxp2.default.Styles.createViewStyle({
-marginLeft:100}),
-
-imageAlignement:_reactxp2.default.Styles.createViewStyle({
-marginLeft:100,
-marginTop:168}),
-
-imageAligned:_reactxp2.default.Styles.createViewStyle({
-marginLeft:105}),
-
-
-
-
-
-
-
-
-
-
-
-
-
-image:_reactxp2.default.Styles.createViewStyle({
-height:100,
-width:100,
-backgroundColor:'#FFFFFF',
-marginTop:10})};var
-
-
-
-ThirdPanel=function(_RX$Component){_inherits(ThirdPanel,_RX$Component);
-function ThirdPanel(props){_classCallCheck(this,ThirdPanel);var _this=_possibleConstructorReturn(this,(ThirdPanel.__proto__||Object.getPrototypeOf(ThirdPanel)).call(this,
-props));
-_this._translationValue=_reactxp2.default.Animated.createValue(-100);
-_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({
-transform:[
-{
-translateY:_this._translationValue}]});return _this;
-
-
-
-}_createClass(ThirdPanel,[{key:'componentDidMount',value:function componentDidMount()
-
-{
-var animation=_reactxp2.default.Animated.timing(this._translationValue,{
-toValue:0,
-easing:_reactxp2.default.Animated.Easing.OutBack(),
-duration:500});
-
-
-
-animation.start();
-}},{key:'render',value:function render()
-
-{
-return(
-_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.scroll,__source:{fileName:_jsxFileName,lineNumber:170}},
-_react2.default.createElement(_reactxp2.default.View,{style:styles.container,__source:{fileName:_jsxFileName,lineNumber:171}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.welcome,__source:{fileName:_jsxFileName,lineNumber:172}},'Compare Quotes')),
-
-
-
-
-
-
-
-
-
-_react2.default.createElement(_reactxp2.default.View,{style:styles.client,__source:{fileName:_jsxFileName,lineNumber:182}},
-_react2.default.createElement(_reactxp2.default.View,{style:[styles.imageAlignement],__source:{fileName:_jsxFileName,lineNumber:183}},
-
-
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTexted],__source:{fileName:_jsxFileName,lineNumber:186}},'Insured Declared Value'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:187}},'NCB'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:188}},'Cashless Garage'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:189}},'Advance Cash'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:190}},'TP Permium'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:191}},'Zero Depreciation'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:192}},'Already Included Addons'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:193}},'Own Damage'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:194}},'Owner / Driver PA Cover'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientNcb],__source:{fileName:_jsxFileName,lineNumber:195}},'Unnamed Passenger Cover')),
-
-
-
-_react2.default.createElement(_reactxp2.default.View,{style:[styles.imageAlign],__source:{fileName:_jsxFileName,lineNumber:199}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Bharti.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:200}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:201}},'Bharati Insurance'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:202}},'3,21,402'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:203}},'10%'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:204}},'Nil'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:205}},'Nil'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:206}},'Nil'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:207}},'2 Claims Per Year'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:208}},'NIL'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:209}},'N/A'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:210}},'Accessible'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:211}},'N/A')),
-
-
-_react2.default.createElement(_reactxp2.default.View,{style:[styles.imageAlign],__source:{fileName:_jsxFileName,lineNumber:214}},
-
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/ergo.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:216}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:217}},'Ergo Insurance'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:218}},'3,17,402'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:219}},'15%'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:220}},'3 Garages Near You'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:221}},'3,45,000'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:222}},'3,45,000'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:223}},'1 Claims Per Year'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:224}},'NIL'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:225}},'NIL'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:226}},'Accessible'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:227}},'N/A')),
-
-_react2.default.createElement(_reactxp2.default.View,{style:[styles.imageAlign],__source:{fileName:_jsxFileName,lineNumber:229}},
-
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/oriental.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:231}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:232}},'Oriental Insurance'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:233}},'3,10,402'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:234}},'20%'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:235}},'2 Garages Near You'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:236}},'Nil'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:237}},'3.60,000'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:238}},'3 Claims Per Year'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:239}},'NIL'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:240}},'N/A'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:241}},'Accessible'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:242}},'N/A')),
-
-_react2.default.createElement(_reactxp2.default.View,{style:[styles.imageAligned],__source:{fileName:_jsxFileName,lineNumber:244}},
-
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/united.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:246}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:247}},'United Insurance'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:248}},'3,08,402'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:249}},'25%'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:250}},'NIL'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:251}},'Nil'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:252}},'3,55,789'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:253}},'1 Claims Per Year'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:254}},'NIL'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:255}},'N/A'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:256}},'Accessible'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subPer],__source:{fileName:_jsxFileName,lineNumber:257}},'N/A'))),
-
-
-
-
-_react2.default.createElement(_reactxp2.default.View,{style:styles.clientNorm,__source:{fileName:_jsxFileName,lineNumber:262}}),
-
-
-_react2.default.createElement(_reactxp2.default.Button,{style:styles.roundButton,onPress:this.props.onNavigateSixth,__source:{fileName:_jsxFileName,lineNumber:265}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.buttonText,__source:{fileName:_jsxFileName,lineNumber:266}},'Next'))));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}}]);return ThirdPanel;}(_reactxp2.default.Component);exports.default=ThirdPanel;
-
-/***/ }),
-/* 629 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/var/www/html/readypolicy-master/src/TenPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
-
-
-
-var _react=__webpack_require__(0);var _react2=_interopRequireDefault(_react);
-var _reactxp=__webpack_require__(13);var _reactxp2=_interopRequireDefault(_reactxp);
-var _reactBootstrap=__webpack_require__(256);
-var _Button=__webpack_require__(258);var _Button2=_interopRequireDefault(_Button);
-var _AppStyles=__webpack_require__(163);var _AppStyles2=_interopRequireDefault(_AppStyles);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
-
-
-
-
-var _styles={
-scroll:_reactxp2.default.Styles.createScrollViewStyle({
-alignSelf:'stretch',
-backgroundColor:'#f1f1f1'})};var
-
-
-
-
-
-
-EightPanel=function(_RX$Component){_inherits(EightPanel,_RX$Component);
-function EightPanel(props){_classCallCheck(this,EightPanel);var _this=_possibleConstructorReturn(this,(EightPanel.__proto__||Object.getPrototypeOf(EightPanel)).call(this,
-props));
-_this._translationValue=_reactxp2.default.Animated.createValue(-100);
-_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({
-transform:[
-{
-translateY:_this._translationValue}]});return _this;
-
-
-
-}_createClass(EightPanel,[{key:'componentDidMount',value:function componentDidMount()
-
-{
-var animation=_reactxp2.default.Animated.timing(this._translationValue,{
-toValue:0,
-easing:_reactxp2.default.Animated.Easing.OutBack(),
-duration:500});
-
-
-
-animation.start();
-}},{key:'render',value:function render()
-
-{
-return(
-_react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:50}},
-_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:51}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:52}},'New Car Insurance')),
-
-
-
-_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.flute,__source:{fileName:_jsxFileName,lineNumber:56}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.head,__source:{fileName:_jsxFileName,lineNumber:57}},'Addons and Accessories')),
-
-
-
-_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:61}},
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',style:_AppStyles2.default.contain,__source:{fileName:_jsxFileName,lineNumber:62}},
-_react2.default.createElement(_reactBootstrap.Col,{md:10,mdOffset:2,className:'hidden-xs',__source:{fileName:_jsxFileName,lineNumber:63}},
-_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:64}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:64}},'24X7 Road Side Assistance')),
-_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:65}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:65}},'Zero Deprication')),
-_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:66}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:66}},'Engine Protection Cover')),
-_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:67}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:67}},'NCB Protactor')),
-_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:68}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:68}},'Key and Lock Replacements')),
-_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:69}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:69}},'Consumables')),
-_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:70}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:70}},'External Accessories-Electrical'))),
-
-_react2.default.createElement(_reactBootstrap.Col,{xs:10,xsOffset:2,className:'hidden-lg',__source:{fileName:_jsxFileName,lineNumber:72}},
-_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:73}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:73}},'24X7 Road Side Assistance')),
-_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:74}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:74}},'Zero Deprication')),
-_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:75}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:75}},'Engine Protection Cover')),
-_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:76}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:76}},'NCB Protactor')),
-_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:77}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:77}},'Key and Lock Replacements')),
-_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:78}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:78}},'Consumables')),
-_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:79}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:79}},'External Accessories-Electrical'))))),
-
-
-
-
-
-_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.flute,__source:{fileName:_jsxFileName,lineNumber:85}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.head,__source:{fileName:_jsxFileName,lineNumber:86}},'Additional Covers')),
-
-
-
-_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:90}},
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',style:_AppStyles2.default.contain,__source:{fileName:_jsxFileName,lineNumber:91}},
-_react2.default.createElement(_reactBootstrap.Col,{md:10,mdOffset:2,className:'hidden-xs',__source:{fileName:_jsxFileName,lineNumber:92}},
-_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:93}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:93}},'24X7 Road Side Assistance')),
-_react2.default.createElement('code',{style:_AppStyles2.default.assitance,__source:{fileName:_jsxFileName,lineNumber:94}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:94}},'Zero Deprication'))),
-
-_react2.default.createElement(_reactBootstrap.Col,{xs:10,xsOffset:2,className:'hidden-lg',__source:{fileName:_jsxFileName,lineNumber:96}},
-_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:97}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:97}},'24X7 Road Side Assistance')),
-_react2.default.createElement('code',{style:_AppStyles2.default.assitanceMob,__source:{fileName:_jsxFileName,lineNumber:98}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:98}},'Zero Deprication'))))),
-
-
-
-
-
-
-
-_react2.default.createElement(_Button2.default,{bsStyle:'danger',onClick:this.props.onNavigateTen,__source:{fileName:_jsxFileName,lineNumber:106}},'Next'),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-_react2.default.createElement(_reactxp2.default.Button,{style:_Button2.default,onPress:this.props.onNavigateTen,__source:{fileName:_jsxFileName,lineNumber:189}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buttonText,__source:{fileName:_jsxFileName,lineNumber:190}},'Go Back'))));
-
-
-
-
-
-
-}}]);return EightPanel;}(_reactxp2.default.Component);exports.default=EightPanel;
-
-/***/ }),
 /* 630 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/var/www/html/readypolicy-master/src/ThirdPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/ubuntu/Desktop/readypolicy/src/ThirdPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -60573,7 +60578,7 @@ _react2.default.createElement(_reactxp2.default.Text,{style:styles.buttonText,__
 /* 631 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _jsxFileName='/var/www/html/readypolicy-master/src/index.js';var _react=__webpack_require__(0);var _react2=_interopRequireDefault(_react);
+var _jsxFileName='/home/ubuntu/Desktop/readypolicy/src/index.js';var _react=__webpack_require__(0);var _react2=_interopRequireDefault(_react);
 var _reactxp=__webpack_require__(13);var _reactxp2=_interopRequireDefault(_reactxp);
 var _App=__webpack_require__(279);var _App2=_interopRequireDefault(_App);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}
 
