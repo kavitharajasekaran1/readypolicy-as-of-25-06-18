@@ -17590,7 +17590,8 @@ var _SeventhPanel=__webpack_require__(629);var _SeventhPanel2=_interopRequireDef
 var _EightPanel=__webpack_require__(621);var _EightPanel2=_interopRequireDefault(_EightPanel);
 var _MyPolicy=__webpack_require__(626);var _MyPolicy2=_interopRequireDefault(_MyPolicy);
 var _InsuranceAddons=__webpack_require__(625);var _InsuranceAddons2=_interopRequireDefault(_InsuranceAddons);
-var _EleventhPanel=__webpack_require__(622);var _EleventhPanel2=_interopRequireDefault(_EleventhPanel);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
+var _EleventhPanel=__webpack_require__(622);var _EleventhPanel2=_interopRequireDefault(_EleventhPanel);
+var _PaymentScreen=__webpack_require__(632);var _PaymentScreen2=_interopRequireDefault(_PaymentScreen);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
 
 
 
@@ -17608,7 +17609,8 @@ SeventhPanel:"SeventhPanel",
 EightPanel:"EightPanel",
 MyPolicy:"MyPolicy",
 InsuranceAddons:"InsuranceAddons",
-EleventhPanel:"EleventhPanel"};
+EleventhPanel:"EleventhPanel",
+PaymentScreen:"PaymentScreen"};
 
 
 
@@ -17637,7 +17639,9 @@ _this._onPressSeven=_this._onPressSeven.bind(_this);
 _this._onPressEight=_this._onPressEight.bind(_this);
 _this._onPressNine=_this._onPressNine.bind(_this);
 _this._onPressTen=_this._onPressTen.bind(_this);
-_this._onPressEleven=_this._onPressEleven.bind(_this);return _this;
+_this._onPressEleven=_this._onPressEleven.bind(_this);
+_this._onPressPayment=_this._onPressPayment.bind(_this);return _this;
+
 }_createClass(App,[{key:'componentDidMount',value:function componentDidMount()
 
 {
@@ -17652,7 +17656,7 @@ return(
 _react2.default.createElement(_reactxpNavigation.Navigator,{
 ref:this._onNavigatorRef,
 renderScene:this._renderScene,
-cardStyle:styles.navCardStyle,__source:{fileName:_jsxFileName,lineNumber:79}}));
+cardStyle:styles.navCardStyle,__source:{fileName:_jsxFileName,lineNumber:83}}));
 
 
 }},{key:'_onNavigatorRef',value:function _onNavigatorRef(
@@ -17664,37 +17668,40 @@ this._navigator=navigator;
 navigatorRoute){
 switch(navigatorRoute.routeId){
 case NavigationRouteId.MainPanel:
-return _react2.default.createElement(_MainPanel2.default,{onPressNavigate:this._onPressNavigate,__source:{fileName:_jsxFileName,lineNumber:94}});
+return _react2.default.createElement(_MainPanel2.default,{onPressNavigate:this._onPressNavigate,__source:{fileName:_jsxFileName,lineNumber:98}});
 
 case NavigationRouteId.CompareQuotes:
-return _react2.default.createElement(_CompareQuotes2.default,{onNavigateBack:this._onPressBack,__source:{fileName:_jsxFileName,lineNumber:97}});
+return _react2.default.createElement(_CompareQuotes2.default,{onNavigateBack:this._onPressBack,__source:{fileName:_jsxFileName,lineNumber:101}});
 
 case NavigationRouteId.ThirdPanel:
-return _react2.default.createElement(_ThirdPanel2.default,{onNavigateForward:this._onPressForward,__source:{fileName:_jsxFileName,lineNumber:100}});
+return _react2.default.createElement(_ThirdPanel2.default,{onNavigateForward:this._onPressForward,__source:{fileName:_jsxFileName,lineNumber:104}});
 
 case NavigationRouteId.FourthPanel:
-return _react2.default.createElement(_FourthPanel2.default,{onNavigateForth:this._onPressForth,__source:{fileName:_jsxFileName,lineNumber:103}});
+return _react2.default.createElement(_FourthPanel2.default,{onNavigateForth:this._onPressForth,__source:{fileName:_jsxFileName,lineNumber:107}});
 
 case NavigationRouteId.FifthPanel:
-return _react2.default.createElement(_FifthPanel2.default,{onNavigateFifth:this._onPressFifth,__source:{fileName:_jsxFileName,lineNumber:106}});
+return _react2.default.createElement(_FifthPanel2.default,{onNavigateFifth:this._onPressFifth,__source:{fileName:_jsxFileName,lineNumber:110}});
 
 case NavigationRouteId.QuotesSelection:
-return _react2.default.createElement(_QuotesSelection2.default,{onNavigateSixth:this._onPressSixth,__source:{fileName:_jsxFileName,lineNumber:109}});
+return _react2.default.createElement(_QuotesSelection2.default,{onNavigateSixth:this._onPressSixth,__source:{fileName:_jsxFileName,lineNumber:113}});
 
 case NavigationRouteId.SeventhPanel:
-return _react2.default.createElement(_SeventhPanel2.default,{onNavigateSeven:this._onPressSeven,__source:{fileName:_jsxFileName,lineNumber:112}});
+return _react2.default.createElement(_SeventhPanel2.default,{onNavigateSeven:this._onPressSeven,__source:{fileName:_jsxFileName,lineNumber:116}});
 
 case NavigationRouteId.EightPanel:
-return _react2.default.createElement(_EightPanel2.default,{onNavigateEight:this._onPressEight,__source:{fileName:_jsxFileName,lineNumber:115}});
+return _react2.default.createElement(_EightPanel2.default,{onNavigateEight:this._onPressEight,__source:{fileName:_jsxFileName,lineNumber:119}});
 
 case NavigationRouteId.MyPolicy:
-return _react2.default.createElement(_MyPolicy2.default,{onNavigateNine:this._onPressNine,__source:{fileName:_jsxFileName,lineNumber:118}});
+return _react2.default.createElement(_MyPolicy2.default,{onNavigateNine:this._onPressNine,__source:{fileName:_jsxFileName,lineNumber:122}});
 
 case NavigationRouteId.InsuranceAddons:
-return _react2.default.createElement(_InsuranceAddons2.default,{onNavigateTen:this._onPressTen,__source:{fileName:_jsxFileName,lineNumber:121}});
+return _react2.default.createElement(_InsuranceAddons2.default,{onNavigateTen:this._onPressTen,__source:{fileName:_jsxFileName,lineNumber:125}});
 
 case NavigationRouteId.EleventhPanel:
-return _react2.default.createElement(_EleventhPanel2.default,{onNavigateEleven:this._onPressEleven,__source:{fileName:_jsxFileName,lineNumber:124}});}
+return _react2.default.createElement(_EleventhPanel2.default,{onNavigateEleven:this._onPressEleven,__source:{fileName:_jsxFileName,lineNumber:128}});
+
+case NavigationRouteId.PaymentScreen:
+return _react2.default.createElement(_PaymentScreen2.default,{onNavigateEleven:this._onPressPayment,__source:{fileName:_jsxFileName,lineNumber:131}});}
 
 
 return null;
@@ -17804,6 +17811,16 @@ hideShadow:true}});
 {
 this._navigator.push({
 routeId:NavigationRouteId.ThirdPanel,
+sceneConfigType:"FloatFromRight",
+customSceneConfig:{
+hideShadow:true}});
+
+
+}},{key:'_onPressPayment',value:function _onPressPayment()
+
+{
+this._navigator.push({
+routeId:NavigationRouteId.PaymentScreen,
 sceneConfigType:"FloatFromRight",
 customSceneConfig:{
 hideShadow:true}});
@@ -60589,6 +60606,94 @@ var _App=__webpack_require__(279);var _App2=_interopRequireDefault(_App);functio
 
 
 _reactxp2.default.UserInterface.setMainView(_react2.default.createElement(_App2.default,{__source:{fileName:_jsxFileName,lineNumber:6}}));
+
+/***/ }),
+/* 632 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/var/www/html/readypolicy-ui/src/PaymentScreen.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+
+
+
+var _react=__webpack_require__(0);var _react2=_interopRequireDefault(_react);
+var _reactxp=__webpack_require__(13);var _reactxp2=_interopRequireDefault(_reactxp);
+var _AppStyles=__webpack_require__(163);var _AppStyles2=_interopRequireDefault(_AppStyles);
+var _reactBootstrap=__webpack_require__(256);
+var _Button=__webpack_require__(258);var _Button2=_interopRequireDefault(_Button);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
+
+
+
+
+var _styles={
+scroll:_reactxp2.default.Styles.createScrollViewStyle({
+alignSelf:'stretch',
+backgroundColor:'#ffffff'})};var
+
+
+
+
+
+EightPanel=function(_RX$Component){_inherits(EightPanel,_RX$Component);
+function EightPanel(props){_classCallCheck(this,EightPanel);var _this=_possibleConstructorReturn(this,(EightPanel.__proto__||Object.getPrototypeOf(EightPanel)).call(this,
+props));
+_this._translationValue=_reactxp2.default.Animated.createValue(-100);
+_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({
+transform:[
+{
+translateY:_this._translationValue}]});return _this;
+
+
+
+}_createClass(EightPanel,[{key:'componentDidMount',value:function componentDidMount()
+
+{
+var animation=_reactxp2.default.Animated.timing(this._translationValue,{
+toValue:0,
+easing:_reactxp2.default.Animated.Easing.OutBack(),
+duration:500});
+
+
+
+animation.start();
+}},{key:'render',value:function render()
+
+
+
+{
+return(
+_react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:51}},
+_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:52}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:53}},'Payment Screen'),
+
+
+_react2.default.createElement(_reactxp2.default.Button,{style:_Button2.default,onPress:this.props.onNavigateEleven,__source:{fileName:_jsxFileName,lineNumber:56}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buttonText,__source:{fileName:_jsxFileName,lineNumber:57}},'Go Back'))),
+
+
+
+
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.Text,__source:{fileName:_jsxFileName,lineNumber:62}},
+this.state.joke),
+
+_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:65}},
+_react2.default.createElement(_reactBootstrap.FormGroup,{
+controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:66}},
+
+
+_react2.default.createElement(_reactBootstrap.ControlLabel,{__source:{fileName:_jsxFileName,lineNumber:70}},'Input'),
+
+
+
+
+
+
+_react2.default.createElement(_reactBootstrap.FormControl.Feedback,{__source:{fileName:_jsxFileName,lineNumber:77}})))));
+
+
+
+
+
+}}]);return EightPanel;}(_reactxp2.default.Component);exports.default=EightPanel;
 
 /***/ })
 /******/ ]);
