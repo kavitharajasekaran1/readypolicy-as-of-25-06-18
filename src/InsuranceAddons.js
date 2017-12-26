@@ -21,7 +21,7 @@ const _styles = {
 };
 
 
-export default class EightPanel extends RX.Component{
+export default class InsuranceAddons extends RX.Component{
     constructor(props) {
         super(props);
         this._translationValue = RX.Animated.createValue(-100);

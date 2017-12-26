@@ -37,6 +37,9 @@ class SeventhPanel extends RX.Component {
     render() {
         return (
             <RX.View style={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <RX.Link style={ styles.docLink } url={ 'https://maps.google.com/maps?q=%22+19.22+%22,%22+16.22+%22&hl=es' }>
+                        Google maps
+                    </RX.Link>
                 <RX.Text>Latitude: {this.state.latitude}</RX.Text>
                 <RX.Text>Longitude: {this.state.longitude}</RX.Text>
                 {this.state.error ? <Text>Error: {this.state.error}</Text> : null}
