@@ -35,7 +35,8 @@ let NavigationRouteId = {
     EightPanel:"EightPanel",
     MyPolicy:"MyPolicy",
     InsuranceAddons:"InsuranceAddons",
-    EleventhPanel:"EleventhPanel"
+    EleventhPanel:"EleventhPanel",
+    PaymentScreen:"PaymentScreen"
 
 
 };
@@ -65,6 +66,7 @@ export default class App extends RX.Component {
         this._onPressNine = this._onPressNine.bind(this);
         this._onPressTen = this._onPressTen.bind(this);
         this._onPressEleven = this._onPressEleven.bind(this);
+        this._onPressPayment = this._onPressPayment.bind(this);
     }
 
     componentDidMount() {
@@ -122,6 +124,12 @@ export default class App extends RX.Component {
 
             case NavigationRouteId.EleventhPanel:
                 return <EleventhPanel onNavigateEleven={ this._onPressEleven }/>;
+
+            case NavigationRouteId.EleventhPanel:
+                return <EleventhPanel onNavigateEleven={ this._onPressEleven }/>;
+
+            case NavigationRouteId.PaymentScreen:
+                return <PaymentScreen onNavigateEleven={ this._onPressPayment }/>;
         }
 
         return null;
@@ -237,5 +245,14 @@ export default class App extends RX.Component {
             }
         });
         }
+    _onPressPayment() {
+        this._navigator.push({
+            routeId: NavigationRouteId.PaymentScreen,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
 
 };
