@@ -125,9 +125,6 @@ export default class App extends RX.Component {
             case NavigationRouteId.EleventhPanel:
                 return <EleventhPanel onNavigateEleven={ this._onPressEleven }/>;
 
-            case NavigationRouteId.EleventhPanel:
-                return <EleventhPanel onNavigateEleven={ this._onPressEleven }/>;
-
             case NavigationRouteId.PaymentScreen:
                 return <PaymentScreen onNavigateEleven={ this._onPressPayment }/>;
         }
