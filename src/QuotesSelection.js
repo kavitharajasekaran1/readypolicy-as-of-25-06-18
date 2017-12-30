@@ -4,7 +4,7 @@
 
 import React from 'react';
 import RX from 'reactxp';
-import MainPanel from './MainPanel';
+import OtpPage from './OtpPage';
 
 
 import {default as RXVideo} from 'reactxp-video';

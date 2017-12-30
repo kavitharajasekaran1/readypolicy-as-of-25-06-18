@@ -7,13 +7,13 @@ import RX from 'reactxp';
 
 import { Navigator } from 'reactxp-navigation';
 
-import MainPanel from './MainPanel';
+import OtpPage from './OtpPage';
 import CompareQuotes from './CompareQuotes';
-import ThirdPanel from './ThirdPanel';
-import FourthPanel from './FourthPanel'
-import FifthPanel from './FifthPanel'
+import MainPanel from './MainPanel';
+import LoginPage from './LoginPage'
+import RegisterPage from './RegisterPage'
 import QuotesSelection from './QuotesSelection'
-import SeventhPanel from './SeventhPanel'
+import Location from './Location'
 import EightPanel from './EightPanel'
 import MyPolicy from './MyPolicy'
 import InsuranceAddons from './InsuranceAddons'
@@ -25,13 +25,13 @@ import EleventhPanel from './EleventhPanel'
 
 
 let NavigationRouteId = {
-    MainPanel: "MainPanel",
+    OtpPage: "OtpPage",
     CompareQuotes: "CompareQuotes",
-    ThirdPanel:"ThirdPanel",
-    FourthPanel:"FourthPanel",
-    FifthPanel:"FifthPanel",
+    MainPanel:"MainPanel",
+    LoginPage:"LoginPage",
+    RegisterPage:"RegisterPage",
     QuotesSelection:"QuotesSelection",
-    SeventhPanel:"SeventhPanel",
+    Location:"Location",
     EightPanel:"EightPanel",
     MyPolicy:"MyPolicy",
     InsuranceAddons:"InsuranceAddons",
@@ -92,26 +92,26 @@ export default class App extends RX.Component {
 
     _renderScene(navigatorRoute) {
         switch (navigatorRoute.routeId) {
-            case NavigationRouteId.MainPanel:
-                return <MainPanel onPressNavigate={ this._onPressNavigate }/>;
+            case NavigationRouteId.OtpPage:
+                return <OtpPage onPressNavigate={ this._onPressNavigate }/>;
 
             case NavigationRouteId.CompareQuotes:
                 return <CompareQuotes onNavigateBack={ this._onPressBack }/>;
 
-            case NavigationRouteId.ThirdPanel:
-                return <ThirdPanel onNavigateForward={ this._onPressForward }/>;
+            case NavigationRouteId.MainPanel:
+                return <MainPanel onNavigateForward={ this._onPressForward }/>;
 
-            case NavigationRouteId.FourthPanel:
-                return <FourthPanel onNavigateForth={ this._onPressForth }/>;
+            case NavigationRouteId.LoginPage:
+                return <LoginPage onNavigateForth={ this._onPressForth }/>;
 
-            case NavigationRouteId.FifthPanel:
-                return <FifthPanel onNavigateFifth={ this._onPressFifth }/>;
+            case NavigationRouteId.RegisterPage:
+                return <RegisterPage onNavigateFifth={ this._onPressFifth }/>;
 
             case NavigationRouteId.QuotesSelection:
                 return <QuotesSelection onNavigateSixth={ this._onPressSixth }/>;
 
-            case NavigationRouteId.SeventhPanel:
-                return <SeventhPanel onNavigateSeven={ this._onPressSeven }/>;
+            case NavigationRouteId.Location:
+                return <Location onNavigateSeven={ this._onPressSeven }/>;
 
             case NavigationRouteId.EightPanel:
                 return <EightPanel onNavigateEight={ this._onPressEight }/>;
@@ -145,7 +145,7 @@ export default class App extends RX.Component {
     _onPressForward() {
         // this._navigator.pop();
         this._navigator.push({
-            routeId: NavigationRouteId.FourthPanel,
+            routeId: NavigationRouteId.LoginPage,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
@@ -155,7 +155,7 @@ export default class App extends RX.Component {
     _onPressForth() {
         // this._navigator.pop();
         this._navigator.push({
-            routeId: NavigationRouteId.FifthPanel,
+            routeId: NavigationRouteId.RegisterPage,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
@@ -175,7 +175,7 @@ export default class App extends RX.Component {
     _onPressSixth() {
         // this._navigator.pop();
         this._navigator.push({
-            routeId: NavigationRouteId.SeventhPanel,
+            routeId: NavigationRouteId.Location,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
@@ -226,7 +226,7 @@ export default class App extends RX.Component {
     _onPressEleven() {
         // this._navigator.pop();
         this._navigator.push({
-            routeId: NavigationRouteId.MainPanel,
+            routeId: NavigationRouteId.OtpPage,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
@@ -235,7 +235,7 @@ export default class App extends RX.Component {
     }
     _onPressBack() {
         this._navigator.push({
-            routeId: NavigationRouteId.ThirdPanel,
+            routeId: NavigationRouteId.MainPanel,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true

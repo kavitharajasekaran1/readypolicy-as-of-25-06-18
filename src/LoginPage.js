@@ -131,7 +131,7 @@ const styles = {
     }),
 };
 
-export default class FourthPanel extends RX.Component{
+export default class LoginPage extends RX.Component{
     constructor(props) {
         super(props);
         this.state = {
