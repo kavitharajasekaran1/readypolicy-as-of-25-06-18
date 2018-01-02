@@ -6,7 +6,7 @@ import React from 'react';
 import RX from 'reactxp';
 import styling from './AppStyles';
 import Button from 'react-bootstrap/lib/Button';
-
+import ToggleSwitch from './ToggleSwitch';
 
 /*const {
     Welcome
@@ -120,6 +120,15 @@ const styles = {
         color: '#3e376d',
         textTransform:'capitalize'
     }),
+    TryHead: RX.Styles.createScrollViewStyle({
+        fontSize: 15,
+        color: 'RED',
+        marginTop: 'auto',
+        textTransform:'capitalize'
+    }),
+    
+    
+        
     client: RX.Styles.createViewStyle({
         justifyContent: 'center',
         alignItems: 'left',
@@ -179,12 +188,13 @@ const styles = {
         backgroundColor: '#7d88a9'
     }),
     buttonText: RX.Styles.createTextStyle({
-        fontSize: 16,
-        marginVertical: 6,
+        fontSize: 18,
+        marginVertical: 12,
         marginHorizontal: 12,
         color: 'black',
-        justifyContent: 'center',
-        textAlign: 'center',
+        margin:30,
+        marginLeft: 474
+        
     }),
     buybuttonText: RX.Styles.createTextStyle({
         fontSize: 16,
@@ -222,7 +232,9 @@ const styles = {
     Button: RX.Styles.createViewStyle({
         margin: 16,
         style: 'rounded square',
-        backgroundColor: '#2ecc71'
+        backgroundColor: '#80808000',
+        margin:30,
+        marginLeft:506
     }),
     radiobutton: RX.Styles.createViewStyle({
         borderRadius: 10,
@@ -233,7 +245,12 @@ const styles = {
         backgroundColor: '#cdcdcd'
 
     }),
-
+    Radio: RX.Styles.createViewStyle({
+        borderRadius: 10,
+        backgroundColor: 'white',
+        marginLeft:1181,
+        marginTop:-22
+       }),
 };
 
 
@@ -242,6 +259,12 @@ const styles = {
 export default class PaymentScreen extends RX.Component{
     constructor(props) {
         super(props);
+        this._onChangeToggle = this._onChangeToggle.bind(this);
+        this.state = {
+            toggleValue: true,
+            progressValue: 0
+        };
+        
         this._translationValue = RX.Animated.createValue(-100);
         this._animatedStyle = RX.Styles.createAnimatedTextStyle({
             transform: [
@@ -264,7 +287,6 @@ export default class PaymentScreen extends RX.Component{
     }
 
 
-
     render() {
         return (
             <RX.ScrollView style={ styles.scroll }>
@@ -276,6 +298,7 @@ export default class PaymentScreen extends RX.Component{
                     </RX.View>
                     <RX.View style={ styles.client }>
                         <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image] } />
+                        <div style={styles.TryHead}>View Details</div>
 
                         <RX.Text style={ styles.sideHead }>
                             Bharathi Axa Life Insurance
@@ -296,13 +319,11 @@ export default class PaymentScreen extends RX.Component{
                         <RX.Text style={ styles.head }>
                             Credit/Debit/AtmCard
                             </RX.Text>
-                        <RX.Button style={ styles.radiobutton }>
-                        <RX.View style={ styles.buttoninside }>
-
-                            </RX.View>
-                
-                               </RX.Button>
-                               
+                            <RX.View style={ styles.Radio}> <input type="radio"
+                             value="radio1"
+                              name="radioGroup"
+                               onClick={this.addFunction} />  
+                               </RX.View>       
                     </RX.View>
                     </RX.View>
                     <RX.View style={ styles.Container }>
@@ -312,12 +333,13 @@ export default class PaymentScreen extends RX.Component{
                     <RX.View style={ styles.pageAlign }>
                     <RX.View style={ styles.flute }>
                         <RX.Text style={ styles.head }>
-                           Internet Banking
-                        
-                        <RX.Text style={ styles.Ncb }>
-                            Rs.560
-                               </RX.Text>
-                               </RX.Text>
+                            Internet Banking
+                            </RX.Text>
+                            <RX.View  style={ styles.Radio}> <input type="radio"
+                             value="radio2"
+                              name="radioGroup"
+                               onClick={this.addFunction} />  
+                               </RX.View>       
                     </RX.View>
                     </RX.View>
                     <RX.View style={ styles.Container }>
@@ -327,12 +349,13 @@ export default class PaymentScreen extends RX.Component{
                     <RX.View style={ styles.pageAlign }>
                     <RX.View style={ styles.flute }>
                         <RX.Text style={ styles.head }>
-                       UPI
-                        
-                        <RX.Text style={ styles.Ncb }>
-                            Rs.560
-                               </RX.Text>
-                               </RX.Text>
+                            UPI
+                            </RX.Text>
+                            <RX.View style={ styles.Radio}> <input type="radio"
+                             value="radio3"
+                              name="radioGroup"
+                               onClick={this.addFunction} />  
+                               </RX.View>       
                     </RX.View>
                     </RX.View>
                     <RX.View style={ styles.Container }>
@@ -342,51 +365,21 @@ export default class PaymentScreen extends RX.Component{
                     <RX.View style={ styles.pageAlign }>
                     <RX.View style={ styles.flute }>
                         <RX.Text style={ styles.head }>
-                            Wallets
-                        <RX.Text style={ styles.Ncb }>
-                            Rs.560
-                               </RX.Text>
-                               </RX.Text>
+                           Wallets
+                           </RX.Text> 
+                            <RX.View style={ styles.Radio}> <input type="radio"
+                             value="radio1"
+                              name="radioGroup"
+                               onClick={this.addFunction} />  
+                               </RX.View>      
                     </RX.View>
                     </RX.View>
                     <RX.View style={ styles.Container }>
                     <RX.Text style={styles.Welcome }>
                     </RX.Text>
                     </RX.View>
-                    <RX.RadioForm
-  formHorizontal={true}
-  animation={true}
->
-  {/* To create radio buttons, loop through your array of options */}
-  {radio_props.map((obj, i) => {
-    <RX.RadioButton labelHorizontal={true}  >
-      {/*  You can set RadioButtonLabel before RadioButtonInput */}
-      <RX.RadioButtonInput
-        obj={obj}
-        index={i}
-        isSelected={this.state.value3Index === i}
-        onPress={onPress}
-        borderWidth={1}
-        buttonInnerColor={'#e74c3c'}
-        buttonOuterColor={this.state.value3Index === i ? '#2196f3' : '#000'}
-        buttonSize={40}
-        buttonOuterSize={80}
-        buttonStyle={{}}
-        buttonWrapStyle={{marginLeft: 10}}
-      />
-      <RX.RadioButtonLabel
-        obj={obj}
-        index={i}
-        labelHorizontal={true}
-        onPress={onPress}
-        labelStyle={{fontSize: 20, color: '#2ecc71'}}
-        labelWrapStyle={{}}
-      />
-      </RX.RadioButton>
-  })}
-  
-</RX.RadioForm>
-                    <RX.Button style={ Button } onPress={ this.props.onNavigateEleven }>
+                   
+                    <RX.Button style={ styles.Button } onPress={ this.props.onNavigateEleven }>
                         <RX.Text style={ styles.buttonText }>
                             Please select a payment method to proceed
                         </RX.Text>
@@ -397,4 +390,8 @@ export default class PaymentScreen extends RX.Component{
 
         );
     }
+
+_onChangeToggle(newValue) {
+    this.setState({toggleValue: newValue});
+}
 }
