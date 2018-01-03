@@ -31,7 +31,7 @@ export default class TravelInsuranceReg extends React.Component{
         };
     }
 
-    onChangePost = (test) => {
+    onChangePost = () => {
         let {
             testValue = 'testValue'
         } = this.state;

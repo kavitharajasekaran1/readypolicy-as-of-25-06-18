@@ -185,7 +185,9 @@ module.exports = {
     }),
     sideText:RX.Styles.createTextStyle({
         fontSize: 16,
-        color: '#1a153b'
+        color: '#2f2a4d',
+        fontWeight:'bold'
+
     }),
     sideMar:RX.Styles.createTextStyle({
         marginTop: 10
@@ -266,6 +268,13 @@ module.exports = {
         borderWidth:1,
         borderColor:"#ccc",
         borderRadius: 4
+    }),
+    Tab:RX.Styles.createViewStyle({
+        backgroundColor: "#f8ad46",
+        borderWidth:1,
+        borderColor:"#ccc",
+        borderRadius: 4,
+        color:"#FFF"
     }),
 
 }

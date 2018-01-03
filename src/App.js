@@ -20,7 +20,6 @@ import InsuranceAddons from './InsuranceAddons'
 import PaymentScreen from './PaymentScreen'
 import EleventhPanel from './EleventhPanel'
 import TravelInsuranceReg from './TravelInsuranceReg'
-import PaymentScreen from './PaymentScreen'
 
 
 
@@ -74,7 +73,7 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.PaymentScreen,
+            routeId: NavigationRouteId.VehicleDetails,
             sceneConfigType: "Fade"
         }]);
     }
