@@ -19,6 +19,7 @@ import MyPolicy from './MyPolicy'
 import InsuranceAddons from './InsuranceAddons'
 import EleventhPanel from './EleventhPanel'
 import PaymentScreen from './PaymentScreen'
+import NewTermInsurance from './NewTermInsurance'
 
 
 
@@ -37,7 +38,8 @@ let NavigationRouteId = {
     MyPolicy:"MyPolicy",
     InsuranceAddons:"InsuranceAddons",
     EleventhPanel:"EleventhPanel",
-    PaymentScreen:"PaymentScreen"
+    PaymentScreen:"PaymentScreen",
+    NewTermInsurance:"NewTermInsurance"
 
 
 };
@@ -67,12 +69,13 @@ export default class App extends RX.Component {
         this._onPressNine = this._onPressNine.bind(this);
         this._onPressTen = this._onPressTen.bind(this);
         this._onPressEleven = this._onPressEleven.bind(this);
-        this._onPressPayment = this._onPressPayment.bind(this);
+        this._onPresspayment = this._onPresspayment.bind(this);
+        this._onPressNewTermInsurance = this._onPressNewTermInsurance.bind(this);
     }
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.PaymentScreen,
+            routeId: NavigationRouteId.NewTermInsurance,
             sceneConfigType: "Fade"
         }]);
     }
@@ -127,7 +130,11 @@ export default class App extends RX.Component {
                 return <EleventhPanel onNavigateEleven={ this._onPressEleven }/>;
 
             case NavigationRouteId.PaymentScreen:
-                return <PaymentScreen onNavigateEleven={ this._onPressPayment }/>;
+                return <PaymentScreen onNavigatepayment={ this._onPresspayment }/>;
+
+                case NavigationRouteId.NewTermInsurance:
+                return <NewTermInsurance onNavigateNewTermInsurance={ this._onPressNewTermInsurance }/>;
+    
         }
 
         return null;
@@ -242,10 +249,19 @@ export default class App extends RX.Component {
                 hideShadow: true
             }
         });
-        }
-    _onPressPayment() {
+    }
+    _onPresspayment() {
         this._navigator.push({
-            routeId: NavigationRouteId.PaymentScreen,
+            routeId: NavigationRouteId.NewTermInsurance,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+    _onPressNewTermInsurance() {
+        this._navigator.push({
+            routeId: NavigationRouteId.NewTermInsurance,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true

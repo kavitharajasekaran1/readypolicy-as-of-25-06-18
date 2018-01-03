@@ -129,6 +129,7 @@ export default class RegisterPage extends RX.Component{
 
         animation.start();
     }
+    
 
     render() {
         return (
@@ -191,6 +192,7 @@ export default class RegisterPage extends RX.Component{
                         placeholder={ 'Email' }
                         autoFocus={ true }
                         textAlign={ 'left' }
+                        keyboardType={'email-address'}
                     />
                     <RX.Text style={ styles.password }>
                         Password*
