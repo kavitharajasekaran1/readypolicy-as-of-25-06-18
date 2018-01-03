@@ -53,15 +53,12 @@ export default class EightPanel extends RX.Component{
                     <RX.Text style={styling.welcome }>
                         Payment Screen
                     </RX.Text>
-                    <RX.Button style={ Button } onPress={ this.props.onNavigateEleven }>
+                    <RX.Button style={ Button } onPress={ this.props.onNavigateTwelve }>
                         <RX.Text style={ styling.buttonText }>
                             Go Back
                         </RX.Text>
                     </RX.Button>
                 </RX.View>
-                <RX.Text style={styling.Text }>
-                    {this.state.joke}
-                </RX.Text>
                 <form>
                     <FormGroup
                         controlId="formBasicText"

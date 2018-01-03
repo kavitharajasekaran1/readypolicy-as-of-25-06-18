@@ -17,7 +17,9 @@ import Location from './Location'
 import EightPanel from './EightPanel'
 import MyPolicy from './MyPolicy'
 import InsuranceAddons from './InsuranceAddons'
+import PaymentScreen from './PaymentScreen'
 import EleventhPanel from './EleventhPanel'
+import TravelInsuranceReg from './TravelInsuranceReg'
 
 
 
@@ -36,9 +38,8 @@ let NavigationRouteId = {
     MyPolicy:"MyPolicy",
     InsuranceAddons:"InsuranceAddons",
     EleventhPanel:"EleventhPanel",
-    PaymentScreen:"PaymentScreen"
-
-
+    PaymentScreen:"PaymentScreen",
+    TravelInsuranceReg:"TravelInsuranceReg"
 };
 
 const styles = {
@@ -67,11 +68,12 @@ export default class App extends RX.Component {
         this._onPressTen = this._onPressTen.bind(this);
         this._onPressEleven = this._onPressEleven.bind(this);
         this._onPressPayment = this._onPressPayment.bind(this);
+        this._onPressTravel = this._onPressTravel.bind(this);
     }
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.MainPanel,
+            routeId: NavigationRouteId.TravelInsuranceReg,
             sceneConfigType: "Fade"
         }]);
     }
@@ -126,7 +128,10 @@ export default class App extends RX.Component {
                 return <EleventhPanel onNavigateEleven={ this._onPressEleven }/>;
 
             case NavigationRouteId.PaymentScreen:
-                return <PaymentScreen onNavigateEleven={ this._onPressPayment }/>;
+                return <PaymentScreen onNavigateTwelve={ this._onPressPayment }/>;
+
+            case NavigationRouteId.TravelInsuranceReg:
+                return <TravelInsuranceReg onNavigateThirteen={ this._onPressTravel }/>;
         }
 
         return null;
@@ -226,7 +231,25 @@ export default class App extends RX.Component {
     _onPressEleven() {
         // this._navigator.pop();
         this._navigator.push({
-            routeId: NavigationRouteId.OtpPage,
+            routeId: NavigationRouteId.PaymentScreen,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+    _onPressPayment() {
+        this._navigator.push({
+            routeId: NavigationRouteId.TravelInsuranceReg,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+    _onPressTravel() {
+        this._navigator.push({
+            routeId: NavigationRouteId.TravelInsuranceReg,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
@@ -242,14 +265,4 @@ export default class App extends RX.Component {
             }
         });
         }
-    _onPressPayment() {
-        this._navigator.push({
-            routeId: NavigationRouteId.PaymentScreen,
-            sceneConfigType: "FloatFromRight",
-            customSceneConfig: {
-                hideShadow: true
-            }
-        });
-    }
-
 };
