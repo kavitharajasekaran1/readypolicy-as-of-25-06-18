@@ -14,12 +14,13 @@ import LoginPage from './LoginPage'
 import RegisterPage from './RegisterPage'
 import QuotesSelection from './QuotesSelection'
 import Location from './Location'
-import EightPanel from './EightPanel'
+import VehicleDetails from './VehicleDetails'
 import MyPolicy from './MyPolicy'
 import InsuranceAddons from './InsuranceAddons'
 import PaymentScreen from './PaymentScreen'
 import EleventhPanel from './EleventhPanel'
 import TravelInsuranceReg from './TravelInsuranceReg'
+import PaymentScreen from './PaymentScreen'
 
 
 
@@ -34,7 +35,7 @@ let NavigationRouteId = {
     RegisterPage:"RegisterPage",
     QuotesSelection:"QuotesSelection",
     Location:"Location",
-    EightPanel:"EightPanel",
+    VehicleDetails:"VehicleDetails",
     MyPolicy:"MyPolicy",
     InsuranceAddons:"InsuranceAddons",
     EleventhPanel:"EleventhPanel",
@@ -73,7 +74,7 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.TravelInsuranceReg,
+            routeId: NavigationRouteId.PaymentScreen,
             sceneConfigType: "Fade"
         }]);
     }
@@ -115,8 +116,8 @@ export default class App extends RX.Component {
             case NavigationRouteId.Location:
                 return <Location onNavigateSeven={ this._onPressSeven }/>;
 
-            case NavigationRouteId.EightPanel:
-                return <EightPanel onNavigateEight={ this._onPressEight }/>;
+            case NavigationRouteId.VehicleDetails:
+                return <VehicleDetails onNavigateEight={ this._onPressEight }/>;
 
             case NavigationRouteId.MyPolicy:
                 return <MyPolicy onNavigateNine={ this._onPressNine }/>;
@@ -190,7 +191,7 @@ export default class App extends RX.Component {
     _onPressSeven() {
         // this._navigator.pop();
         this._navigator.push({
-            routeId: NavigationRouteId.EightPanel,
+            routeId: NavigationRouteId.VehicleDetails,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true

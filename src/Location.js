@@ -9,7 +9,7 @@ const styles = {
       justifyContent: 'CENTER'
       }),
     }
-class SeventhPanel extends RX.Component {
+class Location extends RX.Component {
     constructor(props) {
         super(props);
 
@@ -58,4 +58,4 @@ class SeventhPanel extends RX.Component {
   }
 }
 
-export default SeventhPanel;
+export default Location;
