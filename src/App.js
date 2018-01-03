@@ -18,6 +18,7 @@ import VehicleDetails from './VehicleDetails'
 import MyPolicy from './MyPolicy'
 import InsuranceAddons from './InsuranceAddons'
 import EleventhPanel from './EleventhPanel'
+import TravelInsuranceReg from './TravelInsuranceReg'
 import PaymentScreen from './PaymentScreen'
 import NewTermInsurance from './NewTermInsurance'
 
@@ -39,9 +40,8 @@ let NavigationRouteId = {
     InsuranceAddons:"InsuranceAddons",
     EleventhPanel:"EleventhPanel",
     PaymentScreen:"PaymentScreen",
+    TravelInsuranceReg:"TravelInsuranceReg",
     NewTermInsurance:"NewTermInsurance"
-
-
 };
 
 const styles = {
@@ -69,13 +69,14 @@ export default class App extends RX.Component {
         this._onPressNine = this._onPressNine.bind(this);
         this._onPressTen = this._onPressTen.bind(this);
         this._onPressEleven = this._onPressEleven.bind(this);
-        this._onPresspayment = this._onPresspayment.bind(this);
+        this._onPressPayment = this._onPressPayment.bind(this);
+        this._onPressTravel = this._onPressTravel.bind(this);
         this._onPressNewTermInsurance = this._onPressNewTermInsurance.bind(this);
     }
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.NewTermInsurance,
+            routeId: NavigationRouteId.RegisterPage,
             sceneConfigType: "Fade"
         }]);
     }
@@ -130,11 +131,16 @@ export default class App extends RX.Component {
                 return <EleventhPanel onNavigateEleven={ this._onPressEleven }/>;
 
             case NavigationRouteId.PaymentScreen:
-                return <PaymentScreen onNavigatepayment={ this._onPresspayment }/>;
+                return <PaymentScreen onNavigatePayment={ this._onPressPayment }/>;
+
+            
+                case NavigationRouteId.TravelInsuranceReg:
+                return <TravelInsuranceReg onNavigateThirteen={ this._onPressTravel }/>;
 
                 case NavigationRouteId.NewTermInsurance:
-                return <NewTermInsurance onNavigateNewTermInsurance={ this._onPressNewTermInsurance }/>;
-    
+                return <NewTermInsurance onNavigateThirteen={ this._onPressNewTermInsurance }/>;
+
+
         }
 
         return null;
@@ -241,16 +247,16 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressBack() {
+    _onPressPayment() {
         this._navigator.push({
-            routeId: NavigationRouteId.MainPanel,
+            routeId: NavigationRouteId.TravelInsuranceReg,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
             }
         });
     }
-    _onPresspayment() {
+    _onPressTravel() {
         this._navigator.push({
             routeId: NavigationRouteId.NewTermInsurance,
             sceneConfigType: "FloatFromRight",
@@ -261,12 +267,21 @@ export default class App extends RX.Component {
     }
     _onPressNewTermInsurance() {
         this._navigator.push({
-            routeId: NavigationRouteId.NewTermInsurance,
+            routeId: NavigationRouteId.MainPanel,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
             }
         });
-    }
+        }
 
+    _onPressBack() {
+        this._navigator.push({
+            routeId: NavigationRouteId.MainPanel,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+        }
 };

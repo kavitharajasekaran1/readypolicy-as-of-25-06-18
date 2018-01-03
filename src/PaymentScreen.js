@@ -379,7 +379,7 @@ export default class PaymentScreen extends RX.Component{
                     </RX.Text>
                     </RX.View>
                    
-                    <RX.Button style={ styles.Button } onPress={ this.props.onNavigatepayment}>
+                    <RX.Button style={ styles.Button } onPress={ this.props.onNavigatePayment}>
                         <RX.Text style={ styles.buttonText }>
                             Please select a payment method to proceed
                         </RX.Text>

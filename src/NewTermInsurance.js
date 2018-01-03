@@ -287,6 +287,15 @@ const styles = {
     contain: RX.Styles.createViewStyle({
         backgroundColor:'#80808000',
     }),
+    sideText:RX.Styles.createTextStyle({
+        fontSize: 20,
+        color: '#1a153b'
+    }),
+    sideMar:RX.Styles.createTextStyle({
+        marginTop: 10,
+        marginLeft:30,
+        marginRight:20
+    }),
 };
 
 const pickerItems= [
@@ -351,32 +360,37 @@ export default class PaymentScreen extends RX.Component{
                   Personal Details
                     </RX.Text>
                 </RX.View>
-                <RX.View style={ styles.flute }>
-                    <RX.Text style={ styles.head }>
-                      Coverage Amount
-                    </RX.Text>
-                </RX.View>
-                <RX.Text numberOfLines={ 1 }>
-                <RX.Text style={ styles.number}> { 'Select Coverage' } </RX.Text>
-                <RX.Picker
-                mode='dropdown'
-                    items={ pickerItems }
-                    selectedValue={ this.state.selectedValue }
-                    onValueChange={ this._onValueChange }
-                />
-            </RX.Text>
-            <RX.View style={styles.flute }>
-                    <RX.Text style={ styles.head }>
-                 Term of the policy
-                    </RX.Text>
-                    <RX.TextInput
-                        style={ styles.editTodoItem }
-                        value={ this.state.email }
-                        placeholder={ 'Selcet Term' }
-                        autoFocus={ true }
-                        textAlign={ 'left' }
-                    />
-                </RX.View>
+                <RX.View style={styles.sideMar}>
+                                        <RX.Text style={ styles.sideText }>
+                                            Coverage Amount
+                                        </RX.Text>
+                                        <form>
+                                            <FormGroup controlId="formControlsSelect">
+                                                <FormControl componentClass="select" placeholder="select">
+                                                    <option value="select">Motor Insurance</option>
+                                                    <option value="other">Travel Insurance</option>
+                                                    <option value="other">Health Insurance</option>
+                                                </FormControl>
+                                            </FormGroup>
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styles.sideMar}>
+                                        <RX.Text style={ styles.sideText }>
+                                            Term Of the policy
+                                        </RX.Text>
+                                        <form>
+                                            <FormGroup
+                                                controlId="formBasicText"
+                                            >
+                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
+                                                <FormControl
+                                                    type="text"
+                                                    value={this.state.value}
+                                                    placeholder="Select Term"
+                                                />
+                                            </FormGroup>
+                                        </form>
+                                    </RX.View>
                 <RX.View style={styles.flute }>
                     <RX.Text style={ styles.head }>
                  Gender
@@ -414,18 +428,23 @@ export default class PaymentScreen extends RX.Component{
                             </RX.Text>
                             </RX.View>
                 </RX.View>
-                <RX.View style={styles.flute }>
-                    <RX.Text style={ styles.head }>
-                 Age
-                    </RX.Text>
-                    <RX.TextInput
-                        style={ styles.editTodoItem }
-                        value={ this.state.email }
-                        placeholder={ 'Enter Age' }
-                        autoFocus={ true }
-                        textAlign={ 'left' }
-                    />
-                </RX.View>
+                <RX.View style={styles.sideMar}>
+                                        <RX.Text style={ styles.sideText }>
+                                            Age
+                                        </RX.Text>
+                                        <form>
+                                            <FormGroup
+                                                controlId="formBasicText"
+                                            >
+                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
+                                                <FormControl
+                                                    type="text"
+                                                    value={this.state.value}
+                                                    placeholder="Enter Age"
+                                                />
+                                            </FormGroup>
+                                        </form>
+                                    </RX.View>
                 <RX.View style={styles.flute }>
                     <RX.Text style={ styles.head }>
                  Smoker

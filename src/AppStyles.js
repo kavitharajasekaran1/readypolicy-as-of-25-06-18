@@ -183,6 +183,13 @@ module.exports = {
         marginHorizontal: 12,
         color: 'white'
     }),
+    sideText:RX.Styles.createTextStyle({
+        fontSize: 16,
+        color: '#1a153b'
+    }),
+    sideMar:RX.Styles.createTextStyle({
+        marginTop: 10
+    }),
     buybuttonText: RX.Styles.createTextStyle({
         fontSize: 16,
         marginVertical: 6,
@@ -242,7 +249,25 @@ module.exports = {
     Text:RX.Styles.createTextStyle({
         fontSize:15,
         color:'#000000'
-    })
+    }),
+    Self: RX.Styles.createViewStyle({
+        backgroundColor:'#FF6347'
+
+    }),
+    Form:RX.Styles.createViewStyle({
+        display: 'block',
+         width: '100%',
+         height: 34,
+         // padding: 6px 12px;
+          fontSize: 14,
+        // line: 1.42857143;
+        color: "#555",
+        backgroundColor: "#fff",
+        borderWidth:1,
+        borderColor:"#ccc",
+        borderRadius: 4
+    }),
+
 }
 
 
