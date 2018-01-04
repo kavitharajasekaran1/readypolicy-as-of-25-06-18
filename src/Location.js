@@ -1,5 +1,7 @@
 import React from 'react'
 import RX from 'reactxp';
+import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,MapView,HelpBlock,DateTimeField} from 'react-bootstrap';
+import Default from 'reactxp-navigation';
 // import MapView from 'react-native-maps';
 const styles = {
     roundButton: RX.Styles.createViewStyle({
@@ -14,48 +16,83 @@ class Location extends RX.Component {
         super(props);
 
         this.state = {
-            latitude: null,
-            longitude: null,
-            error: null,
+            mapRegion: null,
+            lastLat: null,
+            lastLong: null,
         };
     }
 
     componentDidMount() {
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                this.setState({
-                    latitude: position.coords.latitude,
-                    longitude: position.coords.longitude,
-                    error: null,
-                });
-            },
-            (error) => this.setState({ error: error.message }),
-            { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
-        );
+    this.watchID = navigator.geolocation.watchPosition((position) => {
+        // Create the object to update this.state.mapRegion through the onRegionChange function
+        let region = {
+          latitude:       position.coords.latitude,
+          longitude:      position.coords.longitude,
+          latitudeDelta:  0.00922*1.5,
+          longitudeDelta: 0.00421*1.5
+        }
+        this.onRegionChange(region, region.latitude, region.longitude);
+      });
     }
-
+    _onRegionChange(region, lastLat, lastLong) {
+        this.setState({
+          mapRegion: region,
+          // If there are no new values set use the the current ones
+          lastLat: lastLat || this.state.lastLat,
+          lastLong: lastLong || this.state.lastLong
+        
+        });
+    }
+        componentWillUnmount() {
+            navigator.geolocation.clearWatch(this.watchID);
+        
+        }
+          _onMapPress(e) {
+            console.log(e.nativeEvent.coordinate.longitude);
+            let region = {
+              latitude:       e.nativeEvent.coordinate.latitude,
+              longitude:      e.nativeEvent.coordinate.longitude,
+              latitudeDelta:  0.00922*1.5,
+              longitudeDelta: 0.00421*1.5
+            }
+            this.onRegionChange(region, region.latitude, region.longitude);
+          }
+    
+    
+        
     render() {
         return (
-            <RX.View style={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <RX.Link style={ styles.docLink } url={ 'https://maps.google.com/maps?q=%22+19.22+%22,%22+16.22+%22&hl=es' }>
-                        Google maps
-                    </RX.Link>
-                <RX.Text>Latitude: {this.state.latitude}</RX.Text>
-                <RX.Text>Longitude: {this.state.longitude}</RX.Text>
-                {this.state.error ? <Text>Error: {this.state.error}</Text> : null}
-                {/* <RX.MapView.Animated
-      region={this.state.region}
-      onRegionChange={this.onRegionChange}
-    /> */}
+            <RX.View style={{flex: 1}}>
+            <RX.MapView
+              style={styles.map}
+              region={this.state.mapRegion}
+              showsUserLocation={true}
+              followUserLocation={true}
+              onRegionChange={this.onRegionChange.bind(this)}
+              onPress={this.onMapPress.bind(this)}>
+              <RX.MapView.Marker
+                coordinate={{
+                  latitude: (this.state.lastLat + 0.00050) || -36.82339,
+                  longitude: (this.state.lastLong + 0.00050) || -73.03569,
+                }}>
+                <RX.View>
+                  <RX.Text style={{color: '#000'}}>
+                    { this.state.lastLong } / { this.state.lastLat }
+                  </RX.Text>
+                </RX.View>
+              </RX.MapView.Marker>
+            </RX.MapView>
             <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateSeven }>
       <RX.Text style={ styles.buttonText }>
       REGISTER
       </RX.Text>
       </RX.Button>
-      </RX.View>
-    );
-    
-  }
+          </RX.View>
+        );
+    }
+
 }
 
-export default Location;
+
+ 
+
