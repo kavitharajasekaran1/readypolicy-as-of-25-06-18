@@ -257,8 +257,13 @@ export default class RegisterPage extends RX.Component{
                                                     value={this.state.value}
                                                     placeholder="Bangalore,India"
                                                     secureTextEntry= {true}
+                                                    placeholder="glyphicon glyphicon-map-marker"
                                                 />
+                                                <RX.Button type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 
+</RX.Button>
                                             </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                     <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateFifth }>

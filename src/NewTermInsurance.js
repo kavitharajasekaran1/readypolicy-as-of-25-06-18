@@ -7,7 +7,7 @@ import RX from 'reactxp';
 import styling from './AppStyles';
 import Button from 'react-bootstrap/lib/Button';
 import ToggleSwitch from './ToggleSwitch';
-import {Nav,NavItem,NavDropdown,MenuItem,Grid,Row,Col,Form,FormGroup,ControlLabel,FormControl,T,Visible,Checkbox,lg,xs} from 'react-bootstrap';
+import {Nav,NavItem,NavDropdown,MenuItem,Grid,Row,Col,Form,FormGroup,ControlLabel,FormControl,T,Visible,Checkbox,lg,xs,label,radio,Input,wrapperClassName,groupClassName} from 'react-bootstrap';
 
 /*const {
     Welcome
@@ -232,13 +232,18 @@ const styles = {
 
     }),
     Button: RX.Styles.createViewStyle({
-        margin: 16,
-    borderRadius:15,
-        backgroundColor: '#f90576',
-        margin:30,
-        height: 64,
-        width: 1255,
-    }),
+        display: 'block',
+        width: '100%',
+        height: 34,
+        // padding: 6px 12px;
+         fontSize: 14,
+       // line: 1.42857143;
+       color: "#F50057",
+       backgroundColor: "#F50057",
+       borderWidth:3,
+       borderColor:"#F50057",
+       borderRadius: 3
+   }),
     radiobutton: RX.Styles.createViewStyle({
         borderRadius: 10,
 
@@ -391,6 +396,9 @@ export default class PaymentScreen extends RX.Component{
                                             </FormGroup>
                                         </form>
                                     </RX.View>
+                                    
+
+
                 <RX.View style={styles.flute }>
                     <RX.Text style={ styles.head }>
                  Gender
@@ -479,13 +487,15 @@ export default class PaymentScreen extends RX.Component{
                          
                         </Col>
                         </Row>
+                        <RX.View style={styles.sideMar}>
+                                        <form>
+                                        </form>
+                                        <Button bsStyle="primary"  onPress={this.props.onNavigateNewTermInsurance }>Next</Button>
                    
+                                    </RX.View>
                    
-                    <RX.Button style={ styles.Button } onPress={ this.props.onNavigateNewTermInsurance}>
-                        <RX.Text style={ styles.buttonText }>
-                            Next
-                        </RX.Text>
-                    </RX.Button>
+                        
+                   
                     
             </RX.ScrollView>
 
