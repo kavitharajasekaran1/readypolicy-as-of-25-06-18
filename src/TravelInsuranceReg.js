@@ -154,6 +154,7 @@ export default class TravelInsuranceReg extends React.Component{
                                                 <FormControl componentClass="select" placeholder="select">
                                                     <option value="select">United States</option>
                                                     <option value="other">Australia</option>
+                                                    <option value="other">India</option>
                                                 </FormControl>
                                             </FormGroup>
                                         </form>

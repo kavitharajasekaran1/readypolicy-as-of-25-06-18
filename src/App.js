@@ -17,9 +17,10 @@ import Location from './Location'
 import VehicleDetails from './VehicleDetails'
 import MyPolicy from './MyPolicy'
 import InsuranceAddons from './InsuranceAddons'
-import PaymentScreen from './PaymentScreen'
 import EleventhPanel from './EleventhPanel'
 import TravelInsuranceReg from './TravelInsuranceReg'
+import PaymentScreen from './PaymentScreen'
+import NewTermInsurance from './NewTermInsurance'
 
 
 
@@ -39,7 +40,8 @@ let NavigationRouteId = {
     InsuranceAddons:"InsuranceAddons",
     EleventhPanel:"EleventhPanel",
     PaymentScreen:"PaymentScreen",
-    TravelInsuranceReg:"TravelInsuranceReg"
+    TravelInsuranceReg:"TravelInsuranceReg",
+    NewTermInsurance:"NewTermInsurance"
 };
 
 const styles = {
@@ -69,6 +71,7 @@ export default class App extends RX.Component {
         this._onPressEleven = this._onPressEleven.bind(this);
         this._onPressPayment = this._onPressPayment.bind(this);
         this._onPressTravel = this._onPressTravel.bind(this);
+        this._onPressNewTermInsurance = this._onPressNewTermInsurance.bind(this);
     }
 
     componentDidMount() {
@@ -128,10 +131,16 @@ export default class App extends RX.Component {
                 return <EleventhPanel onNavigateEleven={ this._onPressEleven }/>;
 
             case NavigationRouteId.PaymentScreen:
-                return <PaymentScreen onNavigateTwelve={ this._onPressPayment }/>;
+                return <PaymentScreen onNavigatePayment={ this._onPressPayment }/>;
 
-            case NavigationRouteId.TravelInsuranceReg:
+            
+                case NavigationRouteId.TravelInsuranceReg:
                 return <TravelInsuranceReg onNavigateThirteen={ this._onPressTravel }/>;
+
+                case NavigationRouteId.NewTermInsurance:
+                return <NewTermInsurance onNavigateThirteen={ this._onPressNewTermInsurance }/>;
+
+
         }
 
         return null;
@@ -249,13 +258,23 @@ export default class App extends RX.Component {
     }
     _onPressTravel() {
         this._navigator.push({
-            routeId: NavigationRouteId.TravelInsuranceReg,
+            routeId: NavigationRouteId.NewTermInsurance,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
             }
         });
     }
+    _onPressNewTermInsurance() {
+        this._navigator.push({
+            routeId: NavigationRouteId.MainPanel,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+        }
+
     _onPressBack() {
         this._navigator.push({
             routeId: NavigationRouteId.MainPanel,

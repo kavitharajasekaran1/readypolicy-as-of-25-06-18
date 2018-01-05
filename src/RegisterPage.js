@@ -4,6 +4,7 @@
 
 import React from 'react';
 import RX from 'reactxp';
+import {Nav,NavItem,NavDropdown,MenuItem,Grid,Row,Col,Form,FormGroup,ControlLabel,FormControl,T,Visible,Checkbox,lg,xs} from 'react-bootstrap';
 /*const {
 Welcome
 } = TodoStyles;*/
@@ -98,7 +99,16 @@ const styles = {
         height: 80,
         width: 110,
         justifyContent: 'center'
-    })
+    }),
+    sideText:RX.Styles.createTextStyle({
+        fontSize: 20,
+        color: '#1a153b'
+    }),
+    sideMar:RX.Styles.createTextStyle({
+        marginTop: 10,
+        marginLeft:30,
+        marginRight:20
+    }),
 };
 
 export default class RegisterPage extends RX.Component{
@@ -129,6 +139,7 @@ export default class RegisterPage extends RX.Component{
 
         animation.start();
     }
+    
 
     render() {
         return (
@@ -145,86 +156,123 @@ export default class RegisterPage extends RX.Component{
                         </RX.Text>
                     </RX.View>
                 </RX.View>
-                <RX.View style={ styles.Container }>
-                    <RX.Image source={ './src/img/register.gif' } style={ [styles.register] } />
-                    <RX.Text style={ styles.email }>
-                        Full Name
-                    </RX.Text>
-                    <RX.TextInput
-                        style={ styles.editTodoItem }
-                        value={ this.state.email }
-                        placeholder={ 'Name' }
-                        autoFocus={ true }
-                        textAlign={ 'left' }
-                    />
-                    <RX.Text style={ styles.email }>
-                        Phone Number
-                    </RX.Text>
-                    <RX.TextInput
-                        style={ styles.editTodoItem }
-                        value={ this.state.email }
-                        placeholder={ '+91' }
-                        autoFocus={ true }
-                        textAlign={ 'left' }
-                    />
-                    <RX.Text style={ styles.email }>
-                        Date Of Birth
-                    </RX.Text>
-                    <RX.TextInput
-                        mode="date"
-                        placeholder="DD/MM/YYYY"
-                        format="DD-MM-YYYY"
-                        style={styles.editTodoItem}
-                        showIcon={false}
-                        confirmBtnText="Confirm"
-                        cancelBtnText="Cancel"
-                        onDateChange={(PolicyissueDate) => {
-                            this.setState({PolicyissueDate: PolicyissueDate})
-                        }}/>
-
-                    <RX.Text style={ styles.email }>
-                        Email*
-                    </RX.Text>
-                    <RX.TextInput
-                        style={ styles.editTodoItem }
-                        value={ this.state.email }
-                        placeholder={ 'Email' }
-                        autoFocus={ true }
-                        textAlign={ 'left' }
-                    />
-                    <RX.Text style={ styles.password }>
-                        Password*
-                    </RX.Text>
-                    <RX.TextInput
-                        style={ styles.editTodoItem }
-                        value={ this.state.password }
-                        placeholder={ 'Password' }
-                        autoFocus={ true }
-                        textAlign={ 'left' }
-                        secureTextEntry= {true}
-                    />
-                    <RX.Text style={ styles.email }>
-                        Location
-                    </RX.Text>
-                    <RX.TextInput
-                        style={ styles.editTodoItem }
-                        value={ this.state.email }
-                        placeholder={ 'Bangalore, India' }
-                        autoFocus={ true }
-                        textAlign={ 'left' }
-                    />
+                    <RX.View style={styles.sideMar}>
+                                        <RX.Text style={ styles.sideText }>
+                                            Full Name
+                                        </RX.Text>
+                                        <form>
+                                            <FormGroup
+                                                controlId="formBasicText"
+                                            >
+                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
+                                                <FormControl
+                                                    type="text"
+                                                    value={this.state.value}
+                                                    placeholder="Enter Name"
+                                                />
+                                            </FormGroup>
+                                        </form>
+                                    </RX.View>
+                    
+                                    <RX.View style={styles.sideMar}>
+                                        <RX.Text style={ styles.sideText }>
+                                            Phone Number
+                                        </RX.Text>
+                                        <form>
+                                            <FormGroup
+                                                controlId="formBasicText"
+                                            >
+                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
+                                                <FormControl
+                                                    type="text"
+                                                    value={this.state.value}
+                                                    placeholder="+91"
+                                                />
+                                            </FormGroup>
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styles.sideMar}>
+                                        <RX.Text style={ styles.sideText }>
+                                          Date of Birth
+                                        </RX.Text>
+                                        <form>
+                                            <FormGroup
+                                                controlId="formBasicText"
+                                            >
+                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
+                                                <FormControl
+                                                    type="text"
+                                                    value={this.state.value}
+                                                    placeholder="DD/MM/YY"
+                                                />
+                                            </FormGroup>
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styles.sideMar}>
+                                        <RX.Text style={ styles.sideText }>
+                                            Email
+                                        </RX.Text>
+                                        <form>
+                                            <FormGroup
+                                                controlId="formBasicText"
+                                            >
+                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
+                                                <FormControl
+                                                    type="text"
+                                                    value={this.state.value}
+                                                    placeholder="Email-Address"
+                                                />
+                                            </FormGroup>
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styles.sideMar}>
+                                        <RX.Text style={ styles.sideText }>
+                                            Password
+                                        </RX.Text>
+                                        <form>
+                                            <FormGroup
+                                                controlId="formBasicText"
+                                            >
+                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
+                                                <FormControl
+                                                    type="text"
+                                                    value={this.state.value}
+                                                    placeholder="Password"
+                                                    secureTextEntry= {true}
+                                                />
+                                            </FormGroup>
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styles.sideMar}>
+                                        <RX.Text style={ styles.sideText }>
+                                           Location
+                                        </RX.Text>
+                                        <form>
+                                            <FormGroup
+                                                controlId="formBasicText"
+                                            >
+                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
+                                                <FormControl
+                                                    type="text"
+                                                    value={this.state.value}
+                                                    placeholder="Bangalore,India"
+                                                    secureTextEntry= {true}
+                                                    placeholder="glyphicon glyphicon-map-marker"
+                                                />
+                                                <RX.Button type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 
+</RX.Button>
+                                            </FormGroup>
+                                            
+                                        </form>
+                                    </RX.View>
                     <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateFifth }>
                         <RX.Text style={ styles.buttonText }>
                             REGISTER
                         </RX.Text>
                     </RX.Button>
-                </RX.View>
-            </RX.ScrollView>
-
+                    </RX.ScrollView>
         );
-    }
-
-    _onChangeToggle(newValue) {
-        this.setState({toggleValue: newValue});
+     
     }
 }
