@@ -276,7 +276,17 @@ module.exports = {
         borderRadius: 4,
         color:"#FFF"
     }),
-
+    customBtn:RX.Styles.createViewStyle({
+        color: "#fff",
+        backgroundColor: "#ff606b",
+        borderColor: "#ff606b",
+        borderWidth:1,
+        padding:10,
+        borderRadius: 4
+    }),
+    marTop:RX.Styles.createViewStyle({
+      marginTop:20
+    })
 }
 
 

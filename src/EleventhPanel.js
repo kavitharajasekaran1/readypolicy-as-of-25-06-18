@@ -8,6 +8,7 @@ import styling from './AppStyles';
 import {Nav,NavItem,NavDropdown,MenuItem,Grid,Row,Col,Form,FormGroup,ControlLabel,FormControl,Checkbox} from 'react-bootstrap';
 import Button from 'react-bootstrap/lib/Button';
 
+
 /*const {
     Welcome
 } = TodoStyles;*/
@@ -63,7 +64,7 @@ export default class EightPanel extends RX.Component{
                     <RX.Text style={styling.welcome }>
                         Eleventh Page
                     </RX.Text>
-                    <RX.Button style={ Button } onPress={ this.props.onNavigateEleven }>
+                    <RX.Button style={ Button } onPress={ this.props.onNavigateSixth }>
                         <RX.Text style={ styling.buttonText }>
                             Go Back
                         </RX.Text>
