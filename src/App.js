@@ -76,7 +76,7 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.VehicleDetails,
+            routeId: NavigationRouteId.Location,
             sceneConfigType: "Fade"
         }]);
     }

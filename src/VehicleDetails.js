@@ -6,8 +6,7 @@ import React from 'react';
 import RX from 'reactxp';
 import styling from './AppStyles';
 import Rest from './RestConfig';
-import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,DatePicker} from 'react-bootstrap';
-import DateTimeField from 'react-native-calendar-component';
+import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,} from 'react-bootstrap';
 
 
 import Button from 'react-bootstrap/lib/Button';
@@ -315,15 +314,13 @@ export default class TravelInsuranceReg extends React.Component{
                                             Registration Year
                                         </RX.Text>
                                         <form>
-                                                <DatePicker
-                                                date={data.PolicyissueDate}
-                                                mode="date"
+                                        <RX.TextInput
+                                                style={styling.Form}
                                                 placeholder="DD/MM/YYYY"
-                                                format="DD-MM-YYYY"
-                                                style={styles.Date}
-                                                showIcon={false}
-                                                confirmBtnText="Confirm"
-                                                cancelBtnText="Cancel"
+                                                value={ this.state.previousPolicyExpiry }
+                                                onChangeText={this.onChangePolicy}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
 
                                                 // defaultValue={ this.state.inputValue }
                                             />

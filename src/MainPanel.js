@@ -39,7 +39,8 @@ const styles = {
         justifyContent: 'center',
         position: 'absolute',
         alignSelf: 'center',
-        marginLeft:-48
+        marginLeft:-48,
+        fontWeight:'bold'
 
     }),
     Welcome: RX.Styles.createTextStyle({
@@ -49,7 +50,8 @@ const styles = {
         justifyContent: 'center',
         position: 'absolute',
         alignSelf: 'center',
-        marginLeft: 67
+        marginLeft: 67,
+        fontweight: 'bold'
 
     }),
     policy:RX.Styles.createTextStyle({
@@ -103,7 +105,8 @@ const styles = {
         bottom: 0,
         top: 0,
        
-    })
+    }),
+    
 };
 
 export default class MainPanel extends RX.Component{
@@ -144,6 +147,11 @@ export default class MainPanel extends RX.Component{
                         </RX.Text>
                     </RX.Button> */}
                 </RX.View>
+                <RX.Button style={ styles.roundButton }  onPress={ this.props.onNavigateForward }>
+                        <RX.Text style={ styles.buttonText }>
+                            NEXT
+                        </RX.Text>
+                    </RX.Button>
             </RX.ScrollView>
 
         );
