@@ -6,7 +6,10 @@ import React from 'react';
 import RX from 'reactxp';
 import styling from './AppStyles';
 import Rest from './RestConfig';
-import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,} from 'react-bootstrap';
+import QuotesSelection from './QuotesSelection';
+import { Navigator } from 'reactxp-navigation';
+
+import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,DateTimeField} from 'react-bootstrap';
 
 
 import Button from 'react-bootstrap/lib/Button';
@@ -19,53 +22,41 @@ const _styles = {
         alignSelf: 'stretch',
         backgroundColor: '#ffffff'
     }),
-    containerDate: {
-        width: 335
-    },
 };
 
 
 
-export default class TravelInsuranceReg extends React.Component{
+export default class VehicleDetails extends React.Component{
+    _navigator
     constructor(props) {
         super(props);
         this.state = {
-            date: new Date()
-        };
-
-        this.state = {
-            name: '',
-            phone:'',
-            email:'',
-            regAreaCode:'',
-            previousPolicyExpiry:'',
-            testValue:'',
-            registrationYear:'',
-            carModel:'',
-            fuelType:'',
-            carVariant:'',
-            existingInsurer:''
+            value: null,
         };
     }
+    renderSquare(i) {
+        return <QuotesSelection value={i} />;
+    }
+
+
 
     onChangeDummy = () => {
         this.state = {
-            name: 'test',
-            phone:'9876543210',
-            regAreaCode:'600017',
+            name: 'arun',
+            email:'arun.hossamani@rapidqube.com',
+            phone:'918369964582',
+            regAreaCode:'DL01AB1245',
             previousPolicyExpiry:'15/11/2017',
-            testValue:'test93',
-            registrationYear:'2015',
-            carModel:'Jeep',
-            fuelType:'CNG',
-            carVariant:'Sedan',
-            existingInsurer:'Bajaj Allianz'
+            registrationYear:'2010',
+            carModel:'maruti',
+            fuelType:'Petrol',
+            carVariant:'AC 4 SPEED(796CC)',
+            existingInsurer:'BAJAJ ALLIANCE'
         };
     }
 
     onChangePost = () => {
         let {
-            testValue = 'testValue',
             name='name',
             phone='phone',
             email='email',
@@ -77,38 +68,44 @@ export default class TravelInsuranceReg extends React.Component{
             carVariant='carVariant',
             existingInsurer='existingInsurer'
         } = this.state;
-
+        let status='new';
+        let _id='';
         let password = "donkeybrains";
-        let myApiUrl = "http://www.example.com/api"
-        let usersPath = "users"
+        let usersPath = "motorfetchPolicyQuotes"
         console.log(name,"name");
         console.log(phone,"phone");
         console.log(email,"email");
         console.log(regAreaCode,"regAreaCode");
         console.log(previousPolicyExpiry,"previousPolicyExpiry");
         console.log(registrationYear,"registrationYear");
-
         console.log(carModel,"carModel");
         console.log(fuelType,"fuelType");
         console.log(carVariant,"carVariant");
         console.log(existingInsurer,"existingInsurer");
-        console.log(password,"password");
-        console.log(myApiUrl,"myApiUrl");
+        console.log(JSON.stringify({
+            status, _id, name, phone,email,regAreaCode,previousPolicyExpiry,registrationYear,carModel,fuelType,carVariant,existingInsurer
+            /*firstParam: 'yourValue',
+            secondParam: 'yourOtherValue',*/
+        }));
 
 
         console.log(Rest.ApiUrl,"RestApiUrl");
-        fetch(`${Rest.ApiUrl}/${usersPath}`, {
+        return fetch(`${Rest.ApiUrl}/${usersPath}`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNWExYmFhNTYyYzZiOTEzNzYzMmM3ZWVjIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiJqWmFlNzI3SzA4S2FPbUtTZ09hR3p3dy9YVnFHci9QS0VnSU1ranJjYkpJPSIsInJhcGlkSUQiOiJCd2JNd0E2YjFIaEUxNC91TFdweVJXS3EzMytBVUJINnd6UjZtQzh0OUowPSIsInVzZXJPYmplY3QiOnsiZm5hbWUiOiJhcnVuIiwibG5hbWUiOiJob3NzYW1hbmkiLCJwaG9uZSI6IjkxODM2OTk2NDU4MiJ9LCJ1c2VydHlwZSI6IkRpcmVjdCBDbGllbnRzIiwib3RwIjoxMTAwLCJlbmNvZGVkTWFpbCI6IllYSjFiaTVvYjNOellXMWhibWxBY21Gd2FXUnhkV0psTG1OdmJRPT0iLCJjcmVhdGVkX2F0IjoiTW9uIE5vdiAyNyAyMDE3IDExOjMxOjU4IEdNVCswNTMwIChJU1QpIiwiY291bnQiOjAsIl9fdiI6MCwic3RhdHVzIjpbInBob25lIiwiZW1haWwiXX1dLCJpYXQiOjE1MTUwNTA3NDcsImV4cCI6MTUxNTExMDc0N30.xZ_K-mE7WfAszkFrGMATmm9EpCmtYgdOyydVL4HGPVk'
             },
             body: JSON.stringify({
-                user: {email, password}
-                /*firstParam: 'yourValue',
-                secondParam: 'yourOtherValue',*/
+                status,_id,name, phone,email,regAreaCode,previousPolicyExpiry,registrationYear,carModel,fuelType,carVariant,existingInsurer
+
             })
-        });
+        }).then((response) => response.json()).then((responseJson) => {
+            var res = responseJson.message;
+            console.log(res,"res");
+            this.props.onNavigateEight(res);
+        })
     }
 
     onChangeTextValue = (value) => {
@@ -118,7 +115,6 @@ export default class TravelInsuranceReg extends React.Component{
 
 
     onChangeName = (value) => {
-        this.setState({ name: value });
         const length = this.state.name.length;
         console.log(length,"length");
 
@@ -136,7 +132,7 @@ export default class TravelInsuranceReg extends React.Component{
 
     getValidationState(name) {
         console.log(this.state.name,"this.state.name");
-        const length = this.state.name.length;
+        // const length = this.state.name.length;
         const value = this.state.name;
         if (this.validateEmail(value)) return 'success';
         else if (length > 5 && !this.validateEmail(value)) return 'warning';
@@ -151,6 +147,7 @@ export default class TravelInsuranceReg extends React.Component{
 
     onChangeEmail = (value) => {
         this.setState({ email: value });
+        this.props.onUpdate(value);
         console.log(this.state.email,"email");
     }
 
@@ -194,16 +191,14 @@ export default class TravelInsuranceReg extends React.Component{
         this.setState({ testValue: value });
         console.log(this.state.testValue,"testValue");
     }
-    handleNextButtonPress() {
-        const date = new Date(this.state.date);
-        date.setMonth(date.getMonth() + 1);
-        this.setState({
-            date
-        });
-    }
 
 
     render() {
+        // this.props.onNavigateSixth(function(res) { return (res); })
+        // this.props.QuotesSelection
+
+
+
         return (
             <RX.ScrollView style={ _styles.scroll }>
                 <RX.View style={ styling.container }>
@@ -225,7 +220,7 @@ export default class TravelInsuranceReg extends React.Component{
                                     {/*<code>&lt;{'Col xs={12} md={8}'} /&gt;</code>*/}
 
                                     <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
+                                        <RX.Text style={ styling.sideText}>
                                             Name
                                         </RX.Text>
                                         <form>
@@ -314,14 +309,11 @@ export default class TravelInsuranceReg extends React.Component{
                                             Registration Year
                                         </RX.Text>
                                         <form>
-                                        <RX.TextInput
+                                            <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="DD/MM/YYYY"
-                                                value={ this.state.previousPolicyExpiry }
-                                                onChangeText={this.onChangePolicy}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
                                                 // defaultValue={ this.state.inputValue }
                                             />
                                         </form>
@@ -387,13 +379,16 @@ export default class TravelInsuranceReg extends React.Component{
                                         </form>
                                     </RX.View>
                                     <Row className="show-grid">
-                                        <Col  md={6}>
-                                            <RX.Button bsStyle="primary"  onPress={()=> this.onChangePost() }>Post</RX.Button>
+                                        <Col  md={6} style={styling.marTop}>
+                                            <RX.Button   onPress={()=> this.onChangePost() }>Submit</RX.Button>
                                         </Col>
-                                        <Col  md={6}>
-                                            <RX.Button bsStyle="warning"  onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
-                                        </Col>
+                                        <Col  md={6} style={styling.marTop}>
+                                            <RX.Button onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
+                                            <RX.Button style={styling.button} onPress={ this.props.onNavigateEleven }>
+                                                try
+                                            </RX.Button>
 
+                                        </Col>
                                     </Row>
 
 

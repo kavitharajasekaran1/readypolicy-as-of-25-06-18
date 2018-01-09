@@ -89,11 +89,43 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor:'#f5f5f3',
-        padding: 11
+        padding: 11,
+        alignSelf:'center',
     }),
     head: RX.Styles.createScrollViewStyle({
-        fontSize: 30,
-        color: 'red'
+        fontSize: 25,
+        color: 'red',
+        alignSelf:'center',
+        textalign:'center',
+        justifyContent: 'center',
+     
+    }),
+    button1Hover: RX.Styles.createButtonStyle({
+        backgroundColor: '#EF5350'
+    }),
+    button1Text: RX.Styles.createTextStyle({
+        fontSize: 14,
+        color: '#EF5350',
+        justifyContent: 'center',
+        textAlign:'CENTER',
+        alignSelf:'center'
+    }),
+    button1TextHover: RX.Styles.createTextStyle({
+        fontSize: 14,
+        color: 'White',
+        justifyContent: 'center',
+        margingright:50,
+        textAlign:'CENTER',
+        alignSelf:'center'
+    }),
+    button1: RX.Styles.createButtonStyle({
+        backgroundColor: '#ddd',
+        borderWidth: 1,
+        margin: 20,
+        padding: 12,
+        borderRadius: 8,
+        borderColor: '#EF5350',
+
     }),
     register: RX.Styles.createImageStyle({
         height: 80,
@@ -257,20 +289,22 @@ export default class RegisterPage extends RX.Component{
                                                     value={this.state.value}
                                                     placeholder="Bangalore,India"
                                                     secureTextEntry= {true}
-                                                    placeholder="glyphicon glyphicon-map-marker"
                                                 />
-                                                <RX.Button type="button" class="btn btn-default btn-lg">
-  <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 
-</RX.Button>
                                             </FormGroup>
                                             
                                         </form>
-                                    </RX.View>
-                    <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateFifth }>
-                        <RX.Text style={ styles.buttonText }>
-                            REGISTER
-                        </RX.Text>
-                    </RX.Button>
+                                    
+                                    <RX.Button
+                    style={ [styles.button1, this.state.button1Hover && styles.button1Hover] }
+                    onHoverStart={ () => { this.setState({ button1Hover: true }) } }
+                    onHoverEnd={ () => { this.setState({ button1Hover: false }) } }
+                    onPress={this.props.onNavigateFifth }
+                >
+                    <RX.Text style={ [styles.button1Text, this.state.button1Hover && styles.button1TextHover] }>
+                        { 'Next' }
+                    </RX.Text>
+                </RX.Button>
+                </RX.View>
                     </RX.ScrollView>
         );
      

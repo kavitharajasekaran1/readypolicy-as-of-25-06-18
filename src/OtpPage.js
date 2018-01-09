@@ -5,35 +5,89 @@
 import React from 'react';
 import RX from 'reactxp';
 
+import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,DateTimeField} from 'react-bootstrap';
+
 const styles = {
     scroll: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
-        backgroundColor: '#f5fcff'
+        backgroundColor: 'black'
     }),
     container: RX.Styles.createViewStyle({
         padding: 16,
         justifyContent: 'center',
-        alignItems: 'center'
+        position: 'absolute',
+        display: 'flex',
+        flexdirection: 'column',
+        flexgrow: 1,
+        flexshrink: 1,
+        overflow: 'hidden',
+        alignitems: 'stretch',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        top: 0,
+    }),
+    welcome: RX.Styles.createTextStyle({
+        color: 'Red',
+        alignSelf: 'center',
+        opacity: 0.9,
+        marginTop: -175,
+        width: 350,
+        justifyContent: 'center',
+        fontweight: 'bold',
+        fontSize:35,
+        marginLeft:65,
+        textstyle:'italic',
+        position:'absolute'
+
+
+    }),
+    Welcome: RX.Styles.createTextStyle({
+        
+        color: 'white',
+        alignSelf: 'center',
+        opacity: 0.9,
+        marginTop: -175,
+        width: 350,
+        justifyContent: 'center',
+        fontweight: 'bold',
+        fontSize:35,
+        marginLeft:190,
+        position: 'absolute'
+
     }),
     helloWorld: RX.Styles.createTextStyle({
         fontSize: 48,
         fontWeight: 'bold',
         marginBottom: 28
     }),
-    welcome: RX.Styles.createTextStyle({
-        position: 'absolute',
-        top: 66,
-        left: 396,
-        color: 'white',
-        fontSize: 80,
-        textTransform:'capitalize'
+    button1Hover: RX.Styles.createButtonStyle({
+        backgroundColor: '#EF5350'
     }),
-    Welcome: RX.Styles.createTextStyle({
-        position: 'absolute',
-        top: 66,
-        left: 651,
-        fontSize: 80,
-        color: 'orange'
+    button1Text: RX.Styles.createTextStyle({
+        fontSize: 14,
+        color: '#EF5350',
+        justifyContent: 'center',
+        textAlign:'CENTER',
+        alignSelf:'center'
+    }),
+    button1TextHover: RX.Styles.createTextStyle({
+        fontSize: 14,
+        color: 'White',
+        justifyContent: 'center',
+        margingright:50,
+        textAlign:'CENTER',
+        alignSelf:'center'
+    }),
+    button1: RX.Styles.createButtonStyle({
+        backgroundColor: '#ddd',
+        borderWidth: 1,
+        margin: 20,
+        padding: 12,
+        borderRadius: 8,
+        borderColor: '#EF5350',
+        marginTop:500,
+
     }),
     instructions: RX.Styles.createTextStyle({
         fontSize: 16,
@@ -172,13 +226,17 @@ const styles = {
         marginLeft:-75
     }),
     otp: RX.Styles.createTextStyle({
-        fontSize: 30,
-        position: 'absolute',
-        top: 482,
-        left: 558,
-        marginBottom: 30,
-        color: 'white',
-        justifyContent: 'center'
+        
+            fontSize: 30,
+            marginBottom: 16,
+            color:'White',
+            justifyContent: 'center',
+            position: 'absolute',
+            alignSelf: 'center',
+            marginLeft: 1,
+            marginTop:82,
+            textAlign: 'center'
+          
     }),
     image: RX.Styles.createViewStyle({
         height: 42,
@@ -188,6 +246,36 @@ const styles = {
 
 
     }),
+    Form:RX.Styles.createViewStyle({
+        width: '25%',
+         float:'left',
+          margin: '5px',
+           backgroundcolor:  '#fff',
+    }),
+    Form1:RX.Styles.createViewStyle({
+        width: '25%',
+        float:'left',
+         margin: '5px',
+          backgroundcolor:  '#fff',
+     
+    }),
+
+    Form2:RX.Styles.createViewStyle({
+        width: '25%',
+        float:'left',
+         margin: '5px',
+          backgroundcolor:  '#fff',
+     
+    }),
+   
+    textInput1: RX.Styles.createTextInputStyle({
+        flex: 1,
+        maxWidth: 200,
+        borderWidth: 1,
+        fontSize: 14,
+        padding: 4,
+        borderColor: 'red'
+    }),
     phone: RX.Styles.createViewStyle({
         height: 42,
         width: 37,
@@ -195,20 +283,83 @@ const styles = {
         marginLeft:154
     }),
     resend: RX.Styles.createScrollViewStyle({
-        fontSize: 15,
+        fontSize: 18,
+        marginBottom: 16,
+        color:'White',
+        justifyContent: 'center',
         position: 'absolute',
-        top: 482,
-        left: 558,
-        marginBottom: 30,
-        color: 'white',
-        justifyContent: 'center'
+        alignSelf: 'center',
+        marginLeft: -117,
+        marginTop:130
+    
     }),
+    Resend: RX.Styles.createScrollViewStyle({
+        fontSize: 18,
+        marginBottom: 16,
+        color:'White',
+        justifyContent: 'center',
+        position: 'absolute',
+        alignSelf: 'center',
+        marginLeft:31,
+        marginTop:130
+    }),
+    policy: RX.Styles.createScrollViewStyle({
+    fontSize: 18,
+    marginBottom: 16,
+    color:'White',
+    justifyContent: 'center',
+    position: 'absolute',
+    alignSelf: 'center',
+    marginLeft: 1,
+    marginTop:-122
+    }),
+    Policy: RX.Styles.createScrollViewStyle({
+        fontSize: 18,
+        marginBottom: 16,
+        color:'White',
+        justifyContent: 'center',
+        position: 'absolute',
+        alignSelf: 'center',
+        marginLeft: 1,
+        marginTop:-48,
+        textAlign: 'center'
+        }),
+        POLICY: RX.Styles.createScrollViewStyle({
+            fontSize: 18,
+            marginBottom: 16,
+            color:'Red',
+            justifyContent: 'center',
+            position: 'absolute',
+            alignSelf: 'center',
+            marginLeft: 1,
+            marginTop:-48,
+            textAlign: 'center'
+            }),
 
+        POlicy:RX.Styles.createTextStyle({
+            fontSize: 18,
+            color:'White',
+            justifyContent: 'center',
+            position: 'absolute',
+            alignSelf: 'center',
+            margin: '5',
+            marginTop: '50',
+            textAlign: 'justify',
+
+    
+        }),
+    
 };
 
 export default class OtpPage extends RX.Component{
     constructor(props) {
         super(props);
+        this.state = {
+            phone:'',
+            phone1:'',
+            phone2:'',
+            phone3:'',
+        };
         this._translationValue = RX.Animated.createValue(-100);
         this._animatedStyle = RX.Styles.createAnimatedTextStyle({
             transform: [
@@ -229,38 +380,85 @@ export default class OtpPage extends RX.Component{
 
         animation.start();
     }
+    onChangeText = (value) => {
+        this.setState({ value: value });
+        
+    }
+    onChangePhone = (value) => {
+        this.setState({ phone: value });
+        console.log(this.state.phone,"phone");
+    }
+    onChangePhone = (value) => {
+        this.setState({ phone1: value });
+        console.log(this.state.phone1,"phone");
+    }
+    onChangePhone = (value) => {
+        this.setState({ phone2: value });
+        console.log(this.state.phone2,"phone");
+    }
+    onChangePhone = (value) => {
+        this.setState({ phone3: value });
+        console.log(this.state.phone3,"phone");
+    }
 
     render() {
         return (
             <RX.ScrollView style={ styles.scroll }>
-                <RX.View style={ styles.container }>
-                    <RX.Image source={ './src/img/business.jpg' } style={ [styles.business] } />
-                    <RX.Text style={ styles.welcome }>
-                        Ready
-                    </RX.Text>
-                    <RX.Text style={ styles.Welcome }>
-                        Policy
-                    </RX.Text>
-                    <RX.Text style={ styles.text}>
-                        Your policy partner
-                    </RX.Text>
-                    <RX.Text style={ styles.Text}>
-                        Waiting to automatically detect an SMS sent to +9600192976.
-                    </RX.Text>
-                    <RX.Text style={ styles.TExt}>
-                        Wrong Number?
-                    </RX.Text>
-                    <RX.Text style={ styles.quotes }>
-                        00
-                    </RX.Text>
-                    <RX.Text style={ styles.quotes1 }>
-                        01
-                    </RX.Text>
-                    <RX.Text style={ styles.quotes2 }>
-                        02
-                    </RX.Text>
-                    <RX.Text style={ styles.quotes3}>
-                        03
+            <RX.View style={ styles.container }>
+            
+                 
+               
+            <RX.Text style={ styles.welcome }>Ready</RX.Text>
+            
+            <RX.Text style={ styles.Welcome }>Policy</RX.Text>
+         
+                <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
+            <RX.Text style={styles.Policy}>Waiting to automatically detect an SMS to 9640266349.<RX.Text style={styles.POLICY}>WrongNumber?</RX.Text></RX.Text>
+            <RX.Text style={styles.POlicy}>       
+            <form>
+                                            <FormGroup
+                                                controlId="formBasicText"
+                                            >
+                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
+                                                <FormControl
+                                                    type="text"
+                                                    style={styles.Form}
+                                                    value={this.state.value}
+                                                    placeholder="00"
+                                                    secureTextEntry= {true}
+                                                />
+                                            </FormGroup>
+                                        </form>
+                                        <form>
+                                            <FormGroup
+                                                controlId="formBasicText"
+                                            >
+                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
+                                                <FormControl
+                                                    type="text"
+                                                    style={styles.Form1}
+                                                    value={this.state.value}
+                                                    placeholder="01"
+                                                    secureTextEntry= {true}
+                                                />
+                                            </FormGroup>
+                                        </form>
+                                        <form>
+                                            <FormGroup
+                                                controlId="formBasicText"
+                                            >
+                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
+                                                <FormControl
+                                                    type="text"
+                                                    style={styles.Form2}
+                                                    value={this.state.value}
+                                                    placeholder="02"
+                                                    secureTextEntry= {true}
+                                                />
+                                            </FormGroup>
+                                        </form>
+                                     
+                
                     </RX.Text>
                     <RX.Text style={ styles.otp}>
                         Enter OTP code
@@ -269,15 +467,20 @@ export default class OtpPage extends RX.Component{
                         <RX.Image source={ './src/img/logo.png' } style={ [styles.image] } />
                         Resend
                     </RX.Text>
-                    <RX.Text style={ styles.resend }>
+                    <RX.Text style={ styles.Resend }>
                         <RX.Image source={ './src/img/download.jpeg' } style={ [styles.phone] } />
                         Phone
                     </RX.Text>
-                    <RX.Button style={ styles.roundButton }  onPress={ this.props.onPressNavigate }>
-                        <RX.Text style={ styles.buttonText }>
-                            NEXT
-                        </RX.Text>
-                    </RX.Button>
+                    <RX.Button
+                    style={ [styles.button1, this.state.button1Hover && styles.button1Hover] }
+                    onHoverStart={ () => { this.setState({ button1Hover: true }) } }
+                    onHoverEnd={ () => { this.setState({ button1Hover: false }) } }
+                    onPress={this.props.onPressNavigate }
+                >
+                    <RX.Text style={ [styles.button1Text, this.state.button1Hover && styles.button1TextHover] }>
+                        { 'Next' }
+                    </RX.Text>
+                </RX.Button>
                 </RX.View>
             </RX.ScrollView>
         );

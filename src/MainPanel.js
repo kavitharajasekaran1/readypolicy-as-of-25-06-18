@@ -4,28 +4,23 @@
 
 import React from 'react';
 import RX from 'reactxp';
+import styling from './AppStyles';
+
+import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,DateTimeField} from 'react-bootstrap';
 /*const {
     Welcome
 } = TodoStyles;*/
 const styles = {
     scroll: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
-        backgroundColor: '#f5fcff'
+        backgroundColor: 'black'
     }),
     container: RX.Styles.createViewStyle({
-        padding: 16,
-        justifyContent: 'center',
-        position: 'absolute',
-        display: 'flex',
-        flexdirection: 'column',
-        flexgrow: 1,
-        flexshrink: 1,
-        overflow: 'hidden',
-        alignitems: 'stretch',
-        left: 0,
-        right: 0,
-        bottom: 0,
-        top: 0,
+        paddingTop: 60,
+        flexGrow: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+
     }),
     helloWorld: RX.Styles.createTextStyle({
         fontSize: 48,
@@ -33,36 +28,47 @@ const styles = {
         marginBottom: 28
     }),
     welcome: RX.Styles.createTextStyle({
-        fontSize: 36,
-        marginBottom: 16,
-        color:' white',
+        paddingTop: 45,
+        color: 'Red',
+        textAlign: 'center',
+        opacity: 0.9,
+        marginTop: 133,
+        width: 350,
         justifyContent: 'center',
-        position: 'absolute',
-        alignSelf: 'center',
-        marginLeft:-48,
-        fontWeight:'bold'
+        fontweight: 'bold',
+        fontSize:35,
+        marginLeft:-124,
+        textstyle:'italic'
+
 
     }),
     Welcome: RX.Styles.createTextStyle({
-        fontSize: 36,
-        marginBottom: 16,
-        color:'ORANGE',
+        paddingTop: 45,
+        color: 'white',
+        textAlign: 'center',
+        opacity: 0.9,
+        marginTop: -94,
+        width: 350,
         justifyContent: 'center',
-        position: 'absolute',
-        alignSelf: 'center',
-        marginLeft: 67,
-        fontweight: 'bold'
+        fontweight: 'bold',
+        padingleft: 149,
+        fontSize:35,
+        marginLeft:122
 
     }),
     policy:RX.Styles.createTextStyle({
-        fontSize: 18,
-        marginBottom: 16,
-        color:'White',
+        paddingTop: 45,
+        color: 'white',
+        textAlign: 'center',
+        opacity: 0.9,
+        marginTop: -38,
+        width: 350,
         justifyContent: 'center',
-        position: 'absolute',
-        alignSelf: 'center',
-        marginLeft: 1,
-        marginTop:34
+        fontweight: 'bold',
+        padingleft: 149,
+        fontSize:20,
+        marginLeft:-10
+       
     }),
         
     text: RX.Styles.createTextStyle({
@@ -82,9 +88,14 @@ const styles = {
         marginBottom: 16
     }),
     roundButton: RX.Styles.createViewStyle({
-        margin: 16,
-        borderRadius: 16,
-        backgroundColor: '#2ecc71'
+        paddingTop: 4,
+        width: '49%',
+        height: 40,
+        color:'pink',
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    
     }),
     buttonText: RX.Styles.createTextStyle({
         fontSize: 16,
@@ -106,12 +117,42 @@ const styles = {
         top: 0,
        
     }),
-    
+    button1Hover: RX.Styles.createButtonStyle({
+        backgroundColor: '#EF5350'
+    }),
+    button1Text: RX.Styles.createTextStyle({
+        fobutton1HoverntSize: 14,
+        color: '#EF5350',
+        justifyContent: 'center',
+        
+    }),
+    button1TextHover: RX.Styles.createTextStyle({
+        fontSize: 14,
+        color: 'White',
+        justifyContent: 'center',
+        margingright:50,
+        
+    }),
+    button1: RX.Styles.createButtonStyle({
+        backgroundColor: '#ddd',
+        borderWidth: 1,
+        margin: 20,
+        padding: 12,
+        borderRadius: 8,
+        borderColor: '#EF5350',
+        marginTop:120,
+    }),
+    marTop:RX.Styles.createViewStyle({
+        marginTop:20,
+    }),
 };
 
 export default class MainPanel extends RX.Component{
     constructor(props) {
         super(props);
+        this.state = {
+            phone:'',
+        };
         this._translationValue = RX.Animated.createValue(-100);
         this._animatedStyle = RX.Styles.createAnimatedTextStyle({
             transform: [
@@ -137,21 +178,31 @@ export default class MainPanel extends RX.Component{
         return (
             <RX.ScrollView style={ styles.scroll }>
                 <RX.View style={ styles.container }>
-                    <RX.Image source={ './src/img/main.png' } style={ [styles.business] } />
-                    <RX.Text style={ styles.welcome }>Ready</RX.Text>
-                    <RX.Text style={ styles.Welcome }>Policy</RX.Text>
-                    <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text>
+                
+                     
+                   
+                <RX.Text style={ styles.welcome }>Ready</RX.Text>
+                
+                <RX.Text style={ styles.Welcome }>Policy</RX.Text>
+             
+                    <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
                     {/* <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateForward}>
                         <RX.Text style={ styles.buttonText }>
                             Go Back
                         </RX.Text>
                     </RX.Button> */}
-                </RX.View>
-                <RX.Button style={ styles.roundButton }  onPress={ this.props.onNavigateForward }>
-                        <RX.Text style={ styles.buttonText }>
-                            NEXT
-                        </RX.Text>
-                    </RX.Button>
+                
+                <RX.Button
+                    style={ [styles.button1, this.state.button1Hover && styles.button1Hover] }
+                    onHoverStart={ () => { this.setState({ button1Hover: true }) } }
+                    onHoverEnd={ () => { this.setState({ button1Hover: false }) } }
+                    onPress={this.props.onNavigateForward }
+                >
+                    <RX.Text style={ [styles.button1Text, this.state.button1Hover && styles.button1TextHover] }>
+                        { 'Next' }
+                    </RX.Text>
+                </RX.Button>
+                    </RX.View>
             </RX.ScrollView>
 
         );

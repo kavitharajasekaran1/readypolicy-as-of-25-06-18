@@ -12,7 +12,7 @@ import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,
 const styles = {
     scroll: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
-        backgroundColor: '#f5fcff'
+        backgroundColor: 'BLACK'
     }),
     container: RX.Styles.createViewStyle({
         padding: 16,
@@ -35,25 +35,32 @@ const styles = {
         marginBottom: 28
     }),
     welcome: RX.Styles.createTextStyle({
-        fontSize: 36,
-        marginBottom: 16,
-        color:' white',
-        justifyContent: 'center',
-        position: 'absolute',
+        color: 'Red',
         alignSelf: 'center',
-        marginLeft:-48,
-        fontWeight:'bold'
+        opacity: 0.9,
+        marginTop: -175,
+        width: 350,
+        justifyContent: 'center',
+        fontweight: 'bold',
+        fontSize:35,
+        marginLeft:65,
+        textstyle:'italic',
+        position:'absolute'
+
 
     }),
     Welcome: RX.Styles.createTextStyle({
-        fontSize: 36,
-        marginBottom: 16,
-        color:'ORANGE',
-        justifyContent: 'center',
-        position: 'absolute',
+        
+        color: 'white',
         alignSelf: 'center',
-        marginLeft: 67,
-        fontweight: 'bold'
+        opacity: 0.9,
+        marginTop: -175,
+        width: 350,
+        justifyContent: 'center',
+        fontweight: 'bold',
+        fontSize:35,
+        marginLeft:190,
+        position: 'absolute'
 
     }),
     policy:RX.Styles.createTextStyle({
@@ -64,7 +71,7 @@ const styles = {
         position: 'absolute',
         alignSelf: 'center',
         marginLeft: 1,
-        marginTop:34
+        marginTop:-122
     }),
     Policy:RX.Styles.createTextStyle({
         fontSize: 18,
@@ -74,7 +81,21 @@ const styles = {
         position: 'absolute',
         alignSelf: 'center',
         marginLeft: 1,
-        marginTop:67
+        marginTop:3,
+        textAlign: 'center'
+
+    }),
+    POlicy:RX.Styles.createTextStyle({
+        fontSize: 18,
+        marginBottom: 16,
+        color:'White',
+        justifyContent: 'center',
+        position: 'absolute',
+        alignSelf: 'center',
+        marginLeft: 1,
+        marginTop:120,
+        textAlign: 'center'
+
     }),
         
     text: RX.Styles.createTextStyle({
@@ -96,12 +117,13 @@ const styles = {
     roundButton: RX.Styles.createViewStyle({
         margin: 16,
         borderRadius: 16,
-        backgroundColor: '#2ecc71'
-    }),
+        backgroundColor: '#ff0000ab',
+        justifyContent: 'CENTER'
+        }),
     buttonText: RX.Styles.createTextStyle({
         fontSize: 16,
         marginVertical: 6,
-        marginHorizontal: 12,
+        marginHorizontal: 1,
         color: 'white'
     }),
     business: RX.Styles.createImageStyle({
@@ -118,6 +140,25 @@ const styles = {
         top: 0,
        
     }),
+    button1Hover: RX.Styles.createButtonStyle({
+        backgroundColor: '#EF5350'
+    }),
+    button1Text: RX.Styles.createTextStyle({
+        fontSize: 14,
+        color: '#EF5350',
+        justifyContent: 'center',
+        textAlign:'CENTER',
+        alignSelf:'center'
+    }),
+    button1TextHover: RX.Styles.createTextStyle({
+        fontSize: 14,
+        color: 'White',
+        justifyContent: 'center',
+        margingright:50,
+        justifyContent: 'center',
+        textAlign:'CENTER',
+        alignSelf:'center'
+    }),
     Form:RX.Styles.createViewStyle({
         display: 'block',
          width: '100%',
@@ -125,14 +166,36 @@ const styles = {
          // padding: 6px 12px;
           fontSize: 14,
         // line: 1.42857143;
-        color: "#555",
-        backgroundColor: "#fff",
+        color: "white",
+        backgroundColor: "grey",
         borderWidth:1,
-        borderColor:"#ccc",
-        borderRadius: 4
+        borderColor:"white",
+        borderRadius: 4,
     }),
-    
- 
+    button1: RX.Styles.createButtonStyle({
+        backgroundColor: '#ddd',
+        borderWidth: 1,
+        margin: 20,
+        padding: 12,
+        borderRadius: 8,
+        borderColor: '#EF5350',
+        marginTop:500,
+
+    }),
+    loginscreenLogoContainer:RX.Styles.createButtonStyle({
+        paddingTop: 60,
+        flexGrow: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    }),
+    loginTitle1: RX.Styles.createButtonStyle({
+        color: 'white',
+        textAlign: 'center',
+        alignSelf: 'center',
+        justifyContent: 'center',
+       
+
+    }),
     TEXT: RX.Styles.createTextStyle({
         fontSize: 26,
         position: 'absolute',
@@ -155,7 +218,7 @@ export default class LoginPage extends RX.Component{
         this.state = {
             
             phone:'9553715856',
-            testValue:'test93',
+          
         };
     }
 
@@ -167,25 +230,26 @@ export default class LoginPage extends RX.Component{
         } = this.state;
 
         let password = "donkeybrains";
-        let myApiUrl = "http://119.81.59.59:8082/newLogin"
-        let usersPath = "users"
+        let myApiUrl = 'http://119.81.59.59:8082'
+        let usersPath = "newLogin"
         console.log(phone,"phone");
         console.log(myApiUrl,"myApiUrl");
 
 
-        console.log(Rest.ApiUrl,"RestApiUrl");
+        console.log(Rest.ApiUrl,"RestApiUrl",phone);
         fetch(`${Rest.ApiUrl}/${usersPath}`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNWExYmFhNTYyYzZiOTEzNzYzMmM3ZWVjIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiJqWmFlNzI3SzA4S2FPbUtTZ09hR3p3dy9YVnFHci9QS0VnSU1ranJjYkpJPSIsInJhcGlkSUQiOiJCd2JNd0E2YjFIaEUxNC91TFdweVJXS3EzMytBVUJINnd6UjZtQzh0OUowPSIsInVzZXJPYmplY3QiOnsiZm5hbWUiOiJhcnVuIiwibG5hbWUiOiJob3NzYW1hbmkiLCJwaG9uZSI6IjkxODM2OTk2NDU4MiJ9LCJ1c2VydHlwZSI6IkRpcmVjdCBDbGllbnRzIiwib3RwIjoxMTAwLCJlbmNvZGVkTWFpbCI6IllYSjFiaTVvYjNOellXMWhibWxBY21Gd2FXUnhkV0psTG1OdmJRPT0iLCJjcmVhdGVkX2F0IjoiTW9uIE5vdiAyNyAyMDE3IDExOjMxOjU4IEdNVCswNTMwIChJU1QpIiwiY291bnQiOjAsIl9fdiI6MCwic3RhdHVzIjpbInBob25lIiwiZW1haWwiXX1dLCJpYXQiOjE1MTUwNTA3NDcsImV4cCI6MTUxNTExMDc0N30.xZ_K-mE7WfAszkFrGMATmm9EpCmtYgdOyydVL4HGPVk'
             },
-            body: JSON.stringify({
-                user: {phone}
-                /*firstParam: 'yourValue',
-                secondParam: 'yourOtherValue',*/
-            })
-        });
+            body: JSON.stringify({"phone":phone})
+        }).then((response) => response.json()).then((responseJson) => {
+            var res = responseJson.message;
+            console.log(res,"res");
+            this.props.onNavigateForth(res);
+        })
     }
 
     onChangeTextValue = (value) => {
@@ -203,24 +267,42 @@ export default class LoginPage extends RX.Component{
         return (
             <RX.ScrollView style={ styles.scroll }>
             <RX.View style={ styles.container }>
-                <RX.Image source={ './src/img/main.png' } style={ [styles.business] } />
-                <RX.Text style={ styles.welcome }>Ready</RX.Text>
-                <RX.Text style={ styles.Welcome }>Policy</RX.Text>
-                <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text>
-                    <RX.Text style={ styles.Policy}>
-                        Please Enter Your Phone Number To Login/Register
-                        </RX.Text> 
-                    <RX.Text style={ styles.TEXT}>
-                        Phone Number
-                    <RX.TextInput
-                         style={styles.Form}
-                         placeholder="phone"
-                         value={ this.state.phone }
-                         onChangeText={this.onChangePhone}
-                         // defaultValue={ this.state.inputValue }
-                    />
+            
+                 
+               
+            <RX.Text style={ styles.welcome }>Ready</RX.Text>
+            
+            <RX.Text style={ styles.Welcome }>Policy</RX.Text>
+         
+                <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
+            <RX.Text style={styles.Policy}>Please Enter Your Phone Number To Login/Register</RX.Text>
+            <RX.Text style={styles.POlicy}>
+            <form>
+                                            <FormGroup
+                                                controlId="formBasicText"
+                                            >
+                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
+                                                <FormControl
+                                                    type="text"
+                                                    value={this.state.value}
+                                                    placeholder="+91"
+                                                    secureTextEntry= {true}
+                                                />
+                                            </FormGroup>
+                                        </form>
+                                        </RX.Text>
+                   <RX.Button
+                    style={ [styles.button1, this.state.button1Hover && styles.button1Hover] }
+                    onHoverStart={ () => { this.setState({ button1Hover: true }) } }
+                    onHoverEnd={ () => { this.setState({ button1Hover: false }) } }
+                    onPress={this.props.onNavigateForth }
+                >
+                    <RX.Text style={ [styles.button1Text, this.state.button1Hover && styles.button1TextHover] }>
+                        { 'Next' }
                     </RX.Text>
-                    <Row className="show-grid">
+                </RX.Button>
+                </RX.View>
+                <Row className="show-grid">
                                         <Col  md={6}>
                                             <RX.Button bsStyle="primary"  onPress={()=> this.onChangePost() }>Post</RX.Button>
                                         </Col>
@@ -229,8 +311,7 @@ export default class LoginPage extends RX.Component{
                                         </Col>
 
                                     </Row>
-
-                </RX.View>
+                
             </RX.ScrollView>
 
         );

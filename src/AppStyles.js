@@ -256,6 +256,20 @@ module.exports = {
         backgroundColor:'#FF6347'
 
     }),
+    button1Hover: RX.Styles.createButtonStyle({
+        backgroundColor: '#EF5350'
+    }),
+    button1Text: RX.Styles.createTextStyle({
+        fobutton1HoverntSize: 14,
+        color: '#EF5350',
+        justifyContent: 'center'
+    }),
+    button1TextHover: RX.Styles.createTextStyle({
+        fontSize: 14,
+        color: 'White',
+        justifyContent: 'center',
+        margingright:50
+    }),
     Form:RX.Styles.createViewStyle({
         display: 'block',
          width: '100%',
@@ -276,7 +290,17 @@ module.exports = {
         borderRadius: 4,
         color:"#FFF"
     }),
-
+    customBtn:RX.Styles.createViewStyle({
+        color: "#fff",
+        backgroundColor: "#ff606b",
+        borderColor: "#ff606b",
+        borderWidth:1,
+        padding:10,
+        borderRadius: 4
+    }),
+    marTop:RX.Styles.createViewStyle({
+      marginTop:20
+    })
 }
 
 

@@ -76,7 +76,7 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.Location,
+            routeId: NavigationRouteId.MainPanel,
             sceneConfigType: "Fade"
         }]);
     }
@@ -169,7 +169,7 @@ export default class App extends RX.Component {
     _onPressForth() {
         // this._navigator.pop();
         this._navigator.push({
-            routeId: NavigationRouteId.RegisterPage,
+            routeId: NavigationRouteId.OtpPage,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
@@ -277,7 +277,7 @@ export default class App extends RX.Component {
 
     _onPressBack() {
         this._navigator.push({
-            routeId: NavigationRouteId.MainPanel,
+            routeId: NavigationRouteId.RegisterPage,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
