@@ -5,6 +5,8 @@
 import React from 'react';
 import RX from 'reactxp';
 import OtpPage from './OtpPage';
+import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,DateTimeField,Checkbox,Button} from 'react-bootstrap';
+
 
 
 import {default as RXVideo} from 'reactxp-video';
@@ -12,6 +14,7 @@ import {default as RXVideo} from 'reactxp-video';
 import ProgressIndicator from './ProgressIndicator';
 import ToggleSwitch from './ToggleSwitch';
 import Rest from "./RestConfig";
+import styling from "./AppStyles";
 
 const _styles = {
     scroll: RX.Styles.createScrollViewStyle({
@@ -284,6 +287,7 @@ export default class QuotesSelection  extends RX.Component {
                             view and compare quotes
                         </RX.Text>
                     </RX.View>
+                    <Grid className="hidden-xs">
                     <RX.View style={ _styles.client }>
                         <RX.Image source={ './src/img/Bharti.png' } style={ [_styles.image] } />
 
@@ -307,10 +311,111 @@ export default class QuotesSelection  extends RX.Component {
                             </RX.Button>
                         </RX.View>
                     </RX.View>
+                    </Grid>
                 </RX.View>
 
+                <Grid className="hidden-lg">
+                <RX.View style={ _styles.client }>
+                        <Row className="show-grid" style={styling.clientLeft} >
+
+                            <Col xs={4}>
+                                <RX.Image source={ './src/img/Bharti.png' } style={ [styling.image] } />
+                            </Col>
+                            <Col  xs={4} style={styling.marTop17 }>
+                                <div style={styling.clientHeadxs}>Bajaj Allianz</div>
+                                <RX.Text style={ styling.sideHeadxs }>
+                                    <div style={styling.tryHeadxs}>IDV: 1,25,300</div>
+                                </RX.Text>
+
+                            </Col>
+                            <Col   xs={4} >
+                                <RX.Button style={ styling.roundButton } onPress={ this.props.onNavigateBack }>
+                                    <RX.Text style={ styling.buybuttonText }>
+                                        Rs.1,322*
+                                    </RX.Text>
+                                </RX.Button>
+                            </Col>
+                        </Row>
+                </RX.View>
+                </Grid>
+                <Grid className="hidden-lg">
+                    <RX.View style={ _styles.client }>
+                        <Row className="show-grid" style={styling.clientLeft} >
+
+                            <Col xs={4}>
+                                <RX.Image source={ './src/img/Bharti.png' } style={ [styling.image] } />
+                            </Col>
+                            <Col  xs={4} style={styling.marTop17 }>
+                                <div style={styling.clientHeadxs}>Bajaj Allianz</div>
+                                <RX.Text style={ styling.sideHeadxs }>
+                                    <div style={styling.tryHeadxs}>IDV: 1,25,300</div>
+                                </RX.Text>
+
+                            </Col>
+                            <Col   xs={4} >
+                                <RX.Button style={ styling.roundButton } onPress={ this.props.onNavigateBack }>
+                                    <RX.Text style={ styling.buybuttonText }>
+                                        Rs.1,322*
+                                    </RX.Text>
+                                </RX.Button>
+                            </Col>
+                        </Row>
+                    </RX.View>
+                </Grid>
+                <Grid className="hidden-lg">
+                <RX.View style={ _styles.client }>
+                    <Row className="show-grid" style={styling.clientLeft} >
+
+                        <Col xs={4}>
+                            <RX.Image source={ './src/img/Bharti.png' } style={ [styling.image] } />
+                        </Col>
+                        <Col  xs={4} style={styling.marTop17 }>
+                            <div style={styling.clientHeadxs}>Bajaj Allianz</div>
+                            <RX.Text style={ styling.sideHeadxs }>
+                                <div style={styling.tryHeadxs}>IDV: 1,25,300</div>
+                            </RX.Text>
+
+                        </Col>
+                        <Col   xs={4} >
+                            <RX.Button style={ styling.roundButton } onPress={ this.props.onNavigateBack }>
+                                <RX.Text style={ styling.buybuttonText }>
+                                    Rs.1,322*
+                                </RX.Text>
+                            </RX.Button>
+                        </Col>
+                    </Row>
+                </RX.View>
+            </Grid>
+                <Grid className="hidden-lg">
+                    <RX.View style={ _styles.client }>
+                        <Row className="show-grid" style={styling.clientLeft} >
+
+                            <Col xs={4}>
+                                <RX.Image source={ './src/img/Bharti.png' } style={ [styling.image] } />
+                            </Col>
+                            <Col  xs={4} style={styling.marTop17 }>
+                                <div style={styling.clientHeadxs}>Bajaj Allianz</div>
+                                <RX.Text style={ styling.sideHeadxs }>
+                                    <div style={styling.tryHeadxs}>IDV: 1,25,300</div>
+                                </RX.Text>
+
+                            </Col>
+                            <Col   xs={4} >
+                                <RX.Button style={ styling.roundButton } onPress={ this.props.onNavigateBack }>
+                                    <RX.Text style={ styling.buybuttonText }>
+                                        Rs.1,322*
+                                    </RX.Text>
+                                </RX.Button>
+                            </Col>
+                        </Row>
+                    </RX.View>
+                </Grid>
 
 
+
+
+
+                <Grid className="hidden-xs">
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
                         <RX.Image source={ './src/img/ergo.png' } style={ [_styles.image] } />
@@ -336,8 +441,9 @@ export default class QuotesSelection  extends RX.Component {
                         </RX.View>
                     </RX.View>
                 </RX.View>
+                </Grid>
 
-
+                <Grid className="hidden-xs">
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
                         <RX.Image source={ './src/img/reliance.png' } style={ [_styles.image] } />
@@ -363,8 +469,9 @@ export default class QuotesSelection  extends RX.Component {
                         </RX.View>
                     </RX.View>
                 </RX.View>
+                </Grid>
 
-
+                <Grid className="hidden-xs">
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
                         <RX.Image source={ './src/img/oriental.png' } style={ [_styles.image] } />
@@ -390,8 +497,9 @@ export default class QuotesSelection  extends RX.Component {
                         </RX.View>
                     </RX.View>
                 </RX.View>
+                </Grid>
 
-
+                <Grid className="hidden-xs">
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
                         <RX.Image source={ './src/img/reliance.png' } style={ [_styles.image] } />
@@ -417,7 +525,7 @@ export default class QuotesSelection  extends RX.Component {
                         </RX.View>
                     </RX.View>
                 </RX.View>
-
+                </Grid>
 
             </RX.ScrollView>
         );

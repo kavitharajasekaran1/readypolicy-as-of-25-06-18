@@ -190,6 +190,9 @@ module.exports = {
         marginTop: 12,
         color: 'black'
     }),
+    txtCenter: RX.Styles.createTextStyle({
+        textAlign: 'center',
+    }),
     videoTitleText: RX.Styles.createTextStyle({
         marginBottom: 8
     }),
@@ -318,7 +321,18 @@ module.exports = {
         borderRadius: 4
     }),
     marTop:RX.Styles.createViewStyle({
-      marginTop:20
+      marginTop:20,
+    }),
+    marTop40:RX.Styles.createViewStyle({
+        marginTop:40,
+    }),
+    marTopxs:RX.Styles.createViewStyle({
+        marginTop:58,
+        color:'#fa774d'
+    }),
+    marTopcs:RX.Styles.createViewStyle({
+        marginTop:20,
+        textAlign:'right'
     }),
     btnMaxWidth:RX.Styles.createViewStyle({
         width:"100%"
@@ -332,6 +346,9 @@ module.exports = {
     }),
     marTop17:RX.Styles.createViewStyle({
         marginTop:17
+    }),
+    cmpBack:RX.Styles.createViewStyle({
+        backgroundColor: "#ffffff",
     })
 }
 
