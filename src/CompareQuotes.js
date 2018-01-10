@@ -57,6 +57,16 @@ const styles = {
         // borderBottomWidth:1,
         // borderColor:"#cccccc"
     }),
+    clientSec: RX.Styles.createViewStyle({
+        justifyContent: 'center',
+        // alignItems: 'center',
+        backgroundColor:'#ffffff',
+        // padding:5,
+        // flex:1,
+        // flexDirection:'row',
+        // borderBottomWidth:1,
+        // borderColor:"#cccccc"
+    }),
     clientNorm: RX.Styles.createViewStyle({
         justifyContent: 'center',
         alignItems: 'left',
@@ -79,7 +89,15 @@ const styles = {
     }),
     clientText: RX.Styles.createViewStyle({
         color:'#413a6f',
-        fontSize:'10'
+        fontSize:'10',
+        alignItems:'right'
+        // borderBottomWidth:1,
+        // borderColor:"#cccccc"
+    }),
+    clientTextxs: RX.Styles.createViewStyle({
+        color:'#413a6f',
+        fontSize:'8',
+        marginBottom:'15'
         // borderBottomWidth:1,
         // borderColor:"#cccccc"
     }),
@@ -149,7 +167,11 @@ const styles = {
         width: 100,
         backgroundColor:'#FFFFFF',
         marginTop:10
-    })
+    }),
+    marTopxs:RX.Styles.createViewStyle({
+        marginTop:58,
+        color:'#fa774d'
+    }),
 };
 
 export default class CompareQuotes extends RX.Component{
@@ -183,14 +205,276 @@ export default class CompareQuotes extends RX.Component{
                     <RX.Text style={ styles.welcome }>
                         Compare Quotes
                     </RX.Text>
-
                 </RX.View>
-                <RX.View style={ styles.client }>
+                <RX.View style={styles.clientSec}>
+                    <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTop}>
+                            {/*<RX.Text>Test</RX.Text>*/}
+                            {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            {/*<RX.Text>Test1</RX.Text>*/}
+                            <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                            {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            {/*<RX.Text>Test2</RX.Text>*/}
+                            <RX.Image source={ './src/img/ergo.png' } style={ [styles.image] } />
+                            {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            {/*<RX.Text>Test3</RX.Text>*/}
+                            <RX.Image source={ './src/img/oriental.png' } style={ [styles.image] } />
+                            {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
+                        </Col>
+                        {/*<Col  md={6} style={styling.marTop}>
+                            <RX.Button onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
+                            <RX.Button style={styling.button} onPress={ this.props.onNavigateEleven }>
+                                try
+                            </RX.Button>
+
+                        </Col>*/}
+                    </Row>
+
+                    <Row className="show-grid hidden-lg">
+                        <Col  xs={4} style={styling.marTop}>
+                            {/*<RX.Text>Test1</RX.Text>*/}
+                            <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                            {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
+                        </Col>
+                        <Col  xs={4} style={styling.marTop}>
+                            {/*<RX.Text>Test2</RX.Text>*/}
+                            <RX.Image source={ './src/img/ergo.png' } style={ [styles.image] } />
+                            {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
+                        </Col>
+                        <Col  xs={4} style={styling.marTop}>
+                            {/*<RX.Text>Test3</RX.Text>*/}
+                            <RX.Image source={ './src/img/oriental.png' } style={ [styles.image] } />
+                            {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
+                        </Col>
+                        {/*<Col  md={6} style={styling.marTop}>
+                            <RX.Button onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
+                            <RX.Button style={styling.button} onPress={ this.props.onNavigateEleven }>
+                                try
+                            </RX.Button>
+
+                        </Col>*/}
+                    </Row>
+
+                    <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTop}>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.clientText]}>Ergo Insurance</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.clientText]}>Oriental Insurance</RX.Text>
+                        </Col>
+
+                    </Row>
+                    <Row className="show-grid hidden-lg">
+                        <Col  xs={4} style={styling.marTop}>
+                            <RX.Text style={[styles.clientTextxs]}>Bharati Insurance</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop}>
+                            <RX.Text style={[styles.clientTextxs]}>Ergo Insurance</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop}>
+                            <RX.Text style={[styles.clientTextxs]}>Oriental Insurance</RX.Text>
+                        </Col>
+
+                    </Row>
+
+                    {/* <Row className="show-grid">
+                        <Col  md={3} style={styling.marTop}>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.clientText]}>Ergo Insurance</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.clientText]}>Oriental Insurance</RX.Text>
+                        </Col>
+                    </Row>*/}
+
+                    <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTopcs}>
+                            <RX.Text style={[styles.clientText]}>Sum Insured</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>3,21,402</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>3,41,402</RX.Text>
+                        </Col>
+                    </Row>
+
+                    <Row className="show-grid hidden-lg">
+                        <Col  xs={4} style={styling.marTop}>
+                            <div style={[styles.clientTextxs]}>Sum Insured</div>
+                            <RX.Text style={[styles.subText]}>3,21,402</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop40}>
+                            <RX.Text style={[styles.clientTextxs]}></RX.Text>
+                            <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop40}>
+                            <RX.Text style={[styles.clientTextxs]}></RX.Text>
+                            <RX.Text style={[styles.subText]}>3,41,402</RX.Text>
+                        </Col>
+                    </Row>
+
+                    <Row className="show-grid hidden-lg">
+                        <Col  xs={4} style={styling.marTop}>
+                            <div style={[styles.clientTextxs]}>Health Checkup</div>
+                            <RX.Text style={[styles.subText]}>3,21,402</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop40}>
+                            <RX.Text style={[styles.clientTextxs]}></RX.Text>
+                            <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop40}>
+                            <RX.Text style={[styles.clientTextxs]}></RX.Text>
+                            <RX.Text style={[styles.subText]}>3,41,402</RX.Text>
+                        </Col>
+                    </Row>
+
+                    <Row className="show-grid hidden-lg">
+                        <Col  xs={4} style={styling.marTop}>
+                            <div style={[styles.clientTextxs]}>Cancer Care Live</div>
+                            <RX.Text style={[styles.subText]}>3,21,402</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop40}>
+                            <RX.Text style={[styles.clientTextxs]}></RX.Text>
+                            <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop40}>
+                            <RX.Text style={[styles.clientTextxs]}></RX.Text>
+                            <RX.Text style={[styles.subText]}>3,41,402</RX.Text>
+                        </Col>
+                    </Row>
+
+                    <Row className="show-grid hidden-lg">
+                        <Col  xs={4} style={styling.marTop}>
+                            <div style={[styles.clientTextxs]}>Dengue Feaver</div>
+                            <RX.Text style={[styles.subText]}>3,21,402</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop40}>
+                            <RX.Text style={[styles.clientTextxs]}></RX.Text>
+                            <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop40}>
+                            <RX.Text style={[styles.clientTextxs]}></RX.Text>
+                            <RX.Text style={[styles.subText]}>3,41,402</RX.Text>
+                        </Col>
+                    </Row>
+
+
+
+                    <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTopcs}>
+                            <RX.Text style={[styles.clientText]}>Hospitalisation at Home</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>15%</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>20%</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>35%</RX.Text>
+                        </Col>
+                    </Row>
+
+                    <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTopcs}>
+                            <RX.Text style={[styles.clientText]}>Organ Donor Expenses</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>15%</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>20%</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>35%</RX.Text>
+                        </Col>
+                    </Row>
+
+                    <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTopcs}>
+                            <RX.Text style={[styles.clientText]}>Cancer Care Liver</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>
+                    </Row>
+
+                    <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTopcs}>
+                            <RX.Text style={[styles.clientText]}>Dengu Care</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>
+                    </Row>
+
+                    <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTopcs}>
+                            <RX.Text style={[styles.clientText]}>Hospitalisation at Home</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>
+                    </Row>
+
+                    <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTopcs}>
+                            <RX.Text style={[styles.clientText]}>Organ Donor Expenses</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>
+                    </Row>
+                </RX.View>
+                {/*<RX.View style={ styles.client }>
                     <Row className="show-grid" className="hidden-xs">
                         <Col  md={3} style={styling.marTop}>
                             <RX.View style={[styles.imageAlignement]}>
-                                {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
-                                {/*<RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>*/}
+                                <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                                <RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>
                                 <RX.Text style={[styles.clientTexted]}>Sum Insured</RX.Text>
                                 <RX.Text style={[styles.clientNcb]}>Health Checkup</RX.Text>
                                 <RX.Text style={[styles.clientNcb]}>Cancer Care Liver</RX.Text>
@@ -240,7 +524,7 @@ export default class CompareQuotes extends RX.Component{
                         </Col>
                     </Row>
                     <Row className="show-grid" className="hidden-lg">
-                        {/*<Col  xs={3} style={styling.marTop}>
+                        <Col  xs={3} style={styling.marTop}>
                             <RX.View style={[styles.imageAlignementxs]}>
                                 <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
                                 <RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>
@@ -252,7 +536,7 @@ export default class CompareQuotes extends RX.Component{
                                 <RX.Text style={[styles.clientNcb]}>Organ Donor Expenes</RX.Text>
 
                             </RX.View>
-                        </Col>*/}
+                        </Col>
                         <Col  xs={4} style={styling.marTop}>
                             <RX.View>
                                 <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
@@ -311,7 +595,7 @@ export default class CompareQuotes extends RX.Component{
                             </RX.View>
                         </Col>
                     </Row>
-                </RX.View>
+                </RX.View>*/}
 
 
 

@@ -125,6 +125,9 @@ const styles = {
         padding: 12,
         borderRadius: 8,
         borderColor: '#EF5350',
+    }),
+        logo:RX.Styles.createButtonStyle({
+        padding: 10,
 
     }),
     register: RX.Styles.createImageStyle({
@@ -290,6 +293,7 @@ export default class RegisterPage extends RX.Component{
                                                     placeholder="Bangalore,India"
                                                     secureTextEntry= {true}
                                                 />
+                                                <RX.Image source={ './src/img/MapPin.svg' } styles={styles.logo} />
                                             </FormGroup>
                                             
                                         </form>

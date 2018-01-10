@@ -13,13 +13,22 @@ import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,
 const styles = {
     scroll: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
-        backgroundColor: 'black'
+       
+        width:'100%'
+        
+    }),
+   Image: RX.Styles.createScrollViewStyle({
+    flex: 1,
+    width: null,
+    height: null,
+    resizeMode: 'cover'
+      
     }),
     container: RX.Styles.createViewStyle({
-        paddingTop: 60,
         flexGrow: 1,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+
 
     }),
     helloWorld: RX.Styles.createTextStyle({
@@ -146,11 +155,9 @@ const styles = {
         marginTop:20,
     }),
     image:RX.Styles.createViewStyle({
-        height: 45,
-        width: 471,
         fontsize:30,
-        backgroundColor:'black',
-        marginTop:10
+      height:100,
+      width:'100%'
     }), 
 };
 
@@ -183,16 +190,18 @@ export default class MainPanel extends RX.Component{
 
     render() {
         return (
+            <RX.Image source={ './src/img/policy.png' } style={ [styles.Image] } >
             <RX.ScrollView style={ styles.scroll }>
                 <RX.View style={ styles.container }>
+                
                 
                      
                    
                 <RX.Text style={ styles.welcome }>
                
-                        <RX.Image source={ './src/img/Logo.svg' } style={ [styles.image] } />
+                        <RX.Image source={ './src/img/Logo.svg' } style={ [styles.image] } >
                        
-                    </RX.Text>
+                    
                                        <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
                     {/* <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateForward}>
                         <RX.Text style={ styles.buttonText }>
@@ -210,8 +219,12 @@ export default class MainPanel extends RX.Component{
                         { 'Next' }
                     </RX.Text>
                 </RX.Button>
+                </RX.Image>
+                </RX.Text>
+                
                     </RX.View>
             </RX.ScrollView>
+            </RX.Image>
 
         );
     }
