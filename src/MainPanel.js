@@ -145,6 +145,13 @@ const styles = {
     marTop:RX.Styles.createViewStyle({
         marginTop:20,
     }),
+    image:RX.Styles.createViewStyle({
+        height: 45,
+        width: 471,
+        fontsize:30,
+        backgroundColor:'black',
+        marginTop:10
+    }), 
 };
 
 export default class MainPanel extends RX.Component{
@@ -181,11 +188,12 @@ export default class MainPanel extends RX.Component{
                 
                      
                    
-                <RX.Text style={ styles.welcome }>Ready</RX.Text>
-                
-                <RX.Text style={ styles.Welcome }>Policy</RX.Text>
-             
-                    <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
+                <RX.Text style={ styles.welcome }>
+               
+                        <RX.Image source={ './src/img/Logo.svg' } style={ [styles.image] } />
+                       
+                    </RX.Text>
+                                       <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
                     {/* <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateForward}>
                         <RX.Text style={ styles.buttonText }>
                             Go Back

@@ -46,6 +46,7 @@ export default class InsuranceAddons extends RX.Component{
     }
 
     render() {
+        console.log(this.props.user,"user");
         return (
             <RX.ScrollView style={ _styles.scroll }>
                 <RX.View style={ styling.container }>

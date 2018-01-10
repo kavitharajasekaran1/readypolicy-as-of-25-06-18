@@ -41,7 +41,12 @@ module.exports = {
         fontSize: 18,
         color: '#232229',
         textTransform:'capitalize',
-        marginLeft:54,
+        marginTop:19
+    }),
+    sideHeadxs: RX.Styles.createScrollViewStyle({
+        fontSize: 10,
+        color: '#232229',
+        textTransform:'capitalize',
         marginTop:19
     }),
     quotes: RX.Styles.createScrollViewStyle({
@@ -51,8 +56,16 @@ module.exports = {
         marginTop:32,
         height:41,
         width:169,
-        padding:4,
-        marginLeft:71
+        padding:4
+    }),
+    quotesxs: RX.Styles.createScrollViewStyle({
+        fontSize: 10,
+        color: '#ff0000',
+        textTransform:'capitalize',
+        marginTop:32,
+        height:41,
+        width:169,
+        padding:4
     }),
     valid: RX.Styles.createScrollViewStyle({
         fontSize: 15,
@@ -109,13 +122,23 @@ module.exports = {
         color: '#3b3a47',
         textTransform:'capitalize'
     }),
+    tryHeadxs: RX.Styles.createScrollViewStyle({
+        fontSize: 15,
+        color: '#3b3a47',
+        textTransform:'capitalize'
+    }),
     clientHead: RX.Styles.createScrollViewStyle({
         fontSize: 20,
         color: '#413a6f',
         textTransform:'capitalize'
     }),
-    clientDate: RX.Styles.createScrollViewStyle({
+    clientHeadxs: RX.Styles.createScrollViewStyle({
         fontSize: 15,
+        color: '#413a6f',
+        textTransform:'capitalize'
+    }),
+    clientDate: RX.Styles.createScrollViewStyle({
+        fontSize: 10,
         color: '#85848c',
         textTransform:'capitalize'
     }),
@@ -127,6 +150,16 @@ module.exports = {
         flex:1,
         flexDirection:'row',
         borderBottomWidth:2,
+        borderColor:"#ff0000"
+    }),
+    clientLeft: RX.Styles.createViewStyle({
+        justifyContent: 'center',
+        alignItems: 'left',
+        backgroundColor:'#ffffff',
+        padding:5,
+        flex:1,
+        flexDirection:'row',
+        borderLeftWidth:2,
         borderColor:"#ff0000"
     }),
     expired: RX.Styles.createViewStyle({
@@ -168,7 +201,7 @@ module.exports = {
         width: 320
     }),
     roundButton: RX.Styles.createViewStyle({
-        margin: 16,
+        marginTop: 16,
         borderRadius: 5,
         backgroundColor: '#2ecc71'
     }),
@@ -300,6 +333,19 @@ module.exports = {
     }),
     marTop:RX.Styles.createViewStyle({
       marginTop:20
+    }),
+    btnMaxWidth:RX.Styles.createViewStyle({
+        width:"100%"
+    }),
+    marTop10:RX.Styles.createViewStyle({
+        marginTop:10
+    }),
+    mobFont:RX.Styles.createViewStyle({
+        color:"#000000",
+        padding:'5'
+    }),
+    marTop17:RX.Styles.createViewStyle({
+        marginTop:17
     })
 }
 

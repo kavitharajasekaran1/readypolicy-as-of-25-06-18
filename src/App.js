@@ -92,10 +92,13 @@ export default class App extends RX.Component {
     }
 
     _onNavigatorRef(navigator) {
+        console.log(navigator,"navigator");
+
         this._navigator = navigator;
     }
-
     _renderScene(navigatorRoute) {
+        console.log(navigatorRoute,"navigatorRoute");
+        var user ={name:"test"};
         switch (navigatorRoute.routeId) {
             case NavigationRouteId.OtpPage:
                 return <OtpPage onPressNavigate={ this._onPressNavigate }/>;
@@ -119,10 +122,10 @@ export default class App extends RX.Component {
                 return <Location onNavigateSeven={ this._onPressSeven }/>;
 
             case NavigationRouteId.VehicleDetails:
-                return <VehicleDetails onNavigateEight={ this._onPressEight }/>;
+                return <VehicleDetails onNavigateEight={ this._onPressEight } />;
 
             case NavigationRouteId.MyPolicy:
-                return <MyPolicy onNavigateNine={ this._onPressNine }/>;
+                return <MyPolicy onNavigateNine={ this._onPressNine }  navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.InsuranceAddons:
                 return <InsuranceAddons onNavigateTen={ this._onPressTen }/>;
@@ -133,11 +136,11 @@ export default class App extends RX.Component {
             case NavigationRouteId.PaymentScreen:
                 return <PaymentScreen onNavigatePayment={ this._onPressPayment }/>;
 
-            
-                case NavigationRouteId.TravelInsuranceReg:
+
+            case NavigationRouteId.TravelInsuranceReg:
                 return <TravelInsuranceReg onNavigateThirteen={ this._onPressTravel }/>;
 
-                case NavigationRouteId.NewTermInsurance:
+            case NavigationRouteId.NewTermInsurance:
                 return <NewTermInsurance onNavigateThirteen={ this._onPressNewTermInsurance }/>;
 
 
@@ -206,17 +209,21 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressEight() {
-        // this._navigator.pop();
+
+    _onPressEight(res) {
+        var res=res;
         this._navigator.push({
             routeId: NavigationRouteId.MyPolicy,
+            res:res,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
             }
+
         });
     }
-    _onPressNine() {
+    _onPressNine(res) {
+        console.log(res,"res");
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.InsuranceAddons,
@@ -273,7 +280,7 @@ export default class App extends RX.Component {
                 hideShadow: true
             }
         });
-        }
+    }
 
     _onPressBack() {
         this._navigator.push({
@@ -283,5 +290,5 @@ export default class App extends RX.Component {
                 hideShadow: true
             }
         });
-        }
+    }
 };

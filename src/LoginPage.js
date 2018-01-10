@@ -204,6 +204,13 @@ const styles = {
         marginBottom: 30,
         color: 'WHITE'
     }),
+    image:RX.Styles.createViewStyle({
+        height: 45,
+        width:221,
+        fontsize:30,
+        backgroundColor:'black',
+        marginTop:10
+    }), 
 };
     
 export default class LoginPage extends RX.Component{
@@ -270,10 +277,10 @@ export default class LoginPage extends RX.Component{
             
                  
                
-            <RX.Text style={ styles.welcome }>Ready</RX.Text>
-            
-            <RX.Text style={ styles.Welcome }>Policy</RX.Text>
-         
+            <RX.Text style={ styles.welcome }>
+            <RX.Image source={ './src/img/Logo.svg' } style={ [styles.image] } />
+        
+         </RX.Text>
                 <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
             <RX.Text style={styles.Policy}>Please Enter Your Phone Number To Login/Register</RX.Text>
             <RX.Text style={styles.POlicy}>

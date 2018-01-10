@@ -4,6 +4,8 @@
 
 import React from 'react';
 import RX from 'reactxp';
+import styling from './AppStyles';
+import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,DateTimeField,Checkbox,Button} from 'react-bootstrap';
 const styles = {
     scroll: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
@@ -81,6 +83,12 @@ const styles = {
         // borderBottomWidth:1,
         // borderColor:"#cccccc"
     }),
+    clientedText: RX.Styles.createViewStyle({
+        color:'#000000',
+        fontSize:'10'
+        // borderBottomWidth:1,
+        // borderColor:"#cccccc"
+    }),
     clientTexted: RX.Styles.createViewStyle({
         color:'#413a6f',
         fontSize:'10',
@@ -98,7 +106,7 @@ const styles = {
     subText: RX.Styles.createViewStyle({
         color:'#fa774d',
         fontSize:'10',
-        marginTop:42
+        marginTop:22
 
         // borderBottomWidth:1,
         // borderColor:"#cccccc"
@@ -116,6 +124,9 @@ const styles = {
     }),
     imageAlignement: RX.Styles.createViewStyle({
         marginLeft:100,
+        marginTop:168
+    }),
+    imageAlignementxs: RX.Styles.createViewStyle({
         marginTop:168
     }),
     imageAligned: RX.Styles.createViewStyle({
@@ -174,15 +185,141 @@ export default class CompareQuotes extends RX.Component{
                     </RX.Text>
 
                 </RX.View>
-
-
-
-
-
                 <RX.View style={ styles.client }>
+                    <Row className="show-grid" className="hidden-xs">
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.View style={[styles.imageAlignement]}>
+                                {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
+                                {/*<RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>*/}
+                                <RX.Text style={[styles.clientTexted]}>Sum Insured</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Health Checkup</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Cancer Care Liver</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Denuge Care</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Hospitalistaion at Home</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Organ Donor Expenes</RX.Text>
+                            </RX.View>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.View style={[styles.imageAlign]}>
+                                <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                                <RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>
+                                <RX.Text style={[styles.subText]}>3,21,402</RX.Text>
+                                <RX.Text style={[styles.subPer]}>10%</RX.Text>
+                                <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                                <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                                <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                                <RX.Text style={[styles.subPer]}>2 Claims Per Year</RX.Text>
+                            </RX.View>
+
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.View style={[styles.imageAlign]}>
+
+                                <RX.Image source={ './src/img/ergo.png' } style={ [styles.image] } />
+                                <RX.Text style={[styles.clientText]}>Ergo Insurance</RX.Text>
+                                <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
+                                <RX.Text style={[styles.subPer]}>15%</RX.Text>
+                                <RX.Text style={[styles.subPer]}>3 Garages Near You</RX.Text>
+                                <RX.Text style={[styles.subPer]}>3,45,000</RX.Text>
+                                <RX.Text style={[styles.subPer]}>3,45,000</RX.Text>
+                                <RX.Text style={[styles.subPer]}>1 Claims Per Year</RX.Text>
+                            </RX.View>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.View style={[styles.imageAlign]}>
+
+                                <RX.Image source={ './src/img/oriental.png' } style={ [styles.image] } />
+                                <RX.Text style={[styles.clientText]}>Oriental Insurance</RX.Text>
+                                <RX.Text style={[styles.subText]}>3,10,402</RX.Text>
+                                <RX.Text style={[styles.subPer]}>20%</RX.Text>
+                                <RX.Text style={[styles.subPer]}>2 Garages Near You</RX.Text>
+                                <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                                <RX.Text style={[styles.subPer]}>3.60,000</RX.Text>
+                                <RX.Text style={[styles.subPer]}>3 Claims Per Year</RX.Text>
+                            </RX.View>
+                        </Col>
+                    </Row>
+                    <Row className="show-grid" className="hidden-lg">
+                        {/*<Col  xs={3} style={styling.marTop}>
+                            <RX.View style={[styles.imageAlignementxs]}>
+                                <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                                <RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>
+                                <RX.Text style={[styles.clientTexted]}>Sum Insured</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Health Checkup</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Cancer Care Liver</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Denuge Care</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Hospitalistaion at Home</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Organ Donor Expenes</RX.Text>
+
+                            </RX.View>
+                        </Col>*/}
+                        <Col  xs={4} style={styling.marTop}>
+                            <RX.View>
+                                <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                                <RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>
+                                <RX.Text style={[styles.clientedText]}>Sum Insured</RX.Text>
+                                <RX.Text style={[styles.subText]}>3,21,402</RX.Text>
+                                <RX.Text style={[styles.clientedText]}>Health Checkup</RX.Text>
+                                <RX.Text style={[styles.subPer]}>10%</RX.Text>
+                                <RX.Text style={[styles.clientedText]}>Cancer Care Liver</RX.Text>
+                                <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                                <RX.Text style={[styles.clientedText]}>Denuge Care</RX.Text>
+                                <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                                <RX.Text style={[styles.clientedText]}>Hospitalistaion at Home</RX.Text>
+                                <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                                <RX.Text style={[styles.clientedText]}>Organ Donor Expenes</RX.Text>
+                                <RX.Text style={[styles.subPer]}>2 Claims Per Year</RX.Text>
+                            </RX.View>
+
+                        </Col>
+                        <Col  xs={4} style={styling.marTop}>
+                            <RX.View>
+
+                                <RX.Image source={ './src/img/ergo.png' } style={ [styles.image] } />
+                                <RX.Text style={[styles.clientText]}>Ergo Insurance</RX.Text>
+                                <RX.Text style={[styles.clientText]}></RX.Text>
+                                <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>15%</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>3 Garages Near You</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>3,45,000</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>3,45,000</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>1 Claims Per Year</RX.Text>
+                            </RX.View>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop}>
+                            <RX.View>
+
+                                <RX.Image source={ './src/img/oriental.png' } style={ [styles.image] } />
+                                <RX.Text style={[styles.clientText]}>Oriental Insurance</RX.Text>
+                                <RX.Text style={[styles.clientText]}></RX.Text>
+                                <RX.Text style={[styles.subText]}>3,10,402</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>20%</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>2 Garages Near You</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>3.60,000</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>3 Claims Per Year</RX.Text>
+                            </RX.View>
+                        </Col>
+                    </Row>
+                </RX.View>
+
+
+
+
+                {/*<RX.View style={ styles.client }>
                     <RX.View style={[styles.imageAlignement]}>
-                        {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
-                        {/*<RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>*/}
+                        <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                        <RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>
                         <RX.Text style={[styles.clientTexted]}>Insured Declared Value</RX.Text>
                         <RX.Text style={[styles.clientNcb]}>NCB</RX.Text>
                         <RX.Text style={[styles.clientNcb]}>Cashless Garage</RX.Text>
@@ -258,7 +395,7 @@ export default class CompareQuotes extends RX.Component{
                     </RX.View>
 
 
-                </RX.View>
+                </RX.View>*/}
                 <RX.View style={ styles.clientNorm }></RX.View>
 
                 <RX.Button style={ styles.roundButton }  onPress={ this.props.onNavigateBack }>
