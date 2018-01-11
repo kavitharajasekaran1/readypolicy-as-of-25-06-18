@@ -283,8 +283,10 @@ export default class RegisterPage extends RX.Component{
                                            Location
                                         </RX.Text>
                                         <form>
+                                        
                                             <FormGroup
                                                 controlId="formBasicText"
+                                                
                                             >
                                                 {/*<ControlLabel>Working example with validation</ControlLabel>*/}
                                                 <FormControl
@@ -292,8 +294,10 @@ export default class RegisterPage extends RX.Component{
                                                     value={this.state.value}
                                                     placeholder="Bangalore,India"
                                                     secureTextEntry= {true}
-                                                />
+                                                  />  
+                                               
                                                 <RX.Image source={ './src/img/MapPin.svg' } styles={styles.logo} />
+                                        
                                             </FormGroup>
                                             
                                         </form>

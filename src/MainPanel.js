@@ -13,24 +13,29 @@ import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,
 const styles = {
     scroll: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
+        flex:1,
        
-        width:'100%'
+        
         
     }),
    Image: RX.Styles.createScrollViewStyle({
     flex: 1,
-    width: null,
-    height: null,
-    resizeMode: 'cover'
+    width: '100%',
+    height: '400%',
+    resizemode:'cover'
+   
       
     }),
     container: RX.Styles.createViewStyle({
         flexGrow: 1,
         alignItems: 'center',
         justifyContent: 'center',
-
+        width: '100%',
+        height: '400%',
+        resizemode:'cover'
 
     }),
+    
     helloWorld: RX.Styles.createTextStyle({
         fontSize: 48,
         fontWeight: 'bold',
@@ -66,17 +71,14 @@ const styles = {
 
     }),
     policy:RX.Styles.createTextStyle({
-        paddingTop: 45,
-        color: 'white',
-        textAlign: 'center',
-        opacity: 0.9,
-        marginTop: -38,
-        width: 350,
+        fontSize: 18,
+        marginBottom: 16,
+        color:'White',
         justifyContent: 'center',
-        fontweight: 'bold',
-        padingleft: 149,
-        fontSize:20,
-        marginLeft:-10
+        position: 'absolute',
+        alignSelf: 'center',
+        marginLeft: -78,
+                marginTop:106
        
     }),
         
@@ -155,10 +157,16 @@ const styles = {
         marginTop:20,
     }),
     image:RX.Styles.createViewStyle({
+        height: 90,
+        width:'100%',
         fontsize:30,
-      height:100,
-      width:'100%'
+        marginleft:20
     }), 
+    backgroundImage:RX.Styles.createViewStyle({
+        flex: 1,
+        alignSelf: "stretch",
+    }),
+    
 };
 
 export default class MainPanel extends RX.Component{
@@ -171,7 +179,7 @@ export default class MainPanel extends RX.Component{
         this._animatedStyle = RX.Styles.createAnimatedTextStyle({
             transform: [
                 {
-                    translateY: this._translationValue
+                    translateY: this._translationvalue
                 }
             ]
         });
@@ -190,13 +198,12 @@ export default class MainPanel extends RX.Component{
 
     render() {
         return (
-            <RX.Image source={ './src/img/policy.png' } style={ [styles.Image] } >
-            <RX.ScrollView style={ styles.scroll }>
-                <RX.View style={ styles.container }>
-                
-                
-                     
-                   
+            <RX.Image
+            source={ './src/img/Main.jpg' }
+            resizeMode="cover"
+            style={[styles.backgroundImage]}
+        >
+               <RX.View style={ styles.container }>
                 <RX.Text style={ styles.welcome }>
                
                         <RX.Image source={ './src/img/Logo.svg' } style={ [styles.image] } >
@@ -220,12 +227,9 @@ export default class MainPanel extends RX.Component{
                     </RX.Text>
                 </RX.Button>
                 </RX.Image>
-                </RX.Text>
-                
+                </RX.Text> 
                     </RX.View>
-            </RX.ScrollView>
-            </RX.Image>
-
+                    </RX.Image>
         );
     }
 }

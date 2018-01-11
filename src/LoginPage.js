@@ -210,7 +210,11 @@ const styles = {
         fontsize:30,
         backgroundColor:'black',
         marginTop:10
-    }), 
+    }),
+    backgroundImage :RX.Styles.createViewStyle({
+        flex: 1,
+        alignSelf: "stretch",
+    }),
 };
     
 export default class LoginPage extends RX.Component{
@@ -272,6 +276,10 @@ export default class LoginPage extends RX.Component{
 
     render() {
         return (
+            <RX.Image source={ './src/img/Main.jpg' }
+            resizeMode="cover"
+
+            style={[styles.backgroundImage]}>
             <RX.ScrollView style={ styles.scroll }>
             <RX.View style={ styles.container }>
             
@@ -282,7 +290,7 @@ export default class LoginPage extends RX.Component{
         
          </RX.Text>
                 <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
-            <RX.Text style={styles.Policy}>Please Enter Your Phone Number To Login/Register</RX.Text>
+            <RX.Text style={styles.Policy}>Please Enter Your phone Number To Login/Register</RX.Text>
             <RX.Text style={styles.POlicy}>
             <form>
                                             <FormGroup
@@ -320,7 +328,7 @@ export default class LoginPage extends RX.Component{
                                     </Row>
                 
             </RX.ScrollView>
-
+</RX.Image>
         );
     }
 }
