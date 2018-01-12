@@ -4,18 +4,30 @@
 
 import React from 'react';
 import RX from 'reactxp';
+import Rest from './RestConfig';
+import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,} from 'react-bootstrap';
 /*const {
     Welcome
 } = TodoStyles;*/
 const styles = {
     scroll: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
-        backgroundColor: '#f5fcff'
+        backgroundColor: 'BLACK'
     }),
     container: RX.Styles.createViewStyle({
         padding: 16,
         justifyContent: 'center',
-        alignItems: 'center'
+        position: 'absolute',
+        display: 'flex',
+        flexdirection: 'column',
+        flexgrow: 1,
+        flexshrink: 1,
+        overflow: 'hidden',
+        alignitems: 'stretch',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        top: 0,
     }),
     helloWorld: RX.Styles.createTextStyle({
         fontSize: 48,
@@ -23,20 +35,75 @@ const styles = {
         marginBottom: 28
     }),
     welcome: RX.Styles.createTextStyle({
-        position: 'absolute',
-        top: 115,
-        left: 396,
-        color: 'white',
-        fontSize: 80,
-        textTransform:'capitalize'
+        color: 'Red',
+        alignSelf: 'center',
+        opacity: 0.9,
+        marginTop: -175,
+        width: 350,
+        justifyContent: 'center',
+        fontweight: 'bold',
+        fontSize:35,
+        marginLeft:65,
+        textstyle:'italic',
+        position:'absolute'
+
+
     }),
     Welcome: RX.Styles.createTextStyle({
-        position: 'absolute',
-        top: 119,
-        left: 651,
-        fontSize: 80,
-        color: 'orange'
+        
+        color: 'white',
+        alignSelf: 'center',
+        opacity: 0.9,
+        marginTop: -175,
+        width: 350,
+        justifyContent: 'center',
+        fontweight: 'bold',
+        fontSize:35,
+        marginLeft:190,
+        position: 'absolute'
+
     }),
+    policy:RX.Styles.createTextStyle({
+        fontSize: 18,
+        marginBottom: 16,
+        color:'White',
+        justifyContent: 'center',
+        position: 'absolute',
+        alignSelf: 'center',
+        marginLeft: 1,
+        marginTop:-122
+    }),
+    Policy:RX.Styles.createTextStyle({
+        fontSize: 18,
+        marginBottom: 16,
+        color:'White',
+        justifyContent: 'center',
+        position: 'absolute',
+        alignSelf: 'center',
+        marginLeft: 1,
+        marginTop:3,
+        textAlign: 'center'
+
+    }),
+    POlicy:RX.Styles.createTextStyle({
+        fontSize: 18,
+        marginBottom: 16,
+        color:'White',
+        justifyContent: 'center',
+        position: 'absolute',
+        alignSelf: 'center',
+        marginLeft: 1,
+        marginTop:120,
+        textAlign: 'center'
+
+    }),
+        
+    text: RX.Styles.createTextStyle({
+        fontSize: 30,
+        marginBottom: 30,
+        color: 'white',
+    }),
+
     instructions: RX.Styles.createTextStyle({
         fontSize: 16,
         color: '#aaa',
@@ -50,63 +117,83 @@ const styles = {
     roundButton: RX.Styles.createViewStyle({
         margin: 16,
         borderRadius: 16,
-        backgroundColor: '#7d88a9'
-    }),
+        backgroundColor: '#ff0000ab',
+        justifyContent: 'CENTER'
+        }),
     buttonText: RX.Styles.createTextStyle({
         fontSize: 16,
         marginVertical: 6,
-        marginHorizontal: 12,
+        marginHorizontal: 1,
         color: 'white'
     }),
     business: RX.Styles.createImageStyle({
-        height: 821,
-        width: 2392,
-        marginTop:10,
+        position: 'absolute',
+        display: 'flex',
+        flexdirection: 'column',
+        flexgrow: 1,
+        flexshrink: 1,
+        overflow: 'hidden',
+        alignitems: 'stretch',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        top: 0,
+       
+    }),
+    button1Hover: RX.Styles.createButtonStyle({
+        backgroundColor: '#EF5350'
+    }),
+    button1Text: RX.Styles.createTextStyle({
+        fontSize: 14,
+        color: '#EF5350',
+        justifyContent: 'center',
+        textAlign:'CENTER',
+        alignSelf:'center'
+    }),
+    button1TextHover: RX.Styles.createTextStyle({
+        fontSize: 14,
+        color: 'White',
+        justifyContent: 'center',
+        margingright:50,
+        justifyContent: 'center',
+        textAlign:'CENTER',
+        alignSelf:'center'
+    }),
+    Form:RX.Styles.createViewStyle({
+        display: 'block',
+         width: '100%',
+         height: 34,
+         // padding: 6px 12px;
+          fontSize: 14,
+        // line: 1.42857143;
+        color: "white",
+        backgroundColor: "grey",
+        borderWidth:1,
+        borderColor:"white",
+        borderRadius: 4,
+    }),
+    button1: RX.Styles.createButtonStyle({
+        backgroundColor: '#ddd',
+        borderWidth: 1,
+        margin: 20,
+        padding: 12,
+        borderRadius: 8,
+        borderColor: '#EF5350',
+        marginTop:500,
 
     }),
-    text: RX.Styles.createTextStyle({
-        fontSize: 30,
-        position: 'absolute',
-        top: 244,
-        left: 507,
-        marginBottom: 30,
-        color: 'white',
+    loginscreenLogoContainer:RX.Styles.createButtonStyle({
+        paddingTop: 60,
+        flexGrow: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
     }),
-    Text: RX.Styles.createTextStyle({
-        fontSize: 30,
-        position: 'absolute',
-        top: 342,
-        left: 331,
-        marginBottom: 30,
+    loginTitle1: RX.Styles.createButtonStyle({
         color: 'white',
-    }),
-        roundButton: RX.Styles.createViewStyle({
-            margin: 16,
-            borderRadius: 5,
-            backgroundColor: '#2ecc71'
-        }),
-        editTodoItem: RX.Styles.createViewStyle({
-            margin: 15,
-            height: 47,
-            fontSize: 20,
-            justifyContent: 'center',
-            alignSelf: 'center',
-            marginLeft: 16,
-            borderWidth: 2,
-            bordercolor: '#cccccc'
-        }),
-        email: RX.Styles.createTextStyle({
-            fontSize: 18,
-            color: 'Black',
-            justifyContent: 'center',
-            position: 'absolute'
-
-        }),
-    Input: RX.Styles.createTextStyle({
-        marginHorizontal: 4,
-        marginVertical: 30,
-        paddingHorizontal: 8,
-        position: 'absolute',
+        textAlign: 'center',
+        alignSelf: 'center',
+        justifyContent: 'center',
+       
 
     }),
     TEXT: RX.Styles.createTextStyle({
@@ -117,92 +204,131 @@ const styles = {
         marginBottom: 30,
         color: 'WHITE'
     }),
-    roundButton: RX.Styles.createViewStyle({
-        margin: 16,
-        borderRadius: 9,
-        backgroundColor: '#2ecc71',
-        marginTop: -239
+    image:RX.Styles.createViewStyle({
+        height: 45,
+        width:221,
+        fontsize:30,
+        backgroundColor:'black',
+        marginTop:10
     }),
-    buybuttonText: RX.Styles.createTextStyle({
-        fontSize: 16,
-        marginVertical: 6,
-        marginHorizontal: 12,
-        color: 'white'
+    backgroundImage :RX.Styles.createViewStyle({
+        flex: 1,
+        alignSelf: "stretch",
     }),
 };
-
+    
 export default class LoginPage extends RX.Component{
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
-            password: '',
-            secureTextEntry: true
-        }
-        this._translationValue = RX.Animated.createValue(-100);
-        this._animatedStyle = RX.Styles.createAnimatedTextStyle({
-            transform: [
-                {
-                    translateY: this._translationValue
-                }
-            ]
-        });
+            phone:'',
+        };
     }
-    // onForward() {
-    // console.log("Registerpage");
-    // this
-    // .props
-    // .navigation
-    // .navigate('RegisterPage');
-// }*
 
-
-    componentDidMount() {
-        let animation = RX.Animated.timing(this._translationValue, {
-                toValue: 0,
-                easing: RX.Animated.Easing.OutBack(),
-                duration: 500
-            }
-        );
-
-        animation.start();
+    onChangeDummy = () => {
+        this.state = {
+            
+            phone:'9553715856',
+          
+        };
     }
+
+    onChangePost = () => {
+        let {
+            testValue = 'testValue',
+            phone='phone',
+            
+        } = this.state;
+
+        let password = "donkeybrains";
+        let myApiUrl = 'http://119.81.59.59:8082'
+        let usersPath = "newLogin"
+        console.log(phone,"phone");
+        console.log(myApiUrl,"myApiUrl");
+
+
+        console.log(Rest.ApiUrl,"RestApiUrl",phone);
+        fetch(`${Rest.ApiUrl}/${usersPath}`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNWExYmFhNTYyYzZiOTEzNzYzMmM3ZWVjIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiJqWmFlNzI3SzA4S2FPbUtTZ09hR3p3dy9YVnFHci9QS0VnSU1ranJjYkpJPSIsInJhcGlkSUQiOiJCd2JNd0E2YjFIaEUxNC91TFdweVJXS3EzMytBVUJINnd6UjZtQzh0OUowPSIsInVzZXJPYmplY3QiOnsiZm5hbWUiOiJhcnVuIiwibG5hbWUiOiJob3NzYW1hbmkiLCJwaG9uZSI6IjkxODM2OTk2NDU4MiJ9LCJ1c2VydHlwZSI6IkRpcmVjdCBDbGllbnRzIiwib3RwIjoxMTAwLCJlbmNvZGVkTWFpbCI6IllYSjFiaTVvYjNOellXMWhibWxBY21Gd2FXUnhkV0psTG1OdmJRPT0iLCJjcmVhdGVkX2F0IjoiTW9uIE5vdiAyNyAyMDE3IDExOjMxOjU4IEdNVCswNTMwIChJU1QpIiwiY291bnQiOjAsIl9fdiI6MCwic3RhdHVzIjpbInBob25lIiwiZW1haWwiXX1dLCJpYXQiOjE1MTUwNTA3NDcsImV4cCI6MTUxNTExMDc0N30.xZ_K-mE7WfAszkFrGMATmm9EpCmtYgdOyydVL4HGPVk'
+            },
+            body: JSON.stringify({"phone":phone})
+        }).then((response) => response.json()).then((responseJson) => {
+            var res = responseJson.message;
+            console.log(res,"res");
+            this.props.onNavigateForth(res);
+        })
+    }
+
+    onChangeTextValue = (value) => {
+        this.setState({ inputValue: value });
+        console.log(this.state.inputValue,"inputValue");
+    }
+
+    onChangePhone = (value) => {
+        this.setState({ phone: value });
+        console.log(this.state.phone,"phone");
+    }
+        
 
     render() {
         return (
-            <RX.ScrollView style={ styles.scroll }>
-                <RX.View style={ styles.container }>
-                    <RX.Image source={ './src/img/business.jpg' } style={ [styles.business] } />
-                    <RX.Text style={ styles.welcome }>
-                        Ready
-                    </RX.Text>
-                    <RX.Text style={ styles.Welcome }>
-                        Policy
-                    </RX.Text>
-                    <RX.Text style={ styles.text}>
-                        Your policy partner
-                        </RX.Text>
-                    <RX.Text style={ styles.Text}>
-                        Please Enter Your Phone Number To Login/Register
-                        </RX.Text> 
-                    <RX.Text style={ styles.TEXT}>
-                        Phone Number
-                    <RX.TextInput
-                        style={ styles.editTodoItem }
-                        value={ this.state.email }
-                        placeholder={ '+91' }
-                        autoFocus={ true }
-                        textAlign={ 'left' }
-                    />
-                    </RX.Text>
-                    <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateForth }>
-                        <RX.Text style={ styles.buybuttonText }>
-                            NEXT
-                        </RX.Text>
-                    </RX.Button>
-                </RX.View>
-            </RX.ScrollView>
+            <RX.Image source={ './src/img/Main.jpg' }
+            resizeMode="cover"
 
+            style={[styles.backgroundImage]}>
+            <RX.ScrollView style={ styles.scroll }>
+            <RX.View style={ styles.container }>
+            
+                 
+               
+            <RX.Text style={ styles.welcome }>
+            <RX.Image source={ './src/img/Logo.svg' } style={ [styles.image] } />
+        
+         </RX.Text>
+                <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
+            <RX.Text style={styles.Policy}>Please Enter Your phone Number To Login/Register</RX.Text>
+            <RX.Text style={styles.POlicy}>
+            <form>
+                                            <FormGroup
+                                                controlId="formBasicText"
+                                            >
+                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
+                                                <FormControl
+                                                    type="text"
+                                                    value={this.state.value}
+                                                    placeholder="+91"
+                                                    secureTextEntry= {true}
+                                                />
+                                            </FormGroup>
+                                        </form>
+                                        </RX.Text>
+                   <RX.Button
+                    style={ [styles.button1, this.state.button1Hover && styles.button1Hover] }
+                    onHoverStart={ () => { this.setState({ button1Hover: true }) } }
+                    onHoverEnd={ () => { this.setState({ button1Hover: false }) } }
+                    onPress={this.props.onNavigateForth }
+                >
+                    <RX.Text style={ [styles.button1Text, this.state.button1Hover && styles.button1TextHover] }>
+                        { 'Next' }
+                    </RX.Text>
+                </RX.Button>
+                </RX.View>
+                <Row className="show-grid">
+                                        <Col  md={6}>
+                                            <RX.Button bsStyle="primary"  onPress={()=> this.onChangePost() }>Post</RX.Button>
+                                        </Col>
+                                        <Col  md={6}>
+                                            <RX.Button bsStyle="warning"  onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
+                                        </Col>
+
+                                    </Row>
+                
+            </RX.ScrollView>
+</RX.Image>
         );
     }
 }
