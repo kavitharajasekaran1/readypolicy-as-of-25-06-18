@@ -46,7 +46,10 @@ const _styles = {
     head: RX.Styles.createScrollViewStyle({
         fontSize: 30,
         color: '#3b3751',
-        textTransform:'capitalize'
+        textTransform:'capitalize',
+        justifyContent:'center',
+        alignself:'center',
+        textAlign:'center'
     }),
     sideHead: RX.Styles.createScrollViewStyle({
         fontSize: 18,
@@ -289,14 +292,14 @@ export default class QuotesSelection  extends RX.Component {
                     </RX.View>
                     <Grid className="hidden-xs">
                     <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/Bharti.png' } style={ [_styles.image] } />
+                        <RX.Image source={ './src/img/bajaj.png' } style={ [_styles.image] } />
 
                         <RX.Text style={ _styles.sideHead }>
-                            Bharathi Axa Life Insurance
+                             Bajaj Allianz
                             <div style={_styles.tryHead}>Single Year Cover Only</div>
                         </RX.Text>
                         <RX.Text style={ _styles.quotes }>
-                            IDV
+                          IDV
                             <div>NCB</div>
                         </RX.Text>
                         <RX.Text style={ _styles.ncb }>
@@ -319,7 +322,7 @@ export default class QuotesSelection  extends RX.Component {
                         <Row className="show-grid" style={styling.clientLeft} >
 
                             <Col xs={4}>
-                                <RX.Image source={ './src/img/Bharti.png' } style={ [styling.image] } />
+                                <RX.Image source={ './src/img/bajaj.png' } style={ [styling.image] } />
                             </Col>
                             <Col  xs={4} style={styling.marTop17 }>
                                 <div style={styling.clientHeadxs}>Bajaj Allianz</div>
@@ -343,7 +346,7 @@ export default class QuotesSelection  extends RX.Component {
                         <Row className="show-grid" style={styling.clientLeft} >
 
                             <Col xs={4}>
-                                <RX.Image source={ './src/img/Bharti.png' } style={ [styling.image] } />
+                                <RX.Image source={ './src/img/icici.png' } style={ [styling.image] } />
                             </Col>
                             <Col  xs={4} style={styling.marTop17 }>
                                 <div style={styling.clientHeadxs}>Bajaj Allianz</div>
@@ -367,7 +370,7 @@ export default class QuotesSelection  extends RX.Component {
                     <Row className="show-grid" style={styling.clientLeft} >
 
                         <Col xs={4}>
-                            <RX.Image source={ './src/img/Bharti.png' } style={ [styling.image] } />
+                            <RX.Image source={ './src/img/tata.png' } style={ [styling.image] } />
                         </Col>
                         <Col  xs={4} style={styling.marTop17 }>
                             <div style={styling.clientHeadxs}>Bajaj Allianz</div>
@@ -391,7 +394,7 @@ export default class QuotesSelection  extends RX.Component {
                         <Row className="show-grid" style={styling.clientLeft} >
 
                             <Col xs={4}>
-                                <RX.Image source={ './src/img/Bharti.png' } style={ [styling.image] } />
+                                <RX.Image source={ './src/img/bajaj.png' } style={ [styling.image] } />
                             </Col>
                             <Col  xs={4} style={styling.marTop17 }>
                                 <div style={styling.clientHeadxs}>Bajaj Allianz</div>
@@ -418,10 +421,10 @@ export default class QuotesSelection  extends RX.Component {
                 <Grid className="hidden-xs">
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/ergo.png' } style={ [_styles.image] } />
+                        <RX.Image source={ './src/img/icici.png' } style={ [_styles.image] } />
 
                         <RX.Text style={ _styles.sideHead }>
-                            HDFC Ergo Life Insurance
+                             ICICI LOMBARD
                             <div style={_styles.tryHead}>Two Year Cover Only</div>
                         </RX.Text>
                         <RX.Text style={ _styles.quotes }>
@@ -446,10 +449,10 @@ export default class QuotesSelection  extends RX.Component {
                 <Grid className="hidden-xs">
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/reliance.png' } style={ [_styles.image] } />
+                        <RX.Image source={ './src/img/tata.png' } style={ [_styles.image] } />
 
                         <RX.Text style={ _styles.sideHead }>
-                            Reliance Life Insurance
+                           Tata AIG
                             <div style={_styles.tryHead}>Two Year Cover Only</div>
                         </RX.Text>
                         <RX.Text style={ _styles.quoted }>
@@ -474,10 +477,10 @@ export default class QuotesSelection  extends RX.Component {
                 <Grid className="hidden-xs">
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/oriental.png' } style={ [_styles.image] } />
+                        <RX.Image source={ './src/img/Bharati.png' } style={ [_styles.image] } />
 
                         <RX.Text style={ _styles.sideHead }>
-                            Oriental Life Insurance
+                          Bharathi AXP
                             <div style={_styles.tryHead}>Two Year Cover Only</div>
                         </RX.Text>
                         <RX.Text style={ _styles.quoted }>
@@ -502,7 +505,7 @@ export default class QuotesSelection  extends RX.Component {
                 <Grid className="hidden-xs">
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/reliance.png' } style={ [_styles.image] } />
+                        <RX.Image source={ './src/img/icici.png' } style={ [_styles.image] } />
 
                         <RX.Text style={ _styles.sideHead }>
                             Reliance Life Insurance

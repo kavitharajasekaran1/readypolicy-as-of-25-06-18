@@ -214,12 +214,12 @@ export default class CompareQuotes extends RX.Component{
                         </Col>
                         <Col  md={3} style={styling.marTop}>
                             {/*<RX.Text>Test1</RX.Text>*/}
-                            <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                            <RX.Image source={ './src/img/bajaj.png' } style={ [styles.image ] } />
                             {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
                         </Col>
                         <Col  md={3} style={styling.marTop}>
                             {/*<RX.Text>Test2</RX.Text>*/}
-                            <RX.Image source={ './src/img/ergo.png' } style={ [styles.image] } />
+                            <RX.Image source={ './src/img/icici.png' } style={ [styles.image] } />
                             {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
                         </Col>
                         <Col  md={3} style={styling.marTop}>
@@ -239,12 +239,12 @@ export default class CompareQuotes extends RX.Component{
                     <Row className="show-grid hidden-lg">
                         <Col  xs={4} style={styling.marTop}>
                             {/*<RX.Text>Test1</RX.Text>*/}
-                            <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                            <RX.Image source={ './src/img/bajaj.png' } style={ [styles.image ] } />
                             {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
                         </Col>
                         <Col  xs={4} style={styling.marTop}>
                             {/*<RX.Text>Test2</RX.Text>*/}
-                            <RX.Image source={ './src/img/ergo.png' } style={ [styles.image] } />
+                            <RX.Image source={ './src/img/icici.png' } style={ [styles.image] } />
                             {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
                         </Col>
                         <Col  xs={4} style={styling.marTop}>

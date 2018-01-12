@@ -4,7 +4,7 @@
 
 import React from 'react';
 import RX from 'reactxp';
-import {Nav,NavItem,NavDropdown,MenuItem,Grid,Row,Col,Form,FormGroup,ControlLabel,FormControl,T,Visible,Checkbox,lg,xs} from 'react-bootstrap';
+import {Nav,NavItem,NavDropdown,MenuItem,Grid,Row,Col,Form,FormGroup,ControlLabel,FormControl,label,Visible,Checkbox,lg,xs} from 'react-bootstrap';
 /*const {
 Welcome
 } = TodoStyles;*/
@@ -295,8 +295,7 @@ export default class RegisterPage extends RX.Component{
                                                     placeholder="Bangalore,India"
                                                     secureTextEntry= {true}
                                                   />  
-                                               
-                                                <RX.Image source={ './src/img/MapPin.svg' } styles={styles.logo} />
+                                               <RX.Image source={ './src/img/MapPin.svg' } styles={styles.logo} />
                                         
                                             </FormGroup>
                                             

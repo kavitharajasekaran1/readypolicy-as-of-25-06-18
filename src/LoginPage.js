@@ -28,6 +28,7 @@ const styles = {
         right: 0,
         bottom: 0,
         top: 0,
+        backgroundColor:'#0101028c'
     }),
     helloWorld: RX.Styles.createTextStyle({
         fontSize: 48,
@@ -208,7 +209,7 @@ const styles = {
         height: 45,
         width:221,
         fontsize:30,
-        backgroundColor:'black',
+        backgroundColor:'#654e4e00',
         marginTop:10
     }),
     backgroundImage :RX.Styles.createViewStyle({
@@ -276,11 +277,12 @@ export default class LoginPage extends RX.Component{
 
     render() {
         return (
-            <RX.Image source={ './src/img/Main.jpg' }
+            <RX.Image
+            source={ ('./src/img/policy.png' )}
             resizeMode="cover"
-
-            style={[styles.backgroundImage]}>
-            <RX.ScrollView style={ styles.scroll }>
+            fluidalt="Responsive Image"
+            style={[styles.backgroundImage]}
+        >
             <RX.View style={ styles.container }>
             
                  
@@ -327,7 +329,7 @@ export default class LoginPage extends RX.Component{
 
                                     </Row>
                 
-            </RX.ScrollView>
+       
 </RX.Image>
         );
     }

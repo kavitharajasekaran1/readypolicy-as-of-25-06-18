@@ -14,6 +14,7 @@ const styles = {
     scroll: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
         flex:1,
+        backgroundColor:'blue'
        
         
         
@@ -27,12 +28,20 @@ const styles = {
       
     }),
     container: RX.Styles.createViewStyle({
-        flexGrow: 1,
-        alignItems: 'center',
+        padding: 16,
         justifyContent: 'center',
-        width: '100%',
-        height: '400%',
-        resizemode:'cover'
+        position: 'absolute',
+        display: 'flex',
+        flexdirection: 'column',
+        flexgrow: 1,
+        flexshrink: 1,
+        overflow: 'hidden',
+        alignitems: 'stretch',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        top: 0,
+        backgroundColor:'#0101028c'
 
     }),
     
@@ -42,32 +51,29 @@ const styles = {
         marginBottom: 28
     }),
     welcome: RX.Styles.createTextStyle({
-        paddingTop: 45,
         color: 'Red',
-        textAlign: 'center',
+        alignSelf: 'center',
         opacity: 0.9,
-        marginTop: 133,
-        width: 350,
+        width: '100%',
         justifyContent: 'center',
         fontweight: 'bold',
         fontSize:35,
-        marginLeft:-124,
-        textstyle:'italic'
-
-
+        textstyle:'italic',
+        position:'absolute',
+        marginTop:-42
     }),
     Welcome: RX.Styles.createTextStyle({
         paddingTop: 45,
         color: 'white',
         textAlign: 'center',
         opacity: 0.9,
-        marginTop: -94,
+        marginTop: -60,
         width: 350,
         justifyContent: 'center',
         fontweight: 'bold',
-        padingleft: 149,
+        alignItems:'center',
         fontSize:35,
-        marginLeft:122
+       
 
     }),
     policy:RX.Styles.createTextStyle({
@@ -77,8 +83,8 @@ const styles = {
         justifyContent: 'center',
         position: 'absolute',
         alignSelf: 'center',
-        marginLeft: -78,
-                marginTop:106
+        marginLeft: 1,
+        marginTop:18
        
     }),
         
@@ -132,16 +138,20 @@ const styles = {
         backgroundColor: '#EF5350'
     }),
     button1Text: RX.Styles.createTextStyle({
-        fobutton1HoverntSize: 14,
+        fontSize: 14,
         color: '#EF5350',
         justifyContent: 'center',
-        
+        textAlign:'CENTER',
+        alignSelf:'center'
     }),
     button1TextHover: RX.Styles.createTextStyle({
         fontSize: 14,
         color: 'White',
         justifyContent: 'center',
         margingright:50,
+        justifyContent: 'center',
+        textAlign:'CENTER',
+        alignSelf:'center'
         
     }),
     button1: RX.Styles.createButtonStyle({
@@ -151,16 +161,17 @@ const styles = {
         padding: 12,
         borderRadius: 8,
         borderColor: '#EF5350',
-        marginTop:120,
+        marginTop:500,
     }),
     marTop:RX.Styles.createViewStyle({
         marginTop:20,
     }),
     image:RX.Styles.createViewStyle({
-        height: 90,
+        height: 100,
         width:'100%',
-        fontsize:30,
-        marginleft:20
+        marginTop:'20'
+
+       
     }), 
     backgroundImage:RX.Styles.createViewStyle({
         flex: 1,
@@ -179,7 +190,7 @@ export default class MainPanel extends RX.Component{
         this._animatedStyle = RX.Styles.createAnimatedTextStyle({
             transform: [
                 {
-                    translateY: this._translationvalue
+                    translateY: this._translationValue
                 }
             ]
         });
@@ -199,36 +210,29 @@ export default class MainPanel extends RX.Component{
     render() {
         return (
             <RX.Image
-            source={ './src/img/Main.jpg' }
+            source={ ('./src/img/policy.png' )}
             resizeMode="cover"
+            fluidalt="Responsive Image"
             style={[styles.backgroundImage]}
         >
                <RX.View style={ styles.container }>
                 <RX.Text style={ styles.welcome }>
                
-                        <RX.Image source={ './src/img/Logo.svg' } style={ [styles.image] } >
+                        <RX.Image source={ './src/img/Logo.svg' } style={ [styles.image] } />
                        
-                    
+                    </RX.Text>
                                        <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
-                    {/* <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateForward}>
-                        <RX.Text style={ styles.buttonText }>
-                            Go Back
-                        </RX.Text>
-                    </RX.Button> */}
-                
-                <RX.Button
+                    <RX.Button
                     style={ [styles.button1, this.state.button1Hover && styles.button1Hover] }
                     onHoverStart={ () => { this.setState({ button1Hover: true }) } }
                     onHoverEnd={ () => { this.setState({ button1Hover: false }) } }
-                    onPress={this.props.onNavigateForward }
+                    onPress={this.props.onNavigateForward}
                 >
                     <RX.Text style={ [styles.button1Text, this.state.button1Hover && styles.button1TextHover] }>
                         { 'Next' }
                     </RX.Text>
                 </RX.Button>
-                </RX.Image>
-                </RX.Text> 
-                    </RX.View>
+                </RX.View> 
                     </RX.Image>
         );
     }
