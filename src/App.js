@@ -21,6 +21,8 @@ import EleventhPanel from './EleventhPanel'
 import TravelInsuranceReg from './TravelInsuranceReg'
 import PaymentScreen from './PaymentScreen'
 import NewTermInsurance from './NewTermInsurance'
+import QuoteDetails from './QuoteDetails'
+
 
 
 
@@ -41,7 +43,8 @@ let NavigationRouteId = {
     EleventhPanel:"EleventhPanel",
     PaymentScreen:"PaymentScreen",
     TravelInsuranceReg:"TravelInsuranceReg",
-    NewTermInsurance:"NewTermInsurance"
+    NewTermInsurance:"NewTermInsurance",
+    QuoteDetails:"QuoteDetails"
 };
 
 const styles = {
@@ -72,11 +75,13 @@ export default class App extends RX.Component {
         this._onPressPayment = this._onPressPayment.bind(this);
         this._onPressTravel = this._onPressTravel.bind(this);
         this._onPressNewTermInsurance = this._onPressNewTermInsurance.bind(this);
+        this._onPressQuoteDetails = this._onPressQuoteDetails.bind(this);
+
     }
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.QuotesSelection,
+            routeId: NavigationRouteId.QuoteDetails,
             sceneConfigType: "Fade"
         }]);
     }
@@ -142,6 +147,9 @@ export default class App extends RX.Component {
 
             case NavigationRouteId.NewTermInsurance:
                 return <NewTermInsurance onNavigateThirteen={ this._onPressNewTermInsurance }/>;
+
+            case NavigationRouteId.QuoteDetails:
+                return <QuoteDetails onNavigateQuoteDetails={ this._onPressQuoteDetails }/>;
 
 
         }
@@ -285,6 +293,17 @@ export default class App extends RX.Component {
     _onPressBack() {
         this._navigator.push({
             routeId: NavigationRouteId.MainPanel,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+
+
+    _onPressQuoteDetails() {
+        this._navigator.push({
+            routeId: NavigationRouteId.QuoteDetails,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true

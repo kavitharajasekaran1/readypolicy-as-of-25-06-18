@@ -132,6 +132,16 @@ module.exports = {
         color: '#413a6f',
         textTransform:'capitalize'
     }),
+    clientHeadts: RX.Styles.createScrollViewStyle({
+        fontSize: 15,
+        color: '#000000',
+        textTransform:'capitalize'
+    }),
+    clientHeadQuotes: RX.Styles.createScrollViewStyle({
+        fontSize: 20,
+        color: '#000000',
+        textTransform:'capitalize'
+    }),
     clientHeadxs: RX.Styles.createScrollViewStyle({
         fontSize: 15,
         color: '#413a6f',
@@ -208,6 +218,11 @@ module.exports = {
         borderRadius: 5,
         backgroundColor: '#2ecc71'
     }),
+    roundButtonQuote: RX.Styles.createViewStyle({
+        marginTop: 23,
+        borderRadius: 5,
+        backgroundColor: '#2ecc71'
+    }),
     buyButton: RX.Styles.createViewStyle({
         margin: 16,
         borderRadius: 16,
@@ -252,6 +267,12 @@ module.exports = {
         width: 100,
         backgroundColor:'#FFFFFF',
         marginTop:10
+    }),
+    quoteImage: RX.Styles.createViewStyle({
+        height: 45,
+        width: 100,
+        backgroundColor:'#FFFFFF',
+        marginTop:19
     }),
     flute: RX.Styles.createViewStyle({
         justifyContent: 'center',
@@ -349,7 +370,11 @@ module.exports = {
     }),
     cmpBack:RX.Styles.createViewStyle({
         backgroundColor: "#ffffff",
-    })
+    }),
+    clientBor: RX.Styles.createViewStyle({
+        borderBottomWidth:1,
+        borderColor:"#cccccc"
+    }),
 }
 
 
