@@ -410,11 +410,6 @@ export default class QuotesSelection  extends RX.Component {
                         </Row>
                     </RX.View>
                 </Grid>
-
-
-
-
-
                 <Grid className="hidden-xs">
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
