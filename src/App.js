@@ -307,4 +307,15 @@ export default class App extends RX.Component {
             }
         });
     }
+
+
+    _onPressQuoteDetails() {
+        this._navigator.push({
+            routeId: NavigationRouteId.QuoteDetails,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
 };
