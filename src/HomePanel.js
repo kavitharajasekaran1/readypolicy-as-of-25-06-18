@@ -20,13 +20,14 @@ const styles = {
         flexDirection: 'row',
         flexWrap: 'wrap',
         padding: 2,
-        backgroundColor:'#8080804d',
+        backgroundColor:'#8080803b',
 
     }),
     scrollImage: RX.Styles.createImageStyle({
     margin: 2,
     width: '100%',
-    height: 200
+    height: 200,
+    
     }),
     homeImageLayout: RX.Styles.createImageStyle({
     height: 210,
@@ -55,14 +56,28 @@ image:RX.Styles.createViewStyle({
     width:'100%',
     marginTop:'20'
 }),
+Image:RX.Styles.createViewStyle({
+    height: 50,
+    width:'50%',
+    marginTop:'20'
+}),
     HomeScrollImageLogo: RX.Styles.createImageStyle({
         width:97,
         height: 72,
         paddingVertical:20,
         marginLeft:3,
         marginTop:-9
+    }),
     
-
+        scroll: RX.Styles.createScrollViewStyle({
+            alignSelf: 'stretch',
+            backgroundColor: '#f5fcff'
+        }),
+        container: RX.Styles.createViewStyle({
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor:'#1c191ff2',
+            padding:5
    
 }),
 policy:RX.Styles.createTextStyle({
@@ -82,7 +97,10 @@ scrollBoxText: RX.Styles.createTextStyle({
     alignItems: 'center',
     textAlign:'Center',
 }),
-
+welcome: RX.Styles.createTextStyle({
+    fontSize: 40,
+    color: 'white',
+}),
 };
 
 export default class RegisterPage extends RX.Component{
@@ -198,8 +216,13 @@ export default class RegisterPage extends RX.Component{
                     </RX.View>
                     </RX.View>
                     </RX.View>
-
-                
+                    <RX.ScrollView style={ styles.scroll }>
+                <RX.View style={ styles.container }>
+                    <RX.Image source={ './src/img/Home.svg' } style={ [styles.Image] } />
+                    <RX.Text style={styles.scrollBoxText}>Home</RX.Text> 
+                      
+                </RX.View>
+                </RX.ScrollView>
   </RX.View>
     );
 }

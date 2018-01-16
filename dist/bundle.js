@@ -2378,6 +2378,16 @@ fontSize:20,
 color:'#413a6f',
 textTransform:'capitalize'}),
 
+clientHeadts:_reactxp2.default.Styles.createScrollViewStyle({
+fontSize:15,
+color:'#000000',
+textTransform:'capitalize'}),
+
+clientHeadQuotes:_reactxp2.default.Styles.createScrollViewStyle({
+fontSize:20,
+color:'#000000',
+textTransform:'capitalize'}),
+
 clientHeadxs:_reactxp2.default.Styles.createScrollViewStyle({
 fontSize:15,
 color:'#413a6f',
@@ -2454,6 +2464,11 @@ marginTop:16,
 borderRadius:5,
 backgroundColor:'#2ecc71'}),
 
+roundButtonQuote:_reactxp2.default.Styles.createViewStyle({
+marginTop:23,
+borderRadius:5,
+backgroundColor:'#2ecc71'}),
+
 buyButton:_reactxp2.default.Styles.createViewStyle({
 margin:16,
 borderRadius:16,
@@ -2498,6 +2513,12 @@ height:45,
 width:100,
 backgroundColor:'#FFFFFF',
 marginTop:10}),
+
+quoteImage:_reactxp2.default.Styles.createViewStyle({
+height:45,
+width:100,
+backgroundColor:'#FFFFFF',
+marginTop:19}),
 
 flute:_reactxp2.default.Styles.createViewStyle({
 justifyContent:'center',
@@ -2608,7 +2629,11 @@ marTop17:_reactxp2.default.Styles.createViewStyle({
 marginTop:17}),
 
 cmpBack:_reactxp2.default.Styles.createViewStyle({
-backgroundColor:"#ffffff"})};
+backgroundColor:"#ffffff"}),
+
+clientBor:_reactxp2.default.Styles.createViewStyle({
+borderBottomWidth:1,
+borderColor:"#cccccc"})};
 
 /***/ }),
 /* 25 */
@@ -18781,6 +18806,17 @@ hideShadow:true}});
 {
 this._navigator.push({
 routeId:NavigationRouteId.RegisterPage,
+sceneConfigType:"FloatFromRight",
+customSceneConfig:{
+hideShadow:true}});
+
+
+}},{key:'_onPressQuoteDetails',value:function _onPressQuoteDetails()
+
+
+{
+this._navigator.push({
+routeId:NavigationRouteId.QuoteDetails,
 sceneConfigType:"FloatFromRight",
 customSceneConfig:{
 hideShadow:true}});
@@ -60444,13 +60480,14 @@ flex:1,
 flexDirection:'row',
 flexWrap:'wrap',
 padding:2,
-backgroundColor:'#8080804d'}),
+backgroundColor:'#8080803b'}),
 
 
 scrollImage:_reactxp2.default.Styles.createImageStyle({
 margin:2,
 width:'100%',
 height:200}),
+
 
 homeImageLayout:_reactxp2.default.Styles.createImageStyle({
 height:210,
@@ -60479,6 +60516,11 @@ height:100,
 width:'100%',
 marginTop:'20'}),
 
+Image:_reactxp2.default.Styles.createViewStyle({
+height:50,
+width:'50%',
+marginTop:'20'}),
+
 HomeScrollImageLogo:_reactxp2.default.Styles.createImageStyle({
 width:97,
 height:72,
@@ -60487,6 +60529,15 @@ marginLeft:3,
 marginTop:-9}),
 
 
+scroll:_reactxp2.default.Styles.createScrollViewStyle({
+alignSelf:'stretch',
+backgroundColor:'#f5fcff'}),
+
+container:_reactxp2.default.Styles.createViewStyle({
+justifyContent:'center',
+alignItems:'center',
+backgroundColor:'#1c191ff2',
+padding:5}),
 
 
 policy:_reactxp2.default.Styles.createTextStyle({
@@ -60504,8 +60555,11 @@ textAlign:'CENTER'}),
 scrollBoxText:_reactxp2.default.Styles.createTextStyle({
 justifyContent:'center',
 alignItems:'center',
-textAlign:'Center'})};var
+textAlign:'Center'}),
 
+welcome:_reactxp2.default.Styles.createTextStyle({
+fontSize:40,
+color:'white'})};var
 
 
 
@@ -60542,78 +60596,78 @@ animation.start();
 {
 return(
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollViewContainer,__source:{fileName:_jsxFileName,lineNumber:121}},
-_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollImage,__source:{fileName:_jsxFileName,lineNumber:122}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollViewContainer,__source:{fileName:_jsxFileName,lineNumber:139}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollImage,__source:{fileName:_jsxFileName,lineNumber:140}},
 _react2.default.createElement(_reactxp2.default.Image,{
 style:styles.homeImageLayout,
 resizeMode:'cover',
-source:'./src/img/Farmer.png',__source:{fileName:_jsxFileName,lineNumber:123}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Logo.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:127}})),
+source:'./src/img/Farmer.png',__source:{fileName:_jsxFileName,lineNumber:141}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Logo.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:145}})),
 
 
 
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.policy,__source:{fileName:_jsxFileName,lineNumber:131}},'Plan your insurance on this platform and get RS 100 off your first policy')),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.policy,__source:{fileName:_jsxFileName,lineNumber:149}},'Plan your insurance on this platform and get RS 100 off your first policy')),
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:134}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'auto'},__source:{fileName:_jsxFileName,lineNumber:135}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:20},__source:{fileName:_jsxFileName,lineNumber:136}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:152}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'auto'},__source:{fileName:_jsxFileName,lineNumber:153}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:20},__source:{fileName:_jsxFileName,lineNumber:154}},
 _react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Car.svg',__source:{fileName:_jsxFileName,lineNumber:137}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:140}},'Car')),
+source:'./src/img/Car.svg',__source:{fileName:_jsxFileName,lineNumber:155}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:158}},'Car')),
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:144}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:145}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:10},__source:{fileName:_jsxFileName,lineNumber:146}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:162}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:163}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:10},__source:{fileName:_jsxFileName,lineNumber:164}},
 _react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Bike.svg',__source:{fileName:_jsxFileName,lineNumber:147}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:150}},'Two Wheeler')),
+source:'./src/img/Bike.svg',__source:{fileName:_jsxFileName,lineNumber:165}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:168}},'Two Wheeler')),
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:154}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:155}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white'},__source:{fileName:_jsxFileName,lineNumber:156}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:172}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:173}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white'},__source:{fileName:_jsxFileName,lineNumber:174}},
 _react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Term.svg',__source:{fileName:_jsxFileName,lineNumber:157}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:160}},'Term Insurance')))))))),
+source:'./src/img/Term.svg',__source:{fileName:_jsxFileName,lineNumber:175}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:178}},'Term Insurance')))))))),
 
 
 
 
 
-
-
-_react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:168}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:169}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:20},__source:{fileName:_jsxFileName,lineNumber:170}},
-_react2.default.createElement(_reactxp2.default.Image,{
-style:styles.HomeScrollImageLogo,
-source:'./src/img/Health.svg',__source:{fileName:_jsxFileName,lineNumber:171}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:174}},'Health Insurance')),
-
-
-_react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:177}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:178}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:10},__source:{fileName:_jsxFileName,lineNumber:179}},
-_react2.default.createElement(_reactxp2.default.Image,{
-style:styles.HomeScrollImageLogo,
-source:'./src/img/Travell.svg',__source:{fileName:_jsxFileName,lineNumber:180}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:183}},'Travel Insurance')),
 
 
 _react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:186}},
 _react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:187}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white'},__source:{fileName:_jsxFileName,lineNumber:188}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:20},__source:{fileName:_jsxFileName,lineNumber:188}},
 _react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Add Existing Insurance.svg',__source:{fileName:_jsxFileName,lineNumber:189}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:192}},'Add Existing Policy'))))))))));
+source:'./src/img/Health.svg',__source:{fileName:_jsxFileName,lineNumber:189}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:192}},'Health Insurance')),
+
+
+_react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:195}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:196}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:10},__source:{fileName:_jsxFileName,lineNumber:197}},
+_react2.default.createElement(_reactxp2.default.Image,{
+style:styles.HomeScrollImageLogo,
+source:'./src/img/Travell.svg',__source:{fileName:_jsxFileName,lineNumber:198}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:201}},'Travel Insurance')),
+
+
+_react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:204}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:205}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white'},__source:{fileName:_jsxFileName,lineNumber:206}},
+_react2.default.createElement(_reactxp2.default.Image,{
+style:styles.HomeScrollImageLogo,
+source:'./src/img/Add Existing Insurance.svg',__source:{fileName:_jsxFileName,lineNumber:207}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:210}},'Add Existing Policy')))))))),
 
 
 
@@ -60621,6 +60675,11 @@ _react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText
 
 
 
+
+_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.scroll,__source:{fileName:_jsxFileName,lineNumber:219}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.container,__source:{fileName:_jsxFileName,lineNumber:220}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Home.svg',style:[styles.Image],__source:{fileName:_jsxFileName,lineNumber:221}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:222}},'Home')))));
 
 
 
