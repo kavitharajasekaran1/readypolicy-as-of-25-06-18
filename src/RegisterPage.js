@@ -127,7 +127,8 @@ const styles = {
         borderColor: '#EF5350',
     }),
         logo:RX.Styles.createButtonStyle({
-        padding: 10,
+            paddingtop: 17,
+            margintop: -24,
 
     }),
     register: RX.Styles.createImageStyle({
@@ -312,7 +313,7 @@ export default class RegisterPage extends RX.Component{
                     </RX.Text>
                 </RX.Button>
                 </RX.View>
-                    </RX.ScrollView>
+                </RX.ScrollView>
         );
      
     }

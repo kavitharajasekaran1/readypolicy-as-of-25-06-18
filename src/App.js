@@ -21,6 +21,7 @@ import EleventhPanel from './EleventhPanel'
 import TravelInsuranceReg from './TravelInsuranceReg'
 import PaymentScreen from './PaymentScreen'
 import NewTermInsurance from './NewTermInsurance'
+import HomePanel from './HomePanel'
 
 
 
@@ -41,7 +42,8 @@ let NavigationRouteId = {
     EleventhPanel:"EleventhPanel",
     PaymentScreen:"PaymentScreen",
     TravelInsuranceReg:"TravelInsuranceReg",
-    NewTermInsurance:"NewTermInsurance"
+    NewTermInsurance:"NewTermInsurance",
+    HomePanel:"HomePanel",
 };
 
 const styles = {
@@ -72,11 +74,12 @@ export default class App extends RX.Component {
         this._onPressPayment = this._onPressPayment.bind(this);
         this._onPressTravel = this._onPressTravel.bind(this);
         this._onPressNewTermInsurance = this._onPressNewTermInsurance.bind(this);
+        this._onPressHome = this._onPressHome.bind(this);
     }
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.MainPanel,
+            routeId: NavigationRouteId.HomePanel,
             sceneConfigType: "Fade"
         }]);
     }
@@ -142,6 +145,9 @@ export default class App extends RX.Component {
 
             case NavigationRouteId.NewTermInsurance:
                 return <NewTermInsurance onNavigateThirteen={ this._onPressNewTermInsurance }/>;
+
+            case NavigationRouteId.HomePanel:
+                return <HomePanel onNavigateSuper={ this._onPressHome}/>;   
 
 
         }
@@ -280,6 +286,16 @@ export default class App extends RX.Component {
                 hideShadow: true
             }
         });
+    }
+
+    _onPressHome() {
+        this._navigator.push({
+            routeId: NavigationRouteId.HomePanel,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true  
+    }
+});
     }
 
     _onPressBack() {
