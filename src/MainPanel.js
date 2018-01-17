@@ -41,7 +41,7 @@ const styles = {
         right: 0,
         bottom: 0,
         top: 0,
-        backgroundColor:'#0101028c'
+        backgroundColor:'#9ca4ab;'
 
     }),
     
