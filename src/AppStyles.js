@@ -17,8 +17,9 @@ module.exports = {
 
     }),
     welcome: RX.Styles.createScrollViewStyle({
-        fontSize: 40,
+        fontSize: 25,
         color: 'white',
+        textAlign:'center',
     }),
     container: RX.Styles.createViewStyle({
         justifyContent: 'center',
@@ -33,8 +34,11 @@ module.exports = {
         padding:5
     }),
     head: RX.Styles.createScrollViewStyle({
-        fontSize: 30,
+        fontSize: 20,
         color: '#3b3751',
+        textAlign:'center',
+        alignSelf:'center',
+        justifyContent:'center',
         textTransform:'capitalize'
     }),
     sideHead: RX.Styles.createScrollViewStyle({

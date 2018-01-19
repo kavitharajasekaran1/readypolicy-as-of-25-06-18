@@ -50,6 +50,13 @@ ScrollBox: RX.Styles.createImageStyle({
     width: '100%',
     flexDirection:'row'
 }),
+roundButton: RX.Styles.createViewStyle({
+    margin: 16,
+    borderRadius: 16,
+    backgroundColor: '#ff0000ab',
+    justifyContent: 'CENTER'
+    }),
+  
 homeScrollImageLogo: RX.Styles.createImageStyle({
     width: 60,
     height: 60,
@@ -273,6 +280,12 @@ export default class RegisterPage extends RX.Component{
                             <RX.Text style={styles.ScrollBoxText}>Settings</RX.Text>
                             {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
                         </Col>
+                        <RX.Button bsStyle="info" onPress={()=> this._onChangeVar() }>Primary</RX.Button>
+           <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateSuper }>
+        <RX.Text style={ styles.buttonText }>
+        REGISTER
+        </RX.Text>
+        </RX.Button>
                         {/*<Col  md={6} style={styling.marTop}>
                             <RX.Button onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
                             <RX.Button style={styling.button} onPress={ this.props.onNavigateEleven }>
@@ -281,6 +294,7 @@ export default class RegisterPage extends RX.Component{
 
                         </Col>*/}
                     </Row>
+                  
                 </RX.ScrollView>
   </RX.View>
  

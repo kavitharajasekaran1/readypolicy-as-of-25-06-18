@@ -79,7 +79,7 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.MainPanel,
+            routeId: NavigationRouteId.VehicleDetails,
             sceneConfigType: "Fade"
         }]);
     }
@@ -144,7 +144,7 @@ export default class App extends RX.Component {
                 return <TravelInsuranceReg onNavigateThirteen={ this._onPressTravel }/>;
 
             case NavigationRouteId.NewTermInsurance:
-                return <NewTermInsurance onNavigateThirteen={ this._onPressNewTermInsurance }/>;
+                return <NewTermInsurance onNavigateNewTermInsurance={ this._onPressNewTermInsurance }/>;
 
             case NavigationRouteId.HomePanel:
                 return <HomePanel onNavigateSuper={ this._onPressHome}/>;   
@@ -157,7 +157,7 @@ export default class App extends RX.Component {
 
     _onPressNavigate() {
         this._navigator.push({
-            routeId: NavigationRouteId.CompareQuotes,
+            routeId: NavigationRouteId.RegisterPage,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
@@ -188,7 +188,7 @@ export default class App extends RX.Component {
     _onPressFifth() {
         // this._navigator.pop();
         this._navigator.push({
-            routeId: NavigationRouteId.QuotesSelection,
+            routeId: NavigationRouteId.HomePanel,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
@@ -198,7 +198,7 @@ export default class App extends RX.Component {
     _onPressSixth() {
         // this._navigator.pop();
         this._navigator.push({
-            routeId: NavigationRouteId.Location,
+            routeId: NavigationRouteId.CompareQuotes,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
@@ -219,7 +219,7 @@ export default class App extends RX.Component {
     _onPressEight(res) {
         var res=res;
         this._navigator.push({
-            routeId: NavigationRouteId.MyPolicy,
+            routeId: NavigationRouteId.InsuranceAddons,
             res:res,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
@@ -243,7 +243,7 @@ export default class App extends RX.Component {
     _onPressTen() {
         // this._navigator.pop();
         this._navigator.push({
-            routeId: NavigationRouteId.EleventhPanel,
+            routeId: NavigationRouteId.QuotesSelection,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
@@ -280,7 +280,7 @@ export default class App extends RX.Component {
     }
     _onPressNewTermInsurance() {
         this._navigator.push({
-            routeId: NavigationRouteId.MainPanel,
+            routeId: NavigationRouteId.PaymentScreen,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
@@ -290,7 +290,7 @@ export default class App extends RX.Component {
 
     _onPressHome() {
         this._navigator.push({
-            routeId: NavigationRouteId.HomePanel,
+            routeId: NavigationRouteId.VehicleDetails,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true  
@@ -300,7 +300,7 @@ export default class App extends RX.Component {
 
     _onPressBack() {
         this._navigator.push({
-            routeId: NavigationRouteId.RegisterPage,
+            routeId: NavigationRouteId.NewTermInsurance,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true

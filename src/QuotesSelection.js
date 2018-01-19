@@ -472,7 +472,7 @@ export default class QuotesSelection  extends RX.Component {
                 <Grid className="hidden-xs">
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/Bharati.png' } style={ [_styles.image] } />
+                        <RX.Image source={ './src/img/tata.png' } style={ [_styles.image] } />
 
                         <RX.Text style={ _styles.sideHead }>
                           Bharathi AXP

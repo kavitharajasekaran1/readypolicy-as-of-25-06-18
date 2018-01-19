@@ -8,10 +8,8 @@ import styling from './AppStyles';
 import Rest from './RestConfig';
 import QuotesSelection from './QuotesSelection';
 import { Navigator } from 'reactxp-navigation';
-
-import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,DateTimeField,Checkbox} from 'react-bootstrap';
-
-
+import DatePicker from 'react-datepicker';
+import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,StyleSheet,FormControl,minDate,maxDate,HelpBlock,DateTimeField,Checkbox} from 'react-bootstrap';
 import Button from 'react-bootstrap/lib/Button';
 
 /*const {
@@ -22,7 +20,13 @@ const _styles = {
         alignSelf: 'stretch',
         backgroundColor: '#ffffff'
     }),
-};
+    roundButton: RX.Styles.createViewStyle({
+        margin: 16,
+        borderRadius: 16,
+        backgroundColor: '#ff0000ab',
+        justifyContent: 'CENTER'
+        }),
+}
 
 
 
@@ -66,7 +70,8 @@ export default class VehicleDetails extends React.Component{
             carModel='carModel',
             fuelType='fuelType',
             carVariant='carVariant',
-            existingInsurer='existingInsurer'
+            existingInsurer='existingInsurer',
+            date='date'
         } = this.state;
         let status='new';
         let _id='';
@@ -75,6 +80,7 @@ export default class VehicleDetails extends React.Component{
         console.log(name,"name");
         console.log(phone,"phone");
         console.log(email,"email");
+        console.log(date,"date");
         console.log(regAreaCode,"regAreaCode");
         console.log(previousPolicyExpiry,"previousPolicyExpiry");
         console.log(registrationYear,"registrationYear");
@@ -164,7 +170,10 @@ export default class VehicleDetails extends React.Component{
         this.props.onUpdate(value);
         console.log(this.state.email,"email");
     }
-
+onChangedate = (value) => {
+    this.setState({ date:value});
+    console.log(this.state.date,"date");
+}
     onChangeArea = (value) => {
         this.setState({ regAreaCode: value });
         console.log(this.state.regAreaCode,"regAreaCode");
@@ -210,7 +219,7 @@ export default class VehicleDetails extends React.Component{
     render() {
         // this.props.onNavigateSixth(function(res) { return (res); })
         // this.props.QuotesSelection
-
+       
 
 
         return (
@@ -247,11 +256,13 @@ export default class VehicleDetails extends React.Component{
                                         </Col>
                     </Row>*/}
 
-                    <Row className="show-grid">
+                    <Row className="clearfix">
                         <Col  md={2}></Col>
                         <Col  md={8}>
-                            <Tabs defaultActiveKey={1} id="tab">
+                    
+                            <Tabs defaultActiveKey={1} id="left-tabs-example">
                                 <Tab eventKey={1} title="New" className="myClass">
+                                
                                     {/*<code>&lt;{'Col xs={12} md={8}'} /&gt;</code>*/}
 
                                     <RX.View style={styling.sideMar}>
@@ -328,15 +339,18 @@ export default class VehicleDetails extends React.Component{
                                         <RX.Text style={ styling.sideText }>
                                             Registration Year
                                         </RX.Text>
-                                        <form>
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="DD/MM/YYYY"
-                                                value={ this.state.previousPolicyExpiry }
-                                                onChangeText={this.onChangePolicy}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                        </form>
+                                        <DatePicker
+             style={styling.Form}                             
+        value={this.state.date}
+        onChangeText={this.onChangedate}
+        mode="date"
+        placeholder="select date"
+        format="YYYY-MM-DD"
+        confirmBtnText="Confirm"
+        cancelBtnText="Cancel"
+        />
+
+                                      
                                     </RX.View>
 
                                     <RX.View style={styling.sideMar}>
@@ -517,15 +531,18 @@ export default class VehicleDetails extends React.Component{
                                         <RX.Text style={ styling.sideText }>
                                             Registration Year
                                         </RX.Text>
-                                        <form>
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="DD/MM/YYYY"
-                                                value={ this.state.previousPolicyExpiry }
-                                                onChangeText={this.onChangePolicy}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                        </form>
+                                       
+                                       
+                                        <div className="form-group">
+                                        <div className="input-group date" id="datetimepicker1">
+                                         <input type="text" className="form-control" />
+                                         <span className="input-group-addon">
+                                         <span className="glyphicon-calendar glyphicon">
+                                         </span></span>
+         </div>
+</div>
+
+                                     
                                     </RX.View>
 
                                     <RX.View style={styling.sideMar}>
@@ -626,6 +643,12 @@ export default class VehicleDetails extends React.Component{
                                         <Col md={12} style={styling.marTop10}>
                                             {/*<RX.Button   onPress={()=> this.onChangePost() }>Submit</RX.Button>*/}
                                             <Button  style={styling.btnMaxWidth} bsStyle="primary">Next</Button>
+                                            <RX.Button bsStyle="info" onPress={()=> this._onChangeVar() }>Primary</RX.Button>
+           <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateEight }>
+        <RX.Text style={ _styles.buttonText }>
+       NEXT
+        </RX.Text>
+        </RX.Button>
 
                                         </Col>
                                         {/*<Col  md={6} style={styling.marTop}>
