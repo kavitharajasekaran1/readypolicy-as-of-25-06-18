@@ -17,6 +17,8 @@ class Location extends RX.Component {
       this.state = {
         latitude: null,
                     longitude: null,
+                    formatted_address: null,
+                    res:null,
                    error: null,
       };
     }
@@ -26,6 +28,7 @@ class Location extends RX.Component {
                       this.setState({
                           latitude: position.coords.latitude,
                           longitude: position.coords.longitude,
+                          formatted_address: position.coords.formatted_address,
                           error: null,
                           
                       });
@@ -52,6 +55,8 @@ class Location extends RX.Component {
                            </RX.Link>
                        <RX.Text>Latitude: {this.state.latitude}</RX.Text>
                        <RX.Text>Longitude: {this.state.longitude}</RX.Text>
+                       <RX.Text>res: {this.state.res}</RX.Text>
+
                        {this.state.error ? <Text>Error: {this.state.error}</Text> : null}
                        {/* <RX.MapView.Animated
              region={this.state.region}

@@ -7,6 +7,8 @@ import RX from 'reactxp';
 import styling from './AppStyles';
 import {Nav,NavItem,NavDropdown,MenuItem,Grid,Row,Col,Form,FormGroup,ControlLabel,FormControl,Checkbox} from 'react-bootstrap';
 import Button from 'react-bootstrap/lib/Button';
+import moment from 'moment';
+import DatePicker from 'react-datepicker';
 
 
 /*const {
@@ -24,6 +26,10 @@ const _styles = {
 export default class EightPanel extends RX.Component{
     constructor(props) {
         super(props);
+        this.state = {
+            startDate: moment()
+          };
+          this.handlechange = this.handlechange.bind(this);
         this._translationValue = RX.Animated.createValue(-100);
         this._animatedStyle = RX.Styles.createAnimatedTextStyle({
             transform: [
@@ -64,12 +70,32 @@ export default class EightPanel extends RX.Component{
                     <RX.Text style={styling.welcome }>
                         Eleventh Page
                     </RX.Text>
+                    
                     <RX.Button style={ Button } onPress={ this.props.onNavigateSixth }>
                         <RX.Text style={ styling.buttonText }>
                             Go Back
                         </RX.Text>
                     </RX.Button>
                 </RX.View>
+                <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                            Registration Year
+                                        </RX.Text>
+                                        <DatePicker
+             style={styling.Form} 
+             mode="date"
+             placeholder="DD/MM/YYYY"
+             format="DD-MM-YYYY"
+             confirmBtnText="Confirm"
+                cancelBtnText="Cancel"                         
+             selected={this.state.startDate}
+             onChange={this.handlechange}
+             showYearDropdown
+    monthsShown={2}
+        />
+
+                                      
+                                    </RX.View>
                 <RX.Text style={styling.Text }>
                     {this.state.joke}
                 </RX.Text>
@@ -88,20 +114,39 @@ export default class EightPanel extends RX.Component{
                         <FormControl.Feedback />
                     </FormGroup>
                 </form>
+                
 
 
                 <RX.Button bsStyle="danger" onPress={()=> this._onChangeVar() }>Primary</RX.Button>
-            </RX.ScrollView>
 
+
+
+           
+<DatePicker
+                                   
+             selected={this.state.startDate}
+             onChange={this.handlechange}
+            
+        />
+ </RX.ScrollView>
         );
     }
 
 
-    _onChangeReg = () => {
-        this.setState({ Model: this.state.Model });
+    _onChangeReg = () =>  {
+        this.setState({ Model: this.state.Model});
     }
-
+    handlechange(date) {
+        this.setState({
+          startDate:date
+        });                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+      }
+      handleSelect(date) {
+        this.setState({
+          startDate: date
+        });
+      }
     handleChange() {
-        this.setState({ Model:'' });
+        this.setState({ Model: ''});
     }
 }

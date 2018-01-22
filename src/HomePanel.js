@@ -92,8 +92,9 @@ Image:RX.Styles.createViewStyle({
             backgroundColor: '#f5fcff'
         }),
         container: RX.Styles.createViewStyle({
-            justifyContent: 'center',
-            alignItems: 'center',
+            marginHorizontal: 4,
+            marginVertical: 30,
+            paddingHorizontal: 8,
             backgroundColor:'#1c191ff2',
            
    
@@ -185,10 +186,12 @@ export default class RegisterPage extends RX.Component{
                     <RX.View style={styles.scrollBox}>
                     <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'auto'}}>
                     <RX.View style={{width: 100, height: 100, backgroundColor: 'white', marginTop:20}} >
-                    <RX.Image
+                    
+                    <RX.Button  onPress={ this.props.onNavigateSuper }><RX.Image
                             style={styles.HomeScrollImageLogo}
                             source={'./src/img/Car.svg'}/>
                        <RX.Text style={styles.scrollBoxText}>Car</RX.Text>
+                       </RX.Button>
                     </RX.View>
               
               
@@ -280,6 +283,7 @@ export default class RegisterPage extends RX.Component{
                             <RX.Text style={styles.ScrollBoxText}>Settings</RX.Text>
                             {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
                         </Col>
+                      
                         <RX.Button bsStyle="info" onPress={()=> this._onChangeVar() }>Primary</RX.Button>
            <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateSuper }>
         <RX.Text style={ styles.buttonText }>
@@ -296,6 +300,7 @@ export default class RegisterPage extends RX.Component{
                     </Row>
                   
                 </RX.ScrollView>
+            
   </RX.View>
  
     );

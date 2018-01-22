@@ -127,8 +127,10 @@ const styles = {
         borderColor: '#EF5350',
     }),
         logo:RX.Styles.createButtonStyle({
-            paddingtop: 17,
-            margintop: -24,
+          width: 25,
+          marginTop: -30,
+          float:'right',
+          alignItems:'right'
 
     }),
     register: RX.Styles.createImageStyle({
@@ -241,6 +243,8 @@ export default class RegisterPage extends RX.Component{
                                                     value={this.state.value}
                                                     placeholder="DD/MM/YY"
                                                 />
+                                                  <img src="./src/img/Datepicker.svg" style={styles.logo}>
+                                            </img>
                                             </FormGroup>
                                         </form>
                                     </RX.View>
@@ -294,10 +298,10 @@ export default class RegisterPage extends RX.Component{
                                                     type="text"
                                                     value={this.state.value}
                                                     placeholder="Bangalore,India"
-                                                    secureTextEntry= {true}
-                                                  />  
-                                               <RX.Image source={ './src/img/MapPin.svg' } styles={styles.logo} />
-                                        
+                                                    secureTextEntry= {true}/>
+                                                 
+                                               <img src="./src/img/MapPin.svg" style={styles.logo}>
+                                            </img>
                                             </FormGroup>
                                             
                                         </form>

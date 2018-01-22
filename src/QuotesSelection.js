@@ -28,7 +28,7 @@ const _styles = {
 
     }),
     welcome: RX.Styles.createScrollViewStyle({
-        fontSize: 40,
+        fontSize: 32,
         color: 'white',
     }),
     container: RX.Styles.createViewStyle({
@@ -472,7 +472,7 @@ export default class QuotesSelection  extends RX.Component {
                 <Grid className="hidden-xs">
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/tata.png' } style={ [_styles.image] } />
+                        <RX.Image source={ './src/img/Sbi.png' } style={ [_styles.image] } />
 
                         <RX.Text style={ _styles.sideHead }>
                           Bharathi AXP
@@ -500,7 +500,7 @@ export default class QuotesSelection  extends RX.Component {
                 <Grid className="hidden-xs">
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/icici.png' } style={ [_styles.image] } />
+                        <RX.Image source={ './src/img/Bharti.png' } style={ [_styles.image] } />
 
                         <RX.Text style={ _styles.sideHead }>
                             Reliance Life Insurance

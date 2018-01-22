@@ -11,6 +11,8 @@ import { Navigator } from 'reactxp-navigation';
 import DatePicker from 'react-datepicker';
 import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,StyleSheet,FormControl,minDate,maxDate,HelpBlock,DateTimeField,Checkbox} from 'react-bootstrap';
 import Button from 'react-bootstrap/lib/Button';
+import moment from 'moment';
+
 
 /*const {
     Welcome
@@ -26,6 +28,7 @@ const _styles = {
         backgroundColor: '#ff0000ab',
         justifyContent: 'CENTER'
         }),
+        
 }
 
 
@@ -37,11 +40,17 @@ export default class VehicleDetails extends React.Component{
         this.state = {
             value: null,
         };
-    }
+        this.state = {
+            startDate: moment()
+          };
+          this.handlechange = this.handlechange.bind(this);
+        }
     renderSquare(i) {
         return <QuotesSelection value={i} />;
     }
 
+   
+    
 
 
     onChangeDummy = () => {
@@ -71,7 +80,6 @@ export default class VehicleDetails extends React.Component{
             fuelType='fuelType',
             carVariant='carVariant',
             existingInsurer='existingInsurer',
-            date='date'
         } = this.state;
         let status='new';
         let _id='';
@@ -170,11 +178,7 @@ export default class VehicleDetails extends React.Component{
         this.props.onUpdate(value);
         console.log(this.state.email,"email");
     }
-onChangedate = (value) => {
-    this.setState({ date:value});
-    console.log(this.state.date,"date");
-}
-    onChangeArea = (value) => {
+  onChangeArea = (value) => {
         this.setState({ regAreaCode: value });
         console.log(this.state.regAreaCode,"regAreaCode");
     }
@@ -340,18 +344,10 @@ onChangedate = (value) => {
                                             Registration Year
                                         </RX.Text>
                                         <DatePicker
-             style={styling.Form}                             
-        value={this.state.date}
-        onChangeText={this.onChangedate}
-        mode="date"
-        placeholder="select date"
-        format="YYYY-MM-DD"
-        confirmBtnText="Confirm"
-        cancelBtnText="Cancel"
-        />
-
-                                      
-                                    </RX.View>
+                                         selected={this.state.startDate}
+                                         onChange={this.handlechange}
+                                         />
+                                     </RX.View>
 
                                     <RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
@@ -703,6 +699,18 @@ onChangedate = (value) => {
     handleChange() {
         this.setState({ Model:'' });
     }
+    handlechange(date) {
+        this.setState({
+          startDate: date
+        });
+
+      }
+      handleSelect(date) {
+        this.setState({
+          startDate: date
+        });
+      }
+      
 
     _onChangeText = (newText) => {
         this.setState({ password: newText });
@@ -711,4 +719,5 @@ onChangedate = (value) => {
     _onChangeTest = (newText) => {
         this.setState({ password: newText });
     }
+    
 }
