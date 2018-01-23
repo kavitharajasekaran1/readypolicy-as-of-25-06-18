@@ -60,7 +60,7 @@ export default class EightPanel extends RX.Component{
 
         console.log(e,"joke");
     }
-    state={joke:'Testing'};
+    state={currentLocation:'Testing'};
 
 
     render() {

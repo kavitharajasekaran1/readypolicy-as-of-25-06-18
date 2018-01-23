@@ -295,7 +295,6 @@ export default class RegisterPage extends RX.Component{
                             <RX.Button style={styling.button} onPress={ this.props.onNavigateEleven }>
                                 try
                             </RX.Button>
-
                         </Col>*/}
                     </Row>
                   

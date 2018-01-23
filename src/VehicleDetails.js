@@ -280,7 +280,6 @@ export default class VehicleDetails extends React.Component{
                                                 >
                                                     {/*<FormControl/>*/}
                                             <RX.TextInput
-                                                controlId="formBasicText"
                                                 type="email"
                                                 style={styling.Form}
                                                 placeholder="Enter Registration No"

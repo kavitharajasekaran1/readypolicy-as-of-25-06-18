@@ -147,6 +147,19 @@ const styles = {
         marginLeft:30,
         marginRight:20
     }),
+    field:RX.Styles.createTextStyle({
+    display: 'block',
+    width: '100%',
+    height: 34,
+    // padding: 6px 12px;
+     fontSize: 14,
+   // line: 1.42857143;
+   color: "#555",
+   backgroundColor: "#fff",
+   borderWidth:1,
+   borderColor:"#ccc",
+   borderRadius: 4
+    }),
 };
 
 export default class RegisterPage extends RX.Component{
@@ -200,10 +213,13 @@ export default class RegisterPage extends RX.Component{
                                         </RX.Text>
                                         <form>
                                             <FormGroup
-                                                controlId="formBasicText"
+
+                                                controlId=" form control form-control-lg"
+                                               
                                             >
                                                 {/*<ControlLabel>Working example with validation</ControlLabel>*/}
                                                 <FormControl
+                                                style={ styles.field}
                                                     type="text"
                                                     value={this.state.value}
                                                     placeholder="Enter Name"
@@ -222,6 +238,7 @@ export default class RegisterPage extends RX.Component{
                                             >
                                                 {/*<ControlLabel>Working example with validation</ControlLabel>*/}
                                                 <FormControl
+                                                style={ styles.field}
                                                     type="text"
                                                     value={this.state.value}
                                                     placeholder="+91"
@@ -239,6 +256,7 @@ export default class RegisterPage extends RX.Component{
                                             >
                                                 {/*<ControlLabel>Working example with validation</ControlLabel>*/}
                                                 <FormControl
+                                                style={ styles.field}
                                                     type="text"
                                                     value={this.state.value}
                                                     placeholder="DD/MM/YY"
