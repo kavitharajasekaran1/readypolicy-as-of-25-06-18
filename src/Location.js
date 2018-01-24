@@ -16,10 +16,10 @@ constructor(props) {
 
     this.state = {
       latitude: null,
-                  longitude: null,
-                  formatted_address: null,
-                  res:null,
-                 error: null,
+                longitude: null,
+                formatted_address: null,
+                res:null,
+                error: null,
 currentLocation:null
     };
   }
@@ -30,9 +30,11 @@ currentLocation:null
                         latitude: position.coords.latitude,
                         longitude: position.coords.longitude,
                         formatted_address: position.coords.formatted_address,
+                    
                         error: null,
                        
                     });
+                    
                 },
                 (error) => this.setState({ error: error.message }),
                 { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
@@ -45,6 +47,9 @@ currentLocation:null
               fetch("http://maps.googleapis.com/maps/api/geocode/json?latlng=12.9067769,80.22776999999999",{headers:{Accept:'text/plain'}}).then((response) => response.json()).then((responseJson) => {
                            currentLocation = responseJson.results[0].formatted_address;                            ;
                           console.log(currentLocation,"currentLocation");
+                          this.setState({
+                            currentLocation:currentLocation
+                          })
                      })
                      state={currentLocation:'Testing'};
           }
@@ -56,7 +61,7 @@ currentLocation:null
                          </RX.Link>
                      <RX.Text>Latitude: {this.state.latitude}</RX.Text>
                      <RX.Text>Longitude: {this.state.longitude}</RX.Text>
-                     <RX.Text>res: {this.state.formatted_address}</RX.Text>
+                     <RX.Text>res: {this.state.currentLocation}</RX.Text>
 
                      {this.state.error ? <Text>Error: {this.state.error}</Text> : null}
                      {/* <RX.MapView.Animated
@@ -66,7 +71,7 @@ currentLocation:null
         <RX.Button class="btn btn-secondary btn-lg btn-block" onPress={()=> this._onChangeVar() }>Primary</RX.Button>
          <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateSeven }>
       <RX.Text style={ styles.buttonText }>
-      REGISTER
+      REGISTER 
       </RX.Text>
       <RX.Text style={styling.Text }>
                   {this.state.joke}

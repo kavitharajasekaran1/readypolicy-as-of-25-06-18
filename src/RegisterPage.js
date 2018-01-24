@@ -11,7 +11,7 @@ Welcome
 const styles = {
     scroll: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
-        backgroundColor: '#f5fcff'
+        backgroundColor: '#2a647d0a'
     }),
     container: RX.Styles.createViewStyle({
         justifyContent: 'center',
@@ -88,7 +88,6 @@ const styles = {
     flute: RX.Styles.createViewStyle({
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor:'#f5f5f3',
         padding: 11,
         alignSelf:'center',
     }),
@@ -114,7 +113,7 @@ const styles = {
         fontSize: 14,
         color: 'White',
         justifyContent: 'center',
-        margingright:50,
+
         textAlign:'CENTER',
         alignSelf:'center'
     }),
@@ -139,27 +138,16 @@ const styles = {
         justifyContent: 'center'
     }),
     sideText:RX.Styles.createTextStyle({
-        fontSize: 20,
-        color: '#1a153b'
+        fontSize: 18,
+        color: '#1a153b',
+       
     }),
     sideMar:RX.Styles.createTextStyle({
         marginTop: 10,
         marginLeft:30,
         marginRight:20
     }),
-    field:RX.Styles.createTextStyle({
-    display: 'block',
-    width: '100%',
-    height: 34,
-    // padding: 6px 12px;
-     fontSize: 14,
-   // line: 1.42857143;
-   color: "#555",
-   backgroundColor: "#fff",
-   borderWidth:1,
-   borderColor:"#ccc",
-   borderRadius: 4
-    }),
+   
 };
 
 export default class RegisterPage extends RX.Component{
@@ -207,123 +195,56 @@ export default class RegisterPage extends RX.Component{
                         </RX.Text>
                     </RX.View>
                 </RX.View>
-                    <RX.View style={styles.sideMar}>
-                                        <RX.Text style={ styles.sideText }>
-                                            Full Name
-                                        </RX.Text>
-                                        <form>
-                                            <FormGroup
+                
+                <div class="container">
+  <form>
+    <div class="form-group row">
+      <label for="lgFormGroupInput" style={styles.sideText}  class="col-sm-2 col-form-label col-form-label-lg">Full Name</label>
+      <div class="col-sm-10">
+        <input type="email" style={styles.sideText} class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Full Name"/>
+      </div>
+    </div>
+    </form>
+    <form>
+    <div class="form-group row">
+      <label for="lgFormGroupInput"  style={styles.sideText}  class="col-sm-2 col-form-label col-form-label-lg">Phone Number</label>
+      <div class="col-sm-10">
+        <input type="email"  style={styles.sideText}  class="form-control form-control-lg" id="lgFormGroupInput" placeholder="+919293456234"/>
+      </div>
+    </div>
+    </form>
+    <form>
+    <div class="form-group row">
+      <label for="lgFormGroupInput"  style={styles.sideText}  class="col-sm-2 col-form-label col-form-label-lg">Email</label>
+      <div class="col-sm-10">
+        <input type="email"  style={styles.sideText}  class="form-control form-control-lg" id="lgFormGroupInput" placeholder="you@example.com"/>
+      </div>
+    </div>
+    </form>
+    <form>
+    <div class="form-group row">
+      <label for="lgFormGroupInput"  style={styles.sideText}  class="col-sm-2 col-form-label col-form-label-lg">Date of Birth</label>
+      <div class="col-sm-10">
+        <input type="email"  style={styles.sideText}  class="form-control form-control-lg" id="lgFormGroupInput" placeholder="DD/MM/YYYY"/>
+        <img src="./src/img/Datepicker.svg" style={styles.logo}>
+                                            </img>
+      </div>
+    </div>
+    </form>
+    <form>
+    <div class="form-group row">
+      <label for="lgFormGroupInput"  style={styles.sideText}  class="col-sm-2 col-form-label col-form-label-lg">Location</label>
+      <div class="col-sm-10">
+        <input type="email"  style={styles.sideText}  class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Bangalore/India"/>
+        <img src="./src/img/MapPin.svg" style={styles.logo}>
+                                            </img>
+      </div>
+    </div>
+    </form>
+   
 
-                                                controlId=" form control form-control-lg"
-                                               
-                                            >
-                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
-                                                <FormControl
-                                                style={ styles.field}
-                                                    type="text"
-                                                    value={this.state.value}
-                                                    placeholder="Enter Name"
-                                                />
-                                            </FormGroup>
-                                        </form>
-                                    </RX.View>
-                    
-                                    <RX.View style={styles.sideMar}>
-                                        <RX.Text style={ styles.sideText }>
-                                            Phone Number
-                                        </RX.Text>
-                                        <form>
-                                            <FormGroup
-                                                controlId="formBasicText"
-                                            >
-                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
-                                                <FormControl
-                                                style={ styles.field}
-                                                    type="text"
-                                                    value={this.state.value}
-                                                    placeholder="+91"
-                                                />
-                                            </FormGroup>
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styles.sideMar}>
-                                        <RX.Text style={ styles.sideText }>
-                                          Date of Birth
-                                        </RX.Text>
-                                        <form>
-                                            <FormGroup
-                                                controlId="formBasicText"
-                                            >
-                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
-                                                <FormControl
-                                                style={ styles.field}
-                                                    type="text"
-                                                    value={this.state.value}
-                                                    placeholder="DD/MM/YY"
-                                                />
-                                                  <img src="./src/img/Datepicker.svg" style={styles.logo}>
-                                            </img>
-                                            </FormGroup>
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styles.sideMar}>
-                                        <RX.Text style={ styles.sideText }>
-                                            Email
-                                        </RX.Text>
-                                        <form>
-                                            <FormGroup
-                                                controlId="formBasicText"
-                                            >
-                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
-                                                <FormControl
-                                                    type="text"
-                                                    value={this.state.value}
-                                                    placeholder="Email-Address"
-                                                />
-                                            </FormGroup>
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styles.sideMar}>
-                                        <RX.Text style={ styles.sideText }>
-                                            Password
-                                        </RX.Text>
-                                        <form>
-                                            <FormGroup
-                                                controlId="formBasicText"
-                                            >
-                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
-                                                <FormControl
-                                                    type="text"
-                                                    value={this.state.value}
-                                                    placeholder="Password"
-                                                    secureTextEntry= {true}
-                                                />
-                                            </FormGroup>
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styles.sideMar}>
-                                        <RX.Text style={ styles.sideText }>
-                                           Location
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <FormGroup
-                                                controlId="formBasicText"
-                                                
-                                            >
-                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
-                                                <FormControl
-                                                    type="text"
-                                                    value={this.state.value}
-                                                    placeholder="Bangalore,India"
-                                                    secureTextEntry= {true}/>
-                                                 
-                                               <img src="./src/img/MapPin.svg" style={styles.logo}>
-                                            </img>
-                                            </FormGroup>
-                                            
-                                        </form>
-                                    
+            </div>
+            
                                     <RX.Button
                     style={ [styles.button1, this.state.button1Hover && styles.button1Hover] }
                     onHoverStart={ () => { this.setState({ button1Hover: true }) } }
@@ -334,8 +255,9 @@ export default class RegisterPage extends RX.Component{
                         { 'Next' }
                     </RX.Text>
                 </RX.Button>
-                </RX.View>
-                </RX.ScrollView>
+               
+            </RX.ScrollView>  
+                
         );
      
     }

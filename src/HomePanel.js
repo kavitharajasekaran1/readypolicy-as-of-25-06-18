@@ -26,7 +26,7 @@ const styles = {
     scrollImage: RX.Styles.createImageStyle({
     margin: 2,
     width: '100%',
-    height: 200,
+    height: 250,
     backgroundColor:''
     
     }),
@@ -70,8 +70,8 @@ image:RX.Styles.createViewStyle({
     marginTop:'20'
 }),
 IMage:RX.Styles.createViewStyle({
-    height: 150,
-    width:'100%',
+    width:"100%",
+    height:201,
    backgroundColor: '#1d6779a8'
 }),
 Image:RX.Styles.createViewStyle({
@@ -132,6 +132,10 @@ welcome: RX.Styles.createTextStyle({
     fontSize: 40,
     color: 'white',
 }),
+remo:RX.Styles.createTextStyle({
+    width:"100%",
+    height:201,
+}),
 };
 
 export default class RegisterPage extends RX.Component{
@@ -170,7 +174,7 @@ export default class RegisterPage extends RX.Component{
             <RX.View style={styles.scrollViewContainer}>
                 <RX.View style={styles.scrollImage}>
                 <RX.Image
-            style={styles.homeImageLayout}
+style={styles.remo}
             resizeMode="cover"
             source={'./src/img/Farmer.png'}>
                 
@@ -283,7 +287,7 @@ export default class RegisterPage extends RX.Component{
                             <RX.Text style={styles.ScrollBoxText}>Settings</RX.Text>
                             {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
                         </Col>
-                      
+                       
                         <RX.Button bsStyle="info" onPress={()=> this._onChangeVar() }>Primary</RX.Button>
            <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateSuper }>
         <RX.Text style={ styles.buttonText }>

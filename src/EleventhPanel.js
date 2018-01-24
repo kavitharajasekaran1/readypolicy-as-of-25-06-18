@@ -70,6 +70,19 @@ export default class EightPanel extends RX.Component{
                     <RX.Text style={styling.welcome }>
                         Eleventh Page
                     </RX.Text>
+                    <Grid>
+		<Row>
+			<Col xs={6} md={3}>
+				<imag alt="171x180" src={'./src/img/Car.svg'} />
+			</Col>
+			<Col xs={6} md={3}>
+				<Thumbnail href="#" alt="171x180" src={'./src/img/Car.svg'} />
+			</Col>
+			<Col xs={6} md={3}>
+				<Thumbnail href="#" alt="171x180" src={'./src/img/Car.svg'} />
+			</Col>
+		</Row>
+	</Grid>
                     
                     <RX.Button style={ Button } onPress={ this.props.onNavigateSixth }>
                         <RX.Text style={ styling.buttonText }>

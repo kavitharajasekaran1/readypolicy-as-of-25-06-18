@@ -82496,9 +82496,22 @@ state={currentLocation:'Testing'};_this.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 _onChangeReg=function(){
 _this.setState({Model:_this.state.Model});
-};_this.state={startDate:(0,_moment2.default)()};_this.handlechange=_this.handlechange.bind(_this);_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(EightPanel,[{key:'componentDidMount',value:function componentDidMount(){var animation=_reactxp2.default.Animated.timing(this._translationValue,{toValue:0,easing:_reactxp2.default.Animated.Easing.OutBack(),duration:500});animation.start();}},{key:'render',value:function render(){var _this2=this;return _react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:68}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:69}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:70}},'Eleventh Page'),_react2.default.createElement(_reactxp2.default.Button,{style:_Button2.default,onPress:this.props.onNavigateSixth,__source:{fileName:_jsxFileName,lineNumber:74}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buttonText,__source:{fileName:_jsxFileName,lineNumber:75}},'Go Back'))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:80}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:81}},'Registration Year'),_react2.default.createElement(_reactDatepicker2.default,{style:_AppStyles2.default.Form,mode:'date',placeholder:'DD/MM/YYYY',format:'DD-MM-YYYY',confirmBtnText:'Confirm',cancelBtnText:'Cancel',selected:this.state.startDate,onChange:this.handlechange,showYearDropdown:true,monthsShown:2,__source:{fileName:_jsxFileName,lineNumber:84}})),_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.Text,__source:{fileName:_jsxFileName,lineNumber:99}},this.state.joke),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:102}},_react2.default.createElement(_reactBootstrap.FormGroup,{controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:103}},_react2.default.createElement(_reactBootstrap.ControlLabel,{__source:{fileName:_jsxFileName,lineNumber:107}},'Input'),_react2.default.createElement(_reactBootstrap.FormControl.Feedback,{__source:{fileName:_jsxFileName,lineNumber:114}}))),_react2.default.createElement(_reactxp2.default.Button,{bsStyle:'danger',onPress:function onPress(){return _this2._onChangeVar();},__source:{fileName:_jsxFileName,lineNumber:120}},'Primary'),_react2.default.createElement(_reactDatepicker2.default,{selected:this.state.startDate,onChange:this.handlechange,__source:{fileName:_jsxFileName,lineNumber:125}}));}},{key:'handlechange',value:function handlechange(
+};_this.state={startDate:(0,_moment2.default)()};_this.handlechange=_this.handlechange.bind(_this);_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(EightPanel,[{key:'componentDidMount',value:function componentDidMount(){var animation=_reactxp2.default.Animated.timing(this._translationValue,{toValue:0,easing:_reactxp2.default.Animated.Easing.OutBack(),duration:500});animation.start();}},{key:'render',value:function render(){var _this2=this;return _react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:68}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:69}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:70}},'Eleventh Page'),_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:73}},_react2.default.createElement(_reactBootstrap.Row,{__source:{fileName:_jsxFileName,lineNumber:74}},_react2.default.createElement(_reactBootstrap.Col,{xs:6,md:3,__source:{fileName:_jsxFileName,lineNumber:75}},_react2.default.createElement('imag',{alt:'171x180',src:'./src/img/Car.svg',__source:{fileName:_jsxFileName,lineNumber:76}})),_react2.default.createElement(_reactBootstrap.Col,{xs:6,md:3,__source:{fileName:_jsxFileName,lineNumber:78}},_react2.default.createElement(Thumbnail,{href:'#',alt:'171x180',src:'./src/img/Car.svg',__source:{fileName:_jsxFileName,lineNumber:79}})),_react2.default.createElement(_reactBootstrap.Col,{xs:6,md:3,__source:{fileName:_jsxFileName,lineNumber:81}},_react2.default.createElement(Thumbnail,{href:'#',alt:'171x180',src:'./src/img/Car.svg',__source:{fileName:_jsxFileName,lineNumber:82}})))),_react2.default.createElement(_reactxp2.default.Button,{style:_Button2.default,onPress:this.props.onNavigateSixth,__source:{fileName:_jsxFileName,lineNumber:87}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buttonText,__source:{fileName:_jsxFileName,lineNumber:88}},'Go Back'))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:93}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:94}},'Registration Year'),_react2.default.createElement(_reactDatepicker2.default,{style:_AppStyles2.default.Form,mode:'date',placeholder:'DD/MM/YYYY',format:'DD-MM-YYYY',confirmBtnText:'Confirm',cancelBtnText:'Cancel',selected:this.state.startDate,onChange:this.handlechange,showYearDropdown:true,monthsShown:2,__source:{fileName:_jsxFileName,lineNumber:97}})),_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.Text,__source:{fileName:_jsxFileName,lineNumber:112}},this.state.joke),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:115}},_react2.default.createElement(_reactBootstrap.FormGroup,{controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:116}},_react2.default.createElement(_reactBootstrap.ControlLabel,{__source:{fileName:_jsxFileName,lineNumber:120}},'Input'),_react2.default.createElement(_reactBootstrap.FormControl.Feedback,{__source:{fileName:_jsxFileName,lineNumber:127}}))),_react2.default.createElement(_reactxp2.default.Button,{bsStyle:'danger',onPress:function onPress(){return _this2._onChangeVar();},__source:{fileName:_jsxFileName,lineNumber:133}},'Primary'),_react2.default.createElement(_reactDatepicker2.default,{selected:this.state.startDate,onChange:this.handlechange,__source:{fileName:_jsxFileName,lineNumber:138}}));}},{key:'handlechange',value:function handlechange(
 date){
 this.setState({
 startDate:date});
@@ -82545,7 +82558,7 @@ backgroundColor:'#8080803b'}),
 scrollImage:_reactxp2.default.Styles.createImageStyle({
 margin:2,
 width:'100%',
-height:200,
+height:250,
 backgroundColor:''}),
 
 
@@ -82589,8 +82602,8 @@ width:'25%',
 marginTop:'20'}),
 
 IMage:_reactxp2.default.Styles.createViewStyle({
-height:150,
-width:'100%',
+width:"100%",
+height:201,
 backgroundColor:'#1d6779a8'}),
 
 Image:_reactxp2.default.Styles.createViewStyle({
@@ -82649,7 +82662,11 @@ color:'white'}),
 
 welcome:_reactxp2.default.Styles.createTextStyle({
 fontSize:40,
-color:'white'})};var
+color:'white'}),
+
+remo:_reactxp2.default.Styles.createTextStyle({
+width:"100%",
+height:201})};var
 
 
 
@@ -82686,51 +82703,51 @@ animation.start();
 {var _this2=this;
 return(
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollViewContainer,__source:{fileName:_jsxFileName,lineNumber:170}},
-_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollImage,__source:{fileName:_jsxFileName,lineNumber:171}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollViewContainer,__source:{fileName:_jsxFileName,lineNumber:174}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollImage,__source:{fileName:_jsxFileName,lineNumber:175}},
 _react2.default.createElement(_reactxp2.default.Image,{
-style:styles.homeImageLayout,
+style:styles.remo,
 resizeMode:'cover',
-source:'./src/img/Farmer.png',__source:{fileName:_jsxFileName,lineNumber:172}},
+source:'./src/img/Farmer.png',__source:{fileName:_jsxFileName,lineNumber:176}},
 
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Logo.svg',style:[styles.IMage],__source:{fileName:_jsxFileName,lineNumber:177}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.policy,__source:{fileName:_jsxFileName,lineNumber:178}})),
-
-
-
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.policy,__source:{fileName:_jsxFileName,lineNumber:182}},'Plan your insurance on this platform and get RS 100 off your first policy')),
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Logo.svg',style:[styles.IMage],__source:{fileName:_jsxFileName,lineNumber:181}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.policy,__source:{fileName:_jsxFileName,lineNumber:182}})),
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:186}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'auto'},__source:{fileName:_jsxFileName,lineNumber:187}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:20},__source:{fileName:_jsxFileName,lineNumber:188}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.policy,__source:{fileName:_jsxFileName,lineNumber:186}},'Plan your insurance on this platform and get RS 100 off your first policy')),
 
-_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateSuper,__source:{fileName:_jsxFileName,lineNumber:190}},_react2.default.createElement(_reactxp2.default.Image,{
+
+
+_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:190}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'auto'},__source:{fileName:_jsxFileName,lineNumber:191}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:20},__source:{fileName:_jsxFileName,lineNumber:192}},
+
+_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateSuper,__source:{fileName:_jsxFileName,lineNumber:194}},_react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Car.svg',__source:{fileName:_jsxFileName,lineNumber:190}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:193}},'Car'))),
+source:'./src/img/Car.svg',__source:{fileName:_jsxFileName,lineNumber:194}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:197}},'Car'))),
 
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:198}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:199}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:10},__source:{fileName:_jsxFileName,lineNumber:200}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:202}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:203}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:10},__source:{fileName:_jsxFileName,lineNumber:204}},
 _react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Bike.svg',__source:{fileName:_jsxFileName,lineNumber:201}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:204}},'Two Wheeler')),
+source:'./src/img/Bike.svg',__source:{fileName:_jsxFileName,lineNumber:205}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:208}},'Two Wheeler')),
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:208}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:209}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white'},__source:{fileName:_jsxFileName,lineNumber:210}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:212}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:213}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white'},__source:{fileName:_jsxFileName,lineNumber:214}},
 _react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Term.svg',__source:{fileName:_jsxFileName,lineNumber:211}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:214}},'Term Insurance')))))))),
+source:'./src/img/Term.svg',__source:{fileName:_jsxFileName,lineNumber:215}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:218}},'Term Insurance')))))))),
 
 
 
@@ -82738,31 +82755,31 @@ _react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:222}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:223}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:20},__source:{fileName:_jsxFileName,lineNumber:224}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:226}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:227}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:20},__source:{fileName:_jsxFileName,lineNumber:228}},
 _react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Health.svg',__source:{fileName:_jsxFileName,lineNumber:225}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:228}},'Health Insurance')),
+source:'./src/img/Health.svg',__source:{fileName:_jsxFileName,lineNumber:229}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:232}},'Health Insurance')),
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:231}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:232}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:10},__source:{fileName:_jsxFileName,lineNumber:233}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:235}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:236}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:10},__source:{fileName:_jsxFileName,lineNumber:237}},
 _react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Travell.svg',__source:{fileName:_jsxFileName,lineNumber:234}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:237}},'Travel Insurance')),
+source:'./src/img/Travell.svg',__source:{fileName:_jsxFileName,lineNumber:238}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:241}},'Travel Insurance')),
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:240}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:241}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white'},__source:{fileName:_jsxFileName,lineNumber:242}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:244}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:245}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white'},__source:{fileName:_jsxFileName,lineNumber:246}},
 _react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Add Existing Insurance.svg',__source:{fileName:_jsxFileName,lineNumber:243}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:246}},'Add Existing Policy')))))))),
+source:'./src/img/Add Existing Insurance.svg',__source:{fileName:_jsxFileName,lineNumber:247}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:250}},'Add Existing Policy')))))))),
 
 
 
@@ -82771,41 +82788,41 @@ _react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText
 
 
 
-_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.container,__source:{fileName:_jsxFileName,lineNumber:255}},
+_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.container,__source:{fileName:_jsxFileName,lineNumber:259}},
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:257}},
-_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:258}}),
-
-
-
-_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:262}},
-
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Home.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:264}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:265}},'Home')),
-
-
-_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:268}},
-
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/MyPolicies.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:270}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:271}},'My Policies')),
-
-
-_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:274}},
-
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Remainder.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:276}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:277}},'Remainder')),
-
-
-_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:280}},
-
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Settings.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:282}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:283}},'Settings')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:261}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:262}}),
 
 
 
-_react2.default.createElement(_reactxp2.default.Button,{bsStyle:'info',onPress:function onPress(){return _this2._onChangeVar();},__source:{fileName:_jsxFileName,lineNumber:287}},'Primary'),
-_react2.default.createElement(_reactxp2.default.Button,{style:styles.roundButton,onPress:this.props.onNavigateSuper,__source:{fileName:_jsxFileName,lineNumber:288}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.buttonText,__source:{fileName:_jsxFileName,lineNumber:289}},'REGISTER'))))));
+_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:266}},
+
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Home.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:268}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:269}},'Home')),
+
+
+_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:272}},
+
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/MyPolicies.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:274}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:275}},'My Policies')),
+
+
+_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:278}},
+
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Remainder.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:280}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:281}},'Remainder')),
+
+
+_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:284}},
+
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Settings.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:286}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:287}},'Settings')),
+
+
+
+_react2.default.createElement(_reactxp2.default.Button,{bsStyle:'info',onPress:function onPress(){return _this2._onChangeVar();},__source:{fileName:_jsxFileName,lineNumber:291}},'Primary'),
+_react2.default.createElement(_reactxp2.default.Button,{style:styles.roundButton,onPress:this.props.onNavigateSuper,__source:{fileName:_jsxFileName,lineNumber:292}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.buttonText,__source:{fileName:_jsxFileName,lineNumber:293}},'REGISTER'))))));
 
 
 
@@ -83072,36 +83089,41 @@ props));_this.
 
 
 
+
+
 _onChangeVar=function(e){
 
 _this.setState({joke:''});
 fetch("http://maps.googleapis.com/maps/api/geocode/json?latlng=12.9067769,80.22776999999999",{headers:{Accept:'text/plain'}}).then(function(response){return response.json();}).then(function(responseJson){
 currentLocation=responseJson.results[0].formatted_address;;
 console.log(currentLocation,"currentLocation");
+_this.setState({
+currentLocation:currentLocation});
+
 });
 state={currentLocation:'Testing'};
 };_this.state={latitude:null,longitude:null,formatted_address:null,res:null,error:null,currentLocation:null};return _this;}_createClass(Location,[{key:'componentDidMount',value:function componentDidMount(){var _this2=this;navigator.geolocation.getCurrentPosition(function(position){_this2.setState({latitude:position.coords.latitude,longitude:position.coords.longitude,formatted_address:position.coords.formatted_address,error:null});},function(error){return _this2.setState({error:error.message});},{enableHighAccuracy:true,timeout:20000,maximumAge:1000});var localAPI="http://googleapis.com/maps/api/geocode/json?latlng='+latitude+','+longitude+'&sensor=true";}},{key:'render',value:function render()
 {var _this3=this;
 return(
-_react2.default.createElement(_reactxp2.default.View,{style:{flexGrow:1,alignItems:'center',justifyContent:'center'},__source:{fileName:_jsxFileName,lineNumber:53}},
-_react2.default.createElement(_reactxp2.default.Link,{style:styles.docLink,url:'https://maps.google.com/maps?q=%22+19.22+%22,%22+16.22+%22&hl=es',__source:{fileName:_jsxFileName,lineNumber:54}},'Google maps'),
+_react2.default.createElement(_reactxp2.default.View,{style:{flexGrow:1,alignItems:'center',justifyContent:'center'},__source:{fileName:_jsxFileName,lineNumber:58}},
+_react2.default.createElement(_reactxp2.default.Link,{style:styles.docLink,url:'https://maps.google.com/maps?q=%22+19.22+%22,%22+16.22+%22&hl=es',__source:{fileName:_jsxFileName,lineNumber:59}},'Google maps'),
 
 
-_react2.default.createElement(_reactxp2.default.Text,{__source:{fileName:_jsxFileName,lineNumber:57}},'Latitude: ',this.state.latitude),
-_react2.default.createElement(_reactxp2.default.Text,{__source:{fileName:_jsxFileName,lineNumber:58}},'Longitude: ',this.state.longitude),
-_react2.default.createElement(_reactxp2.default.Text,{__source:{fileName:_jsxFileName,lineNumber:59}},'res: ',this.state.formatted_address),
+_react2.default.createElement(_reactxp2.default.Text,{__source:{fileName:_jsxFileName,lineNumber:62}},'Latitude: ',this.state.latitude),
+_react2.default.createElement(_reactxp2.default.Text,{__source:{fileName:_jsxFileName,lineNumber:63}},'Longitude: ',this.state.longitude),
+_react2.default.createElement(_reactxp2.default.Text,{__source:{fileName:_jsxFileName,lineNumber:64}},'res: ',this.state.currentLocation),
 
-this.state.error?_react2.default.createElement(Text,{__source:{fileName:_jsxFileName,lineNumber:61}},'Error: ',this.state.error):null,
-
-
+this.state.error?_react2.default.createElement(Text,{__source:{fileName:_jsxFileName,lineNumber:66}},'Error: ',this.state.error):null,
 
 
-_react2.default.createElement(_reactxp2.default.Button,{'class':'btn btn-secondary btn-lg btn-block',onPress:function onPress(){return _this3._onChangeVar();},__source:{fileName:_jsxFileName,lineNumber:66}},'Primary'),
-_react2.default.createElement(_reactxp2.default.Button,{style:styles.roundButton,onPress:this.props.onNavigateSeven,__source:{fileName:_jsxFileName,lineNumber:67}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.buttonText,__source:{fileName:_jsxFileName,lineNumber:68}},'REGISTER'),
 
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.Text,__source:{fileName:_jsxFileName,lineNumber:71}},
+_react2.default.createElement(_reactxp2.default.Button,{'class':'btn btn-secondary btn-lg btn-block',onPress:function onPress(){return _this3._onChangeVar();},__source:{fileName:_jsxFileName,lineNumber:71}},'Primary'),
+_react2.default.createElement(_reactxp2.default.Button,{style:styles.roundButton,onPress:this.props.onNavigateSeven,__source:{fileName:_jsxFileName,lineNumber:72}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.buttonText,__source:{fileName:_jsxFileName,lineNumber:73}},'REGISTER'),
+
+
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.Text,__source:{fileName:_jsxFileName,lineNumber:76}},
 this.state.joke))));
 
 
@@ -84989,7 +85011,7 @@ var _reactBootstrap=__webpack_require__(21);function _interopRequireDefault(obj)
 var styles={
 scroll:_reactxp2.default.Styles.createScrollViewStyle({
 alignSelf:'stretch',
-backgroundColor:'#f5fcff'}),
+backgroundColor:'#2a647d0a'}),
 
 container:_reactxp2.default.Styles.createViewStyle({
 justifyContent:'center',
@@ -85066,7 +85088,6 @@ justifyContent:'center'}),
 flute:_reactxp2.default.Styles.createViewStyle({
 justifyContent:'center',
 alignItems:'center',
-backgroundColor:'#f5f5f3',
 padding:11,
 alignSelf:'center'}),
 
@@ -85092,7 +85113,7 @@ button1TextHover:_reactxp2.default.Styles.createTextStyle({
 fontSize:14,
 color:'White',
 justifyContent:'center',
-margingright:50,
+
 textAlign:'CENTER',
 alignSelf:'center'}),
 
@@ -85117,26 +85138,15 @@ width:110,
 justifyContent:'center'}),
 
 sideText:_reactxp2.default.Styles.createTextStyle({
-fontSize:20,
+fontSize:18,
 color:'#1a153b'}),
+
 
 sideMar:_reactxp2.default.Styles.createTextStyle({
 marginTop:10,
 marginLeft:30,
-marginRight:20}),
+marginRight:20})};var
 
-field:_reactxp2.default.Styles.createTextStyle({
-display:'block',
-width:'100%',
-height:34,
-
-fontSize:14,
-
-color:"#555",
-backgroundColor:"#fff",
-borderWidth:1,
-borderColor:"#ccc",
-borderRadius:4})};var
 
 
 
@@ -85172,131 +85182,64 @@ animation.start();
 
 {var _this2=this;
 return(
-_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.scroll,__source:{fileName:_jsxFileName,lineNumber:197}},
-_react2.default.createElement(_reactxp2.default.View,{style:styles.container,__source:{fileName:_jsxFileName,lineNumber:198}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.welcome,__source:{fileName:_jsxFileName,lineNumber:199}},'Profile')),
+_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.scroll,__source:{fileName:_jsxFileName,lineNumber:185}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.container,__source:{fileName:_jsxFileName,lineNumber:186}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.welcome,__source:{fileName:_jsxFileName,lineNumber:187}},'Profile')),
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:203}},
-_react2.default.createElement(_reactxp2.default.View,{style:styles.flute,__source:{fileName:_jsxFileName,lineNumber:204}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.head,__source:{fileName:_jsxFileName,lineNumber:205}},'Please Create An Account'))),
-
-
-
-
-_react2.default.createElement(_reactxp2.default.View,{style:styles.sideMar,__source:{fileName:_jsxFileName,lineNumber:210}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.sideText,__source:{fileName:_jsxFileName,lineNumber:211}},'Full Name'),
-
-
-_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:214}},
-_react2.default.createElement(_reactBootstrap.FormGroup,{
-
-controlId:' form control form-control-lg',__source:{fileName:_jsxFileName,lineNumber:215}},
-
-
-
-_react2.default.createElement(_reactBootstrap.FormControl,{
-style:styles.field,
-type:'text',
-value:this.state.value,
-placeholder:'Enter Name',__source:{fileName:_jsxFileName,lineNumber:221}})))),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:191}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.flute,__source:{fileName:_jsxFileName,lineNumber:192}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.head,__source:{fileName:_jsxFileName,lineNumber:193}},'Please Create An Account'))),
 
 
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.sideMar,__source:{fileName:_jsxFileName,lineNumber:231}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.sideText,__source:{fileName:_jsxFileName,lineNumber:232}},'Phone Number'),
-
-
-_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:235}},
-_react2.default.createElement(_reactBootstrap.FormGroup,{
-controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:236}},
-
-
-_react2.default.createElement(_reactBootstrap.FormControl,{
-style:styles.field,
-type:'text',
-value:this.state.value,
-placeholder:'+91',__source:{fileName:_jsxFileName,lineNumber:240}})))),
+_react2.default.createElement('div',{'class':'container',__source:{fileName:_jsxFileName,lineNumber:199}},
+_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:200}},
+_react2.default.createElement('div',{'class':'form-group row',__source:{fileName:_jsxFileName,lineNumber:201}},
+_react2.default.createElement('label',{'for':'lgFormGroupInput',style:styles.sideText,'class':'col-sm-2 col-form-label col-form-label-lg',__source:{fileName:_jsxFileName,lineNumber:202}},'Full Name'),
+_react2.default.createElement('div',{'class':'col-sm-10',__source:{fileName:_jsxFileName,lineNumber:203}},
+_react2.default.createElement('input',{type:'email',style:styles.sideText,'class':'form-control form-control-lg',id:'lgFormGroupInput',placeholder:'Full Name',__source:{fileName:_jsxFileName,lineNumber:204}})))),
 
 
 
-
-_react2.default.createElement(_reactxp2.default.View,{style:styles.sideMar,__source:{fileName:_jsxFileName,lineNumber:249}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.sideText,__source:{fileName:_jsxFileName,lineNumber:250}},'Date of Birth'),
-
-
-_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:253}},
-_react2.default.createElement(_reactBootstrap.FormGroup,{
-controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:254}},
+_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:208}},
+_react2.default.createElement('div',{'class':'form-group row',__source:{fileName:_jsxFileName,lineNumber:209}},
+_react2.default.createElement('label',{'for':'lgFormGroupInput',style:styles.sideText,'class':'col-sm-2 col-form-label col-form-label-lg',__source:{fileName:_jsxFileName,lineNumber:210}},'Phone Number'),
+_react2.default.createElement('div',{'class':'col-sm-10',__source:{fileName:_jsxFileName,lineNumber:211}},
+_react2.default.createElement('input',{type:'email',style:styles.sideText,'class':'form-control form-control-lg',id:'lgFormGroupInput',placeholder:'+919293456234',__source:{fileName:_jsxFileName,lineNumber:212}})))),
 
 
-_react2.default.createElement(_reactBootstrap.FormControl,{
-style:styles.field,
-type:'text',
-value:this.state.value,
-placeholder:'DD/MM/YY',__source:{fileName:_jsxFileName,lineNumber:258}}),
 
-_react2.default.createElement('img',{src:'./src/img/Datepicker.svg',style:styles.logo,__source:{fileName:_jsxFileName,lineNumber:264}})))),
+_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:216}},
+_react2.default.createElement('div',{'class':'form-group row',__source:{fileName:_jsxFileName,lineNumber:217}},
+_react2.default.createElement('label',{'for':'lgFormGroupInput',style:styles.sideText,'class':'col-sm-2 col-form-label col-form-label-lg',__source:{fileName:_jsxFileName,lineNumber:218}},'Email'),
+_react2.default.createElement('div',{'class':'col-sm-10',__source:{fileName:_jsxFileName,lineNumber:219}},
+_react2.default.createElement('input',{type:'email',style:styles.sideText,'class':'form-control form-control-lg',id:'lgFormGroupInput',placeholder:'you@example.com',__source:{fileName:_jsxFileName,lineNumber:220}})))),
+
+
+
+_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:224}},
+_react2.default.createElement('div',{'class':'form-group row',__source:{fileName:_jsxFileName,lineNumber:225}},
+_react2.default.createElement('label',{'for':'lgFormGroupInput',style:styles.sideText,'class':'col-sm-2 col-form-label col-form-label-lg',__source:{fileName:_jsxFileName,lineNumber:226}},'Date of Birth'),
+_react2.default.createElement('div',{'class':'col-sm-10',__source:{fileName:_jsxFileName,lineNumber:227}},
+_react2.default.createElement('input',{type:'email',style:styles.sideText,'class':'form-control form-control-lg',id:'lgFormGroupInput',placeholder:'DD/MM/YYYY',__source:{fileName:_jsxFileName,lineNumber:228}}),
+_react2.default.createElement('img',{src:'./src/img/Datepicker.svg',style:styles.logo,__source:{fileName:_jsxFileName,lineNumber:229}})))),
 
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.sideMar,__source:{fileName:_jsxFileName,lineNumber:269}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.sideText,__source:{fileName:_jsxFileName,lineNumber:270}},'Email'),
-
-
-_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:273}},
-_react2.default.createElement(_reactBootstrap.FormGroup,{
-controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:274}},
-
-
-_react2.default.createElement(_reactBootstrap.FormControl,{
-type:'text',
-value:this.state.value,
-placeholder:'Email-Address',__source:{fileName:_jsxFileName,lineNumber:278}})))),
+_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:234}},
+_react2.default.createElement('div',{'class':'form-group row',__source:{fileName:_jsxFileName,lineNumber:235}},
+_react2.default.createElement('label',{'for':'lgFormGroupInput',style:styles.sideText,'class':'col-sm-2 col-form-label col-form-label-lg',__source:{fileName:_jsxFileName,lineNumber:236}},'Location'),
+_react2.default.createElement('div',{'class':'col-sm-10',__source:{fileName:_jsxFileName,lineNumber:237}},
+_react2.default.createElement('input',{type:'email',style:styles.sideText,'class':'form-control form-control-lg',id:'lgFormGroupInput',placeholder:'Bangalore/India',__source:{fileName:_jsxFileName,lineNumber:238}}),
+_react2.default.createElement('img',{src:'./src/img/MapPin.svg',style:styles.logo,__source:{fileName:_jsxFileName,lineNumber:239}}))))),
 
 
 
-
-_react2.default.createElement(_reactxp2.default.View,{style:styles.sideMar,__source:{fileName:_jsxFileName,lineNumber:286}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.sideText,__source:{fileName:_jsxFileName,lineNumber:287}},'Password'),
-
-
-_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:290}},
-_react2.default.createElement(_reactBootstrap.FormGroup,{
-controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:291}},
-
-
-_react2.default.createElement(_reactBootstrap.FormControl,{
-type:'text',
-value:this.state.value,
-placeholder:'Password',
-secureTextEntry:true,__source:{fileName:_jsxFileName,lineNumber:295}})))),
-
-
-
-
-_react2.default.createElement(_reactxp2.default.View,{style:styles.sideMar,__source:{fileName:_jsxFileName,lineNumber:304}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.sideText,__source:{fileName:_jsxFileName,lineNumber:305}},'Location'),
-
-
-_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:308}},
-
-_react2.default.createElement(_reactBootstrap.FormGroup,{
-controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:310}},
-
-
-
-_react2.default.createElement(_reactBootstrap.FormControl,{
-type:'text',
-value:this.state.value,
-placeholder:'Bangalore,India',
-secureTextEntry:true,__source:{fileName:_jsxFileName,lineNumber:315}}),
-
-_react2.default.createElement('img',{src:'./src/img/MapPin.svg',style:styles.logo,__source:{fileName:_jsxFileName,lineNumber:321}}))),
 
 
 
@@ -85306,10 +85249,11 @@ _react2.default.createElement(_reactxp2.default.Button,{
 style:[styles.button1,this.state.button1Hover&&styles.button1Hover],
 onHoverStart:function onHoverStart(){_this2.setState({button1Hover:true});},
 onHoverEnd:function onHoverEnd(){_this2.setState({button1Hover:false});},
-onPress:this.props.onNavigateFifth,__source:{fileName:_jsxFileName,lineNumber:327}},
+onPress:this.props.onNavigateFifth,__source:{fileName:_jsxFileName,lineNumber:248}},
 
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.button1Text,this.state.button1Hover&&styles.button1TextHover],__source:{fileName:_jsxFileName,lineNumber:333}},
-'Next')))));
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.button1Text,this.state.button1Hover&&styles.button1TextHover],__source:{fileName:_jsxFileName,lineNumber:254}},
+'Next'))));
+
 
 
 
