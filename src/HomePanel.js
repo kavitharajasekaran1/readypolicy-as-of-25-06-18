@@ -136,6 +136,9 @@ remo:RX.Styles.createTextStyle({
     width:"100%",
     height:201,
 }),
+read: RX.Styles.createScrollViewStyle({
+    width:'100%'
+}),
 };
 
 export default class RegisterPage extends RX.Component{
@@ -187,77 +190,31 @@ style={styles.remo}
                 </RX.View>
     
               
-                    <RX.View style={styles.scrollBox}>
-                    <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'auto'}}>
-                    <RX.View style={{width: 100, height: 100, backgroundColor: 'white', marginTop:20}} >
-                    
-                    <RX.Button  onPress={ this.props.onNavigateSuper }><RX.Image
-                            style={styles.HomeScrollImageLogo}
-                            source={'./src/img/Car.svg'}/>
-                       <RX.Text style={styles.scrollBoxText}>Car</RX.Text>
-                       </RX.Button>
-                    </RX.View>
-              
-              
-                    <RX.View style={styles.scrollBox}>
-                    <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
-                    <RX.View style={{width: 100, height: 100, backgroundColor: 'white',marginTop:10 }} >
-                    <RX.Image
-                            style={styles.HomeScrollImageLogo}
-                            source={'./src/img/Bike.svg'}/>
-                       <RX.Text style={styles.scrollBoxText}>Two Wheeler</RX.Text>
-                    </RX.View>
-
-               
-                    <RX.View style={styles.scrollBox}>
-                    <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
-                    <RX.View style={{width: 100, height: 100, backgroundColor: 'white',}} >
-                        <RX.Image
-                            style={styles.HomeScrollImageLogo}
-                            source={'./src/img/Term.svg'}/>
-                       <RX.Text style={styles.scrollBoxText}>Term Insurance</RX.Text>
-                    </RX.View>
-                    </RX.View>
-                    </RX.View>
-                    </RX.View>
-                    </RX.View>
-                    </RX.View>
-                    </RX.View>
-                    <RX.View style={styles.ScrollBox}>
-                    <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
-                    <RX.View style={{width: 100, height: 100, backgroundColor: 'white',marginTop:20}} >
-                        <RX.Image
-                            style={styles.HomeScrollImageLogo}
-                            source={'./src/img/Health.svg'}/>
-                       <RX.Text style={styles.scrollBoxText}>Health Insurance</RX.Text>
-                    </RX.View>
-                   
-                    <RX.View style={styles.ScrollBox}>
-                    <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
-                    <RX.View style={{width: 100, height: 100, backgroundColor: 'white',marginTop:10}} >
-                    <RX.Image
-                            style={styles.HomeScrollImageLogo}
-                            source={'./src/img/Travell.svg'}/>
-                       <RX.Text style={styles.scrollBoxText}>Travel Insurance</RX.Text>
-                    </RX.View>
-                   
-                    <RX.View style={styles.ScrollBox}>
-                    <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
-                    <RX.View style={{width: 100, height: 100, backgroundColor: 'white',}} >
-                        <RX.Image
-                            style={styles.HomeScrollImageLogo}
-                            source={'./src/img/Add Existing Insurance.svg'}/>
-                       <RX.Text style={styles.scrollBoxText}>Add Existing Policy</RX.Text>
-                    </RX.View>
-                    
-                    </RX.View>
-                    </RX.View>
-                    </RX.View>
-                    </RX.View>
-                    </RX.View>
-                    </RX.View>
+                <div className="row">
+                <div className="col-xs-4 col-sm-4 col-md-4">
+               <img src={'./src/img/Term.svg'} alt="Lights" style={styles.read}/>
+               </div>
+               <div className="col-xs-4 col-sm-4 col-md-4">
+               <img src={'./src/img/Term.svg'} alt="Lights" style={styles.read}/>
+               </div>
+               <div className="col-xs-4 col-sm-4 col-md-4">
+               <img src={'./src/img/Term.svg'} alt="Lights" style={styles.read}/>
+               </div>
+               </div>
+              <div className="row">
+                <div className="col-xs-4 col-sm-4 col-md-4">
+               <img src={'./src/img/Term.svg'} alt="Lights" style={styles.read}/>
+               </div>
+               <div className="col-xs-4 col-sm-4 col-md-4">
+               <img src={'./src/img/Term.svg'} alt="Lights" style={styles.read}/>
+               </div>
+               <div className="col-xs-4 col-sm-4 col-md-4">
+               <img src={'./src/img/Term.svg'} alt="Lights" style={styles.read}/>
+               </div>
+              </div>
+                
+                
                     <RX.ScrollView style={ styles.container}>
-                 
                     <Row className="show-grid hidden-xs">
                         <Col  md={2} style={styling.marTop}>
                             {/*<RX.Text>Test</RX.Text>*/}

@@ -5,7 +5,7 @@
 import React from 'react';
 import RX from 'reactxp';
 import styling from './AppStyles';
-import {Nav,NavItem,NavDropdown,MenuItem,Grid,Row,Col,Form,FormGroup,ControlLabel,FormControl,Checkbox} from 'react-bootstrap';
+import {Nav,NavItem,NavDropdown,MenuItem,Grid,Row,Col,Form,thumbnail,FormGroup,ControlLabel,FormControl,Checkbox} from 'react-bootstrap';
 import Button from 'react-bootstrap/lib/Button';
 import moment from 'moment';
 import DatePicker from 'react-datepicker';
@@ -19,6 +19,10 @@ const _styles = {
         alignSelf: 'stretch',
         backgroundColor: '#ffffff'
     }),
+    read: RX.Styles.createScrollViewStyle({
+        width:'100%'
+    }),
+
 };
 
 
@@ -70,26 +74,41 @@ export default class EightPanel extends RX.Component{
                     <RX.Text style={styling.welcome }>
                         Eleventh Page
                     </RX.Text>
-                    <Grid>
-		<Row>
-			<Col xs={6} md={3}>
-				<imag alt="171x180" src={'./src/img/Car.svg'} />
-			</Col>
-			<Col xs={6} md={3}>
-				<Thumbnail href="#" alt="171x180" src={'./src/img/Car.svg'} />
-			</Col>
-			<Col xs={6} md={3}>
-				<Thumbnail href="#" alt="171x180" src={'./src/img/Car.svg'} />
-			</Col>
-		</Row>
-	</Grid>
-                    
+                    <RX.View style={styling.sideMar}>
+    <div className="row">
+                <div className="col-xs-4 col-sm-4 col-md-4">
+               <img src={'./src/img/Car.svg'} alt="Lights" style={_styles.read}/>
+               </div>
+               <div className="col-xs-4 col-sm-4 col-md-4">
+               <img src={'./src/img/Bike.svg'} alt="Lights" style={_styles.read}/>
+               </div>
+               <div className="col-xs-4 col-sm-4 col-md-4">
+               <img src={'./src/img/Term.svg'} alt="Lights" style={_styles.read}/>
+               </div>
+               </div>
+              <div className="row">
+                <div className="col-xs-4 col-sm-4 col-md-4">
+               <img src={'./src/img/Health.svg'} alt="Lights" style={_styles.read}/>
+               </div>
+               <div className="col-xs-4 col-sm-4 col-md-4">
+               <img src={'./src/img/Travell.svg'} alt="Lights" style={_styles.read}/>
+               </div>
+               <div className="col-xs-4 col-sm-4 col-md-4">
+               <img src={'./src/img/Add Existing Insurance.svg'} alt="Lights" style={_styles.read}/>
+               </div>
+              </div>
+                </RX.View>
+                
+
+            
                     <RX.Button style={ Button } onPress={ this.props.onNavigateSixth }>
                         <RX.Text style={ styling.buttonText }>
                             Go Back
                         </RX.Text>
                     </RX.Button>
                 </RX.View>
+               
+
                 <RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
                                             Registration Year
