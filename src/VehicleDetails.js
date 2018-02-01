@@ -28,6 +28,12 @@ const _styles = {
         backgroundColor: '#ff0000ab',
         justifyContent: 'CENTER'
         }),
+        read:RX.Styles.createScrollViewStyle({
+            borderRadius:15,
+            width:"100%",
+            marginLeft:20,
+            align:'center'
+        }),
         
 }
 
@@ -260,12 +266,26 @@ export default class VehicleDetails extends React.Component{
                                         </Col>
                     </Row>*/}
 
-                    <Row className="clearfix">
-                        <Col  md={2}></Col>
+                    <Row className="clearfix" >
+                        <Col  md={8}></Col>
                         <Col  md={8}>
+                        <div class="container">
+                        <div class="btn-pref btn-group btn-group-justified btn-group-sm" role="group" style={styling.sideMar}aria-label="...">
+        <div class="btn-group" role="group">
+            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                <div class="hidden-xs">New</div>
+            </button>
+        </div>
+        <div class="btn-group" role="group"  style={styling.sideMar}  >
+            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                <div class="hidden-xs">Renew</div>
+            </button>
+        </div>
+        </div>
+        </div>
                     
-                            <Tabs defaultActiveKey={1} id="left-tabs-example">
-                                <Tab eventKey={1} title="New" className="myClass">
+                            <Tabs defaultActiveKey={1} style={_styles.read} id="left-tabs-example">
+                                <Tab eventKey={1} style={_styles.read}title="New" className="myClass">
                                 
                                     {/*<code>&lt;{'Col xs={12} md={8}'} /&gt;</code>*/}
 
@@ -451,7 +471,7 @@ export default class VehicleDetails extends React.Component{
                                     </Row>
 
                                 </Tab>
-                                <Tab eventKey={2} title="Renew">
+                                <Tab eventKey={2} style={_styles.read}  title="Renew">
                                     <RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText}>
                                             Registration No

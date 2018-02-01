@@ -313,6 +313,11 @@ module.exports = {
         fontSize:15,
         color:'#000000'
     }),
+    TExt:RX.Styles.createTextStyle({
+        fontSize:15,
+        color:'#000000',
+        marginTop:10
+    }),
     Self: RX.Styles.createViewStyle({
         backgroundColor:'#FF6347'
 

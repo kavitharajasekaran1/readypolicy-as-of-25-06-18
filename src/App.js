@@ -22,6 +22,7 @@ import TravelInsuranceReg from './TravelInsuranceReg'
 import PaymentScreen from './PaymentScreen'
 import NewTermInsurance from './NewTermInsurance'
 import HomePanel from './HomePanel'
+import Vehicleregister from './Vehicleregister'
 
 
 
@@ -44,6 +45,7 @@ let NavigationRouteId = {
     TravelInsuranceReg:"TravelInsuranceReg",
     NewTermInsurance:"NewTermInsurance",
     HomePanel:"HomePanel",
+    Vehicleregister:"Vehicleregister"
 };
 
 const styles = {
@@ -75,11 +77,13 @@ export default class App extends RX.Component {
         this._onPressTravel = this._onPressTravel.bind(this);
         this._onPressNewTermInsurance = this._onPressNewTermInsurance.bind(this);
         this._onPressHome = this._onPressHome.bind(this);
+        this._onPressfont = this._onPressfont.bind(this);
+
     }
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.EleventhPanel,
+            routeId: NavigationRouteId.Vehicleregister,
             sceneConfigType: "Fade"
         }]);
     }
@@ -149,6 +153,10 @@ export default class App extends RX.Component {
             case NavigationRouteId.HomePanel:
                 return <HomePanel onNavigateSuper={ this._onPressHome}/>;   
 
+             case NavigationRouteId.Vehicleregister:
+                return <Vehicleregister onNavigatefont={ this._onPressfont}/>; 
+
+
 
         }
 
@@ -179,6 +187,16 @@ export default class App extends RX.Component {
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.OtpPage,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+    _onPressfont() {
+        // this._navigator.pop();
+        this._navigator.push({
+            routeId: NavigationRouteId.Vehicleregister,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
