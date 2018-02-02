@@ -193,6 +193,11 @@ const _styles = {
         backgroundColor:'#FFFFFF',
         marginTop:10
     }),
+    assitance: RX.Styles.createTextStyle({
+        fontSize: 20,
+        color: '#1a1828',
+        textTransform:'capitalize',
+    }),
 };
 
 export default class QuotesSelection  extends RX.Component {
@@ -293,6 +298,7 @@ export default class QuotesSelection  extends RX.Component {
                     <Grid className="hidden-xs">
                     <RX.View style={ _styles.client }>
                         <RX.Image source={ './src/img/bajaj.png' } style={ [_styles.image] } />
+                        <code style={_styles.assitance}><Checkbox>Compare</Checkbox></code>
 
                         <RX.Text style={ _styles.sideHead }>
                              Bajaj Allianz

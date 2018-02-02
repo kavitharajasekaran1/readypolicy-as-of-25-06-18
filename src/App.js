@@ -83,7 +83,7 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.RegisterPage,
+            routeId: NavigationRouteId. QuotesSelection,
             sceneConfigType: "Fade"
         }]);
     }
@@ -196,7 +196,7 @@ export default class App extends RX.Component {
     _onPressfont() {
         // this._navigator.pop();
         this._navigator.push({
-            routeId: NavigationRouteId.Vehicleregister,
+            routeId: NavigationRouteId.VehicleDetails,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
@@ -308,7 +308,7 @@ export default class App extends RX.Component {
 
     _onPressHome() {
         this._navigator.push({
-            routeId: NavigationRouteId.VehicleDetails,
+            routeId: NavigationRouteId.Vehicleregister,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true  

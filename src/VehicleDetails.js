@@ -34,6 +34,14 @@ const _styles = {
             marginLeft:20,
             align:'center'
         }),
+        HomeScrollImageLogo: RX.Styles.createImageStyle({
+            width:97,
+            height: 72,
+            paddingVertical:20,
+            marginLeft:3,
+            marginTop:-9
+        }),
+        
         
 }
 
@@ -235,9 +243,13 @@ export default class VehicleDetails extends React.Component{
         return (
             <RX.ScrollView style={ _styles.scroll }>
                 <RX.View style={ styling.container }>
-                    <RX.Text style={styling.welcome }>
+                <RX.Button  onPress={ this.props.onNavigateSuper }><RX.Image
+                             style={_styles.HomeScrollImageLogo}
+                             source={'./src/img/Back.svg'}/>
+                        <RX.Text style={styling.welcome }>
                         New Car Insurance
                     </RX.Text>
+                       </RX.Button>
                     {/*<RX.Button style={ Button } this._onChangeVaronPress={ this.props.onNavigateThirteen }>
                         <RX.Text style={ styling.buttonText }>
                             Go Back
