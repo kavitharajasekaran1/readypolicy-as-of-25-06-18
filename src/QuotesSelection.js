@@ -194,9 +194,11 @@ const _styles = {
         marginTop:10
     }),
     assitance: RX.Styles.createTextStyle({
-        fontSize: 20,
-        color: '#1a1828',
-        textTransform:'capitalize',
+        position: "relative", 
+        width: "100",
+         height: "100",
+          float: "left" ,
+          marginleft: 10, 
     }),
 };
 

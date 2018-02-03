@@ -303,7 +303,7 @@ export default class VehicleDetails extends React.Component{
 
                                     <RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText}>
-                                            Registration No
+                                            Title
                                         </RX.Text>
                                         <form>
                                                 <FormGroup
@@ -326,7 +326,427 @@ export default class VehicleDetails extends React.Component{
 
                                     <RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
-                                            Manufacturer
+                                           First Name
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Last Name
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                            Email id
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                            Mobile no
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Date of birth
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                            is New User
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                            is Login check
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Occupation
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                            Nominee name
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                            Nominee age
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                            Relationship with nominee
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Guardian Name
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Guardian Age
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Relationshiip with guardian
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Permanent address 1
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                            Permanent address 2
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Permanent address 3
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                          Permanent address 3
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Permanent address 4
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Permanent City
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Permanent pincode
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                          Same address Reg
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Residential address 1
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                          Residential address 2
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Residential address 3
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Residentiial address 4
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                        Residence city
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Residence pincode
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                         Password reseted
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                            Client name
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="Enter Manufacturer"
+                                                value={ this.state.phone }
+                                                onChangeText={this.onChangePhone}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           strStdcode
                                         </RX.Text>
                                         <form>
                                             <RX.TextInput
@@ -340,9 +760,10 @@ export default class VehicleDetails extends React.Component{
                                     </RX.View>
 
 
+
                                     <RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
-                                            Model
+                                           str Phone no
                                         </RX.Text>
                                         <form>
                                             <RX.TextInput
@@ -357,7 +778,7 @@ export default class VehicleDetails extends React.Component{
 
                                     <RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
-                                            Variant
+                                            
                                         </RX.Text>
                                         <form>
                                             <RX.TextInput
@@ -372,7 +793,7 @@ export default class VehicleDetails extends React.Component{
 
                                     <RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
-                                            Registration Year
+                                           Year of manufacturer
                                         </RX.Text>
                                         <DatePicker
                                          selected={this.state.startDate}
@@ -382,7 +803,316 @@ export default class VehicleDetails extends React.Component{
 
                                     <RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
-                                            RTO Location
+                                          Driving experience 
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                      Voluntary Deductible
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                          Vehicle Manufacture name
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                       IDV
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Policy Start Date
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                          Vehicle Mostly driven on
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                          Vehicle register Date
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                          Vehicleregisteredin the name of
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                          model Name
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Company name for car
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                            Enginee Number
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View><RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Chassis Number
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View><RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                          Is twowheeler financed
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View><RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           Vehicle subline
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View><RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                          Fueltype
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View><RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                          Automobile association membership
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View><RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                            Region
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View><RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                         Car Register city
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View><RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                            Average monthly mileage run
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View><RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                            Engine capacity amount
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View><RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                        Personal accident coverfor paid driver
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View><RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                          Legalliability to paid driver
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View><RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                           legalliability to employees
+                                        </RX.Text>
+                                        <form>
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RTO Location"
+                                                value={ this.state.registrationYear }
+                                                onChangeText={this.onChangeReg}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                        </form>
+                                    </RX.View><RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                       \cover_elec_acc
                                         </RX.Text>
                                         <form>
                                             <RX.TextInput
