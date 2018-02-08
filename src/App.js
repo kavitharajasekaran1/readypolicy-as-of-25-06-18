@@ -83,7 +83,7 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId. QuotesSelection,
+            routeId: NavigationRouteId.QuotesSelection,
             sceneConfigType: "Fade"
         }]);
     }

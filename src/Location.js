@@ -45,7 +45,7 @@ currentLocation:null
 
               this.setState({ joke:'' });
               fetch("http://maps.googleapis.com/maps/api/geocode/json?latlng=12.9067769,80.22776999999999",{headers:{Accept:'text/plain'}}).then((response) => response.json()).then((responseJson) => {
-                           currentLocation = responseJson.results[0].formatted_address;                            ;
+                           currentLocation = responseJson.results[0];                            ;
                           console.log(currentLocation,"currentLocation");
                           this.setState({
                             currentLocation:currentLocation
