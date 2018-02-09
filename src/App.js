@@ -83,7 +83,7 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.QuotesSelection,
+            routeId: NavigationRouteId.InsuranceAddons,
             sceneConfigType: "Fade"
         }]);
     }
@@ -123,7 +123,7 @@ export default class App extends RX.Component {
                 return <RegisterPage onNavigateFifth={ this._onPressFifth }/>;
 
             case NavigationRouteId.QuotesSelection:
-                return <QuotesSelection onNavigateSixth={ this._onPressSixth }/>;
+                return <QuotesSelection onNavigateSixth={ this._onPressSixth } navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.Location:
                 return <Location onNavigateSeven={ this._onPressSeven }/>;
@@ -135,7 +135,7 @@ export default class App extends RX.Component {
                 return <MyPolicy onNavigateNine={ this._onPressNine }  navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.InsuranceAddons:
-                return <InsuranceAddons onNavigateTen={ this._onPressTen }/>;
+                return <InsuranceAddons onNavigateTen={ this._onPressTen } navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.EleventhPanel:
                 return <EleventhPanel onNavigateEleven={ this._onPressEleven }/>;
@@ -258,11 +258,13 @@ export default class App extends RX.Component {
         });
     }
 
-    _onPressTen() {
+    _onPressTen(resJson) {
+        console.log(resJson,"<-------")
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.QuotesSelection,
             sceneConfigType: "FloatFromRight",
+            resJson:resJson,
             customSceneConfig: {
                 hideShadow: true
             }

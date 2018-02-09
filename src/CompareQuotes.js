@@ -214,7 +214,7 @@ export default class CompareQuotes extends RX.Component{
                         </Col>
                        <Col  md={3} style={styling.marTop}>
                             {/*<RX.Text>Test1</RX.Text>*/}
-                            <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                            <RX.Image source={ './src/img/royal.jpg' } style={ [styles.image ] } />
                             {/* <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
                         </Col>
                         <Col  md={3} style={styling.marTop}>
@@ -265,7 +265,7 @@ export default class CompareQuotes extends RX.Component{
                         <Col  md={3} style={styling.marTop}>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
-                            <RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>
+                            <RX.Text style={[styles.clientText]}>Royal Sundaram</RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.clientText]}>Ergo Insurance</RX.Text>

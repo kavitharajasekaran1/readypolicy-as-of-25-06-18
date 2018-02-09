@@ -33,7 +33,120 @@ export default class InsuranceAddons extends RX.Component{
             ]
         });
     }
+    onChangePostt = () => {
+console.log("hittinh.......")
+        //   let email = "joe@example.com";
+        // let password = "donkeybrains";
+        // let usersPath = "motorIssuePolicy"
+        // console.log(password,"password");
+       // console.log(Rest.ApiUrl,"RestApiUrl");
+      return  fetch('http://192.168.1.7:3000/calculatepremium', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                
+                // 'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNWExYmFhNTYyYzZiOTEzNzYzMmM3ZWVjIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiJqWmFlNzI3SzA4S2FPbUtTZ09hR3p3dy9YVnFHci9QS0VnSU1ranJjYkpJPSIsInJhcGlkSUQiOiJCd2JNd0E2YjFIaEUxNC91TFdweVJXS3EzMytBVUJINnd6UjZtQzh0OUowPSIsInVzZXJPYmplY3QiOnsiZm5hbWUiOiJhcnVuIiwibG5hbWUiOiJob3NzYW1hbmkiLCJwaG9uZSI6IjkxODM2OTk2NDU4MiJ9LCJ1c2VydHlwZSI6IkRpcmVjdCBDbGllbnRzIiwib3RwIjoxMTAwLCJlbmNvZGVkTWFpbCI6IllYSjFiaTVvYjNOellXMWhibWxBY21Gd2FXUnhkV0psTG1OdmJRPT0iLCJjcmVhdGVkX2F0IjoiTW9uIE5vdiAyNyAyMDE3IDExOjMxOjU4IEdNVCswNTMwIChJU1QpIiwiY291bnQiOjAsIl9fdiI6MCwic3RhdHVzIjpbInBob25lIiwiZW1haWwiXX1dLCJpYXQiOjE1MTUwNTA3NDcsImV4cCI6MTUxNTExMDc0N30.xZ_K-mE7WfAszkFrGMATmm9EpCmtYgdOyydVL4HGPVk'
+            },
+            
+            body: JSON.stringify({
 
+                    CALCULATEPREMIUMREQUEST: {
+                      authenticationDetails: {
+                        apiKey: "310ZQmv/bYJMYrWQ1iYa7s43084=",
+                        agentId: "RSAI"
+                      },
+                      proposerDetails: {
+                        title: "Ms",
+                        firstName: "testxerago",
+                        lastName: "name",
+                        emailId: "test@xerago.com",
+                        mobileNo: "7898732798",
+                        dateOfBirth: "26/11/1987",
+                        occupation: "Student",
+                        nomineeName: "nomineename",
+                        nomineeAge: "43",
+                        relationshipWithNominee: "Cousin",
+                        guardianName: "guardianname",
+                        guardianAge: "54",
+                        relationshipwithGuardian: "Mother",
+                        permanentAddress1: "address1",
+                        permanentAddress2: "address2",
+                        permanentAddress3: "address3",
+                        permanentAddress4: "address4",
+                        permanentCity: "Chennai",
+                        permanentPincode: "600032",
+                        sameAdressReg: "No",
+                        ResidenceAddressOne: "addressone",
+                        ResidenceAddressTwo: "addresstwo",
+                        ResidenceAddressThree: "addressthree",
+                        ResidenceAddressFour: "addressfour",
+                        ResidenceCity: "Chennai",
+                        ResidencePinCode: "600034",
+                        strStdCode: "044",
+                        strPhoneNo: "2456984"
+                      },
+                      vehicleDetails: {
+                        vehicleModelCode: "ZWTV310",
+                        planOpted: "Flexi Plan",
+                        yearOfManufacture: "2017",
+                        drivingExperience: "1",
+                        voluntaryDeductible: "0",
+                        vehicleManufacturerName: "TVS",
+                        idv: "65478",
+                        policyStartDate: "09/02/2018",
+                        vehicleMostlyDrivenOn: "City roads",
+                        vehicleRegDate: "09/02/2018",
+                        vehicleRegisteredInTheNameOf: "Company",
+                        modelName: "APACHE RTR ABS-2 Seater",
+                        productName: "BrandNewTwoWheeler",
+                        companyNameForCar: "xerago",
+                        engineNumber: "565465466",
+                        chassisNumber: "5654656",
+                        isTwoWheelerFinanced: "No",
+                        vehicleSubLine: "motorCycle",
+                        fuelType: "Petrol",
+                        automobileAssociationMembership: "No",
+                        region: "East Region",
+                        carRegisteredCity: "24PARGANAS",
+                        averageMonthlyMileageRun: "1000",
+                        engineCapacityAmount: "153 CC",
+                        personalAccidentCoverForUnnamedPassengers: "50000",
+                        accidentCoverForPaidDriver: "50000",
+                        legalliabilityToPaidDriver: "Yes",
+                        legalliabilityToEmployees: "Yes",
+                        cover_elec_acc: "Yes",
+                        nonElectricalAccesories: {
+                          nonelectronicAccessoriesDetails: {
+                            NameOfElectronicAccessories: "Tyre",
+                            MakeModel: "TVS",
+                            Value: "345"
+                          }
+                        },
+                        electricalAccessories: {
+                          electronicAccessoriesDetails: {
+                            NameOfElectronicAccessories: "Headlight",
+                            MakeModel: "Philips",
+                            Value: "300"
+                          }
+                        },
+                      }
+                    }
+                    }),
+                    }).then((response) => response.json()).then((responseJson) => {
+                 var res = responseJson.response;
+                 var resJson1 = JSON.parse(res)
+                 var resJson = resJson1.PREMIUMDETAILS.DATA.IDV
+                 var resJson2 = resJson1.PREMIUMDETAILS.DATA.LIABILITY
+                 var  liability = resJson2
+                 //console.log("idididid",idv)
+                 console.log("neenenne",resJson2)
+                        this.props.onNavigateTen(resJson); 
+                     //   idv = resJson.PREMIUMDETAILS.DATA.IDV
+                    
+                        
+                    })
+    }
     componentDidMount() {
         let animation = RX.Animated.timing(this._translationValue, {
                 toValue: 0,
@@ -46,7 +159,7 @@ export default class InsuranceAddons extends RX.Component{
     }
 
     render() {
-        console.log(this.props.user,"user");
+       // console.log(this.props.user,"user");
         return (
             <RX.ScrollView style={ _styles.scroll }>
                 <RX.View style={ styling.container }>
@@ -104,7 +217,7 @@ export default class InsuranceAddons extends RX.Component{
                 </Grid>
 
 
-                <Button bsStyle="danger" onClick={ this.props.onNavigateTen }>Next</Button>
+                <RX.Button bsStyle="danger" onPress={()=> this.onChangePostt()}>Next</RX.Button>
 
 
 

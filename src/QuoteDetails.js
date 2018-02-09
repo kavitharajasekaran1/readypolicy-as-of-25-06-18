@@ -256,7 +256,7 @@ export default class QuotesSelection  extends RX.Component {
         console.log(testValue,"testValue");
         console.log(password,"password");
         console.log(Rest.ApiUrl,"RestApiUrl");
-        fetch(`${Rest.ApiUrl}/${usersPath}`, {
+        fetch('http://192.168.1.7:3000/calculatepremium',{
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
