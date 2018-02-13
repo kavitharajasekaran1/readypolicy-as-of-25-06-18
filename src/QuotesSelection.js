@@ -355,35 +355,19 @@ export default class QuotesSelection  extends RX.Component {
         })
     }
 
-    onChangePost = () => {
-        let {
-            testValue = 'read'
-        } = this.state;
+    onChangeliability  = () => {
+        this.props.onNavigateSixth(liability,resJson);
+        
+        
 
-        let email = "joe@example.com";
-        let password = "donkeybrains";
-        let myApiUrl = "http://www.example.com/api"
-        let usersPath = "users"
-        console.log(testValue,"testValue");
-        console.log(password,"password");
-        console.log(Rest.ApiUrl,"RestApiUrl");
-        fetch(`${Rest.ApiUrl}/${usersPath}`, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                user: {email, password}
-                /*firstParam: 'yourValue',
-                secondParam: 'yourOtherValue',*/
-            })
-        });
+       
     }
 
     render() {
      resJson = this.props.navigatorRoute.resJson
+     liability = this.props.navigatorRoute.liability
     console.log("idvvvvv",resJson)
+    console.log("liablity",liability)
         return (
             <RX.ScrollView style={ _styles.scroll }>
                 <RX.View style={ _styles.container }>
@@ -417,7 +401,7 @@ export default class QuotesSelection  extends RX.Component {
                             <div>NIL</div>
                         </RX.Text>
                         <RX.View style={_styles.nextBtn}>
-                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
+                            <RX.Button style={ _styles.roundButton } onPress={()=> this.onChangeliability()}>
                                 <RX.Text style={ _styles.buybuttonText }>
                                     Rs.1,322*
                                 </RX.Text>

@@ -191,7 +191,9 @@ const _styles = {
         marginTop:10
     }),
 };
-
+var idv
+var resJson
+var liability
 export default class QuotesSelection  extends RX.Component {
 
 
@@ -263,15 +265,116 @@ export default class QuotesSelection  extends RX.Component {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                user: {email, password}
+                CALCULATEPREMIUMREQUEST: {
+                    authenticationDetails: {
+                      apiKey: "310ZQmv/bYJMYrWQ1iYa7s43084=",
+                      agentId: "RSAI"
+                    },
+                    proposerDetails: {
+                      title: "Ms",
+                      firstName: "testxerago",
+                      lastName: "name",
+                      emailId: "test@xerago.com",
+                      mobileNo: "7898732798",
+                      dateOfBirth: "26/11/1987",
+                      occupation: "Student",
+                      nomineeName: "nomineename",
+                      nomineeAge: "43",
+                      relationshipWithNominee: "Cousin",
+                      guardianName: "guardianname",
+                      guardianAge: "54",
+                      relationshipwithGuardian: "Mother",
+                      permanentAddress1: "address1",
+                      permanentAddress2: "address2",
+                      permanentAddress3: "address3",
+                      permanentAddress4: "address4",
+                      permanentCity: "Chennai",
+                      permanentPincode: "600032",
+                      sameAdressReg: "No",
+                      ResidenceAddressOne: "addressone",
+                      ResidenceAddressTwo: "addresstwo",
+                      ResidenceAddressThree: "addressthree",
+                      ResidenceAddressFour: "addressfour",
+                      ResidenceCity: "Chennai",
+                      ResidencePinCode: "600034",
+                      strStdCode: "044",
+                      strPhoneNo: "2456984"
+                    },
+                    vehicleDetails: {
+                      vehicleModelCode: "ZWTV310",
+                      planOpted: "Flexi Plan",
+                      yearOfManufacture: "2017",
+                      drivingExperience: "1",
+                      voluntaryDeductible: "0",
+                      vehicleManufacturerName: "TVS",
+                      idv: "65478",
+                      policyStartDate: "13/02/2018",
+                      vehicleMostlyDrivenOn: "City roads",
+                      vehicleRegDate: "13/02/2018",
+                      vehicleRegisteredInTheNameOf: "Company",
+                      modelName: "APACHE RTR ABS-2 Seater",
+                      productName: "BrandNewTwoWheeler",
+                      companyNameForCar: "xerago",
+                      engineNumber: "565465466",
+                      chassisNumber: "5654656",
+                      isTwoWheelerFinanced: "No",
+                      vehicleSubLine: "motorCycle",
+                      fuelType: "Petrol",
+                      automobileAssociationMembership: "No",
+                      region: "East Region",
+                      carRegisteredCity: "24PARGANAS",
+                      averageMonthlyMileageRun: "1000",
+                      engineCapacityAmount: "153 CC",
+                      personalAccidentCoverForUnnamedPassengers: "50000",
+                      accidentCoverForPaidDriver: "50000",
+                      legalliabilityToPaidDriver: "Yes",
+                      legalliabilityToEmployees: "Yes",
+                      cover_elec_acc: "Yes",
+                      nonElectricalAccesories: {
+                        nonelectronicAccessoriesDetails: {
+                          NameOfElectronicAccessories: "Tyre",
+                          MakeModel: "TVS",
+                          Value: "345"
+                        }
+                      },
+                      electricalAccessories: {
+                        electronicAccessoriesDetails: {
+                          NameOfElectronicAccessories: "Headlight",
+                          MakeModel: "Philips",
+                          Value: "300"
+                        }
+                      },
+                    }
+                  }
+                  }),
+                  }).then((response) => response.json()).then((responseJson) => {
+               var res = responseJson.response;
+               var resJson1 = JSON.parse(res)
+               var resJson = resJson1.PREMIUMDETAILS.DATA.IDV
+               var liability = resJson1.PREMIUMDETAILS.DATA.LIABILITY
+               var message = resJson1.PREMIUMDETAILS.DATA.Status
+               //console.log("idididid",idv)
+               console.log("neenenne",resJson)
+               console.log("liablity",liability)
+               console.log("message",message)
+                        this.props.onNavigateTen(resJson,liability); 
+                        this.props.onNavigateBack (liability,message);
+                   //   idv = resJson.PREMIUMDETAILS.DATA.IDV
+                  
+                      
+            
+  
                 /*firstParam: 'yourValue',
                 secondParam: 'yourOtherValue',*/
             })
-        });
     }
 
     render() {
-        console.log(this.props,"value");
+        resJson = this.props.navigatorRoute.resJson
+     liability = this.props.navigatorRoute.liability
+    console.log("idvvvvv",resJson)
+    console.log("liablity",liability)
+       // console.log(this.props,"value");
         return (
             <RX.ScrollView style={ _styles.scroll }>
                 <RX.View style={ _styles.container }>
@@ -290,12 +393,12 @@ export default class QuotesSelection  extends RX.Component {
                                     <RX.View >
                                         <Col md={8} xs={8}style={ _styles.client }>
                                             <Col md={2} xs={2}>
-                                                <RX.Image source={ './src/img/Bharti.png' } style={ [styling.quoteImage] } />
+                                                <RX.Image source={ './src/img/royal.jpg '} style={ [styling.quoteImage] } />
                                             </Col>
                                             <Col  md={4} xs={4} style={styling.marTop17 }>
-                                                <div style={styling.clientHead}>Bajaj Allianz</div>
+                                                <div style={styling.clientHead}>Royal Sundaram</div>
                                                 <RX.Text style={ styling.sideHead}>
-                                                    <div style={styling.tryHead}>IDV: 1,25,300</div>
+                                                    <div style={styling.tryHead}>IDV:{resJson}</div>
                                                 </RX.Text>
 
                                             </Col>
@@ -519,6 +622,11 @@ export default class QuotesSelection  extends RX.Component {
                                 </Col>
                             </Row>
                         </RX.View>
+                        <RX.Button style={ Button } onPress={ this.props.onNavigateDetail }>
+                    <RX.Text style={ styling.buttonText }>
+                        Go Back
+                    </RX.Text>
+                </RX.Button>
 
                     </Grid>
 

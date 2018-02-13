@@ -173,7 +173,8 @@ const styles = {
         color:'#fa774d'
     }),
 };
-
+var liability
+var resJson
 export default class CompareQuotes extends RX.Component{
     constructor(props) {
         super(props);
@@ -197,8 +198,42 @@ export default class CompareQuotes extends RX.Component{
 
         animation.start();
     }
+    onChangePostCompare = () => {
+        this.props.onNavigateCompare(liability,resJson);
+    
+    
+    }
+    onNavigateSixth = () => {
+        let {
+            testValue = 'read'
+        } = this.state;
+
+        let email = "joe@example.com";
+        let password = "donkeybrains";
+        let myApiUrl = "http://www.example.com/api"
+        let usersPath = "users"
+        console.log(testValue,"testValue");
+        console.log(password,"password");
+        console.log(Rest.ApiUrl,"RestApiUrl");
+        fetch(`${Rest.ApiUrl}/${usersPath}`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                user: {email, password}
+                /*firstParam: 'yourValue',
+                secondParam: 'yourOtherValue',*/
+            })
+        });
+    }
 
     render() {
+         liability = this.props.navigatorRoute.liability
+         resJson = this.props.navigatorRoute.resJson
+        console.log("comparequotes",liability)
+        console.log("resJson",resJson)
         return (
             <RX.ScrollView style={ styles.scroll }>
                 <RX.View style={ styles.container }>
@@ -304,17 +339,17 @@ export default class CompareQuotes extends RX.Component{
 
                     <Row className="show-grid hidden-xs">
                         <Col  md={3} style={styling.marTopcs}>
-                            <RX.Text style={[styles.clientText]}>Sum Insured</RX.Text>
+                            <RX.Text style={[styles.clientText]}>Basic Permium:</RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
-                            <RX.Text style={[styles.subText]}>3,21,402</RX.Text>
+                            <RX.Text style={[styles.subText]}>{liability.BASIC_PREMIUM_INCLUDING_PREMIUM_FOR_TPPD}</RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>3,41,402</RX.Text>
-                        </Col>
+                        </Col>sic 
                     </Row>
 
                     <Row className="show-grid hidden-lg">
@@ -381,10 +416,12 @@ export default class CompareQuotes extends RX.Component{
 
                     <Row className="show-grid hidden-xs">
                         <Col  md={3} style={styling.marTopcs}>
-                            <RX.Text style={[styles.clientText]}>Hospitalisation at Home</RX.Text>
+                            <RX.Text style={[styles.clientText]}> Cover To Paid Driver</RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
-                            <RX.Text style={[styles.subText]}>15%</RX.Text>
+                            <RX.Text style={[styles.subText]}>{liability.PA_COVER_TO_PAID_DRIVER}
+
+</RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>20%</RX.Text>
@@ -396,10 +433,12 @@ export default class CompareQuotes extends RX.Component{
 
                     <Row className="show-grid hidden-xs">
                         <Col  md={3} style={styling.marTopcs}>
-                            <RX.Text style={[styles.clientText]}>Organ Donor Expenses</RX.Text>
+                            <RX.Text style={[styles.clientText]}>Total Liability premium</RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
-                            <RX.Text style={[styles.subText]}>15%</RX.Text>
+                            <RX.Text style={[styles.subText]}>{liability.TOTAL_LIABILITY_PREMIUM}
+
+</RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>20%</RX.Text>
@@ -411,25 +450,10 @@ export default class CompareQuotes extends RX.Component{
 
                     <Row className="show-grid hidden-xs">
                         <Col  md={3} style={styling.marTopcs}>
-                            <RX.Text style={[styles.clientText]}>Cancer Care Liver</RX.Text>
+                            <RX.Text style={[styles.clientText]}>Employees</RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
-                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
-                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
-                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
-                        </Col>
-                    </Row>
-
-                    <Row className="show-grid hidden-xs">
-                        <Col  md={3} style={styling.marTopcs}>
-                            <RX.Text style={[styles.clientText]}>Dengu Care</RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
-                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                            <RX.Text style={[styles.subText]}>{liability.TO_EMPLOYESES}</RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>Nil</RX.Text>
@@ -441,10 +465,12 @@ export default class CompareQuotes extends RX.Component{
 
                     <Row className="show-grid hidden-xs">
                         <Col  md={3} style={styling.marTopcs}>
-                            <RX.Text style={[styles.clientText]}>Hospitalisation at Home</RX.Text>
+                            <RX.Text style={[styles.clientText]}>Paid Drivers</RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
-                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                            <RX.Text style={[styles.subText]}>{liability.TO_PAID_DRIVERS}
+
+</RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>Nil</RX.Text>
@@ -456,10 +482,29 @@ export default class CompareQuotes extends RX.Component{
 
                     <Row className="show-grid hidden-xs">
                         <Col  md={3} style={styling.marTopcs}>
-                            <RX.Text style={[styles.clientText]}>Organ Donor Expenses</RX.Text>
+                            <RX.Text style={[styles.clientText]}>Owner Driver</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>{liability.UNDER_SECTION_III_OWNER_DRIVER}
+:
+</RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>
+                    </Row>
+
+                    <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTopcs}>
+                            <RX.Text style={[styles.clientText]}>Umnnamed Passengers</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>{liability.UNNAMED_PASSENGRS}
+
+</RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>Nil</RX.Text>
@@ -682,7 +727,8 @@ export default class CompareQuotes extends RX.Component{
                 </RX.View>*/}
                 <RX.View style={ styles.clientNorm }></RX.View>
 
-                <RX.Button style={ styles.roundButton }  onPress={ this.props.onNavigateBack }>
+                <RX.Button style={ styles.roundButton }  onPress={()=> this.onChangePostCompare() }>
+>
                     <RX.Text style={ styles.buttonText }>
                         NEXT
                     </RX.Text>

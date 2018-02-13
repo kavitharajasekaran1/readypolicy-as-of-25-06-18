@@ -51,70 +51,70 @@ export default class VehicleDetails extends React.Component{
    constructor(props) {
         super(props);
         this.state = {
-                      title: '',
-                      firstname: '',
-                      lastname: '',
-                      emailId: '',
-                      mobileNo: '',
-                      dateofbirth: '',
-                      occupation: '',
-                      nomineeName: '',
-                      nomineeAge: '',
-                      relationshipWithNominee: '',
-                      guardianName: '',
-                      guardianAge: '',
-                      relationshipwithGuardian: '',
-                      permanentAddress1: '',
-                      permanentAddress2: '',
-                      permanentAddress3: '',
-                      permanentAddress4: '',
-                      permanentCity: '',
-                      permanentPincode: '',
-                      sameAdressReg:'',
-                      ResidenceAddressOne: '',
-                      ResidenceAddressTwo: '',
-                      ResidenceAddressThree: '',
-                      ResidenceAddressFour: '',
-                      ResidenceCity: '',
-                      ResidencePinCode: '',
-                      strStdCode: '',
-                      strPhoneNo: '',
-                      vehicleModelCode: '',
-                      planOpted: '',
-                      yearOfManufacture: '',
-                      drivingExperience: '',
-                      voluntaryDeductible:'',
-                      vehicleManufacturerName: '',
-                      idv: '',
-                      policyStartDate: '',
-                      vehicleMostlyDrivenOn: '',
-                      vehicleRegDate: '',
-                      vehicleRegisteredInTheNameOf: '',
-                      modelName: '',
-                      productName: '',
-                      companyNameForCar: '',
-                      engineNumber: '',
-                      chassisNumber: '',
-                      isTwoWheelerFinanced: '',
-                      vehicleSubLine: '',
-                      registrationchargesRoadtax: '',
-                      fuelType: '',
-                      automobileAssociationMembership: '',
-                      region: '',
-                      carRegisteredCity: '',
-                      isProductCheck: '',
-                      engineCapacityAmount: '',
-                      personalAccidentCoverForUnnamedPassengers: '',
-                      accidentCoverForPaidDriver: '',
-                      legalliabilityToPaidDriver: '',
-                      legalliabilityToEmployees: '',
-                      cover_elec_acc: '',
-                      NameOfElectronicAccessories: '',
-                      MakeModel: '',
-                      Value:'',
-                      NameOfElectronicAccessories: '',
-                          MakeModel: '',
-                          Value: '',
+                      title: 'Ms',
+                      firstname: 'Neelima',
+                      lastname: 'Rani',
+                      emailId: 'neeluneelima67@gmail.com',
+                      mobileNo: '9553715856',
+                      dateofbirth: '02/12/1994',
+                      occupation: 'Student',
+                      nomineeName: 'Harini',
+                      nomineeAge: '50',
+                      relationshipWithNominee: 'Cousin',
+                      guardianName: 'Prakhya',
+                      guardianAge: '60',
+                      relationshipwithGuardian: 'Sister',
+                      permanentAddress1: 'Guntupalli',
+                      permanentAddress2: 'Vijayawada',
+                      permanentAddress3: 'Krishna',
+                      permanentAddress4: 'Ibrahimpatnam',
+                      permanentCity: 'Chennai',
+                      permanentPincode: '600034',
+                      sameAdressReg:'No',
+                      ResidenceAddressOne: 'Hyderabad',
+                      ResidenceAddressTwo: 'Guntupalli',
+                      ResidenceAddressThree: 'Krishna',
+                      ResidenceAddressFour: 'Kurnool',
+                      ResidenceCity: 'Chennai',
+                      ResidencePinCode: '600032',
+                      strStdCode: '0866',
+                      strPhoneNo: '2831608',
+                      vehicleModelCode: 'ZWTV310',
+                      planOpted: 'Fixed Plan',
+                      yearOfManufacture: '2017',
+                      drivingExperience: '1',
+                      voluntaryDeductible:'0',
+                      vehicleManufacturerName: 'TVS',
+                      idv: '87164',
+                      policyStartDate: '13/02/2018',
+                      vehicleMostlyDrivenOn: 'Roads',
+                      vehicleRegDate: '13/02/2018',
+                      vehicleRegisteredInTheNameOf: 'Company',
+                      modelName: 'APACHE RTR ABS-2 Seater',
+                      productName: 'BrandNewTwoWheeler',
+                      companyNameForCar: 'xerago',
+                      engineNumber: '565465466',
+                      chassisNumber: '56546546',
+                      isTwoWheelerFinanced: 'No',
+                      vehicleSubLine: 'motorCycle',
+                      registrationchargesRoadtax: 'No',
+                      fuelType: 'Petrol',
+                      automobileAssociationMembership: 'No',
+                      region: 'East Region',
+                      carRegisteredCity: '24PARGANAS',
+                      isProductCheck: 'No',
+                      engineCapacityAmount: '153 CC',
+                      personalAccidentCoverForUnnamedPassengers: '5000',
+                      accidentCoverForPaidDriver: '5000',
+                      legalliabilityToPaidDriver: 'Yes',
+                      legalliabilityToEmployees: 'Yes',
+                      cover_elec_acc: 'Yes',
+                      NameOfElectronicAccessories: 'Tyre',
+                      MakeModel: 'TVS',
+                      Value:'345',
+                      NameOfElectronicAccessories: 'Handle',
+                          MakeModel: 'HONDA',
+                          Value: '365',
             secureTextEntry: true
         };
         this._translationValue = RX.Animated.createValue(-100);
@@ -144,41 +144,41 @@ export default class VehicleDetails extends React.Component{
         
             body: JSON.stringify({
                 CALCULATEPREMIUMREQUEST: {
-                    quoteId: "QVPBMN0008262",
+                    quoteId: "QVMN0011306",
                     premium: "2774.0",
                     authenticationDetails: {
                       apiKey: "310ZQmv/bYJMYrWQ1iYa7s43084=",
                       agentId: "RSAI"
                     },
                     proposerDetails: {
-                      title: this.state.title,
-                      firstName: this.state.firstname,
-                      lastname: this.state.lastname,
-                      emailId: this.state. emailId,
-                      mobileNo: this.state. mobileNo,
-                      dateOfBirth: this.state.dateofbirth,
-                      occupation: this.state.occupation,
-                      nomineeName: this.state. nomineeName,
-                      nomineeAge: this.state.nomineeAge,
-                      relationshipWithNominee: this.state.relationshipWithNominee,
-                      guardianName: this.state. guardianName,
-                      guardianAge: this.state. guardianAge,
-                      relationshipwithGuardian: this.state.relationshipwithGuardian,
-                      permanentAddress1: this.state.permanentAddress1,
-                      permanentAddress2: this.state.permanentAddress2,
-                      permanentAddress3: this.state.permanentAddress3,
-                      permanentAddress4: this.state.permanentAddress4,
-                      permanentCity: this.state. permanentCity,
-                      permanentPincode: this.state. permanentPincode,
-                      sameAdressReg: this.state.sameAdressReg,
-                      ResidenceAddressOne: this.state.ResidenceAddressOne,
-                      ResidenceAddressTwo: this.state.ResidenceAddressTwo,
-                      ResidenceAddressThree: this.state.ResidenceAddressThree,
-                      ResidenceAddressFour: this.state. ResidenceAddressFour,
-                      ResidenceCity: this.state. ResidenceCity,
-                      ResidencePinCode: this.state.ResidencePinCode,
-                      strStdCode: this.state.strStdCode,
-                      strPhoneNo: this.state.strPhoneNo,
+                      "title": this.state.title,
+                      "firstName": this.state.firstname,
+                      "lastname": this.state.lastname,
+                      "emailId": this.state. emailId,
+                      "mobileNo": this.state. mobileNo,
+                      "dateOfBirth": this.state.dateofbirth,
+                      "occupation": this.state.occupation,
+                      "nomineeName": this.state. nomineeName,
+                      "nomineeAge": this.state.nomineeAge,
+                      "relationshipWithNominee": this.state.relationshipWithNominee,
+                      "guardianName": this.state. guardianName,
+                      "guardianAge": this.state. guardianAge,
+                      "relationshipwithGuardian": this.state.relationshipwithGuardian,
+                      "permanentAddress1": this.state.permanentAddress1,
+                      "permanentAddress2": this.state.permanentAddress2,
+                      "permanentAddress3": this.state.permanentAddress3,
+                      "permanentAddress4": this.state.permanentAddress4,
+                      "permanentCity": this.state. permanentCity,
+                      "permanentPincode": this.state. permanentPincode,
+                      "sameAdressReg": this.state.sameAdressReg,
+                      "ResidenceAddressOne": this.state.ResidenceAddressOne,
+                      "ResidenceAddressTwo": this.state.ResidenceAddressTwo,
+                      "ResidenceAddressThree": this.state.ResidenceAddressThree,
+                      "ResidenceAddressFour": this.state. ResidenceAddressFour,
+                      "ResidenceCity": this.state. ResidenceCity,
+                      "ResidencePinCode": this.state.ResidencePinCode,
+                      "strStdCode": this.state.strStdCode,
+                      "strPhoneNo": this.state.strPhoneNo,
                     },
                     vehicleDetails: {
                       vehicleModelCode: this.state.vehicleModelCode,
@@ -231,8 +231,18 @@ export default class VehicleDetails extends React.Component{
                 }),
         }).then((response) => response.json()).then((responseJson) => {
             var res = responseJson.response;
-            console.log(res,"res");
+            var resJson1 = JSON.parse(res)
+            console.log(resJson1,"res");
+           // this.props.onNavigateEight(res);
+            var Message = resJson1.PREMIUMDETAILS.Status.Message
+            console.log(Message,"Message");
+            alert(''+Message+'')
+            if (Message==="Premium Calculated and Vehicle details saved successfully"){
             this.props.onNavigateEight(res);
+            }else{
+                return false
+            }
+
         })
      }
         
@@ -258,26 +268,30 @@ export default class VehicleDetails extends React.Component{
         this.setState({ emailId: value });
         console.log(this.state.emailId,"emailId");
     }
-
-    validateEmail(value) {
-        let regex = /\w[-._\w]*@[-._\w]*\w\.\w{2,5}/;
-        if (regex.test(value) === true) {
-            return true;
-        } else {
-            return false;
-        }
+    onChangevehicleManufacturerName = (value) => {
+        this.setState({ vehicleManufacturerName: value });
+        console.log(this.state.vehicleManufacturerName,"vehicleManufacturerName");
     }
 
-    getValidationState(name) {
-        console.log(this.state.name,"this.state.name");
-        // const length = this.state.name.length;
-        const value = this.state.name;
-        if (this.validateEmail(value)) return 'success';
-        else if (length > 5 && !this.validateEmail(value)) return 'warning';
-        else if (length > 2 && !this.validateEmail(value)) return 'error';
-        return null;
-    }
+    // validateEmail(value) {
+    //     let regex = /\w[-._\w]*@[-._\w]*\w\.\w{2,5}/;
+    //     if (regex.test(value) === true) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    //  }
 
+    // // getValidationState = (value)=> {
+    // //     this.setState({ name: value });
+    // //     console.log(this.state.name,"name");
+    // //     // const length = this.state.name.length;
+    // //     const value = this.state.name;
+    // //     if (this.validateEmail(value)) return 'success';
+    // //     else if (length > 5 && !this.validateEmail(value)) return 'warning';
+    // //     else if (length > 2 && !this.validateEmail(value)) return 'error';
+    // //     return null;
+    // // }
     onChangemobileNo = (value) => {
         this.setState({ mobileNo: value });
         console.log(this.state.mobileNo,"mobileNo");
@@ -300,189 +314,201 @@ export default class VehicleDetails extends React.Component{
         this.setState({ occupation: value });
         console.log(this.state.occupation,"occupation");
     }
-    onChangenomineename =   (value) => {
-        this.setState({ nomineename: value });
-        console.log(this.state.nomineename,"nomineename");
+    onChangenomineeName =   (value) => {
+        this.setState({ nomineeName: value });
+        console.log(this.state.nomineeName,"nomineeName");
     }
-    onChangenomineeage =   (value) => {
-        this.setState({ nomineeage: value });
-        console.log(this.state.nomineeage,"nomineeage");
+    onChangenomineeAge =   (value) => {
+        this.setState({ nomineeAge: value });
+        console.log(this.state.nomineeAge,"nomineeAge");
     }
-    onChangeguardianname =   (value) => {
-        this.setState({ guardianname: value });
-        console.log(this.state.guardianname,"guardianname");
+    onChangeguardianName =   (value) => {
+        this.setState({ guardianName: value });
+        console.log(this.state.guardianName,"guardianName");
     }
-    onChangeguardianage =   (value) => {
-        this.setState({ guardianage: value });
-        console.log(this.state.guardianage,"guardianage");
+    onChangeguardianAge =   (value) => {
+        this.setState({ guardianAge: value });
+        console.log(this.state.guardianAge,"guardianAge");
     }
-    onChangerelationship =   (value) => {
-        this.setState({ relationship: value });
-        console.log(this.state.relationship,"relationship");
+    onChangerelationshipWithNominee =   (value) => {
+        this.setState({ relationshipWithNominee: value });
+        console.log(this.state.relationshipWithNominee,"relationshipWithNominee");
     }
-    onChangepermanent1 =   (value) => {
-        this.setState({ permanent1: value });
-        console.log(this.state.permanent1,"permanent1");
+    onChangerelationshipWithGuardian =   (value) => {
+        this.setState({ relationshipWithGuardian: value });
+        console.log(this.state.relationshipWithGuardian,"relationshipWithGuardian");
     }
-    onChangepermanent2=   (value) => {
-        this.setState({ permanent2: value });
-        console.log(this.state.permanent2,"permanent2");
+    onChangepermanentAddress1 =   (value) => {
+        this.setState({ permanentAddress1: value });
+        console.log(this.state.permanentAddress1,"permanentAddress1");
     }
-    onChangepermanent3 =   (value) => {
-        this.setState({ permanent3: value });
-        console.log(this.state.permanent3,"permanent3");
+    onChangepermanentAddress2=   (value) => {
+        this.setState({ permanentAddress2: value });
+        console.log(this.state.permanentAddress2,"permanentAddress2");
     }
-    onChangepermanent4 =   (value) => {
-        this.setState({ permanent4: value });
-        console.log(this.state.permanent4,"permanent4");
+    onChangepermanentAddress3 =   (value) => {
+        this.setState({ permanentAddress3: value });
+        console.log(this.state.permanentAddress3,"permanentAddress3");
     }
-    onChangepermanentcity =   (value) => {
-        this.setState({ permanentcity: value });
-        console.log(this.state.permanentcity,"permanentcity");
+    onChangepermanentAddress4 =   (value) => {
+        this.setState({ permanentAddress4: value });
+        console.log(this.state.permanentAddress4,"permanentAddress4");
     }
-    onChangepincode =   (value) => {
-        this.setState({ pincode: value });
-        console.log(this.state.pincode,"pincode");
+    onChangepermanentCity =   (value) => {
+        this.setState({ permanentCity: value });
+        console.log(this.state.permanentCity,"permanentCity");
     }
-    onChangeaddress =   (value) => {
-        this.setState({ address: value });
-        console.log(this.state.address,"address");
+    onChangepermanentPincode =   (value) => {
+        this.setState({ permanentPincode: value });
+        console.log(this.state.permanentPincode,"Pincode");
+    }
+    onChangesameAdressReg =   (value) => {
+        this.setState({ sameAdressReg: value });
+        console.log(this.state.sameAdressReg,"sameAdressReg");
     }
 
-    onChangeresidencecity = (value) => {
-        this.setState({residentialcity : value });
-        console.log(this.state.residentialcity ,"residentialcity ");
+    onChangeResidenceCity = (value) => {
+        this.setState({ResidenceCity : value });
+        console.log(this.state.ResidenceCity ,"ResidentialCity ");
     }
-    onChangeresidencepin = (value) => {
-        this.setState({residencepin : value });
-        console.log(this.state.residencepin ,"residencepin");
+    onChangeResidencePinCode = (value) => {
+        this.setState({ResidencePinCode : value });
+        console.log(this.state.ResidencePinCode ,"ResidencePinCode");
     }
-    onChangestrcode = (value) => {
-        this.setState({strcode : value });
-        console.log(this.state.strcode ,"strcode");
+    onChangestrStdCode = (value) => {
+        this.setState({strStdCode : value });
+        console.log(this.state.strStdCode ,"strStdCode");
+    }
+    onChangestrPhoneNo = (value) => {
+        this.setState({strPhoneNo : value });
+        console.log(this.state.strPhoneNo ,"strPhoneNO");
     }
     onChangestrpin = (value) => {
         this.setState({strpin : value });
         console.log(this.state.strpin ,"strpin");
     }
-    onChangevehicle= (value) => {
-        this.setState({vehicle : value });
-        console.log(this.state.vehicle,"vehicle");
+    onChangevehicleModelCode= (value) => {
+        this.setState({vehicleModelCode : value });
+        console.log(this.state.vehicleModelCode,"vehicleModelCode");
+    }
+    onChangeplanOpted= (value) => {
+        this.setState({planOpted : value });
+        console.log(this.state.planOpted,"planOpted");
+    }
+    onChangedrivingExperience= (value) => {
+        this.setState({drivingExperience : value });
+        console.log(this.state.drivingExperience,"drivingExperience");
+    }
+    onChangevoluntaryDeductible= (value) => {
+        this.setState({voluntaryDeductible : value });
+        console.log(this.state.voluntaryDeductible,"voluntaryDetuctible");
+    }
+    onChangepermanetCity= (value) => {
+        this.setState({permanentCity : value });
+        console.log(this.state.permanentCity,"permanentCity");
     }
     onChangeplan= (value) => {
         this.setState({plan : value });
         console.log(this.state.plan,"plan");
     }
-    onChangedriving= (value) => {
-        this.setState({driving : value });
-        console.log(this.state.driving,"driving");
-    }
-    onChangevoluntary= (value) => {
-        this.setState({voluntary : value });
-        console.log(this.state.plan,"voluntary");
-    }
-    onChangeplan= (value) => {
-        this.setState({plan : value });
-        console.log(this.state.plan,"plan");
-    }
-    onChangemanufacture= (value) => {
-        this.setState({manufacture: value });
-        console.log(this.state.manufacture,"manufacture");
+    onChangeyearOfManufacture= (value) => {
+        this.setState({yearOfManufacture: value });
+        console.log(this.state.yearOfManufacture,"yearOfManufacture");
     }
     onChangeidv= (value) => {
         this.setState({idv : value });
         console.log(this.state.idv,"idv");
     }
-    onChangepolicysd= (value) => {
-        this.setState({policysd : value });
-        console.log(this.state.policysd,"policysd");
+    onChangepolicyStartDate= (value) => {
+        this.setState({policyStartDate : value });
+        console.log(this.state.policyStartDate,"policyStartDate");
     }
-    onChangedriven= (value) => {
-        this.setState({driven : value });
-        console.log(this.state.driven,"driven");
+    onChangevehicleMostlyDrivenOn= (value) => {
+        this.setState({vehicleMostlyDrivenOn: value });
+        console.log(this.state.vehicleMostlyDrivenOn,"vehicleMostlyDrivenOn");
     }
-    onChangeregistersdate= (value) => {
-        this.setState({registersdate : value });
-        console.log(this.state.registersdate,"registersdate");
+    onChangevehicleRegDate = (value) => {
+        this.setState({vehicleRegDate  : value });
+        console.log(this.state.vehicleRegDate ,"vehicleRegDate ");
     }
-    onChangevehicleregisteredin= (value) => {
-        this.setState({vehicleregisteredin : value });
-        console.log(this.state.vehicleregisteredin,"vehicleregisteredin");
+    onChangevehicleRegisteredInTheNameOf= (value) => {
+        this.setState({vehicleRegisteredInTheNameOf : value });
+        console.log(this.state.vehicleRegisteredInTheNameOf,"vehicleRegisteredInTheNameOf");
     }
-    onChangemodel= (value) => {
-        this.setState({model : value });
-        console.log(this.state.model,"model");
+    onChangemodelName= (value) => {
+        this.setState({modelName : value });
+        console.log(this.state.modelName,"modelName");
     }
-    onChangeproduct= (value) => {
-        this.setState({product : value });
-        console.log(this.state.product,"product");
+    onChangeproductName= (value) => {
+        this.setState({productName : value });
+        console.log(this.state.productName,"productName");
     }
-    onChangecompany= (value) => {
-        this.setState({company : value });
-        console.log(this.state.company,"company");
+    onChangecompanyNameForCar= (value) => {
+        this.setState({companyNameForCar : value });
+        console.log(this.state.companyNameForCar,"companyNameForCar");
     }
-    onChangeenginee= (value) => {
-        this.setState({enginee: value });
-        console.log(this.state.enginee,"enginee");
+    onChangeengineNumber= (value) => {
+        this.setState({engineNumber: value });
+        console.log(this.state.engineNumber,"engineNumber");
     }
-    onChangechassis= (value) => {
-        this.setState({chassis: value });
-        console.log(this.state.chassis,"chassis");
+    onChangechassisNumber= (value) => {
+        this.setState({chassisNumber: value });
+        console.log(this.state.chassisNumber,"chassisNumber");
     }
-    onChangetwowheeler= (value) => {
-        this.setState({twowheeler: value });
-        console.log(this.state.twowheeler,"twowheeler");
+    onChangeisTwoWheelerFinanced= (value) => {
+        this.setState({isTwoWheelerFinanced: value });
+        console.log(this.state.isTwoWheelerFinanced,"isTwoWheelerFinanced");
     }
-    onChangesubline= (value) => {
-        this.setState({subline: value });
-        console.log(this.state.subline,"subline");
+    onChangevehicleSubline= (value) => {
+        this.setState({vehicleSubline: value });
+        console.log(this.state.vehicleSubline,"vehicleSubline");
     }
-    onChangetax= (value) => {
-        this.setState({tax: value });
-        console.log(this.state.tax,"tax");
+    onChangeregistrationchargesRoadtax= (value) => {
+        this.setState({registrationchargesRoadtax: value });
+        console.log(this.state.registrationchargesRoadtax,"registrationchargesRoadtax");
     }
-    onChangefuel= (value) => {
-        this.setState({fuel: value });
-        console.log(this.state.fuel,"fuel");
+    onChangefuelType= (value) => {
+        this.setState({fuelType: value });
+        console.log(this.state.fuelType,"fuelType");
     }
-    onChangeautomobile= (value) => {
-        this.setState({automobile: value });
-        console.log(this.state.automobile,"automobile");
+    onChangeautomobileAssociationMembership= (value) => {
+        this.setState({automobileAssociationMembership: value });
+        console.log(this.state.automobileAssociationMembership,"automobileAssociationMembership");
     }
     onChangeregion= (value) => {
         this.setState({region: value });
         console.log(this.state.region,"region");
     }
-    onChangecar= (value) => {
-        this.setState({car: value });
-        console.log(this.state.car,"car");
+    onChangecarRegisteredCity= (value) => {
+        this.setState({carRegisteredCity: value });
+        console.log(this.state.carRegisteredCity,"carRegisteredCity");
     }
     onChangemileage= (value) => {
         this.setState({mileage: value });
         console.log(this.state.mileage,"mileage");
     }
-    onChangecheckbox= (value) => {
-        this.setState({checkbox: value });
-        console.log(this.state.checkbox,"checkbox");
+    onChangeisProductCheck= (value) => {
+        this.setState({isProductCheck: value });
+        console.log(this.state.isProductCheck,"isProductCheck");
     }
 
 
 
-    onChangeresidential1 = (value) => {
-        this.setState({ residential1: value });
-        console.log(this.state.residential1,"residential1");
+    onChangeResidenceAddressOne = (value) => {
+        this.setState({  ResidenceAddressOne: value });
+        console.log(this.state. ResidenceAddressOne," ResidenceAddressOne");
     }
-    onChangeresidential2 = (value) => {
-        this.setState({ residential2: value });
-        console.log(this.state.residential2,"residential2");
+    onChangeResidenceAddressTwo = (value) => {
+        this.setState({  ResidenceAddressTwo: value });
+        console.log(this.state. ResidenceAddressTwo," ResidenceAddressTwo");
     }
-    onChangeresidential3 = (value) => {
-        this.setState({ residential3: value });
-        console.log(this.state.residential3,"residential3");
+    onChangeResidenceAddressThree= (value) => {
+        this.setState({  ResidenceAddressThree: value });
+        console.log(this.state. ResidenceAddressThree," ResidenceAddressThree");
     }
-    onChangeresidential4 = (value) => {
-        this.setState({ residential1: value });
-        console.log(this.state.residential4,"residential4");
+    onChangeResidenceAddressFour = (value) => {
+        this.setState({  ResidenceAddressFour: value });
+        console.log(this.state. ResidenceAddressFour," ResidenceAddressFour");
     }
 
     onChangeModel = (value) => {
@@ -505,9 +531,41 @@ export default class VehicleDetails extends React.Component{
         console.log(this.state.existingInsurer,"existingInsurer");
     }
 
-    onChangeRestValue = (value) => {
-        this.setState({ testValue: value });
-        console.log(this.state.testValue,"testValue");
+    onChangeengineCapacityAmount = (value) => {
+        this.setState({engineCapacityAmount: value });
+        console.log(this.state.engineCapacityAmount,"engineCapacityAmount");
+    }
+    onChangepersonalAccidentCoverForUnnamedPassengers = (value) => {
+        this.setState({ personalAccidentCoverForUnnamedPassengers: value });
+        console.log(this.state.personalAccidentCoverForUnnamedPassengers,"personalAccidentCoverForUnnamedPassengers");
+    }
+    onChangeaccidentCoverForPaidDriver = (value) => {
+        this.setState({accidentCoverForPaidDriver: value });
+        console.log(this.state.accidentCoverForPaidDriver,"accidentCoverForPaidDriver");
+    }
+    onChangelegalliabilityToPaidDriver = (value) => {
+        this.setState({ legalliabilityToPaidDriver: value });
+        console.log(this.state.legalliabilityToPaidDriver,"legalliabilityToPaidDriver");
+    }
+    onChangelegalliabilityToEmployees= (value) => {
+        this.setState({ legalliabilityToEmployees: value });
+        console.log(this.state.legalliabilityToEmployees,"legalliabilityToEmployees");
+    }
+    onChangecover_elec_acc = (value) => {
+        this.setState({ cover_elec_acc: value });
+        console.log(this.state.cover_elec_acc,"cover_elec_acc");
+    }
+    onChangeNameOfElectronicAccessories = (value) => {
+        this.setState({ NameOfElectronicAccessories: value });
+        console.log(this.state.NameOfElectronicAccessories,"NameOfElectronicAccessories");
+    }
+    onChangeMakeModel = (value) => {
+        this.setState({ MakeModel: value });
+        console.log(this.state.MakeModel,"MakeModel");
+    }
+    onChangeValue = (value) => {
+        this.setState({ Value: value });
+        console.log(this.state.Value,"Value");
     }
 
 
@@ -558,11 +616,11 @@ export default class VehicleDetails extends React.Component{
                     <Row className="clearfix" >
                         <Col  md={8}></Col>
                         <Col  md={8}>
-                        <div class="container">
-                        <div class="btn-pref btn-group btn-group-justified btn-group-sm" role="group" style={styling.sideMar}aria-label="...">
-        <div class="btn-group" role="group">
-            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <div class="hidden-xs">New</div>
+                        <div className="container">
+                        <div className="btn-pref btn-group btn-group-justified btn-group-sm" role="group" style={styling.sideMar}aria-label="...">
+        <div className="btn-group" role="group">
+            <button type="button" id="stars" className="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                <div className="hidden-xs">New</div>
             </button>
         </div>
         <div class="btn-group" role="group"  style={styling.sideMar}  >
@@ -583,11 +641,7 @@ export default class VehicleDetails extends React.Component{
                                             Title
                                         </RX.Text>
                                         <form>
-                                                <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
-                                                    {/*<FormControl/>*/}
+
                                             <RX.TextInput
                                                 type="email"
                                                 style={styling.Form}
@@ -596,8 +650,7 @@ export default class VehicleDetails extends React.Component{
                                                 onChangeText={this.onChangetitle}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                                <FormControl.Feedback/>
-                                                </FormGroup>
+                                              
                                         </form>
                                     </RX.View>
 
@@ -639,10 +692,7 @@ export default class VehicleDetails extends React.Component{
                                             Email id
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
 
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -651,8 +701,7 @@ export default class VehicleDetails extends React.Component{
                                                 onChangeText={this.onChangeemailId}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -660,19 +709,15 @@ export default class VehicleDetails extends React.Component{
                                             Mobile no
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Mobile no"
-                                                value={ this.state.mobile }
-                                                onChangeText={this.onChangemobile}
+                                                value={ this.state.mobileNo }
+                                                onChangeText={this.onChangemobileNo}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                             <FormControl.Feedback/>
-                                                </FormGroup>
+                                             
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -680,10 +725,7 @@ export default class VehicleDetails extends React.Component{
                                            Date of birth
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Date of Birth"
@@ -691,8 +733,7 @@ export default class VehicleDetails extends React.Component{
                                                 onChangeText={this.onChangedateofbirth}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                             <FormControl.Feedback/>
-                                                </FormGroup>
+                                             
                                         </form>
                                     </RX.View>
 
@@ -701,10 +742,7 @@ export default class VehicleDetails extends React.Component{
                                            Occupation
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Occupation"
@@ -712,8 +750,7 @@ export default class VehicleDetails extends React.Component{
                                                 onChangeText={this.onChangeoccupation}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                         
                                     </RX.View>
@@ -722,19 +759,15 @@ export default class VehicleDetails extends React.Component{
                                             Nominee name
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Enter Manufacturer"
-                                                value={ this.state.nomineename }
-                                                onChangeText={this.onChangenomineename}
+                                                value={ this.state.nomineeName }
+                                                onChangeText={this.onChangenomineeName}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -742,19 +775,31 @@ export default class VehicleDetails extends React.Component{
                                             Nominee age
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Nominee age"
-                                                value={ this.state.nomineeage }
-                                                onChangeText={this.onChangnomineeage}
+                                                value={ this.state.nomineeAge }
+                                                onChangeText={this.onChangenomineeAge}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText }>
+                                        RelationshipWithNominee
+                                        </RX.Text>
+                                        <form>
+                                        
+                                            <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder="RelationshipWithNominee"
+                                                value={ this.state.  relationshipWithNominee}
+                                                onChangeText={this.onChangerelationshipWithNominee}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                            
                                         </form>
                                     </RX.View>
 
@@ -763,19 +808,15 @@ export default class VehicleDetails extends React.Component{
                                            Guardian Name
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Guardian Name"
-                                                value={ this.state.guardianname}
-                                                onChangeText={this.onChangeguardianname}
+                                                value={ this.state.guardianName}
+                                                onChangeText={this.onChangeguardianName}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -783,19 +824,15 @@ export default class VehicleDetails extends React.Component{
                                            Guardian Age
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Guardian age"
-                                                value={ this.state.guardianage }
-                                                onChangeText={this.onChangeguardianage}
+                                                value={ this.state.guardianAge }
+                                                onChangeText={this.onChangeguardianAge}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -803,19 +840,15 @@ export default class VehicleDetails extends React.Component{
                                            Relationshiip with guardian
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Relationship with guardian"
-                                                value={ this.state.relationship }
-                                                onChangeText={this.onChangerelationship}
+                                                value={ this.state.relationshipWithGuardian }
+                                                onChangeText={this.onChangerelationshipWithGuardian}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -823,19 +856,15 @@ export default class VehicleDetails extends React.Component{
                                            Permanent address 1
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Permanent address 1"
-                                                value={ this.state.permanent1 }
-                                                onChangeText={this.onChangepermanent1}
+                                                value={ this.state.permanentAddress1 }
+                                                onChangeText={this.onChangepermanentAddress1}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -843,19 +872,15 @@ export default class VehicleDetails extends React.Component{
                                             Permanent address 2
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Permanent address 2"
-                                                value={ this.state.permanent2}
-                                                onChangeText={this.onChangepermanent2}
+                                                value={ this.state.permanentAddress2}
+                                                onChangeText={this.onChangepermanentAddress2}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -863,19 +888,15 @@ export default class VehicleDetails extends React.Component{
                                           Permanent address 3
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Permanent address 3"
-                                                value={ this.state.permanent3 }
-                                                onChangeText={this.onChangepermanent3}
+                                                value={ this.state.permanentAddress3 }
+                                                onChangeText={this.onChangepermanentAddress3}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -883,19 +904,15 @@ export default class VehicleDetails extends React.Component{
                                            Permanent address 4
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Permanent address 4"
-                                                value={ this.state.permanent4 }
-                                                onChangeText={this.onChangepermanent4}
+                                                value={ this.state.permanentAddress4 }
+                                                onChangeText={this.onChangepermanentAddress4}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -903,19 +920,15 @@ export default class VehicleDetails extends React.Component{
                                            Permanent City
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Permanent city"
-                                                value={ this.state.permanentcity }
-                                                onChangeText={this.onChangepermanetcity}
+                                                value={ this.state.permanentCity }
+                                                onChangeText={this.onChangepermanentCity}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -923,19 +936,15 @@ export default class VehicleDetails extends React.Component{
                                            Permanent pincode
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Permanent pincode"
-                                                value={ this.state.pincode }
-                                                onChangeText={this.onChangepincode}
+                                                value={ this.state.permanentPincode }
+                                                onChangeText={this.onChangepermanentPincode}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -943,19 +952,15 @@ export default class VehicleDetails extends React.Component{
                                           Same address Reg
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Same address reg"
-                                                value={ this.state.address }
-                                                onChangeText={this.onChangeaddress}
+                                                value={ this.state.sameAdressReg }
+                                                onChangeText={this.onChangesameAdressReg}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -963,19 +968,15 @@ export default class VehicleDetails extends React.Component{
                                            Residential address 1
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="esidential address 1"
-                                                value={ this.state.residential1}
-                                                onChangeText={this.onChangeresidential1}
+                                                value={ this.state. ResidenceAddressOne}
+                                                onChangeText={this.onChangeResidenceAddressOne}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -983,19 +984,15 @@ export default class VehicleDetails extends React.Component{
                                           Residential address 2
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Residential address 2"
-                                                value={ this.state.residential2 }
-                                                onChangeText={this.onChangeonChangeresidential2}
+                                                value={ this.state. ResidenceAddressTwo }
+                                                onChangeText={this.onChangeResidenceAddressTwo}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1003,19 +1000,15 @@ export default class VehicleDetails extends React.Component{
                                            Residential address 3
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Residential address 3"
-                                                value={ this.state.residential3 }
-                                                onChangeText={this.onChangeresidential3}
+                                                value={ this.state. ResidenceAddressThree }
+                                                onChangeText={this.onChangeResidenceAddressThree}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1023,19 +1016,15 @@ export default class VehicleDetails extends React.Component{
                                            Residentiial address 4
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Residential address 4"
-                                                value={ this.state.residential4 }
-                                                onChangeText={this.onChangeresidential4}
+                                                value={ this.state. ResidenceAddressFour }
+                                                onChangeText={this.onChangeResidenceAddressFour}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1043,19 +1032,15 @@ export default class VehicleDetails extends React.Component{
                                         Residence city
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Residence city"
-                                                value={ this.state.residencecity }
-                                                onChangeText={this.onChangeresidencecity}
+                                                value={ this.state.ResidenceCity }
+                                                onChangeText={this.onChangeResidenceCity}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1063,19 +1048,15 @@ export default class VehicleDetails extends React.Component{
                                            Residence pincode
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Residence pincode"
-                                                value={ this.state.residencepin }
-                                                onChangeText={this.onChangeresidencepin}
+                                                value={ this.state.ResidencePinCode }
+                                                onChangeText={this.onChangeResidencePinCode}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1083,19 +1064,15 @@ export default class VehicleDetails extends React.Component{
                                            strStdcode
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="strstdcode"
-                                                value={ this.state.strcode }
-                                                onChangeText={this.onChangestrcode}
+                                                value={ this.state.strStdCode }
+                                                onChangeText={this.onChangestrStdCode}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                    <RX.View style={styling.sideMar}>
@@ -1103,19 +1080,15 @@ export default class VehicleDetails extends React.Component{
                                            str Phone no
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="str phone no"
-                                                value={ this.state.strphone }
-                                                onChangeText={this.onChangestrphone}
+                                                value={ this.state.strPhoneNo }
+                                                onChangeText={this.onChangestrPhoneNo}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
 
@@ -1124,19 +1097,15 @@ export default class VehicleDetails extends React.Component{
                                           Vehicle model code  
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Vehicle model code"
-                                                value={ this.state.vehicle}
-                                                onChangeText={this.onChangevehicle}
+                                                value={ this.state.vehicleModelCode}
+                                                onChangeText={this.onChangevehicleModelCode}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1144,29 +1113,28 @@ export default class VehicleDetails extends React.Component{
                                           Plan opted 
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Plan opted"
-                                                value={ this.state.plan }
-                                                onChangeText={this.onChangeplan}
+                                                value={ this.state.planOpted }
+                                                onChangeText={this.onChangeplanOpted}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
                                            Year of manufacturer
                                         </RX.Text>
-                                        <DatePicker
-                                         selected={this.state.startDate}
-                                         onChange={this.handlechange}
-                                         />
+                                        <RX.TextInput
+                                                style={styling.Form}
+                                                placeholder=" Year of manufacturer"
+                                                value={ this.state.yearOfManufacture}
+                                                onChangeText={this.onChangeyearOfManufacture}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
                                      </RX.View>
 
                                     <RX.View style={styling.sideMar}>
@@ -1174,19 +1142,15 @@ export default class VehicleDetails extends React.Component{
                                           Driving experience 
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Driving experience"
-                                                value={ this.state.driving }
-                                                onChangeText={this.onChangedriving}
+                                                value={ this.state.drivingExperience }
+                                                onChangeText={this.onChangedrivingExperience}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1194,19 +1158,15 @@ export default class VehicleDetails extends React.Component{
                                       Voluntary Deductible
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Voluntary detuctable"
-                                                value={ this.state.voluntary }
-                                                onChangeText={this.onChangevoluntary}
+                                                value={ this.state.voluntaryDeductible }
+                                                onChangeText={this.onChangevoluntaryDeductible}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1214,19 +1174,15 @@ export default class VehicleDetails extends React.Component{
                                           Vehicle Manufacture name
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Vehicle manufacturer name"
-                                                value={ this.state.manufacturer}
-                                                onChangeText={this.onChangemanufacturer}
+                                                value={ this.state.vehicleManufacturerName}
+                                                onChangeText={this.onChangevehicleManufacturerName}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1234,10 +1190,7 @@ export default class VehicleDetails extends React.Component{
                                        IDV
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="IDV"
@@ -1245,8 +1198,7 @@ export default class VehicleDetails extends React.Component{
                                                 onChangeText={this.onChangeidv}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1254,19 +1206,15 @@ export default class VehicleDetails extends React.Component{
                                            Policy Start date
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder=" staPolicy"
-                                                value={ this.state.policysd }
-                                                onChangeText={this.onChangepolicysd}
+                                                value={ this.state.policyStartDate }
+                                                onChangeText={this.onChangepolicyStartDate}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1274,19 +1222,15 @@ export default class VehicleDetails extends React.Component{
                                           Vehicle Mostly driven on
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="vehicle mostly driven on"
-                                                value={ this.state.driven }
-                                                onChangeText={this.onChangedriven}
+                                                value={ this.state.vehicleMostlyDrivenOn }
+                                                onChangeText={this.onChangevehicleMostlyDrivenOn}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1294,19 +1238,16 @@ export default class VehicleDetails extends React.Component{
                                           Vehicle register Date
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Vehicle register date"
-                                                value={ this.state.registerdate }
-                                                onChangeText={this.onChangeregisterdate}
+                                                value={ this.state.vehicleRegDate }
+                                                onChangeText={this.onChangevehicleRegDate }
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
+                                    
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1314,19 +1255,15 @@ export default class VehicleDetails extends React.Component{
                                           Vehicleregisteredin the name of
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Vehicle registered in the name of"
-                                                value={ this.state.Vehicleregisteredin }
-                                                onChangeText={this.onChangeVehicleregisteredin}
+                                                value={ this.state.vehicleRegisteredInTheNameOf }
+                                                onChangeText={this.onChangevehicleRegisteredInTheNameOf}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1334,19 +1271,15 @@ export default class VehicleDetails extends React.Component{
                                           model Name
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="model name"
-                                                value={ this.state.model }
-                                                onChangeText={this.onChangemodel}
+                                                value={ this.state.modelName }
+                                                onChangeText={this.onChangemodelName}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1354,19 +1287,15 @@ export default class VehicleDetails extends React.Component{
                                          Product Name
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Product name"
-                                                value={ this.state.product }
-                                                onChangeText={this.onChangeproduct}
+                                                value={ this.state.productName }
+                                                onChangeText={this.onChangeproductName}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1374,19 +1303,15 @@ export default class VehicleDetails extends React.Component{
                                            Company name for car
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Company name for car"
-                                                value={ this.state.company }
-                                                onChangeText={this.onChangecompany}
+                                                value={ this.state.companyNameForCar }
+                                                onChangeText={this.onChangecompanyNameForCar}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1394,19 +1319,15 @@ export default class VehicleDetails extends React.Component{
                                             Enginee Number
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="enginee number"
-                                                value={ this.state.enginee }
-                                                onChangeText={this.onChangeenginee}
+                                                value={ this.state.engineNumber }
+                                                onChangeText={this.onChangeengineNumber}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1414,19 +1335,15 @@ export default class VehicleDetails extends React.Component{
                                            Chassis Number
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Chassis Number"
-                                                value={ this.state.chassis }
-                                                onChangeText={this.onChangechassis}
+                                                value={ this.state.chassisNumber }
+                                                onChangeText={this.onChangechassisNumber}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1434,38 +1351,31 @@ export default class VehicleDetails extends React.Component{
                                           Is twowheeler financed
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Is twowheeler FInanced"
-                                                value={ this.state.twowheeler }
-                                                onChangeText={this.onChangetwowheeler}
+                                                value={ this.state.isTwoWheelerFinanced }
+                                                onChangeText={this.onChangeisTwoWheelerFinanced}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View><RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
                                            Vehicle subline
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
+                                                
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Vehicle subline"
-                                                value={ this.state.subline }
-                                                onChangeText={this.onChangesubline}
+                                                value={ this.state.vehicleSubline}
+                                                onChangeText={this.onChangevehicleSubline}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1473,19 +1383,15 @@ export default class VehicleDetails extends React.Component{
                                            Registration charges road tax
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="RTO Location"
-                                                value={ this.state.tax }
-                                                onChangeText={this.onChangetax}
+                                                value={ this.state.registrationchargesRoadtax }
+                                                onChangeText={this.onChangeregistrationchargesRoadtax}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1493,48 +1399,37 @@ export default class VehicleDetails extends React.Component{
                                           Fueltype
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Fueltype"
-                                                value={ this.state.fuel }
-                                                onChangeText={this.onChangefuel}
+                                                value={ this.state.fuelType }
+                                                onChangeText={this.onChangefuelType}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View><RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
                                           Automobile association membership
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Automobile association membership"
-                                                value={ this.state.automobile }
-                                                onChangeText={this.onChangeautomobile}
+                                                value={ this.state.automobileAssociationMembership }
+                                                onChangeText={this.onChangeautomobileAssociationMembership }
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View><RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
                                             Region
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Region"
@@ -1542,37 +1437,29 @@ export default class VehicleDetails extends React.Component{
                                                 onChangeText={this.onChangeregion}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View><RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
                                          Car Register city
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Car Register city"
-                                                value={ this.state.car }
-                                                onChangeText={this.onChangecar}
+                                                value={ this.state.carRegisteredCity }
+                                                onChangeText={this.onChangecarRegisteredCity}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View><RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
                                             Average monthly mileage run
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Averege monthly mileage run"
@@ -1580,8 +1467,7 @@ export default class VehicleDetails extends React.Component{
                                                 onChangeText={this.onChangemileage}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1589,19 +1475,15 @@ export default class VehicleDetails extends React.Component{
                                          Is Product Checkbox
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Is product checkbox"
-                                                value={ this.state.checkbox }
-                                                onChangeText={this.onChangecheckbox}
+                                                value={ this.state.isProductCheck }
+                                                onChangeText={this.onChangeisProductCheck}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1609,19 +1491,15 @@ export default class VehicleDetails extends React.Component{
                                             Engine capacity amount
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Engine capacity amount"
-                                                value={ this.state.engine }
-                                                onChangeText={this.onChangeengine}
+                                                value={ this.state.engineCapacityAmount }
+                                                onChangeText={this.onChangeengineCapacityAmount}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                    <RX.View style={styling.sideMar}>
@@ -1629,19 +1507,15 @@ export default class VehicleDetails extends React.Component{
                                            Personal accident cover for unnamed passengers
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Personal accident cover for unnamed passenger"
-                                                value={ this.state.accident}
-                                                onChangeText={this.onChangeaccident}
+                                                value={ this.state.personalAccidentCoverForUnnamedPassengers}
+                                                onChangeText={this.onChangepersonalAccidentCoverForUnnamedPassengers}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1649,76 +1523,60 @@ export default class VehicleDetails extends React.Component{
                                         Personal accident coverfor paid driver
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Personal accident coverfor paid driver"
-                                                value={ this.state.paiddriver }
-                                                onChangeText={this.onChangepaiddriver}
+                                                value={ this.state.accidentCoverForPaidDriver }
+                                                onChangeText={this.onChangeaccidentCoverForPaidDriver}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View><RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
                                           Legalliability to paid driver
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="      Legalliability to paid driver"
-                                                value={ this.state.legal }
-                                                onChangeText={this.onChangelegal}
+                                                value={ this.state.legalliabilityToPaidDriver }
+                                                onChangeText={this.onChangelegalliabilityToPaidDriver }
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                          
                                         </form>
                                     </RX.View><RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
                                            legalliability to employees
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="legalliability to employees"
-                                                value={ this.state.employees }
-                                                onChangeText={this.onChangeemployees}
+                                                value={ this.state.legalliabilityToEmployees }
+                                                onChangeText={this.onChangelegalliabilityToEmployees}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View><RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
                                        cover_elec_acc
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder=" cover_elec_acc"
-                                                value={ this.state.cover }
-                                                onChangeText={this.onChangecover}
+                                                value={ this.state.cover_elec_acc }
+                                                onChangeText={this.onChangecover_elec_acc}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1726,19 +1584,15 @@ export default class VehicleDetails extends React.Component{
                                     Name of Electronic accessories
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Name of Electronic accessories"
-                                                value={ this.state.electronic}
-                                                onChangeText={this.onChangeRegelcetronic}
+                                                value={ this.state.NameOfElectronicAccessories}
+                                                onChangeText={this.onChangeNameOfElectronicAccessories}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1746,19 +1600,15 @@ export default class VehicleDetails extends React.Component{
                                Make Model
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Make Model"
-                                                value={ this.state.model}
-                                                onChangeText={this.onChangemodel}
+                                                value={ this.state.MakeModel}
+                                                onChangeText={this.onChangeMakeModel}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1766,19 +1616,15 @@ export default class VehicleDetails extends React.Component{
                                Value
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Value"
-                                                value={ this.state.value }
-                                                onChangeText={this.onChangevalue}
+                                                value={ this.state.Value }
+                                                onChangeText={this.onChangeValue}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1786,19 +1632,15 @@ export default class VehicleDetails extends React.Component{
                                     Name of Electronic accessories
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Name of Electronic accessories"
-                                                value={ this.state.noneleectronic }
-                                                onChangeText={this.onChangenonelectronic}
+                                                value={ this.state.NameOfElectronicAccessories }
+                                                onChangeText={this.onChangeNameOfElectroniAccessories}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                           
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1806,19 +1648,15 @@ export default class VehicleDetails extends React.Component{
                                Make Model
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Make Model"
-                                                value={ this.state.makemodel }
-                                                onChangeText={this.onChangemakemodel}
+                                                value={ this.state.MakeModel }
+                                                onChangeText={this.onChangeMakeModel}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                            
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -1826,10 +1664,7 @@ export default class VehicleDetails extends React.Component{
                                            Value
                                         </RX.Text>
                                         <form>
-                                        <FormGroup
-                                                    controlId="formBasicText"
-                                                    validationState={this.getValidationState()}
-                                                >
+                                       
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="VAlue"
@@ -1837,8 +1672,7 @@ export default class VehicleDetails extends React.Component{
                                                 onChangeText={this.onChangeValue}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            <FormControl.Feedback/>
-                                                </FormGroup>
+                                          
                                         </form>
                                     </RX.View>
 
@@ -1936,10 +1770,7 @@ export default class VehicleDetails extends React.Component{
                                             Registration No
                                         </RX.Text>
                                         <form>
-                                            <FormGroup
-                                                controlId="formBasicText"
-                                                validationState={this.getValidationState()}
-                                            >
+                                          
                                                 {/*<FormControl/>*/}
                                                 <RX.TextInput
                                                     controlId="formBasicText"
@@ -1950,8 +1781,7 @@ export default class VehicleDetails extends React.Component{
                                                     onChangeText={this.onChangeName}
                                                     // defaultValue={ this.state.inputValue }
                                                 />
-                                                <FormControl.Feedback/>
-                                            </FormGroup>
+                                               
                                         </form>
                                     </RX.View>
 
