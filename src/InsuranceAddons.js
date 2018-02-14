@@ -94,9 +94,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "13/02/2018",
+                        policyStartDate: "14/02/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "13/02/2018",
+                        vehicleRegDate: "14/02/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -138,13 +138,14 @@ console.log("hittinh.......")
                  var resJson1 = JSON.parse(res)
                  var resJson = resJson1.PREMIUMDETAILS.DATA.IDV
                  var liability = resJson1.PREMIUMDETAILS.DATA.LIABILITY
-                 var message = resJson1.PREMIUMDETAILS.DATA.Status
+                 var message = resJson1.PREMIUMDETAILS.Status.Message
                  //console.log("idididid",idv)
-                 console.log("neenenne",resJson)
+                 console.log("neenenne",resJson1)
                  console.log("liablity",liability)
                  console.log("message",message)
-                          this.props.onNavigateTen(resJson,liability); 
-                          this.props.onNavigateBack (liability,message);
+                          this.props.onNavigateTen(resJson,liability,message); 
+                        //  this.props.onNavigateBack (liability,message);
+                         // this.props.onNavigateDetail(liability,message);
                      //   idv = resJson.PREMIUMDETAILS.DATA.IDV
                     
                         

@@ -356,7 +356,7 @@ export default class QuotesSelection  extends RX.Component {
     }
 
     onChangeliability  = () => {
-        this.props.onNavigateSixth(liability,resJson);
+        this.props.onNavigateSixth(liability,resJson,message);
         
         
 
@@ -366,8 +366,10 @@ export default class QuotesSelection  extends RX.Component {
     render() {
      resJson = this.props.navigatorRoute.resJson
      liability = this.props.navigatorRoute.liability
+     message = this.props.navigatorRoute.message
     console.log("idvvvvv",resJson)
     console.log("liablity",liability)
+    console.log("message",message)
         return (
             <RX.ScrollView style={ _styles.scroll }>
                 <RX.View style={ _styles.container }>

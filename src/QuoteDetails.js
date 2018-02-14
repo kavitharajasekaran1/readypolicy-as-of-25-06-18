@@ -194,6 +194,7 @@ const _styles = {
 var idv
 var resJson
 var liability
+var message
 export default class QuotesSelection  extends RX.Component {
 
 
@@ -246,119 +247,121 @@ export default class QuotesSelection  extends RX.Component {
         })
     }
 
+   
     onChangePost = () => {
-        let {
-            testValue = 'read'
-        } = this.state;
+        console.log("Rahul")
 
-        let email = "joe@example.com";
-        let password = "donkeybrains";
-        let myApiUrl = "http://www.example.com/api"
-        let usersPath = "users"
-        console.log(testValue,"testValue");
-        console.log(password,"password");
-        console.log(Rest.ApiUrl,"RestApiUrl");
-        fetch('http://192.168.1.7:3000/calculatepremium',{
+        return fetch('http://192.168.1.7:3000/brandnewupdatevehical', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
+                
             },
+        
             body: JSON.stringify({
                 CALCULATEPREMIUMREQUEST: {
+                    quoteId: "QVMN0011306",
+                    premium: "2774.0",
                     authenticationDetails: {
                       apiKey: "310ZQmv/bYJMYrWQ1iYa7s43084=",
                       agentId: "RSAI"
                     },
                     proposerDetails: {
-                      title: "Ms",
-                      firstName: "testxerago",
-                      lastName: "name",
-                      emailId: "test@xerago.com",
-                      mobileNo: "7898732798",
-                      dateOfBirth: "26/11/1987",
-                      occupation: "Student",
-                      nomineeName: "nomineename",
-                      nomineeAge: "43",
-                      relationshipWithNominee: "Cousin",
-                      guardianName: "guardianname",
-                      guardianAge: "54",
-                      relationshipwithGuardian: "Mother",
-                      permanentAddress1: "address1",
-                      permanentAddress2: "address2",
-                      permanentAddress3: "address3",
-                      permanentAddress4: "address4",
-                      permanentCity: "Chennai",
-                      permanentPincode: "600032",
-                      sameAdressReg: "No",
-                      ResidenceAddressOne: "addressone",
-                      ResidenceAddressTwo: "addresstwo",
-                      ResidenceAddressThree: "addressthree",
-                      ResidenceAddressFour: "addressfour",
-                      ResidenceCity: "Chennai",
-                      ResidencePinCode: "600034",
-                      strStdCode: "044",
-                      strPhoneNo: "2456984"
+                      "title": this.state.title,
+                      "firstName": this.state.firstname,
+                      "lastname": this.state.lastname,
+                      "emailId": this.state. emailId,
+                      "mobileNo": this.state. mobileNo,
+                      "dateOfBirth": this.state.dateofbirth,
+                      "occupation": this.state.occupation,
+                      "nomineeName": this.state. nomineeName,
+                      "nomineeAge": this.state.nomineeAge,
+                      "relationshipWithNominee": this.state.relationshipWithNominee,
+                      "guardianName": this.state. guardianName,
+                      "guardianAge": this.state. guardianAge,
+                      "relationshipwithGuardian": this.state.relationshipwithGuardian,
+                      "permanentAddress1": this.state.permanentAddress1,
+                      "permanentAddress2": this.state.permanentAddress2,
+                      "permanentAddress3": this.state.permanentAddress3,
+                      "permanentAddress4": this.state.permanentAddress4,
+                      "permanentCity": this.state. permanentCity,
+                      "permanentPincode": this.state. permanentPincode,
+                      "sameAdressReg": this.state.sameAdressReg,
+                      "ResidenceAddressOne": this.state.ResidenceAddressOne,
+                      "ResidenceAddressTwo": this.state.ResidenceAddressTwo,
+                      "ResidenceAddressThree": this.state.ResidenceAddressThree,
+                      "ResidenceAddressFour": this.state. ResidenceAddressFour,
+                      "ResidenceCity": this.state. ResidenceCity,
+                      "ResidencePinCode": this.state.ResidencePinCode,
+                      "strStdCode": this.state.strStdCode,
+                      "strPhoneNo": this.state.strPhoneNo,
                     },
                     vehicleDetails: {
-                      vehicleModelCode: "ZWTV310",
-                      planOpted: "Flexi Plan",
-                      yearOfManufacture: "2017",
-                      drivingExperience: "1",
-                      voluntaryDeductible: "0",
-                      vehicleManufacturerName: "TVS",
-                      idv: "65478",
-                      policyStartDate: "13/02/2018",
-                      vehicleMostlyDrivenOn: "City roads",
-                      vehicleRegDate: "13/02/2018",
-                      vehicleRegisteredInTheNameOf: "Company",
-                      modelName: "APACHE RTR ABS-2 Seater",
-                      productName: "BrandNewTwoWheeler",
-                      companyNameForCar: "xerago",
-                      engineNumber: "565465466",
-                      chassisNumber: "5654656",
-                      isTwoWheelerFinanced: "No",
-                      vehicleSubLine: "motorCycle",
-                      fuelType: "Petrol",
-                      automobileAssociationMembership: "No",
-                      region: "East Region",
-                      carRegisteredCity: "24PARGANAS",
-                      averageMonthlyMileageRun: "1000",
-                      engineCapacityAmount: "153 CC",
-                      personalAccidentCoverForUnnamedPassengers: "50000",
-                      accidentCoverForPaidDriver: "50000",
-                      legalliabilityToPaidDriver: "Yes",
-                      legalliabilityToEmployees: "Yes",
-                      cover_elec_acc: "Yes",
+                      vehicleModelCode: this.state.vehicleModelCode,
+                      planOpted: this.state.planOpted,
+                      yearOfManufacture: this.state. yearOfManufacture,
+                      drivingExperience: this.state.drivingExperience,
+                      voluntaryDeductible:this.state.voluntaryDeductible ,
+                      vehicleManufacturerName:this.state.vehicleManufacturerName,
+                      idv: this.state.idv,
+                      policyStartDate:this.state.policyStartDate,
+                      vehicleMostlyDrivenOn: this.state.vehicleMostlyDrivenOn,
+                      vehicleRegDate:this.state.vehicleRegDate ,
+                      vehicleRegisteredInTheNameOf: this.state.vehicleRegisteredInTheNameOf,
+                      modelName:this.state.modelName ,
+                      productName: this.state. productName,
+                      companyNameForCar: this.state.companyNameForCar,
+                      engineNumber:this.state. engineNumber,
+                      chassisNumber: this.state. chassisNumber,
+                      isTwoWheelerFinanced: this.state.isTwoWheelerFinanced,
+                      vehicleSubLine: this.state. vehicleSubLine,
+                      registrationchargesRoadtax: this.state.registrationchargesRoadtax,
+                      fuelType: this.state.fuelType,
+                      automobileAssociationMembership:this.state.automobileAssociationMembership,
+                      region: this.state.region,
+                      carRegisteredCity: this.state. carRegisteredCity,
+                      averageMonthlyMileageRun: this.state.  averageMonthlyMileageRun,
+                      isProductCheck: this.state.isProductCheck,
+                      engineCapacityAmount: this.state.engineCapacityAmount,
+                      personalAccidentCoverForUnnamedPassengers: this.state.personalAccidentCoverForUnnamedPassengers,
+                      accidentCoverForPaidDriver: this.state.accidentCoverForPaidDriver,
+                      legalliabilityToPaidDriver: this.state.legalliabilityToPaidDriver,
+                      legalliabilityToEmployees:this.state. legalliabilityToEmployees,
+                      cover_elec_acc: this.state.cover_elec_acc,
                       nonElectricalAccesories: {
                         nonelectronicAccessoriesDetails: {
-                          NameOfElectronicAccessories: "Tyre",
-                          MakeModel: "TVS",
-                          Value: "345"
+                          NameOfElectronicAccessories: this.state.NameOfElectronicAccesories,
+                          MakeModel: this.state.MakeModel,
+                          Value: this.state.Value
                         }
                       },
                       electricalAccessories: {
                         electronicAccessoriesDetails: {
-                          NameOfElectronicAccessories: "Headlight",
-                          MakeModel: "Philips",
-                          Value: "300"
+                          NameOfElectronicAccessories: this.state.NameOfElectronicAccessories,
+                          MakeModel: this.state.MakeModel,
+                          Value: this.state.Value
                         }
                       },
                     }
-                  }
-                  }),
+                }
+                }),
                   }).then((response) => response.json()).then((responseJson) => {
                var res = responseJson.response;
                var resJson1 = JSON.parse(res)
                var resJson = resJson1.PREMIUMDETAILS.DATA.IDV
                var liability = resJson1.PREMIUMDETAILS.DATA.LIABILITY
-               var message = resJson1.PREMIUMDETAILS.DATA.Status
+              var message = resJson1.PREMIUMDETAILS.DATA.Status
+              var Message = resJson1.PREMIUMDETAILS.Status.Message
+               console.log(Message,"Message");
+               alert(''+message+'')
                //console.log("idididid",idv)
                console.log("neenenne",resJson)
+               console.log("resJson1",resJson1)
                console.log("liablity",liability)
                console.log("message",message)
-                        this.props.onNavigateTen(resJson,liability); 
-                        this.props.onNavigateBack (liability,message);
+                        this.props.onNavigateTen(resJson,liability,message); 
+                      //  this.props.onNavigateBack (liability,message);
                    //   idv = resJson.PREMIUMDETAILS.DATA.IDV
                   
                       
@@ -372,8 +375,10 @@ export default class QuotesSelection  extends RX.Component {
     render() {
         resJson = this.props.navigatorRoute.resJson
      liability = this.props.navigatorRoute.liability
+     message = this.props.navigatorRoute.message
     console.log("idvvvvv",resJson)
     console.log("liablity",liability)
+    console.log("message",message)
        // console.log(this.props,"value");
         return (
             <RX.ScrollView style={ _styles.scroll }>
@@ -406,7 +411,7 @@ export default class QuotesSelection  extends RX.Component {
                                             <Col md={3} xs={3}>
                                                 <RX.Button style={ styling.roundButtonQuote } onPress={ this.props.onNavigateBack }>
                                                     <RX.Text style={ styling.buybuttonText }>
-                                                        Rs.1,322*
+                                                    {liability.BASIC_PREMIUM_INCLUDING_PREMIUM_FOR_TPPD}
                                                     </RX.Text>
                                                 </RX.Button>
                                             </Col>
@@ -476,11 +481,11 @@ export default class QuotesSelection  extends RX.Component {
                                     <RX.View>
                                         <Col md={8} style={ _styles.client }>
                                             <Col md={5}>
-                                                <RX.Text style={styling.clientHeadts}>Basic TP Premium</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>TOTAL_LIABILITY_PREMIUM</RX.Text>
                                             </Col>
                                             <Col  md={4}></Col>
                                             <Col md={3} >
-                                                <RX.Text style={styling.clientHeadts}>Rs.560</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>{liability.TOTAL_LIABILITY_PREMIUM}</RX.Text>
                                             </Col>
                                         </Col>
                                     </RX.View>
@@ -491,11 +496,11 @@ export default class QuotesSelection  extends RX.Component {
                                     <RX.View>
                                         <Col md={8} style={ _styles.client }>
                                             <Col md={5}>
-                                                <RX.Text style={styling.clientHeadts}>Basic TP Premium</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>Employees</RX.Text>
                                             </Col>
                                             <Col  md={4}></Col>
                                             <Col md={3} >
-                                                <RX.Text style={styling.clientHeadts}>Rs.560</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>{liability.TO_EMPLOYESES}</RX.Text>
                                             </Col>
                                         </Col>
                                     </RX.View>
@@ -506,11 +511,11 @@ export default class QuotesSelection  extends RX.Component {
                                     <RX.View>
                                         <Col md={8} style={ _styles.client }>
                                             <Col md={5}>
-                                                <RX.Text style={styling.clientHeadts}>Basic TP Premium</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>Paiid Drivers</RX.Text>
                                             </Col>
                                             <Col  md={4}></Col>
                                             <Col md={3} >
-                                                <RX.Text style={styling.clientHeadts}>Rs.560</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>{liability.TO_PAID_DRIVERS}</RX.Text>
                                             </Col>
                                         </Col>
                                     </RX.View>
@@ -521,11 +526,11 @@ export default class QuotesSelection  extends RX.Component {
                                     <RX.View>
                                         <Col md={8} style={ _styles.client }>
                                             <Col md={5}>
-                                                <RX.Text style={styling.clientHeadts}>Basic TP Premium</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>Owner Driver</RX.Text>
                                             </Col>
                                             <Col  md={4}></Col>
                                             <Col md={3} >
-                                                <RX.Text style={styling.clientHeadts}>Rs.560</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>{liability.UNDER_SECTION_III_OWNER_DRIVER}</RX.Text>
                                             </Col>
                                         </Col>
                                     </RX.View>

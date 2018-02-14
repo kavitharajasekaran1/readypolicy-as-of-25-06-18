@@ -218,7 +218,7 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressSixth(liability,resJson) {
+    _onPressSixth(liability,resJson,message) {
         console.log("liablity2222222",liability)
         // this._navigator.pop();
         this._navigator.push({
@@ -226,6 +226,7 @@ export default class App extends RX.Component {
             sceneConfigType: "FloatFromRight",
             liability:liability,
             resJson:resJson,
+            message:message,
             customSceneConfig: {
                 hideShadow: true
             }
@@ -241,11 +242,17 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressDetail() {
+    _onPressDetail(resJson,liability,res,message) {
+        console.log("neenenne",resJson)
+        console.log("liablity",liability)
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.VehicleDetails,
             sceneConfigType: "FloatFromRight",
+            resJson:resJson,
+            liability:liability,
+            res:res,
+            message:message,
             customSceneConfig: {
                 hideShadow: true
             }
@@ -276,7 +283,7 @@ export default class App extends RX.Component {
         });
     }
 
-    _onPressTen(resJson,liability) {
+    _onPressTen(resJson,liability,message) {
         console.log("neenenne",resJson)
         console.log("liablity",liability)
         // this._navigator.pop();
@@ -285,6 +292,7 @@ export default class App extends RX.Component {
             sceneConfigType: "FloatFromRight",
             resJson:resJson,
             liability:liability,
+            message:message,
             customSceneConfig: {
                 hideShadow: true
             }
@@ -338,7 +346,7 @@ export default class App extends RX.Component {
 });
     }
 
-    _onPressCompare(liability,resJson) {
+    _onPressCompare(liability,resJson,message) {
         console.log("liablity",liability)
         console.log(resJson,"resJson")
             this._navigator.push({
@@ -346,6 +354,7 @@ export default class App extends RX.Component {
             sceneConfigType: "FloatFromRight",
             resJson:resJson,
             liability:liability,
+            message:message,
             customSceneConfig: {
                 hideShadow: true
             }
