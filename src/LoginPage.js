@@ -28,7 +28,7 @@ const styles = {
         right: 0,
         bottom: 0,
         top: 0,
-        backgroundColor:'#0101028c'
+       
     }),
     helloWorld: RX.Styles.createTextStyle({
         fontSize: 48,

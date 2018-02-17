@@ -176,6 +176,8 @@ const styles = {
 var liability
 var resJson
 var message
+var quoteid
+var premium
 export default class CompareQuotes extends RX.Component{
     constructor(props) {
         super(props);
@@ -200,7 +202,7 @@ export default class CompareQuotes extends RX.Component{
         animation.start();
     }
     onChangePostCompare = () => {
-        this.props.onNavigateCompare(liability,resJson,message);
+        this.props.onNavigateCompare(liability,resJson,message,quoteid,premium);
     
     
     }
@@ -234,8 +236,12 @@ export default class CompareQuotes extends RX.Component{
          liability = this.props.navigatorRoute.liability
          resJson = this.props.navigatorRoute.resJson
          message = this.props.navigatorRoute.message
+         quoteid = this.props.navigatorRoute.quoteid
+         premium = this.props.navigatorRoute.premium
         console.log("comparequotes",liability)
         console.log("resJson",resJson)
+        console.log("quoteiid",quoteid)
+        console.log("premium",premium)
         return (
             <RX.ScrollView style={ styles.scroll }>
                 <RX.View style={ styles.container }>

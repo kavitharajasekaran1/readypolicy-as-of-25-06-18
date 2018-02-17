@@ -60,7 +60,7 @@ console.log("hittinh.......")
                         title: "Ms",
                         firstName: "testxerago",
                         lastName: "name",
-                        emailId: "test@xerago.com",
+                        emailId: "neeluneelima67@gmail.com",
                         mobileNo: "7898732798",
                         dateOfBirth: "26/11/1987",
                         occupation: "Student",
@@ -94,9 +94,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "14/02/2018",
+                        policyStartDate: "17/02/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "14/02/2018",
+                        vehicleRegDate: "17/02/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -137,13 +137,16 @@ console.log("hittinh.......")
                  var res = responseJson.response;
                  var resJson1 = JSON.parse(res)
                  var resJson = resJson1.PREMIUMDETAILS.DATA.IDV
+                 var quoteid = resJson1.PREMIUMDETAILS.DATA.QUOTE_ID
+                 var premium = resJson1.PREMIUMDETAILS.DATA.PREMIUM
                  var liability = resJson1.PREMIUMDETAILS.DATA.LIABILITY
                  var message = resJson1.PREMIUMDETAILS.Status.Message
-                 //console.log("idididid",idv)
+                 console.log("quoteid",quoteid)
                  console.log("neenenne",resJson1)
                  console.log("liablity",liability)
                  console.log("message",message)
-                          this.props.onNavigateTen(resJson,liability,message); 
+                 console.log("premium",premium)
+                          this.props.onNavigateTen(resJson,liability,message,quoteid,premium); 
                         //  this.props.onNavigateBack (liability,message);
                          // this.props.onNavigateDetail(liability,message);
                      //   idv = resJson.PREMIUMDETAILS.DATA.IDV

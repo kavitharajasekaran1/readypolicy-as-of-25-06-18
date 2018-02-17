@@ -15,6 +15,7 @@ import ProgressIndicator from './ProgressIndicator';
 import ToggleSwitch from './ToggleSwitch';
 import Rest from "./RestConfig";
 import styling from "./AppStyles";
+import { toUnicode } from 'punycode';
 
 const _styles = {
     scroll: RX.Styles.createScrollViewStyle({
@@ -195,6 +196,8 @@ var idv
 var resJson
 var liability
 var message
+var quoteid
+var premium
 export default class QuotesSelection  extends RX.Component {
 
 
@@ -212,27 +215,7 @@ export default class QuotesSelection  extends RX.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.triggerPost,'function');
-
-
-        let email = "joe@example.com";
-        let password = "donkeybrains";
-        let usersPath = "motorIssuePolicy"
-        console.log(password,"password");
-        console.log(Rest.ApiUrl,"RestApiUrl");
-        fetch(`${Rest.ApiUrl}/${usersPath}`, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNWExYmFhNTYyYzZiOTEzNzYzMmM3ZWVjIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiJqWmFlNzI3SzA4S2FPbUtTZ09hR3p3dy9YVnFHci9QS0VnSU1ranJjYkpJPSIsInJhcGlkSUQiOiJCd2JNd0E2YjFIaEUxNC91TFdweVJXS3EzMytBVUJINnd6UjZtQzh0OUowPSIsInVzZXJPYmplY3QiOnsiZm5hbWUiOiJhcnVuIiwibG5hbWUiOiJob3NzYW1hbmkiLCJwaG9uZSI6IjkxODM2OTk2NDU4MiJ9LCJ1c2VydHlwZSI6IkRpcmVjdCBDbGllbnRzIiwib3RwIjoxMTAwLCJlbmNvZGVkTWFpbCI6IllYSjFiaTVvYjNOellXMWhibWxBY21Gd2FXUnhkV0psTG1OdmJRPT0iLCJjcmVhdGVkX2F0IjoiTW9uIE5vdiAyNyAyMDE3IDExOjMxOjU4IEdNVCswNTMwIChJU1QpIiwiY291bnQiOjAsIl9fdiI6MCwic3RhdHVzIjpbInBob25lIiwiZW1haWwiXX1dLCJpYXQiOjE1MTUwNTA3NDcsImV4cCI6MTUxNTExMDc0N30.xZ_K-mE7WfAszkFrGMATmm9EpCmtYgdOyydVL4HGPVk'
-            },
-            body: JSON.stringify({
-                user: {email, password}
-                /*firstParam: 'yourValue',
-                secondParam: 'yourOtherValue',*/
-            })
-        });
+        
     }
 
     componentWillUnmount() {
@@ -251,116 +234,10 @@ export default class QuotesSelection  extends RX.Component {
     onChangePost = () => {
         console.log("Rahul")
 
-        return fetch('http://192.168.1.7:3000/brandnewupdatevehical', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                
-            },
-        
-            body: JSON.stringify({
-                CALCULATEPREMIUMREQUEST: {
-                    quoteId: "QVMN0011306",
-                    premium: "2774.0",
-                    authenticationDetails: {
-                      apiKey: "310ZQmv/bYJMYrWQ1iYa7s43084=",
-                      agentId: "RSAI"
-                    },
-                    proposerDetails: {
-                      "title": this.state.title,
-                      "firstName": this.state.firstname,
-                      "lastname": this.state.lastname,
-                      "emailId": this.state. emailId,
-                      "mobileNo": this.state. mobileNo,
-                      "dateOfBirth": this.state.dateofbirth,
-                      "occupation": this.state.occupation,
-                      "nomineeName": this.state. nomineeName,
-                      "nomineeAge": this.state.nomineeAge,
-                      "relationshipWithNominee": this.state.relationshipWithNominee,
-                      "guardianName": this.state. guardianName,
-                      "guardianAge": this.state. guardianAge,
-                      "relationshipwithGuardian": this.state.relationshipwithGuardian,
-                      "permanentAddress1": this.state.permanentAddress1,
-                      "permanentAddress2": this.state.permanentAddress2,
-                      "permanentAddress3": this.state.permanentAddress3,
-                      "permanentAddress4": this.state.permanentAddress4,
-                      "permanentCity": this.state. permanentCity,
-                      "permanentPincode": this.state. permanentPincode,
-                      "sameAdressReg": this.state.sameAdressReg,
-                      "ResidenceAddressOne": this.state.ResidenceAddressOne,
-                      "ResidenceAddressTwo": this.state.ResidenceAddressTwo,
-                      "ResidenceAddressThree": this.state.ResidenceAddressThree,
-                      "ResidenceAddressFour": this.state. ResidenceAddressFour,
-                      "ResidenceCity": this.state. ResidenceCity,
-                      "ResidencePinCode": this.state.ResidencePinCode,
-                      "strStdCode": this.state.strStdCode,
-                      "strPhoneNo": this.state.strPhoneNo,
-                    },
-                    vehicleDetails: {
-                      vehicleModelCode: this.state.vehicleModelCode,
-                      planOpted: this.state.planOpted,
-                      yearOfManufacture: this.state. yearOfManufacture,
-                      drivingExperience: this.state.drivingExperience,
-                      voluntaryDeductible:this.state.voluntaryDeductible ,
-                      vehicleManufacturerName:this.state.vehicleManufacturerName,
-                      idv: this.state.idv,
-                      policyStartDate:this.state.policyStartDate,
-                      vehicleMostlyDrivenOn: this.state.vehicleMostlyDrivenOn,
-                      vehicleRegDate:this.state.vehicleRegDate ,
-                      vehicleRegisteredInTheNameOf: this.state.vehicleRegisteredInTheNameOf,
-                      modelName:this.state.modelName ,
-                      productName: this.state. productName,
-                      companyNameForCar: this.state.companyNameForCar,
-                      engineNumber:this.state. engineNumber,
-                      chassisNumber: this.state. chassisNumber,
-                      isTwoWheelerFinanced: this.state.isTwoWheelerFinanced,
-                      vehicleSubLine: this.state. vehicleSubLine,
-                      registrationchargesRoadtax: this.state.registrationchargesRoadtax,
-                      fuelType: this.state.fuelType,
-                      automobileAssociationMembership:this.state.automobileAssociationMembership,
-                      region: this.state.region,
-                      carRegisteredCity: this.state. carRegisteredCity,
-                      averageMonthlyMileageRun: this.state.  averageMonthlyMileageRun,
-                      isProductCheck: this.state.isProductCheck,
-                      engineCapacityAmount: this.state.engineCapacityAmount,
-                      personalAccidentCoverForUnnamedPassengers: this.state.personalAccidentCoverForUnnamedPassengers,
-                      accidentCoverForPaidDriver: this.state.accidentCoverForPaidDriver,
-                      legalliabilityToPaidDriver: this.state.legalliabilityToPaidDriver,
-                      legalliabilityToEmployees:this.state. legalliabilityToEmployees,
-                      cover_elec_acc: this.state.cover_elec_acc,
-                      nonElectricalAccesories: {
-                        nonelectronicAccessoriesDetails: {
-                          NameOfElectronicAccessories: this.state.NameOfElectronicAccesories,
-                          MakeModel: this.state.MakeModel,
-                          Value: this.state.Value
-                        }
-                      },
-                      electricalAccessories: {
-                        electronicAccessoriesDetails: {
-                          NameOfElectronicAccessories: this.state.NameOfElectronicAccessories,
-                          MakeModel: this.state.MakeModel,
-                          Value: this.state.Value
-                        }
-                      },
-                    }
-                }
-                }),
-                  }).then((response) => response.json()).then((responseJson) => {
-               var res = responseJson.response;
-               var resJson1 = JSON.parse(res)
-               var resJson = resJson1.PREMIUMDETAILS.DATA.IDV
-               var liability = resJson1.PREMIUMDETAILS.DATA.LIABILITY
-              var message = resJson1.PREMIUMDETAILS.DATA.Status
-              var Message = resJson1.PREMIUMDETAILS.Status.Message
-               console.log(Message,"Message");
-               alert(''+message+'')
-               //console.log("idididid",idv)
-               console.log("neenenne",resJson)
-               console.log("resJson1",resJson1)
-               console.log("liablity",liability)
-               console.log("message",message)
-                        this.props.onNavigateTen(resJson,liability,message); 
+                        alert(''+message+'')
+                        console.log("quoteiid",quoteid)
+                        console.log("premium",premium)
+                        this.props.onNavigateDetail(quoteid,premium); 
                       //  this.props.onNavigateBack (liability,message);
                    //   idv = resJson.PREMIUMDETAILS.DATA.IDV
                   
@@ -369,16 +246,20 @@ export default class QuotesSelection  extends RX.Component {
   
                 /*firstParam: 'yourValue',
                 secondParam: 'yourOtherValue',*/
-            })
+            
     }
 
     render() {
         resJson = this.props.navigatorRoute.resJson
      liability = this.props.navigatorRoute.liability
      message = this.props.navigatorRoute.message
+     quoteid = this.props.navigatorRoute.quoteid
+     premium = this.props.navigatorRoute.premium
     console.log("idvvvvv",resJson)
     console.log("liablity",liability)
     console.log("message",message)
+    console.log("quoteiid",quoteid)
+    console.log("premium",premium)
        // console.log(this.props,"value");
         return (
             <RX.ScrollView style={ _styles.scroll }>
@@ -627,11 +508,7 @@ export default class QuotesSelection  extends RX.Component {
                                 </Col>
                             </Row>
                         </RX.View>
-                        <RX.Button style={ Button } onPress={ this.props.onNavigateDetail }>
-                    <RX.Text style={ styling.buttonText }>
-                        Go Back
-                    </RX.Text>
-                </RX.Button>
+                        <RX.Button bsStyle="info" onPress={()=> this.onChangePost() }>Primary</RX.Button>
 
                     </Grid>
 

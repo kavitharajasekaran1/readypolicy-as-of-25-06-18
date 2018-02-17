@@ -1,3 +1,3 @@
 export default {
-     ApiUrl: 'http://192.168.1.7:3000/brandnewupdatevehical',
+     ApiUrl: 'http://119.81.59.59:8082',
 }

@@ -35,22 +35,25 @@ const _styles = {
             align:'center'
         }),
         HomeScrollImageLogo: RX.Styles.createImageStyle({
-            width:97,
+            width:5000,
             height: 72,
             paddingVertical:20,
-            marginLeft:3,
-            marginTop:-9
+            marginLeft:-1200,
+            marginTop:12
         }),
         
         
 }
 
-
-
+//var message
+var quoteid
+var premium
 export default class VehicleDetails extends React.Component{
    constructor(props) {
         super(props);
         this.state = {
+                      quoteid:this.props.navigatorRoute.quoteid,
+                      mypremium:this.props.navigatorRoute.premium,
                       title: 'Ms',
                       firstname: 'Neelima',
                       lastname: 'Rani',
@@ -86,9 +89,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '13/02/2018',
+                      policyStartDate: '17/02/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '13/02/2018',
+                      vehicleRegDate: '17/02/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -133,7 +136,8 @@ export default class VehicleDetails extends React.Component{
 
     onChangePost = () => {
         console.log("Rahul")
-
+console.log("quoteid",this.state.quoteid)
+console.log("quoteid_",this.props.navigatorRoute.quoteid)
         return fetch('http://192.168.1.7:3000/brandnewupdatevehical', {
             method: 'POST',
             headers: {
@@ -144,8 +148,8 @@ export default class VehicleDetails extends React.Component{
         
             body: JSON.stringify({
                 CALCULATEPREMIUMREQUEST: {
-                    quoteId: "QVMN0011306",
-                    premium: "2774.0",
+                    "quoteId": this.state.quoteid,
+                    "premium": this.state.premium,
                     authenticationDetails: {
                       apiKey: "310ZQmv/bYJMYrWQ1iYa7s43084=",
                       agentId: "RSAI"
@@ -236,9 +240,11 @@ export default class VehicleDetails extends React.Component{
            // this.props.onNavigateEight(res);
             var Message = resJson1.PREMIUMDETAILS.Status.Message
             console.log(Message,"Message");
-            alert(''+Message+'')
+            var mypremium = resJson1.PREMIUMDETAILS.DATA.PREMIUM
+            console.log("premium",premium)
+            alert(''+mypremium+'')
             if (Message==="Premium Calculated and Vehicle details saved successfully"){
-            this.props.onNavigateEight(res);
+            this.props.onNavigateEight(res,quoteid,mypremium);
             }else{
                 return false
             }
@@ -249,6 +255,16 @@ export default class VehicleDetails extends React.Component{
     onChangeTextValue = (value) => {
         this.setState({ inputValue: value });
         console.log(this.state.inputValue,"inputValue");
+    }
+    onChangequoteid = (value) => {
+        console.log("VenhicleDetails", value)
+        var quote = quoteid
+        this.setState ({ quoteid:value});
+        console.log(this.state.quoteid,"quoteId");
+    }
+    onChangepremium = (value) => {
+        this.setState({mypremium: value });
+        console.log({premium},"premium");
     }
 
 
@@ -573,7 +589,11 @@ export default class VehicleDetails extends React.Component{
         // this.props.onNavigateSixth(function(res) { return (res); })
         // this.props.QuotesSelection
        
-
+     //   message = this.props.navigatorRoute.message
+        quoteid = this.props.navigatorRoute.quoteid
+         mypremium = this.props.navigatorRoute.premium
+        console.log("quoteid",quoteid)
+        console.log("premium",mypremium)
 
         return (
             <RX.ScrollView style={ _styles.scroll }>
@@ -635,7 +655,40 @@ export default class VehicleDetails extends React.Component{
                                 <Tab eventKey={1} style={_styles.read}title="New" className="myClass">
                                 
                                     {/*<code>&lt;{'Col xs={12} md={8}'} /&gt;</code>*/}
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText}>
+                                            Quote ID
+                                        </RX.Text>
+                                        <form>
 
+                                            <RX.TextInput
+                                                type="Quote ID"
+                                                style={styling.Form}
+                                                placeholder="Quote Id"
+                                                value={quoteid }
+                                                onChangeText={this.onChangequoteid}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                              
+                                        </form>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
+                                        <RX.Text style={ styling.sideText}>
+                                            Premium 
+                                        </RX.Text>
+                                        <form>
+
+                                            <RX.TextInput
+                                                type="Premium"
+                                                style={styling.Form}
+                                                placeholder="Premium"
+                                                value={mypremium}
+                                                onChangeText={this.onChangepremium}
+                                                // defaultValue={ this.state.inputValue }
+                                            />
+                                              
+                                        </form>
+                                    </RX.View>
                                     <RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText}>
                                             Title
@@ -1065,7 +1118,7 @@ export default class VehicleDetails extends React.Component{
                                         </RX.Text>
                                         <form>
                                         
-                                            <RX.TextInput
+                                              <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="strstdcode"
                                                 value={ this.state.strStdCode }
@@ -1541,7 +1594,7 @@ export default class VehicleDetails extends React.Component{
                                        
                                             <RX.TextInput
                                                 style={styling.Form}
-                                                placeholder="      Legalliability to paid driver"
+                                                placeholder="Legalliability to paid driver"
                                                 value={ this.state.legalliabilityToPaidDriver }
                                                 onChangeText={this.onChangelegalliabilityToPaidDriver }
                                                 // defaultValue={ this.state.inputValue }

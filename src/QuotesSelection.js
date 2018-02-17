@@ -206,9 +206,11 @@ check: RX.Styles.createTextStyle({
     textTransform:'capitalize',
     marginTop:62
     }),
-};
+}; 
 var idv
 var resJson
+var quoteid
+var premium
 export default class QuotesSelection  extends RX.Component {
 
 
@@ -356,7 +358,7 @@ export default class QuotesSelection  extends RX.Component {
     }
 
     onChangeliability  = () => {
-        this.props.onNavigateSixth(liability,resJson,message);
+        this.props.onNavigateSixth(liability,resJson,message,quoteid,premium);
         
         
 
@@ -367,14 +369,19 @@ export default class QuotesSelection  extends RX.Component {
      resJson = this.props.navigatorRoute.resJson
      liability = this.props.navigatorRoute.liability
      message = this.props.navigatorRoute.message
+     quoteid =  this.props.navigatorRoute.quoteid
+     premium = this.props.navigatorRoute.premium
     console.log("idvvvvv",resJson)
     console.log("liablity",liability)
     console.log("message",message)
+    console.log("quoteiid",quoteid)
+    console.log("premium",premium)
         return (
             <RX.ScrollView style={ _styles.scroll }>
                 <RX.View style={ _styles.container }>
                     <RX.Text style={ _styles.welcome }>
                         New Motor Insurance
+                       
                     </RX.Text>
                     <RX.Text style={ _styles.welcome }>
                     </RX.Text>

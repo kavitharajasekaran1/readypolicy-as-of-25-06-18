@@ -17,6 +17,7 @@ module.exports = {
 
     }),
     welcome: RX.Styles.createScrollViewStyle({
+        top: -50,
         fontSize: 25,
         color: 'white',
         textAlign:'center',
@@ -25,7 +26,8 @@ module.exports = {
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor:'#1a153b',
-        padding:5
+        height:80,
+        padding:-10
     }),
     flute: RX.Styles.createViewStyle({
         justifyContent: 'center',
