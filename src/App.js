@@ -15,8 +15,10 @@ import RegisterPage from './RegisterPage'
 import QuotesSelection from './QuotesSelection'
 import Location from './Location'
 import VehicleDetails from './VehicleDetails'
+import VehicleDcar from './VehicleDcar'
 import MyPolicy from './MyPolicy'
 import InsuranceAddons from './InsuranceAddons'
+import InsuranceFourWheeler from './InsauranceFourWheeler'
 import EleventhPanel from './EleventhPanel'
 import TravelInsuranceReg from './TravelInsuranceReg'
 import QuoteDetails from './QuoteDetails'
@@ -25,6 +27,7 @@ import NewTermInsurance from './NewTermInsurance'
 import HomePanel from './HomePanel'
 import Vehicleregister from './Vehicleregister'
 import Gproposal from './Gproposal'
+import Quotefour from './Quotefour'
 
 
 
@@ -39,8 +42,10 @@ let NavigationRouteId = {
     QuotesSelection:"QuotesSelection",
     Location:"Location",
     VehicleDetails:"VehicleDetails",
+    VehicleDcar:"VehicleDcar",
     MyPolicy:"MyPolicy",
     InsuranceAddons:"InsuranceAddons",
+    InsuranceFourWheeler:"InsuranceFourWheeler",
     EleventhPanel:"EleventhPanel",
     PaymentScreen:"PaymentScreen",
     QuoteDetails:"QuoteDetails",
@@ -48,7 +53,8 @@ let NavigationRouteId = {
     NewTermInsurance:"NewTermInsurance",
     HomePanel:"HomePanel",
     Vehicleregister:"Vehicleregister",
-    Gproposal:"Gproposal"
+    Gproposal:"Gproposal",
+    Quotefour:"Quotefour"
 };
 
 const styles = {
@@ -75,15 +81,20 @@ export default class App extends RX.Component {
         this._onPressEight = this._onPressEight.bind(this);
         this._onPressNine = this._onPressNine.bind(this);
         this._onPressTen = this._onPressTen.bind(this);
+        this._onPressTens = this._onPressTens.bind(this);
         this._onPressEleven = this._onPressEleven.bind(this);
         this._onPressPayment = this._onPressPayment.bind(this);
         this._onPressTravel = this._onPressTravel.bind(this);
         this._onPressNewTermInsurance = this._onPressNewTermInsurance.bind(this);
         this._onPressHome = this._onPressHome.bind(this);
+        this._onPressHome1 = this._onPressHome1.bind(this);
         this._onPressfont = this._onPressfont.bind(this);
         this._onPressDetail = this._onPressDetail.bind(this);
         this._onPressproposal = this._onPressproposal.bind(this);
         this._onPressSuper = this._onPressSuper.bind(this);
+        this._onPressVehicledcar = this._onPressVehicledcar.bind(this);
+        this._onPressSelect  = this._onPressSelect .bind(this);
+
     }
 
     componentDidMount() {
@@ -140,11 +151,20 @@ export default class App extends RX.Component {
                 return <VehicleDetails onNavigateEight={ this._onPressEight } navigatorRoute={navigatorRoute}/>;
                 return <VehicleDetails onNavigateSuper={ this._onPressSuper  } navigatorRoute={navigatorRoute}/>;
 
+            case NavigationRouteId.VehicleDcar:
+                return <VehicleDcar onNavigateSelect={ this._onPressSelect } navigatorRoute={navigatorRoute}/>;
+
+                case NavigationRouteId.Quotefour:
+                return <Quotefour onNavigatePush={ this._onPressSelect12345 } navigatorRoute={navigatorRoute}/>;
+
             case NavigationRouteId.MyPolicy:
                 return <MyPolicy onNavigateNine={ this._onPressNine }  navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.InsuranceAddons:
                 return <InsuranceAddons onNavigateTen={ this._onPressTen } navigatorRoute={navigatorRoute}/>;
+
+            case NavigationRouteId.InsuranceFourWheeler:
+                return <InsuranceFourWheeler onNavigateVehicledcar={ this._onPressVehicledcar } navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.EleventhPanel:
                 return <EleventhPanel onNavigateEleven={ this._onPressEleven }/>;
@@ -160,8 +180,8 @@ export default class App extends RX.Component {
                 return <NewTermInsurance onNavigateNewTermInsurance={ this._onPressNewTermInsurance }/>;
 
             case NavigationRouteId.HomePanel:
-                return <HomePanel onNavigateSuper={ this._onPressHome}/>;   
-
+              //  return <HomePanel onNavigateSuper={ this._onPressHome}/>;   
+                return <HomePanel onNavigateSuperCar = {this._onPressHome1}/>;
              case NavigationRouteId.Vehicleregister:
                 return <Vehicleregister onNavigatefont={ this._onPressfont}/>; 
 
@@ -293,7 +313,7 @@ export default class App extends RX.Component {
         console.log("quoteid",quoteid)
         console.log("premium",mypremium)
         this._navigator.push({
-            routeId: NavigationRouteId.Gproposal,
+            routeId: NavigationRouteId.Quotefour,
             res:res,
             quoteid:quoteid,
             mypremium:mypremium,
@@ -316,7 +336,52 @@ export default class App extends RX.Component {
         });
     }
 
+    _onPressVehicledcar(resJson,liability,message,quoteid,premium) {
+        console.log(resJson,"res");
+        console.log(quoteid,"quoteiid")
+        console.log(premium,"premium")
+        // this._navigator.pop();
+        this._navigator.push({
+            routeId: NavigationRouteId.VehicleDcar,
+            sceneConfigType: "FloatFromRight",
+            quoteid:quoteid,
+            premium:premium,
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+
     _onPressTen(resJson,liability,message,quoteid,premium) {
+        console.log("neenenne",resJson)
+        console.log("liablity",liability)
+        console.log("quoteid",quoteid)
+        // this._navigator.pop();
+        this._navigator.push({
+            routeId: NavigationRouteId.QuotesSelection,
+            sceneConfigType: "FloatFromRight",
+            resJson:resJson,
+            liability:liability,
+            message:message,
+            quoteid:quoteid,
+            premium:premium,
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+    _onPressEleven() {
+        // this._navigator.pop();
+        this._navigator.push({
+            routeId: NavigationRouteId.PaymentScreen,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+
+    _onPressTens(resJson,liability,message,quoteid,premium) {
         console.log("neenenne",resJson)
         console.log("liablity",liability)
         console.log("quoteid",quoteid)
@@ -353,6 +418,19 @@ export default class App extends RX.Component {
             }
         });
     }
+    _onPressSelect (quoteid,premium) {
+       // console.log("res",res)
+        this._navigator.push({
+            routeId: NavigationRouteId.Quotefour,
+            sceneConfigType: "FloatFromRight",
+           // res:res,
+            premium:premium,
+            quoteid:quoteid,
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
     _onPressTravel() {
         this._navigator.push({
             routeId: NavigationRouteId.NewTermInsurance,
@@ -362,6 +440,7 @@ export default class App extends RX.Component {
             }
         });
     }
+    
     _onPressNewTermInsurance() {
         this._navigator.push({
             routeId: NavigationRouteId.PaymentScreen,
@@ -375,6 +454,16 @@ export default class App extends RX.Component {
     _onPressHome() {
         this._navigator.push({
             routeId: NavigationRouteId.InsuranceAddons,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true  
+    }
+});
+    }
+
+    _onPressHome1() {
+        this._navigator.push({
+            routeId: NavigationRouteId.InsuranceFourWheeler,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true  

@@ -195,11 +195,11 @@ style={styles.remo}
                      <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'auto'}}>
                      <RX.View style={{width: 100, height: 100, backgroundColor: 'white', marginTop:20}} >
                      
-                 <RX.Image
+                     <RX.Button  onPress={ this.props.onNavigateSuperCar }><RX.Image
                              style={styles.HomeScrollImageLogo}
                              source={'./src/img/Car.svg'}/>
                         <RX.Text style={styles.scrollBoxText}>Car</RX.Text>
-                      
+                      </RX.Button>
                      </RX.View>
                
                      <div className="row"></div>

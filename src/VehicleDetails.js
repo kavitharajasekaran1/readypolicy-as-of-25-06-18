@@ -1492,7 +1492,8 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                             />
                                            
                                         </form>
-                                    </RX.View><RX.View style={styling.sideMar}>
+                                    </RX.View>
+                                    <RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText }>
                                          Car Register city
                                         </RX.Text>
