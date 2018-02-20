@@ -211,6 +211,8 @@ var idv
 var resJson
 var quoteid
 var premium
+var liability
+var allResponse
 export default class QuotesSelection  extends RX.Component {
 
 
@@ -358,11 +360,8 @@ export default class QuotesSelection  extends RX.Component {
     }
 
     onChangeliability  = () => {
-        this.props.onNavigateSelect(liability,resJson,message,quoteid,premium);
+        this.props.onNavigatePush(allResponse,liability,resJson,message,quoteid,premium);
         
-        
-
-       
     }
 
     render() {
@@ -371,11 +370,13 @@ export default class QuotesSelection  extends RX.Component {
      message = this.props.navigatorRoute.message
      quoteid =  this.props.navigatorRoute.quoteid
      premium = this.props.navigatorRoute.premium
+     allResponse = this.props.navigatorRoute.allResponse
     console.log("idvvvvv",resJson)
     console.log("liablity",liability)
     console.log("message",message)
     console.log("quoteiid",quoteid)
     console.log("premium",premium)
+    console.log("allResponse",allResponse)
         return (
             <RX.ScrollView style={ _styles.scroll }>
                 <RX.View style={ _styles.container }>

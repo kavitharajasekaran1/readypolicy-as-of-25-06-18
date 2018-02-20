@@ -32,7 +32,7 @@ export default class InsuranceAddons extends RX.Component{
             carRegisteredCity: '24PARGANAS',
             vehicleManufacturerName: 'TVS',
             vehicleModelCode: 'ZWTV310',
-            vehicleRegDate: '19/02/2018',
+            vehicleRegDate: '20/02/2018',
             lastname: 'Rani',
         };
         this._translationValue = RX.Animated.createValue(-100);
@@ -105,7 +105,7 @@ console.log("hittinh.......")
                         region: "South Region",
                         vehicleManufacturerName: "BMW",
                         vehicleModelCode: "CMB65",
-                        vehicleregDate: "19/02/2018",
+                        vehicleregDate: "20/02/2018",
                         idv: "3025465",
                         engineCapacityAmount: "1995 CC",
                         drivingExperience: "2",
@@ -208,18 +208,18 @@ console.log("hittinh.......")
                 })
                     }).then((response) => response.json()).then((responseJson) => {
                  var res = responseJson.response;
-                 var resJson1 = JSON.parse(res)
-                 var resJson = resJson1.PREMIUMDETAILS.DATA.IDV
-                 var quoteid = resJson1.PREMIUMDETAILS.DATA.QUOTE_ID
-                 var premium = resJson1.PREMIUMDETAILS.DATA.PREMIUM
-                 var liability = resJson1.PREMIUMDETAILS.DATA.LIABILITY
-                 var message = resJson1.PREMIUMDETAILS.Status.Message
+                 var allResponse = JSON.parse(res)
+                 var resJson = allResponse.PREMIUMDETAILS.DATA.IDV
+                 var quoteid = allResponse.PREMIUMDETAILS.DATA.QUOTE_ID
+                 var premium = allResponse.PREMIUMDETAILS.DATA.PREMIUM
+                 var liability = allResponse.PREMIUMDETAILS.DATA.LIABILITY
+                 var message = allResponse.PREMIUMDETAILS.Status.Message
                  console.log("quoteid",quoteid)
-                 console.log("neenenne",resJson1)
+                 console.log("allresponse",allResponse)
                  console.log("liablity",liability)
                  console.log("message",message)
                  console.log("premium",premium)
-                          this.props.onNavigateVehicledcar(resJson,liability,message,quoteid,premium); 
+                          this.props.onNavigateTwenty(allResponse,resJson,liability,message,quoteid,premium); 
                         //  this.props.onNavigateBack (liability,message);
                          // this.props.onNavigateDetail(liability,message);
                      //   idv = resJson.PREMIUMDETAILS.DATA.IDV

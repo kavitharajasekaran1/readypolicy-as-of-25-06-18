@@ -48,6 +48,10 @@ const _styles = {
 //var message
 var quoteid
 var premium
+var liability
+var idv
+var resJson
+var allResponse
 export default class VehicleDetails extends React.Component{
    constructor(props) {
         super(props);
@@ -89,9 +93,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '17/02/2018',
+                      policyStartDate: '20/02/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '17/02/2018',
+                      vehicleRegDate: '20/02/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -190,7 +194,7 @@ console.log("quoteid",this.state.quoteid)
                         region: "South Region",
                         vehicleManufacturerName: "REVA",
                         vehicleModelCode: "CMB65",
-                        vehicleregDate: "19/02/2018",
+                        vehicleregDate: "20/02/2018",
                         idv: "3025465",
                         engineCapacityAmount: "1995 CC",
                         drivingExperience: "2",
@@ -301,11 +305,11 @@ console.log("quoteid",this.state.quoteid)
             var mypremium = resJson1.PREMIUMDETAILS.DATA.PREMIUM
             console.log("premium",mypremium)
             alert(''+Message+'')
-            if (Message==="Premium Calculated and Vehicle details saved successfully"){
-            this.props.onNavigateSelect(quoteid,mypremium);
-            }else{
-                return false
-            }
+             if (Message==="Vehicle Additional details updation success"){
+             this.props.onNavigateFifty(quoteid,mypremium,liability,idv,resJson,allResponse);
+             }else{
+                 return false
+             }
 
         })
      }
@@ -650,8 +654,15 @@ console.log("quoteid",this.state.quoteid)
      //   message = this.props.navigatorRoute.message
         quoteid = this.props.navigatorRoute.quoteid
          mypremium = this.props.navigatorRoute.premium
+       //  liability = this.props.navigatorRoute.liability
+         //idv = this.props.navigatorRoute.idv
+         //resJson = this.props.navigatorRoute.resJson
+         //allResponse = this.props.navigatorRoute.allResponse
         console.log("quoteid",quoteid)
         console.log("premium",mypremium)
+       // console.log("liability",liability)
+       // console.log("idv",idv)
+       // console.log("idv",resJson)
 
         return (
             <RX.ScrollView style={ _styles.scroll }>

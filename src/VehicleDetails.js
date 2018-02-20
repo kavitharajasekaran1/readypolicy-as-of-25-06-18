@@ -241,7 +241,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
             var Message = resJson1.PREMIUMDETAILS.Status.Message
             console.log(Message,"Message");
             var mypremium = resJson1.PREMIUMDETAILS.DATA.PREMIUM
-            console.log("premium",premium)
+            //console.log("premium",premium)
             alert(''+mypremium+'')
             if (Message==="Premium Calculated and Vehicle details saved successfully"){
             this.props.onNavigateEight(res,quoteid,mypremium);
