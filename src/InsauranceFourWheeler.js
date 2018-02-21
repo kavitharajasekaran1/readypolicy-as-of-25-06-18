@@ -7,6 +7,7 @@ import RX from 'reactxp';
 import {Nav,NavItem,NavDropdown,MenuItem,Grid,Row,Col,Form,FormGroup,ControlLabel,FormControl,Checkbox,Visible,lg,xs} from 'react-bootstrap';
 import Button from 'react-bootstrap/lib/Button';
 import styling from './AppStyles';
+import popupS from 'popups'
 
 /*const {
     Welcome
@@ -32,7 +33,7 @@ export default class InsuranceAddons extends RX.Component{
             carRegisteredCity: '24PARGANAS',
             vehicleManufacturerName: 'TVS',
             vehicleModelCode: 'ZWTV310',
-            vehicleRegDate: '20/02/2018',
+            vehicleRegDate: '21/02/2018',
             lastname: 'Rani',
         };
         this._translationValue = RX.Animated.createValue(-100);
@@ -105,7 +106,7 @@ console.log("hittinh.......")
                         region: "South Region",
                         vehicleManufacturerName: "BMW",
                         vehicleModelCode: "CMB65",
-                        vehicleregDate: "20/02/2018",
+                        vehicleregDate: "21/02/2018",
                         idv: "3025465",
                         engineCapacityAmount: "1995 CC",
                         drivingExperience: "2",
@@ -281,7 +282,7 @@ console.log("hittinh.......")
                          style={_styles.HomeScrollImageLogo}
                          source={'./src/img/Back.svg'}/>
                     <RX.Text style={styling.welcome }>
-                    New Car Insurance
+                    Get Quote
                 </RX.Text>
                    </RX.Button>
                 {/*<RX.Button style={ Button } this._onChangeVaronPress={ this.props.onNavigateThirteen }>
@@ -434,11 +435,12 @@ console.log("hittinh.......")
                                              
                                         </form>
                                     </RX.View>
+                                    <RX.Button style={styling.button} onPress={()=> this.onChangePostt()}>Get Quote</RX.Button>
                                    
                 </Grid>
 
 
-                <RX.Button bsStyle="danger" onPress={()=> this.onChangePostt()}>Get Quote</RX.Button>
+                
 
 
 

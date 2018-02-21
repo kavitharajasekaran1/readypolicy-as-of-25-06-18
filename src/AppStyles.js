@@ -21,6 +21,8 @@ module.exports = {
         fontSize: 25,
         color: 'white',
         textAlign:'center',
+        marginleft: 134
+
     }),
     container: RX.Styles.createViewStyle({
         justifyContent: 'center',
@@ -340,7 +342,7 @@ module.exports = {
     }),
     Form:RX.Styles.createViewStyle({
         display: 'block',
-         width: '100%',
+         width: '80%',
          height: 34,
          // padding: 6px 12px;
           fontSize: 14,
@@ -350,6 +352,24 @@ module.exports = {
         borderWidth:1,
         borderColor:"#ccc",
         borderRadius: 4
+    }),
+    button:RX.Styles.createViewStyle({
+        display: 'block',
+         width: '50%',
+         height: 34,
+         justifyContent: 'center',
+        alignItems: 'center',
+         // padding: 6px 12px;
+          fontSize: 20,
+        // line: 1.42857143;
+        color: "White",
+        backgroundColor: "blue",
+        borderWidth:1,
+        borderColor:"#ccc",
+        borderRadius: 4,
+        marginLeft:90,
+        marginTop:20
+ 
     }),
     Tab:RX.Styles.createViewStyle({
         backgroundColor: "#f8ad46",

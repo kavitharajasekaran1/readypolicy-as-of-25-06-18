@@ -15,6 +15,7 @@ import ProgressIndicator from './ProgressIndicator';
 import ToggleSwitch from './ToggleSwitch';
 import Rest from "./RestConfig";
 import styling from "./AppStyles";
+import popupS from 'popups'
 
 const _styles = {
     scroll: RX.Styles.createScrollViewStyle({
@@ -405,11 +406,11 @@ export default class QuotesSelection  extends RX.Component {
                         </RX.Text>
                         <RX.Text style={ _styles.quotes }>
                           IDV:{resJson}
-                            <div>NCB</div>
+                            <div></div>
                         </RX.Text>
                         <RX.Text style={ _styles.ncb }>
                             Rs. 20,347
-                            <div>NIL</div>
+                            <div></div>
                         </RX.Text>
                         <RX.View style={_styles.nextBtn}>
                             <RX.Button style={ _styles.roundButton } onPress={()=> this.onChangeliability()}>
@@ -530,11 +531,11 @@ export default class QuotesSelection  extends RX.Component {
                         </RX.Text>
                         <RX.Text style={ _styles.quotes }>
                             IDV
-                            <div>NCB</div>
+                            <div></div>
                         </RX.Text>
                         <RX.Text style={ _styles.ncb }>
                             Rs. 20,347
-                            <div>NIL</div>
+                            <div></div>
                         </RX.Text>
                         <RX.View style={_styles.nextBtn}>
                             <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
@@ -559,11 +560,11 @@ export default class QuotesSelection  extends RX.Component {
                         </RX.Text>
                         <RX.Text style={ _styles.quoted }>
                             IDV
-                            <div>NCB</div>
+                            <div></div>
                         </RX.Text>
                         <RX.Text style={ _styles.ncb }>
                             Rs. 23,347
-                            <div>NIL</div>
+                            <div></div>
                         </RX.Text>
                         <RX.View style={_styles.nextBtn}>
                             <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
@@ -588,11 +589,11 @@ export default class QuotesSelection  extends RX.Component {
                         </RX.Text>
                         <RX.Text style={ _styles.quoted }>
                             IDV
-                            <div>NCB</div>
+                            <div></div>
                         </RX.Text>
                         <RX.Text style={ _styles.ncb }>
                             Rs. 28,347
-                            <div>NIL</div>
+                            <div></div>
                         </RX.Text>
                         <RX.View style={_styles.nextBtn}>
                             <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
@@ -612,16 +613,16 @@ export default class QuotesSelection  extends RX.Component {
                         <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
                          </RX.Image>
                         <RX.Text style={ _styles.sideHead }>
-                            Reliance Life Insurance
+                            ICICI LOMBARD
                             <div style={_styles.tryHead}>Two Year Cover Only</div>
                         </RX.Text>
                         <RX.Text style={ _styles.quoted }>
                             IDV
-                            <div>NCB</div>
+                            <div></div>
                         </RX.Text>
                         <RX.Text style={ _styles.ncb }>
                             Rs. 23,347
-                            <div>NIL</div>
+                            <div></div>
                         </RX.Text>
                         <RX.View style={_styles.nextBtn}>
                             <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>

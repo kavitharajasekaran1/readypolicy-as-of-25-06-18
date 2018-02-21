@@ -14,6 +14,7 @@ import Button from 'react-bootstrap/lib/Button';
 import moment from 'moment';
 
 
+
 /*const {
     Welcome
 } = TodoStyles;*/
@@ -39,7 +40,8 @@ const _styles = {
             height: 72,
             paddingVertical:20,
             marginLeft:3,
-            marginTop:-9
+            marginTop:-9,
+            marginleft: 117
         }),
         
         
@@ -89,9 +91,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '16/02/2018',
+                      policyStartDate: '21/02/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '16/02/2018',
+                      vehicleRegDate: '21/02/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -147,26 +149,27 @@ export default class VehicleDetails extends React.Component{
         
             body: JSON.stringify({
                 GPROPOSALREQUEST: {
-                    "quoteId": this.state.quoteid,
-                    "premium": this.state.premium,
-                    "emailId": this.state. emailId,
                     authenticationDetails: {
-                      apiKey: "310ZQmv/bYJMYrWQ1iYa7s43084=",
-                      agentId: "RSAI"
-                    }
-                }
-            })
+                      agentI: "BA502092",
+                      apikey: "310ZQmv/bYJMYrWQ1iYa7s43084="
+                    },
+                    premium: "114516.0",
+                    quoteId: "BA502092VPC0018256",
+                    strEmail: "neeluneelima67@gmail.com",
+                    reqType: "xml"
+                  }
+                }),
                     
                     
         }).then((response) => response.json()).then((responseJson) => {
             var res = responseJson.response;
             var resJson1 = JSON.parse(res)
             console.log(resJson1,"res");
-           // this.props.onNavigateEight(res);
+        //    this.props.onNavigateFifty(resJson);
             var Message = resJson1.PREMIUMDETAILS.Status.Message
             console.log(Message,"Message");
             alert(''+Message+'')
-            if (Message==="Quote Approved,Preceed Buy Policy"){
+            if (Message==="Quote Approved,Proceed Buy Policy"){
            // this.props.onNavigateprposal(res);
             }else{
                 return false
@@ -240,23 +243,7 @@ export default class VehicleDetails extends React.Component{
                                         </Col>
                     </Row>*/}
 
-                    <Row className="clearfix" >
-                        <Col  md={8}></Col>
-                        <Col  md={8}>
-                        <div className="container">
-                        <div className="btn-pref btn-group btn-group-justified btn-group-sm" role="group" style={styling.sideMar}aria-label="...">
-        <div className="btn-group" role="group">
-            <button type="button" id="stars" className="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <div className="hidden-xs">New</div>
-            </button>
-        </div>
-        <div class="btn-group" role="group"  style={styling.sideMar}  >
-            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                <div class="hidden-xs">Renew</div>
-            </button>
-        </div>
-        </div>
-        </div>
+   
                     
                             <Tabs defaultActiveKey={1} style={_styles.read} id="left-tabs-example">
                                 <Tab eventKey={1} style={_styles.read}title="New" className="myClass">
@@ -322,7 +309,7 @@ export default class VehicleDetails extends React.Component{
                                     <Row className="show-grid">
                                         <Col md={12} style={styling.marTop10}>
                                             {/*<RX.Button   onPress={()=> this.onChangePost() }>Submit</RX.Button>*/}
-                                            <RX.Button bsStyle="info" onPress={()=> this.onChangePost() }>Primary</RX.Button>
+                                            <RX.Button style={styling.button} onPress={()=> this.onChangePost() }>Primary</RX.Button>
 
                                         </Col>
                                         {/*<Col  md={6} style={styling.marTop}>
@@ -538,8 +525,6 @@ export default class VehicleDetails extends React.Component{
 
                                 </Tab>
                             </Tabs>
-                        </Col>
-                    </Row>
                 </Grid>
 
                 {/*<RX.Text style={styling.Text }>
