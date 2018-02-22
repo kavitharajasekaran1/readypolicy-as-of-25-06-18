@@ -162,12 +162,12 @@ export default class VehicleDetails extends React.Component{
             var res = responseJson.response;
             var resJson1 = JSON.parse(res)
             console.log(resJson1,"res");
-            this.props.onNavigateFifty(res);
+            // this.props.onNavigateFifty(res);
             var Message = resJson1.PREMIUMDETAILS.Status.Message
             console.log(Message,"Message");
             alert(''+Message+'')
             if (Message==="Quote Approved,Preceed Buy Policy"){
-            this.props.onNavigateprposal(res);
+            // this.props.onNavigateFifty(res);
             }else{
                 return false
             }

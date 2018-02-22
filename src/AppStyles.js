@@ -371,6 +371,23 @@ module.exports = {
         marginTop:20
  
     }),
+    nextbutton:RX.Styles.createViewStyle({
+        display: 'block',
+         width: '50%',
+         height: 34,
+         justifyContent: 'center',
+        alignItems: 'center',
+         // padding: 6px 12px;
+          fontSize: 20,
+        // line: 1.42857143;
+        color: "White",
+        backgroundColor: "blue",
+        borderWidth:1,
+        borderColor:"#ccc",
+        borderRadius: 4,
+        marginLeft:221,
+        marginTop:20
+    }),
     Tab:RX.Styles.createViewStyle({
         backgroundColor: "#f8ad46",
         borderWidth:1,

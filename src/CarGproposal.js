@@ -56,9 +56,7 @@ export default class VehicleDetails extends React.Component{
         this.state = {
                       quoteid:this.props.navigatorRoute.quoteid,
                       premium:this.props.navigatorRoute.mypremium,
-                      title: 'Ms',
-                      firstname: 'Neelima',
-                      lastname: 'Rani',
+                     
                       emailId: 'neeluneelima67@gmail.com',
                       mobileNo: '9553715856',
                       dateofbirth: '02/12/1994',
@@ -91,9 +89,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '21/02/2018',
+                      policyStartDate: '22/02/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '21/02/2018',
+                      vehicleRegDate: '22/02/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -150,12 +148,12 @@ export default class VehicleDetails extends React.Component{
             body: JSON.stringify({
                 GPROPOSALREQUEST: {
                     authenticationDetails: {
-                      agentI: "BA502092",
+                      agentId: "BA502092",
                       apikey: "310ZQmv/bYJMYrWQ1iYa7s43084="
                     },
-                    premium: "114516.0",
-                    quoteId: "BA502092VPC0018256",
-                    strEmail: "neeluneelima67@gmail.com",
+                    premium: this.state.premium,
+                    quoteId: this.state.quoteid,
+                    strEmail: this.state.emailId,
                     reqType: "xml"
                   }
                 }),
@@ -203,7 +201,7 @@ export default class VehicleDetails extends React.Component{
        
      //   message = this.props.navigatorRoute.message
        var quoteid = this.props.navigatorRoute.quoteid
-        var mypremium = this.props.navigatorRoute.mypremium
+        var premium = this.props.navigatorRoute.mypremium
 
         return (
             <RX.ScrollView style={ _styles.scroll }>
@@ -304,6 +302,7 @@ export default class VehicleDetails extends React.Component{
                                             
                                         </form>
                                     </RX.View>
+                                
                                    
 
                                     <Row className="show-grid">

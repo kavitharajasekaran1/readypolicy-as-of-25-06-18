@@ -235,7 +235,7 @@ export default class QuotesSelection  extends RX.Component {
     onChangePost = () => {
         console.log("Rahul")
 
-                        alert(''+message+'')
+                        // alert(''+message+'')
                         console.log("quoteiid",quoteid)
                         console.log("premium",premium)
                          this.props.onNavigateTwo(quoteid,premium); 
@@ -510,7 +510,7 @@ export default class QuotesSelection  extends RX.Component {
                                 </Col>
                             </Row>
                         </RX.View>
-                        <RX.Button bsStyle="info" onPress={()=> this.onChangePost() }>Primary</RX.Button>
+                        <RX.Button style={styling.nextbutton} onPress={()=> this.onChangePost() }>Primary</RX.Button>
 
                     </Grid>
 

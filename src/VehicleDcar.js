@@ -93,9 +93,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '21/02/2018',
+                      policyStartDate: '22/02/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '21/02/2018',
+                      vehicleRegDate: '22/02/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -194,7 +194,7 @@ console.log("quoteid",this.state.quoteid)
                         region: "South Region",
                         vehicleManufacturerName: "REVA",
                         vehicleModelCode: "CMB65",
-                        vehicleregDate: "21/02/2018",
+                        vehicleregDate: "22/02/2018",
                         idv: "3025465",
                         engineCapacityAmount: "1995 CC",
                         drivingExperience: "2",
@@ -306,7 +306,7 @@ console.log("quoteid",this.state.quoteid)
             console.log("premium",mypremium)
             alert(''+Message+'')
              if (Message==="Vehicle Additional details updation success"){
-             this.props.onNavigateFifty(quoteid,mypremium,liability,idv,resJson,allResponse);
+             this.props.onNavigateFifty(quoteid,mypremium);
              }else{
                  return false
              }
@@ -657,7 +657,7 @@ console.log("quoteid",this.state.quoteid)
        //  liability = this.props.navigatorRoute.liability
          //idv = this.props.navigatorRoute.idv
          //resJson = this.props.navigatorRoute.resJson
-         //allResponse = this.props.navigatorRoute.allResponse
+        //  allResponse = this.props.navigatorRoute.allResponse
         console.log("quoteid",quoteid)
         console.log("premium",mypremium)
        // console.log("liability",liability)
