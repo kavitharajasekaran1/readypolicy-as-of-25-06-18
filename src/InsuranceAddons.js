@@ -24,6 +24,17 @@ const _styles = {
 export default class InsuranceAddons extends RX.Component{
     constructor(props) {
         super(props);
+        this.state = {
+            emailId: 'neeluneelima67@gmail.com',
+            mobileNo: '9553715856',
+            yearOfManufacture: '2017',
+            vehicleMostlyDrivenOn: 'Roads',
+            carRegisteredCity: '24PARGANAS',
+            vehicleManufacturerName: 'TVS',
+            vehicleModelCode: 'ZWTV310',
+            vehicleRegDate: '23/02/2018',
+            lastname: 'Rani',
+        };
         this._translationValue = RX.Animated.createValue(-100);
         this._animatedStyle = RX.Styles.createAnimatedTextStyle({
             transform: [
@@ -40,7 +51,7 @@ console.log("hittinh.......")
         // let usersPath = "motorIssuePolicy"
         // console.log(password,"password");
        // console.log(Rest.ApiUrl,"RestApiUrl");
-      return  fetch('http://192.168.1.7:3000/calculatepremium', {
+      return  fetch('http://192.168.1.25:3000/calculatepremium', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -94,9 +105,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "22/02/2018",
+                        policyStartDate: "23/02/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "22/02/2018",
+                        vehicleRegDate: "23/02/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -154,6 +165,40 @@ console.log("hittinh.......")
                         
                     })
     }
+    onChangeyearOfManufacture= (value) => {
+        this.setState({yearOfManufacture: value });
+        console.log(this.state.yearOfManufacture,"yearOfManufacture");
+    }
+    onChangecarRegisteredCity= (value) => {
+        this.setState({carRegisteredCity: value });
+        console.log(this.state.carRegisteredCity,"carRegisteredCity");
+    }
+    onChangevehicleRegDate = (value) => {
+        this.setState({vehicleRegDate  : value });
+        console.log(this.state.vehicleRegDate ,"vehicleRegDate ");
+    }
+    onChangevehicleManufacturerName = (value) => {
+        this.setState({ vehicleManufacturerName: value });
+        console.log(this.state.vehicleManufacturerName,"vehicleManufacturerName");
+    }
+    onChangevehicleModelCode= (value) => {
+        this.setState({vehicleModelCode : value });
+        console.log(this.state.vehicleModelCode,"vehicleModelCode");
+    }
+    onChangevehicleMostlyDrivenOn= (value) => {
+        this.setState({vehicleMostlyDrivenOn: value });
+        console.log(this.state.vehicleMostlyDrivenOn,"vehicleMostlyDrivenOn");
+    }
+    onChangemobileNo = (value) => {
+        this.setState({ mobileNo: value });
+        console.log(this.state.mobileNo,"mobileNo");
+    }
+
+    onChangeEmail = (value) => {
+        this.setState({ email: value });
+        this.props.onUpdate(value);
+        console.log(this.state.email,"email");
+    }
     componentDidMount() {
         let animation = RX.Animated.timing(this._translationValue, {
                 toValue: 0,
@@ -166,154 +211,262 @@ console.log("hittinh.......")
     }
 
     render() {
-       // console.log(this.props.user,"user");
-        return (
-            <RX.ScrollView style={ _styles.scroll }>
-                <RX.View style={ styling.container }>
-                    <RX.Text style={styling.welcome }>
-                        New Car Insurance
-                    </RX.Text>
-                </RX.View>
-                <RX.View style={ styling.flute }>
-                    <RX.Text style={ styling.head }>
-                        Addons and Accessories
-                    </RX.Text>
-                </RX.View>
-                <Grid>
-                    <Row className="show-grid" style={styling.contain}>
-                        <Col md={10} mdOffset={2} className="hidden-xs" >
-                            <code style={styling.assitance}><Checkbox>24X7 Road Side Assistance</Checkbox></code>
-                            <code style={styling.assitance}><Checkbox>Zero Deprication</Checkbox></code>
-                            <code style={styling.assitance}><Checkbox>Engine Protection Cover</Checkbox></code>
-                            <code style={styling.assitance}><Checkbox>NCB Protactor</Checkbox></code>
-                            <code style={styling.assitance}><Checkbox>Key and Lock Replacements</Checkbox></code>
-                            <code style={styling.assitance}><Checkbox>Consumables</Checkbox></code>
-                            <code style={styling.assitance}><Checkbox>External Accessories-Electrical</Checkbox></code>
-                        </Col>
-                        <Col xs={10}  xsOffset={2}  className="hidden-lg">
-                            <code style={styling.assitanceMob}><Checkbox>24X7 Road Side Assistance</Checkbox></code>
-                            <code style={styling.assitanceMob}><Checkbox>Zero Deprication</Checkbox></code>
-                            <code style={styling.assitanceMob}><Checkbox>Engine Protection Cover</Checkbox></code>
-                            <code style={styling.assitanceMob}><Checkbox>NCB Protactor</Checkbox></code>
-                            <code style={styling.assitanceMob}><Checkbox>Key and Lock Replacements</Checkbox></code>
-                            <code style={styling.assitanceMob}><Checkbox>Consumables</Checkbox></code>
-                            <code style={styling.assitanceMob}><Checkbox>External Accessories-Electrical</Checkbox></code>
-                        </Col>
-
-                    {/*<Col xs={10} md={10}><code></code></Col>*/}
-                    </Row>
-                </Grid>
-                <RX.View style={ styling.flute }>
-                    <RX.Text style={ styling.head }>
-                        Additional Covers
-                    </RX.Text>
-                </RX.View>
-                <Grid>
-                    <Row className="show-grid" style={styling.contain}>
-                        <Col md={10} mdOffset={2} className="hidden-xs" >
-                            <code style={styling.assitance}><Checkbox>24X7 Road Side Assistance</Checkbox></code>
-                            <code style={styling.assitance}><Checkbox>Zero Deprication</Checkbox></code>
-                        </Col>
-                        <Col xs={10}  xsOffset={2}  className="hidden-lg">
-                            <code style={styling.assitanceMob}><Checkbox>24X7 Road Side Assistance</Checkbox></code>
-                            <code style={styling.assitanceMob}><Checkbox>Zero Deprication</Checkbox></code>
-                        </Col>
-
-                        {/*<Col xs={10} md={10}><code></code></Col>*/}
-                    </Row>
-                </Grid>
-
-
-                <RX.Button bsStyle="danger" onPress={()=> this.onChangePostt()}>Next</RX.Button>
-
-
-
-
-
-
-
-
-                {/*Bootstrap ex stashed for integrate*/}
-                {/*<Nav bsStyle="tabs" activeKey="1" onSelect={this.handleSelect}>
-                    <NavItem eventKey="1" href="/home">NavItem 1 content</NavItem>
-                    <NavItem eventKey="2" title="Item">NavItem 2 content</NavItem>
-                    <NavItem eventKey="3" disabled>NavItem 3 content</NavItem>
-                    <NavDropdown eventKey="4" title="Dropdown" id="nav-dropdown">
-                        <MenuItem eventKey="4.1">Action</MenuItem>
-                        <MenuItem eventKey="4.2">Another action</MenuItem>
-                        <MenuItem eventKey="4.3">Something else here</MenuItem>
-                        <MenuItem divider />
-                        <MenuItem eventKey="4.4">Separated link</MenuItem>
-                    </NavDropdown>
-                </Nav>
-
-
-
-
-                <Grid>
-                    <Row className="show-grid">
-                        <Col xs={12} md={8}><code>&lt;{'Col xs={12} md={8}'} /&gt;</code></Col>
-                        <Col xs={6} md={4}><code>&lt;{'Col xs={6} md={4}'} /&gt;</code></Col>
-                    </Row>
-
-                    <Row className="show-grid">
-                        <Col xs={6} md={4}><code>&lt;{'Col xs={6} md={4}'} /&gt;</code></Col>
-                        <Col xs={6} md={4}><code>&lt;{'Col xs={6} md={4}'} /&gt;</code></Col>
-                        <Col xsHidden md={4}><code>&lt;{'Col xsHidden md={4}'} /&gt;</code></Col>
-                    </Row>
-
-                    <Row className="show-grid">
-                        <Col xs={6} xsOffset={6}><code>&lt;{'Col xs={6} xsOffset={6}'} /&gt;</code></Col>
-                    </Row>
-
-                    <Row className="show-grid">
-                        <Col md={6} mdPush={6}><code>&lt;{'Col md={6} mdPush={6}'} /&gt;</code></Col>
-                        <Col md={6} mdPull={6}><code>&lt;{'Col md={6} mdPull={6}'} /&gt;</code></Col>
-                    </Row>
-                </Grid>
-
-
-                <Form horizontal>
-                    <FormGroup controlId="formHorizontalEmail">
-                        <Col componentClass={ControlLabel} sm={2}>
-                            Email
-                        </Col>
-                        <Col sm={10}>
-                            <FormControl type="email" placeholder="Email" />
-                        </Col>
-                    </FormGroup>
-
-                    <FormGroup controlId="formHorizontalPassword">
-                        <Col componentClass={ControlLabel} sm={2}>
-                            Password
-                        </Col>
-                        <Col sm={10}>
-                            <FormControl type="password" placeholder="Password" />
-                        </Col>
-                    </FormGroup>
-
-                    <FormGroup>
-                        <Col smOffset={2} sm={10}>
-                            <Checkbox>Remember me</Checkbox>
-                        </Col>
-                    </FormGroup>
-
-                    <FormGroup>
-                        <Col smOffset={2} sm={10}>
-                            <Button type="submit">
-                                Sign in
-                            </Button>
-                        </Col>
-                    </FormGroup>
-                </Form>*/}
-
-                <RX.Button style={ Button } onPress={ this.props.onNavigateTen }>
-                    <RX.Text style={ styling.buttonText }>
-                        Go Back
-                    </RX.Text>
-                </RX.Button>
-            </RX.ScrollView>
-
-        );
-    }
-}
+        // console.log(this.props.user,"user");
+         return (
+             <RX.ScrollView style={ _styles.scroll }>
+             <RX.View style={ styling.container }>
+             <RX.Button  onPress={ this.props.onNavigateSuper }><RX.Image
+                          style={_styles.HomeScrollImageLogo}
+                          source={'./src/img/Back.svg'}/>
+                     <RX.Text style={styling.welcome }>
+                     Get Quote
+                 </RX.Text>
+                    </RX.Button>
+                 {/*<RX.Button style={ Button } this._onChangeVaronPress={ this.props.onNavigateThirteen }>
+                     <RX.Text style={ styling.buttonText }>
+                         Go Back
+                     </RX.Text>
+                 </RX.Button>*/}
+             </RX.View>
+                 <Grid>
+                 <RX.View style={styling.sideMar}>
+                                         <RX.Text style={ styling.sideText }>
+                                          Manufacturing Year
+                                         </RX.Text>
+                                         <RX.TextInput
+                                                 style={styling.Form}
+                                                 placeholder=" Year of manufacturer"
+                                                 value={ this.state.yearOfManufacture}
+                                                 onChangeText={this.onChangeyearOfManufacture}
+                                                 // defaultValue={ this.state.inputValue }
+                                             />
+                                      </RX.View>
+                                      <RX.View style={styling.sideMar}>
+                                         <RX.Text style={ styling.sideText }>
+                                          Car Register city
+                                         </RX.Text>
+                                         <form>
+                                        
+                                             <RX.TextInput
+                                                 style={styling.Form}
+                                                 placeholder="Car Register city"
+                                                 value={ this.state.carRegisteredCity }
+                                                 onChangeText={this.onChangecarRegisteredCity}
+                                                 // defaultValue={ this.state.inputValue }
+                                             />
+                                            
+                                         </form>
+                                     </RX.View>
+                                     <RX.View>
+                                     <RX.Text style={ styling.sideText }>
+                                           Vehicle register Date
+                                         </RX.Text>
+                                         <form>
+                                        
+                                             <RX.TextInput
+                                                 style={styling.Form}
+                                                 placeholder="Vehicle register date"
+                                                 value={ this.state.vehicleRegDate }
+                                                 onChangeText={this.onChangevehicleRegDate }
+                                                 // defaultValue={ this.state.inputValue }
+                                             />
+                                            
+                                     
+                                         </form>
+                                     </RX.View>
+                                     <RX.View style={styling.sideMar}>
+                                         <RX.Text style={ styling.sideText }>
+                                           Vehicle Manufacture name
+                                         </RX.Text>
+                                         <form>
+                                         
+                                             <RX.TextInput
+                                                 style={styling.Form}
+                                                 placeholder="Vehicle manufacturer name"
+                                                 value={ this.state.vehicleManufacturerName}
+                                                 onChangeText={this.onChangevehicleManufacturerName}
+                                                 // defaultValue={ this.state.inputValue }
+                                             />
+                                            
+                                         </form>
+                                     </RX.View>
+                                     <RX.View style={styling.sideMar}>
+                                         <RX.Text style={ styling.sideText }>
+                                           Vehicle model code  
+                                         </RX.Text>
+                                         <form>
+                                         
+                                             <RX.TextInput
+                                                 style={styling.Form}
+                                                 placeholder="Vehicle model code"
+                                                 value={ this.state.vehicleModelCode}
+                                                 onChangeText={this.onChangevehicleModelCode}
+                                                 // defaultValue={ this.state.inputValue }
+                                             />
+                                             
+                                         </form>
+                                     </RX.View>
+                                     <RX.View style={styling.sideMar}>
+                                         <RX.Text style={ styling.sideText }>
+                                           Vehicle Mostly driven on
+                                         </RX.Text>
+                                         <form>
+                                        
+                                             <RX.TextInput
+                                                 style={styling.Form}
+                                                 placeholder="vehicle mostly driven on"
+                                                 value={ this.state.vehicleMostlyDrivenOn }
+                                                 onChangeText={this.onChangevehicleMostlyDrivenOn}
+                                                 // defaultValue={ this.state.inputValue }
+                                             />
+                                            
+                                         </form>
+                                     </RX.View>
+                                     <RX.View style={styling.sideMar}>
+                                         <RX.Text style={ styling.sideText }>
+                                             Name
+                                         </RX.Text>
+                                         <form>
+                                        
+ 
+                                             <RX.TextInput
+                                                 style={styling.Form}
+                                                 placeholder="Last Name"
+                                                 value={ this.state.lastname }
+                                                 onChangeText={this.onChangelastName }
+                                                 // defaultValue={ this.state.inputValue }
+                                             />
+                                              
+                                         </form>
+                                     </RX.View>
+                                     <RX.View style={styling.sideMar}>
+                                         <RX.Text style={ styling.sideText }>
+                                             Email id
+                                         </RX.Text>
+                                         <form>
+                                        
+ 
+                                             <RX.TextInput
+                                                 style={styling.Form}
+                                                 placeholder="Email id"
+                                                 value={ this.state.emailId }
+                                                 onChangeText={this.onChangeemailId}
+                                                 // defaultValue={ this.state.inputValue }
+                                             />
+                                             
+                                         </form>
+                                     </RX.View>
+                                     <RX.View style={styling.sideMar}>
+                                         <RX.Text style={ styling.sideText }>
+                                             Mobile no
+                                         </RX.Text>
+                                         <form>
+                                         
+                                             <RX.TextInput
+                                                 style={styling.Form}
+                                                 placeholder="Mobile no"
+                                                 value={ this.state.mobileNo }
+                                                 onChangeText={this.onChangemobileNo}
+                                                 // defaultValue={ this.state.inputValue }
+                                             />
+                                              
+                                         </form>
+                                     </RX.View>
+                                     <RX.Button style={styling.button} onPress={()=> this.onChangePostt()}>Get Quote</RX.Button>
+                                    
+                 </Grid>
+ 
+ 
+                 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                 {/*Bootstrap ex stashed for integrate*/}
+                 {/*<Nav bsStyle="tabs" activeKey="1" onSelect={this.handleSelect}>
+                     <NavItem eventKey="1" href="/home">NavItem 1 content</NavItem>
+                     <NavItem eventKey="2" title="Item">NavItem 2 content</NavItem>
+                     <NavItem eventKey="3" disabled>NavItem 3 content</NavItem>
+                     <NavDropdown eventKey="4" title="Dropdown" id="nav-dropdown">
+                         <MenuItem eventKey="4.1">Action</MenuItem>
+                         <MenuItem eventKey="4.2">Another action</MenuItem>
+                         <MenuItem eventKey="4.3">Something else here</MenuItem>
+                         <MenuItem divider />
+                         <MenuItem eventKey="4.4">Separated link</MenuItem>
+                     </NavDropdown>
+                 </Nav>
+ 
+ 
+ 
+ 
+                 <Grid>
+                     <Row className="show-grid">
+                         <Col xs={12} md={8}><code>&lt;{'Col xs={12} md={8}'} /&gt;</code></Col>
+                         <Col xs={6} md={4}><code>&lt;{'Col xs={6} md={4}'} /&gt;</code></Col>
+                     </Row>
+ 
+                     <Row className="show-grid">
+                         <Col xs={6} md={4}><code>&lt;{'Col xs={6} md={4}'} /&gt;</code></Col>
+                         <Col xs={6} md={4}><code>&lt;{'Col xs={6} md={4}'} /&gt;</code></Col>
+                         <Col xsHidden md={4}><code>&lt;{'Col xsHidden md={4}'} /&gt;</code></Col>
+                     </Row>
+ 
+                     <Row className="show-grid">
+                         <Col xs={6} xsOffset={6}><code>&lt;{'Col xs={6} xsOffset={6}'} /&gt;</code></Col>
+                     </Row>
+ 
+                     <Row className="show-grid">
+                         <Col md={6} mdPush={6}><code>&lt;{'Col md={6} mdPush={6}'} /&gt;</code></Col>
+                         <Col md={6} mdPull={6}><code>&lt;{'Col md={6} mdPull={6}'} /&gt;</code></Col>
+                     </Row>
+                 </Grid>
+ 
+ 
+                 <Form horizontal>
+                     <FormGroup controlId="formHorizontalEmail">
+                         <Col componentClass={ControlLabel} sm={2}>
+                             Email
+                         </Col>
+                         <Col sm={10}>
+                             <FormControl type="email" placeholder="Email" />
+                         </Col>
+                     </FormGroup>
+ 
+                     <FormGroup controlId="formHorizontalPassword">
+                         <Col componentClass={ControlLabel} sm={2}>
+                             Password
+                         </Col>
+                         <Col sm={10}>
+                             <FormControl type="password" placeholder="Password" />
+                         </Col>
+                     </FormGroup>
+ 
+                     <FormGroup>
+                         <Col smOffset={2} sm={10}>
+                             <Checkbox>Remember me</Checkbox>
+                         </Col>
+                     </FormGroup>
+ 
+                     <FormGroup>
+                         <Col smOffset={2} sm={10}>
+                             <Button type="submit">
+                                 Sign in
+                             </Button>
+                         </Col>
+                     </FormGroup>
+                 </Form>*/}
+ 
+                 <RX.Button style={ Button } onPress={ this.props.onNavigateTen }>
+                     <RX.Text style={ styling.buttonText }>
+                         Go Back
+                     </RX.Text>
+                 </RX.Button>
+             </RX.ScrollView>
+ 
+         );
+     }
+ }

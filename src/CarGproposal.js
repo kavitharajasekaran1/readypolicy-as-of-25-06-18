@@ -89,9 +89,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '22/02/2018',
+                      policyStartDate: '23/02/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '22/02/2018',
+                      vehicleRegDate: '23/02/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -137,7 +137,7 @@ export default class VehicleDetails extends React.Component{
     onChangePost = () => {
         console.log("Rahul")
 
-        return fetch('http://192.168.1.7:3000/gproposalcar', {
+        return fetch('http://192.168.1.25:3000/gproposalcar', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -208,7 +208,7 @@ export default class VehicleDetails extends React.Component{
                 <RX.View style={ styling.container }>
                 <RX.Button  onPress={ this.props.onNavigateSuper }><RX.Image
                              style={_styles.HomeScrollImageLogo}
-                             source={'./src/img/Back.svg'}/>
+                            source={'./src/img/Back.svg'}/>
                         <RX.Text style={styling.welcome }>
                         New Car Insurance
                     </RX.Text>
@@ -244,7 +244,7 @@ export default class VehicleDetails extends React.Component{
    
                     
                             <Tabs defaultActiveKey={1} style={_styles.read} id="left-tabs-example">
-                                <Tab eventKey={1} style={_styles.read}title="New" className="myClass">
+                                <Tab eventKey={1} style={_styles.read}title="" className="myClass">
                                 
                                     {/*<code>&lt;{'Col xs={12} md={8}'} /&gt;</code>*/}
                                     <RX.View style={styling.sideMar}>
@@ -308,7 +308,7 @@ export default class VehicleDetails extends React.Component{
                                     <Row className="show-grid">
                                         <Col md={12} style={styling.marTop10}>
                                             {/*<RX.Button   onPress={()=> this.onChangePost() }>Submit</RX.Button>*/}
-                                            <RX.Button style={styling.button} onPress={()=> this.onChangePost() }>Primary</RX.Button>
+                                            <RX.Button style={styling.button} onPress={()=> this.onChangePost() }>Proceed to buy policy</RX.Button>
 
                                         </Col>
                                         {/*<Col  md={6} style={styling.marTop}>
@@ -321,7 +321,7 @@ export default class VehicleDetails extends React.Component{
                                     </Row>
 
                                 </Tab>
-                                <Tab eventKey={2} style={_styles.read}  title="Renew">
+                                <Tab eventKey={2} style={_styles.read}  title="">
                                     <RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText}>
                                             Registration No

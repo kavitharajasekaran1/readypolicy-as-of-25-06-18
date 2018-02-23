@@ -89,9 +89,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '22/02/2018',
+                      policyStartDate: '23/02/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '22/02/2018',
+                      vehicleRegDate: '23/02/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -138,7 +138,7 @@ export default class VehicleDetails extends React.Component{
         console.log("Rahul")
 console.log("quoteid",this.state.quoteid)
 console.log("quoteid_",this.props.navigatorRoute.quoteid)
-        return fetch('http://192.168.1.7:3000/brandnewupdatevehical', {
+        return fetch('http://192.168.1.25:3000/brandnewupdatevehical', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

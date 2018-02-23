@@ -33,7 +33,7 @@ export default class InsuranceAddons extends RX.Component{
             carRegisteredCity: '24PARGANAS',
             vehicleManufacturerName: 'TVS',
             vehicleModelCode: 'ZWTV310',
-            vehicleRegDate: '22/02/2018',
+            vehicleRegDate: '23/02/2018',
             lastname: 'Rani',
         };
         this._translationValue = RX.Animated.createValue(-100);
@@ -52,7 +52,7 @@ console.log("hittinh.......")
         // let usersPath = "motorIssuePolicy"
         // console.log(password,"password");
        // console.log(Rest.ApiUrl,"RestApiUrl");
-      return  fetch('http://192.168.1.7:3000/calculatecarpremium', {
+      return  fetch('http://192.168.1.25:3000/calculatecarpremium', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -106,7 +106,7 @@ console.log("hittinh.......")
                         region: "South Region",
                         vehicleManufacturerName: "BMW",
                         vehicleModelCode: "CMB65",
-                        vehicleregDate: "22/02/2018",
+                        vehicleregDate: "23/02/2018",
                         idv: "3025465",
                         engineCapacityAmount: "1995 CC",
                         drivingExperience: "2",

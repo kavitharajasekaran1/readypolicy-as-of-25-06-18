@@ -137,7 +137,7 @@ export default class VehicleDetails extends React.Component{
     onChangePost = () => {
         console.log("Rahul")
 
-        return fetch('http://192.168.1.7:3000/gproposalrequest', {
+        return fetch('http://192.168.1.25:3000/gproposalrequest', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -259,7 +259,7 @@ export default class VehicleDetails extends React.Component{
         </div>
                     
                             <Tabs defaultActiveKey={1} style={_styles.read} id="left-tabs-example">
-                                <Tab eventKey={1} style={_styles.read}title="New" className="myClass">
+                                <Tab eventKey={1} style={_styles.read}title="" className="myClass">
                                 
                                     {/*<code>&lt;{'Col xs={12} md={8}'} /&gt;</code>*/}
                                     <RX.View style={styling.sideMar}>
@@ -335,7 +335,7 @@ export default class VehicleDetails extends React.Component{
                                     </Row>
 
                                 </Tab>
-                                <Tab eventKey={2} style={_styles.read}  title="Renew">
+                                <Tab eventKey={2} style={_styles.read}  title="">
                                     <RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.sideText}>
                                             Registration No

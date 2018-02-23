@@ -181,7 +181,7 @@ style={styles.remo}
             resizeMode="cover"
             source={'./src/img/Farmer.png'}>
                 
-            <RX.Image source={ './src/img/Logo.svg' } style={ [styles.IMage] }/>
+            {/* <RX.Image source={ './src/img/Logo.svg' } style={ [styles.IMage] }/> */}
             <RX.Text style={ styles.policy }></RX.Text> 
            
             </RX.Image>

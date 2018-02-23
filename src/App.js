@@ -32,6 +32,7 @@ import CarSelection from './CarSelection'
 import CompareCar from './CompareCar'
 import CarDetails from './CarDetails'
 import CarGproposal from './CarGproposal'
+import Addons from './Addons'
 
 
 
@@ -64,7 +65,8 @@ let NavigationRouteId = {
     CarSelection: "CarSelection",
     CompareCar:" CompareCar",
     CarDetails:"CarDetails",
-    CarGproposal:"CarGproposal"
+    CarGproposal:"CarGproposal",
+    Addons:"Addons",
 };
 
 const styles = {
@@ -109,12 +111,13 @@ export default class App extends RX.Component {
         this._onPressThirty = this._onPressThirty.bind(this);
         this._onPressFourty = this._onPressFourty.bind(this);
         this._onPressFifty = this._onPressFifty.bind(this);
+        this._onPressNinety = this._onPressNinety.bind(this);
 
     }
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.HomePanel,
+            routeId: NavigationRouteId.MainPanel,
             sceneConfigType: "Fade"
         }]);
     }
@@ -185,7 +188,10 @@ export default class App extends RX.Component {
                 case NavigationRouteId.CarDetails:
                 return <CarDetails onNavigateTwo={ this._onPressTwo }  navigatorRoute={navigatorRoute}/>;
 
-            case NavigationRouteId.InsuranceAddons:
+                case NavigationRouteId.Addons:
+                return <Addons onNavigateNinety={ this._onPressNinety }  navigatorRoute={navigatorRoute}/>;
+
+                case NavigationRouteId.InsuranceAddons:
                 return <InsuranceAddons onNavigateTen={ this._onPressTen } navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.InsuranceFourWheeler:
@@ -205,8 +211,8 @@ export default class App extends RX.Component {
                 return <NewTermInsurance onNavigateNewTermInsurance={ this._onPressNewTermInsurance }/>;
 
             case NavigationRouteId.HomePanel:
-            //   return <HomePanel onNavigateSuper={ this._onPressHome}/>;   
-             return <HomePanel onNavigateSuperCar = {this._onPressHome1}/>;
+         return <HomePanel onNavigateSuper={ this._onPressHome}/>;   
+        //  return <HomePanel onNavigateSuperCar = {this._onPressHome1}/>;
              case NavigationRouteId.Vehicleregister:
                 return <Vehicleregister onNavigatefont={ this._onPressfont}/>; 
 
@@ -461,6 +467,25 @@ export default class App extends RX.Component {
     }
 
     _onPressTen(resJson,liability,message,quoteid,premium) {
+        console.log("neenenne",resJson)
+        console.log("liablity",liability)
+        console.log("quoteid",quoteid)
+        // this._navigator.pop();
+        this._navigator.push({
+            routeId: NavigationRouteId.Addons,
+            sceneConfigType: "FloatFromRight",
+            resJson:resJson,
+            liability:liability,
+            message:message,
+            quoteid:quoteid,
+            premium:premium,
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+
+    _onPressNinety(resJson,liability,message,quoteid,premium) {
         console.log("neenenne",resJson)
         console.log("liablity",liability)
         console.log("quoteid",quoteid)
