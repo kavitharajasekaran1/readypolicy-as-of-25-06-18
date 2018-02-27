@@ -41,6 +41,16 @@ const _styles = {
             marginLeft:-1200,
             marginTop:12
         }),
+        client: RX.Styles.createViewStyle({
+            justifyContent: 'center',
+            alignItems: 'left',
+            backgroundColor:'#ffffff',
+            padding:5,
+            flex:1,
+            flexDirection:'row',
+            borderBottomWidth:1,
+            borderColor:"#cccccc"
+        }),
         
         
 }
@@ -89,9 +99,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '23/02/2018',
+                      policyStartDate: '27/02/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '23/02/2018',
+                      vehicleRegDate: '27/02/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -138,7 +148,7 @@ export default class VehicleDetails extends React.Component{
         console.log("Rahul")
 console.log("quoteid",this.state.quoteid)
 console.log("quoteid_",this.props.navigatorRoute.quoteid)
-        return fetch('http://192.168.1.25:3000/brandnewupdatevehical', {
+        return fetch('http://192.168.1.18:3000/brandnewupdatevehical', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -655,11 +665,11 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                 <Tab eventKey={1} style={_styles.read}title="New" className="myClass">
                                 
                                     {/*<code>&lt;{'Col xs={12} md={8}'} /&gt;</code>*/}
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText}>
-                                            Quote ID
-                                        </RX.Text>
+                                    <RX.View style={ _styles.client }>
                                         <form>
+                                        <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4" style={ styling.sideText }>Quote ID</label>
 
                                             <RX.TextInput
                                                 type="Quote ID"
@@ -670,13 +680,10 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 // defaultValue={ this.state.inputValue }
                                             />
                                               
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText}>
-                                            Premium 
-                                        </RX.Text>
-                                        <form>
+                                              </div>
+                                              
+    <div class="form-group col-md-4">
+      <label for="inputPassword4" style={ styling.sideText }>Premium</label>
 
                                             <RX.TextInput
                                                 type="Premium"
@@ -686,14 +693,11 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 onChangeText={this.onChangepremium}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                              
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText}>
-                                            Title
-                                        </RX.Text>
-                                        <form>
+                                                </div>
+
+    <div class="form-group col-md-4">
+      <label for="inputEmail4" style={ styling.sideText }>Registration Number</label>
+                                      
 
                                             <RX.TextInput
                                                 type="email"
@@ -703,15 +707,25 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 onChangeText={this.onChangetitle}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                              
-                                        </form>
-                                    </RX.View>
-
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           First Name
-                                        </RX.Text>
-                                        <form>
+           </div>
+           </div>
+        </form>  
+        </RX.View>
+        <RX.View style={ _styles.client }>
+        <div class="jumbotron" style={ _styles.SCROLL}> 
+                 <form>
+      <div class="form-row">
+    
+      <label for="inputEmail4" style={ styling.SIDETEXT }>Personal Details</label>
+      </div>
+    
+      </form>  
+         <form> 
+                                        <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputPassword4" style={ styling.sideText }>First Name</label>
+                                     
+                                       
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -720,14 +734,13 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 onChangeText={this.onChangefirstName}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                             
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Last Name
-                                        </RX.Text>
-                                        <form>
+                                           </div>
+  
+                                     
+       
+ 
+    <div class="form-group col-md-4">
+      <label for="inputEmail4" style={ styling.sideText }>Last Name</label>                           
                                        
 
                                             <RX.TextInput
@@ -737,15 +750,10 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 onChangeText={this.onChangelastName }
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                             
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                            Email id
-                                        </RX.Text>
-                                        <form>
-                                       
+                                                   </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4" style={ styling.sideText }>Email ID</label>
+                                      
 
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -754,14 +762,17 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 onChangeText={this.onChangeemailId}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                            Mobile no
-                                        </RX.Text>
-                                        <form>
+                                           </div>
+  </div>
+  </form>
+  
+  <form>   
+                                     
+       
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4" style={ styling.sideText }>Mobile No</label>         
+                                       
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -770,14 +781,11 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 onChangeText={this.onChangemobileNo}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                             
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Date of birth
-                                        </RX.Text>
-                                        <form>
+                                            </div>
+                                         <div class="form-group col-md-4">
+      <label for="inputPassword4" style={ styling.sideText }>Date Of Birth</label>
+                                      
+                                  
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -787,14 +795,12 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 // defaultValue={ this.state.inputValue }
                                             />
                                              
-                                        </form>
-                                    </RX.View>
+                                             </div>
+    
 
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Occupation
-                                        </RX.Text>
-                                        <form>
+    <div class="form-group col-md-4">
+      <label for="inputEmail4" style={ styling.sideText }>Occupation</label>  
+                                    
                                        
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -804,30 +810,29 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 // defaultValue={ this.state.inputValue }
                                             />
                                            
-                                        </form>
-                                        
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                            Nominee name
-                                        </RX.Text>
-                                        <form>
+                                           </div>
+                                           </div>
+                                           </form>
+                                           <form>
+                                           <div class="form-row">
+                                         <div class="form-group col-md-4">
+      <label for="inputPassword4" style={ styling.sideText }>Nominee Name</label>
                                        
                                             <RX.TextInput
                                                 style={styling.Form}
-                                                placeholder="Enter Manufacturer"
+                                                placeholder="Nominee Name"
                                                 value={ this.state.nomineeName }
                                                 onChangeText={this.onChangenomineeName}
                                                 // defaultValue={ this.state.inputValue }
                                             />
                                             
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                            Nominee age
-                                        </RX.Text>
-                                        <form>
+                                            </div>
+  
+                                            
+                                            <div class="form-group col-md-4">
+      <label for="inputPassword4" style={ styling.sideText }>Nominee Age</label>
+                                    
+                                       
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -837,13 +842,10 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 // defaultValue={ this.state.inputValue }
                                             />
                                             
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                        RelationshipWithNominee
-                                        </RX.Text>
-                                        <form>
+                                       </div>
+                                       <div class="form-group col-md-4">
+      <label for="inputPassword4" style={ styling.sideText }>Relation with Nominee</label>
+                                    
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -853,303 +855,28 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 // defaultValue={ this.state.inputValue }
                                             />
                                             
-                                        </form>
-                                    </RX.View>
+                                     </div>
 
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Guardian Name
-                                        </RX.Text>
-                                        <form>
+                                     </div>
+                                     </form>
+                                  
+                                     
+                                     <RX.View style={ _styles.client }>
+                                     <div class="jumbotron" style={ _styles.SCROLL}> 
+                                     
+                 <form>
+      <div class="form-row">
+    
+      <label for="inputEmail4" style={ styling.SIDETEXT }>Vehicle Details</label>
+      </div>
+    
+      </form>  
+                                     <form>
                                         
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Guardian Name"
-                                                value={ this.state.guardianName}
-                                                onChangeText={this.onChangeguardianName}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Guardian Age
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Guardian age"
-                                                value={ this.state.guardianAge }
-                                                onChangeText={this.onChangeguardianAge}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Relationshiip with guardian
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Relationship with guardian"
-                                                value={ this.state.relationshipWithGuardian }
-                                                onChangeText={this.onChangerelationshipWithGuardian}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Permanent address 1
-                                        </RX.Text>
-                                        <form>
+                                     <div class="form-row">
+                                         <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>Vehicle Model code</label>
                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Permanent address 1"
-                                                value={ this.state.permanentAddress1 }
-                                                onChangeText={this.onChangepermanentAddress1}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                            Permanent address 2
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Permanent address 2"
-                                                value={ this.state.permanentAddress2}
-                                                onChangeText={this.onChangepermanentAddress2}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                          Permanent address 3
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Permanent address 3"
-                                                value={ this.state.permanentAddress3 }
-                                                onChangeText={this.onChangepermanentAddress3}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Permanent address 4
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Permanent address 4"
-                                                value={ this.state.permanentAddress4 }
-                                                onChangeText={this.onChangepermanentAddress4}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Permanent City
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Permanent city"
-                                                value={ this.state.permanentCity }
-                                                onChangeText={this.onChangepermanentCity}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Permanent pincode
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Permanent pincode"
-                                                value={ this.state.permanentPincode }
-                                                onChangeText={this.onChangepermanentPincode}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                          Same address Reg
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Same address reg"
-                                                value={ this.state.sameAdressReg }
-                                                onChangeText={this.onChangesameAdressReg}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Residential address 1
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="esidential address 1"
-                                                value={ this.state. ResidenceAddressOne}
-                                                onChangeText={this.onChangeResidenceAddressOne}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                          Residential address 2
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Residential address 2"
-                                                value={ this.state. ResidenceAddressTwo }
-                                                onChangeText={this.onChangeResidenceAddressTwo}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Residential address 3
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Residential address 3"
-                                                value={ this.state. ResidenceAddressThree }
-                                                onChangeText={this.onChangeResidenceAddressThree}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Residentiial address 4
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Residential address 4"
-                                                value={ this.state. ResidenceAddressFour }
-                                                onChangeText={this.onChangeResidenceAddressFour}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                        Residence city
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Residence city"
-                                                value={ this.state.ResidenceCity }
-                                                onChangeText={this.onChangeResidenceCity}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Residence pincode
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Residence pincode"
-                                                value={ this.state.ResidencePinCode }
-                                                onChangeText={this.onChangeResidencePinCode}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           strStdcode
-                                        </RX.Text>
-                                        <form>
-                                        
-                                              <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="strstdcode"
-                                                value={ this.state.strStdCode }
-                                                onChangeText={this.onChangestrStdCode}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View>
-                                   <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           str Phone no
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="str phone no"
-                                                value={ this.state.strPhoneNo }
-                                                onChangeText={this.onChangestrPhoneNo}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View>
-
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                          Vehicle model code  
-                                        </RX.Text>
-                                        <form>
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1158,15 +885,9 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 onChangeText={this.onChangevehicleModelCode}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                          Plan opted 
-                                        </RX.Text>
-                                        <form>
-                                       
+                                            </div>
+                                            <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>Plan Opted</label>
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Plan opted"
@@ -1174,13 +895,10 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 onChangeText={this.onChangeplanOpted}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Year of manufacturer
-                                        </RX.Text>
+                                            </div>
+                                         <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>year Of Manufacturer</label>   
+                                      
                                         <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder=" Year of manufacturer"
@@ -1188,13 +906,14 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 onChangeText={this.onChangeyearOfManufacture}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                     </RX.View>
+                                      </div>
 
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                          Driving experience 
-                                        </RX.Text>
-                                        <form>
+
+<div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>Driving Experience</label>   
+                                      
+                                   
+                                        
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1203,14 +922,12 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 onChangeText={this.onChangedrivingExperience}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                      Voluntary Deductible
-                                        </RX.Text>
-                                        <form>
+                                         </div>  
+                                        
+                                         <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>Voluntary Detuctable</label>   
+                                                                    
+                                   
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1219,14 +936,13 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 onChangeText={this.onChangevoluntaryDeductible}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                          Vehicle Manufacture name
-                                        </RX.Text>
-                                        <form>
+                                            </div>
+
+                                            </div>
+
+
+<div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>Voluntary Detuctable</label>       
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1236,13 +952,16 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 // defaultValue={ this.state.inputValue }
                                             />
                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                       IDV
-                                        </RX.Text>
-                                        <form>
+                                     </div>
+                                     </form>
+</div>
+</RX.View>
+<RX.View style={ _styles.client }>
+<div class="jumbotron" style={ _styles.SCROLL}> 
+<form>
+                                           <div class="form-row">
+                                         <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>IDV</label>
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1252,29 +971,21 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 // defaultValue={ this.state.inputValue }
                                             />
                                             
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Policy Start date
-                                        </RX.Text>
-                                        <form>
-                                        
+                                      </div>
+                                    
+                                      <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>Start Policy</label>   
                                             <RX.TextInput
                                                 style={styling.Form}
-                                                placeholder=" staPolicy"
+                                                placeholder=" start Policy"
                                                 value={ this.state.policyStartDate }
                                                 onChangeText={this.onChangepolicyStartDate}
                                                 // defaultValue={ this.state.inputValue }
                                             />
                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                          Vehicle Mostly driven on
-                                        </RX.Text>
-                                        <form>
+                                        </div>
+                                        <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>Vehicle Mostly driven </label>  
                                        
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1284,14 +995,15 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 // defaultValue={ this.state.inputValue }
                                             />
                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                          Vehicle register Date
-                                        </RX.Text>
-                                        <form>
-                                       
+                                     </div>
+                                     </div>
+                                     
+                                   
+                                     <form>
+                                           <div class="form-row">
+                                         <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>Vehicle Registered Date</label>
+                                        
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Vehicle register date"
@@ -1299,15 +1011,10 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 onChangeText={this.onChangevehicleRegDate }
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                           
+                                        </div>
                                     
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                          Vehicleregisteredin the name of
-                                        </RX.Text>
-                                        <form>
+                                        <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>Vehicle Registered</label>
                                        
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1316,14 +1023,12 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 onChangeText={this.onChangevehicleRegisteredInTheNameOf}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            
+                                            </div>
+                                            </div>
                                         </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                          model Name
-                                        </RX.Text>
-                                        <form>
+                                        
+                                        <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>Model Name</label>
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1333,13 +1038,9 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 // defaultValue={ this.state.inputValue }
                                             />
                                             
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                         Product Name
-                                        </RX.Text>
-                                        <form>
+                                        </div>
+                                        <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>Product Name</label>
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1349,13 +1050,9 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 // defaultValue={ this.state.inputValue }
                                             />
                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Company name for car
-                                        </RX.Text>
-                                        <form>
+                                      </div>
+                                      <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>Company Name for car</label>
                                        
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1365,13 +1062,9 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 // defaultValue={ this.state.inputValue }
                                             />
                                             
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                            Enginee Number
-                                        </RX.Text>
-                                        <form>
+                                      </div>
+                                      <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>Enginee Number</label>
                                        
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1380,14 +1073,9 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 onChangeText={this.onChangeengineNumber}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Chassis Number
-                                        </RX.Text>
-                                        <form>
+                                     </div>
+                                     <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>chassis Number</label>
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1397,338 +1085,16 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 // defaultValue={ this.state.inputValue }
                                             />
                                            
-                                        </form>
+                                       </div>
+                                    </form>
+</div>
                                     </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                          Is twowheeler financed
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Is twowheeler FInanced"
-                                                value={ this.state.isTwoWheelerFinanced }
-                                                onChangeText={this.onChangeisTwoWheelerFinanced}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View><RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Vehicle subline
-                                        </RX.Text>
-                                        <form>
-                                       
-                                                
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Vehicle subline"
-                                                value={ this.state.vehicleSubline}
-                                                onChangeText={this.onChangevehicleSubline}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Registration charges road tax
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="RTO Location"
-                                                value={ this.state.registrationchargesRoadtax }
-                                                onChangeText={this.onChangeregistrationchargesRoadtax}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                          Fueltype
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Fueltype"
-                                                value={ this.state.fuelType }
-                                                onChangeText={this.onChangefuelType}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View><RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                          Automobile association membership
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Automobile association membership"
-                                                value={ this.state.automobileAssociationMembership }
-                                                onChangeText={this.onChangeautomobileAssociationMembership }
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View><RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                            Region
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Region"
-                                                value={ this.state.region }
-                                                onChangeText={this.onChangeregion}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                         Car Register city
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Car Register city"
-                                                value={ this.state.carRegisteredCity }
-                                                onChangeText={this.onChangecarRegisteredCity}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View><RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                            Average monthly mileage run
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Averege monthly mileage run"
-                                                value={ this.state.mileage }
-                                                onChangeText={this.onChangemileage}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                         Is Product Checkbox
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Is product checkbox"
-                                                value={ this.state.isProductCheck }
-                                                onChangeText={this.onChangeisProductCheck}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                            Engine capacity amount
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Engine capacity amount"
-                                                value={ this.state.engineCapacityAmount }
-                                                onChangeText={this.onChangeengineCapacityAmount}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View>
-                                   <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Personal accident cover for unnamed passengers
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Personal accident cover for unnamed passenger"
-                                                value={ this.state.personalAccidentCoverForUnnamedPassengers}
-                                                onChangeText={this.onChangepersonalAccidentCoverForUnnamedPassengers}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                        Personal accident coverfor paid driver
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Personal accident coverfor paid driver"
-                                                value={ this.state.accidentCoverForPaidDriver }
-                                                onChangeText={this.onChangeaccidentCoverForPaidDriver}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View><RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                          Legalliability to paid driver
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Legalliability to paid driver"
-                                                value={ this.state.legalliabilityToPaidDriver }
-                                                onChangeText={this.onChangelegalliabilityToPaidDriver }
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                          
-                                        </form>
-                                    </RX.View><RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           legalliability to employees
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="legalliability to employees"
-                                                value={ this.state.legalliabilityToEmployees }
-                                                onChangeText={this.onChangelegalliabilityToEmployees}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View><RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                       cover_elec_acc
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder=" cover_elec_acc"
-                                                value={ this.state.cover_elec_acc }
-                                                onChangeText={this.onChangecover_elec_acc}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                    Name of Electronic accessories
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Name of Electronic accessories"
-                                                value={ this.state.NameOfElectronicAccessories}
-                                                onChangeText={this.onChangeNameOfElectronicAccessories}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                               Make Model
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Make Model"
-                                                value={ this.state.MakeModel}
-                                                onChangeText={this.onChangeMakeModel}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                               Value
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Value"
-                                                value={ this.state.Value }
-                                                onChangeText={this.onChangeValue}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                    Name of Electronic accessories
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Name of Electronic accessories"
-                                                value={ this.state.NameOfElectronicAccessories }
-                                                onChangeText={this.onChangeNameOfElectroniAccessories}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                           
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                               Make Model
-                                        </RX.Text>
-                                        <form>
-                                        
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Make Model"
-                                                value={ this.state.MakeModel }
-                                                onChangeText={this.onChangeMakeModel}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                            
-                                        </form>
-                                    </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                           Value
-                                        </RX.Text>
-                                        <form>
-                                       
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="VAlue"
-                                                value={ this.state.Value}
-                                                onChangeText={this.onChangeValue}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                          
-                                        </form>
-                                    </RX.View>
+                                    
+                                  </div>
+                                  
+                                  </RX.View>
+                                  
+                                  
 
                                     {/*<RX.View style={styling.sideMar}>*/}
                                         {/*<RX.Text style={ styling.sideText }>*/}
@@ -1917,6 +1283,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                             />
                                         </form>
                                     </RX.View>
+                                
 
                                     {/*<RX.View style={styling.sideMar}>*/}
                                     {/*<RX.Text style={ styling.sideText }>*/}
@@ -2007,6 +1374,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
        NEXT
         </RX.Text>
         </RX.Button>
+       
 
                                         </Col>
                                         {/*<Col  md={6} style={styling.marTop}>

@@ -738,12 +738,9 @@ export default class CompareQuotes extends RX.Component{
                 </RX.View>*/}
                 <RX.View style={ styles.clientNorm }></RX.View>
 
-                <RX.Button style={ styles.roundButton }  onPress={()=> this.onChangePostCompare() }>
->
-                    <RX.Text style={ styles.buttonText }>
-                        NEXT
-                    </RX.Text>
-                </RX.Button>
+               
+            <RX.Button style={styling.BUTTON4}  onPress={()=> this.onChangePostCompare()}>Next</RX.Button>
+                
 
                 {/*<RX.View style={ styles.container }>
                     <RX.Text style={ styles.welcome }>

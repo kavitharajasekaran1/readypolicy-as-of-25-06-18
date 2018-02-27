@@ -317,99 +317,58 @@ export default class TwelvePanel extends RX.Component {
 
     render() {
         return (
-            <RX.ScrollView keyboardShouldPersistTaps="always" style={styles.scrollContainer}>
-            <RX.View style={styles.scrollViewContainer}>
-                <RX.View style={styles.scrollImage}>
-                    <RX.Image
-                        style={styles.homeImageLayout}
-                        source={require('../../../assets/images/marine_cargo_insurance.jpg')}/>
-                </RX.View>
-                <RX.TouchableOpacity
-                    activeOpacity={.5}
-                    onPress={() => this.onSubmitIssuedPolicy(token, userType)}>
-
-                    <RX.View style={styles.scrollBox}>
-
-                        <RX.Image
-                            style={styles.homeScrollImageLogo}
-                            source={require('../../../assets/images/mypolicies_icon.png')}/>
-                        <RX.Text style={styles.scrollBoxText}>Issued Policies</RX.Text>
-                    </RX.View>
-                </RX.TouchableOpacity>
-                <RX.TouchableOpacity
-                    activeOpacity={.5}
-                    onPress={() => this.onSubmitSavedPolicy(token, userType, policyHolderName, email)}>
-                    <RX.View style={styles.scrollBox}>
-                        <RX.Image
-                            style={styles.homeScrollImageLogo}
-                            source={require('../../../assets/images/savedpolicy_icon.png')}/>
-                        <RX.Text style={styles.scrollBoxText}>Saved Policies</RX.Text>
-                    </RX.View>
-                </RX.TouchableOpacity>
-
-                <RX.TouchableOpacity
-                    activeOpacity={.5}
-                    onPress={() => this.onSubmitNewPolicy(token, userType, policyHolderName, email)}>
-                    <RX.View style={styles.scrollBox}>
-                        <RX.Image
-                            style={styles.homeScrollImageLogo}
-                            source={require('../../../assets/images/newpolicy_icon.png')}/>
-                        <RX.Text style={styles.scrollBoxText}>New Policy</RX.Text>
-                    </RX.View>
-                </RX.TouchableOpacity>
-                <RX.TouchableOpacity
-                    activeOpacity={.5}
-                    onPress={() => this.onSubmitMyClaims(token, userType)}>
-                    <RX.View style={styles.scrollBox}>
-                        <RX.Image
-                            style={styles.homeScrollImageLogo}
-                            source={require('../../../assets/images/claims_icon.png')}/>
-                        <RX.Text style={styles.scrollBoxText}>My Claims</RX.Text>
-                    </RX.View>
-                </RX.TouchableOpacity>
-                <RX.TouchableOpacity
-                    activeOpacity={.5}
-                    onPress={() => this.onSubmitLogout(token, userType, policyHolderName, email)}>
-                    <RX.View style={styles.scrollBox}>
-                        <RX.Image
-                            style={styles.homeScrollImageLogo}
-                            source={require('../../../assets/images/Logout_icon.png')}/>
-                        <RX.Text style={styles.scrollBoxText}>Logout</RX.Text>
-                    </RX.View>
-                </RX.TouchableOpacity>
-                <RX.TouchableOpacity
-                    activeOpacity={.5}
-                    onPress={() => this.onSubmitClaimStatus(token, userType)}>
-                    <RX.View style={scrollBox}>
-                        <RX.Image
-                            style={homeScrollImageLogo}
-                            source={require('../../../assets/images/claimstatus.png')}/>
-                        <RX.Text style={scrollBoxText}>Claim Status</RX.Text>
-                    </RX.View>
-                </RX.TouchableOpacity>
-                <RX.TouchableOpacity
-                    activeOpacity={.5}
-                    onPress={() => this.onSubmitChat(token, userType)}>
-                    <RX.View style={scrollBox}>
-                        <RX.Image
-                            style={homeScrollImageLogo}
-                            source={require('../../../assets/images/chat.png')}/>
-
-                    </RX.View>
-                </RX.TouchableOpacity>
-                <RX.TouchableOpacity
-                    activeOpacity={.5}
-                    onPress={() => this.onSubmitUpdate(token, userType, email, fname, lname, phone, password)}>
-                    <RX.View style={styles.scrollBox}>
-                        <RX.Image
-                            style={styles.homeScrollImageLogo}
-                            source={require('../../../assets/images/updateprofile.png')}/>
-                        <RX.Text style={scrollBoxText}>Update Profile</RX.Text>
-                    </RX.View>
-                </RX.TouchableOpacity>
-            </RX.View>
-        </RX.ScrollView>
-
-    );
-}
+                    <form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <RX.TextInput
+                                                 style={styling.Form}
+                                                 placeholder=" Year of manufacturer"
+                                                 value={ this.state.yearOfManufacture}
+                                                 onChangeText={this.onChangeyearOfManufacture}
+                                                 // defaultValue={ this.state.inputValue }
+                                             />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Password"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"/>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"/>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity"/>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="inputZip"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck"/>
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+        );
+    } 
 }

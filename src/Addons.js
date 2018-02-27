@@ -40,7 +40,7 @@ console.log("hittinh.......")
         // let usersPath = "motorIssuePolicy"
         // console.log(password,"password");
        // console.log(Rest.ApiUrl,"RestApiUrl");
-      return  fetch('http://192.168.1.7:3000/calculatepremium', {
+      return  fetch('http://192.168.1.18:3000/calculatepremium', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -94,9 +94,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "23/02/2018",
+                        policyStartDate: "27/02/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "23/02/2018",
+                        vehicleRegDate: "27/02/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -224,7 +224,7 @@ console.log("hittinh.......")
                 </Grid>
 
 
-                <RX.Button bsStyle="danger" onPress={()=> this.onChangePostt()}>Next</RX.Button>
+                <RX.Button style={styling.BUTTON4}  onPress={()=> this.onChangePostt()}>Next</RX.Button>
 
 
 

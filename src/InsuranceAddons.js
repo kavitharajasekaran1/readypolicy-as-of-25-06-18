@@ -14,9 +14,12 @@ import styling from './AppStyles';
 const _styles = {
     scroll: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
-        backgroundColor: '#f1f1f1'
+        backgroundColor: 'white'
     }),
-
+    SCROLL: RX.Styles.createScrollViewStyle({
+        alignSelf: 'stretch',
+        backgroundColor: '#1cafdb40'
+    }),
 
 };
 
@@ -32,7 +35,7 @@ export default class InsuranceAddons extends RX.Component{
             carRegisteredCity: '24PARGANAS',
             vehicleManufacturerName: 'TVS',
             vehicleModelCode: 'ZWTV310',
-            vehicleRegDate: '23/02/2018',
+            vehicleRegDate: '27/02/2018',
             lastname: 'Rani',
         };
         this._translationValue = RX.Animated.createValue(-100);
@@ -51,7 +54,7 @@ console.log("hittinh.......")
         // let usersPath = "motorIssuePolicy"
         // console.log(password,"password");
        // console.log(Rest.ApiUrl,"RestApiUrl");
-      return  fetch('http://192.168.1.25:3000/calculatepremium', {
+      return  fetch('http://192.168.1.18:3000/calculatepremium', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -105,9 +108,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "23/02/2018",
+                        policyStartDate: "27/02/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "23/02/2018",
+                        vehicleRegDate: "27/02/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -215,13 +218,9 @@ console.log("hittinh.......")
          return (
              <RX.ScrollView style={ _styles.scroll }>
              <RX.View style={ styling.container }>
-             <RX.Button  onPress={ this.props.onNavigateSuper }><RX.Image
-                          style={_styles.HomeScrollImageLogo}
-                          source={'./src/img/Back.svg'}/>
                      <RX.Text style={styling.welcome }>
                      Get Quote
                  </RX.Text>
-                    </RX.Button>
                  {/*<RX.Button style={ Button } this._onChangeVaronPress={ this.props.onNavigateThirteen }>
                      <RX.Text style={ styling.buttonText }>
                          Go Back
@@ -229,10 +228,35 @@ console.log("hittinh.......")
                  </RX.Button>*/}
              </RX.View>
                  <Grid>
-                 <RX.View style={styling.sideMar}>
-                                         <RX.Text style={ styling.sideText }>
-                                          Manufacturing Year
-                                         </RX.Text>
+                     
+                 <div class="steps-form-2">
+    <div class="steps-row-2 setup-panel-2 d-flex justify-content-between">
+        <div class="steps-step-2">
+            <a href="#step-1" type="button" class="btn btn-amber btn-circle-2 waves-effect ml-0" data-toggle="tooltip" data-placement="top" title="Quote Details"><i class="fa fa-folder-open-o" aria-hidden="true"></i></a>
+        </div>
+        <div class="steps-step-2">
+            <a href="#step-2" type="button" class="btn btn-blue-grey btn-circle-2 waves-effect" data-toggle="tooltip" data-placement="top" title="Vehicle Details"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+        </div>
+        <div class="steps-step-2">
+            <a href="#step-3" type="button" class="btn btn-blue-grey btn-circle-2 waves-effect" data-toggle="tooltip" data-placement="top" title="Personal Information"><i class="fa fa-photo" aria-hidden="true"></i></a>
+        </div>
+        <div class="steps-step-2">
+            <a href="#step-4" type="button" class="btn btn-blue-grey btn-circle-2 waves-effect mr-0" data-toggle="tooltip" data-placement="top" title="Payment"><i class="fa fa-check" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</div>
+                 <div class="jumbotron" style={ _styles.SCROLL}> 
+                 <form>
+  <div class="form-row">
+    
+      <label for="inputEmail4" style={ styling.SIDETEXT }>Please enter vehicle details to get your Quote</label>
+      </div>
+    
+      </form>             
+                 <form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4" style={ styling.sideText }>Manufacturer Year</label>
                                          <RX.TextInput
                                                  style={styling.Form}
                                                  placeholder=" Year of manufacturer"
@@ -240,12 +264,10 @@ console.log("hittinh.......")
                                                  onChangeText={this.onChangeyearOfManufacture}
                                                  // defaultValue={ this.state.inputValue }
                                              />
-                                      </RX.View>
-                                      <RX.View style={styling.sideMar}>
-                                         <RX.Text style={ styling.sideText }>
-                                          Car Register city
-                                         </RX.Text>
-                                         <form>
+                                    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>Car Registered City</label>
+                                         
                                         
                                              <RX.TextInput
                                                  style={styling.Form}
@@ -255,13 +277,14 @@ console.log("hittinh.......")
                                                  // defaultValue={ this.state.inputValue }
                                              />
                                             
-                                         </form>
-                                     </RX.View>
-                                     <RX.View>
-                                     <RX.Text style={ styling.sideText }>
-                                           Vehicle register Date
-                                         </RX.Text>
-                                         <form>
+                                            </div>
+  </div>
+  </form>
+  <form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4"  style={ styling.sideText }>Vehicle Register Date</label> 
+                                    
                                         
                                              <RX.TextInput
                                                  style={styling.Form}
@@ -270,16 +293,10 @@ console.log("hittinh.......")
                                                  onChangeText={this.onChangevehicleRegDate }
                                                  // defaultValue={ this.state.inputValue }
                                              />
-                                            
+                                          </div>  
                                      
-                                         </form>
-                                     </RX.View>
-                                     <RX.View style={styling.sideMar}>
-                                         <RX.Text style={ styling.sideText }>
-                                           Vehicle Manufacture name
-                                         </RX.Text>
-                                         <form>
-                                         
+                                          <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>Vehicle Manufacturer Name</label>                                     
                                              <RX.TextInput
                                                  style={styling.Form}
                                                  placeholder="Vehicle manufacturer name"
@@ -287,14 +304,15 @@ console.log("hittinh.......")
                                                  onChangeText={this.onChangevehicleManufacturerName}
                                                  // defaultValue={ this.state.inputValue }
                                              />
-                                            
-                                         </form>
-                                     </RX.View>
-                                     <RX.View style={styling.sideMar}>
-                                         <RX.Text style={ styling.sideText }>
-                                           Vehicle model code  
-                                         </RX.Text>
-                                         <form>
+                                              </div>
+                                              </div>
+                                              </form>
+  <form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4" style={ styling.sideText }>Vehicle Model Code</label> 
+                                    
+                                        
                                          
                                              <RX.TextInput
                                                  style={styling.Form}
@@ -304,13 +322,10 @@ console.log("hittinh.......")
                                                  // defaultValue={ this.state.inputValue }
                                              />
                                              
-                                         </form>
-                                     </RX.View>
-                                     <RX.View style={styling.sideMar}>
-                                         <RX.Text style={ styling.sideText }>
-                                           Vehicle Mostly driven on
-                                         </RX.Text>
-                                         <form>
+                                     </div>
+      <div class="form-group col-md-6">
+      <label for="inputPassword4" style={ styling.sideText }>Vehicle Mostly Driven On</label>     
+                                     
                                         
                                              <RX.TextInput
                                                  style={styling.Form}
@@ -320,13 +335,15 @@ console.log("hittinh.......")
                                                  // defaultValue={ this.state.inputValue }
                                              />
                                             
-                                         </form>
-                                     </RX.View>
-                                     <RX.View style={styling.sideMar}>
-                                         <RX.Text style={ styling.sideText }>
-                                             Name
-                                         </RX.Text>
-                                         <form>
+                                            </div>
+                                            </div>
+                                              </form>
+                                              <form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4" style={ styling.sideText }>Name</label> 
+                                    
+                                         
                                         
  
                                              <RX.TextInput
@@ -337,13 +354,9 @@ console.log("hittinh.......")
                                                  // defaultValue={ this.state.inputValue }
                                              />
                                               
-                                         </form>
-                                     </RX.View>
-                                     <RX.View style={styling.sideMar}>
-                                         <RX.Text style={ styling.sideText }>
-                                             Email id
-                                         </RX.Text>
-                                         <form>
+                                        </div>
+                                        <div class="form-group col-md-3">
+      <label for="inputPassword4" style={ styling.sideText }>Email ID</label>     
                                         
  
                                              <RX.TextInput
@@ -353,27 +366,24 @@ console.log("hittinh.......")
                                                  onChangeText={this.onChangeemailId}
                                                  // defaultValue={ this.state.inputValue }
                                              />
-                                             
-                                         </form>
-                                     </RX.View>
-                                     <RX.View style={styling.sideMar}>
-                                         <RX.Text style={ styling.sideText }>
-                                             Mobile no
-                                         </RX.Text>
-                                         <form>
+                                        </div>
+                                            </div>
+                                            <div class="form-group col-md-3">     
+                                      
+                                            <label for="inputPassword4" style={ styling.SIdeText }>Mobile No</label> 
                                          
                                              <RX.TextInput
-                                                 style={styling.Form}
+                                                 style={styling.FOrm}
                                                  placeholder="Mobile no"
                                                  value={ this.state.mobileNo }
                                                  onChangeText={this.onChangemobileNo}
                                                  // defaultValue={ this.state.inputValue }
                                              />
-                                              
+                                           </div>   
                                          </form>
-                                     </RX.View>
-                                     <RX.Button style={styling.button} onPress={()=> this.onChangePostt()}>Get Quote</RX.Button>
                                     
+                                     <RX.Button style={styling.button} onPress={()=> this.onChangePostt()}>Get Quote</RX.Button>
+                   </div>                 
                  </Grid>
  
  

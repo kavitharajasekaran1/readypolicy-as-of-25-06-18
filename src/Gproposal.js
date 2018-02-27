@@ -89,9 +89,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '16/02/2018',
+                      policyStartDate: '27/02/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '16/02/2018',
+                      vehicleRegDate: '27/02/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -137,7 +137,7 @@ export default class VehicleDetails extends React.Component{
     onChangePost = () => {
         console.log("Rahul")
 
-        return fetch('http://192.168.1.25:3000/gproposalrequest', {
+        return fetch('http://192.168.1.18:3000/gproposalrequest', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

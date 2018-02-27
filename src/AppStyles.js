@@ -21,7 +21,7 @@ module.exports = {
         fontSize: 25,
         color: 'white',
         textAlign:'center',
-        marginleft: 134
+     margintop:95
 
     }),
     container: RX.Styles.createViewStyle({
@@ -29,8 +29,13 @@ module.exports = {
         alignItems: 'center',
         backgroundColor:'#1a153b',
         height:80,
-        padding:-10
+        padding:-10,
     }),
+  jumbotron:RX.Styles.createViewStyle({
+       boxshadow:'pink',
+        margintop: 20,
+         paddingleft: -20
+  }),
     flute: RX.Styles.createViewStyle({
         justifyContent: 'center',
         alignItems: 'left',
@@ -248,6 +253,20 @@ module.exports = {
         fontWeight:'bold'
 
     }),
+    SIDETEXT:RX.Styles.createTextStyle({
+        fontSize: 16,
+        color: 'BLUE',
+        fontWeight:'bold',
+        marginLeft:18
+
+    }),
+    SIdeText:RX.Styles.createTextStyle({
+        fontSize: 16,
+        color: '#2f2a4d',
+        fontWeight:'bold',
+        marginLeft:-50
+
+    }),
     sideMar:RX.Styles.createTextStyle({
         marginTop: 10
     }),
@@ -353,10 +372,24 @@ module.exports = {
         borderColor:"#ccc",
         borderRadius: 4
     }),
+    FOrm:RX.Styles.createViewStyle({
+        display: 'block',
+         width: '80%',
+         height: 34,
+         // padding: 6px 12px;
+          fontSize: 14,
+        // line: 1.42857143;
+        color: "#555",
+        backgroundColor: "#fff",
+        borderWidth:1,
+        borderColor:"#ccc",
+        borderRadius: 4,
+        marginLeft:-53
+    }),
     button:RX.Styles.createViewStyle({
         display: 'block',
-         width: '50%',
-         height: 34,
+         width: '14%',
+         height: 41,
          justifyContent: 'center',
         alignItems: 'center',
          // padding: 6px 12px;
@@ -367,8 +400,47 @@ module.exports = {
         borderWidth:1,
         borderColor:"#ccc",
         borderRadius: 4,
-        marginLeft:90,
-        marginTop:20
+        marginLeft:392,
+        marginTop:30,
+        padding:5
+ 
+    }),
+    BUTTON4 :RX.Styles.createViewStyle({
+        display: 'block',
+         width: '14%',
+         height: 41,
+         justifyContent: 'center',
+        alignItems: 'center',
+         // padding: 6px 12px;
+          fontSize: 20,
+        // line: 1.42857143;
+        color: "White",
+        backgroundColor: "blue",
+        borderWidth:1,
+        borderColor:"#ccc",
+        borderRadius: 4,
+        marginLeft:589,
+        marginTop:30,
+        padding:5
+ 
+    }),
+    BUTTON5 :RX.Styles.createViewStyle({
+        display: 'block',
+         width: '14%',
+         height: 41,
+         justifyContent: 'center',
+        alignItems: 'center',
+         // padding: 6px 12px;
+          fontSize: 20,
+        // line: 1.42857143;
+        color: "White",
+        backgroundColor: "blue",
+        borderWidth:1,
+        borderColor:"#ccc",
+        borderRadius: 4,
+        marginLeft:450,
+        marginTop:30,
+        padding:5
  
     }),
     nextbutton:RX.Styles.createViewStyle({
