@@ -198,6 +198,7 @@ var liability
 var message
 var quoteid
 var premium
+var odpremium
 export default class QuotesSelection  extends RX.Component {
 
 
@@ -237,7 +238,9 @@ export default class QuotesSelection  extends RX.Component {
                         alert(''+message+'')
                         console.log("quoteiid",quoteid)
                         console.log("premium",premium)
-                        this.props.onNavigateDetail(quoteid,premium); 
+                        console.log("odpremium",odpremium)
+
+                        this.props.onNavigateDetail(quoteid,premium,odpremium); 
                       //  this.props.onNavigateBack (liability,message);
                    //   idv = resJson.PREMIUMDETAILS.DATA.IDV
                   
@@ -255,11 +258,14 @@ export default class QuotesSelection  extends RX.Component {
      message = this.props.navigatorRoute.message
      quoteid = this.props.navigatorRoute.quoteid
      premium = this.props.navigatorRoute.premium
+     odpremium = this.props.navigatorRoute.odpremium
+     allResponse = this.props.navigatorRoute.allResponse
     console.log("idvvvvv",resJson)
     console.log("liablity",liability)
     console.log("message",message)
     console.log("quoteiid",quoteid)
     console.log("premium",premium)
+    console.log("odpremium",odpremium)
        // console.log(this.props,"value");
         return (
             <RX.ScrollView style={ _styles.scroll }>
@@ -329,6 +335,7 @@ export default class QuotesSelection  extends RX.Component {
                     </Grid>
                     <Grid>
                         <RX.View >
+                           
                             <Row className="show-grid" >
                                 <Col md={12} style={styling.marTop17 }>
                                     <Col md={2}></Col>
@@ -351,9 +358,10 @@ export default class QuotesSelection  extends RX.Component {
                                             </Col>
                                             <Col  md={4}></Col>
                                             <Col md={3} >
-                                                <RX.Text style={styling.clientHeadts}>Rs.560</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>RS.887.0</RX.Text>
                                             </Col>
                                         </Col>
+                                     
                                     </RX.View>
                                     <Col md={2}></Col>
                                 </Col>
@@ -392,7 +400,7 @@ export default class QuotesSelection  extends RX.Component {
                                     <RX.View>
                                         <Col md={8} style={ _styles.client }>
                                             <Col md={5}>
-                                                <RX.Text style={styling.clientHeadts}>Paiid Drivers</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>Paid Drivers</RX.Text>
                                             </Col>
                                             <Col  md={4}></Col>
                                             <Col md={3} >
@@ -436,11 +444,12 @@ export default class QuotesSelection  extends RX.Component {
                                     <RX.View>
                                         <Col md={8} style={ _styles.client }>
                                             <Col md={5}>
-                                                <RX.Text style={styling.clientHeadts}>Basic TP Premium</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>Package Premium</RX.Text>
                                             </Col>
                                             <Col  md={4}></Col>
                                             <Col md={3} >
-                                                <RX.Text style={styling.clientHeadts}>Rs.560</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>{odpremium.PACKAGE_PREMIUM}
+                                                </RX.Text>
                                             </Col>
                                         </Col>
                                     </RX.View>
@@ -451,11 +460,11 @@ export default class QuotesSelection  extends RX.Component {
                                     <RX.View>
                                         <Col md={8} style={ _styles.client }>
                                             <Col md={5}>
-                                                <RX.Text style={styling.clientHeadts}>Basic TP Premium</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>Policy Expiry Date</RX.Text>
                                             </Col>
                                             <Col  md={4}></Col>
                                             <Col md={3} >
-                                                <RX.Text style={styling.clientHeadts}>Rs.560</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>{odpremium.POLICY_EXPIRY_DATE}</RX.Text>
                                             </Col>
                                         </Col>
                                     </RX.View>
@@ -466,11 +475,12 @@ export default class QuotesSelection  extends RX.Component {
                                     <RX.View>
                                         <Col md={8} style={ _styles.client }>
                                             <Col md={5}>
-                                                <RX.Text style={styling.clientHeadts}>Basic TP Premium</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>Policy Start Date</RX.Text>
                                             </Col>
                                             <Col  md={4}></Col>
                                             <Col md={3} >
-                                                <RX.Text style={styling.clientHeadts}>Rs.560</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>{odpremium.POLICY_START_DATE}
+                                            </RX.Text>
                                             </Col>
                                         </Col>
                                     </RX.View>
@@ -481,11 +491,12 @@ export default class QuotesSelection  extends RX.Component {
                                     <RX.View>
                                         <Col md={8} style={ _styles.client }>
                                             <Col md={5}>
-                                                <RX.Text style={styling.clientHeadts}>Basic TP Premium</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>Policy Term</RX.Text>
                                             </Col>
                                             <Col  md={4}></Col>
                                             <Col md={3} >
-                                                <RX.Text style={styling.clientHeadts}>Rs.560</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>{odpremium.POLICY_TERM}
+</RX.Text>
                                             </Col>
                                         </Col>
                                     </RX.View>
@@ -496,11 +507,12 @@ export default class QuotesSelection  extends RX.Component {
                                     <RX.View>
                                         <Col md={8} style={ _styles.client }>
                                             <Col md={5}>
-                                                <RX.Text style={styling.clientHeadts}>Basic TP Premium</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>Premium without covers</RX.Text>
                                             </Col>
                                             <Col  md={4}></Col>
                                             <Col md={3} >
-                                                <RX.Text style={styling.clientHeadts}>Rs.560</RX.Text>
+                                                <RX.Text style={styling.clientHeadts}>{odpremium.PREMIUM_WITHOUT_COVERS}
+                                                </RX.Text>
                                             </Col>
                                         </Col>
                                     </RX.View>
@@ -509,7 +521,7 @@ export default class QuotesSelection  extends RX.Component {
                             </Row>
                         </RX.View>
                         <RX.Button style={styling.BUTTON5}   onPress={()=> this.onChangePost() }>Next</RX.Button>
-
+                       
                     </Grid>
 
 
@@ -541,6 +553,7 @@ export default class QuotesSelection  extends RX.Component {
                         </RX.View>
                     </Grid>*/}
                 </RX.View>
+                
             </RX.ScrollView>
         );
     }

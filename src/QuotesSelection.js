@@ -230,6 +230,7 @@ var idv
 var resJson
 var quoteid
 var premium
+var odpremium
 export default class QuotesSelection  extends RX.Component {
 
 
@@ -377,7 +378,7 @@ export default class QuotesSelection  extends RX.Component {
     }
 
     onChangeliability  = () => {
-        this.props.onNavigateSixth(liability,resJson,message,quoteid,premium);
+        this.props.onNavigateSixth(liability,resJson,message,quoteid,premium,odpremium);
         
         
 
@@ -390,11 +391,14 @@ export default class QuotesSelection  extends RX.Component {
      message = this.props.navigatorRoute.message
      quoteid =  this.props.navigatorRoute.quoteid
      premium = this.props.navigatorRoute.premium
+     odpremium = this.props.navigatorRoute.odpremium
     console.log("idvvvvv",resJson)
     console.log("liablity",liability)
     console.log("message",message)
     console.log("quoteiid",quoteid)
     console.log("premium",premium)
+    console.log("odpremium",odpremium)
+
         return (
             <RX.ScrollView style={ _styles.scroll }>
                 <RX.View style={ _styles.container }>
@@ -425,13 +429,14 @@ export default class QuotesSelection  extends RX.Component {
                             <div>NCB</div>
                         </RX.Text>
                         <RX.Text style={ _styles.ncb }>
-                            Rs. 20,347
+                        {odpremium.PACKAGE_PREMIUM}
+
                             <div>NIL</div>
                         </RX.Text>
                         <RX.View style={_styles.nextBtn}>
                             <RX.Button style={ _styles.roundButton } onPress={()=> this.onChangeliability()}>
                                 <RX.Text style={ _styles.buybuttonText }>
-                                    Rs.1,322*
+                                    {odpremium.GROSS_PREMIUM}
                                 </RX.Text>
                             </RX.Button>
                         </RX.View>

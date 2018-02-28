@@ -99,9 +99,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '27/02/2018',
+                      policyStartDate: '28/02/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '27/02/2018',
+                      vehicleRegDate: '28/02/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -248,11 +248,11 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
             var resJson1 = JSON.parse(res)
             console.log(resJson1,"res");
            // this.props.onNavigateEight(res);
+           var mypremium = resJson1.PREMIUMDETAILS.DATA.PREMIUM
             var Message = resJson1.PREMIUMDETAILS.Status.Message
             console.log(Message,"Message");
-            var mypremium = resJson1.PREMIUMDETAILS.DATA.PREMIUM
             //console.log("premium",premium)
-            alert(''+mypremium+'')
+            alert(''+Message+'')
             if (Message==="Premium Calculated and Vehicle details saved successfully"){
             this.props.onNavigateEight(res,quoteid,mypremium);
             }else{
@@ -669,7 +669,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                         <form>
                                         <div class="form-row">
     <div class="form-group col-md-4">
-      <label for="inputEmail4" style={ styling.sideText }>Quote ID</label>
+      <label for="inputEmail4" style={ styling.siDeText }>Quote ID</label>
 
                                             <RX.TextInput
                                                 type="Quote ID"
@@ -683,7 +683,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                               </div>
                                               
     <div class="form-group col-md-4">
-      <label for="inputPassword4" style={ styling.sideText }>Premium</label>
+      <label for="inputPassword4" style={ styling.siDeText }>Premium</label>
 
                                             <RX.TextInput
                                                 type="Premium"
@@ -696,13 +696,13 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                                 </div>
 
     <div class="form-group col-md-4">
-      <label for="inputEmail4" style={ styling.sideText }>Registration Number</label>
+      <label for="inputEmail4" style={ styling.siDeText }>Title</label>
                                       
 
                                             <RX.TextInput
-                                                type="email"
+                                                type="title"
                                                 style={styling.Form}
-                                                placeholder="Enter Registration No"
+                                                placeholder="Title"
                                                 value={ this.state.title }
                                                 onChangeText={this.onChangetitle}
                                                 // defaultValue={ this.state.inputValue }
@@ -723,7 +723,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
          <form> 
                                         <div class="form-row">
     <div class="form-group col-md-4">
-      <label for="inputPassword4" style={ styling.sideText }>First Name</label>
+      <label for="inputPassword4" style={ styling.siDeText }>First Name</label>
                                      
                                        
                                         
@@ -740,7 +740,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
        
  
     <div class="form-group col-md-4">
-      <label for="inputEmail4" style={ styling.sideText }>Last Name</label>                           
+      <label for="inputEmail4" style={ styling.siDeText }>Last Name</label>                           
                                        
 
                                             <RX.TextInput
@@ -752,7 +752,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                             />
                                                    </div>
     <div class="form-group col-md-4">
-      <label for="inputPassword4" style={ styling.sideText }>Email ID</label>
+      <label for="inputPassword4" style={ styling.siDeText }>Email ID</label>
                                       
 
                                             <RX.TextInput
@@ -771,7 +771,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
        
   <div class="form-row">
     <div class="form-group col-md-4">
-      <label for="inputEmail4" style={ styling.sideText }>Mobile No</label>         
+      <label for="inputEmail4" style={ styling.siDeText }>Mobile No</label>         
                                        
                                         
                                             <RX.TextInput
@@ -783,7 +783,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                             />
                                             </div>
                                          <div class="form-group col-md-4">
-      <label for="inputPassword4" style={ styling.sideText }>Date Of Birth</label>
+      <label for="inputPassword4" style={ styling.siDeText }>Date Of Birth</label>
                                       
                                   
                                         
@@ -799,7 +799,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
     
 
     <div class="form-group col-md-4">
-      <label for="inputEmail4" style={ styling.sideText }>Occupation</label>  
+      <label for="inputEmail4" style={ styling.siDeText }>Occupation</label>  
                                     
                                        
                                             <RX.TextInput
@@ -816,7 +816,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                            <form>
                                            <div class="form-row">
                                          <div class="form-group col-md-4">
-      <label for="inputPassword4" style={ styling.sideText }>Nominee Name</label>
+      <label for="inputPassword4" style={ styling.siDeText }>Nominee Name</label>
                                        
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -830,7 +830,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
   
                                             
                                             <div class="form-group col-md-4">
-      <label for="inputPassword4" style={ styling.sideText }>Nominee Age</label>
+      <label for="inputPassword4" style={ styling.siDeText }>Nominee Age</label>
                                     
                                        
                                         
@@ -844,7 +844,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                             
                                        </div>
                                        <div class="form-group col-md-4">
-      <label for="inputPassword4" style={ styling.sideText }>Relation with Nominee</label>
+      <label for="inputPassword4" style={ styling.siDeText }>Relation with Nominee</label>
                                     
                                         
                                             <RX.TextInput
@@ -875,7 +875,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                         
                                      <div class="form-row">
                                          <div class="form-group col-md-6">
-      <label for="inputPassword4" style={ styling.sideText }>Vehicle Model code</label>
+      <label for="inputPassword4" style={ styling.siDeText }>Vehicle Model code</label>
                                        
                                         
                                             <RX.TextInput
@@ -887,7 +887,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                             />
                                             </div>
                                             <div class="form-group col-md-6">
-      <label for="inputPassword4" style={ styling.sideText }>Plan Opted</label>
+      <label for="inputPassword4" style={ styling.siDeText }>Plan Opted</label>
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder="Plan opted"
@@ -897,7 +897,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                             />
                                             </div>
                                          <div class="form-group col-md-6">
-      <label for="inputPassword4" style={ styling.sideText }>year Of Manufacturer</label>   
+      <label for="inputPassword4" style={ styling.siDeText }>year Of Manufacturer</label>   
                                       
                                         <RX.TextInput
                                                 style={styling.Form}
@@ -910,7 +910,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
 
 
 <div class="form-group col-md-6">
-      <label for="inputPassword4" style={ styling.sideText }>Driving Experience</label>   
+      <label for="inputPassword4" style={ styling.siDeText }>Driving Experience</label>   
                                       
                                    
                                         
@@ -925,7 +925,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                          </div>  
                                         
                                          <div class="form-group col-md-6">
-      <label for="inputPassword4" style={ styling.sideText }>Voluntary Detuctable</label>   
+      <label for="inputPassword4" style={ styling.siDeText }>Voluntary Detuctable</label>   
                                                                     
                                    
                                         
@@ -942,7 +942,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
 
 
 <div class="form-group col-md-6">
-      <label for="inputPassword4" style={ styling.sideText }>Voluntary Detuctable</label>       
+      <label for="inputPassword4" style={ styling.siDeText }>Voluntary Detuctable</label>       
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -961,7 +961,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
 <form>
                                            <div class="form-row">
                                          <div class="form-group col-md-6">
-      <label for="inputPassword4" style={ styling.sideText }>IDV</label>
+      <label for="inputPassword4" style={ styling.siDeText }>IDV</label>
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -974,7 +974,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                       </div>
                                     
                                       <div class="form-group col-md-6">
-      <label for="inputPassword4" style={ styling.sideText }>Start Policy</label>   
+      <label for="inputPassword4" style={ styling.siDeText }>Start Policy</label>   
                                             <RX.TextInput
                                                 style={styling.Form}
                                                 placeholder=" start Policy"
@@ -985,7 +985,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                            
                                         </div>
                                         <div class="form-group col-md-6">
-      <label for="inputPassword4" style={ styling.sideText }>Vehicle Mostly driven </label>  
+      <label for="inputPassword4" style={ styling.siDeText }>Vehicle Mostly driven </label>  
                                        
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1002,7 +1002,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                      <form>
                                            <div class="form-row">
                                          <div class="form-group col-md-6">
-      <label for="inputPassword4" style={ styling.sideText }>Vehicle Registered Date</label>
+      <label for="inputPassword4" style={ styling.siDeText }>Vehicle Registered Date</label>
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1014,7 +1014,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                         </div>
                                     
                                         <div class="form-group col-md-6">
-      <label for="inputPassword4" style={ styling.sideText }>Vehicle Registered</label>
+      <label for="inputPassword4" style={ styling.siDeText }>Vehicle Registered</label>
                                        
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1028,7 +1028,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                         </form>
                                         
                                         <div class="form-group col-md-6">
-      <label for="inputPassword4" style={ styling.sideText }>Model Name</label>
+      <label for="inputPassword4" style={ styling.siDeText }>Model Name</label>
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1040,7 +1040,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                             
                                         </div>
                                         <div class="form-group col-md-6">
-      <label for="inputPassword4" style={ styling.sideText }>Product Name</label>
+      <label for="inputPassword4" style={ styling.siDeText }>Product Name</label>
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1052,7 +1052,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                            
                                       </div>
                                       <div class="form-group col-md-6">
-      <label for="inputPassword4" style={ styling.sideText }>Company Name for car</label>
+      <label for="inputPassword4" style={ styling.siDeText }>Company Name for car</label>
                                        
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1064,7 +1064,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                             
                                       </div>
                                       <div class="form-group col-md-6">
-      <label for="inputPassword4" style={ styling.sideText }>Enginee Number</label>
+      <label for="inputPassword4" style={ styling.siDeText }>Enginee Number</label>
                                        
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1075,7 +1075,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                             />
                                      </div>
                                      <div class="form-group col-md-6">
-      <label for="inputPassword4" style={ styling.sideText }>chassis Number</label>
+      <label for="inputPassword4" style={ styling.siDeText }>chassis Number</label>
                                         
                                             <RX.TextInput
                                                 style={styling.Form}
@@ -1171,7 +1171,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                     <Row className="show-grid">
                                         <Col md={12} style={styling.marTop10}>
                                             {/*<RX.Button   onPress={()=> this.onChangePost() }>Submit</RX.Button>*/}
-                                            <RX.Button bsStyle="info" onPress={()=> this.onChangePost() }>Primary</RX.Button>
+                                            <RX.Button style={styling.BUTTON6} onPress={()=> this.onChangePost() }>Next</RX.Button>
 
                                         </Col>
                                         {/*<Col  md={6} style={styling.marTop}>

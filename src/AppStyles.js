@@ -249,7 +249,13 @@ module.exports = {
     }),
     sideText:RX.Styles.createTextStyle({
         fontSize: 16,
-        color: '#2f2a4d',
+        color: 'white',
+        fontWeight:'bold'
+
+    }),
+    siDeText:RX.Styles.createTextStyle({
+        fontSize: 16,
+        color: 'Black',
         fontWeight:'bold'
 
     }),
@@ -262,7 +268,7 @@ module.exports = {
     }),
     SIdeText:RX.Styles.createTextStyle({
         fontSize: 16,
-        color: '#2f2a4d',
+        color: 'white',
         fontWeight:'bold',
         marginLeft:-50
 
@@ -367,7 +373,7 @@ module.exports = {
           fontSize: 14,
         // line: 1.42857143;
         color: "#555",
-        backgroundColor: "#fff",
+        backgroundColor: "white",
         borderWidth:1,
         borderColor:"#ccc",
         borderRadius: 4
@@ -440,6 +446,44 @@ module.exports = {
         borderRadius: 4,
         marginLeft:450,
         marginTop:30,
+        padding:5
+ 
+    }),
+    BUTTON6 :RX.Styles.createViewStyle({
+        display: 'block',
+         width: '14%',
+         height: 41,
+         justifyContent: 'center',
+        alignItems: 'center',
+         // padding: 6px 12px;
+          fontSize: 20,
+        // line: 1.42857143;
+        color: "White",
+        backgroundColor: "blue",
+        borderWidth:1,
+        borderColor:"#ccc",
+        borderRadius: 4,
+        marginLeft:322,
+        marginTop:-133,
+        padding:5
+ 
+    }),
+    BUTTON7 :RX.Styles.createViewStyle({
+        display: 'block',
+         width: '14%',
+         height: 41,
+         justifyContent: 'center',
+        alignItems: 'center',
+         // padding: 6px 12px;
+          fontSize: 20,
+        // line: 1.42857143;
+        color: "White",
+        backgroundColor: "blue",
+        borderWidth:1,
+        borderColor:"#ccc",
+        borderRadius: 4,
+        marginLeft:322,
+        marginTop:-8,
         padding:5
  
     }),

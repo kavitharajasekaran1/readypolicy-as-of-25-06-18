@@ -18,7 +18,14 @@ const _styles = {
     }),
     SCROLL: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
-        backgroundColor: '#1cafdb40'
+        backgroundColor: '#1a153b'
+    }),
+    HomeScrollImageLogo: RX.Styles.createImageStyle({
+        width:5000,
+        height: 72,
+        paddingVertical:20,
+        marginLeft:-1200,
+        marginTop:12
     }),
 
 };
@@ -35,7 +42,7 @@ export default class InsuranceAddons extends RX.Component{
             carRegisteredCity: '24PARGANAS',
             vehicleManufacturerName: 'TVS',
             vehicleModelCode: 'ZWTV310',
-            vehicleRegDate: '27/02/2018',
+            vehicleRegDate: '28/02/2018',
             lastname: 'Rani',
         };
         this._translationValue = RX.Animated.createValue(-100);
@@ -108,9 +115,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "27/02/2018",
+                        policyStartDate: "28/02/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "27/02/2018",
+                        vehicleRegDate: "28/02/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -154,13 +161,15 @@ console.log("hittinh.......")
                  var quoteid = resJson1.PREMIUMDETAILS.DATA.QUOTE_ID
                  var premium = resJson1.PREMIUMDETAILS.DATA.PREMIUM
                  var liability = resJson1.PREMIUMDETAILS.DATA.LIABILITY
+                 var odpremium = resJson1.PREMIUMDETAILS.DATA
                  var message = resJson1.PREMIUMDETAILS.Status.Message
                  console.log("quoteid",quoteid)
                  console.log("neenenne",resJson1)
                  console.log("liablity",liability)
                  console.log("message",message)
                  console.log("premium",premium)
-                          this.props.onNavigateTen(resJson,liability,message,quoteid,premium); 
+                 console.log("odpremium",odpremium)
+                          this.props.onNavigateTen(resJson,liability,message,quoteid,premium,odpremium); 
                         //  this.props.onNavigateBack (liability,message);
                          // this.props.onNavigateDetail(liability,message);
                      //   idv = resJson.PREMIUMDETAILS.DATA.IDV
@@ -216,17 +225,21 @@ console.log("hittinh.......")
     render() {
         // console.log(this.props.user,"user");
          return (
-             <RX.ScrollView style={ _styles.scroll }>
-             <RX.View style={ styling.container }>
-                     <RX.Text style={styling.welcome }>
-                     Get Quote
-                 </RX.Text>
-                 {/*<RX.Button style={ Button } this._onChangeVaronPress={ this.props.onNavigateThirteen }>
-                     <RX.Text style={ styling.buttonText }>
-                         Go Back
-                     </RX.Text>
-                 </RX.Button>*/}
-             </RX.View>
+            <RX.ScrollView style={ _styles.scroll }>
+            <RX.View style={ styling.container }>
+            <RX.Button  onPress={ this.props.onNavigateSuper }><RX.Image
+                         style={_styles.HomeScrollImageLogo}
+                         source={'./src/img/Back.svg'}/>
+                    <RX.Text style={styling.welcome }>
+                    Get Quote
+                </RX.Text>
+                   </RX.Button>
+                {/*<RX.Button style={ Button } this._onChangeVaronPress={ this.props.onNavigateThirteen }>
+                    <RX.Text style={ styling.buttonText }>
+                        Go Back
+                    </RX.Text>
+                </RX.Button>*/}
+            </RX.View>
                  <Grid>
                      
                  <div class="steps-form-2">

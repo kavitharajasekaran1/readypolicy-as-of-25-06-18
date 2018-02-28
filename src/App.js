@@ -117,7 +117,7 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.VehicleDetails,
+            routeId: NavigationRouteId.MainPanel,
             sceneConfigType: "Fade"
         }]);
     }
@@ -211,8 +211,8 @@ export default class App extends RX.Component {
                 return <NewTermInsurance onNavigateNewTermInsurance={ this._onPressNewTermInsurance }/>;
 
             case NavigationRouteId.HomePanel:
-         return <HomePanel onNavigateSuper={ this._onPressHome}/>;   
-        //  return <HomePanel onNavigateSuperCar = {this._onPressHome1}/>;
+            return <HomePanel onNavigateSuper={ this._onPressHome}/>;   
+            //  return <HomePanel onNavigateSuperCar = {this._onPressHome1}/>;
              case NavigationRouteId.Vehicleregister:
                 return <Vehicleregister onNavigatefont={ this._onPressfont}/>; 
 
@@ -338,7 +338,7 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressSixth(liability,resJson,message,quoteid,premium) {
+    _onPressSixth(liability,resJson,message,quoteid,premium,odpremium) {
         console.log("liablity2222222",liability)
         // this._navigator.pop();
         this._navigator.push({
@@ -348,6 +348,7 @@ export default class App extends RX.Component {
             resJson:resJson,
             quoteid:quoteid,
             premium:premium,
+            odpremium:odpremium,
             message:message,
             customSceneConfig: {
                 hideShadow: true
@@ -382,16 +383,18 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressDetail(quoteid,premium) {
+    _onPressDetail(quoteid,premium,odpremium) {
        
         console.log("quoteid",quoteid)
         console.log("premium",premium)
+        console.log("odpremium",odpremium)
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.VehicleDetails,
             sceneConfigType: "FloatFromRight",
             quoteid:quoteid,
             premium:premium,
+            odpremium:odpremium,
             customSceneConfig: {
                 hideShadow: true
             }
@@ -466,10 +469,11 @@ export default class App extends RX.Component {
         });
     }
 
-    _onPressTen(resJson,liability,message,quoteid,premium) {
+    _onPressTen(resJson,liability,message,quoteid,premium,odpremium) {
         console.log("neenenne",resJson)
         console.log("liablity",liability)
         console.log("quoteid",quoteid)
+        console.log("odpremium",odpremium)
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.Addons,
@@ -479,16 +483,18 @@ export default class App extends RX.Component {
             message:message,
             quoteid:quoteid,
             premium:premium,
+            odpremium:odpremium,
             customSceneConfig: {
                 hideShadow: true
             }
         });
     }
 
-    _onPressNinety(resJson,liability,message,quoteid,premium) {
+    _onPressNinety(resJson,liability,message,quoteid,premium,odpremium) {
         console.log("neenenne",resJson)
         console.log("liablity",liability)
         console.log("quoteid",quoteid)
+        console.log("odpremium",odpremium)
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.QuotesSelection,
@@ -498,6 +504,7 @@ export default class App extends RX.Component {
             message:message,
             quoteid:quoteid,
             premium:premium,
+            odpremium:odpremium,
             customSceneConfig: {
                 hideShadow: true
             }
@@ -629,7 +636,7 @@ export default class App extends RX.Component {
 });
     }
 
-    _onPressCompare(allResponse,liability,resJson,message,quoteid,premium) {
+    _onPressCompare(allResponse,liability,resJson,message,quoteid,premium,odpremium) {
         console.log("liablity",liability)
         console.log(resJson,"resJson")
             this._navigator.push({
@@ -637,6 +644,7 @@ export default class App extends RX.Component {
             sceneConfigType: "FloatFromRight",
             resJson:resJson,
             liability:liability,
+            odpremium:odpremium,
             quoteid:quoteid,
             premium:premium,
             message:message,
