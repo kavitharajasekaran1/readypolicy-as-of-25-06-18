@@ -12,6 +12,7 @@
   "devDependencies": {
     "babel-loader": "^7.0.0",
     "babel-preset-react-native": "1.9.2",
+    "ember-sweetalert": "^0.1.1",
     "source-map-loader": "^0.1.6",
     "webpack": "2.2.1"
   },
@@ -36,6 +37,7 @@
     "reactxp": "^0.46.1",
     "reactxp-imagesvg": "^0.2.6",
     "reactxp-navigation": "^1.0.14",
-    "reactxp-video": "^0.2.1"
+    "reactxp-video": "^0.2.1",
+    "sweetalert": "^2.1.0"
   }
 }

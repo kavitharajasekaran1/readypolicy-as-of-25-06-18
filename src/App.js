@@ -40,6 +40,7 @@ import Addons from './Addons'
 
 
 
+
 let NavigationRouteId = {
     OtpPage: "OtpPage",
     CompareQuotes: "CompareQuotes",
@@ -226,7 +227,7 @@ export default class App extends RX.Component {
 
     _onPressNavigate() {
         this._navigator.push({
-            routeId: NavigationRouteId.RegisterPage,
+            routeId: NavigationRouteId.HomePanel,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
@@ -298,11 +299,13 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressForth() {
+    _onPressForth(res) {
+        console.log("res",res)
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.OtpPage,
             sceneConfigType: "FloatFromRight",
+            res:res,
             customSceneConfig: {
                 hideShadow: true
             }

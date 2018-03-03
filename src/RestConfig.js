@@ -1,3 +1,3 @@
 export default {
-     ApiUrl: 'http://119.81.59.59:8082',
+     ApiUrl: 'http://localhost:8082',
 }

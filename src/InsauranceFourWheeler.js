@@ -52,7 +52,7 @@ console.log("hittinh.......")
         // let usersPath = "motorIssuePolicy"
         // console.log(password,"password");
        // console.log(Rest.ApiUrl,"RestApiUrl");
-      return  fetch('http://192.168.1.18:3000/calculatecarpremium', {
+      return  fetch('http://192.168.1.18:8082/calculatecarpremium', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -106,7 +106,7 @@ console.log("hittinh.......")
                         region: "South Region",
                         vehicleManufacturerName: "BMW",
                         vehicleModelCode: "CMB65",
-                        vehicleregDate: "28/02/2018",
+                        vehicleregDate: "01/03/2018",
                         idv: "3025465",
                         engineCapacityAmount: "1995 CC",
                         drivingExperience: "2",

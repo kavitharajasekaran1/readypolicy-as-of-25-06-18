@@ -40,7 +40,7 @@ console.log("hittinh.......")
         // let usersPath = "motorIssuePolicy"
         // console.log(password,"password");
        // console.log(Rest.ApiUrl,"RestApiUrl");
-      return  fetch('http://192.168.1.18:3000/calculatepremium', {
+      return  fetch('http://192.168.0.77:8082/calculatepremium', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -94,9 +94,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "28/02/2018",
+                        policyStartDate: "01/03/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "28/02/2018",
+                        vehicleRegDate: "01/03/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
