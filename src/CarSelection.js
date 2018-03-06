@@ -15,7 +15,7 @@ import ProgressIndicator from './ProgressIndicator';
 import ToggleSwitch from './ToggleSwitch';
 import Rest from "./RestConfig";
 import styling from "./AppStyles";
-import popupS from 'popups'
+
 
 const _styles = {
     scroll: RX.Styles.createScrollViewStyle({

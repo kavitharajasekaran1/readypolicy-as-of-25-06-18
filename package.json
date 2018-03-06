@@ -17,6 +17,10 @@
     "webpack": "2.2.1"
   },
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "react": "^16.2.0",
     "react-bootstrap": "^0.31.5",
     "react-datepicker": "^1.0.4",
@@ -38,6 +42,19 @@
     "reactxp-imagesvg": "^0.2.6",
     "reactxp-navigation": "^1.0.14",
     "reactxp-video": "^0.2.1",
-    "sweetalert": "^2.1.0"
-  }
+    "sweetalert": "^2.1.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^3.1.0"
+  },
+  "description": "This app works on React Native (iOS, Android) and web. Most of the app's code is contained in `App.tsx`.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rapidqube/readypolicy-ui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rapidqube/readypolicy-ui/issues"
+  },
+  "homepage": "https://github.com/rapidqube/readypolicy-ui#readme"
 }

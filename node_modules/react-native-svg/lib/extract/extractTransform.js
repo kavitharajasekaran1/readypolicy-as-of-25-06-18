@@ -79,6 +79,11 @@ function props2transform(props) {
     };
 }
 
+/**
+ *
+ * @param props
+ */
 export default function (props) {
+    // TODO: support Percentage for transform
     return transformToMatrix(props2transform(props), props.transform ? props2transform(props.transform) : null);
 }

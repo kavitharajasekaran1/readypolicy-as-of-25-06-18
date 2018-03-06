@@ -7,7 +7,7 @@
  */
 
 #import "RNSVGNode.h"
-#import <React/RCTViewManager.h>
+#import "RCTViewManager.h"
 
 @interface RNSVGNodeManager : RCTViewManager
 
