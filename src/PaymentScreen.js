@@ -379,10 +379,10 @@ export default class PaymentScreen extends RX.Component{
                     </RX.Text>
                     </RX.View>
                    
-                    <RX.Button style={ styles.Button } onPress={ this.props.onNavigateEleven }>
-                        <RX.Text style={ styles.buttonText }>
-                            Please select a payment method to proceed
-                        </RX.Text>
+                    <RX.Button style={ styles.Button }>
+                        <RX.Link style={ styles.buttonText }  url={ 'https://www.royalsundaram.net/web/test/makepayment?quoteId=QVMN0011943' }>
+                            After selecting please click here to proceed
+                        </RX.Link>
                     </RX.Button>
                        
             </RX.ScrollView>
