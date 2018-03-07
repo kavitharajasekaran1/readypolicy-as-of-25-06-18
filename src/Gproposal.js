@@ -13,6 +13,7 @@ import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,StyleSheet,FormControl
 import Button from 'react-bootstrap/lib/Button';
 import moment from 'moment';
 import ReactDom from 'react-dom';
+import swal from 'sweetalert';
 
 
 
@@ -96,9 +97,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '06/03/2018',
+                      policyStartDate: '07/03/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '06/03/2018',
+                      vehicleRegDate: '07/03/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -144,7 +145,7 @@ export default class VehicleDetails extends React.Component{
     onChangePost = () => {
         console.log("Rahul")
 
-        return fetch('http://192.168.0.77:8082/gproposalrequest', {
+        return fetch('http://192.168.0.94:8082/gproposalrequest', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -172,7 +173,7 @@ export default class VehicleDetails extends React.Component{
             // this.props.onNavigateFifty(res);
             var Message = resJson1.PREMIUMDETAILS.Status.Message
             console.log(Message,"Message");
-           alert(''+Message+'')
+          swal(''+Message+'')
             if (Message==="Quote Approved,Preceed Buy Policy"){
             // this.props.onNavigateFifty(res);
             }else{

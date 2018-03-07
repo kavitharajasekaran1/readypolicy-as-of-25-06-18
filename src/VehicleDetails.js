@@ -6,12 +6,14 @@ import React from 'react';
 import RX from 'reactxp';
 import styling from './AppStyles';
 import Rest from './RestConfig';
+import swal from 'sweetalert';
 import QuotesSelection from './QuotesSelection';
 import { Navigator } from 'reactxp-navigation';
 import DatePicker from 'react-datepicker';
 import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,StyleSheet,FormControl,minDate,maxDate,HelpBlock,DateTimeField,Checkbox} from 'react-bootstrap';
 import Button from 'react-bootstrap/lib/Button';
 import moment from 'moment';
+import SweetAlert from 'react-swal';
 
 
 /*const {
@@ -99,9 +101,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '06/03/2018',
+                      policyStartDate: '07/03/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '06/03/2018',
+                      vehicleRegDate: '07/03/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -252,7 +254,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
             var Message = resJson1.PREMIUMDETAILS.Status.Message
             console.log(Message,"Message");
             //console.log("premium",premium)
-            alert(''+Message+'')
+           swal(''+Message+'')
             if (Message==="Premium Calculated and Vehicle details saved successfully"){
             this.props.onNavigateEight(res,quoteid,mypremium);
             }else{
@@ -646,21 +648,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                     <Row className="clearfix" >
                         <Col  md={8}></Col>
                         <Col  md={8}>
-                        <div className="container">
-                        <div className="btn-pref btn-group btn-group-justified btn-group-sm" role="group" style={styling.sideMar}aria-label="...">
-        <div className="btn-group" role="group">
-            <button type="button" id="stars" className="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <div className="hidden-xs">New</div>
-            </button>
-        </div>
-        <div class="btn-group" role="group"  style={styling.sideMar}  >
-            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                <div class="hidden-xs">Renew</div>
-            </button>
-        </div>
-        </div>
-        </div>
-                    
+
                             <Tabs defaultActiveKey={1} style={_styles.read} id="left-tabs-example">
                                 <Tab eventKey={1} style={_styles.read}title="New" className="myClass">
                                 
