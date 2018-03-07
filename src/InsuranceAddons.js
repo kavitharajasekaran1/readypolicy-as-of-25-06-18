@@ -61,7 +61,7 @@ console.log("hittinh.......")
         // let usersPath = "motorIssuePolicy"
         // console.log(password,"password");
        // console.log(Rest.ApiUrl,"RestApiUrl");
-      return  fetch('http://192.168.0.94:8082/calculatepremium', {
+      return  fetch('http://localhost:8082/calculatepremium', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

@@ -51894,7 +51894,7 @@ _this._onPressNinety=_this._onPressNinety.bind(_this);return _this;
 
 {
 this._navigator.immediatelyResetRouteStack([{
-routeId:NavigationRouteId.MainPanel,
+routeId:NavigationRouteId.HomePanel,
 sceneConfigType:"Fade"}]);
 
 }},{key:'render',value:function render()
@@ -51975,10 +51975,10 @@ case NavigationRouteId.InsuranceFourWheeler:
 return _react2.default.createElement(_InsauranceFourWheeler2.default,{onNavigateTwenty:this._onPressTwenty,navigatorRoute:navigatorRoute,__source:{fileName:_jsxFileName,lineNumber:199}});
 
 case NavigationRouteId.EleventhPanel:
-return _react2.default.createElement(_EleventhPanel2.default,{onNavigateEleven:this._onPressEleven,__source:{fileName:_jsxFileName,lineNumber:202}});
+return _react2.default.createElement(_EleventhPanel2.default,{onNavigateEleven:this._onPressEleven,navigatorRoute:navigatorRoute,__source:{fileName:_jsxFileName,lineNumber:202}});
 
 case NavigationRouteId.PaymentScreen:
-return _react2.default.createElement(_PaymentScreen2.default,{onNavigatePayment:this._onPressPayment,__source:{fileName:_jsxFileName,lineNumber:205}});
+return _react2.default.createElement(_PaymentScreen2.default,{onNavigatePayment:this._onPressPayment,navigatorRoute:navigatorRoute,__source:{fileName:_jsxFileName,lineNumber:205}});
 
 
 case NavigationRouteId.TravelInsuranceReg:
@@ -51994,7 +51994,7 @@ case NavigationRouteId.Vehicleregister:
 return _react2.default.createElement(_Vehicleregister2.default,{onNavigatefont:this._onPressfont,__source:{fileName:_jsxFileName,lineNumber:218}});
 
 case NavigationRouteId.Gproposal:
-return _react2.default.createElement(_Gproposal2.default,{onNavigateproposal:this._onPressproposal,navigatorRoute:navigatorRoute,__source:{fileName:_jsxFileName,lineNumber:221}});}
+return _react2.default.createElement(_Gproposal2.default,{onNavigateEleven:this._onPressEleven,navigatorRoute:navigatorRoute,__source:{fileName:_jsxFileName,lineNumber:221}});}
 
 
 
@@ -52291,6 +52291,7 @@ hideShadow:true}});
 }},{key:'_onPressEleven',value:function _onPressEleven()
 {
 
+console.log("hitting to eleven panel");
 this._navigator.push({
 routeId:NavigationRouteId.PaymentScreen,
 sceneConfigType:"FloatFromRight",
@@ -115012,7 +115013,7 @@ console.log("hittinh.......");
 
 
 
-return fetch('http://192.168.0.94:8082/calculatepremium',{
+return fetch('http://localhost:8082/calculatepremium',{
 method:'POST',
 headers:{
 'Accept':'application/json',
@@ -118889,7 +118890,7 @@ props));_this.
 onChangePost=function(){
 console.log("Rahul");
 
-return fetch('http://192.168.0.94:8082/gproposalrequest',{
+return fetch('http://localhost:8082/gproposalrequest',{
 method:'POST',
 headers:{
 'Accept':'application/json',
@@ -118918,8 +118919,9 @@ console.log(resJson1,"res");
 var Message=resJson1.PREMIUMDETAILS.Status.Message;
 console.log(Message,"Message");
 (0,_sweetalert2.default)(''+Message+'');
-if(Message==="Quote Approved,Preceed Buy Policy"){
-
+if(Message==="Quote Approved,Proceed Buy Policy"){
+console.log("approved");
+_this.props.onNavigateEleven();
 }else{
 return false;
 }
@@ -119145,7 +119147,7 @@ _this.setState({password:newText});
 
 _onChangeTest=function(newText){
 _this.setState({password:newText});
-};_this.state={quoteid:_this.props.navigatorRoute.quoteid,premium:_this.props.navigatorRoute.mypremium,title:'Ms',firstname:'Neelima',lastname:'Rani',emailId:'neeluneelima67@gmail.com',mobileNo:'9553715856',dateofbirth:'02/12/1994',occupation:'Student',nomineeName:'Harini',nomineeAge:'50',relationshipWithNominee:'Cousin',guardianName:'Prakhya',guardianAge:'60',relationshipwithGuardian:'Sister',permanentAddress1:'Guntupalli',permanentAddress2:'Vijayawada',permanentAddress3:'Krishna',permanentAddress4:'Ibrahimpatnam',permanentCity:'Chennai',permanentPincode:'600034',sameAdressReg:'No',ResidenceAddressOne:'Hyderabad',ResidenceAddressTwo:'Guntupalli',ResidenceAddressThree:'Krishna',ResidenceAddressFour:'Kurnool',ResidenceCity:'Chennai',ResidencePinCode:'600032',strStdCode:'0866',strPhoneNo:'2831608',vehicleModelCode:'ZWTV310',planOpted:'Fixed Plan',yearOfManufacture:'2017',drivingExperience:'1',voluntaryDeductible:'0',vehicleManufacturerName:'TVS',idv:'87164',policyStartDate:'07/03/2018',vehicleMostlyDrivenOn:'Roads',vehicleRegDate:'07/03/2018',vehicleRegisteredInTheNameOf:'Company',modelName:'APACHE RTR ABS-2 Seater',productName:'BrandNewTwoWheeler',companyNameForCar:'xerago',engineNumber:'565465466',chassisNumber:'56546546',isTwoWheelerFinanced:'No',vehicleSubLine:'motorCycle',registrationchargesRoadtax:'No',fuelType:'Petrol',automobileAssociationMembership:'No',region:'East Region',carRegisteredCity:'24PARGANAS',isProductCheck:'No',engineCapacityAmount:'153 CC',personalAccidentCoverForUnnamedPassengers:'5000',accidentCoverForPaidDriver:'5000',legalliabilityToPaidDriver:'Yes',legalliabilityToEmployees:'Yes',cover_elec_acc:'Yes',NameOfElectronicAccessories:'Tyre',MakeModel:'TVS',Value:'345',NameOfElectronicAccessories:'Handle',MakeModel:'HONDA',Value:'365',secureTextEntry:true};_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(VehicleDetails,[{key:'render',value:function render(){var _this2=this;var quoteid=this.props.navigatorRoute.quoteid;var mypremium=this.props.navigatorRoute.mypremium;return _react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:214}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:215}},_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateSuper,__source:{fileName:_jsxFileName,lineNumber:216}},_react2.default.createElement(_reactxp2.default.Image,{style:_styles.HomeScrollImageLogo,source:'./src/img/Back.svg',__source:{fileName:_jsxFileName,lineNumber:216}}),_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:219}},'Gproposal Details'))),_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:229}},_react2.default.createElement('div',{'class':'jumbotron',__source:{fileName:_jsxFileName,lineNumber:257}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:258}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:259}},'Quote ID'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:262}},_react2.default.createElement(_reactxp2.default.TextInput,{type:'Quote ID',style:_AppStyles2.default.Form,placeholder:'Quote Id',value:quoteid,onChangeText:this.onChangequoteid,__source:{fileName:_jsxFileName,lineNumber:264}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:275}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:276}},'Premium'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:279}},_react2.default.createElement(_reactxp2.default.TextInput,{type:'Premium',style:_AppStyles2.default.Form,placeholder:'Premium',value:mypremium,onChangeText:this.onChangepremium,__source:{fileName:_jsxFileName,lineNumber:281}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:296}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:297}},'Email id'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:300}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Email id',value:this.state.emailId,onChangeText:this.onChangeemailId,__source:{fileName:_jsxFileName,lineNumber:303}}))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:316}},_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop10,__source:{fileName:_jsxFileName,lineNumber:317}},_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.BUTTON7,onPress:function onPress(){return _this2.onChangePost();},__source:{fileName:_jsxFileName,lineNumber:319}},'Buy Policy'))))));}},{key:'handleChange',value:function handleChange(){this.setState({Model:''});}},{key:'handlechange',value:function handlechange(date){this.setState({startDate:date});}},{key:'handleSelect',value:function handleSelect(date){this.setState({startDate:date});}}]);return VehicleDetails;}(_react2.default.Component);exports.default=VehicleDetails;
+};_this.state={quoteid:_this.props.navigatorRoute.quoteid,premium:_this.props.navigatorRoute.mypremium,title:'Ms',firstname:'Neelima',lastname:'Rani',emailId:'neeluneelima67@gmail.com',mobileNo:'9553715856',dateofbirth:'02/12/1994',occupation:'Student',nomineeName:'Harini',nomineeAge:'50',relationshipWithNominee:'Cousin',guardianName:'Prakhya',guardianAge:'60',relationshipwithGuardian:'Sister',permanentAddress1:'Guntupalli',permanentAddress2:'Vijayawada',permanentAddress3:'Krishna',permanentAddress4:'Ibrahimpatnam',permanentCity:'Chennai',permanentPincode:'600034',sameAdressReg:'No',ResidenceAddressOne:'Hyderabad',ResidenceAddressTwo:'Guntupalli',ResidenceAddressThree:'Krishna',ResidenceAddressFour:'Kurnool',ResidenceCity:'Chennai',ResidencePinCode:'600032',strStdCode:'0866',strPhoneNo:'2831608',vehicleModelCode:'ZWTV310',planOpted:'Fixed Plan',yearOfManufacture:'2017',drivingExperience:'1',voluntaryDeductible:'0',vehicleManufacturerName:'TVS',idv:'87164',policyStartDate:'07/03/2018',vehicleMostlyDrivenOn:'Roads',vehicleRegDate:'07/03/2018',vehicleRegisteredInTheNameOf:'Company',modelName:'APACHE RTR ABS-2 Seater',productName:'BrandNewTwoWheeler',companyNameForCar:'xerago',engineNumber:'565465466',chassisNumber:'56546546',isTwoWheelerFinanced:'No',vehicleSubLine:'motorCycle',registrationchargesRoadtax:'No',fuelType:'Petrol',automobileAssociationMembership:'No',region:'East Region',carRegisteredCity:'24PARGANAS',isProductCheck:'No',engineCapacityAmount:'153 CC',personalAccidentCoverForUnnamedPassengers:'5000',accidentCoverForPaidDriver:'5000',legalliabilityToPaidDriver:'Yes',legalliabilityToEmployees:'Yes',cover_elec_acc:'Yes',NameOfElectronicAccessories:'Tyre',MakeModel:'TVS',Value:'345',NameOfElectronicAccessories:'Handle',MakeModel:'HONDA',Value:'365',secureTextEntry:true};_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(VehicleDetails,[{key:'render',value:function render(){var _this2=this;var quoteid=this.props.navigatorRoute.quoteid;var mypremium=this.props.navigatorRoute.mypremium;return _react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:215}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:216}},_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateSuper,__source:{fileName:_jsxFileName,lineNumber:217}},_react2.default.createElement(_reactxp2.default.Image,{style:_styles.HomeScrollImageLogo,source:'./src/img/Back.svg',__source:{fileName:_jsxFileName,lineNumber:217}}),_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:220}},'Gproposal Details'))),_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:230}},_react2.default.createElement('div',{'class':'jumbotron',__source:{fileName:_jsxFileName,lineNumber:258}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:259}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:260}},'Quote ID'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:263}},_react2.default.createElement(_reactxp2.default.TextInput,{type:'Quote ID',style:_AppStyles2.default.Form,placeholder:'Quote Id',value:quoteid,onChangeText:this.onChangequoteid,__source:{fileName:_jsxFileName,lineNumber:265}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:276}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:277}},'Premium'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:280}},_react2.default.createElement(_reactxp2.default.TextInput,{type:'Premium',style:_AppStyles2.default.Form,placeholder:'Premium',value:mypremium,onChangeText:this.onChangepremium,__source:{fileName:_jsxFileName,lineNumber:282}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:297}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:298}},'Email id'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:301}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Email id',value:this.state.emailId,onChangeText:this.onChangeemailId,__source:{fileName:_jsxFileName,lineNumber:304}}))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:317}},_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop10,__source:{fileName:_jsxFileName,lineNumber:318}},_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.BUTTON7,onPress:function onPress(){return _this2.onChangePost();},__source:{fileName:_jsxFileName,lineNumber:320}},'Buy Policy'))))));}},{key:'handleChange',value:function handleChange(){this.setState({Model:''});}},{key:'handlechange',value:function handlechange(date){this.setState({startDate:date});}},{key:'handleSelect',value:function handleSelect(date){this.setState({startDate:date});}}]);return VehicleDetails;}(_react2.default.Component);exports.default=VehicleDetails;
 
 /***/ }),
 /* 977 */
@@ -120079,7 +120081,7 @@ console.log("hittinh.......");
 
 
 
-return fetch('http://192.168.0.94:8082/calculatepremium',{
+return fetch('http://localhost:8082/calculatepremium',{
 method:'POST',
 headers:{
 'Accept':'application/json',
@@ -122400,8 +122402,8 @@ _react2.default.createElement(_reactxp2.default.Text,{style:styles.Welcome,__sou
 
 
 
-_react2.default.createElement(_reactxp2.default.Button,{style:styles.Button,onPress:this.props.onNavigateEleven,__source:{fileName:_jsxFileName,lineNumber:382}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.buttonText,__source:{fileName:_jsxFileName,lineNumber:383}},'Please select a payment method to proceed')))));
+_react2.default.createElement(_reactxp2.default.Button,{style:styles.Button,__source:{fileName:_jsxFileName,lineNumber:382}},
+_react2.default.createElement(_reactxp2.default.Link,{style:styles.buttonText,url:'https://www.royalsundaram.net/web/test/makepayment?quoteId=QVMN0011943',__source:{fileName:_jsxFileName,lineNumber:383}},'After selecting please click here to proceed')))));
 
 
 
@@ -125874,7 +125876,7 @@ onChangePost=function(){
 console.log("Rahul");
 console.log("quoteid",_this.state.quoteid);
 console.log("quoteid_",_this.props.navigatorRoute.quoteid);
-return fetch('http://192.168.0.94:8082/brandnewupdatevehical',{
+return fetch('http://localhost:8082/brandnewupdatevehical',{
 method:'POST',
 headers:{
 'Accept':'application/json',

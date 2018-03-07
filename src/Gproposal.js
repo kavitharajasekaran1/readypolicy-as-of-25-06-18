@@ -145,7 +145,7 @@ export default class VehicleDetails extends React.Component{
     onChangePost = () => {
         console.log("Rahul")
 
-        return fetch('http://192.168.0.94:8082/gproposalrequest', {
+        return fetch('http://localhost:8082/gproposalrequest', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -174,8 +174,9 @@ export default class VehicleDetails extends React.Component{
             var Message = resJson1.PREMIUMDETAILS.Status.Message
             console.log(Message,"Message");
           swal(''+Message+'')
-            if (Message==="Quote Approved,Preceed Buy Policy"){
-            // this.props.onNavigateFifty(res);
+            if (Message==="Quote Approved,Proceed Buy Policy"){
+                console.log("approved")   
+                this.props.onNavigateEleven()
             }else{
                 return false
             }

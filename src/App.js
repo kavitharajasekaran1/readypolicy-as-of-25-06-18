@@ -118,7 +118,7 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.MainPanel,
+            routeId: NavigationRouteId.HomePanel,
             sceneConfigType: "Fade"
         }]);
     }
@@ -199,10 +199,10 @@ export default class App extends RX.Component {
                 return <InsuranceFourWheeler onNavigateTwenty={ this._onPressTwenty } navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.EleventhPanel:
-                return <EleventhPanel onNavigateEleven={ this._onPressEleven }/>;
+                return <EleventhPanel onNavigateEleven={ this._onPressEleven } navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.PaymentScreen:
-                return <PaymentScreen onNavigatePayment={ this._onPressPayment }/>;
+                return <PaymentScreen onNavigatePayment={ this._onPressPayment } navigatorRoute={navigatorRoute}/>;
 
 
             case NavigationRouteId.TravelInsuranceReg:
@@ -212,13 +212,13 @@ export default class App extends RX.Component {
                 return <NewTermInsurance onNavigateNewTermInsurance={ this._onPressNewTermInsurance }/>;
 
             case NavigationRouteId.HomePanel:
-            return <HomePanel onNavigateSuper={ this._onPressHome}/>;   
-            //   return <HomePanel onNavigateSuperCar = {this._onPressHome1}/>;
+          return <HomePanel onNavigateSuper={ this._onPressHome}/>;   
+            // return <HomePanel onNavigateSuperCar = {this._onPressHome1}/>;
              case NavigationRouteId.Vehicleregister:
                 return <Vehicleregister onNavigatefont={ this._onPressfont}/>; 
 
                 case NavigationRouteId.Gproposal:
-                return <Gproposal onNavigateproposal={ this._onPressproposal} navigatorRoute={navigatorRoute}/>;
+                return <Gproposal onNavigateEleven={ this._onPressEleven} navigatorRoute={navigatorRoute}/>;
 
         }
 
@@ -515,6 +515,7 @@ export default class App extends RX.Component {
     }
     _onPressEleven() {
         // this._navigator.pop();
+        console.log("hitting to eleven panel")
         this._navigator.push({
             routeId: NavigationRouteId.PaymentScreen,
             sceneConfigType: "FloatFromRight",

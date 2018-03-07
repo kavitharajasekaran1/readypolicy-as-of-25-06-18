@@ -150,7 +150,7 @@ export default class VehicleDetails extends React.Component{
         console.log("Rahul")
 console.log("quoteid",this.state.quoteid)
 console.log("quoteid_",this.props.navigatorRoute.quoteid)
-        return fetch('http://192.168.0.94:8082/brandnewupdatevehical', {
+        return fetch('http://localhost:8082/brandnewupdatevehical', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
