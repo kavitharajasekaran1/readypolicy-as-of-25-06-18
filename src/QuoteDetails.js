@@ -6,11 +6,10 @@ import React from 'react';
 import RX from 'reactxp';
 import OtpPage from './OtpPage';
 import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,DateTimeField,Checkbox,Button} from 'react-bootstrap';
-
-
-
+import Dialog from 'react-bootstrap-dialog';
+import Popup from 'react-popup';
+import swal from 'sweetalert';
 import {default as RXVideo} from 'reactxp-video';
-
 import ProgressIndicator from './ProgressIndicator';
 import ToggleSwitch from './ToggleSwitch';
 import Rest from "./RestConfig";
@@ -235,7 +234,7 @@ export default class QuotesSelection  extends RX.Component {
     onChangePost = () => {
         console.log("Rahul")
 
-                        alert(''+message+'')
+                       swal(''+message+'')
                         console.log("quoteiid",quoteid)
                         console.log("premium",premium)
                         console.log("odpremium",odpremium)

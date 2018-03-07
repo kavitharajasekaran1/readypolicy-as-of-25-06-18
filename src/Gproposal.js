@@ -13,6 +13,7 @@ import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,StyleSheet,FormControl
 import Button from 'react-bootstrap/lib/Button';
 import moment from 'moment';
 import ReactDom from 'react-dom';
+import swal from 'sweetalert';
 
 
 
@@ -172,10 +173,10 @@ export default class VehicleDetails extends React.Component{
             // this.props.onNavigateFifty(res);
             var Message = resJson1.PREMIUMDETAILS.Status.Message
             console.log(Message,"Message");
-           alert(''+Message+'')
+          swal(''+Message+'')
             if (Message==="Quote Approved,Proceed Buy Policy"){
-             console.log("approved")   
-            this.props.onNavigateEleven();
+                console.log("approved")   
+                this.props.onNavigateEleven()
             }else{
                 return false
             }

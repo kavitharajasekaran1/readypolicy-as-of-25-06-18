@@ -60,7 +60,7 @@ const _styles = {
         marginTop:41
     }),
     quotes: RX.Styles.createScrollViewStyle({
-        fontSize: 15,
+        fontSize: 13,
         color: '#101010',
         textTransform:'capitalize',
         backgroundColor:"#c7c7c7",
@@ -426,12 +426,12 @@ export default class QuotesSelection  extends RX.Component {
                         </RX.Text>
                         <RX.Text style={ _styles.quotes }>
                           IDV:{resJson}
-                            <div>NCB</div>
+                            <div>Package Premium</div>
                         </RX.Text>
                         <RX.Text style={ _styles.ncb }>
-                        {odpremium.PACKAGE_PREMIUM}
+                        <div>NCB</div>
 
-                            <div>NIL</div>
+                            <div>{odpremium.PACKAGE_PREMIUM}</div>
                         </RX.Text>
                         <RX.View style={_styles.nextBtn}>
                             <RX.Button style={ _styles.roundButton } onPress={()=> this.onChangeliability()}>
