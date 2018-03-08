@@ -7,6 +7,8 @@ import RX from 'reactxp';
 import {Nav,NavItem,NavDropdown,MenuItem,Grid,Row,Col,Form,FormGroup,ControlLabel,FormControl,Checkbox,Visible,lg,xs} from 'react-bootstrap';
 import Button from 'react-bootstrap/lib/Button';
 import styling from './AppStyles';
+import SweetAlert from 'react-swal';
+import swal from 'sweetalert';
 
 /*const {
     Welcome
@@ -32,7 +34,7 @@ export default class InsuranceAddons extends RX.Component{
             carRegisteredCity: '24PARGANAS',
             vehicleManufacturerName: 'TVS',
             vehicleModelCode: 'ZWTV310',
-            vehicleRegDate: '07/03/2018',
+            vehicleRegDate: '08/03/2018',
             lastname: 'Rani',
         };
         this._translationValue = RX.Animated.createValue(-100);
@@ -51,7 +53,7 @@ console.log("hittinh.......")
         // let usersPath = "motorIssuePolicy"
         // console.log(password,"password");
        // console.log(Rest.ApiUrl,"RestApiUrl");
-      return  fetch('http://192.168.0.94:8082/calculatecarpremium', {
+      return  fetch('http://localhost:8082/calculatecarpremium', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -105,7 +107,7 @@ console.log("hittinh.......")
                         region: "South Region",
                         vehicleManufacturerName: "BMW",
                         vehicleModelCode: "CMB65",
-                        vehicleregDate: "07/03/2018",
+                        vehicleregDate: "08/03/2018",
                         idv: "3025465",
                         engineCapacityAmount: "1995 CC",
                         drivingExperience: "2",
@@ -209,21 +211,28 @@ console.log("hittinh.......")
                     }).then((response) => response.json()).then((responseJson) => {
                  var res = responseJson.response;
                  var allResponse = JSON.parse(res)
+                 var message = allResponse.PREMIUMDETAILS.Status.Message
+                 var status = allResponse.PREMIUMDETAILS.Status.StatusCode
+                 if (status==='"S-002"'){
                  var resJson = allResponse.PREMIUMDETAILS.DATA.IDV
                  var quoteid = allResponse.PREMIUMDETAILS.DATA.QUOTE_ID
                  var premium = allResponse.PREMIUMDETAILS.DATA.PREMIUM
                  var liability = allResponse.PREMIUMDETAILS.DATA.LIABILITY
-                 var message = allResponse.PREMIUMDETAILS.Status.Message
+                
                  console.log("quoteid",quoteid)
                  console.log("allresponse",allResponse)
                  console.log("liablity",liability)
                  console.log("message",message)
                  console.log("premium",premium)
+                 swal(message)
                           this.props.onNavigateTwenty(allResponse,resJson,liability,message,quoteid,premium); 
                         //  this.props.onNavigateBack (liability,message);
                          // this.props.onNavigateDetail(liability,message);
                      //   idv = resJson.PREMIUMDETAILS.DATA.IDV
-                    
+                 }else{
+                    swal(message)
+
+                 }
                         
                     })
     }

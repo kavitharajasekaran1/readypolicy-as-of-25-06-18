@@ -173,12 +173,13 @@ export default class VehicleDetails extends React.Component{
             // this.props.onNavigateFifty(res);
             var Message = resJson1.PREMIUMDETAILS.Status.Message
             console.log(Message,"Message");
-          swal(''+Message+'')
+          
             if (Message==="Quote Approved,Proceed Buy Policy"){
+                swal(''+Message+'')
                 console.log("approved")   
                 this.props.onNavigateEleven()
             }else{
-                return false
+                swal(''+Message+'')
             }
 
         })

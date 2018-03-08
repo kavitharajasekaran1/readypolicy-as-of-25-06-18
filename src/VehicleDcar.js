@@ -12,6 +12,8 @@ import DatePicker from 'react-datepicker';
 import {Tabs,Tab,Grid,Row,Col,FormGroup,form,Form,ControlLabel,StyleSheet,FormControl,minDate,maxDate,HelpBlock,DateTimeField,Checkbox} from 'react-bootstrap';
 import Button from 'react-bootstrap/lib/Button';
 import moment from 'moment';
+import SweetAlert from 'react-swal';
+import swal from 'sweetalert';
 
 
 /*const {
@@ -302,13 +304,14 @@ console.log("quoteid",this.state.quoteid)
            // this.props.onNavigateEight(res);
             var Message = resJson1.PREMIUMDETAILS.Status.Message
             console.log(Message,"Message");
+            if (Message==="Vehicle Additional details updation success"){
             var mypremium = resJson1.PREMIUMDETAILS.DATA.PREMIUM
             console.log("premium",mypremium)
-            alert(''+Message+'')
-             if (Message==="Vehicle Additional details updation success"){
+            swal(''+Message+'')
+            
              this.props.onNavigateFifty(quoteid,mypremium);
              }else{
-                 return false
+                swal(''+Message+'')
              }
 
         })

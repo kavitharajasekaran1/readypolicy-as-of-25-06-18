@@ -212,8 +212,8 @@ export default class App extends RX.Component {
                 return <NewTermInsurance onNavigateNewTermInsurance={ this._onPressNewTermInsurance }/>;
 
             case NavigationRouteId.HomePanel:
-            return <HomePanel onNavigateSuper={ this._onPressHome}/>;   
-            //  return <HomePanel onNavigateSuperCar = {this._onPressHome1}/>;
+          //  return <HomePanel onNavigateSuper={ this._onPressHome}/>;   
+            return <HomePanel onNavigateSuperCar = {this._onPressHome1}/>;
              case NavigationRouteId.Vehicleregister:
                 return <Vehicleregister onNavigatefont={ this._onPressfont}/>; 
 
