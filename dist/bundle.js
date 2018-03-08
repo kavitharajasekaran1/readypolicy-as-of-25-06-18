@@ -52097,8 +52097,8 @@ case NavigationRouteId.NewTermInsurance:
 return _react2.default.createElement(_NewTermInsurance2.default,{onNavigateNewTermInsurance:this._onPressNewTermInsurance,__source:{fileName:_jsxFileName,lineNumber:212}});
 
 case NavigationRouteId.HomePanel:
+return _react2.default.createElement(_HomePanel2.default,{onNavigateSuper:this._onPressHome,__source:{fileName:_jsxFileName,lineNumber:215}});
 
-return _react2.default.createElement(_HomePanel2.default,{onNavigateSuperCar:this._onPressHome1,__source:{fileName:_jsxFileName,lineNumber:216}});
 case NavigationRouteId.Vehicleregister:
 return _react2.default.createElement(_Vehicleregister2.default,{onNavigatefont:this._onPressfont,__source:{fileName:_jsxFileName,lineNumber:218}});
 
