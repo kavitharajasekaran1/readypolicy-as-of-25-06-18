@@ -301,7 +301,7 @@ style={styles.remo}
                         </Col>
                        
                         <RX.Button bsStyle="info" onPress={()=> this._onChangeVar() }>Primary</RX.Button>
-           <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateSuper }>
+           <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateForth}>
         <RX.Text style={ styles.buttonText }>
         REGISTER
         </RX.Text>
