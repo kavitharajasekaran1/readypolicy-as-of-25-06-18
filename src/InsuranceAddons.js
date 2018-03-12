@@ -7,7 +7,8 @@ import RX from 'reactxp';
 import {Nav,NavItem,NavDropdown,MenuItem,Grid,Row,Col,Form,FormGroup,ControlLabel,FormControl,Checkbox,Visible,lg,xs} from 'react-bootstrap';
 import Button from 'react-bootstrap/lib/Button';
 import styling from './AppStyles';
-
+import SweetAlert from 'react-swal';
+import swal from 'sweetalert';
 /*const {
     Welcome
 } = TodoStyles;*/
@@ -42,7 +43,7 @@ export default class InsuranceAddons extends RX.Component{
             carRegisteredCity: '24PARGANAS',
             vehicleManufacturerName: 'TVS',
             vehicleModelCode: 'ZWTV310',
-            vehicleRegDate: '08/03/2018',
+            vehicleRegDate: '09/03/2018',
             lastname: 'Rani',
         };
         this._translationValue = RX.Animated.createValue(-100);
@@ -115,9 +116,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "08/03/2018",
+                        policyStartDate: "12/03/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "08/03/2018",
+                        vehicleRegDate: "12/03/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -157,19 +158,30 @@ console.log("hittinh.......")
                     }).then((response) => response.json()).then((responseJson) => {
                  var res = responseJson.response;
                  var resJson1 = JSON.parse(res)
+                 var message = resJson1.PREMIUMDETAILS.Status.Message
+                 if (message==="Premium Calculated and Quote Saved Successfully"){
                  var resJson = resJson1.PREMIUMDETAILS.DATA.IDV
                  var quoteid = resJson1.PREMIUMDETAILS.DATA.QUOTE_ID
                  var premium = resJson1.PREMIUMDETAILS.DATA.PREMIUM
                  var liability = resJson1.PREMIUMDETAILS.DATA.LIABILITY
                  var odpremium = resJson1.PREMIUMDETAILS.DATA
-                 var message = resJson1.PREMIUMDETAILS.Status.Message
+                
                  console.log("quoteid",quoteid)
                  console.log("neenenne",resJson1)
                  console.log("liablity",liability)
                  console.log("message",message)
                  console.log("premium",premium)
                  console.log("odpremium",odpremium)
-                          this.props.onNavigateTen(resJson,liability,message,quoteid,premium,odpremium); 
+                 
+           
+               
+                this.props.onNavigateTen(resJson,liability,message,quoteid,premium,odpremium); 
+            }else{
+                console.log(message)
+              
+                return false
+            }
+                          
                         //  this.props.onNavigateBack (liability,message);
                          // this.props.onNavigateDetail(liability,message);
                      //   idv = resJson.PREMIUMDETAILS.DATA.IDV

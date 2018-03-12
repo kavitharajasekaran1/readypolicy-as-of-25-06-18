@@ -285,7 +285,7 @@ style={styles.remo}
                             {/*<RX.Text>Test2</RX.Text>*/}
                             <RX.Image source={ './src/img/MyPolicies.svg' } style={ [styles.image] } />
                             <RX.Text style={styles.ScrollBoxText}>My Policies</RX.Text>
-                            {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
+                            {/*<RX.Image source={ './src08/img/Bharti.png' } style={ [styles.image ] } />*/}
                         </Col>
                         <Col  md={2} style={styling.marTop}>
                             {/*<RX.Text>Test3</RX.Text>*/}

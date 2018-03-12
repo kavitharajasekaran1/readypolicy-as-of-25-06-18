@@ -101,9 +101,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '08/03/2018',
+                      policyStartDate: '12/03/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '08/03/2018',
+                      vehicleRegDate: '12/03/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -250,15 +250,17 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
             var resJson1 = JSON.parse(res)
             console.log(resJson1,"res");
            // this.props.onNavigateEight(res);
-           var mypremium = resJson1.PREMIUMDETAILS.DATA.PREMIUM
+           
             var Message = resJson1.PREMIUMDETAILS.Status.Message
             console.log(Message,"Message");
             //console.log("premium",premium)
-           swal(''+Message+'')
+         
             if (Message==="Premium Calculated and Vehicle details saved successfully"){
+            var mypremium = resJson1.PREMIUMDETAILS.DATA.PREMIUM
+                swal(''+Message+'')
             this.props.onNavigateEight(res,quoteid,mypremium);
             }else{
-                return false
+                swal(''+Message+'')
             }
 
         })

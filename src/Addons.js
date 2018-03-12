@@ -1,4 +1,4 @@
-/*
+    /*
  * This file demonstrates a basic ReactXP app.
  */
 
@@ -7,6 +7,8 @@ import RX from 'reactxp';
 import {Nav,NavItem,NavDropdown,MenuItem,Grid,Row,Col,Form,FormGroup,ControlLabel,FormControl,Checkbox,Visible,lg,xs} from 'react-bootstrap';
 import Button from 'react-bootstrap/lib/Button';
 import styling from './AppStyles';
+import SweetAlert from 'react-swal';
+import swal from 'sweetalert';
 
 /*const {
     Welcome
@@ -40,7 +42,7 @@ console.log("hittinh.......")
         // let usersPath = "motorIssuePolicy"
         // console.log(password,"password");
        // console.log(Rest.ApiUrl,"RestApiUrl");
-      return  fetch('http://localhost:8082/calculatepremium', {
+      return  fetch('http://192.168.0.94:8082/calculatepremium', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -94,9 +96,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "08/03/2018",
+                        policyStartDate: "12/03/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "08/03/2018",
+                        vehicleRegDate: "12/03/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -136,25 +138,27 @@ console.log("hittinh.......")
                     }).then((response) => response.json()).then((responseJson) => {
                  var res = responseJson.response;
                  var resJson1 = JSON.parse(res)
+                 var message = resJson1.PREMIUMDETAILS.Status.Message
+                
                  var resJson = resJson1.PREMIUMDETAILS.DATA.IDV
                  var quoteid = resJson1.PREMIUMDETAILS.DATA.QUOTE_ID
                  var premium = resJson1.PREMIUMDETAILS.DATA.PREMIUM
                  var liability = resJson1.PREMIUMDETAILS.DATA.LIABILITY
                  var odpremium = resJson1.PREMIUMDETAILS.DATA
-                 var message = resJson1.PREMIUMDETAILS.Status.Message
+                 
                  console.log("quoteid",quoteid)
                  console.log("neenenne",resJson1)
                  console.log("liablity",liability)
                  console.log("message",message)
                  console.log("premium",premium)
                  console.log("odpremium",odpremium)
+                 
                           this.props.onNavigateNinety(resJson,liability,message,quoteid,premium,odpremium); 
-                        //  this.props.onNavigateBack (liability,message);
-                         // this.props.onNavigateDetail(liability,message);
-                     //   idv = resJson.PREMIUMDETAILS.DATA.IDV
+                
                     
-                        
-                    })
+                    
+                    })               
+              
     }
     componentDidMount() {
         let animation = RX.Animated.timing(this._translationValue, {

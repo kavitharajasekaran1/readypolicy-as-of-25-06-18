@@ -90,9 +90,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '08/03/2018',
+                      policyStartDate: '12/03/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '08/03/2018',
+                      vehicleRegDate: '12/03/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -166,12 +166,13 @@ export default class VehicleDetails extends React.Component{
             console.log(resJson1,"res");
         //    this.props.onNavigateFifty(resJson);
             var Message = resJson1.PREMIUMDETAILS.Status.Message
-            console.log(Message,"Message");
-            alert(''+Message+'')
             if (Message==="Quote Approved,Proceed Buy Policy"){
-           // this.props.onNavigateprposal(res);
+            console.log(Message,"Message");
+            swal(''+Message+'')
+            
+                this.props.onNavigateEleven()
             }else{
-                return false
+                swal(''+Message+'')
             }
 
         })
