@@ -229,6 +229,7 @@ console.log("hittinh.......")
                  var resJson = allResponse.PREMIUMDETAILS.DATA.IDV
                  var quoteid = allResponse.PREMIUMDETAILS.DATA.QUOTE_ID
                  var premium = allResponse.PREMIUMDETAILS.DATA.PREMIUM
+                 var odpremium =allResponse.PREMIUMDETAILS.DATA
                  var liability = allResponse.PREMIUMDETAILS.DATA.LIABILITY
                 
                  console.log("quoteid",quoteid)
@@ -236,8 +237,9 @@ console.log("hittinh.......")
                  console.log("liablity",liability)
                  console.log("message",message)
                  console.log("premium",premium)
+                 console.log("odpremium",odpremium)
                 //  swal(message)
-                          this.props.onNavigateTwenty(allResponse,resJson,liability,message,quoteid,premium); 
+                          this.props.onNavigateTwenty(allResponse,resJson,liability,message,quoteid,premium,odpremium); 
                         //  this.props.onNavigateBack (liability,message);
                          // this.props.onNavigateDetail(liability,message);
                      //   idv = resJson.PREMIUMDETAILS.DATA.IDV

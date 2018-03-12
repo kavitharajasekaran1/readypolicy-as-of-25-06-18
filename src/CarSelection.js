@@ -19,9 +19,8 @@ import styling from "./AppStyles";
 
 const _styles = {
     scroll: RX.Styles.createScrollViewStyle({
-        backgroundColor: '#ffffff',
-        alignSelf: 'stretch'
-
+        alignSelf: 'stretch',
+        backgroundColor: 'white'
     }),
     pageAlign: RX.Styles.createScrollViewStyle({
         backgroundColor: '#ffffff',
@@ -143,6 +142,14 @@ const _styles = {
         marginTop: 12,
         color: 'black'
     }),
+    HomeScrollImageLogo: RX.Styles.createImageStyle({
+        width:5000,
+        height: 72,
+        paddingVertical:20,
+        marginLeft:-1200,
+        marginTop:12
+    }),
+
     videoTitleText: RX.Styles.createTextStyle({
         marginBottom: 8
     }),
@@ -213,6 +220,7 @@ var resJson
 var quoteid
 var premium
 var allResponse 
+var odpremium
 export default class QuotesSelection  extends RX.Component {
 
 
@@ -360,7 +368,7 @@ export default class QuotesSelection  extends RX.Component {
     }
 
     onChangeliability  = () => {
-        this.props.onNavigateThirty(liability,resJson,quoteid,premium,allResponse);
+        this.props.onNavigateThirty(liability,resJson,quoteid,premium,allResponse,odpremium);
         
         
 
@@ -373,19 +381,22 @@ export default class QuotesSelection  extends RX.Component {
      allResponse = this.props.navigatorRoute.allResponse
      quoteid =  this.props.navigatorRoute.quoteid
      premium = this.props.navigatorRoute.premium
+     odpremium = this.props.navigatorRoute.odpremium
     console.log("idvvvvv",resJson)
     console.log("liablity",liability)
    // console.log("message",message)
     console.log("quoteiid",quoteid)
     console.log("premium",premium)
     console.log("allResponse",allResponse)
+    console.log("odpremium",odpremium)
         return (
             <RX.ScrollView style={ _styles.scroll }>
-                <RX.View style={ _styles.container }>
-                    <RX.Text style={ _styles.welcome }>
-                        New Motor Insurance
-                       
-                    </RX.Text>
+                <RX.View style={ styling.container }>
+                <RX.Button  onPress={ this.props.onNavigateNinety}><RX.Image
+                         style={_styles.HomeScrollImageLogo}
+                         source={'./src/img/Back.svg'}/>
+                    <RX.Text style={ _styles.welcome }>New Motor Insurance </RX.Text>
+                    </RX.Button>
                     <RX.Text style={ _styles.welcome }>
                     </RX.Text>
                 </RX.View>
@@ -406,16 +417,17 @@ export default class QuotesSelection  extends RX.Component {
                         </RX.Text>
                         <RX.Text style={ _styles.quotes }>
                           IDV:{resJson}
-                            <div></div>
+                          <div>Package Premium</div>
                         </RX.Text>
                         <RX.Text style={ _styles.ncb }>
-                            Rs. 20,347
-                            <div></div>
+                        <div>NCB</div>
+
+<div>{odpremium.PACKAGE_PREMIUM}</div>
                         </RX.Text>
                         <RX.View style={_styles.nextBtn}>
                             <RX.Button style={ _styles.roundButton } onPress={()=> this.onChangeliability()}>
                                 <RX.Text style={ _styles.buybuttonText }>
-                                    Rs.1,322*
+                                {odpremium.GROSS_PREMIUM}
                                 </RX.Text>
                             </RX.Button>
                         </RX.View>

@@ -118,7 +118,7 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.HomePanel,
+            routeId: NavigationRouteId.MainPanel,
             sceneConfigType: "Fade"
         }]);
     }
@@ -146,7 +146,7 @@ export default class App extends RX.Component {
                 return <OtpPage onPressNavigate={ this._onPressNavigate }/>;
 
             case NavigationRouteId.CompareQuotes:
-                return <CompareQuotes onNavigateCompare={ this._onPressCompare } navigatorRoute={navigatorRoute}/>;
+                return <CompareQuotes onNavigateCompare={ this._onPressCompare } onNavigateNinety={ this._onPressNinety } navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.MainPanel:
                 return <MainPanel onNavigateForward={ this._onPressForward }/>;
@@ -158,10 +158,10 @@ export default class App extends RX.Component {
                 return <RegisterPage onNavigateFifth={ this._onPressFifth }/>;
 
             case NavigationRouteId.QuoteDetails:
-                return <QuoteDetails onNavigateDetail={ this._onPressDetail } navigatorRoute={navigatorRoute}/>;
+                return <QuoteDetails onNavigateDetail={ this._onPressDetail } onNavigateCompare={ this._onPressCompare } navigatorRoute={navigatorRoute}/>;
 
                 case NavigationRouteId.QuotesSelection:
-                return <QuotesSelection onNavigateSixth={ this._onPressSixth } navigatorRoute={navigatorRoute}/>;
+                return <QuotesSelection onNavigateSixth={ this._onPressSixth }  navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.Location:
                 return <Location onNavigateSeven={ this._onPressSeven }/>;
@@ -190,10 +190,10 @@ export default class App extends RX.Component {
                 return <CarDetails onNavigateTwo={ this._onPressTwo }  navigatorRoute={navigatorRoute}/>;
 
                 case NavigationRouteId.Addons:
-                return <Addons onNavigateNinety={ this._onPressNinety }  navigatorRoute={navigatorRoute}/>;
+                return <Addons onNavigateNinety={ this._onPressNinety } onNavigateSuper={ this._onPressHome} navigatorRoute={navigatorRoute}/>;
 
                 case NavigationRouteId.InsuranceAddons:
-                return <InsuranceAddons onNavigateTen={ this._onPressTen } navigatorRoute={navigatorRoute}/>;
+                return <InsuranceAddons onNavigateTen={ this._onPressTen } onPressNavigate={ this._onPressNavigate } navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.InsuranceFourWheeler:
                 return <InsuranceFourWheeler onNavigateTwenty={ this._onPressTwenty } navigatorRoute={navigatorRoute}/>;
@@ -212,8 +212,8 @@ export default class App extends RX.Component {
                 return <NewTermInsurance onNavigateNewTermInsurance={ this._onPressNewTermInsurance }/>;
 
             case NavigationRouteId.HomePanel:
-             return <HomePanel onNavigateSuper={ this._onPressHome}/>;  
-            //  return <HomePanel onNavigateSuperCar = {this._onPressHome1}/>;
+          return <HomePanel onNavigateSuper={ this._onPressHome} onNavigateSuperCar={ this._onPressHome1 }/>;   
+            // return <HomePanel onNavigateSuperCar = {this._onPressHome1}/>;
              case NavigationRouteId.Vehicleregister:
                 return <Vehicleregister onNavigatefont={ this._onPressfont}/>; 
 
@@ -234,13 +234,14 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressTwenty(allResponse,resJson,liability,message,quoteid,premium) {
+    _onPressTwenty(allResponse,resJson,liability,message,quoteid,premium,odpremium) {
         console.log("allResponse",allResponse)
         console.log("resJson",resJson)
         console.log("liablity",liability)
         console.log("message",message)
         console.log("quoteid",quoteid)
         console.log("premium",premium)
+        console.log("odpremium",odpremium)
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.CarSelection,
@@ -249,13 +250,14 @@ export default class App extends RX.Component {
             resJson:resJson,
             quoteid:quoteid,
             premium:premium,
+            odpremium:odpremium,
             allResponse:allResponse,
             customSceneConfig: {
                 hideShadow: true
             }
         });
     }
-    _onPressThirty(liability,resJson,quoteid,premium,allResponse) {
+    _onPressThirty(liability,resJson,quoteid,premium,allResponse,) {
         console.log("resJson",resJson)
         console.log("liablity",liability)
         console.log("quoteid",quoteid)

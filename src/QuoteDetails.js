@@ -18,9 +18,19 @@ import { toUnicode } from 'punycode';
 
 const _styles = {
     scroll: RX.Styles.createScrollViewStyle({
-        backgroundColor: '#ffffff',
-        alignSelf: 'stretch'
-
+        alignSelf: 'stretch',
+        backgroundColor: 'white'
+    }),
+    SCROLL: RX.Styles.createScrollViewStyle({
+        alignSelf: 'stretch',
+        backgroundColor: '#1a153b'
+    }),
+    HomeScrollImageLogo: RX.Styles.createImageStyle({
+        width:5000,
+        height: 72,
+        paddingVertical:20,
+        marginLeft:-1200,
+        marginTop:12
     }),
     pageAlign: RX.Styles.createScrollViewStyle({
         backgroundColor: '#f5f5f3',
@@ -271,12 +281,12 @@ export default class QuotesSelection  extends RX.Component {
        // console.log(this.props,"value");
         return (
             <RX.ScrollView style={ _styles.scroll }>
-                <RX.View style={ _styles.container }>
-                    <RX.Text style={ _styles.welcome }>
-                        QuoteDetails
-                    </RX.Text>
-                    <RX.Text style={ _styles.welcome }>
-                    </RX.Text>
+            <RX.View style={ styling.container }>
+            <RX.Button  onPress={ this.props.onNavigateCompare}><RX.Image
+                     style={_styles.HomeScrollImageLogo}
+                     source={'./src/img/Back.svg'}/>
+                <RX.Text style={ styling.welcome }>Quote Details</RX.Text>
+                </RX.Button>
                 </RX.View>
                 <RX.View style={ _styles.pageAlign }>
                     <Grid className="hidden-xs">

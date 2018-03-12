@@ -16,11 +16,23 @@ import swal from 'sweetalert';
 const _styles = {
     scroll: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
-        backgroundColor: '#f1f1f1'
+        backgroundColor: 'white'
+    }),
+    SCROLL: RX.Styles.createScrollViewStyle({
+        alignSelf: 'stretch',
+        backgroundColor: '#1a153b'
+    }),
+    HomeScrollImageLogo: RX.Styles.createImageStyle({
+        width:5000,
+        height: 72,
+        paddingVertical:20,
+        marginLeft:-1200,
+        marginTop:12
     }),
 
-
 };
+
+
 
 
 export default class InsuranceAddons extends RX.Component{
@@ -174,12 +186,19 @@ console.log("hittinh.......")
     render() {
        // console.log(this.props.user,"user");
         return (
-            <RX.ScrollView style={ _styles.scroll }>
-                <RX.View style={ styling.container }>
-                    <RX.Text style={styling.welcome }>
-                        New Car Insurance
+              <RX.ScrollView style={ _styles.scroll }>
+            <RX.View style={ styling.container }>
+            <RX.Button  onPress={ this.props.onNavigateSuper}><RX.Image
+                         style={_styles.HomeScrollImageLogo}
+                         source={'./src/img/Back.svg'}/>
+                    <RX.Text style={styling.welcome }>New Bike Insurance </RX.Text>
+                   </RX.Button>
+                {/*<RX.Button style={ Button } this._onChangeVaronPress={ this.props.onNavigateThirteen }>
+                    <RX.Text style={ styling.buttonText }>
+                        Go Back
                     </RX.Text>
-                </RX.View>
+                </RX.Button>*/}
+            </RX.View>
                 <RX.View style={ styling.flute }>
                     <RX.Text style={ styling.head }>
                         Addons and Accessories

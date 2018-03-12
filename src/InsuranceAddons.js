@@ -239,12 +239,10 @@ console.log("hittinh.......")
          return (
             <RX.ScrollView style={ _styles.scroll }>
             <RX.View style={ styling.container }>
-            <RX.Button  onPress={ this.props.onNavigateSuper }><RX.Image
+            <RX.Button  onPress={ this.props.onPressNavigate}><RX.Image
                          style={_styles.HomeScrollImageLogo}
                          source={'./src/img/Back.svg'}/>
-                    <RX.Text style={styling.welcome }>
-                    Get Quote
-                </RX.Text>
+                    <RX.Text style={styling.welcome }>Get Quote </RX.Text>
                    </RX.Button>
                 {/*<RX.Button style={ Button } this._onChangeVaronPress={ this.props.onNavigateThirteen }>
                     <RX.Text style={ styling.buttonText }>
