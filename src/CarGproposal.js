@@ -37,14 +37,12 @@ const _styles = {
             align:'center'
         }),
         HomeScrollImageLogo: RX.Styles.createImageStyle({
-            width:97,
+            width:5000,
             height: 72,
             paddingVertical:20,
-            marginLeft:3,
-            marginTop:-9,
-            marginleft: 117
+            marginLeft:-1200,
+            marginTop:12
         }),
-        
         
 }
 
@@ -90,9 +88,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                        idv: '4520250',
-                      policyStartDate: '12/03/2018',
+                      policyStartDate: '14/03/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '12/03/2018',
+                      vehicleRegDate: '14/03/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -138,7 +136,7 @@ export default class VehicleDetails extends React.Component{
     onChangePost = () => {
         console.log("Rahul")
 
-        return fetch('http://192.168.0.94:8082/gproposalcar', {
+        return fetch('http://localhost:8082/gproposalcar', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -207,14 +205,14 @@ export default class VehicleDetails extends React.Component{
 
         return (
             <RX.ScrollView style={ _styles.scroll }>
-                <RX.View style={ styling.container }>
-                <RX.Button  onPress={ this.props.onNavigateSuper }><RX.Image
-                             style={_styles.HomeScrollImageLogo}
-                            source={'./src/img/Back.svg'}/>
-                        <RX.Text style={styling.welcome }>
-                        New Car Insurance
-                    </RX.Text>
-                       </RX.Button>
+            <RX.View style={ styling.container }>
+            <RX.Button  onPress={ this.props.onNavigateSuper }><RX.Image
+                         style={_styles.HomeScrollImageLogo}
+                         source={'./src/img/Back.svg'}/>
+                    <RX.Text style={styling.welcome }>
+                   Gproposal Details
+                </RX.Text>
+                   </RX.Button>
                     {/*<RX.Button style={ Button } this._onChangeVaronPress={ this.props.onNavigateThirteen }>
                         <RX.Text style={ styling.buttonText }>
                             Go Back
@@ -306,7 +304,7 @@ export default class VehicleDetails extends React.Component{
                                     <Row className="show-grid">
                                         <Col md={12} style={styling.marTop10}>
                                             {/*<RX.Button   onPress={()=> this.onChangePost() }>Submit</RX.Button>*/}
-                                            <RX.Button style={styling.button} onPress={()=> this.onChangePost() }>Proceed to buy policy</RX.Button>
+                                            <RX.Button style={styling.button} onPress={()=> this.onChangePost() }>Buy Policy</RX.Button>
 
                                         </Col>
                                         {/*<Col  md={6} style={styling.marTop}>

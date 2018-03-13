@@ -66,7 +66,14 @@ const _styles = {
         fontSize: 18,
         color: '#3e376d',
         textTransform:'capitalize',
-        marginLeft:54,
+        msideHeadarginLeft:54,
+        marginTop:41
+    }),
+    sideHEad: RX.Styles.createScrollViewStyle({
+        fontSize: 18,
+        color: '#3e376d',
+        textTransform:'capitalize',
+        msideHeadarginLeft:60,
         marginTop:41
     }),
     quotes: RX.Styles.createScrollViewStyle({
@@ -459,7 +466,7 @@ export default class QuotesSelection  extends RX.Component {
                         <RX.Image source={ './src/img/icici.png' } style={ [_styles.icic] } >
                         <div style={_styles.Check}><Checkbox>Compare</Checkbox></div>
                          </RX.Image>
-                        <RX.Text style={ _styles.sideHead }>
+                        <RX.Text style={ _styles.sideHEad }>
                              ICICI LOMBARD
                             <div style={_styles.tryHead}>Two Year Cover Only</div>
                         </RX.Text>

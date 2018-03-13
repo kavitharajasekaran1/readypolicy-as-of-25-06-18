@@ -13,7 +13,18 @@ import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,
 const _styles = {
     scroll: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
-        backgroundColor: '#ffffff'
+        backgroundColor: 'white'
+    }),
+    SCROLL: RX.Styles.createScrollViewStyle({
+        alignSelf: 'stretch',
+        backgroundColor: '#1a153b'
+    }),
+    HomeScrollImageLogo: RX.Styles.createImageStyle({
+        width:5000,
+        height: 72,
+        paddingVertical:20,
+        marginLeft:-1200,
+        marginTop:12
     }),
 
 
@@ -59,11 +70,12 @@ export default class EightPanel extends RX.Component{
         return (
 
             <RX.ScrollView style={ _styles.scroll }>
-
-                <RX.View style={ styling.container }>
-                    <RX.Text style={styling.welcome } onNavigateEight={this._onPressEight}>
-                        My Policies
-                    </RX.Text>
+            <RX.View style={ styling.container }>
+            <RX.Button  onPress={ this.props.onNavigateNinety}><RX.Image
+                         style={_styles.HomeScrollImageLogo}
+                         source={'./src/img/Back.svg'}/>
+                    <RX.Text style={styling.welcome }> My Policies </RX.Text>
+                   </RX.Button>
                 </RX.View>
                 {/*<RX.View style={ styling.sort }>
                     <RX.View style={ styling.sorBor }>
@@ -100,7 +112,7 @@ export default class EightPanel extends RX.Component{
                 <RX.View style={ styling.pageAlign}>
                     <RX.View style={ styling.flute }>
                         <RX.Text style={ styling.head }>
-                            Sort
+                            Sort By
                             {/*  <ul className="PlayerList">
                                 {
                                     this.props.navigatorRoute.res.items.map(function(player) {
@@ -116,26 +128,26 @@ export default class EightPanel extends RX.Component{
 
                                 <Col  md={2}></Col>
                                 <Col  md={2} xs={2}>
-                                    <RX.Image source={ './src/img/Bharti.png' } style={ [styling.image] } />
-                                    <div style={styling.clientHead}>Bajaj Allianz</div>
-                                    <div style={styling.clientDate}>12/04/2017 - 12/04/2018</div>
+                                    <RX.Image source={ './src/img/royal.jpg' } style={ [styling.image] } />
+                                    <div style={styling.clientHead}>Royal Sundaram</div>
+                                    <div style={styling.clientDate}>14/03/2018 - 13/03/2019</div>
                                 </Col>
                                 <Col md={3} xs={3} style={styling.marTop17 }>
                                     <RX.Text style={ styling.sideHead }>
-                                        DL4CCB1111
-                                        <div style={styling.tryHead}>Honda CB Hornet</div>
-                                        <div style={styling.tryHead}>IDV: 1,25,300</div>
+                                        ZWTV3100
+                                        <div style={styling.tryHead}>Honda CB Tvs</div>
+                                        <div style={styling.tryHead}>IDV: 87164</div>
                                     </RX.Text>
 
                                 </Col>
                                 <Col  md={5} xs={5} style={styling.marTop}>
-                                    <RX.Button style={ styling.roundButton } onPress={ this.props.onNavigateBack }>
+                                    <RX.Button style={ styling.roundButton } onPress={ this.props.onNavigateRole }>
                                         <RX.Text style={ styling.buybuttonText }>
-                                            Rs.1,322*
+                                            Rs.2325*
                                         </RX.Text>
                                     </RX.Button>
                                     <RX.Text style={ styling.quotes }>
-                                        Expired on 12/04/2017
+                                        Expired on 13/03/2019
                                     </RX.Text>
                                 </Col>
                             </Row>
@@ -233,6 +245,72 @@ export default class EightPanel extends RX.Component{
                             </Row>
                         </Grid>
                     </RX.View>
+                    <RX.View style={styling.client}>
+                        <Grid  className="hidden-xs" >
+                            <Row className="show-grid" >
+
+                                <Col  md={2} style={styling.expired}></Col>
+                                <Col  md={2}>
+                                    <RX.Image source={ './src/img/Sbi.png' } style={ [styling.image] } />
+                                    <div style={styling.clientHead}>State Bank</div>
+                                    <div style={styling.clientDate}>12/04/2017 - 12/04/2018</div>
+                                </Col>
+                                <Col md={3} style={styling.marTop17 }>
+                                    <RX.Text style={ styling.sideHead }>
+                                        CB4CCB1235
+                                        <div style={styling.tryHead}>Honda CB Hornet</div>
+                                        <div style={styling.tryHead}>IDV: 1,25,300</div>
+                                    </RX.Text>
+
+                                </Col>
+                                <Col  md={5} style={styling.marTop}>
+                                    <RX.Button style={ styling.roundButton } onPress={ this.props.onNavigateBack }>
+                                        <RX.Text style={ styling.buybuttonText }>
+                                            Rs.1,322*
+                                        </RX.Text>
+                                    </RX.Button>
+                                    <RX.Text style={ styling.quotes }>
+                                        Expired on 12/04/2017
+                                    </RX.Text>
+                                </Col>
+                            </Row>
+                        </Grid>
+                    </RX.View>
+                    <RX.View style={styling.expired}>
+                        <Grid  className="hidden-xs" >
+                            <Row className="show-grid" >
+
+                                <Col  md={2} style={styling.expired}></Col>
+                                <Col  md={2}>
+                                    <RX.Image source={ './src/img/tata.png' } style={ [styling.image] } />
+                                    <div style={styling.clientHead}>Tata Insurance</div>
+                                    <div style={styling.clientDate}>12/04/2017 - 12/04/2018</div>
+                                </Col>
+                                <Col md={3} style={styling.marTop17 }>
+                                    <RX.Text style={ styling.sideHead }>
+                                        AB4CCB123
+                                        <div style={styling.tryHead}>Honda CB Hornet</div>
+                                        <div style={styling.tryHead}>IDV: 1,25,300</div>
+                                    </RX.Text>
+
+                                </Col>
+                                <Col  md={5} style={styling.marTop}>
+                                    <RX.Button style={ styling.roundButton } onPress={ this.props.onNavigateBack }>
+                                        <RX.Text style={ styling.buybuttonText }>
+                                            Rs.1,322*
+                                        </RX.Text>
+                                    </RX.Button>
+                                    <RX.Text style={ styling.quotes }>
+                                        Expired on 12/04/2017
+                                    </RX.Text>
+                                </Col>
+                            </Row>
+                        </Grid>
+                    </RX.View>
+
+
+
+
 
 
 

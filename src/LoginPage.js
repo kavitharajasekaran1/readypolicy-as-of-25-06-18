@@ -5,6 +5,7 @@
 import React from 'react';
 import RX from 'reactxp';
 import Rest from './RestConfig';
+import SweetAlert from 'react-swal';
 import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,} from 'react-bootstrap';
 /*const {
     Welcome
@@ -259,7 +260,7 @@ export default class LoginPage extends RX.Component{
         }).then((response) => response.json()).then((responseJson) => {
             var res = responseJson.message;
             console.log(res,"res");
-           confirm(''+res+'')
+           swal(''+res+'')
             this.props.onNavigateForth(res);
         })
     }

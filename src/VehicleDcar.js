@@ -106,9 +106,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '4520250.0',
-                      policyStartDate: '12/03/2018',
+                      policyStartDate: '13/03/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '12/03/2018',
+                      vehicleRegDate: '13/03/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -155,7 +155,7 @@ export default class VehicleDetails extends React.Component{
         console.log("Rahul")
 console.log("quoteid",this.state.quoteid)
 //console.log("quoteid_",this.props.navigatorRoute.quoteid)
-        return fetch('http://192.168.0.94:8082/updatevehicalcardetails', {
+        return fetch('http://localhost:8082/updatevehicalcardetails', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -207,7 +207,7 @@ console.log("quoteid",this.state.quoteid)
                         region: "South Region",
                         vehicleManufacturerName: "REVA",
                         vehicleModelCode: "CMB65",
-                        vehicleregDate: "12/03/2018",
+                        vehicleregDate: "14/03/2018",
                         idv: this.state.idv, 
                         engineCapacityAmount: "1995 CC",
                         drivingExperience: "2",

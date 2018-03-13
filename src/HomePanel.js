@@ -176,15 +176,15 @@ export default class RegisterPage extends RX.Component{
            
             <RX.View style={styles.scrollViewContainer}>
                 <RX.View style={styles.scrollImage}>
-                <RX.Image
+                {/* <RX.Image
 style={styles.remo}
             resizeMode="cover"
-            source={'./src/img/Farmer.png'}>
+            source={'./src/img/Farmer.png'}> */}
                 
-            {/* <RX.Image source={ './src/img/Logo.svg' } style={ [styles.IMage] }/> */}
+            <RX.Image source={ './src/img/Logo.svg' } style={ [styles.IMage] }/>
             <RX.Text style={ styles.policy }></RX.Text> 
            
-            </RX.Image>
+            {/* </RX.Image> */}
             
               <RX.Text style={ styles.policy }>Plan your insurance on this platform and get RS 100 off your first policy</RX.Text> 
                 </RX.View>
@@ -283,9 +283,10 @@ style={styles.remo}
                         </Col>
                         <Col  md={2} style={styling.marTop}>
                             {/*<RX.Text>Test2</RX.Text>*/}
-                            <RX.Image source={ './src/img/MyPolicies.svg' } style={ [styles.image] } />
+                            <RX.Button  onPress={ this.props.onNavigateRole }><RX.Image source={ './src/img/MyPolicies.svg' } style={ [styles.image] } />
                             <RX.Text style={styles.ScrollBoxText}>My Policies</RX.Text>
                             {/*<RX.Image source={ './src08/img/Bharti.png' } style={ [styles.image ] } />*/}
+                            </RX.Button>
                         </Col>
                         <Col  md={2} style={styling.marTop}>
                             {/*<RX.Text>Test3</RX.Text>*/}

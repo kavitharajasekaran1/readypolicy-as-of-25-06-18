@@ -113,6 +113,8 @@ export default class App extends RX.Component {
         this._onPressFourty = this._onPressFourty.bind(this);
         this._onPressFifty = this._onPressFifty.bind(this);
         this._onPressNinety = this._onPressNinety.bind(this);
+        this._onPressRole = this._onPressRole.bind(this);
+
 
     }
 
@@ -178,7 +180,7 @@ export default class App extends RX.Component {
                 return <Quotefour onNavigatePush={ this._onPressPush } navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.MyPolicy:
-                return <MyPolicy onNavigateNine={ this._onPressNine }  navigatorRoute={navigatorRoute}/>;
+                return <MyPolicy onNavigateRole={ this._onPressRole }  navigatorRoute={navigatorRoute}/>;
             
                 case NavigationRouteId.CarSelection:
                 return <CarSelection onNavigateThirty={ this._onPressThirty }  navigatorRoute={navigatorRoute}/>;
@@ -212,7 +214,7 @@ export default class App extends RX.Component {
                 return <NewTermInsurance onNavigateNewTermInsurance={ this._onPressNewTermInsurance }/>;
 
             case NavigationRouteId.HomePanel:
-          return <HomePanel onNavigateSuper={ this._onPressHome} onNavigateSuperCar={ this._onPressHome1 }/>;   
+          return <HomePanel onNavigateSuper={ this._onPressHome} onNavigateSuperCar={ this._onPressHome1 } onNavigateRole={ this._onPressRole } />;   
             // return <HomePanel onNavigateSuperCar = {this._onPressHome1}/>;
              case NavigationRouteId.Vehicleregister:
                 return <Vehicleregister onNavigatefont={ this._onPressfont}/>; 
@@ -301,6 +303,16 @@ export default class App extends RX.Component {
             }
         });
     }
+    _onPressRole(){
+        // this._navigator.pop();
+        this._navigator.push({
+            routeId: NavigationRouteId.MyPolicy,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
     _onPressForth(res) {
         console.log("res",res)
         // this._navigator.pop();
@@ -347,7 +359,7 @@ export default class App extends RX.Component {
         console.log("liablity2222222",liability)
         // this._navigator.pop();
         this._navigator.push({
-            routeId: NavigationRouteId.CompareQuotes,
+            routeId: NavigationRouteId.QuoteDetails,
             sceneConfigType: "FloatFromRight",
             liability:liability,
             resJson:resJson,
@@ -365,7 +377,7 @@ export default class App extends RX.Component {
         console.log("allResp",allResponse)
         // this._navigator.pop();
         this._navigator.push({
-            routeId: NavigationRouteId.CompareQuotes,
+            routeId: NavigationRouteId.QuoteDetails,
             sceneConfigType: "FloatFromRight",
             liability:liability,
             resJson:resJson,
