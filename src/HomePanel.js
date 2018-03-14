@@ -193,7 +193,7 @@ style={styles.remo}
                 <div className="col-xs-4 col-sm-4 col-md-4"></div>
                 <RX.View style={styles.scrollBox}>
                      <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'auto'}}>
-                     <RX.View style={{width: 100, height: 100, backgroundColor: 'white', marginTop:20}} >
+                     <RX.View style={{width: 100, height: 100, backgroundColor: 'white', marginTop:20,marginLeft:250}} >
                      
                      <RX.Button  onPress={ this.props.onNavigateSuperCar }><RX.Image
                              style={styles.HomeScrollImageLogo}
@@ -206,7 +206,7 @@ style={styles.remo}
                 <div className="col-xs-4 col-sm-4 col-md-4"></div>
                      <RX.View style={styles.scrollBox}>
                      <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
-                     <RX.View style={{width: 100, height: 100, backgroundColor: 'white',marginTop:10 }} >
+                     <RX.View style={{width: 100, height: 100, backgroundColor: 'white',marginTop:10,marginLeft:200 }} >
                      <RX.Button  onPress={ this.props.onNavigateSuper }><RX.Image
                              style={styles.HomeScrollImageLogo}
                              source={'./src/img/Bike.svg'}/>
@@ -218,7 +218,7 @@ style={styles.remo}
                 <div className="col-xs-4 col-sm-4 col-md-4"></div>
                      <RX.View style={styles.scrollBox}>
                      <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
-                     <RX.View style={{width: 100, height: 100, backgroundColor: 'white',}} >
+                     <RX.View style={{width: 100, height: 100, backgroundColor: 'white', marginLeft:200}} >
                          <RX.Image
                              style={styles.HomeScrollImageLogo}
                              source={'./src/img/Term.svg'}/>
@@ -234,7 +234,7 @@ style={styles.remo}
                 <div className="col-xs-4 col-sm-4 col-md-4"></div>
                      <RX.View style={styles.ScrollBox}>
                      <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
-                     <RX.View style={{width: 100, height: 100, backgroundColor: 'white',marginTop:20}} >
+                     <RX.View style={{width: 100, height: 100, backgroundColor: 'white',marginTop:20,marginLeft:250}} >
                          <RX.Image
                              style={styles.HomeScrollImageLogo}
                              source={'./src/img/Health.svg'}/>
@@ -244,7 +244,7 @@ style={styles.remo}
                 <div className="col-xs-4 col-sm-4 col-md-4"></div>
                      <RX.View style={styles.ScrollBox}>
                      <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
-                     <RX.View style={{width: 100, height: 100, backgroundColor: 'white',marginTop:10}} >
+                     <RX.View style={{width: 100, height: 100, backgroundColor: 'white',marginTop:10,marginLeft:200}} >
                      <RX.Image
                              style={styles.HomeScrollImageLogo}
                              source={'./src/img/Travell.svg'}/>
@@ -254,7 +254,7 @@ style={styles.remo}
                 <div className="col-xs-4 col-sm-4 col-md-4"></div>
                    <RX.View style={styles.ScrollBox}>
                       <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
-                      <RX.View style={{width: 100, height: 100, backgroundColor: 'white',}} >
+                      <RX.View style={{width: 100, height: 100, backgroundColor: 'white',marginLeft:200}} >
                           <RX.Image
                               style={styles.HomeScrollImageLogo}
                               source={'./src/img/Add Existing Insurance.svg'}/>
@@ -301,12 +301,12 @@ style={styles.remo}
                             {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
                         </Col>
                        
-                        <RX.Button bsStyle="info" onPress={()=> this._onChangeVar() }>Primary</RX.Button>
+                        {/* <RX.Button bsStyle="info" onPress={()=> this._onChangeVar() }>Primary</RX.Button>
            <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateForth}>
         <RX.Text style={ styles.buttonText }>
         REGISTER
         </RX.Text>
-        </RX.Button>
+        </RX.Button> */}
                         {/*<Col  md={6} style={styling.marTop}>
                             <RX.Button onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
                             <RX.Button style={styling.button} onPress={ this.props.onNavigateEleven }>

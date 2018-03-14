@@ -20,7 +20,7 @@ const _styles = {
     }),
     SCROLL: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
-        backgroundColor: '#1a153b'
+        backgroundColor: 'white'
     }),
     HomeScrollImageLogo: RX.Styles.createImageStyle({
         width:5000,

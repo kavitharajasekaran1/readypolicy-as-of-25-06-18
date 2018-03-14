@@ -66,7 +66,14 @@ const _styles = {
         fontSize: 18,
         color: '#3e376d',
         textTransform:'capitalize',
-        msideHeadarginLeft:54,
+        marginLeft:54,
+        marginTop:41
+    }),
+    SideHead: RX.Styles.createScrollViewStyle({
+        fontSize: 18,
+        color: '#3e376d',
+        textTransform:'capitalize',
+        marginLeft:113,
         marginTop:41
     }),
     sideHEad: RX.Styles.createScrollViewStyle({
@@ -93,7 +100,7 @@ const _styles = {
         textTransform:'capitalize',
         backgroundColor:"#c7c7c7",
         marginTop:41,
-        height:41,
+        height:44,
         width:169,
         padding:4,
         marginLeft:92
@@ -115,7 +122,7 @@ const _styles = {
         backgroundColor:"#c7c7c7",
         marginTop:41,
         alignItems:'left',
-        height:41,
+        height:44,
         padding:4
     }),
     subNcb: RX.Styles.createScrollViewStyle({
@@ -211,11 +218,18 @@ const _styles = {
         backgroundColor:'#FFFFFF',
         marginTop:10
     }),
+    imAge: RX.Styles.createViewStyle({
+        height: 100,
+        width: 145,
+        backgroundColor:'#FFFFFF',
+        marginTop:10,
+        marginLeft:8
+    }),
     icic: RX.Styles.createViewStyle({
         height: 70,
-        width: 80,
+        width: 100,
         backgroundColor:'#FFFFFF',
-        marginTop:10
+        marginTop:10,
     }),
     tata: RX.Styles.createViewStyle({
         height: 70,
@@ -433,26 +447,26 @@ export default class QuotesSelection  extends RX.Component {
                     </RX.View>
                     <Grid className="hidden-xs">
                     <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/royal.jpg' } style={ [_styles.image] } >
+                        <RX.Image source={ './src/img/royal.jpg' } style={ [_styles.imAge] } >
                         <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
                          </RX.Image>
                         <RX.Text style={ _styles.sideHead }>
                             Royal Sundaram
                             <div style={_styles.tryHead}>Single Year Cover Only</div>
                         </RX.Text>
-                        <RX.Text style={ _styles.quotes }>
-                          IDV:{resJson}
+                        <RX.Text style={ _styles.quoted }>
+                             IDV
                             <div>Package Premium</div>
                         </RX.Text>
                         <RX.Text style={ _styles.ncb }>
-                        <div>NCB</div>
+                        <div>Rs.{resJson}</div>
 
                             <div>{odpremium.PACKAGE_PREMIUM}</div>
                         </RX.Text>
                         <RX.View style={_styles.nextBtn}>
                             <RX.Button style={ _styles.roundButton } onPress={()=> this.onChangeliability()}>
                                 <RX.Text style={ _styles.buybuttonText }>
-                                    {odpremium.GROSS_PREMIUM}
+                                    Rs.{odpremium.GROSS_PREMIUM}
                                 </RX.Text>
                             </RX.Button>
                         </RX.View>
@@ -466,11 +480,11 @@ export default class QuotesSelection  extends RX.Component {
                         <RX.Image source={ './src/img/icici.png' } style={ [_styles.icic] } >
                         <div style={_styles.Check}><Checkbox>Compare</Checkbox></div>
                          </RX.Image>
-                        <RX.Text style={ _styles.sideHEad }>
+                        <RX.Text style={ _styles.SideHead }>
                              ICICI LOMBARD
                             <div style={_styles.tryHead}>Two Year Cover Only</div>
                         </RX.Text>
-                        <RX.Text style={ _styles.quotes }>
+                        <RX.Text style={ _styles.quoted }>
                             IDV
                             <div>NCB</div>
                         </RX.Text>
@@ -492,10 +506,10 @@ export default class QuotesSelection  extends RX.Component {
                 <Grid className="hidden-xs">
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/tata.png' } style={ [_styles.image] } >
+                        <RX.Image source={ './src/img/tata.png' } style={ [styling.JUKE] } >
                         <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
                          </RX.Image>
-                        <RX.Text style={ _styles.sideHead }>
+                        <RX.Text style={ _styles.SideHead }>
                            Tata AIG
                             <div style={_styles.tryHead}>Two Year Cover Only</div>
                         </RX.Text>
@@ -524,7 +538,7 @@ export default class QuotesSelection  extends RX.Component {
                         <RX.Image source={ './src/img/Sbi.png' } style={ [_styles.image] } >
                         <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
                          </RX.Image>
-                        <RX.Text style={ _styles.sideHead }>
+                        <RX.Text style={ _styles.SideHead }>
                           Bharathi AXP
                             <div style={_styles.tryHead}>Two Year Cover Only</div>
                         </RX.Text>
@@ -553,8 +567,8 @@ export default class QuotesSelection  extends RX.Component {
                         <RX.Image source={ './src/img/Bharti.png' } style={ [_styles.image] } >
                         <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
                          </RX.Image>
-                        <RX.Text style={ _styles.sideHead }>
-                            Reliance Life Insurance
+                        <RX.Text style={ _styles.SideHead }>
+                            Reliance AXP
                             <div style={_styles.tryHead}>Two Year Cover Only</div>
                         </RX.Text>
                         <RX.Text style={ _styles.quoted }>

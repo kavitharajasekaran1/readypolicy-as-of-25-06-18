@@ -249,7 +249,7 @@ module.exports = {
     }),
     sideText:RX.Styles.createTextStyle({
         fontSize: 16,
-        color: 'white',
+        color: 'black',
         fontWeight:'bold'
 
     }),
@@ -268,7 +268,7 @@ module.exports = {
     }),
     SIdeText:RX.Styles.createTextStyle({
         fontSize: 16,
-        color: 'white',
+        color: 'black',
         fontWeight:'bold',
         marginLeft:-50
 
@@ -300,6 +300,12 @@ module.exports = {
         width: 100,
         backgroundColor:'#FFFFFF',
         marginTop:10
+    }),
+    JUKE: RX.Styles.createViewStyle({
+        height: 63,
+        width: 99,
+        backgroundColor:'#FFFFFF',
+        marginTop:-1
     }),
     quoteImage: RX.Styles.createViewStyle({
         height: 45,
@@ -336,7 +342,7 @@ module.exports = {
        marginTop:5
     }),
     contain: RX.Styles.createViewStyle({
-        backgroundColor:'#FFFFFF',
+        backgroundColor:'#white',
     }),
     Text:RX.Styles.createTextStyle({
         fontSize:15,

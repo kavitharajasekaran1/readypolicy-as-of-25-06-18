@@ -19,7 +19,7 @@ const _styles = {
     }),
     SCROLL: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
-        backgroundColor: '#1a153b'
+        backgroundColor: '#52525636'
     }),
     HomeScrollImageLogo: RX.Styles.createImageStyle({
         width:5000,
@@ -36,15 +36,15 @@ export default class InsuranceAddons extends RX.Component{
     constructor(props) {
         super(props);
         this.state = {
-            emailId: 'neeluneelima67@gmail.com',
-            mobileNo: '9553715856',
-            yearOfManufacture: '2017',
-            vehicleMostlyDrivenOn: 'Roads',
-            carRegisteredCity: '24PARGANAS',
-            vehicleManufacturerName: 'TVS',
-            vehicleModelCode: 'ZWTV310',
-            vehicleRegDate: '14/03/2018',
-            lastname: 'Rani',
+            emailId: '',
+            mobileNo: '',
+            yearOfManufacture: '',
+            vehicleMostlyDrivenOn: '',
+            carRegisteredCity: '',
+            vehicleManufacturerName: '',
+            vehicleModelCode: '',
+            vehicleRegDate: '',
+            lastName: '',
         };
         this._translationValue = RX.Animated.createValue(-100);
         this._animatedStyle = RX.Styles.createAnimatedTextStyle({
@@ -116,9 +116,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "13/03/2018",
+                        policyStartDate: "14/03/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "13/03/2018",
+                        vehicleRegDate: "14/03/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -217,11 +217,14 @@ console.log("hittinh.......")
         this.setState({ mobileNo: value });
         console.log(this.state.mobileNo,"mobileNo");
     }
-
-    onChangeEmail = (value) => {
-        this.setState({ email: value });
+    onChangelastName = (value) => {
+        this.setState({ lastName: value });
+        console.log(this.state.lastName,"lastName");
+    }
+    onChangeemailId = (value) => {
+        this.setState({ emailId: value });
         this.props.onUpdate(value);
-        console.log(this.state.email,"email");
+        console.log(this.state.emailId,"email");
     }
     componentDidMount() {
         let animation = RX.Animated.timing(this._translationValue, {
@@ -372,7 +375,7 @@ console.log("hittinh.......")
                                              <RX.TextInput
                                                  style={styling.Form}
                                                  placeholder="Last Name"
-                                                 value={ this.state.lastname }
+                                                 value={ this.state.lastName }
                                                  onChangeText={this.onChangelastName }
                                                  // defaultValue={ this.state.inputValue }
                                              />

@@ -307,6 +307,40 @@ export default class EightPanel extends RX.Component{
                             </Row>
                         </Grid>
                     </RX.View>
+                    <RX.View style={styling.expired}>
+                        <Grid  className="hidden-xs" >
+                            <Row className="show-grid" >
+
+                                <Col  md={2} style={styling.expired}></Col>
+                                <Col  md={2}>
+                                    <RX.Image source={ './src/img/icici.png' } style={ [styling.image] } />
+                                    <div style={styling.clientHead}>ICIC Insurance</div>
+                                    <div style={styling.clientDate}>12/04/2017 - 12/04/2018</div>
+                                </Col>
+                                <Col md={3} style={styling.marTop17 }>
+                                    <RX.Text style={ styling.sideHead }>
+                                        AB4CCB123
+                                        <div style={styling.tryHead}>Honda CB Hornet</div>
+                                        <div style={styling.tryHead}>IDV: 1,25,300</div>
+                                    </RX.Text>
+
+                                </Col>
+                                <Col  md={5} style={styling.marTop}>
+                                    <RX.Button style={ styling.roundButton } onPress={ this.props.onNavigateBack }>
+                                        <RX.Text style={ styling.buybuttonText }>
+                                            Rs.1,322*
+                                        </RX.Text>
+                                    </RX.Button>
+                                    <RX.Text style={ styling.quotes }>
+                                        Expired on 12/04/2017
+                                    </RX.Text>
+                                </Col>
+                            </Row>
+                        </Grid>
+                    </RX.View>
+
+
+
 
 
 
