@@ -145,6 +145,12 @@ module.exports = {
         color: '#413a6f',
         textTransform:'capitalize'
     }),
+    CliEntHead: RX.Styles.createScrollViewStyle({
+        fontSize: 16,
+        color: 'Black',
+        textTransform:'capitalize',
+        marginLeft:36
+    }),
     clientHeadts: RX.Styles.createScrollViewStyle({
         fontSize: 15,
         color: '#000000',

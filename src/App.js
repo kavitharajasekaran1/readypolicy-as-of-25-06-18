@@ -33,6 +33,7 @@ import CompareCar from './CompareCar'
 import CarDetails from './CarDetails'
 import CarGproposal from './CarGproposal'
 import Addons from './Addons'
+import Remainders from './Remainders'
 
 
 
@@ -68,6 +69,7 @@ let NavigationRouteId = {
     CarDetails:"CarDetails",
     CarGproposal:"CarGproposal",
     Addons:"Addons",
+    Remainders:"Remainders"
 };
 
 const styles = {
@@ -114,13 +116,13 @@ export default class App extends RX.Component {
         this._onPressFifty = this._onPressFifty.bind(this);
         this._onPressNinety = this._onPressNinety.bind(this);
         this._onPressRole = this._onPressRole.bind(this);
-
+        this._onPressOne = this._onPressOne.bind(this);
 
     }
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.MainPanel,
+            routeId: NavigationRouteId.Remainders,
             sceneConfigType: "Fade"
         }]);
     }
@@ -159,6 +161,10 @@ export default class App extends RX.Component {
             case NavigationRouteId.RegisterPage:
                 return <RegisterPage onNavigateFifth={ this._onPressFifth }/>;
 
+                case NavigationRouteId.Remainders:
+                return <Remainders onNavigateOne={ this._onPressOne }  navigatorRoute={navigatorRoute}/>;
+    
+
             case NavigationRouteId.QuoteDetails:
                 return <QuoteDetails onNavigateDetail={ this._onPressDetail } onNavigateCompare={ this._onPressCompare } navigatorRoute={navigatorRoute}/>;
 
@@ -169,8 +175,8 @@ export default class App extends RX.Component {
                 return <Location onNavigateSeven={ this._onPressSeven }/>;
 
             case NavigationRouteId.VehicleDetails:
-                return <VehicleDetails onNavigateEight={ this._onPressEight } navigatorRoute={navigatorRoute}/>;
-                return <VehicleDetails onNavigateSuper={ this._onPressSuper  } navigatorRoute={navigatorRoute}/>;
+                return <VehicleDetails onNavigateEight={ this._onPressEight } onNavigateCompare={ this._onPressCompare }  navigatorRoute={navigatorRoute}/>;
+
 
             case NavigationRouteId.VehicleDcar:
                 return <VehicleDcar onNavigateFifty={ this._onPressFifty } navigatorRoute={navigatorRoute}/>;
@@ -180,7 +186,7 @@ export default class App extends RX.Component {
                 return <Quotefour onNavigatePush={ this._onPressPush } navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.MyPolicy:
-                return <MyPolicy onNavigateRole={ this._onPressRole }  navigatorRoute={navigatorRoute}/>;
+                return <MyPolicy onNavigateRole={ this._onPressRole } onPressNavigate={ this._onPressNavigate } navigatorRoute={navigatorRoute}/>;
             
                 case NavigationRouteId.CarSelection:
                 return <CarSelection onNavigateThirty={ this._onPressThirty }  navigatorRoute={navigatorRoute}/>;
@@ -294,6 +300,16 @@ export default class App extends RX.Component {
         });
     }
     _onPressForward() {
+        // this._navigator.pop();
+        this._navigator.push({
+            routeId: NavigationRouteId.LoginPage,
+            sceneConfigType: "FloatFromRight",
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+    _onPressOne() {
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.LoginPage,

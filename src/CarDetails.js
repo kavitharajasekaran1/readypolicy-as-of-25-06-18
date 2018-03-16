@@ -510,7 +510,7 @@ export default class QuotesSelection  extends RX.Component {
                                 </Col>
                             </Row>
                         </RX.View>
-                        <RX.Button style={styling.nextbutton} onPress={()=> this.onChangePost() }>Primary</RX.Button>
+                        <RX.Button style={styling.nextbutton} onPress={()=> this.onChangePost() }>Next</RX.Button>
 
                     </Grid>
 

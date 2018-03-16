@@ -21,7 +21,7 @@ const _styles = {
     }),
     SCROLL: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
-        backgroundColor: '#1a153b'
+        backgroundColor: '#52525636'
     }),
     HomeScrollImageLogo: RX.Styles.createImageStyle({
         width:5000,
@@ -46,7 +46,7 @@ export default class InsuranceAddons extends RX.Component{
             carRegisteredCity: '24PARGANAS',
             vehicleManufacturerName: 'TVS',
             vehicleModelCode: 'ZWTV310',
-            vehicleRegDate: '13/03/2018',
+            vehicleRegDate: '16/03/2018',
             lastname: 'Rani',
         };
         this._translationValue = RX.Animated.createValue(-100);
@@ -119,7 +119,7 @@ console.log("hittinh.......")
                         region: "South Region",
                         vehicleManufacturerName: "BMW",
                         vehicleModelCode: "CMB65",
-                        vehicleregDate: "14/03/2018",
+                        vehicleregDate: "16/03/2018",
                         idv: "3025465",
                         engineCapacityAmount: "1995 CC",
                         drivingExperience: "2",

@@ -121,6 +121,8 @@ scrollBoxText: RX.Styles.createTextStyle({
     justifyContent: 'center',
     alignItems: 'center',
     textAlign:'Center',
+   color:'#1a153b',
+
 }),
 ScrollBoxText: RX.Styles.createTextStyle({
     justifyContent: 'center',
@@ -266,7 +268,7 @@ style={styles.remo}
                       </RX.View>
                       </RX.View>
                       </RX.View>
-                       </RX.View>
+                      </RX.View>
                 
                 
                     <RX.ScrollView style={ styles.container}>

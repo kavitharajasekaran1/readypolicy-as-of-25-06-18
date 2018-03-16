@@ -22,6 +22,17 @@ const _styles = {
         alignSelf: 'stretch',
         backgroundColor: 'white'
     }),
+    SCROLL: RX.Styles.createScrollViewStyle({
+        alignSelf: 'stretch',
+        backgroundColor: '#1a153b'
+    }),
+    HomeScrollImageLogo: RX.Styles.createImageStyle({
+        width:5000,
+        height: 72,
+        paddingVertical:20,
+        marginLeft:-1200,
+        marginTop:12
+    }),
     pageAlign: RX.Styles.createScrollViewStyle({
         backgroundColor: '#ffffff',
         justifyContent:'center'
@@ -58,8 +69,22 @@ const _styles = {
         marginLeft:54,
         marginTop:41
     }),
+    SideHead: RX.Styles.createScrollViewStyle({
+        fontSize: 18,
+        color: '#3e376d',
+        textTransform:'capitalize',
+        marginLeft:113,
+        marginTop:41
+    }),
+    sideHEad: RX.Styles.createScrollViewStyle({
+        fontSize: 18,
+        color: '#3e376d',
+        textTransform:'capitalize',
+        msideHeadarginLeft:60,
+        marginTop:41
+    }),
     quotes: RX.Styles.createScrollViewStyle({
-        fontSize: 15,
+        fontSize: 13,
         color: '#101010',
         textTransform:'capitalize',
         backgroundColor:"#c7c7c7",
@@ -75,7 +100,7 @@ const _styles = {
         textTransform:'capitalize',
         backgroundColor:"#c7c7c7",
         marginTop:41,
-        height:41,
+        height:44,
         width:169,
         padding:4,
         marginLeft:92
@@ -97,7 +122,7 @@ const _styles = {
         backgroundColor:"#c7c7c7",
         marginTop:41,
         alignItems:'left',
-        height:41,
+        height:44,
         padding:4
     }),
     subNcb: RX.Styles.createScrollViewStyle({
@@ -142,14 +167,6 @@ const _styles = {
         marginTop: 12,
         color: 'black'
     }),
-    HomeScrollImageLogo: RX.Styles.createImageStyle({
-        width:5000,
-        height: 72,
-        paddingVertical:20,
-        marginLeft:-1200,
-        marginTop:12
-    }),
-
     videoTitleText: RX.Styles.createTextStyle({
         marginBottom: 8
     }),
@@ -201,6 +218,25 @@ const _styles = {
         backgroundColor:'#FFFFFF',
         marginTop:10
     }),
+    imAge: RX.Styles.createViewStyle({
+        height: 100,
+        width: 145,
+        backgroundColor:'#FFFFFF',
+        marginTop:10,
+        marginLeft:8
+    }),
+    icic: RX.Styles.createViewStyle({
+        height: 70,
+        width: 100,
+        backgroundColor:'#FFFFFF',
+        marginTop:10,
+    }),
+    tata: RX.Styles.createViewStyle({
+        height: 70,
+        width: 70,
+        backgroundColor:'#FFFFFF',
+        marginTop:10
+    }),
     Assitance: RX.Styles.createTextStyle({
         position: "relative", 
         width: "100",
@@ -214,6 +250,12 @@ check: RX.Styles.createTextStyle({
     textTransform:'capitalize',
     marginTop:62
     }),
+    Check: RX.Styles.createTextStyle({
+        fontSize: 20,
+        textTransform:'capitalize',
+        marginTop:52,
+        marginRight:40
+        }),
 }; 
 var idv
 var resJson
@@ -408,14 +450,14 @@ export default class QuotesSelection  extends RX.Component {
                     </RX.View>
                     <Grid className="hidden-xs">
                     <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/royal.jpg' } style={ [_styles.image] } >
+                        <RX.Image source={ './src/img/royal.jpg' } style={ [_styles.imAge] } >
                         <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
                          </RX.Image>
                         <RX.Text style={ _styles.sideHead }>
                             Royal Sundaram
                             <div style={_styles.tryHead}>Single Year Cover Only</div>
                         </RX.Text>
-                        <RX.Text style={ _styles.quotes }>
+                        <RX.Text style={ _styles.quoted }>
                           IDV:{resJson}
                           <div>Package Premium</div>
                         </RX.Text>
@@ -434,6 +476,121 @@ export default class QuotesSelection  extends RX.Component {
                     </RX.View>
                     </Grid>
                 </RX.View>
+                <Grid className="hidden-xs">
+                <RX.View style={ _styles.pageAlign }>
+                    <RX.View style={ _styles.client }>
+                        <RX.Image source={ './src/img/icici.png' } style={ [_styles.icic] } >
+                        <div style={_styles.Check}><Checkbox>Compare</Checkbox></div>
+                         </RX.Image>
+                        <RX.Text style={ _styles.SideHead }>
+                             ICICI LOMBARD
+                            <div style={_styles.tryHead}>Two Year Cover Only</div>
+                        </RX.Text>
+                        <RX.Text style={ _styles.quoted }>
+                            IDV
+                            <div>NCB</div>
+                        </RX.Text>
+                        <RX.Text style={ _styles.ncb }>
+                            Rs. 20,347
+                            <div>NIL</div>
+                        </RX.Text>
+                        <RX.View style={_styles.nextBtn}>
+                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
+                                <RX.Text style={ _styles.buybuttonText }>
+                                    Rs.1,634*
+                                </RX.Text>
+                            </RX.Button>
+                        </RX.View>
+                    </RX.View>
+                </RX.View>
+                </Grid>
+
+                <Grid className="hidden-xs">
+                <RX.View style={ _styles.pageAlign }>
+                    <RX.View style={ _styles.client }>
+                        <RX.Image source={ './src/img/tata.png' } style={ [styling.JUKE] } >
+                        <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
+                         </RX.Image>
+                        <RX.Text style={ _styles.SideHead }>
+                           Tata AIG
+                            <div style={_styles.tryHead}>Two Year Cover Only</div>
+                        </RX.Text>
+                        <RX.Text style={ _styles.quoted }>
+                            IDV
+                            <div>NCB</div>
+                        </RX.Text>
+                        <RX.Text style={ _styles.ncb }>
+                            Rs. 23,347
+                            <div>NIL</div>
+                        </RX.Text>
+                        <RX.View style={_styles.nextBtn}>
+                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
+                                <RX.Text style={ _styles.buybuttonText }>
+                                    Rs.1,834*
+                                </RX.Text>
+                            </RX.Button>
+                        </RX.View>
+                    </RX.View>
+                </RX.View>
+                </Grid>
+
+                <Grid className="hidden-xs">
+                <RX.View style={ _styles.pageAlign }>
+                    <RX.View style={ _styles.client }>
+                        <RX.Image source={ './src/img/Sbi.png' } style={ [_styles.image] } >
+                        <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
+                         </RX.Image>
+                        <RX.Text style={ _styles.SideHead }>
+                          Bharathi AXP
+                            <div style={_styles.tryHead}>Two Year Cover Only</div>
+                        </RX.Text>
+                        <RX.Text style={ _styles.quoted }>
+                            IDV
+                            <div>NCB</div>
+                        </RX.Text>
+                        <RX.Text style={ _styles.ncb }>
+                            Rs. 28,347
+                            <div>NIL</div>
+                        </RX.Text>
+                        <RX.View style={_styles.nextBtn}>
+                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
+                                <RX.Text style={ _styles.buybuttonText }>
+                                    Rs.1,934*
+                                </RX.Text>
+                            </RX.Button>
+                        </RX.View>
+                    </RX.View>
+                </RX.View>
+                </Grid>
+
+                <Grid className="hidden-xs">
+                <RX.View style={ _styles.pageAlign }>
+                    <RX.View style={ _styles.client }>
+                        <RX.Image source={ './src/img/Bharti.png' } style={ [_styles.image] } >
+                        <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
+                         </RX.Image>
+                        <RX.Text style={ _styles.SideHead }>
+                            Reliance AXP
+                            <div style={_styles.tryHead}>Two Year Cover Only</div>
+                        </RX.Text>
+                        <RX.Text style={ _styles.quoted }>
+                            IDV
+                            <div>NCB</div>
+                        </RX.Text>
+                        <RX.Text style={ _styles.ncb }>
+                            Rs. 23,347
+                            <div>NIL</div>
+                        </RX.Text>
+                        <RX.View style={_styles.nextBtn}>
+                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
+                                <RX.Text style={ _styles.buybuttonText }>
+                                    Rs.1,834*
+                                </RX.Text>
+                            </RX.Button>
+                        </RX.View>
+                    </RX.View>
+                </RX.View>
+                </Grid>
 
                 <Grid className="hidden-lg">
                 <RX.View style={ _styles.client }>
@@ -531,121 +688,7 @@ export default class QuotesSelection  extends RX.Component {
                         </Row>
                     </RX.View>
                 </Grid>
-                <Grid className="hidden-xs">
-                <RX.View style={ _styles.pageAlign }>
-                    <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/icici.png' } style={ [_styles.image] } >
-                        <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
-                         </RX.Image>
-                        <RX.Text style={ _styles.sideHead }>
-                             ICICI LOMBARD
-                            <div style={_styles.tryHead}>Two Year Cover Only</div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.quotes }>
-                            IDV
-                            <div></div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.ncb }>
-                            Rs. 20,347
-                            <div></div>
-                        </RX.Text>
-                        <RX.View style={_styles.nextBtn}>
-                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
-                                <RX.Text style={ _styles.buybuttonText }>
-                                    Rs.1,634*
-                                </RX.Text>
-                            </RX.Button>
-                        </RX.View>
-                    </RX.View>
-                </RX.View>
-                </Grid>
-
-                <Grid className="hidden-xs">
-                <RX.View style={ _styles.pageAlign }>
-                    <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/tata.png' } style={ [_styles.image] } >
-                        <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
-                         </RX.Image>
-                        <RX.Text style={ _styles.sideHead }>
-                           Tata AIG
-                            <div style={_styles.tryHead}>Two Year Cover Only</div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.quoted }>
-                            IDV
-                            <div></div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.ncb }>
-                            Rs. 23,347
-                            <div></div>
-                        </RX.Text>
-                        <RX.View style={_styles.nextBtn}>
-                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
-                                <RX.Text style={ _styles.buybuttonText }>
-                                    Rs.1,834*
-                                </RX.Text>
-                            </RX.Button>
-                        </RX.View>
-                    </RX.View>
-                </RX.View>
-                </Grid>
-
-                <Grid className="hidden-xs">
-                <RX.View style={ _styles.pageAlign }>
-                    <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/Sbi.png' } style={ [_styles.image] } >
-                        <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
-                         </RX.Image>
-                        <RX.Text style={ _styles.sideHead }>
-                          Bharathi AXP
-                            <div style={_styles.tryHead}>Two Year Cover Only</div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.quoted }>
-                            IDV
-                            <div></div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.ncb }>
-                            Rs. 28,347
-                            <div></div>
-                        </RX.Text>
-                        <RX.View style={_styles.nextBtn}>
-                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
-                                <RX.Text style={ _styles.buybuttonText }>
-                                    Rs.1,934*
-                                </RX.Text>
-                            </RX.Button>
-                        </RX.View>
-                    </RX.View>
-                </RX.View>
-                </Grid>
-
-                <Grid className="hidden-xs">
-                <RX.View style={ _styles.pageAlign }>
-                    <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/icici.png' } style={ [_styles.image] } >
-                        <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
-                         </RX.Image>
-                        <RX.Text style={ _styles.sideHead }>
-                            ICICI LOMBARD
-                            <div style={_styles.tryHead}>Two Year Cover Only</div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.quoted }>
-                            IDV
-                            <div></div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.ncb }>
-                            Rs. 23,347
-                            <div></div>
-                        </RX.Text>
-                        <RX.View style={_styles.nextBtn}>
-                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
-                                <RX.Text style={ _styles.buybuttonText }>
-                                    Rs.1,834*
-                                </RX.Text>
-                            </RX.Button>
-                        </RX.View>
-                    </RX.View>
-                </RX.View>
-                </Grid>
+                
 
             </RX.ScrollView>
         );

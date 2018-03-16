@@ -106,9 +106,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '4520250.0',
-                      policyStartDate: '13/03/2018',
+                      policyStartDate: '16/03/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '13/03/2018',
+                      vehicleRegDate: '16/03/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -207,7 +207,7 @@ console.log("quoteid",this.state.quoteid)
                         region: "South Region",
                         vehicleManufacturerName: "REVA",
                         vehicleModelCode: "CMB65",
-                        vehicleregDate: "14/03/2018",
+                        vehicleregDate: "16/03/2018",
                         idv: this.state.idv, 
                         engineCapacityAmount: "1995 CC",
                         drivingExperience: "2",
@@ -320,7 +320,7 @@ console.log("quoteid",this.state.quoteid)
             console.log("premium",mypremium)
             swal(''+Message+'')
             
-             this.props.onNavigateFifty(quoteid,mypremium);
+             this.props.onNavigateFifty(quoteid,mypremium,);
              }else{
                 swal(''+Message+'')
              }
