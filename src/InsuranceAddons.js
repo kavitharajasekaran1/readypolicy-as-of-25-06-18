@@ -36,35 +36,30 @@ const _styles = {
 
 };
 
-
+var token
 export default class InsuranceAddons extends RX.Component{
     constructor(props) {
         super(props);
         this.state = {
-            startDate: moment()
-          };
-          this.handleChange = this.handleChange.bind(this);
-        
-        this.state = {
-            emailId: '',
-            mobileNo: '',
-            yearOfManufacture: '',
-            vehicleMostlyDrivenOn: '',
-            carRegisteredCity: '',
-            vehicleManufacturerName: '',
-            vehicleModelCode: '',
-            startDate: '',
-            lastName: '',
-        };
-        this._translationValue = RX.Animated.createValue(-100);
-        this._animatedStyle = RX.Styles.createAnimatedTextStyle({
-            transform: [
-                {
-                    translateY: this._translationValue
-                }
-            ]
-        });
-    }
+                emailId: 'neeluneelima67@gmail.com',
+                mobileNo: '9553715856',
+                yearOfManufacture: '2017',
+                vehicleMostlyDrivenOn: 'Roads',
+                carRegisteredCity: '24PARGANAS',
+                vehicleManufacturerName: 'TVS',
+                vehicleModelCode: 'ZWTV310',
+                vehicleRegDate: '27/03/2018',
+                lastname: 'Rani',
+            };
+            this._translationValue = RX.Animated.createValue(-100);
+            this._animatedStyle = RX.Styles.createAnimatedTextStyle({
+                transform: [
+                    {
+                        translateY: this._translationValue
+                    }
+                ]
+            });
+        }
     onChangePostt = () => {
 console.log("hittinh.......")
         //   let email = "joe@example.com";
@@ -269,7 +264,6 @@ console.log("hittinh.......")
                 </RX.Button>*/}
             </RX.View>
                  <Grid>
-                     
                  <div class="steps-form-2">
     <div class="steps-row-2 setup-panel-2 d-flex justify-content-between">
         <div class="steps-step-2">
@@ -317,6 +311,7 @@ console.log("hittinh.......")
                                                  onChangeText={this.onChangecarRegisteredCity}
                                                  // defaultValue={ this.state.inputValue }
                                              />
+                                            
                                             </div>
   </div>
   </form>
@@ -326,16 +321,12 @@ console.log("hittinh.......")
       <label for="inputEmail4"  style={ styling.sideText }>Vehicle Register Date</label> 
                                     
                                         
-                                           
-                                             <DatePicker
-                                              mode="date"
-                                              placeholder="DD/MM/YYYY"
-                                              format="DD-MM-YYYY"
-                                              showIcon={false}
-                                              confirmBtnText="Confirm"
-                                              cancelBtnText="Cancel"
-                                                selected={this.state.startDate}
-                                                onChange={this.handleChange}
+                                             <RX.TextInput
+                                                 style={styling.Form}
+                                                 placeholder="Vehicle register date"
+                                                 value={ this.state.vehicleRegDate }
+                                                 onChangeText={this.onChangevehicleRegDate }
+                                                 // defaultValue={ this.state.inputValue }
                                              />
                                           </div>  
                                      
@@ -381,8 +372,8 @@ console.log("hittinh.......")
                                             
                                             </div>
                                             </div>
-                                            </form>
-                                            <form>
+                                              </form>
+                                              <form>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4" style={ styling.sideText }>Name</label> 
@@ -393,13 +384,14 @@ console.log("hittinh.......")
                                              <RX.TextInput
                                                  style={styling.Form}
                                                  placeholder="Last Name"
-                                                 value={ this.state.lastName }
+                                                 value={ this.state.lastname }
                                                  onChangeText={this.onChangelastName }
                                                  // defaultValue={ this.state.inputValue }
-                                                />
-                                                </div>
-                                                <div class="form-group col-md-3">
-                       <label for="inputPassword4" style={ styling.sideText }>Email ID</label>     
+                                             />
+                                              
+                                        </div>
+                                        <div class="form-group col-md-3">
+      <label for="inputPassword4" style={ styling.sideText }>Email ID</label>     
                                         
  
                                              <RX.TextInput
@@ -424,6 +416,7 @@ console.log("hittinh.......")
                                              />
                                            </div>   
                                          </form>
+               
                                     
                                      <RX.Button style={styling.button} onPress={()=> this.onChangePostt()}>Get Quote</RX.Button>
                    </div>                 
