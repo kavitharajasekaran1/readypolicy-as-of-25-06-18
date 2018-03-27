@@ -76,7 +76,7 @@ console.log("hittinh.......")
                         lastName: "name",
                         emailId: "neeluneelima67@gmail.com",
                         mobileNo: "7898732798",
-                        dateOfBirth: "26/11/1987",
+                        dateOfBirth: "27/11/1987",
                         occupation: "Student",
                         nomineeName: "nomineename",
                         nomineeAge: "43",
@@ -108,9 +108,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "16/03/2018",
+                        policyStartDate: "27/03/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "16/03/2018",
+                        vehicleRegDate: "27/03/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -208,7 +208,7 @@ console.log("hittinh.......")
                     <Row className="show-grid" style={styling.contain}>
                         <Col md={10} mdOffset={2} className="hidden-xs" >
                             <code style={styling.assitance}><Checkbox>24X7 Road Side Assistance</Checkbox></code>
-                            <code style={styling.assitance}><Checkbox>Zero Deprication</Checkbox></code>
+                            <code style={styling.assitance}><Checkbox>Zero Depreciation</Checkbox></code>
                             <code style={styling.assitance}><Checkbox>Engine Protection Cover</Checkbox></code>
                             <code style={styling.assitance}><Checkbox>NCB Protactor</Checkbox></code>
                             <code style={styling.assitance}><Checkbox>Key and Lock Replacements</Checkbox></code>
@@ -217,7 +217,7 @@ console.log("hittinh.......")
                         </Col>
                         <Col xs={10}  xsOffset={2}  className="hidden-lg">
                             <code style={styling.assitanceMob}><Checkbox>24X7 Road Side Assistance</Checkbox></code>
-                            <code style={styling.assitanceMob}><Checkbox>Zero Deprication</Checkbox></code>
+                            <code style={styling.assitanceMob}><Checkbox>Zero Depreciation</Checkbox></code>
                             <code style={styling.assitanceMob}><Checkbox>Engine Protection Cover</Checkbox></code>
                             <code style={styling.assitanceMob}><Checkbox>NCB Protactor</Checkbox></code>
                             <code style={styling.assitanceMob}><Checkbox>Key and Lock Replacements</Checkbox></code>
@@ -237,11 +237,11 @@ console.log("hittinh.......")
                     <Row className="show-grid" style={styling.contain}>
                         <Col md={10} mdOffset={2} className="hidden-xs" >
                             <code style={styling.assitance}><Checkbox>24X7 Road Side Assistance</Checkbox></code>
-                            <code style={styling.assitance}><Checkbox>Zero Deprication</Checkbox></code>
+                            <code style={styling.assitance}><Checkbox>Zero Depreciation</Checkbox></code>
                         </Col>
                         <Col xs={10}  xsOffset={2}  className="hidden-lg">
                             <code style={styling.assitanceMob}><Checkbox>24X7 Road Side Assistance</Checkbox></code>
-                            <code style={styling.assitanceMob}><Checkbox>Zero Deprication</Checkbox></code>
+                            <code style={styling.assitanceMob}><Checkbox>Zero Depreciation</Checkbox></code>
                         </Col>
 
                         {/*<Col xs={10} md={10}><code></code></Col>*/}

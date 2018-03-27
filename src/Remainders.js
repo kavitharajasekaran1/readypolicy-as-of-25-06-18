@@ -27,16 +27,18 @@ const _styles = {
         marginTop:12
     }),
    Ramp: RX.Styles.createViewStyle({
-        height: 55,
-        width: 100,
-        backgroundColor:'#80808038',
-        marginTop:10,
-        borderstyle: 'outset',
-        borderwidth: '5px',
-        outlinecolor:'red',
-        outlinestyle:'dotted',
-        outlinewidth:'5',
-        borderRadius:10,
+    position: 'relative',
+    overflow: 'visible',
+    backgroundcolor: 'transparent',
+    flexgrow: 0,
+    flexshrink: 0,
+    height: '55px',
+    width: '100px',
+    margintop: '10px',
+    borderradius: '10px',
+    display: 'flex',
+    // outlineStyle:"auto",
+    // outlineColor:"red"
        
        
     }),
@@ -48,6 +50,17 @@ const _styles = {
         height:41,
         width:169,
         padding:4
+    }),
+   CLIENT: RX.Styles.createViewStyle({
+        justifyContent: 'center',
+        alignItems: 'left',
+        backgroundColor:'#ffffff',
+        padding:5,
+        flex:1,
+        flexDirection:'row',
+        borderBottomWidth:4,
+        borderColor:"#80808085",
+       
     }),
     
 
@@ -145,17 +158,20 @@ export default class EightPanel extends RX.Component{
                             </ul>*/}
                         </RX.Text>
                     </RX.View>
-                    <RX.View style={styling.client}>
+                    <RX.View style={_styles.CLIENT}>
                         <Grid>
-                            <Row className="show-grid" style={styling.client} className="hidden-xs">
+                            <Row className="show-grid" style={_styles.CLIENT} className="hidden-xs">
 
                                 <Col  md={2}></Col>
                                 <Col  md={2} xs={2}>
+        
                                     <RX.Image source={ './src/img/Bike.svg' } style={ [_styles.Ramp] } />
                                     <div style={styling.CliEntHead}>Bike</div>
                                     <div style={styling.clientHead}>Royal Sundaram</div>
                                     <div style={styling.clientDate}>14/03/2018 - 13/03/2019</div>
+                                   
                                 </Col>
+
                                 <Col md={3} xs={3} style={styling.marTop17 }>
                                     <RX.Text style={ styling.sideHead }>
                                         ZWTV3100
@@ -173,14 +189,15 @@ export default class EightPanel extends RX.Component{
                                     <RX.Text style={ styling.quotes }>
                                         Expired on 13/03/2019
                                     </RX.Text>
+                                   
                                 </Col>
                             </Row>
                         </Grid>
                     </RX.View>
 
-                    <RX.View style={styling.client}>
+                    <RX.View style={_styles.CLIENT}>
                     <Grid>
-                            <Row className="show-grid" style={styling.expired} className="hidden-xs">
+                            <Row className="show-grid" style={_styles.CLIENT} className="hidden-xs">
 
                                 <Col  md={2}></Col>
                                 <Col  md={2} xs={2}>
@@ -210,9 +227,9 @@ export default class EightPanel extends RX.Component{
                             </Row>
                         </Grid>
                     </RX.View>
-                    <RX.View style={styling.client}>
+                    <RX.View style={_styles.CLIENT}>
                         <Grid>
-                            <Row className="show-grid" style={styling.client} className="hidden-xs">
+                            <Row className="show-grid" style={_styles.CLIENT} className="hidden-xs">
 
                                 <Col  md={2}></Col>
                                 <Col  md={2} xs={2}>
@@ -243,9 +260,41 @@ export default class EightPanel extends RX.Component{
                         </Grid>
                     </RX.View>
 
-                      <RX.View style={styling.client}>
+                      <RX.View style={_styles.CLIENT}>
                     <Grid>
-                            <Row className="show-grid" style={styling.expired} className="hidden-xs">
+                            <Row className="show-grid" style={_styles.CLIENT} className="hidden-xs">
+
+                                <Col  md={2}></Col>
+                                <Col  md={2} xs={2}>
+                                    <RX.Image source={ './src/img/Bike.svg' } style={ [_styles.Ramp] } />
+                                    <div style={styling.CliEntHead}>Bike</div>
+                                    <div style={styling.clientHead}>Royal Sundaram</div>
+                                    <div style={styling.clientDate}>14/03/2018 - 13/03/2019</div>
+                                </Col>
+                                <Col md={3} xs={3} style={styling.marTop17 }>
+                                    <RX.Text style={ styling.sideHead }>
+                                        ZWTV3100
+                                        <div style={styling.tryHead}>Honda CB Tvs</div>
+                                        <div style={styling.tryHead}>IDV: 87164</div>
+                                    </RX.Text>
+
+                                </Col>
+                                <Col  md={5} xs={5} style={styling.marTop}>
+                                    <RX.Button style={ styling.roundButton } onPress={ this.props.onNavigateRole }>
+                                        <RX.Text style={ styling.buybuttonText }>
+                                            Rs.2325*
+                                        </RX.Text>
+                                    </RX.Button>
+                                    <RX.Text style={ _styles.Quotes }>
+                                        Expires by 13/03/2019
+                                    </RX.Text>
+                                </Col>
+                            </Row>
+                        </Grid>
+                    </RX.View>
+                    <RX.View style={_styles.CLIENT}>
+                    <Grid>
+                            <Row className="show-grid" style={_styles.CLIENT} className="hidden-xs">
 
                                 <Col  md={2}></Col>
                                 <Col  md={2} xs={2}>

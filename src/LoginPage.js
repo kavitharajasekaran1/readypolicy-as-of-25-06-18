@@ -243,13 +243,13 @@ export default class LoginPage extends RX.Component{
         } = this.state;
 
         let password = "donkeybrains";
-        let myApiUrl = 'http://localhost:8082/newLogin';
+        let myApiUrl = 'http://localhost:8082/newLogin1';
         console.log(phone,"phone");
         console.log(myApiUrl,"myApiUrl");
 
 
         console.log("RestApiUrl");
-        fetch('http://localhost:8082/newLogin', {
+        fetch('http://localhost:8082/newLogin1', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -259,6 +259,7 @@ export default class LoginPage extends RX.Component{
             body: JSON.stringify({phone:"918369480901"})
         }).then((response) => response.json()).then((responseJson) => {
             var res = responseJson.message;
+            console.log(responseJson.token,"response")
             console.log(res,"res");
            swal(''+res+'')
             this.props.onNavigateForth(res);

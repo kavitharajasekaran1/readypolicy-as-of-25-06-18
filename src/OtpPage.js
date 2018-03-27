@@ -350,7 +350,7 @@ const styles = {
         }),
     
 };
-
+var token
 export default class OtpPage extends RX.Component{
     constructor(props) {
         super(props);
@@ -402,6 +402,7 @@ export default class OtpPage extends RX.Component{
     }
 
     render() {
+        token = this.props.navigatorRoute.token
         return (
             <RX.ScrollView style={ styles.scroll }>
             <RX.View style={ styles.container }>

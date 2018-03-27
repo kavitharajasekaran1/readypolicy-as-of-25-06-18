@@ -263,7 +263,7 @@ export default class CompareQuotes extends RX.Component{
         return (
             <RX.ScrollView style={ styles.scroll }>
             <RX.View style={ styling.container }>
-            <RX.Button  onPress={ this.props.onNavigateNinety}><RX.Image
+            <RX.Button  onPress={ this.props.onNavigateTen}><RX.Image
                          style={styles.HomeScrollImageLogo}
                          source={'./src/img/Back.svg'}/>
                     <RX.Text style={styling.welcome }>Compare Quotes </RX.Text>

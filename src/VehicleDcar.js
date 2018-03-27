@@ -106,9 +106,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '4520250.0',
-                      policyStartDate: '16/03/2018',
+                      policyStartDate: '27/03/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '16/03/2018',
+                      vehicleRegDate: '27/03/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -168,7 +168,7 @@ console.log("quoteid",this.state.quoteid)
                       authenticationDetails: {
                         agentId: "BA502092",
                         apikey: "310ZQmv/bYJMYrWQ1iYa7s43084="
-                      },
+                    },
                       quoteId: this.state.quoteid,
                       proposerDetails: {
                         addressFour: "North Street",
@@ -198,7 +198,7 @@ console.log("quoteid",this.state.quoteid)
                         strPhoneNo: "57879797",
                         strStdCode: "044",
                         strTitle: "Mr"
-                      },
+                    },
                       reqType: "XML",
                       respType: "XML",
                       vehicleDetails: {
@@ -207,7 +207,7 @@ console.log("quoteid",this.state.quoteid)
                         region: "South Region",
                         vehicleManufacturerName: "REVA",
                         vehicleModelCode: "CMB65",
-                        vehicleregDate: "16/03/2018",
+                        vehicleregDate: "27/03/2018",
                         idv: this.state.idv, 
                         engineCapacityAmount: "1995 CC",
                         drivingExperience: "2",
@@ -247,7 +247,7 @@ console.log("quoteid",this.state.quoteid)
                               value: "1215"
                             },
                             {
-                              makeModel: "jsoOIXpVKJ",
+                            makeModel: "jsoOIXpVKJ",
                             nameOfElectronicAccessories: "AGtVfPoitL",
                               value: "1579"
                             },

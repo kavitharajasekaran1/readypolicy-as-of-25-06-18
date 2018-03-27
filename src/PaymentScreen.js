@@ -28,9 +28,13 @@ const styles = {
         backgroundColor:'#c4c3c7',
         padding:5
     }),
-    welcome: RX.Styles.createTextStyle({
-        fontSize: 40,
+    welcome: RX.Styles.createScrollViewStyle({
+        top: 5,
+        fontSize: 25,
         color: 'white',
+        textAlign:'center',
+     margintop:95
+
     }),
     Welcome: RX.Styles.createTextStyle({
         fontSize: 38,
@@ -291,7 +295,7 @@ export default class PaymentScreen extends RX.Component{
         return (
             <RX.ScrollView style={ styles.scroll }>
                 <RX.View style={ styling.container }>
-                    <RX.Text style={styling.welcome }>
+                    <RX.Text style={styles.welcome }>
                         Payments
                     </RX.Text>
 

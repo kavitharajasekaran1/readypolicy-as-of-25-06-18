@@ -122,7 +122,7 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.Remainders,
+            routeId: NavigationRouteId.MainPanel,
             sceneConfigType: "Fade"
         }]);
     }
@@ -150,7 +150,7 @@ export default class App extends RX.Component {
                 return <OtpPage onPressNavigate={ this._onPressNavigate }/>;
 
             case NavigationRouteId.CompareQuotes:
-                return <CompareQuotes onNavigateCompare={ this._onPressCompare } onNavigateNinety={ this._onPressNinety } navigatorRoute={navigatorRoute}/>;
+                return <CompareQuotes onNavigateCompare={ this._onPressCompare }  navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.MainPanel:
                 return <MainPanel onNavigateForward={ this._onPressForward }/>;
@@ -162,20 +162,20 @@ export default class App extends RX.Component {
                 return <RegisterPage onNavigateFifth={ this._onPressFifth }/>;
 
                 case NavigationRouteId.Remainders:
-                return <Remainders onNavigateOne={ this._onPressOne }  navigatorRoute={navigatorRoute}/>;
+                return <Remainders onNavigateOne={ this._onPressOne }  onPressNavigate={ this._onPressNavigate } navigatorRoute={navigatorRoute}/>;
     
 
             case NavigationRouteId.QuoteDetails:
-                return <QuoteDetails onNavigateDetail={ this._onPressDetail } onNavigateCompare={ this._onPressCompare } navigatorRoute={navigatorRoute}/>;
+                return <QuoteDetails onNavigateDetail={ this._onPressDetail } onNavigateNinety={ this._onPressNinety }  navigatorRoute={navigatorRoute}/>;
 
                 case NavigationRouteId.QuotesSelection:
-                return <QuotesSelection onNavigateSixth={ this._onPressSixth }  navigatorRoute={navigatorRoute}/>;
+                return <QuotesSelection onNavigateSixth={ this._onPressSixth } onNavigateTen={ this._onPressTen }  navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.Location:
                 return <Location onNavigateSeven={ this._onPressSeven }/>;
 
             case NavigationRouteId.VehicleDetails:
-                return <VehicleDetails onNavigateEight={ this._onPressEight } onNavigateCompare={ this._onPressCompare }  navigatorRoute={navigatorRoute}/>;
+                return <VehicleDetails onNavigateEight={ this._onPressEight } onNavigateCompare={ this._onPressCompare }onNavigateSixth={ this._onPressSixth }  navigatorRoute={navigatorRoute}/>;
 
 
             case NavigationRouteId.VehicleDcar:
@@ -220,7 +220,7 @@ export default class App extends RX.Component {
                 return <NewTermInsurance onNavigateNewTermInsurance={ this._onPressNewTermInsurance }/>;
 
             case NavigationRouteId.HomePanel:
-          return <HomePanel onNavigateSuper={ this._onPressHome} onNavigateSuperCar={ this._onPressHome1 } onNavigateRole={ this._onPressRole } />;   
+          return <HomePanel onNavigateSuper={ this._onPressHome} onNavigateSuperCar={ this._onPressHome1 } onNavigateRole={ this._onPressRole } onNavigateOne={ this._onPressOne } />;   
             // return <HomePanel onNavigateSuperCar = {this._onPressHome1}/>;
              case NavigationRouteId.Vehicleregister:
                 return <Vehicleregister onNavigatefont={ this._onPressfont}/>; 
@@ -312,7 +312,7 @@ export default class App extends RX.Component {
     _onPressOne() {
         // this._navigator.pop();
         this._navigator.push({
-            routeId: NavigationRouteId.LoginPage,
+            routeId: NavigationRouteId.Remainders,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
@@ -329,13 +329,15 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressForth(res) {
+    _onPressForth(res,token) {
         console.log("res",res)
+        console.log("token",token)
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.OtpPage,
             sceneConfigType: "FloatFromRight",
             res:res,
+            token:token,
             customSceneConfig: {
                 hideShadow: true
             }

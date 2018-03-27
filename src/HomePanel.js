@@ -292,9 +292,10 @@ style={styles.remo}
                         </Col>
                         <Col  md={2} style={styling.marTop}>
                             {/*<RX.Text>Test3</RX.Text>*/}
-                            <RX.Image source={ './src/img/Remainder.svg' } style={ [styles.image] } />
+                            <RX.Button  onPress={ this.props.onNavigateOne }>   <RX.Image source={ './src/img/Remainder.svg' } style={ [styles.image] } />
                             <RX.Text style={styles.ScrollBoxText}>Remainder</RX.Text>
                             {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
+                        </RX.Button>
                         </Col>
                         <Col  md={2} style={styling.marTop}>
                             {/*<RX.Text>Test3</RX.Text>*/}

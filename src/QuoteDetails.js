@@ -282,7 +282,7 @@ export default class QuotesSelection  extends RX.Component {
         return (
             <RX.ScrollView style={ _styles.scroll }>
             <RX.View style={ styling.container }>
-            <RX.Button  onPress={ this.props.onNavigateCompare}><RX.Image
+            <RX.Button  onPress={ this.props.onNavigateNinety}><RX.Image
                      style={_styles.HomeScrollImageLogo}
                      source={'./src/img/Back.svg'}/>
                 <RX.Text style={ styling.welcome }>Quote Details</RX.Text>

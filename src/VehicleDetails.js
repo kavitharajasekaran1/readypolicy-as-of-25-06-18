@@ -101,9 +101,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '16/03/2018',
+                      policyStartDate: '27/03/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '16/03/2018',
+                      vehicleRegDate: '27/03/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -435,7 +435,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
     }
     onChangepermanetCity= (value) => {
         this.setState({permanentCity : value });
-        console.log(this.state.permanentCity,"permanentCity");
+        console.log(this.state.permanentCity,"permantCity");
     }
     onChangeplan= (value) => {
         this.setState({plan : value });
@@ -612,7 +612,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
         return (
             <RX.ScrollView style={ _styles.scroll }>
                 <RX.View style={ styling.container }>
-                <RX.Button  onPress={ this.props.onNavigateCompare }><RX.Image
+                <RX.Button  onPress={ this.props.onNavigateSixth }><RX.Image
                              style={_styles.HomeScrollImageLogo}
                              source={'./src/img/Back.svg'}/>
                         <RX.Text style={styling.welcome }>
