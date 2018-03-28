@@ -259,10 +259,11 @@ export default class LoginPage extends RX.Component{
             body: JSON.stringify({phone:"918369480901"})
         }).then((response) => response.json()).then((responseJson) => {
             var res = responseJson.message;
-            console.log(responseJson.token,"response")
+            var token = responseJson.token
+            console.log(token,"token")
             console.log(res,"res");
            swal(''+res+'')
-            this.props.onNavigateForth(res);
+            this.props.onNavigateForth(res,token);
         })
     }
 

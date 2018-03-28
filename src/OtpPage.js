@@ -402,7 +402,8 @@ export default class OtpPage extends RX.Component{
     }
 
     render() {
-        token = this.props.navigatorRoute.token
+        token =  this.props.navigatorRoute.token
+        console.log("token",token)
         return (
             <RX.ScrollView style={ styles.scroll }>
             <RX.View style={ styles.container }>

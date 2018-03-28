@@ -122,7 +122,7 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.MainPanel,
+            routeId: NavigationRouteId.LoginPage,
             sceneConfigType: "Fade"
         }]);
     }
@@ -147,7 +147,7 @@ export default class App extends RX.Component {
         var user ={name:"test"};
         switch (navigatorRoute.routeId) {
             case NavigationRouteId.OtpPage:
-                return <OtpPage onPressNavigate={ this._onPressNavigate }/>;
+                return <OtpPage onPressNavigate={ this._onPressNavigate } navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.CompareQuotes:
                 return <CompareQuotes onNavigateCompare={ this._onPressCompare }  navigatorRoute={navigatorRoute}/>;

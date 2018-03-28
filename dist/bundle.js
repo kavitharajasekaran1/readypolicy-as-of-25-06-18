@@ -12241,7 +12241,7 @@ module.exports=getNative;
 /* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/ToggleSwitch.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/ToggleSwitch.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -13036,10 +13036,12 @@ var selectedYear=_this.props.year;
 var options=_this.state.yearsList.map(function(year){
 return _react2.default.createElement(
 "div",
-{className:selectedYear===year?'react-datepicker__year-option --selected_year':'react-datepicker__year-option',
+{
+className:selectedYear===year?"react-datepicker__year-option --selected_year":"react-datepicker__year-option",
 key:year,
 ref:year,
 onClick:_this.onChange.bind(_this,year)},
+
 selectedYear===year?_react2.default.createElement(
 "span",
 {className:"react-datepicker__year-option--selected"},
@@ -13062,6 +13064,7 @@ className:"react-datepicker__year-option",
 ref:"upcoming",
 key:"upcoming",
 onClick:_this.incrementYears},
+
 _react2.default.createElement("a",{className:"react-datepicker__navigation react-datepicker__navigation--years react-datepicker__navigation--years-upcoming"})));
 
 }
@@ -13076,6 +13079,7 @@ className:"react-datepicker__year-option",
 ref:"previous",
 key:"previous",
 onClick:_this.decrementYears},
+
 _react2.default.createElement("a",{className:"react-datepicker__navigation react-datepicker__navigation--years react-datepicker__navigation--years-previous"})));
 
 }
@@ -13610,6 +13614,7 @@ return _react2.default.createElement(
 value:_this.props.year,
 className:"react-datepicker__year-select",
 onChange:_this.onSelectChange},
+
 _this.renderSelectOptions());
 
 },_this.renderReadView=function(visible){
@@ -13622,6 +13627,7 @@ className:"react-datepicker__year-read-view",
 onClick:function onClick(event){
 return _this.toggleDropdown(event);
 }},
+
 _react2.default.createElement("span",{className:"react-datepicker__year-read-view--down-arrow"}),
 _react2.default.createElement(
 "span",
@@ -13640,6 +13646,7 @@ minDate:_this.props.minDate,
 maxDate:_this.props.maxDate,
 scrollableYearDropdown:_this.props.scrollableYearDropdown,
 yearDropdownItemNumber:_this.props.yearDropdownItemNumber});
+
 },_this.renderScrollMode=function(){
 var dropdownVisible=_this.state.dropdownVisible;
 
@@ -13689,6 +13696,7 @@ return _react2.default.createElement(
 "div",
 {
 className:"react-datepicker__year-dropdown-container react-datepicker__year-dropdown-container--"+this.props.dropdownMode},
+
 renderedDropdown);
 
 };
@@ -13726,10 +13734,12 @@ return _ret=(_temp=(_this=possibleConstructorReturn(this,_React$Component.call.a
 return _this.props.monthNames.map(function(month,i){
 return _react2.default.createElement(
 "div",
-{className:_this.props.month===i?'react-datepicker__month-option --selected_month':'react-datepicker__month-option',
+{
+className:_this.props.month===i?"react-datepicker__month-option --selected_month":"react-datepicker__month-option",
 key:month,
 ref:month,
 onClick:_this.onChange.bind(_this,i)},
+
 _this.props.month===i?_react2.default.createElement(
 "span",
 {className:"react-datepicker__month-option--selected"},
@@ -13796,6 +13806,7 @@ className:"react-datepicker__month-select",
 onChange:function onChange(e){
 return _this.onChange(e.target.value);
 }},
+
 _this.renderSelectOptions(monthNames));
 
 },_this.renderReadView=function(visible,monthNames){
@@ -13806,6 +13817,7 @@ key:"read",
 style:{visibility:visible?"visible":"hidden"},
 className:"react-datepicker__month-read-view",
 onClick:_this.toggleDropdown},
+
 _react2.default.createElement("span",{className:"react-datepicker__month-read-view--down-arrow"}),
 _react2.default.createElement(
 "span",
@@ -13821,6 +13833,7 @@ month:_this.props.month,
 monthNames:monthNames,
 onChange:_this.onChange,
 onCancel:_this.toggleDropdown});
+
 },_this.renderScrollMode=function(monthNames){
 var dropdownVisible=_this.state.dropdownVisible;
 
@@ -13865,6 +13878,7 @@ return _react2.default.createElement(
 "div",
 {
 className:"react-datepicker__month-dropdown-container react-datepicker__month-dropdown-container--"+this.props.dropdownMode},
+
 renderedDropdown);
 
 };
@@ -13905,22 +13919,22 @@ classCallCheck(this,MonthYearDropdownOptions);
 var _this=possibleConstructorReturn(this,_React$Component.call(this,props));
 
 _this.renderOptions=function(){
-
 return _this.state.monthYearsList.map(function(monthYear){
-
 var monthYearPoint=monthYear.valueOf();
 
 var isSameMonthYear=isSameYear(_this.props.date,monthYear)&&isSameMonth(_this.props.date,monthYear);
 
 return _react2.default.createElement(
-'div',
-{className:isSameMonthYear?'react-datepicker__month-year-option --selected_month-year':'react-datepicker__month-year-option',
+"div",
+{
+className:isSameMonthYear?"react-datepicker__month-year-option --selected_month-year":"react-datepicker__month-year-option",
 key:monthYearPoint,
 ref:monthYearPoint,
 onClick:_this.onChange.bind(_this,monthYearPoint)},
+
 isSameMonthYear?_react2.default.createElement(
-'span',
-{className:'react-datepicker__month-year-option--selected'},
+"span",
+{className:"react-datepicker__month-year-option--selected"},
 '\u2713'):
 "",
 formatDate(monthYear,_this.props.dateFormat));
@@ -13944,12 +13958,12 @@ return _this;
 
 MonthYearDropdownOptions.prototype.render=function render(){
 var dropdownClass=(0,_classnames3.default)({
-'react-datepicker__month-year-dropdown':true,
-'react-datepicker__month-year-dropdown--scrollable':this.props.scrollableMonthYearDropdown});
+"react-datepicker__month-year-dropdown":true,
+"react-datepicker__month-year-dropdown--scrollable":this.props.scrollableMonthYearDropdown});
 
 
 return _react2.default.createElement(
-'div',
+"div",
 {className:dropdownClass},
 this.renderOptions());
 
@@ -13991,10 +14005,9 @@ var lastDate=getStartOfMonth(localizeDate(_this.props.maxDate,_this.props.locale
 var options=[];
 
 while(!isAfter(currDate,lastDate)){
-
 var timepoint=currDate.valueOf();
 options.push(_react2.default.createElement(
-'option',
+"option",
 {key:timepoint,value:timepoint},
 formatDate(currDate,_this.props.dateFormat)));
 
@@ -14007,36 +14020,38 @@ return options;
 _this.onChange(e.target.value);
 },_this.renderSelectMode=function(){
 return _react2.default.createElement(
-'select',
+"select",
 {
 value:getStartOfMonth(_this.props.date).valueOf(),
-className:'react-datepicker__month-year-select',
+className:"react-datepicker__month-year-select",
 onChange:_this.onSelectChange},
+
 _this.renderSelectOptions());
 
 },_this.renderReadView=function(visible){
-
 var yearMonth=formatDate(localizeDate(newDate(_this.props.date),_this.props.locale),_this.props.dateFormat);
 
 return _react2.default.createElement(
-'div',
-{key:'read',
-style:{visibility:visible?'visible':'hidden'},
-className:'react-datepicker__month-year-read-view',
+"div",
+{
+key:"read",
+style:{visibility:visible?"visible":"hidden"},
+className:"react-datepicker__month-year-read-view",
 onClick:function onClick(event){
 return _this.toggleDropdown(event);
 }},
-_react2.default.createElement('span',{className:'react-datepicker__month-year-read-view--down-arrow'}),
+
+_react2.default.createElement("span",{className:"react-datepicker__month-year-read-view--down-arrow"}),
 _react2.default.createElement(
-'span',
-{className:'react-datepicker__month-year-read-view--selected-month-year'},
+"span",
+{className:"react-datepicker__month-year-read-view--selected-month-year"},
 yearMonth));
 
 
 },_this.renderDropdown=function(){
 return _react2.default.createElement(WrappedMonthYearDropdownOptions,{
-key:'dropdown',
-ref:'options',
+key:"dropdown",
+ref:"options",
 date:_this.props.date,
 dateFormat:_this.props.dateFormat,
 onChange:_this.onChange,
@@ -14044,6 +14059,7 @@ onCancel:_this.toggleDropdown,
 minDate:localizeDate(_this.props.minDate,_this.props.locale),
 maxDate:localizeDate(_this.props.maxDate,_this.props.locale),
 scrollableMonthYearDropdown:_this.props.scrollableMonthYearDropdown});
+
 },_this.renderScrollMode=function(){
 var dropdownVisible=_this.state.dropdownVisible;
 
@@ -14072,18 +14088,19 @@ dropdownVisible:!_this.state.dropdownVisible});
 MonthYearDropdown.prototype.render=function render(){
 var renderedDropdown=void 0;
 switch(this.props.dropdownMode){
-case'scroll':
+case"scroll":
 renderedDropdown=this.renderScrollMode();
 break;
-case'select':
+case"select":
 renderedDropdown=this.renderSelectMode();
 break;}
 
 
 return _react2.default.createElement(
-'div',
+"div",
 {
-className:'react-datepicker__month-year-dropdown-container react-datepicker__month-year-dropdown-container--'+this.props.dropdownMode},
+className:"react-datepicker__month-year-dropdown-container react-datepicker__month-year-dropdown-container--"+this.props.dropdownMode},
+
 renderedDropdown);
 
 };
@@ -14092,7 +14109,7 @@ return MonthYearDropdown;
 }(_react2.default.Component);
 
 MonthYearDropdown.propTypes={
-dropdownMode:_propTypes2.default.oneOf(['scroll','select']).isRequired,
+dropdownMode:_propTypes2.default.oneOf(["scroll","select"]).isRequired,
 dateFormat:_propTypes2.default.string.isRequired,
 locale:_propTypes2.default.string,
 maxDate:_propTypes2.default.object.isRequired,
@@ -14261,6 +14278,7 @@ onClick:this.handleClick,
 onMouseEnter:this.handleMouseEnter,
 "aria-label":"day-"+getDate(this.props.day),
 role:"option"},
+
 getDate(this.props.day));
 
 };
@@ -14316,6 +14334,7 @@ return _react2.default.createElement(
 className:(0,_classnames3.default)(weekNumberClasses),
 "aria-label":"week-"+this.props.weekNumber,
 onClick:this.handleClick},
+
 this.props.weekNumber);
 
 };
@@ -14389,6 +14408,7 @@ startDate:_this.props.startDate,
 endDate:_this.props.endDate,
 dayClassName:_this.props.dayClassName,
 utcOffset:_this.props.utcOffset});
+
 }));
 },_temp),possibleConstructorReturn(_this,_ret);
 }
@@ -14494,6 +14514,7 @@ endDate:_this.props.endDate,
 dayClassName:_this.props.dayClassName,
 utcOffset:_this.props.utcOffset}));
 
+
 if(breakAfterNextPush)break;
 
 i++;
@@ -14533,6 +14554,7 @@ return _react2.default.createElement(
 className:this.getClassNames(),
 onMouseLeave:this.handleMouseLeave,
 role:"listbox"},
+
 this.renderWeeks());
 
 };
@@ -14617,6 +14639,7 @@ return _react2.default.createElement(
 key:i,
 onClick:_this.handleClick.bind(_this,time),
 className:_this.liClasses(time,currH,currM)},
+
 formatDate(time,format));
 
 });
@@ -14642,6 +14665,7 @@ return _react2.default.createElement(
 "div",
 {
 className:"react-datepicker__time-container "+(this.props.todayButton?"react-datepicker__time-container--with-today-button":"")},
+
 _react2.default.createElement(
 "div",
 {className:"react-datepicker__header react-datepicker__header--time"},
@@ -14665,6 +14689,7 @@ ref:function ref(list){
 _this2.list=list;
 },
 style:height?{height:height}:{}},
+
 this.renderTimes.bind(this)()))));
 
 
@@ -14869,10 +14894,9 @@ weekDayName);
 };
 
 _this.renderPreviousMonthButton=function(){
-
 var allPrevDaysDisabled=allDaysDisabledBefore(_this.state.date,"month",_this.props);
 
-if(!_this.props.forceShowMonthNavigation&&!_this.props.showDisabledMonthNavigation&&allPrevDaysDisabled){
+if(!_this.props.forceShowMonthNavigation&&!_this.props.showDisabledMonthNavigation&&allPrevDaysDisabled||_this.props.showTimeSelectOnly){
 return;
 }
 
@@ -14885,16 +14909,17 @@ classes.push("react-datepicker__navigation--previous--disabled");
 clickHandler=null;
 }
 
-return _react2.default.createElement("button",{type:"button",
+return _react2.default.createElement("button",{
+type:"button",
 className:classes.join(" "),
 onClick:clickHandler});
+
 };
 
 _this.renderNextMonthButton=function(){
-
 var allNextDaysDisabled=allDaysDisabledAfter(_this.state.date,"month",_this.props);
 
-if(!_this.props.forceShowMonthNavigation&&!_this.props.showDisabledMonthNavigation&&allNextDaysDisabled){
+if(!_this.props.forceShowMonthNavigation&&!_this.props.showDisabledMonthNavigation&&allNextDaysDisabled||_this.props.showTimeSelectOnly){
 return;
 }
 
@@ -14913,7 +14938,11 @@ classes.push("react-datepicker__navigation--next--disabled");
 clickHandler=null;
 }
 
-return _react2.default.createElement("button",{type:"button",className:classes.join(" "),onClick:clickHandler});
+return _react2.default.createElement("button",{
+type:"button",
+className:classes.join(" "),
+onClick:clickHandler});
+
 };
 
 _this.renderCurrentMonth=function(){
@@ -14955,6 +14984,7 @@ maxDate:_this.props.maxDate,
 year:getYear(_this.state.date),
 scrollableYearDropdown:_this.props.scrollableYearDropdown,
 yearDropdownItemNumber:_this.props.yearDropdownItemNumber});
+
 };
 
 _this.renderMonthDropdown=function(){
@@ -14970,6 +15000,7 @@ dateFormat:_this.props.dateFormat,
 onChange:_this.changeMonth,
 month:getMonth(_this.state.date),
 useShortMonthInDropdown:_this.props.useShortMonthInDropdown});
+
 };
 
 _this.renderMonthYearDropdown=function(){
@@ -14991,7 +15022,7 @@ scrollableMonthYearDropdown:_this.props.scrollableMonthYearDropdown});
 };
 
 _this.renderTodayButton=function(){
-if(!_this.props.todayButton){
+if(!_this.props.todayButton||_this.props.showTimeSelectOnly){
 return;
 }
 return _react2.default.createElement(
@@ -15001,11 +15032,16 @@ className:"react-datepicker__today-button",
 onClick:function onClick(e){
 return _this.props.onSelect(getStartOfDate(now(_this.props.utcOffset)),e);
 }},
+
 _this.props.todayButton);
 
 };
 
 _this.renderMonths=function(){
+if(_this.props.showTimeSelectOnly){
+return;
+}
+
 var monthList=[];
 for(var i=0;i<_this.props.monthsShown;++i){
 var monthDate=addMonths(cloneDate(_this.state.date),i);
@@ -15018,6 +15054,7 @@ ref:function ref(div){
 _this.monthContainer=div;
 },
 className:"react-datepicker__month-container"},
+
 _react2.default.createElement(
 "div",
 {className:"react-datepicker__header"},
@@ -15027,6 +15064,7 @@ _react2.default.createElement(
 {
 className:"react-datepicker__header__dropdown react-datepicker__header__dropdown--"+_this.props.dropdownMode,
 onFocus:_this.handleDropdownFocus},
+
 _this.renderMonthDropdown(i!==0),
 _this.renderMonthYearDropdown(i!==0),
 _this.renderYearDropdown(i!==0)),
@@ -15064,6 +15102,7 @@ endDate:_this.props.endDate,
 peekNextMonth:_this.props.peekNextMonth,
 utcOffset:_this.props.utcOffset})));
 
+
 }
 return monthList;
 };
@@ -15086,6 +15125,7 @@ showMonthYearDropdown:_this.props.showMonthYearDropdown,
 showYearDropdown:_this.props.showYearDropdown,
 withPortal:_this.props.withPortal,
 monthRef:_this.state.monthContainer});
+
 }
 };
 
@@ -15126,7 +15166,11 @@ date:this.localizeDate(nextProps.openToDate)});
 Calendar.prototype.render=function render(){
 return _react2.default.createElement(
 "div",
-{className:(0,_classnames3.default)("react-datepicker",this.props.className)},
+{
+className:(0,_classnames3.default)("react-datepicker",this.props.className,{
+"react-datepicker--time-only":this.props.showTimeSelectOnly})},
+
+
 _react2.default.createElement("div",{className:"react-datepicker__triangle"}),
 this.renderPreviousMonthButton(),
 this.renderNextMonthButton(),
@@ -15168,6 +15212,7 @@ onDropdownFocus:_propTypes2.default.func,
 onSelect:_propTypes2.default.func.isRequired,
 onWeekSelect:_propTypes2.default.func,
 showTimeSelect:_propTypes2.default.bool,
+showTimeSelectOnly:_propTypes2.default.bool,
 timeFormat:_propTypes2.default.string,
 timeIntervals:_propTypes2.default.number,
 onTimeChange:_propTypes2.default.func,
@@ -15229,6 +15274,7 @@ popper=_react2.default.createElement(_reactPopper.Popper,
 className:classes,
 modifiers:popperModifiers,
 placement:popperPlacement},
+
 popperComponent);
 
 }
@@ -15339,7 +15385,8 @@ preventFocus:false,
 preSelection:_this.props.selected?newDate(_this.props.selected):boundedPreSelection,
 
 
-highlightDates:getHightLightDaysMap(_this.props.highlightDates)};
+highlightDates:getHightLightDaysMap(_this.props.highlightDates),
+focused:false};
 
 };
 
@@ -15369,6 +15416,7 @@ if(!_this.props.preventOpenOnFocus){
 _this.setOpen(true);
 }
 }
+_this.setState({focused:true});
 };
 
 _this.cancelFocusInput=function(){
@@ -15393,6 +15441,7 @@ _this.deferFocusInput();
 }else{
 _this.props.onBlur(event);
 }
+_this.setState({focused:false});
 };
 
 _this.handleCalendarClickOutside=function(event){
@@ -15496,7 +15545,7 @@ preSelection:changedDate});
 
 _this.props.onChange(changedDate);
 _this.setOpen(false);
-_this.setState({inputValue:changedDate.format(_this.props.dateFormat)});
+_this.setState({inputValue:null});
 };
 
 _this.onInputClick=function(){
@@ -15642,6 +15691,7 @@ onMonthChange:_this.props.onMonthChange,
 onYearChange:_this.props.onYearChange,
 dayClassName:_this.props.dayClassName,
 showTimeSelect:_this.props.showTimeSelect,
+showTimeSelectOnly:_this.props.showTimeSelectOnly,
 onTimeChange:_this.handleTimeChange,
 timeFormat:_this.props.timeFormat,
 timeIntervals:_this.props.timeIntervals,
@@ -15651,6 +15701,7 @@ excludeTimes:_this.props.excludeTimes,
 timeCaption:_this.props.timeCaption,
 className:_this.props.calendarClassName,
 yearDropdownItemNumber:_this.props.yearDropdownItemNumber},
+
 _this.props.children);
 
 };
@@ -15675,6 +15726,7 @@ return _react2.default.createElement("a",{
 className:"react-datepicker__close-icon",
 href:"javascript:void(0)",
 onClick:_this.onClearClick});
+
 }else{
 return null;
 }
@@ -15695,6 +15747,7 @@ this.setState({
 highlightDates:getHightLightDaysMap(nextProps.highlightDates)});
 
 }
+if(!this.state.focused)this.setState({inputValue:null});
 };
 
 DatePicker.prototype.componentWillUnmount=function componentWillUnmount(){
@@ -15739,6 +15792,7 @@ this.renderClearButton()),
 popperContainer:this.props.popperContainer,
 popperComponent:calendar,
 popperPlacement:this.props.popperPlacement});
+
 };
 
 return DatePicker;
@@ -15754,8 +15808,8 @@ children:_propTypes2.default.node,
 className:_propTypes2.default.string,
 customInput:_propTypes2.default.element,
 customInputRef:_propTypes2.default.string,
-dateFormat:_propTypes2.default.oneOfType([
-_propTypes2.default.string,_propTypes2.default.array]),
+
+dateFormat:_propTypes2.default.oneOfType([_propTypes2.default.string,_propTypes2.default.array]),
 dateFormatCalendar:_propTypes2.default.string,
 dayClassName:_propTypes2.default.func,
 disabled:_propTypes2.default.bool,
@@ -15822,6 +15876,7 @@ withPortal:_propTypes2.default.bool,
 yearDropdownItemNumber:_propTypes2.default.number,
 shouldCloseOnSelect:_propTypes2.default.bool,
 showTimeSelect:_propTypes2.default.bool,
+showTimeSelectOnly:_propTypes2.default.bool,
 timeFormat:_propTypes2.default.string,
 timeIntervals:_propTypes2.default.number,
 minTime:_propTypes2.default.object,
@@ -15980,7 +16035,7 @@ module.exports=__webpack_require__(856);
 /* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/OtpPage.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/OtpPage.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -16385,22 +16440,23 @@ console.log(_this.state.phone3,"phone");
 
 {var _this2=this;
 token=this.props.navigatorRoute.token;
+console.log("token",token);
 return(
-_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.scroll,__source:{fileName:_jsxFileName,lineNumber:407}},
-_react2.default.createElement(_reactxp2.default.View,{style:styles.container,__source:{fileName:_jsxFileName,lineNumber:408}},
+_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.scroll,__source:{fileName:_jsxFileName,lineNumber:408}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.container,__source:{fileName:_jsxFileName,lineNumber:409}},
 
 
 
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.welcome,__source:{fileName:_jsxFileName,lineNumber:412}},'Ready'),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.welcome,__source:{fileName:_jsxFileName,lineNumber:413}},'Ready'),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.Welcome,__source:{fileName:_jsxFileName,lineNumber:414}},'Policy'),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.Welcome,__source:{fileName:_jsxFileName,lineNumber:415}},'Policy'),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.policy,__source:{fileName:_jsxFileName,lineNumber:416}},'Your Policy Patner'),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.Policy,__source:{fileName:_jsxFileName,lineNumber:417}},'Waiting to automatically detect an SMS to 9640266349.',_react2.default.createElement(_reactxp2.default.Text,{style:styles.POLICY,__source:{fileName:_jsxFileName,lineNumber:417}},'WrongNumber?')),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.POlicy,__source:{fileName:_jsxFileName,lineNumber:418}},
-_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:419}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.policy,__source:{fileName:_jsxFileName,lineNumber:417}},'Your Policy Patner'),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.Policy,__source:{fileName:_jsxFileName,lineNumber:418}},'Waiting to automatically detect an SMS to 9640266349.',_react2.default.createElement(_reactxp2.default.Text,{style:styles.POLICY,__source:{fileName:_jsxFileName,lineNumber:418}},'WrongNumber?')),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.POlicy,__source:{fileName:_jsxFileName,lineNumber:419}},
+_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:420}},
 _react2.default.createElement(_reactBootstrap.FormGroup,{
-controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:420}},
+controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:421}},
 
 
 _react2.default.createElement(_reactBootstrap.FormControl,{
@@ -16408,13 +16464,13 @@ type:'text',
 style:styles.Form,
 value:this.state.value,
 placeholder:'00',
-secureTextEntry:true,__source:{fileName:_jsxFileName,lineNumber:424}}))),
+secureTextEntry:true,__source:{fileName:_jsxFileName,lineNumber:425}}))),
 
 
 
-_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:433}},
+_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:434}},
 _react2.default.createElement(_reactBootstrap.FormGroup,{
-controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:434}},
+controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:435}},
 
 
 _react2.default.createElement(_reactBootstrap.FormControl,{
@@ -16422,13 +16478,13 @@ type:'text',
 style:styles.Form1,
 value:this.state.value,
 placeholder:'01',
-secureTextEntry:true,__source:{fileName:_jsxFileName,lineNumber:438}}))),
+secureTextEntry:true,__source:{fileName:_jsxFileName,lineNumber:439}}))),
 
 
 
-_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:447}},
+_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:448}},
 _react2.default.createElement(_reactBootstrap.FormGroup,{
-controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:448}},
+controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:449}},
 
 
 _react2.default.createElement(_reactBootstrap.FormControl,{
@@ -16436,31 +16492,31 @@ type:'text',
 style:styles.Form2,
 value:this.state.value,
 placeholder:'02',
-secureTextEntry:true,__source:{fileName:_jsxFileName,lineNumber:452}})))),
+secureTextEntry:true,__source:{fileName:_jsxFileName,lineNumber:453}})))),
 
 
 
 
 
 
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.otp,__source:{fileName:_jsxFileName,lineNumber:464}},'Enter OTP code'),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.otp,__source:{fileName:_jsxFileName,lineNumber:465}},'Enter OTP code'),
 
 
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.resend,__source:{fileName:_jsxFileName,lineNumber:467}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/logo.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:468}}),'Resend'),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.resend,__source:{fileName:_jsxFileName,lineNumber:468}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/logo.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:469}}),'Resend'),
 
 
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.Resend,__source:{fileName:_jsxFileName,lineNumber:471}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/download.jpeg',style:[styles.phone],__source:{fileName:_jsxFileName,lineNumber:472}}),'Phone'),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.Resend,__source:{fileName:_jsxFileName,lineNumber:472}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/download.jpeg',style:[styles.phone],__source:{fileName:_jsxFileName,lineNumber:473}}),'Phone'),
 
 
 _react2.default.createElement(_reactxp2.default.Button,{
 style:[styles.button1,this.state.button1Hover&&styles.button1Hover],
 onHoverStart:function onHoverStart(){_this2.setState({button1Hover:true});},
 onHoverEnd:function onHoverEnd(){_this2.setState({button1Hover:false});},
-onPress:this.props.onPressNavigate,__source:{fileName:_jsxFileName,lineNumber:475}},
+onPress:this.props.onPressNavigate,__source:{fileName:_jsxFileName,lineNumber:476}},
 
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.button1Text,this.state.button1Hover&&styles.button1TextHover],__source:{fileName:_jsxFileName,lineNumber:481}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.button1Text,this.state.button1Hover&&styles.button1TextHover],__source:{fileName:_jsxFileName,lineNumber:482}},
 'Next')))));
 
 
@@ -16473,7 +16529,7 @@ _react2.default.createElement(_reactxp2.default.Text,{style:[styles.button1Text,
 /* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/QuotesSelection.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/QuotesSelection.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -20377,7 +20433,7 @@ return module;
 /* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/ProgressIndicator.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/ProgressIndicator.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -25131,7 +25187,7 @@ module.exports=exports['default'];
 
 
 
-exports=module.exports=function(searchInput){
+function keyCode(searchInput){
 
 if(searchInput&&'object'===typeof searchInput){
 var hasKeyCode=searchInput.which||searchInput.keyCode||searchInput.charCode;
@@ -25156,7 +25212,36 @@ if(foundNamedKey)return foundNamedKey;
 if(search.length===1)return search.charCodeAt(0);
 
 return undefined;
+}
+
+
+
+
+
+
+
+
+
+keyCode.isEventKey=function isEventKey(event,nameOrCode){
+if(event&&'object'===typeof event){
+var keyCode=event.which||event.keyCode||event.charCode;
+if(keyCode===null||keyCode===undefined){return false;}
+if(typeof nameOrCode==='string'){
+
+var foundNamedKey=codes[nameOrCode.toLowerCase()];
+if(foundNamedKey){return foundNamedKey===keyCode;}
+
+
+var foundNamedKey=aliases[nameOrCode.toLowerCase()];
+if(foundNamedKey){return foundNamedKey===keyCode;}
+}else if(typeof nameOrCode==='number'){
+return nameOrCode===keyCode;
+}
+return false;
+}
 };
+
+exports=module.exports=keyCode;
 
 
 
@@ -25227,12 +25312,12 @@ var aliases=exports.aliases={
 'return':13,
 'escape':27,
 'spc':32,
+'spacebar':32,
 'pgup':33,
 'pgdn':34,
 'ins':45,
 'del':46,
 'cmd':91};
-
 
 
 
@@ -47033,23 +47118,23 @@ el.blur();
 }
 };
 Button.prototype._getStyles=function(){
+var buttonStyleMutations={};
 var buttonStyles=Styles_1.default.combine(this.props.style);
 
 if(buttonStyles&&buttonStyles.padding===undefined&&
 buttonStyles.paddingRight===undefined&&buttonStyles.paddingLeft===undefined&&
 buttonStyles.paddingBottom===undefined&&buttonStyles.paddingTop===undefined&&
 buttonStyles.paddingHorizontal===undefined&&buttonStyles.paddingVertical===undefined){
-buttonStyles['padding']='0';
+buttonStyleMutations.padding=0;
 }
-var combinedStyles=Styles_1.default.combine([_styles.defaultButton,buttonStyles]);
 if(this.props.disabled){
-combinedStyles.opacity=0.5;
+buttonStyleMutations.opacity=0.5;
 }
 
-if(!combinedStyles['cursor']){
-combinedStyles['cursor']=this.props.disabled?'default':'pointer';
+if(!buttonStyleMutations.cursor){
+buttonStyleMutations.cursor=this.props.disabled?'default':'pointer';
 }
-return combinedStyles;
+return Styles_1.default.combine([_styles.defaultButton,buttonStyles,buttonStyleMutations]);
 };
 Button.contextTypes={
 hasRxButtonAscendant:PropTypes.bool};
@@ -47562,8 +47647,8 @@ _this.props.onPaste(e);
 }
 _this._checkSelectionChanged();
 };
-_this._onInput=function(e){
-if(!e.defaultPrevented){
+_this._onInputChanged=function(event){
+if(!event.defaultPrevented){
 if(_this._mountedComponent){
 
 var value=_this._mountedComponent.value||'';
@@ -47654,11 +47739,11 @@ var editable=this.props.editable!==undefined?this.props.editable:true;
 var spellCheck=this.props.spellCheck!==undefined?this.props.spellCheck:this.props.autoCorrect;
 
 if(this.props.multiline){
-return React.createElement("textarea",{ref:this._onMount,style:combinedStyles,value:this.state.inputValue,autoCorrect:this.props.autoCorrect===false?'off':undefined,spellCheck:spellCheck,disabled:!editable,maxLength:this.props.maxLength,placeholder:this.props.placeholder,onInput:this._onInput,onKeyDown:this._onKeyDown,onKeyUp:this._checkSelectionChanged,onFocus:this.props.onFocus,onBlur:this.props.onBlur,onMouseDown:this._checkSelectionChanged,onMouseUp:this._checkSelectionChanged,onPaste:this._onPaste,onScroll:this._onScroll,"aria-label":this.props.accessibilityLabel,"aria-live":_isMac?'assertive':undefined});
+return React.createElement("textarea",{ref:this._onMount,style:combinedStyles,value:this.state.inputValue,autoCorrect:this.props.autoCorrect===false?'off':undefined,spellCheck:spellCheck,disabled:!editable,maxLength:this.props.maxLength,placeholder:this.props.placeholder,onChange:this._onInputChanged,onKeyDown:this._onKeyDown,onKeyUp:this._checkSelectionChanged,onFocus:this.props.onFocus,onBlur:this.props.onBlur,onMouseDown:this._checkSelectionChanged,onMouseUp:this._checkSelectionChanged,onPaste:this._onPaste,onScroll:this._onScroll,"aria-label":this.props.accessibilityLabel,"aria-live":_isMac?'assertive':undefined});
 }else
 {
 var _a=this._getKeyboardType(),keyboardTypeValue=_a.keyboardTypeValue,wrapInForm=_a.wrapInForm,pattern=_a.pattern;
-var input=React.createElement("input",{ref:this._onMount,style:combinedStyles,value:this.state.inputValue,autoCorrect:this.props.autoCorrect===false?'off':undefined,spellCheck:spellCheck,disabled:!editable,maxLength:this.props.maxLength,placeholder:this.props.placeholder,onInput:this._onInput,onKeyDown:this._onKeyDown,onKeyUp:this._checkSelectionChanged,onFocus:this.props.onFocus,onBlur:this.props.onBlur,onMouseDown:this._checkSelectionChanged,onMouseUp:this._checkSelectionChanged,onPaste:this._onPaste,"aria-label":this.props.accessibilityLabel,"aria-live":_isMac?'assertive':undefined,type:keyboardTypeValue,pattern:pattern});
+var input=React.createElement("input",{ref:this._onMount,style:combinedStyles,value:this.state.inputValue,autoCorrect:this.props.autoCorrect===false?'off':undefined,spellCheck:spellCheck,disabled:!editable,maxLength:this.props.maxLength,placeholder:this.props.placeholder,onChange:this._onInputChanged,onKeyDown:this._onKeyDown,onKeyUp:this._checkSelectionChanged,onFocus:this.props.onFocus,onBlur:this.props.onBlur,onMouseDown:this._checkSelectionChanged,onMouseUp:this._checkSelectionChanged,onPaste:this._onPaste,"aria-label":this.props.accessibilityLabel,"aria-live":_isMac?'assertive':undefined,type:keyboardTypeValue,pattern:pattern});
 if(wrapInForm){
 
 input=React.createElement("form",{action:'',onSubmit:function onSubmit(ev){ev.preventDefault();_this.blur();},style:_styles.formStyle},input);
@@ -48510,23 +48595,23 @@ el.blur();
 }
 };
 Button.prototype._getStyles=function(){
+var buttonStyleMutations={};
 var buttonStyles=Styles_1.default.combine(this.props.style);
 
 if(buttonStyles&&buttonStyles.padding===undefined&&
 buttonStyles.paddingRight===undefined&&buttonStyles.paddingLeft===undefined&&
 buttonStyles.paddingBottom===undefined&&buttonStyles.paddingTop===undefined&&
 buttonStyles.paddingHorizontal===undefined&&buttonStyles.paddingVertical===undefined){
-buttonStyles['padding']='0';
+buttonStyleMutations.padding=0;
 }
-var combinedStyles=Styles_1.default.combine([_styles.defaultButton,buttonStyles]);
 if(this.props.disabled){
-combinedStyles.opacity=0.5;
+buttonStyleMutations.opacity=0.5;
 }
 
-if(!combinedStyles['cursor']){
-combinedStyles['cursor']=this.props.disabled?'default':'pointer';
+if(!buttonStyleMutations.cursor){
+buttonStyleMutations.cursor=this.props.disabled?'default':'pointer';
 }
-return combinedStyles;
+return Styles_1.default.combine([_styles.defaultButton,buttonStyles,buttonStyleMutations]);
 };
 Button.contextTypes={
 hasRxButtonAscendant:PropTypes.bool};
@@ -49039,8 +49124,8 @@ _this.props.onPaste(e);
 }
 _this._checkSelectionChanged();
 };
-_this._onInput=function(e){
-if(!e.defaultPrevented){
+_this._onInputChanged=function(event){
+if(!event.defaultPrevented){
 if(_this._mountedComponent){
 
 var value=_this._mountedComponent.value||'';
@@ -49131,11 +49216,11 @@ var editable=this.props.editable!==undefined?this.props.editable:true;
 var spellCheck=this.props.spellCheck!==undefined?this.props.spellCheck:this.props.autoCorrect;
 
 if(this.props.multiline){
-return React.createElement("textarea",{ref:this._onMount,style:combinedStyles,value:this.state.inputValue,autoCorrect:this.props.autoCorrect===false?'off':undefined,spellCheck:spellCheck,disabled:!editable,maxLength:this.props.maxLength,placeholder:this.props.placeholder,onInput:this._onInput,onKeyDown:this._onKeyDown,onKeyUp:this._checkSelectionChanged,onFocus:this.props.onFocus,onBlur:this.props.onBlur,onMouseDown:this._checkSelectionChanged,onMouseUp:this._checkSelectionChanged,onPaste:this._onPaste,onScroll:this._onScroll,"aria-label":this.props.accessibilityLabel,"aria-live":_isMac?'assertive':undefined});
+return React.createElement("textarea",{ref:this._onMount,style:combinedStyles,value:this.state.inputValue,autoCorrect:this.props.autoCorrect===false?'off':undefined,spellCheck:spellCheck,disabled:!editable,maxLength:this.props.maxLength,placeholder:this.props.placeholder,onChange:this._onInputChanged,onKeyDown:this._onKeyDown,onKeyUp:this._checkSelectionChanged,onFocus:this.props.onFocus,onBlur:this.props.onBlur,onMouseDown:this._checkSelectionChanged,onMouseUp:this._checkSelectionChanged,onPaste:this._onPaste,onScroll:this._onScroll,"aria-label":this.props.accessibilityLabel,"aria-live":_isMac?'assertive':undefined});
 }else
 {
 var _a=this._getKeyboardType(),keyboardTypeValue=_a.keyboardTypeValue,wrapInForm=_a.wrapInForm,pattern=_a.pattern;
-var input=React.createElement("input",{ref:this._onMount,style:combinedStyles,value:this.state.inputValue,autoCorrect:this.props.autoCorrect===false?'off':undefined,spellCheck:spellCheck,disabled:!editable,maxLength:this.props.maxLength,placeholder:this.props.placeholder,onInput:this._onInput,onKeyDown:this._onKeyDown,onKeyUp:this._checkSelectionChanged,onFocus:this.props.onFocus,onBlur:this.props.onBlur,onMouseDown:this._checkSelectionChanged,onMouseUp:this._checkSelectionChanged,onPaste:this._onPaste,"aria-label":this.props.accessibilityLabel,"aria-live":_isMac?'assertive':undefined,type:keyboardTypeValue,pattern:pattern});
+var input=React.createElement("input",{ref:this._onMount,style:combinedStyles,value:this.state.inputValue,autoCorrect:this.props.autoCorrect===false?'off':undefined,spellCheck:spellCheck,disabled:!editable,maxLength:this.props.maxLength,placeholder:this.props.placeholder,onChange:this._onInputChanged,onKeyDown:this._onKeyDown,onKeyUp:this._checkSelectionChanged,onFocus:this.props.onFocus,onBlur:this.props.onBlur,onMouseDown:this._checkSelectionChanged,onMouseUp:this._checkSelectionChanged,onPaste:this._onPaste,"aria-label":this.props.accessibilityLabel,"aria-live":_isMac?'assertive':undefined,type:keyboardTypeValue,pattern:pattern});
 if(wrapInForm){
 
 input=React.createElement("form",{action:'',onSubmit:function onSubmit(ev){ev.preventDefault();_this.blur();},style:_styles.formStyle},input);
@@ -49947,23 +50032,23 @@ el.blur();
 }
 };
 Button.prototype._getStyles=function(){
+var buttonStyleMutations={};
 var buttonStyles=Styles_1.default.combine(this.props.style);
 
 if(buttonStyles&&buttonStyles.padding===undefined&&
 buttonStyles.paddingRight===undefined&&buttonStyles.paddingLeft===undefined&&
 buttonStyles.paddingBottom===undefined&&buttonStyles.paddingTop===undefined&&
 buttonStyles.paddingHorizontal===undefined&&buttonStyles.paddingVertical===undefined){
-buttonStyles['padding']='0';
+buttonStyleMutations.padding=0;
 }
-var combinedStyles=Styles_1.default.combine([_styles.defaultButton,buttonStyles]);
 if(this.props.disabled){
-combinedStyles.opacity=0.5;
+buttonStyleMutations.opacity=0.5;
 }
 
-if(!combinedStyles['cursor']){
-combinedStyles['cursor']=this.props.disabled?'default':'pointer';
+if(!buttonStyleMutations.cursor){
+buttonStyleMutations.cursor=this.props.disabled?'default':'pointer';
 }
-return combinedStyles;
+return Styles_1.default.combine([_styles.defaultButton,buttonStyles,buttonStyleMutations]);
 };
 Button.contextTypes={
 hasRxButtonAscendant:PropTypes.bool};
@@ -50476,8 +50561,8 @@ _this.props.onPaste(e);
 }
 _this._checkSelectionChanged();
 };
-_this._onInput=function(e){
-if(!e.defaultPrevented){
+_this._onInputChanged=function(event){
+if(!event.defaultPrevented){
 if(_this._mountedComponent){
 
 var value=_this._mountedComponent.value||'';
@@ -50568,11 +50653,11 @@ var editable=this.props.editable!==undefined?this.props.editable:true;
 var spellCheck=this.props.spellCheck!==undefined?this.props.spellCheck:this.props.autoCorrect;
 
 if(this.props.multiline){
-return React.createElement("textarea",{ref:this._onMount,style:combinedStyles,value:this.state.inputValue,autoCorrect:this.props.autoCorrect===false?'off':undefined,spellCheck:spellCheck,disabled:!editable,maxLength:this.props.maxLength,placeholder:this.props.placeholder,onInput:this._onInput,onKeyDown:this._onKeyDown,onKeyUp:this._checkSelectionChanged,onFocus:this.props.onFocus,onBlur:this.props.onBlur,onMouseDown:this._checkSelectionChanged,onMouseUp:this._checkSelectionChanged,onPaste:this._onPaste,onScroll:this._onScroll,"aria-label":this.props.accessibilityLabel,"aria-live":_isMac?'assertive':undefined});
+return React.createElement("textarea",{ref:this._onMount,style:combinedStyles,value:this.state.inputValue,autoCorrect:this.props.autoCorrect===false?'off':undefined,spellCheck:spellCheck,disabled:!editable,maxLength:this.props.maxLength,placeholder:this.props.placeholder,onChange:this._onInputChanged,onKeyDown:this._onKeyDown,onKeyUp:this._checkSelectionChanged,onFocus:this.props.onFocus,onBlur:this.props.onBlur,onMouseDown:this._checkSelectionChanged,onMouseUp:this._checkSelectionChanged,onPaste:this._onPaste,onScroll:this._onScroll,"aria-label":this.props.accessibilityLabel,"aria-live":_isMac?'assertive':undefined});
 }else
 {
 var _a=this._getKeyboardType(),keyboardTypeValue=_a.keyboardTypeValue,wrapInForm=_a.wrapInForm,pattern=_a.pattern;
-var input=React.createElement("input",{ref:this._onMount,style:combinedStyles,value:this.state.inputValue,autoCorrect:this.props.autoCorrect===false?'off':undefined,spellCheck:spellCheck,disabled:!editable,maxLength:this.props.maxLength,placeholder:this.props.placeholder,onInput:this._onInput,onKeyDown:this._onKeyDown,onKeyUp:this._checkSelectionChanged,onFocus:this.props.onFocus,onBlur:this.props.onBlur,onMouseDown:this._checkSelectionChanged,onMouseUp:this._checkSelectionChanged,onPaste:this._onPaste,"aria-label":this.props.accessibilityLabel,"aria-live":_isMac?'assertive':undefined,type:keyboardTypeValue,pattern:pattern});
+var input=React.createElement("input",{ref:this._onMount,style:combinedStyles,value:this.state.inputValue,autoCorrect:this.props.autoCorrect===false?'off':undefined,spellCheck:spellCheck,disabled:!editable,maxLength:this.props.maxLength,placeholder:this.props.placeholder,onChange:this._onInputChanged,onKeyDown:this._onKeyDown,onKeyUp:this._checkSelectionChanged,onFocus:this.props.onFocus,onBlur:this.props.onBlur,onMouseDown:this._checkSelectionChanged,onMouseUp:this._checkSelectionChanged,onPaste:this._onPaste,"aria-label":this.props.accessibilityLabel,"aria-live":_isMac?'assertive':undefined,type:keyboardTypeValue,pattern:pattern});
 if(wrapInForm){
 
 input=React.createElement("form",{action:'',onSubmit:function onSubmit(ev){ev.preventDefault();_this.blur();},style:_styles.formStyle},input);
@@ -51927,7 +52012,7 @@ module.exports=restyleForInlineText;
 /* 503 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/App.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/App.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -52051,7 +52136,7 @@ _this._onPressOne=_this._onPressOne.bind(_this);return _this;
 
 {
 this._navigator.immediatelyResetRouteStack([{
-routeId:NavigationRouteId.MainPanel,
+routeId:NavigationRouteId.LoginPage,
 sceneConfigType:"Fade"}]);
 
 }},{key:'render',value:function render()
@@ -52076,7 +52161,7 @@ console.log(navigatorRoute,"navigatorRoute");
 var user={name:"test"};
 switch(navigatorRoute.routeId){
 case NavigationRouteId.OtpPage:
-return _react2.default.createElement(_OtpPage2.default,{onPressNavigate:this._onPressNavigate,__source:{fileName:_jsxFileName,lineNumber:150}});
+return _react2.default.createElement(_OtpPage2.default,{onPressNavigate:this._onPressNavigate,navigatorRoute:navigatorRoute,__source:{fileName:_jsxFileName,lineNumber:150}});
 
 case NavigationRouteId.CompareQuotes:
 return _react2.default.createElement(_CompareQuotes2.default,{onNavigateCompare:this._onPressCompare,navigatorRoute:navigatorRoute,__source:{fileName:_jsxFileName,lineNumber:153}});
@@ -95537,7 +95622,7 @@ return React.createElement("div",{className:this.state.focusClass,style:rootView
 this.props.mainView,
 optionalModal,
 optionalPopup,
-React.createElement("div",{style:_styles.liveRegionContainer,"aria-live":AccessibilityUtil_1.default.accessibilityLiveRegionToString(Types.AccessibilityLiveRegion.Polite),"aria-atomic":'true',"aria-relevant":'text'},announcement));
+React.createElement("div",{style:_styles.liveRegionContainer,"aria-live":AccessibilityUtil_1.default.accessibilityLiveRegionToString(Types.AccessibilityLiveRegion.Polite),"aria-atomic":'true',"aria-relevant":'additions text'},announcement));
 };
 RootView.prototype._determineIfClickOnElement=function(elementReference,eventSource){
 var element=ReactDOM.findDOMNode(elementReference);
@@ -101202,7 +101287,7 @@ return React.createElement("div",{className:this.state.focusClass,style:rootView
 this.props.mainView,
 optionalModal,
 optionalPopup,
-React.createElement("div",{style:_styles.liveRegionContainer,"aria-live":AccessibilityUtil_1.default.accessibilityLiveRegionToString(Types.AccessibilityLiveRegion.Polite),"aria-atomic":'true',"aria-relevant":'text'},announcement));
+React.createElement("div",{style:_styles.liveRegionContainer,"aria-live":AccessibilityUtil_1.default.accessibilityLiveRegionToString(Types.AccessibilityLiveRegion.Polite),"aria-atomic":'true',"aria-relevant":'additions text'},announcement));
 };
 RootView.prototype._determineIfClickOnElement=function(elementReference,eventSource){
 var element=ReactDOM.findDOMNode(elementReference);
@@ -106401,7 +106486,7 @@ return React.createElement("div",{className:this.state.focusClass,style:rootView
 this.props.mainView,
 optionalModal,
 optionalPopup,
-React.createElement("div",{style:_styles.liveRegionContainer,"aria-live":AccessibilityUtil_1.default.accessibilityLiveRegionToString(Types.AccessibilityLiveRegion.Polite),"aria-atomic":'true',"aria-relevant":'text'},announcement));
+React.createElement("div",{style:_styles.liveRegionContainer,"aria-live":AccessibilityUtil_1.default.accessibilityLiveRegionToString(Types.AccessibilityLiveRegion.Polite),"aria-atomic":'true',"aria-relevant":'additions text'},announcement));
 };
 RootView.prototype._determineIfClickOnElement=function(elementReference,eventSource){
 var element=ReactDOM.findDOMNode(elementReference);
@@ -115107,7 +115192,7 @@ return Object.prototype.hasOwnProperty.call(obj,prop);
 /* 969 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/Addons.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/Addons.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -115455,7 +115540,7 @@ _react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.
 /* 970 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/CarDetails.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/CarDetails.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -116039,7 +116124,7 @@ this.setState({toggleValue:newValue});
 /* 971 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/CarGproposal.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/CarGproposal.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -116422,7 +116507,7 @@ _this.setState({password:newText});
 /* 972 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/CarSelection.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/CarSelection.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -117153,7 +117238,7 @@ this.setState({toggleValue:newValue});
 /* 973 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/CompareCar.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/CompareCar.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -117919,7 +118004,7 @@ _react2.default.createElement(_reactxp2.default.Text,{style:styles.buttonText,__
 /* 974 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/CompareQuotes.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/CompareQuotes.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -118763,7 +118848,7 @@ _react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.defaul
 /* 976 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/Gproposal.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/Gproposal.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -119174,7 +119259,7 @@ _this.setState({password:newText});
 /* 977 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/HomePanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/HomePanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -119505,7 +119590,7 @@ _react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText
 /* 978 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/InsauranceFourWheeler.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/InsauranceFourWheeler.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -120076,7 +120161,7 @@ _react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.
 /* 979 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/InsuranceAddons.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/InsuranceAddons.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -120109,11 +120194,11 @@ width:5000,
 height:72,
 paddingVertical:20,
 marginLeft:-1200,
-marginTop:12})};var
+marginTop:12})};
 
 
 
-
+var token;var
 
 InsuranceAddons=function(_RX$Component){_inherits(InsuranceAddons,_RX$Component);
 function InsuranceAddons(props){_classCallCheck(this,InsuranceAddons);var _this=_possibleConstructorReturn(this,(InsuranceAddons.__proto__||Object.getPrototypeOf(InsuranceAddons)).call(this,
@@ -120154,9 +120239,10 @@ return fetch('http://localhost:8082/calculatepremium',{
 method:'POST',
 headers:{
 'Accept':'application/json',
-'Content-Type':'application/json'},
+'Content-Type':'application/json',
 
 
+'x-access-token':token},
 
 
 body:JSON.stringify({
@@ -120333,12 +120419,12 @@ animation.start();
 {var _this2=this;
 
 return(
-_react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:258}},
-_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:259}},
-_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onPressNavigate,__source:{fileName:_jsxFileName,lineNumber:260}},_react2.default.createElement(_reactxp2.default.Image,{
+_react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:259}},
+_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:260}},
+_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onPressNavigate,__source:{fileName:_jsxFileName,lineNumber:261}},_react2.default.createElement(_reactxp2.default.Image,{
 style:_styles.HomeScrollImageLogo,
-source:'./src/img/Back.svg',__source:{fileName:_jsxFileName,lineNumber:260}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:263}},'Get Quote '))),
+source:'./src/img/Back.svg',__source:{fileName:_jsxFileName,lineNumber:261}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:264}},'Get Quote '))),
 
 
 
@@ -120346,62 +120432,62 @@ _react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.
 
 
 
-_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:271}},
+_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:272}},
 
-_react2.default.createElement('div',{'class':'steps-form-2',__source:{fileName:_jsxFileName,lineNumber:273}},
-_react2.default.createElement('div',{'class':'steps-row-2 setup-panel-2 d-flex justify-content-between',__source:{fileName:_jsxFileName,lineNumber:274}},
-_react2.default.createElement('div',{'class':'steps-step-2',__source:{fileName:_jsxFileName,lineNumber:275}},
-_react2.default.createElement('a',{href:'#step-1',type:'button','class':'btn btn-amber btn-circle-2 waves-effect ml-0','data-toggle':'tooltip','data-placement':'top',title:'Quote Details',__source:{fileName:_jsxFileName,lineNumber:276}},_react2.default.createElement('i',{'class':'fa fa-folder-open-o','aria-hidden':'true',__source:{fileName:_jsxFileName,lineNumber:276}}))),
+_react2.default.createElement('div',{'class':'steps-form-2',__source:{fileName:_jsxFileName,lineNumber:274}},
+_react2.default.createElement('div',{'class':'steps-row-2 setup-panel-2 d-flex justify-content-between',__source:{fileName:_jsxFileName,lineNumber:275}},
+_react2.default.createElement('div',{'class':'steps-step-2',__source:{fileName:_jsxFileName,lineNumber:276}},
+_react2.default.createElement('a',{href:'#step-1',type:'button','class':'btn btn-amber btn-circle-2 waves-effect ml-0','data-toggle':'tooltip','data-placement':'top',title:'Quote Details',__source:{fileName:_jsxFileName,lineNumber:277}},_react2.default.createElement('i',{'class':'fa fa-folder-open-o','aria-hidden':'true',__source:{fileName:_jsxFileName,lineNumber:277}}))),
 
-_react2.default.createElement('div',{'class':'steps-step-2',__source:{fileName:_jsxFileName,lineNumber:278}},
-_react2.default.createElement('a',{href:'#step-2',type:'button','class':'btn btn-blue-grey btn-circle-2 waves-effect','data-toggle':'tooltip','data-placement':'top',title:'Vehicle Details',__source:{fileName:_jsxFileName,lineNumber:279}},_react2.default.createElement('i',{'class':'fa fa-pencil','aria-hidden':'true',__source:{fileName:_jsxFileName,lineNumber:279}}))),
+_react2.default.createElement('div',{'class':'steps-step-2',__source:{fileName:_jsxFileName,lineNumber:279}},
+_react2.default.createElement('a',{href:'#step-2',type:'button','class':'btn btn-blue-grey btn-circle-2 waves-effect','data-toggle':'tooltip','data-placement':'top',title:'Vehicle Details',__source:{fileName:_jsxFileName,lineNumber:280}},_react2.default.createElement('i',{'class':'fa fa-pencil','aria-hidden':'true',__source:{fileName:_jsxFileName,lineNumber:280}}))),
 
-_react2.default.createElement('div',{'class':'steps-step-2',__source:{fileName:_jsxFileName,lineNumber:281}},
-_react2.default.createElement('a',{href:'#step-3',type:'button','class':'btn btn-blue-grey btn-circle-2 waves-effect','data-toggle':'tooltip','data-placement':'top',title:'Personal Information',__source:{fileName:_jsxFileName,lineNumber:282}},_react2.default.createElement('i',{'class':'fa fa-photo','aria-hidden':'true',__source:{fileName:_jsxFileName,lineNumber:282}}))),
+_react2.default.createElement('div',{'class':'steps-step-2',__source:{fileName:_jsxFileName,lineNumber:282}},
+_react2.default.createElement('a',{href:'#step-3',type:'button','class':'btn btn-blue-grey btn-circle-2 waves-effect','data-toggle':'tooltip','data-placement':'top',title:'Personal Information',__source:{fileName:_jsxFileName,lineNumber:283}},_react2.default.createElement('i',{'class':'fa fa-photo','aria-hidden':'true',__source:{fileName:_jsxFileName,lineNumber:283}}))),
 
-_react2.default.createElement('div',{'class':'steps-step-2',__source:{fileName:_jsxFileName,lineNumber:284}},
-_react2.default.createElement('a',{href:'#step-4',type:'button','class':'btn btn-blue-grey btn-circle-2 waves-effect mr-0','data-toggle':'tooltip','data-placement':'top',title:'Payment',__source:{fileName:_jsxFileName,lineNumber:285}},_react2.default.createElement('i',{'class':'fa fa-check','aria-hidden':'true',__source:{fileName:_jsxFileName,lineNumber:285}}))))),
-
-
-
-_react2.default.createElement('div',{'class':'jumbotron',style:_styles.SCROLL,__source:{fileName:_jsxFileName,lineNumber:289}},
-_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:290}},
-_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:291}},
-
-_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.SIDETEXT,__source:{fileName:_jsxFileName,lineNumber:293}},'Please enter vehicle details to get your Quote'))),
+_react2.default.createElement('div',{'class':'steps-step-2',__source:{fileName:_jsxFileName,lineNumber:285}},
+_react2.default.createElement('a',{href:'#step-4',type:'button','class':'btn btn-blue-grey btn-circle-2 waves-effect mr-0','data-toggle':'tooltip','data-placement':'top',title:'Payment',__source:{fileName:_jsxFileName,lineNumber:286}},_react2.default.createElement('i',{'class':'fa fa-check','aria-hidden':'true',__source:{fileName:_jsxFileName,lineNumber:286}}))))),
 
 
 
-_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:297}},
-_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:298}},
-_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:299}},
-_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:300}},'Manufacturer Year'),
+_react2.default.createElement('div',{'class':'jumbotron',style:_styles.SCROLL,__source:{fileName:_jsxFileName,lineNumber:290}},
+_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:291}},
+_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:292}},
+
+_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.SIDETEXT,__source:{fileName:_jsxFileName,lineNumber:294}},'Please enter vehicle details to get your Quote'))),
+
+
+
+_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:298}},
+_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:299}},
+_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:300}},
+_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:301}},'Manufacturer Year'),
 _react2.default.createElement(_reactxp2.default.TextInput,{
 style:_AppStyles2.default.Form,
 placeholder:' Year of manufacturer',
 value:this.state.yearOfManufacture,
-onChangeText:this.onChangeyearOfManufacture,__source:{fileName:_jsxFileName,lineNumber:301}})),
+onChangeText:this.onChangeyearOfManufacture,__source:{fileName:_jsxFileName,lineNumber:302}})),
 
 
 
-_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:309}},
-_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:310}},'Car Registered City'),
+_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:310}},
+_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:311}},'Car Registered City'),
 
 
 _react2.default.createElement(_reactxp2.default.TextInput,{
 style:_AppStyles2.default.Form,
 placeholder:'Car Register city',
 value:this.state.carRegisteredCity,
-onChangeText:this.onChangecarRegisteredCity,__source:{fileName:_jsxFileName,lineNumber:313}})))),
+onChangeText:this.onChangecarRegisteredCity,__source:{fileName:_jsxFileName,lineNumber:314}})))),
 
 
 
 
 
-_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:323}},
-_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:324}},
-_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:325}},
-_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:326}},'Vehicle Register Date'),
+_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:324}},
+_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:325}},
+_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:326}},
+_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:327}},'Vehicle Register Date'),
 
 
 
@@ -120413,26 +120499,26 @@ showIcon:false,
 confirmBtnText:'Confirm',
 cancelBtnText:'Cancel',
 selected:this.state.startDate,
-onChange:this.handleChange,__source:{fileName:_jsxFileName,lineNumber:330}})),
+onChange:this.handleChange,__source:{fileName:_jsxFileName,lineNumber:331}})),
 
 
 
-_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:342}},
-_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:343}},'Vehicle Manufacturer Name'),
+_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:343}},
+_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:344}},'Vehicle Manufacturer Name'),
 _react2.default.createElement(_reactxp2.default.TextInput,{
 style:_AppStyles2.default.Form,
 placeholder:'Vehicle manufacturer name',
 value:this.state.vehicleManufacturerName,
-onChangeText:this.onChangevehicleManufacturerName,__source:{fileName:_jsxFileName,lineNumber:344}})))),
+onChangeText:this.onChangevehicleManufacturerName,__source:{fileName:_jsxFileName,lineNumber:345}})))),
 
 
 
 
 
-_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:354}},
-_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:355}},
-_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:356}},
-_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:357}},'Vehicle Model Code'),
+_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:355}},
+_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:356}},
+_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:357}},
+_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:358}},'Vehicle Model Code'),
 
 
 
@@ -120440,30 +120526,30 @@ _react2.default.createElement(_reactxp2.default.TextInput,{
 style:_AppStyles2.default.Form,
 placeholder:'Vehicle model code',
 value:this.state.vehicleModelCode,
-onChangeText:this.onChangevehicleModelCode,__source:{fileName:_jsxFileName,lineNumber:361}})),
+onChangeText:this.onChangevehicleModelCode,__source:{fileName:_jsxFileName,lineNumber:362}})),
 
 
 
 
-_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:370}},
-_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:371}},'Vehicle Mostly Driven On'),
+_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:371}},
+_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:372}},'Vehicle Mostly Driven On'),
 
 
 _react2.default.createElement(_reactxp2.default.TextInput,{
 style:_AppStyles2.default.Form,
 placeholder:'vehicle mostly driven on',
 value:this.state.vehicleMostlyDrivenOn,
-onChangeText:this.onChangevehicleMostlyDrivenOn,__source:{fileName:_jsxFileName,lineNumber:374}})))),
+onChangeText:this.onChangevehicleMostlyDrivenOn,__source:{fileName:_jsxFileName,lineNumber:375}})))),
 
 
 
 
 
 
-_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:385}},
-_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:386}},
-_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:387}},
-_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:388}},'Name'),
+_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:386}},
+_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:387}},
+_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:388}},
+_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:389}},'Name'),
 
 
 
@@ -120472,38 +120558,38 @@ _react2.default.createElement(_reactxp2.default.TextInput,{
 style:_AppStyles2.default.Form,
 placeholder:'Last Name',
 value:this.state.lastName,
-onChangeText:this.onChangelastName,__source:{fileName:_jsxFileName,lineNumber:393}})),
+onChangeText:this.onChangelastName,__source:{fileName:_jsxFileName,lineNumber:394}})),
 
 
 
-_react2.default.createElement('div',{'class':'form-group col-md-3',__source:{fileName:_jsxFileName,lineNumber:401}},
-_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:402}},'Email ID'),
+_react2.default.createElement('div',{'class':'form-group col-md-3',__source:{fileName:_jsxFileName,lineNumber:402}},
+_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:403}},'Email ID'),
 
 
 _react2.default.createElement(_reactxp2.default.TextInput,{
 style:_AppStyles2.default.Form,
 placeholder:'Email id',
 value:this.state.emailId,
-onChangeText:this.onChangeemailId,__source:{fileName:_jsxFileName,lineNumber:405}}))),
+onChangeText:this.onChangeemailId,__source:{fileName:_jsxFileName,lineNumber:406}}))),
 
 
 
 
-_react2.default.createElement('div',{'class':'form-group col-md-3',__source:{fileName:_jsxFileName,lineNumber:414}},
+_react2.default.createElement('div',{'class':'form-group col-md-3',__source:{fileName:_jsxFileName,lineNumber:415}},
 
-_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.SIdeText,__source:{fileName:_jsxFileName,lineNumber:416}},'Mobile No'),
+_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.SIdeText,__source:{fileName:_jsxFileName,lineNumber:417}},'Mobile No'),
 
 _react2.default.createElement(_reactxp2.default.TextInput,{
 style:_AppStyles2.default.FOrm,
 placeholder:'Mobile no',
 value:this.state.mobileNo,
-onChangeText:this.onChangemobileNo,__source:{fileName:_jsxFileName,lineNumber:418}}))),
+onChangeText:this.onChangemobileNo,__source:{fileName:_jsxFileName,lineNumber:419}}))),
 
 
 
 
 
-_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.button,onPress:function onPress(){return _this2.onChangePostt();},__source:{fileName:_jsxFileName,lineNumber:428}},'Get Quote'))),
+_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.button,onPress:function onPress(){return _this2.onChangePostt();},__source:{fileName:_jsxFileName,lineNumber:429}},'Get Quote'))),
 
 
 
@@ -120591,8 +120677,8 @@ _react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.defaul
 
 
 
-_react2.default.createElement(_reactxp2.default.Button,{style:_Button2.default,onPress:this.props.onNavigateTen,__source:{fileName:_jsxFileName,lineNumber:516}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buttonText,__source:{fileName:_jsxFileName,lineNumber:517}},'Go Back'))));
+_react2.default.createElement(_reactxp2.default.Button,{style:_Button2.default,onPress:this.props.onNavigateTen,__source:{fileName:_jsxFileName,lineNumber:517}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buttonText,__source:{fileName:_jsxFileName,lineNumber:518}},'Go Back'))));
 
 
 
@@ -120605,7 +120691,7 @@ _react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.
 /* 980 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/Location.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(0);var _react2=_interopRequireDefault(_react);
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/Location.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(0);var _react2=_interopRequireDefault(_react);
 var _reactxp=__webpack_require__(11);var _reactxp2=_interopRequireDefault(_reactxp);
 var _AppStyles=__webpack_require__(16);var _AppStyles2=_interopRequireDefault(_AppStyles);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}
 
@@ -120696,7 +120782,7 @@ Location;
 /* 981 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/LoginPage.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/LoginPage.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -120957,10 +121043,11 @@ headers:{
 body:JSON.stringify({phone:"918369480901"})}).
 then(function(response){return response.json();}).then(function(responseJson){
 var res=responseJson.message;
-console.log(responseJson.token,"response");
+var token=responseJson.token;
+console.log(token,"token");
 console.log(res,"res");
 swal(''+res+'');
-_this.props.onNavigateForth(res);
+_this.props.onNavigateForth(res,token);
 });
 };_this.
 
@@ -120981,29 +121068,29 @@ _react2.default.createElement(_reactxp2.default.Image,{
 source:'./src/img/policy.png',
 resizeMode:'cover',
 fluidalt:'Responsive Image',
-style:[styles.backgroundImage],__source:{fileName:_jsxFileName,lineNumber:282}},
+style:[styles.backgroundImage],__source:{fileName:_jsxFileName,lineNumber:283}},
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.container,__source:{fileName:_jsxFileName,lineNumber:288}},
-
-
-
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.welcome,__source:{fileName:_jsxFileName,lineNumber:292}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Logo.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:293}})),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.container,__source:{fileName:_jsxFileName,lineNumber:289}},
 
 
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.policy,__source:{fileName:_jsxFileName,lineNumber:296}},'Your Policy Patner'),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.Policy,__source:{fileName:_jsxFileName,lineNumber:297}},'Please Enter Your phone Number To Login/Register'),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.POlicy,__source:{fileName:_jsxFileName,lineNumber:298}},
-_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:299}},
+
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.welcome,__source:{fileName:_jsxFileName,lineNumber:293}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Logo.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:294}})),
+
+
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.policy,__source:{fileName:_jsxFileName,lineNumber:297}},'Your Policy Patner'),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.Policy,__source:{fileName:_jsxFileName,lineNumber:298}},'Please Enter Your phone Number To Login/Register'),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.POlicy,__source:{fileName:_jsxFileName,lineNumber:299}},
+_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:300}},
 _react2.default.createElement(_reactBootstrap.FormGroup,{
-controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:300}},
+controlId:'formBasicText',__source:{fileName:_jsxFileName,lineNumber:301}},
 
 
 _react2.default.createElement(_reactBootstrap.FormControl,{
 type:'text',
 value:this.state.value,
 placeholder:'+91',
-secureTextEntry:true,__source:{fileName:_jsxFileName,lineNumber:304}})))),
+secureTextEntry:true,__source:{fileName:_jsxFileName,lineNumber:305}})))),
 
 
 
@@ -121012,19 +121099,19 @@ _react2.default.createElement(_reactxp2.default.Button,{
 style:[styles.button1,this.state.button1Hover&&styles.button1Hover],
 onHoverStart:function onHoverStart(){_this2.setState({button1Hover:true});},
 onHoverEnd:function onHoverEnd(){_this2.setState({button1Hover:false});},
-onPress:this.props.onNavigateForth,__source:{fileName:_jsxFileName,lineNumber:313}},
+onPress:this.props.onNavigateForth,__source:{fileName:_jsxFileName,lineNumber:314}},
 
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.button1Text,this.state.button1Hover&&styles.button1TextHover],__source:{fileName:_jsxFileName,lineNumber:319}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.button1Text,this.state.button1Hover&&styles.button1TextHover],__source:{fileName:_jsxFileName,lineNumber:320}},
 'Next'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:324}},
-_react2.default.createElement(_reactBootstrap.Col,{md:6,__source:{fileName:_jsxFileName,lineNumber:325}},
-_react2.default.createElement(_reactxp2.default.Button,{bsStyle:'primary',onPress:function onPress(){return _this2.onChangePost();},__source:{fileName:_jsxFileName,lineNumber:326}},'Post')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:325}},
+_react2.default.createElement(_reactBootstrap.Col,{md:6,__source:{fileName:_jsxFileName,lineNumber:326}},
+_react2.default.createElement(_reactxp2.default.Button,{bsStyle:'primary',onPress:function onPress(){return _this2.onChangePost();},__source:{fileName:_jsxFileName,lineNumber:327}},'Post')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:6,__source:{fileName:_jsxFileName,lineNumber:328}},
-_react2.default.createElement(_reactxp2.default.Button,{bsStyle:'warning',onPress:function onPress(){return _this2.onChangeDummy();},__source:{fileName:_jsxFileName,lineNumber:329}},'Dummy')))));
+_react2.default.createElement(_reactBootstrap.Col,{md:6,__source:{fileName:_jsxFileName,lineNumber:329}},
+_react2.default.createElement(_reactxp2.default.Button,{bsStyle:'warning',onPress:function onPress(){return _this2.onChangeDummy();},__source:{fileName:_jsxFileName,lineNumber:330}},'Dummy')))));
 
 
 
@@ -121038,7 +121125,7 @@ _react2.default.createElement(_reactxp2.default.Button,{bsStyle:'warning',onPres
 /* 982 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/MainPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/MainPanel.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -121281,7 +121368,7 @@ _react2.default.createElement(_reactxp2.default.Text,{style:[styles.button1Text,
 /* 983 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/MyPolicy.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/MyPolicy.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -121712,7 +121799,7 @@ _react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.
 /* 984 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/NewTermInsurance.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/NewTermInsurance.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -122223,7 +122310,7 @@ _this.setState({selectedValue:itemValue});
 /* 985 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/PaymentScreen.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/PaymentScreen.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -122628,7 +122715,7 @@ this.setState({toggleValue:newValue});
 /* 986 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/QuoteDetails.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/QuoteDetails.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -123235,7 +123322,7 @@ this.setState({toggleValue:newValue});
 /* 987 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/Quotefour.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/Quotefour.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -123909,7 +123996,7 @@ this.setState({toggleValue:newValue});
 /* 988 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/RegisterPage.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/RegisterPage.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -124177,7 +124264,7 @@ _react2.default.createElement(_reactxp2.default.Text,{style:[styles.button1Text,
 /* 989 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/Remainders.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/Remainders.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -124625,7 +124712,7 @@ _react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.
 /* 990 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/TravelInsuranceReg.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/TravelInsuranceReg.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -124862,7 +124949,7 @@ _this.setState({password:newText});
 /* 991 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/VehicleDcar.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/VehicleDcar.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -126377,7 +126464,7 @@ _this.setState({password:newText});
 /* 992 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/VehicleDetails.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/VehicleDetails.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -127823,7 +127910,7 @@ _this.setState({password:newText});
 /* 993 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/Vehicleregister.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/Vehicleregister.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 
 
 
@@ -128428,7 +128515,7 @@ _this.setState({password:newText});
 /* 994 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _jsxFileName='/home/rpqb-desk-002/readypolicy-ui/src/index.js';var _react=__webpack_require__(0);var _react2=_interopRequireDefault(_react);
+var _jsxFileName='/home/rpqbdesk-04/ReactXpWorkspace/readypolicy-ui/src/index.js';var _react=__webpack_require__(0);var _react2=_interopRequireDefault(_react);
 var _reactxp=__webpack_require__(11);var _reactxp2=_interopRequireDefault(_reactxp);
 var _App=__webpack_require__(503);var _App2=_interopRequireDefault(_App);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}
 
