@@ -369,6 +369,9 @@ export default class OtpPage extends RX.Component{
             ]
         });
     }
+    onChangePost() {
+        this.props.onPressNavigate(token);
+    }
 
     componentDidMount() {
         let animation = RX.Animated.timing(this._translationValue, {
@@ -403,6 +406,7 @@ export default class OtpPage extends RX.Component{
 
     render() {
         token = this.props.navigatorRoute.token
+        console.log(token,"token")
         return (
             <RX.ScrollView style={ styles.scroll }>
             <RX.View style={ styles.container }>
@@ -483,7 +487,18 @@ export default class OtpPage extends RX.Component{
                     </RX.Text>
                 </RX.Button>
                 </RX.View>
+                <Row className="show-grid">
+                                        <Col  md={6}>
+                                            <RX.Button bsStyle="primary"  onPress={()=> this.onChangePost() }>Post</RX.Button>
+                                        </Col>
+                                        <Col  md={6}>
+                                            <RX.Button bsStyle="warning"  onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
+                                        </Col>
+
+                                    </Row>
+                
             </RX.ScrollView>
+
         );
     }
 }

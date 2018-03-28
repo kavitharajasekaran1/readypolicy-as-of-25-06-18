@@ -48,7 +48,7 @@ export default class InsuranceAddons extends RX.Component{
                 carRegisteredCity: '24PARGANAS',
                 vehicleManufacturerName: 'TVS',
                 vehicleModelCode: 'ZWTV310',
-                vehicleRegDate: '27/03/2018',
+                vehicleRegDate: '28/03/2018',
                 lastname: 'Rani',
             };
             this._translationValue = RX.Animated.createValue(-100);
@@ -73,7 +73,7 @@ console.log("hittinh.......")
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
                 
-                // 'x-access-token': eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNWExYmFhNTYyYzZiOTEzNzYzMmM3ZWVjIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiJqWmFlNzI3SzA4S2FPbUtTZ09hR3p3dy9YVnFHci9QS0VnSU1ranJjYkpJPSIsInJhcGlkSUQiOiJCd2JNd0E2YjFIaEUxNC91TFdweVJXS3EzMytBVUJINnd6UjZtQzh0OUowPSIsInVzZXJPYmplY3QiOnsiZm5hbWUiOiJhcnVuIiwibG5hbWUiOiJob3NzYW1hbmkiLCJwaG9uZSI6IjkxODM2OTk2NDU4MiJ9LCJ1c2VydHlwZSI6IkRpcmVjdCBDbGllbnRzIiwib3RwIjoxMTAwLCJlbmNvZGVkTWFpbCI6IllYSjFiaTVvYjNOellXMWhibWxBY21Gd2FXUnhkV0psTG1OdmJRPT0iLCJjcmVhdGVkX2F0IjoiTW9uIE5vdiAyNyAyMDE3IDExOjMxOjU4IEdNVCswNTMwIChJU1QpIiwiY291bnQiOjAsIl9fdiI6MCwic3RhdHVzIjpbInBob25lIiwiZW1haWwiXX1dLCJpYXQiOjE1MTUwNTA3NDcsImV4cCI6MTUxNTExMDc0N30.xZ_K-mE7WfAszkFrGMATmm9EpCmtYgdOyydVL4HGPVk
+                'x-access-token': token
             },
             
             body: JSON.stringify({
@@ -89,7 +89,7 @@ console.log("hittinh.......")
                         lastName: "name",
                         emailId: "neeluneelima67@gmail.com",
                         mobileNo: "7898732798",
-                        dateOfBirth: "27/11/1987",
+                        dateOfBirth: "28/11/1987",
                         occupation: "Student",
                         nomineeName: "nomineename",
                         nomineeAge: "43",
@@ -121,9 +121,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "27/03/2018",
+                        policyStartDate: "28/03/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "27/03/2018",
+                        vehicleRegDate: "28/03/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -156,7 +156,7 @@ console.log("hittinh.......")
                             MakeModel: "Philips",
                             Value: "300"
                           }
-                        },
+                        }
                       }
                     }
                     }),
@@ -170,7 +170,6 @@ console.log("hittinh.......")
                  var premium = resJson1.PREMIUMDETAILS.DATA.PREMIUM
                  var liability = resJson1.PREMIUMDETAILS.DATA.LIABILITY
                  var odpremium = resJson1.PREMIUMDETAILS.DATA
-                
                  console.log("quoteid",quoteid)
                  console.log("neenenne",resJson1)
                  console.log("liablity",liability)
@@ -248,7 +247,6 @@ console.log("hittinh.......")
     }
 
     render() {
-        // console.log(this.props.user,"user");
          return (
             <RX.ScrollView style={ _styles.scroll }>
             <RX.View style={ styling.container }>

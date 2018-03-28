@@ -142,7 +142,7 @@ read: RX.Styles.createScrollViewStyle({
     width:'100%'
 }),
 };
-
+var token
 export default class RegisterPage extends RX.Component{
     constructor(props) {
         super(props);
@@ -160,7 +160,10 @@ export default class RegisterPage extends RX.Component{
             ]
         });
     }
-
+    onChangePost(){
+        this.props.onNavigateSuper(token)
+        console.log(token,"tokenab")
+    }
     componentDidMount() {
         let animation = RX.Animated.timing(this._translationValue, {
                 toValue: 0,
@@ -174,6 +177,8 @@ export default class RegisterPage extends RX.Component{
     
 
     render() {
+        token = this.props.navigatorRoute.token
+        console.log("token",token)
         return (
            
             <RX.View style={styles.scrollViewContainer}>
@@ -209,7 +214,7 @@ style={styles.remo}
                      <RX.View style={styles.scrollBox}>
                      <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
                      <RX.View style={{width: 100, height: 100, backgroundColor: 'white',marginTop:10,marginLeft:200 }} >
-                     <RX.Button  onPress={ this.props.onNavigateSuper }><RX.Image
+                     <RX.Button  onPress= {()=> this.onChangePost() }>post<RX.Image
                              style={styles.HomeScrollImageLogo}
                              source={'./src/img/Bike.svg'}/>
                         <RX.Text style={styles.scrollBoxText}>Two Wheeler</RX.Text>

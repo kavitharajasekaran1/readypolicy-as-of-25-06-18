@@ -147,7 +147,7 @@ export default class App extends RX.Component {
         var user ={name:"test"};
         switch (navigatorRoute.routeId) {
             case NavigationRouteId.OtpPage:
-                return <OtpPage onPressNavigate={ this._onPressNavigate }/>;
+                return <OtpPage onPressNavigate={ this._onPressNavigate } navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.CompareQuotes:
                 return <CompareQuotes onNavigateCompare={ this._onPressCompare }  navigatorRoute={navigatorRoute}/>;
@@ -156,7 +156,7 @@ export default class App extends RX.Component {
                 return <MainPanel onNavigateForward={ this._onPressForward }/>;
 
             case NavigationRouteId.LoginPage:
-                return <LoginPage onNavigateForth={ this._onPressForth }/>;
+                return <LoginPage onNavigateForth={ this._onPressForth } navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.RegisterPage:
                 return <RegisterPage onNavigateFifth={ this._onPressFifth }/>;
@@ -220,7 +220,7 @@ export default class App extends RX.Component {
                 return <NewTermInsurance onNavigateNewTermInsurance={ this._onPressNewTermInsurance }/>;
 
             case NavigationRouteId.HomePanel:
-          return <HomePanel onNavigateSuper={ this._onPressHome} onNavigateSuperCar={ this._onPressHome1 } onNavigateRole={ this._onPressRole } onNavigateOne={ this._onPressOne } />;   
+              return <HomePanel onNavigateSuper={ this._onPressHome} onNavigateSuperCar={ this._onPressHome1 } onNavigateRole={ this._onPressRole } onNavigateOne={ this._onPressOne } navigatorRoute={navigatorRoute} />;   
             // return <HomePanel onNavigateSuperCar = {this._onPressHome1}/>;
              case NavigationRouteId.Vehicleregister:
                 return <Vehicleregister onNavigatefont={ this._onPressfont}/>; 
@@ -233,10 +233,12 @@ export default class App extends RX.Component {
         return null;
     }
 
-    _onPressNavigate() {
+    _onPressNavigate(token) {
+        console.log("token",token)
         this._navigator.push({
             routeId: NavigationRouteId.HomePanel,
             sceneConfigType: "FloatFromRight",
+            token:token,
             customSceneConfig: {
                 hideShadow: true
             }
@@ -285,7 +287,7 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressproposal(res,quoteid,premium) {
+    _onPressproposal(res,quoteid,premium,) {
         console.log("quoteid",quoteid)
         console.log("premium",premium)
         this._navigator.push({
@@ -343,11 +345,13 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressSuper() {
+    _onPressSuper(token) {
+        console.log("token",token)
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.InsuranceAddons,
             sceneConfigType: "FloatFromRight",
+            token:token,
             customSceneConfig: {
                 hideShadow: true
             }
@@ -652,10 +656,12 @@ export default class App extends RX.Component {
         });
     }
 
-    _onPressHome() {
+    _onPressHome(token) {
+        console.log("token",token)
         this._navigator.push({
             routeId: NavigationRouteId.InsuranceAddons,
             sceneConfigType: "FloatFromRight",
+            token:token,
             customSceneConfig: {
                 hideShadow: true  
     }
