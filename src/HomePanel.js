@@ -160,9 +160,9 @@ export default class RegisterPage extends RX.Component{
             ]
         });
     }
-    onChangePost(){
-        this.props.onNavigateSuper(token)
-        console.log(token,"tokenab")
+    onChangePost() {
+        this.props.onNavigateSuper(token);
+        console.log(token,"token")
     }
     componentDidMount() {
         let animation = RX.Animated.timing(this._translationValue, {
@@ -224,7 +224,7 @@ style={styles.remo}
                      <div className="row"></div>
                 <div className="col-xs-4 col-sm-4 col-md-4"></div>
                      <RX.View style={styles.scrollBox}>
-                     <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
+                     <RX.View style={{flex: 1, flexDirection: 'rowRpqb',   justifyContent: 'space-between'}}>
                      <RX.View style={{width: 100, height: 100, backgroundColor: 'white', marginLeft:200}} >
                          <RX.Image
                              style={styles.HomeScrollImageLogo}

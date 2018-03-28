@@ -119359,7 +119359,7 @@ translateY:_this._translationValue}]});return _this;
 }_createClass(RegisterPage,[{key:'onChangePost',value:function onChangePost()
 {
 this.props.onNavigateSuper(token);
-console.log(token,"tokenab");
+console.log(token,"token");
 }},{key:'componentDidMount',value:function componentDidMount()
 {
 var animation=_reactxp2.default.Animated.timing(this._translationValue,{
@@ -119421,7 +119421,7 @@ _react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText
 _react2.default.createElement('div',{className:'row',__source:{fileName:_jsxFileName,lineNumber:224}}),
 _react2.default.createElement('div',{className:'col-xs-4 col-sm-4 col-md-4',__source:{fileName:_jsxFileName,lineNumber:225}}),
 _react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:226}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:227}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'rowRpqb',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:227}},
 _react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginLeft:200},__source:{fileName:_jsxFileName,lineNumber:228}},
 _react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
