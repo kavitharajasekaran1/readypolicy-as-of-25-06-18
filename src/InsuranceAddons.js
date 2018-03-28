@@ -179,7 +179,7 @@ console.log("hittinh.......")
                  
            
                
-                this.props.onNavigateTen(resJson,liability,message,quoteid,premium,odpremium); 
+                this.props.onNavigateTen(resJson,liability,message,quoteid,premium,odpremium,token); 
             }else{
                 console.log(message)
               
@@ -247,6 +247,8 @@ console.log("hittinh.......")
     }
 
     render() {
+        token = this.props.navigatorRoute.token
+        console.log(token,"token")
          return (
             <RX.ScrollView style={ _styles.scroll }>
             <RX.View style={ styling.container }>

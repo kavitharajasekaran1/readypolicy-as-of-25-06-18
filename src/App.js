@@ -662,6 +662,7 @@ export default class App extends RX.Component {
             routeId: NavigationRouteId.InsuranceAddons,
             sceneConfigType: "FloatFromRight",
             token:token,
+            res:res,
             customSceneConfig: {
                 hideShadow: true  
     }
