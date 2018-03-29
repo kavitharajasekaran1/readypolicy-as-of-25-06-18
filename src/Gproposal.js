@@ -151,7 +151,7 @@ export default class VehicleDetails extends React.Component{
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                
+                'x-access-token': token
             },
         
             body: JSON.stringify({
@@ -212,7 +212,7 @@ export default class VehicleDetails extends React.Component{
      //   message = this.props.navigatorRoute.message
        var quoteid = this.props.navigatorRoute.quoteid
         var mypremium = this.props.navigatorRoute.mypremium
-       var token = this.props.navigatorRoute.token
+       token = this.props.navigatorRoute.token
         console.log(token,"token")
 
         return (

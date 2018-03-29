@@ -561,12 +561,14 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressEleven() {
+    _onPressEleven(token) {
         // this._navigator.pop();
         console.log("hitting to eleven panel")
+        console.log("token")
         this._navigator.push({
             routeId: NavigationRouteId.PaymentScreen,
             sceneConfigType: "FloatFromRight",
+            token:token,
             customSceneConfig: {
                 hideShadow: true
             }

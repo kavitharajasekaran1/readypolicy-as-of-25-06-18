@@ -156,7 +156,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                
+                'x-access-token': token
             },
         
             body: JSON.stringify({
