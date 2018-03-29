@@ -60,6 +60,7 @@ const _styles = {
 //var message
 var quoteid
 var premium
+var token
 export default class VehicleDetails extends React.Component{
    constructor(props) {
         super(props);
@@ -101,9 +102,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '28/03/2018',
+                      policyStartDate: '29/03/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '28/03/2018',
+                      vehicleRegDate: '29/03/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -258,7 +259,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
             if (Message==="Premium Calculated and Vehicle details saved successfully"){
             var mypremium = resJson1.PREMIUMDETAILS.DATA.PREMIUM
                 swal(''+Message+'')
-            this.props.onNavigateEight(res,quoteid,mypremium);
+            this.props.onNavigateEight(res,quoteid,mypremium,token);
             }else{
                 swal(''+Message+'')
             }
@@ -606,6 +607,8 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
      //   message = this.props.navigatorRoute.message
         quoteid = this.props.navigatorRoute.quoteid
          mypremium = this.props.navigatorRoute.premium
+         token = this.props.navigatorRoute.token
+         console.log(token,"token")
         console.log("quoteid",quoteid)
         console.log("premium",mypremium)
 

@@ -56,6 +56,7 @@ const _styles = {
 //var message
 var quoteid
 var premium
+var token
 export default class VehicleDetails extends React.Component{
    constructor(props) {
         super(props);
@@ -97,9 +98,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '28/03/2018',
+                      policyStartDate: '29/03/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '28/03/2018',
+                      vehicleRegDate: '29/03/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -177,7 +178,7 @@ export default class VehicleDetails extends React.Component{
             if (Message==="Quote Approved,Proceed Buy Policy"){
                 swal(''+Message+'')
                 console.log("approved")   
-                this.props.onNavigateEleven()
+                this.props.onNavigateEleven(token)
             }else{
                 swal(''+Message+'')
             }
@@ -211,6 +212,8 @@ export default class VehicleDetails extends React.Component{
      //   message = this.props.navigatorRoute.message
        var quoteid = this.props.navigatorRoute.quoteid
         var mypremium = this.props.navigatorRoute.mypremium
+       var token = this.props.navigatorRoute.token
+        console.log(token,"token")
 
         return (
             <RX.ScrollView style={ _styles.scroll }>

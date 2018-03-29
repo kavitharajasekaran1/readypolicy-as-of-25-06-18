@@ -122,7 +122,7 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.MainPanel,
+            routeId: NavigationRouteId.LoginPage,
             sceneConfigType: "Fade"
         }]);
     }
@@ -197,7 +197,7 @@ export default class App extends RX.Component {
                 case NavigationRouteId.CarDetails:
                 return <CarDetails onNavigateTwo={ this._onPressTwo }  navigatorRoute={navigatorRoute}/>;
 
-                case NavigationRouteId.Addons:
+                 case NavigationRouteId.Addons:
                 return <Addons onNavigateNinety={ this._onPressNinety } onNavigateSuper={ this._onPressHome} navigatorRoute={navigatorRoute}/>;
 
                 case NavigationRouteId.InsuranceAddons:
@@ -220,7 +220,7 @@ export default class App extends RX.Component {
                 return <NewTermInsurance onNavigateNewTermInsurance={ this._onPressNewTermInsurance }/>;
 
             case NavigationRouteId.HomePanel:
-              return <HomePanel onNavigateSuper={ this._onPressHome} onNavigateSuperCar={ this._onPressHome1 } onNavigateRole={ this._onPressRole } onNavigateOne={ this._onPressOne } navigatorRoute={navigatorRoute} />;   
+              return <HomePanel onPressSuper={ this._onPressHome} onNavigateSuperCar={ this._onPressHome1 } onNavigateRole={ this._onPressRole } onNavigateOne={ this._onPressOne } navigatorRoute={navigatorRoute} />;   
             // return <HomePanel onNavigateSuperCar = {this._onPressHome1}/>;
              case NavigationRouteId.Vehicleregister:
                 return <Vehicleregister onNavigatefont={ this._onPressfont}/>; 
@@ -377,8 +377,9 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressSixth(liability,resJson,message,quoteid,premium,odpremium) {
+    _onPressSixth(liability,resJson,message,quoteid,premium,odpremium,token) {
         console.log("liablity2222222",liability)
+        console.log(token,"token")
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.QuoteDetails,
@@ -389,14 +390,16 @@ export default class App extends RX.Component {
             premium:premium,
             odpremium:odpremium,
             message:message,
+            token:token,
             customSceneConfig: {
                 hideShadow: true
             }
         });
     }
-    _onPressPush(allResponse,liability,resJson,message,quoteid,premium) {
+    _onPressPush(allResponse,liability,resJson,message,quoteid,premium,token) {
         console.log("liablity2222222",liability)
         console.log("allResp",allResponse)
+        console.log("token",token)
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.QuoteDetails,
@@ -406,6 +409,7 @@ export default class App extends RX.Component {
             quoteid:quoteid,
             premium:premium,
             message:message,
+            token:token,
             allResponse:allResponse,
             customSceneConfig: {
                 hideShadow: true
@@ -422,17 +426,19 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressDetail(quoteid,premium,odpremium) {
+    _onPressDetail(quoteid,premium,odpremium,token) {
        
         console.log("quoteid",quoteid)
         console.log("premium",premium)
         console.log("odpremium",odpremium)
+        console.log("token",token)
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.VehicleDetails,
             sceneConfigType: "FloatFromRight",
             quoteid:quoteid,
             premium:premium,
+            token:token,
             odpremium:odpremium,
             customSceneConfig: {
                 hideShadow: true
@@ -459,15 +465,17 @@ export default class App extends RX.Component {
              }
          });
      }
-    _onPressEight(res,quoteid,mypremium) {
+    _onPressEight(res,quoteid,mypremium,token) {
         var res=res;
         console.log("quoteid",quoteid)
         console.log("premium",mypremium)
+        console.log("token",token)
         this._navigator.push({
             routeId: NavigationRouteId.Gproposal,
             res:res,
             quoteid:quoteid,
             mypremium:mypremium,
+            token:token,
             sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
@@ -508,7 +516,8 @@ export default class App extends RX.Component {
         });
     }
 
-    _onPressTen(resJson,liability,message,quoteid,premium,odpremium) {
+    _onPressTen(resJson,liability,message,quoteid,premium,odpremium,token) {
+        console.log("token",token)
         console.log("neenenne",resJson)
         console.log("liablity",liability)
         console.log("quoteid",quoteid)
@@ -523,17 +532,19 @@ export default class App extends RX.Component {
             quoteid:quoteid,
             premium:premium,
             odpremium:odpremium,
+            token:token,
             customSceneConfig: {
                 hideShadow: true
             }
         });
     }
 
-    _onPressNinety(resJson,liability,message,quoteid,premium,odpremium) {
+    _onPressNinety(resJson,liability,message,quoteid,premium,odpremium,token) {
         console.log("neenenne",resJson)
         console.log("liablity",liability)
         console.log("quoteid",quoteid)
         console.log("odpremium",odpremium)
+        console.log("token",token)
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.QuotesSelection,
@@ -544,6 +555,7 @@ export default class App extends RX.Component {
             quoteid:quoteid,
             premium:premium,
             odpremium:odpremium,
+            token:token,
             customSceneConfig: {
                 hideShadow: true
             }
@@ -561,9 +573,10 @@ export default class App extends RX.Component {
         });
     }
 
-    _onPressTens(resJson,liability,message,quoteid,premium) {
+    _onPressTens(resJson,liability,message,quoteid,premium,token) {
         console.log("neenenne",resJson)
         console.log("liablity",liability)
+        console.log("quoteid",quoteid)
         console.log("quoteid",quoteid)
         // this._navigator.pop();
         this._navigator.push({
@@ -574,6 +587,7 @@ export default class App extends RX.Component {
             message:message,
             quoteid:quoteid,
             premium:premium,
+            token:token,
             customSceneConfig: {
                 hideShadow: true
             }
@@ -662,7 +676,6 @@ export default class App extends RX.Component {
             routeId: NavigationRouteId.InsuranceAddons,
             sceneConfigType: "FloatFromRight",
             token:token,
-            res:res,
             customSceneConfig: {
                 hideShadow: true  
     }
@@ -679,9 +692,10 @@ export default class App extends RX.Component {
 });
     }
 
-    _onPressCompare(allResponse,liability,resJson,message,quoteid,premium,odpremium) {
+    _onPressCompare(allResponse,liability,resJson,message,quoteid,premium,odpremium,token) {
         console.log("liablity",liability)
         console.log(resJson,"resJson")
+        console.log(token,"token")
             this._navigator.push({
             routeId: NavigationRouteId.QuoteDetails,
             sceneConfigType: "FloatFromRight",
@@ -692,6 +706,7 @@ export default class App extends RX.Component {
             premium:premium,
             message:message,
             allResponse:allResponse,
+            token:token,
             customSceneConfig: {
                 hideShadow: true
             }
@@ -699,12 +714,14 @@ export default class App extends RX.Component {
     }
 
 
-    _onPressQuoteDetails(resJson,liability) {
+    _onPressQuoteDetails(resJson,liability,token) {
         console.log("idvvvvv",resJson)
+        console.log("token",token)
         this._navigator.push({
             routeId: NavigationRouteId.QuoteDetails,
             sceneConfigType: "FloatFromRight",
             resJson:resJson,
+            token:token,
             liability:liability,
             customSceneConfig: {
                 hideShadow: true

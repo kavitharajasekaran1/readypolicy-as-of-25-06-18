@@ -208,6 +208,7 @@ var message
 var quoteid
 var premium
 var odpremium
+var token
 export default class QuotesSelection  extends RX.Component {
 
 
@@ -248,8 +249,9 @@ export default class QuotesSelection  extends RX.Component {
                         console.log("quoteiid",quoteid)
                         console.log("premium",premium)
                         console.log("odpremium",odpremium)
+                        console.log("token",token)
 
-                        this.props.onNavigateDetail(quoteid,premium,odpremium);
+                        this.props.onNavigateDetail(quoteid,premium,odpremium,token);
             }else{
                 swal(''+message+'')
             } 
@@ -272,6 +274,8 @@ export default class QuotesSelection  extends RX.Component {
      premium = this.props.navigatorRoute.premium
      odpremium = this.props.navigatorRoute.odpremium
      allResponse = this.props.navigatorRoute.allResponse
+     token = this.props.navigatorRoute.token
+     console.log(token,"token")
     console.log("idvvvvv",resJson)
     console.log("liablity",liability)
     console.log("message",message)
