@@ -193,6 +193,10 @@ console.log("hittinh.......")
                         
                     })
     }
+    onChangePost = () => {
+        console.log(token,"my token")
+        this.props.onPressNavigate(token);
+    }
     onChangeyearOfManufacture= (value) => {
         this.setState({yearOfManufacture: value });
         console.log(this.state.yearOfManufacture,"yearOfManufacture");
@@ -252,7 +256,7 @@ console.log("hittinh.......")
          return (
             <RX.ScrollView style={ _styles.scroll }>
             <RX.View style={ styling.container }>
-            <RX.Button  onPress={ this.props.onPressNavigate}><RX.Image
+            <RX.Button  onPress={()=> this.onChangePost()}><RX.Image
                          style={_styles.HomeScrollImageLogo}
                          source={'./src/img/Back.svg'}/>
                     <RX.Text style={styling.welcome }>Get Quote </RX.Text>
