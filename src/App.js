@@ -244,7 +244,7 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressTwenty(allResponse,resJson,liability,message,quoteid,premium,odpremium) {
+    _onPressTwenty(allResponse,resJson,liability,message,quoteid,premium,odpremium,token) {
         console.log("allResponse",allResponse)
         console.log("resJson",resJson)
         console.log("liablity",liability)
@@ -252,6 +252,7 @@ export default class App extends RX.Component {
         console.log("quoteid",quoteid)
         console.log("premium",premium)
         console.log("odpremium",odpremium)
+        console.log("token",token)
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.CarSelection,
@@ -262,17 +263,19 @@ export default class App extends RX.Component {
             premium:premium,
             odpremium:odpremium,
             allResponse:allResponse,
+            token:token,
             customSceneConfig: {
                 hideShadow: true
             }
         });
     }
-    _onPressThirty(liability,resJson,quoteid,premium,allResponse,) {
+    _onPressThirty(liability,resJson,quoteid,premium,allResponse,token) {
         console.log("resJson",resJson)
         console.log("liablity",liability)
         console.log("quoteid",quoteid)
         console.log("premium",premium)
         console.log("allResponse",allResponse)
+        console.log("token",token)
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.CompareCar,
@@ -282,6 +285,7 @@ export default class App extends RX.Component {
             allResponse:allResponse,
             quoteid:quoteid,
             premium:premium,
+            token:token,
             customSceneConfig: {
                 hideShadow: true
             }
@@ -445,10 +449,11 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressFourty(liability,resJson,quoteid,premium,allResponse) {
+    _onPressFourty(liability,resJson,quoteid,premium,allResponse,token) {
         // console.log("res",res)
         console.log("premium",premium)
         console.log("allResponse",allResponse)
+        console.log("token",token)
          this._navigator.push({
              routeId: NavigationRouteId.CarDetails,
              sceneConfigType: "FloatFromRight",
@@ -458,6 +463,7 @@ export default class App extends RX.Component {
              liability:liability,
             // idv:idv,
              resJson:resJson,
+             token:token,
              allResponse:allResponse,
  
              customSceneConfig: {
@@ -684,10 +690,12 @@ export default class App extends RX.Component {
 });
     }
 
-    _onPressHome1() {
+    _onPressHome1(token) {
+        console.log("token",token)
         this._navigator.push({
             routeId: NavigationRouteId.InsuranceFourWheeler,
             sceneConfigType: "FloatFromRight",
+            token:token,
             customSceneConfig: {
                 hideShadow: true  
     }

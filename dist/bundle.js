@@ -52191,7 +52191,7 @@ hideShadow:true}});
 
 
 }},{key:'_onPressTwenty',value:function _onPressTwenty(
-allResponse,resJson,liability,message,quoteid,premium,odpremium){
+allResponse,resJson,liability,message,quoteid,premium,odpremium,token){
 console.log("allResponse",allResponse);
 console.log("resJson",resJson);
 console.log("liablity",liability);
@@ -52199,6 +52199,7 @@ console.log("message",message);
 console.log("quoteid",quoteid);
 console.log("premium",premium);
 console.log("odpremium",odpremium);
+console.log("token",token);
 
 this._navigator.push({
 routeId:NavigationRouteId.CarSelection,
@@ -52209,17 +52210,19 @@ quoteid:quoteid,
 premium:premium,
 odpremium:odpremium,
 allResponse:allResponse,
+token:token,
 customSceneConfig:{
 hideShadow:true}});
 
 
 }},{key:'_onPressThirty',value:function _onPressThirty(
-liability,resJson,quoteid,premium,allResponse){
+liability,resJson,quoteid,premium,allResponse,token){
 console.log("resJson",resJson);
 console.log("liablity",liability);
 console.log("quoteid",quoteid);
 console.log("premium",premium);
 console.log("allResponse",allResponse);
+console.log("token",token);
 
 this._navigator.push({
 routeId:NavigationRouteId.CompareCar,
@@ -52229,6 +52232,7 @@ liability:liability,
 allResponse:allResponse,
 quoteid:quoteid,
 premium:premium,
+token:token,
 customSceneConfig:{
 hideShadow:true}});
 
@@ -52392,10 +52396,11 @@ hideShadow:true}});
 
 
 }},{key:'_onPressFourty',value:function _onPressFourty(
-liability,resJson,quoteid,premium,allResponse){
+liability,resJson,quoteid,premium,allResponse,token){
 
 console.log("premium",premium);
 console.log("allResponse",allResponse);
+console.log("token",token);
 this._navigator.push({
 routeId:NavigationRouteId.CarDetails,
 sceneConfigType:"FloatFromRight",
@@ -52405,6 +52410,7 @@ quoteid:quoteid,
 liability:liability,
 
 resJson:resJson,
+token:token,
 allResponse:allResponse,
 
 customSceneConfig:{
@@ -52629,12 +52635,14 @@ customSceneConfig:{
 hideShadow:true}});
 
 
-}},{key:'_onPressHome1',value:function _onPressHome1()
+}},{key:'_onPressHome1',value:function _onPressHome1(
 
-{
+token){
+console.log("token",token);
 this._navigator.push({
 routeId:NavigationRouteId.InsuranceFourWheeler,
 sceneConfigType:"FloatFromRight",
+token:token,
 customSceneConfig:{
 hideShadow:true}});
 
@@ -115229,7 +115237,7 @@ firstName:"testxerago",
 lastName:"name",
 emailId:"neeluneelima67@gmail.com",
 mobileNo:"7898732798",
-dateOfBirth:"29/11/1987",
+dateOfBirth:"30/11/1987",
 occupation:"Student",
 nomineeName:"nomineename",
 nomineeAge:"43",
@@ -115261,9 +115269,9 @@ drivingExperience:"1",
 voluntaryDeductible:"0",
 vehicleManufacturerName:"TVS",
 idv:"65478",
-policyStartDate:"29/03/2018",
+policyStartDate:"30/03/2018",
 vehicleMostlyDrivenOn:"City roads",
-vehicleRegDate:"29/03/2018",
+vehicleRegDate:"30/03/2018",
 vehicleRegisteredInTheNameOf:"Company",
 modelName:"APACHE RTR ABS-2 Seater",
 productName:"BrandNewTwoWheeler",
@@ -115700,7 +115708,8 @@ var liability;
 var message;
 var quoteid;
 var premium;
-var allResponse;var
+var allResponse;
+var token;var
 QuotesSelection=function(_RX$Component){_inherits(QuotesSelection,_RX$Component);
 
 
@@ -115740,7 +115749,7 @@ console.log("Rahul");
 
 console.log("quoteiid",quoteid);
 console.log("premium",premium);
-_this.props.onNavigateTwo(quoteid,premium);
+_this.props.onNavigateTwo(quoteid,premium,token);
 
 
 
@@ -115758,6 +115767,8 @@ liability=this.props.navigatorRoute.liability;
 quoteid=this.props.navigatorRoute.quoteid;
 premium=this.props.navigatorRoute.premium;
 allResponse=this.props.navigatorRoute.allResponse;
+token=this.props.navigatorRoute.token;
+console.log(token,"token");
 console.log("idvvvvv",resJson);
 console.log("liablity",liability);
 
@@ -115766,64 +115777,64 @@ console.log("premium",premium);
 console.log("allResponse",allResponse.PREMIUMDETAILS.DATA.POLICY_START_DATE);
 
 return(
-_react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:267}},
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.container,__source:{fileName:_jsxFileName,lineNumber:268}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.welcome,__source:{fileName:_jsxFileName,lineNumber:269}},'QuoteDetails'),
+_react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:270}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.container,__source:{fileName:_jsxFileName,lineNumber:271}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.welcome,__source:{fileName:_jsxFileName,lineNumber:272}},'QuoteDetails'),
 
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.welcome,__source:{fileName:_jsxFileName,lineNumber:272}})),
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.welcome,__source:{fileName:_jsxFileName,lineNumber:275}})),
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:275}},
-_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-xs',__source:{fileName:_jsxFileName,lineNumber:276}},
-_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:277}},
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:278}},
-_react2.default.createElement(_reactBootstrap.Col,{md:12,xs:12,__source:{fileName:_jsxFileName,lineNumber:279}},
-_react2.default.createElement(_reactBootstrap.Col,{md:2,xs:2,__source:{fileName:_jsxFileName,lineNumber:280}}),
-_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:281}},
-_react2.default.createElement(_reactBootstrap.Col,{md:8,xs:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:282}},
-_react2.default.createElement(_reactBootstrap.Col,{md:2,xs:2,__source:{fileName:_jsxFileName,lineNumber:283}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/royal.jpg ',style:[_AppStyles2.default.quoteImage],__source:{fileName:_jsxFileName,lineNumber:284}})),
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:278}},
+_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-xs',__source:{fileName:_jsxFileName,lineNumber:279}},
+_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:280}},
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:281}},
+_react2.default.createElement(_reactBootstrap.Col,{md:12,xs:12,__source:{fileName:_jsxFileName,lineNumber:282}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,xs:2,__source:{fileName:_jsxFileName,lineNumber:283}}),
+_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:284}},
+_react2.default.createElement(_reactBootstrap.Col,{md:8,xs:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:285}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,xs:2,__source:{fileName:_jsxFileName,lineNumber:286}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/royal.jpg ',style:[_AppStyles2.default.quoteImage],__source:{fileName:_jsxFileName,lineNumber:287}})),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:4,xs:4,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:286}},
-_react2.default.createElement('div',{style:_AppStyles2.default.clientHead,__source:{fileName:_jsxFileName,lineNumber:287}},'Royal Sundaram'),
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideHead,__source:{fileName:_jsxFileName,lineNumber:288}},
-_react2.default.createElement('div',{style:_AppStyles2.default.tryHead,__source:{fileName:_jsxFileName,lineNumber:289}},'IDV:',resJson))),
+_react2.default.createElement(_reactBootstrap.Col,{md:4,xs:4,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:289}},
+_react2.default.createElement('div',{style:_AppStyles2.default.clientHead,__source:{fileName:_jsxFileName,lineNumber:290}},'Royal Sundaram'),
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideHead,__source:{fileName:_jsxFileName,lineNumber:291}},
+_react2.default.createElement('div',{style:_AppStyles2.default.tryHead,__source:{fileName:_jsxFileName,lineNumber:292}},'IDV:',resJson))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,xs:3,__source:{fileName:_jsxFileName,lineNumber:293}}),
-_react2.default.createElement(_reactBootstrap.Col,{md:3,xs:3,__source:{fileName:_jsxFileName,lineNumber:294}},
-_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.roundButtonQuote,onPress:this.props.onNavigateBack,__source:{fileName:_jsxFileName,lineNumber:295}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:296}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,xs:3,__source:{fileName:_jsxFileName,lineNumber:296}}),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,xs:3,__source:{fileName:_jsxFileName,lineNumber:297}},
+_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.roundButtonQuote,onPress:this.props.onNavigateBack,__source:{fileName:_jsxFileName,lineNumber:298}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:299}},
 liability.BASIC_PREMIUM_INCLUDING_PREMIUM_FOR_TPPD))))),
 
 
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:2,xs:2,__source:{fileName:_jsxFileName,lineNumber:303}}))))),
+_react2.default.createElement(_reactBootstrap.Col,{md:2,xs:2,__source:{fileName:_jsxFileName,lineNumber:306}}))))),
 
 
 
 
-_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-lg',__source:{fileName:_jsxFileName,lineNumber:308}},
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:309}},
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',style:_AppStyles2.default.clientLeft,__source:{fileName:_jsxFileName,lineNumber:310}},
+_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-lg',__source:{fileName:_jsxFileName,lineNumber:311}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:312}},
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',style:_AppStyles2.default.clientLeft,__source:{fileName:_jsxFileName,lineNumber:313}},
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:3,__source:{fileName:_jsxFileName,lineNumber:312}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Bharti.png',style:[_AppStyles2.default.image],__source:{fileName:_jsxFileName,lineNumber:313}})),
+_react2.default.createElement(_reactBootstrap.Col,{xs:3,__source:{fileName:_jsxFileName,lineNumber:315}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Bharti.png',style:[_AppStyles2.default.image],__source:{fileName:_jsxFileName,lineNumber:316}})),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:5,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:315}},
-_react2.default.createElement('div',{style:_AppStyles2.default.clientHeadxs,__source:{fileName:_jsxFileName,lineNumber:316}},'Bajaj Allianz'),
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideHeadxs,__source:{fileName:_jsxFileName,lineNumber:317}},
-_react2.default.createElement('div',{style:_AppStyles2.default.tryHeadxs,__source:{fileName:_jsxFileName,lineNumber:318}},'IDV: 1,25,300'))),
+_react2.default.createElement(_reactBootstrap.Col,{xs:5,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:318}},
+_react2.default.createElement('div',{style:_AppStyles2.default.clientHeadxs,__source:{fileName:_jsxFileName,lineNumber:319}},'Bajaj Allianz'),
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideHeadxs,__source:{fileName:_jsxFileName,lineNumber:320}},
+_react2.default.createElement('div',{style:_AppStyles2.default.tryHeadxs,__source:{fileName:_jsxFileName,lineNumber:321}},'IDV: 1,25,300'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:3,__source:{fileName:_jsxFileName,lineNumber:322}},
-_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.roundButton,onPress:this.props.onNavigateBack,__source:{fileName:_jsxFileName,lineNumber:323}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:324}},'Rs.1,322*')))))),
+_react2.default.createElement(_reactBootstrap.Col,{xs:3,__source:{fileName:_jsxFileName,lineNumber:325}},
+_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.roundButton,onPress:this.props.onNavigateBack,__source:{fileName:_jsxFileName,lineNumber:326}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:327}},'Rs.1,322*')))))),
 
 
 
@@ -115831,188 +115842,188 @@ _react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.
 
 
 
-_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:332}},
-_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:333}},
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:334}},
-_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:335}},
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:336}}),
-_react2.default.createElement(_reactBootstrap.Col,{md:8,__source:{fileName:_jsxFileName,lineNumber:337}},
-_react2.default.createElement('div',{style:_AppStyles2.default.clientHeadQuotes,__source:{fileName:_jsxFileName,lineNumber:338}},'Basic Covers'))))),
+_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:335}},
+_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:336}},
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:337}},
+_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:338}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:339}}),
+_react2.default.createElement(_reactBootstrap.Col,{md:8,__source:{fileName:_jsxFileName,lineNumber:340}},
+_react2.default.createElement('div',{style:_AppStyles2.default.clientHeadQuotes,__source:{fileName:_jsxFileName,lineNumber:341}},'Basic Covers'))))),
 
 
 
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:345}},
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:346}},
-_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:347}},
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:348}}),
-_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:349}},
-_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:350}},
-_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:351}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:352}},'Basic TP Premium')),
+_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:348}},
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:349}},
+_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:350}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:351}}),
+_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:352}},
+_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:353}},
+_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:354}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:355}},'Basic TP Premium')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:354}}),
-_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:355}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:356}},'Rs.560')))),
+_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:357}}),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:358}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:359}},'Rs.560')))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:360}})),
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:363}})),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:12,__source:{fileName:_jsxFileName,lineNumber:362}},
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:363}}),
-_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:364}},
-_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:365}},
-_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:366}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:367}},'TOTAL_LIABILITY_PREMIUM')),
+_react2.default.createElement(_reactBootstrap.Col,{md:12,__source:{fileName:_jsxFileName,lineNumber:365}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:366}}),
+_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:367}},
+_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:368}},
+_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:369}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:370}},'TOTAL_LIABILITY_PREMIUM')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:369}}),
-_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:370}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:371}},liability.TOTAL_LIABILITY_PREMIUM)))),
+_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:372}}),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:373}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:374}},liability.TOTAL_LIABILITY_PREMIUM)))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:375}})),
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:378}})),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:12,__source:{fileName:_jsxFileName,lineNumber:377}},
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:378}}),
-_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:379}},
-_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:380}},
-_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:381}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:382}},'Employees')),
+_react2.default.createElement(_reactBootstrap.Col,{md:12,__source:{fileName:_jsxFileName,lineNumber:380}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:381}}),
+_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:382}},
+_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:383}},
+_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:384}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:385}},'Employees')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:384}}),
-_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:385}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:386}},liability.TO_EMPLOYESES)))),
+_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:387}}),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:388}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:389}},liability.TO_EMPLOYESES)))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:390}})),
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:393}})),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:12,__source:{fileName:_jsxFileName,lineNumber:392}},
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:393}}),
-_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:394}},
-_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:395}},
-_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:396}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:397}},'Paiid Drivers')),
+_react2.default.createElement(_reactBootstrap.Col,{md:12,__source:{fileName:_jsxFileName,lineNumber:395}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:396}}),
+_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:397}},
+_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:398}},
+_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:399}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:400}},'Paiid Drivers')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:399}}),
-_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:400}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:401}},liability.TO_PAID_DRIVERS)))),
+_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:402}}),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:403}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:404}},liability.TO_PAID_DRIVERS)))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:405}})),
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:408}})),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:12,__source:{fileName:_jsxFileName,lineNumber:407}},
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:408}}),
-_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:409}},
-_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:410}},
-_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:411}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:412}},'Owner Driver')),
+_react2.default.createElement(_reactBootstrap.Col,{md:12,__source:{fileName:_jsxFileName,lineNumber:410}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:411}}),
+_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:412}},
+_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:413}},
+_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:414}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:415}},'Owner Driver')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:414}}),
-_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:415}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:416}},liability.UNDER_SECTION_III_OWNER_DRIVER)))),
+_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:417}}),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:418}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:419}},liability.UNDER_SECTION_III_OWNER_DRIVER)))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:420}})))),
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:423}})))),
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:424}},
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:425}},
-_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:426}},
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:427}}),
-_react2.default.createElement(_reactBootstrap.Col,{md:8,__source:{fileName:_jsxFileName,lineNumber:428}},
-_react2.default.createElement('div',{style:_AppStyles2.default.clientHeadQuotes,__source:{fileName:_jsxFileName,lineNumber:429}},'Addon Covers'))))),
+_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:427}},
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:428}},
+_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:429}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:430}}),
+_react2.default.createElement(_reactBootstrap.Col,{md:8,__source:{fileName:_jsxFileName,lineNumber:431}},
+_react2.default.createElement('div',{style:_AppStyles2.default.clientHeadQuotes,__source:{fileName:_jsxFileName,lineNumber:432}},'Addon Covers'))))),
 
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:434}},
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:435}},
-_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:436}},
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:437}}),
-_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:438}},
-_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:439}},
-_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:440}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:441}},'Policy Start Date')),
+_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:437}},
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:438}},
+_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:439}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:440}}),
+_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:441}},
+_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:442}},
+_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:443}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:444}},'Policy Start Date')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:443}}),
-_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:444}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:445}},allResponse.PREMIUMDETAILS.DATA.POLICY_START_DATE)))),
+_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:446}}),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:447}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:448}},allResponse.PREMIUMDETAILS.DATA.POLICY_START_DATE)))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:449}})),
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:452}})),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:12,__source:{fileName:_jsxFileName,lineNumber:451}},
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:452}}),
-_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:453}},
-_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:454}},
-_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:455}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:456}},'Policy End Date')),
+_react2.default.createElement(_reactBootstrap.Col,{md:12,__source:{fileName:_jsxFileName,lineNumber:454}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:455}}),
+_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:456}},
+_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:457}},
+_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:458}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:459}},'Policy End Date')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:458}}),
-_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:459}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:460}},allResponse.PREMIUMDETAILS.DATA.POLICY_EXPIRY_DATE)))),
+_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:461}}),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:462}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:463}},allResponse.PREMIUMDETAILS.DATA.POLICY_EXPIRY_DATE)))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:464}})),
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:467}})),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:12,__source:{fileName:_jsxFileName,lineNumber:466}},
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:467}}),
-_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:468}},
-_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:469}},
-_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:470}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:471}},'Premium Without Covers')),
+_react2.default.createElement(_reactBootstrap.Col,{md:12,__source:{fileName:_jsxFileName,lineNumber:469}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:470}}),
+_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:471}},
+_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:472}},
+_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:473}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:474}},'Premium Without Covers')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:473}}),
-_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:474}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:475}},allResponse.PREMIUMDETAILS.DATA.PREMIUM_WITHOUT_COVERS)))),
+_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:476}}),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:477}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:478}},allResponse.PREMIUMDETAILS.DATA.PREMIUM_WITHOUT_COVERS)))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:479}})),
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:482}})),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:12,__source:{fileName:_jsxFileName,lineNumber:481}},
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:482}}),
-_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:483}},
-_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:484}},
-_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:485}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:486}},'Tax Type')),
+_react2.default.createElement(_reactBootstrap.Col,{md:12,__source:{fileName:_jsxFileName,lineNumber:484}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:485}}),
+_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:486}},
+_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:487}},
+_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:488}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:489}},'Tax Type')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:488}}),
-_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:489}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:490}},allResponse.PREMIUMDETAILS.DATA.TAX_TYPE)))),
+_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:491}}),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:492}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:493}},allResponse.PREMIUMDETAILS.DATA.TAX_TYPE)))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:494}})),
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:497}})),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:12,__source:{fileName:_jsxFileName,lineNumber:496}},
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:497}}),
-_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:498}},
-_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:499}},
-_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:500}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:501}},'Basic TP Premium')),
+_react2.default.createElement(_reactBootstrap.Col,{md:12,__source:{fileName:_jsxFileName,lineNumber:499}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:500}}),
+_react2.default.createElement(_reactxp2.default.View,{__source:{fileName:_jsxFileName,lineNumber:501}},
+_react2.default.createElement(_reactBootstrap.Col,{md:8,style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:502}},
+_react2.default.createElement(_reactBootstrap.Col,{md:5,__source:{fileName:_jsxFileName,lineNumber:503}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:504}},'Basic TP Premium')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:503}}),
-_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:504}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:505}},'Rs.560')))),
+_react2.default.createElement(_reactBootstrap.Col,{md:4,__source:{fileName:_jsxFileName,lineNumber:506}}),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,__source:{fileName:_jsxFileName,lineNumber:507}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.clientHeadts,__source:{fileName:_jsxFileName,lineNumber:508}},'Rs.560')))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:509}})))),
+_react2.default.createElement(_reactBootstrap.Col,{md:2,__source:{fileName:_jsxFileName,lineNumber:512}})))),
 
 
 
-_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.nextbutton,onPress:function onPress(){return _this2.onChangePost();},__source:{fileName:_jsxFileName,lineNumber:513}},'Next')))));
+_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.nextbutton,onPress:function onPress(){return _this2.onChangePost();},__source:{fileName:_jsxFileName,lineNumber:516}},'Next')))));
 
 
 
@@ -116461,7 +116472,7 @@ _this.setState({password:newText});
 
 _onChangeTest=function(newText){
 _this.setState({password:newText});
-};_this.state={quoteid:_this.props.navigatorRoute.quoteid,premium:_this.props.navigatorRoute.mypremium,emailId:'neeluneelima67@gmail.com',mobileNo:'9553715856',dateofbirth:'02/12/1994',occupation:'Student',nomineeName:'Harini',nomineeAge:'50',relationshipWithNominee:'Cousin',guardianName:'Prakhya',guardianAge:'60',relationshipwithGuardian:'Sister',permanentAddress1:'Guntupalli',permanentAddress2:'Vijayawada',permanentAddress3:'Krishna',permanentAddress4:'Ibrahimpatnam',permanentCity:'Chennai',permanentPincode:'600034',sameAdressReg:'No',ResidenceAddressOne:'Hyderabad',ResidenceAddressTwo:'Guntupalli',ResidenceAddressThree:'Krishna',ResidenceAddressFour:'Kurnool',ResidenceCity:'Chennai',ResidencePinCode:'600032',strStdCode:'0866',strPhoneNo:'2831608',vehicleModelCode:'ZWTV310',planOpted:'Fixed Plan',yearOfManufacture:'2017',drivingExperience:'1',voluntaryDeductible:'0',vehicleManufacturerName:'TVS',idv:'4520250',policyStartDate:'29/03/2018',vehicleMostlyDrivenOn:'Roads',vehicleRegDate:'29/03/2018',vehicleRegisteredInTheNameOf:'Company',modelName:'APACHE RTR ABS-2 Seater',productName:'BrandNewTwoWheeler',companyNameForCar:'xerago',engineNumber:'565465466',chassisNumber:'56546546',isTwoWheelerFinanced:'No',vehicleSubLine:'motorCycle',registrationchargesRoadtax:'No',fuelType:'Petrol',automobileAssociationMembership:'No',region:'East Region',carRegisteredCity:'24PARGANAS',isProductCheck:'No',engineCapacityAmount:'153 CC',personalAccidentCoverForUnnamedPassengers:'5000',accidentCoverForPaidDriver:'5000',legalliabilityToPaidDriver:'Yes',legalliabilityToEmployees:'Yes',cover_elec_acc:'Yes',NameOfElectronicAccessories:'Tyre',MakeModel:'TVS',Value:'345',NameOfElectronicAccessories:'Handle',MakeModel:'HONDA',Value:'365',secureTextEntry:true};_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(VehicleDetails,[{key:'render',value:function render(){var _this2=this;var quoteid=this.props.navigatorRoute.quoteid;var premium=this.props.navigatorRoute.mypremium;return _react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:207}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:208}},_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateSuper,__source:{fileName:_jsxFileName,lineNumber:209}},_react2.default.createElement(_reactxp2.default.Image,{style:_styles.HomeScrollImageLogo,source:'./src/img/Back.svg',__source:{fileName:_jsxFileName,lineNumber:209}}),_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:212}},'Gproposal Details'))),_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:222}},_react2.default.createElement('div',{'class':'jumbotron',__source:{fileName:_jsxFileName,lineNumber:246}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:247}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:248}},'Quote ID'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:251}},_react2.default.createElement(_reactxp2.default.TextInput,{type:'Quote ID',style:_AppStyles2.default.Form,placeholder:'Quote Id',value:quoteid,onChangeText:this.onChangequoteid,__source:{fileName:_jsxFileName,lineNumber:253}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:264}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:265}},'Premium'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:268}},_react2.default.createElement(_reactxp2.default.TextInput,{type:'Premium',style:_AppStyles2.default.Form,placeholder:'Premium',value:mypremium,onChangeText:this.onChangepremium,__source:{fileName:_jsxFileName,lineNumber:270}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:285}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:286}},'Email id'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:289}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Email id',value:this.state.emailId,onChangeText:this.onChangeemailId,__source:{fileName:_jsxFileName,lineNumber:292}}))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:304}},_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop10,__source:{fileName:_jsxFileName,lineNumber:305}},_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.button,onPress:function onPress(){return _this2.onChangePost();},__source:{fileName:_jsxFileName,lineNumber:307}},'Buy Policy'))))));}},{key:'handleChange',value:function handleChange(){this.setState({Model:''});}},{key:'handlechange',value:function handlechange(date){this.setState({startDate:date});}},{key:'handleSelect',value:function handleSelect(date){this.setState({startDate:date});}}]);return VehicleDetails;}(_react2.default.Component);exports.default=VehicleDetails;
+};_this.state={quoteid:_this.props.navigatorRoute.quoteid,premium:_this.props.navigatorRoute.mypremium,emailId:'neeluneelima67@gmail.com',mobileNo:'9553715856',dateofbirth:'02/12/1994',occupation:'Student',nomineeName:'Harini',nomineeAge:'50',relationshipWithNominee:'Cousin',guardianName:'Prakhya',guardianAge:'60',relationshipwithGuardian:'Sister',permanentAddress1:'Guntupalli',permanentAddress2:'Vijayawada',permanentAddress3:'Krishna',permanentAddress4:'Ibrahimpatnam',permanentCity:'Chennai',permanentPincode:'600034',sameAdressReg:'No',ResidenceAddressOne:'Hyderabad',ResidenceAddressTwo:'Guntupalli',ResidenceAddressThree:'Krishna',ResidenceAddressFour:'Kurnool',ResidenceCity:'Chennai',ResidencePinCode:'600032',strStdCode:'0866',strPhoneNo:'2831608',vehicleModelCode:'ZWTV310',planOpted:'Fixed Plan',yearOfManufacture:'2017',drivingExperience:'1',voluntaryDeductible:'0',vehicleManufacturerName:'TVS',idv:'4520250',policyStartDate:'30/03/2018',vehicleMostlyDrivenOn:'Roads',vehicleRegDate:'30/03/2018',vehicleRegisteredInTheNameOf:'Company',modelName:'APACHE RTR ABS-2 Seater',productName:'BrandNewTwoWheeler',companyNameForCar:'xerago',engineNumber:'565465466',chassisNumber:'56546546',isTwoWheelerFinanced:'No',vehicleSubLine:'motorCycle',registrationchargesRoadtax:'No',fuelType:'Petrol',automobileAssociationMembership:'No',region:'East Region',carRegisteredCity:'24PARGANAS',isProductCheck:'No',engineCapacityAmount:'153 CC',personalAccidentCoverForUnnamedPassengers:'5000',accidentCoverForPaidDriver:'5000',legalliabilityToPaidDriver:'Yes',legalliabilityToEmployees:'Yes',cover_elec_acc:'Yes',NameOfElectronicAccessories:'Tyre',MakeModel:'TVS',Value:'345',NameOfElectronicAccessories:'Handle',MakeModel:'HONDA',Value:'365',secureTextEntry:true};_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(VehicleDetails,[{key:'render',value:function render(){var _this2=this;var quoteid=this.props.navigatorRoute.quoteid;var premium=this.props.navigatorRoute.mypremium;return _react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:207}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:208}},_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateSuper,__source:{fileName:_jsxFileName,lineNumber:209}},_react2.default.createElement(_reactxp2.default.Image,{style:_styles.HomeScrollImageLogo,source:'./src/img/Back.svg',__source:{fileName:_jsxFileName,lineNumber:209}}),_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:212}},'Gproposal Details'))),_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:222}},_react2.default.createElement('div',{'class':'jumbotron',__source:{fileName:_jsxFileName,lineNumber:246}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:247}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:248}},'Quote ID'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:251}},_react2.default.createElement(_reactxp2.default.TextInput,{type:'Quote ID',style:_AppStyles2.default.Form,placeholder:'Quote Id',value:quoteid,onChangeText:this.onChangequoteid,__source:{fileName:_jsxFileName,lineNumber:253}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:264}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:265}},'Premium'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:268}},_react2.default.createElement(_reactxp2.default.TextInput,{type:'Premium',style:_AppStyles2.default.Form,placeholder:'Premium',value:mypremium,onChangeText:this.onChangepremium,__source:{fileName:_jsxFileName,lineNumber:270}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:285}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:286}},'Email id'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:289}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Email id',value:this.state.emailId,onChangeText:this.onChangeemailId,__source:{fileName:_jsxFileName,lineNumber:292}}))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:304}},_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop10,__source:{fileName:_jsxFileName,lineNumber:305}},_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.button,onPress:function onPress(){return _this2.onChangePost();},__source:{fileName:_jsxFileName,lineNumber:307}},'Buy Policy'))))));}},{key:'handleChange',value:function handleChange(){this.setState({Model:''});}},{key:'handlechange',value:function handlechange(date){this.setState({startDate:date});}},{key:'handleSelect',value:function handleSelect(date){this.setState({startDate:date});}}]);return VehicleDetails;}(_react2.default.Component);exports.default=VehicleDetails;
 
 /***/ }),
 /* 972 */
@@ -116879,7 +116890,7 @@ fieldVal:value});
 };_this.
 
 onChangeliability=function(){
-_this.props.onNavigateThirty(liability,resJson,quoteid,premium,allResponse,odpremium);
+_this.props.onNavigateThirty(liability,resJson,quoteid,premium,allResponse,odpremium,token);
 
 
 
@@ -116893,6 +116904,8 @@ allResponse=this.props.navigatorRoute.allResponse;
 quoteid=this.props.navigatorRoute.quoteid;
 premium=this.props.navigatorRoute.premium;
 odpremium=this.props.navigatorRoute.odpremium;
+token=this.props.navigatorRoute.token;
+console.log(token,"token");
 console.log("idvvvvv",resJson);
 console.log("liablity",liability);
 
@@ -116901,43 +116914,43 @@ console.log("premium",premium);
 console.log("allResponse",allResponse);
 console.log("odpremium",odpremium);
 return(
-_react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:435}},
-_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:436}},
-_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateNinety,__source:{fileName:_jsxFileName,lineNumber:437}},_react2.default.createElement(_reactxp2.default.Image,{
+_react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:437}},
+_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:438}},
+_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateNinety,__source:{fileName:_jsxFileName,lineNumber:439}},_react2.default.createElement(_reactxp2.default.Image,{
 style:_styles.HomeScrollImageLogo,
-source:'./src/img/Back.svg',__source:{fileName:_jsxFileName,lineNumber:437}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.welcome,__source:{fileName:_jsxFileName,lineNumber:440}},'New Motor Insurance ')),
+source:'./src/img/Back.svg',__source:{fileName:_jsxFileName,lineNumber:439}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.welcome,__source:{fileName:_jsxFileName,lineNumber:442}},'New Motor Insurance ')),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.welcome,__source:{fileName:_jsxFileName,lineNumber:442}})),
-
-
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:445}},
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.flute,__source:{fileName:_jsxFileName,lineNumber:446}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.head,__source:{fileName:_jsxFileName,lineNumber:447}},'view and compare quotes')),
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.welcome,__source:{fileName:_jsxFileName,lineNumber:444}})),
 
 
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:447}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.flute,__source:{fileName:_jsxFileName,lineNumber:448}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.head,__source:{fileName:_jsxFileName,lineNumber:449}},'view and compare quotes')),
 
-_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-xs',__source:{fileName:_jsxFileName,lineNumber:451}},
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:452}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/royal.jpg',style:[_styles.imAge],__source:{fileName:_jsxFileName,lineNumber:453}},
-_react2.default.createElement('div',{style:_styles.check,__source:{fileName:_jsxFileName,lineNumber:454}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:454}},'Compare'))),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.sideHead,__source:{fileName:_jsxFileName,lineNumber:456}},'Royal Sundaram',
 
-_react2.default.createElement('div',{style:_styles.tryHead,__source:{fileName:_jsxFileName,lineNumber:458}},'Single Year Cover Only')),
+_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-xs',__source:{fileName:_jsxFileName,lineNumber:453}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:454}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/royal.jpg',style:[_styles.imAge],__source:{fileName:_jsxFileName,lineNumber:455}},
+_react2.default.createElement('div',{style:_styles.check,__source:{fileName:_jsxFileName,lineNumber:456}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:456}},'Compare'))),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.quoted,__source:{fileName:_jsxFileName,lineNumber:460}},'IDV:',
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.sideHead,__source:{fileName:_jsxFileName,lineNumber:458}},'Royal Sundaram',
+
+_react2.default.createElement('div',{style:_styles.tryHead,__source:{fileName:_jsxFileName,lineNumber:460}},'Single Year Cover Only')),
+
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.quoted,__source:{fileName:_jsxFileName,lineNumber:462}},'IDV:',
 resJson,
-_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:462}},'Package Premium')),
+_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:464}},'Package Premium')),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.ncb,__source:{fileName:_jsxFileName,lineNumber:464}},
-_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:465}},'NCB'),
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.ncb,__source:{fileName:_jsxFileName,lineNumber:466}},
+_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:467}},'NCB'),
 
-_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:467}},odpremium.PACKAGE_PREMIUM)),
+_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:469}},odpremium.PACKAGE_PREMIUM)),
 
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.nextBtn,__source:{fileName:_jsxFileName,lineNumber:469}},
-_react2.default.createElement(_reactxp2.default.Button,{style:_styles.roundButton,onPress:function onPress(){return _this2.onChangeliability();},__source:{fileName:_jsxFileName,lineNumber:470}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:471}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.nextBtn,__source:{fileName:_jsxFileName,lineNumber:471}},
+_react2.default.createElement(_reactxp2.default.Button,{style:_styles.roundButton,onPress:function onPress(){return _this2.onChangeliability();},__source:{fileName:_jsxFileName,lineNumber:472}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:473}},
 odpremium.GROSS_PREMIUM)))))),
 
 
@@ -116945,27 +116958,27 @@ odpremium.GROSS_PREMIUM)))))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-xs',__source:{fileName:_jsxFileName,lineNumber:479}},
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:480}},
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:481}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/icici.png',style:[_styles.icic],__source:{fileName:_jsxFileName,lineNumber:482}},
-_react2.default.createElement('div',{style:_styles.Check,__source:{fileName:_jsxFileName,lineNumber:483}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:483}},'Compare'))),
+_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-xs',__source:{fileName:_jsxFileName,lineNumber:481}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:482}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:483}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/icici.png',style:[_styles.icic],__source:{fileName:_jsxFileName,lineNumber:484}},
+_react2.default.createElement('div',{style:_styles.Check,__source:{fileName:_jsxFileName,lineNumber:485}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:485}},'Compare'))),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.SideHead,__source:{fileName:_jsxFileName,lineNumber:485}},'ICICI LOMBARD',
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.SideHead,__source:{fileName:_jsxFileName,lineNumber:487}},'ICICI LOMBARD',
 
-_react2.default.createElement('div',{style:_styles.tryHead,__source:{fileName:_jsxFileName,lineNumber:487}},'Two Year Cover Only')),
+_react2.default.createElement('div',{style:_styles.tryHead,__source:{fileName:_jsxFileName,lineNumber:489}},'Two Year Cover Only')),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.quoted,__source:{fileName:_jsxFileName,lineNumber:489}},'IDV',
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.quoted,__source:{fileName:_jsxFileName,lineNumber:491}},'IDV',
 
-_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:491}},'NCB')),
+_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:493}},'NCB')),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.ncb,__source:{fileName:_jsxFileName,lineNumber:493}},'Rs. 20,347',
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.ncb,__source:{fileName:_jsxFileName,lineNumber:495}},'Rs. 20,347',
 
-_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:495}},'NIL')),
+_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:497}},'NIL')),
 
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.nextBtn,__source:{fileName:_jsxFileName,lineNumber:497}},
-_react2.default.createElement(_reactxp2.default.Button,{style:_styles.roundButton,onPress:this.props.onNavigateSixth,__source:{fileName:_jsxFileName,lineNumber:498}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:499}},'Rs.1,634*')))))),
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.nextBtn,__source:{fileName:_jsxFileName,lineNumber:499}},
+_react2.default.createElement(_reactxp2.default.Button,{style:_styles.roundButton,onPress:this.props.onNavigateSixth,__source:{fileName:_jsxFileName,lineNumber:500}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:501}},'Rs.1,634*')))))),
 
 
 
@@ -116974,27 +116987,27 @@ _react2.default.createElement(_reactxp2.default.Text,{style:_styles.buybuttonTex
 
 
 
-_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-xs',__source:{fileName:_jsxFileName,lineNumber:508}},
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:509}},
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:510}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/tata.png',style:[_AppStyles2.default.JUKE],__source:{fileName:_jsxFileName,lineNumber:511}},
-_react2.default.createElement('div',{style:_styles.check,__source:{fileName:_jsxFileName,lineNumber:512}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:512}},'Compare'))),
+_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-xs',__source:{fileName:_jsxFileName,lineNumber:510}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:511}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:512}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/tata.png',style:[_AppStyles2.default.JUKE],__source:{fileName:_jsxFileName,lineNumber:513}},
+_react2.default.createElement('div',{style:_styles.check,__source:{fileName:_jsxFileName,lineNumber:514}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:514}},'Compare'))),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.SideHead,__source:{fileName:_jsxFileName,lineNumber:514}},'Tata AIG',
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.SideHead,__source:{fileName:_jsxFileName,lineNumber:516}},'Tata AIG',
 
-_react2.default.createElement('div',{style:_styles.tryHead,__source:{fileName:_jsxFileName,lineNumber:516}},'Two Year Cover Only')),
+_react2.default.createElement('div',{style:_styles.tryHead,__source:{fileName:_jsxFileName,lineNumber:518}},'Two Year Cover Only')),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.quoted,__source:{fileName:_jsxFileName,lineNumber:518}},'IDV',
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.quoted,__source:{fileName:_jsxFileName,lineNumber:520}},'IDV',
 
-_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:520}},'NCB')),
+_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:522}},'NCB')),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.ncb,__source:{fileName:_jsxFileName,lineNumber:522}},'Rs. 23,347',
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.ncb,__source:{fileName:_jsxFileName,lineNumber:524}},'Rs. 23,347',
 
-_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:524}},'NIL')),
+_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:526}},'NIL')),
 
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.nextBtn,__source:{fileName:_jsxFileName,lineNumber:526}},
-_react2.default.createElement(_reactxp2.default.Button,{style:_styles.roundButton,onPress:this.props.onNavigateSixth,__source:{fileName:_jsxFileName,lineNumber:527}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:528}},'Rs.1,834*')))))),
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.nextBtn,__source:{fileName:_jsxFileName,lineNumber:528}},
+_react2.default.createElement(_reactxp2.default.Button,{style:_styles.roundButton,onPress:this.props.onNavigateSixth,__source:{fileName:_jsxFileName,lineNumber:529}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:530}},'Rs.1,834*')))))),
 
 
 
@@ -117003,27 +117016,27 @@ _react2.default.createElement(_reactxp2.default.Text,{style:_styles.buybuttonTex
 
 
 
-_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-xs',__source:{fileName:_jsxFileName,lineNumber:537}},
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:538}},
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:539}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Sbi.png',style:[_styles.image],__source:{fileName:_jsxFileName,lineNumber:540}},
-_react2.default.createElement('div',{style:_styles.check,__source:{fileName:_jsxFileName,lineNumber:541}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:541}},'Compare'))),
+_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-xs',__source:{fileName:_jsxFileName,lineNumber:539}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:540}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:541}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Sbi.png',style:[_styles.image],__source:{fileName:_jsxFileName,lineNumber:542}},
+_react2.default.createElement('div',{style:_styles.check,__source:{fileName:_jsxFileName,lineNumber:543}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:543}},'Compare'))),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.SideHead,__source:{fileName:_jsxFileName,lineNumber:543}},'Bharathi AXP',
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.SideHead,__source:{fileName:_jsxFileName,lineNumber:545}},'Bharathi AXP',
 
-_react2.default.createElement('div',{style:_styles.tryHead,__source:{fileName:_jsxFileName,lineNumber:545}},'Two Year Cover Only')),
+_react2.default.createElement('div',{style:_styles.tryHead,__source:{fileName:_jsxFileName,lineNumber:547}},'Two Year Cover Only')),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.quoted,__source:{fileName:_jsxFileName,lineNumber:547}},'IDV',
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.quoted,__source:{fileName:_jsxFileName,lineNumber:549}},'IDV',
 
-_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:549}},'NCB')),
+_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:551}},'NCB')),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.ncb,__source:{fileName:_jsxFileName,lineNumber:551}},'Rs. 28,347',
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.ncb,__source:{fileName:_jsxFileName,lineNumber:553}},'Rs. 28,347',
 
-_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:553}},'NIL')),
+_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:555}},'NIL')),
 
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.nextBtn,__source:{fileName:_jsxFileName,lineNumber:555}},
-_react2.default.createElement(_reactxp2.default.Button,{style:_styles.roundButton,onPress:this.props.onNavigateSixth,__source:{fileName:_jsxFileName,lineNumber:556}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:557}},'Rs.1,934*')))))),
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.nextBtn,__source:{fileName:_jsxFileName,lineNumber:557}},
+_react2.default.createElement(_reactxp2.default.Button,{style:_styles.roundButton,onPress:this.props.onNavigateSixth,__source:{fileName:_jsxFileName,lineNumber:558}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:559}},'Rs.1,934*')))))),
 
 
 
@@ -117032,27 +117045,27 @@ _react2.default.createElement(_reactxp2.default.Text,{style:_styles.buybuttonTex
 
 
 
-_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-xs',__source:{fileName:_jsxFileName,lineNumber:566}},
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:567}},
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:568}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Bharti.png',style:[_styles.image],__source:{fileName:_jsxFileName,lineNumber:569}},
-_react2.default.createElement('div',{style:_styles.check,__source:{fileName:_jsxFileName,lineNumber:570}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:570}},'Compare'))),
+_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-xs',__source:{fileName:_jsxFileName,lineNumber:568}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:569}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:570}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Bharti.png',style:[_styles.image],__source:{fileName:_jsxFileName,lineNumber:571}},
+_react2.default.createElement('div',{style:_styles.check,__source:{fileName:_jsxFileName,lineNumber:572}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:572}},'Compare'))),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.SideHead,__source:{fileName:_jsxFileName,lineNumber:572}},'Reliance AXP',
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.SideHead,__source:{fileName:_jsxFileName,lineNumber:574}},'Reliance AXP',
 
-_react2.default.createElement('div',{style:_styles.tryHead,__source:{fileName:_jsxFileName,lineNumber:574}},'Two Year Cover Only')),
+_react2.default.createElement('div',{style:_styles.tryHead,__source:{fileName:_jsxFileName,lineNumber:576}},'Two Year Cover Only')),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.quoted,__source:{fileName:_jsxFileName,lineNumber:576}},'IDV',
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.quoted,__source:{fileName:_jsxFileName,lineNumber:578}},'IDV',
 
-_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:578}},'NCB')),
+_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:580}},'NCB')),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.ncb,__source:{fileName:_jsxFileName,lineNumber:580}},'Rs. 23,347',
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.ncb,__source:{fileName:_jsxFileName,lineNumber:582}},'Rs. 23,347',
 
-_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:582}},'NIL')),
+_react2.default.createElement('div',{__source:{fileName:_jsxFileName,lineNumber:584}},'NIL')),
 
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.nextBtn,__source:{fileName:_jsxFileName,lineNumber:584}},
-_react2.default.createElement(_reactxp2.default.Button,{style:_styles.roundButton,onPress:this.props.onNavigateSixth,__source:{fileName:_jsxFileName,lineNumber:585}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_styles.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:586}},'Rs.1,834*')))))),
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.nextBtn,__source:{fileName:_jsxFileName,lineNumber:586}},
+_react2.default.createElement(_reactxp2.default.Button,{style:_styles.roundButton,onPress:this.props.onNavigateSixth,__source:{fileName:_jsxFileName,lineNumber:587}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_styles.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:588}},'Rs.1,834*')))))),
 
 
 
@@ -117061,23 +117074,23 @@ _react2.default.createElement(_reactxp2.default.Text,{style:_styles.buybuttonTex
 
 
 
-_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-lg',__source:{fileName:_jsxFileName,lineNumber:595}},
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:596}},
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',style:_AppStyles2.default.clientLeft,__source:{fileName:_jsxFileName,lineNumber:597}},
+_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-lg',__source:{fileName:_jsxFileName,lineNumber:597}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:598}},
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',style:_AppStyles2.default.clientLeft,__source:{fileName:_jsxFileName,lineNumber:599}},
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,__source:{fileName:_jsxFileName,lineNumber:599}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/bajaj.png',style:[_AppStyles2.default.image],__source:{fileName:_jsxFileName,lineNumber:600}})),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,__source:{fileName:_jsxFileName,lineNumber:601}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/bajaj.png',style:[_AppStyles2.default.image],__source:{fileName:_jsxFileName,lineNumber:602}})),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:602}},
-_react2.default.createElement('div',{style:_AppStyles2.default.clientHeadxs,__source:{fileName:_jsxFileName,lineNumber:603}},'Bajaj Allianz'),
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideHeadxs,__source:{fileName:_jsxFileName,lineNumber:604}},
-_react2.default.createElement('div',{style:_AppStyles2.default.tryHeadxs,__source:{fileName:_jsxFileName,lineNumber:605}},'IDV: 1,25,300'))),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:604}},
+_react2.default.createElement('div',{style:_AppStyles2.default.clientHeadxs,__source:{fileName:_jsxFileName,lineNumber:605}},'Bajaj Allianz'),
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideHeadxs,__source:{fileName:_jsxFileName,lineNumber:606}},
+_react2.default.createElement('div',{style:_AppStyles2.default.tryHeadxs,__source:{fileName:_jsxFileName,lineNumber:607}},'IDV: 1,25,300'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,__source:{fileName:_jsxFileName,lineNumber:609}},
-_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.roundButton,onPress:this.props.onNavigateSixth,__source:{fileName:_jsxFileName,lineNumber:610}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:611}},'Rs.1,322*')))))),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,__source:{fileName:_jsxFileName,lineNumber:611}},
+_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.roundButton,onPress:this.props.onNavigateSixth,__source:{fileName:_jsxFileName,lineNumber:612}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:613}},'Rs.1,322*')))))),
 
 
 
@@ -117085,23 +117098,23 @@ _react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.
 
 
 
-_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-lg',__source:{fileName:_jsxFileName,lineNumber:619}},
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:620}},
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',style:_AppStyles2.default.clientLeft,__source:{fileName:_jsxFileName,lineNumber:621}},
+_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-lg',__source:{fileName:_jsxFileName,lineNumber:621}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:622}},
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',style:_AppStyles2.default.clientLeft,__source:{fileName:_jsxFileName,lineNumber:623}},
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,__source:{fileName:_jsxFileName,lineNumber:623}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/icici.png',style:[_AppStyles2.default.image],__source:{fileName:_jsxFileName,lineNumber:624}})),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,__source:{fileName:_jsxFileName,lineNumber:625}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/icici.png',style:[_AppStyles2.default.image],__source:{fileName:_jsxFileName,lineNumber:626}})),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:626}},
-_react2.default.createElement('div',{style:_AppStyles2.default.clientHeadxs,__source:{fileName:_jsxFileName,lineNumber:627}},'Bajaj Allianz'),
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideHeadxs,__source:{fileName:_jsxFileName,lineNumber:628}},
-_react2.default.createElement('div',{style:_AppStyles2.default.tryHeadxs,__source:{fileName:_jsxFileName,lineNumber:629}},'IDV: 1,25,300'))),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:628}},
+_react2.default.createElement('div',{style:_AppStyles2.default.clientHeadxs,__source:{fileName:_jsxFileName,lineNumber:629}},'Bajaj Allianz'),
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideHeadxs,__source:{fileName:_jsxFileName,lineNumber:630}},
+_react2.default.createElement('div',{style:_AppStyles2.default.tryHeadxs,__source:{fileName:_jsxFileName,lineNumber:631}},'IDV: 1,25,300'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,__source:{fileName:_jsxFileName,lineNumber:633}},
-_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.roundButton,onPress:this.props.onNavigateBack,__source:{fileName:_jsxFileName,lineNumber:634}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:635}},'Rs.1,322*')))))),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,__source:{fileName:_jsxFileName,lineNumber:635}},
+_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.roundButton,onPress:this.props.onNavigateBack,__source:{fileName:_jsxFileName,lineNumber:636}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:637}},'Rs.1,322*')))))),
 
 
 
@@ -117109,23 +117122,23 @@ _react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.
 
 
 
-_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-lg',__source:{fileName:_jsxFileName,lineNumber:643}},
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:644}},
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',style:_AppStyles2.default.clientLeft,__source:{fileName:_jsxFileName,lineNumber:645}},
+_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-lg',__source:{fileName:_jsxFileName,lineNumber:645}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:646}},
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',style:_AppStyles2.default.clientLeft,__source:{fileName:_jsxFileName,lineNumber:647}},
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,__source:{fileName:_jsxFileName,lineNumber:647}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/tata.png',style:[_AppStyles2.default.image],__source:{fileName:_jsxFileName,lineNumber:648}})),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,__source:{fileName:_jsxFileName,lineNumber:649}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/tata.png',style:[_AppStyles2.default.image],__source:{fileName:_jsxFileName,lineNumber:650}})),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:650}},
-_react2.default.createElement('div',{style:_AppStyles2.default.clientHeadxs,__source:{fileName:_jsxFileName,lineNumber:651}},'Bajaj Allianz'),
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideHeadxs,__source:{fileName:_jsxFileName,lineNumber:652}},
-_react2.default.createElement('div',{style:_AppStyles2.default.tryHeadxs,__source:{fileName:_jsxFileName,lineNumber:653}},'IDV: 1,25,300'))),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:652}},
+_react2.default.createElement('div',{style:_AppStyles2.default.clientHeadxs,__source:{fileName:_jsxFileName,lineNumber:653}},'Bajaj Allianz'),
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideHeadxs,__source:{fileName:_jsxFileName,lineNumber:654}},
+_react2.default.createElement('div',{style:_AppStyles2.default.tryHeadxs,__source:{fileName:_jsxFileName,lineNumber:655}},'IDV: 1,25,300'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,__source:{fileName:_jsxFileName,lineNumber:657}},
-_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.roundButton,onPress:this.props.onNavigateBack,__source:{fileName:_jsxFileName,lineNumber:658}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:659}},'Rs.1,322*')))))),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,__source:{fileName:_jsxFileName,lineNumber:659}},
+_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.roundButton,onPress:this.props.onNavigateBack,__source:{fileName:_jsxFileName,lineNumber:660}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:661}},'Rs.1,322*')))))),
 
 
 
@@ -117133,23 +117146,23 @@ _react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.
 
 
 
-_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-lg',__source:{fileName:_jsxFileName,lineNumber:667}},
-_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:668}},
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',style:_AppStyles2.default.clientLeft,__source:{fileName:_jsxFileName,lineNumber:669}},
+_react2.default.createElement(_reactBootstrap.Grid,{className:'hidden-lg',__source:{fileName:_jsxFileName,lineNumber:669}},
+_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:670}},
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',style:_AppStyles2.default.clientLeft,__source:{fileName:_jsxFileName,lineNumber:671}},
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,__source:{fileName:_jsxFileName,lineNumber:671}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/bajaj.png',style:[_AppStyles2.default.image],__source:{fileName:_jsxFileName,lineNumber:672}})),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,__source:{fileName:_jsxFileName,lineNumber:673}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/bajaj.png',style:[_AppStyles2.default.image],__source:{fileName:_jsxFileName,lineNumber:674}})),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:674}},
-_react2.default.createElement('div',{style:_AppStyles2.default.clientHeadxs,__source:{fileName:_jsxFileName,lineNumber:675}},'Bajaj Allianz'),
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideHeadxs,__source:{fileName:_jsxFileName,lineNumber:676}},
-_react2.default.createElement('div',{style:_AppStyles2.default.tryHeadxs,__source:{fileName:_jsxFileName,lineNumber:677}},'IDV: 1,25,300'))),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop17,__source:{fileName:_jsxFileName,lineNumber:676}},
+_react2.default.createElement('div',{style:_AppStyles2.default.clientHeadxs,__source:{fileName:_jsxFileName,lineNumber:677}},'Bajaj Allianz'),
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideHeadxs,__source:{fileName:_jsxFileName,lineNumber:678}},
+_react2.default.createElement('div',{style:_AppStyles2.default.tryHeadxs,__source:{fileName:_jsxFileName,lineNumber:679}},'IDV: 1,25,300'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,__source:{fileName:_jsxFileName,lineNumber:681}},
-_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.roundButton,onPress:this.props.onNavigateBack,__source:{fileName:_jsxFileName,lineNumber:682}},
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:683}},'Rs.1,322*'))))))));
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,__source:{fileName:_jsxFileName,lineNumber:683}},
+_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.roundButton,onPress:this.props.onNavigateBack,__source:{fileName:_jsxFileName,lineNumber:684}},
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.buybuttonText,__source:{fileName:_jsxFileName,lineNumber:685}},'Rs.1,322*'))))))));
 
 
 
@@ -117378,7 +117391,8 @@ var resJson;
 var message;
 var quoteid;
 var premium;
-var allResponse;var
+var allResponse;
+var token;var
 CompareQuotes=function(_RX$Component){_inherits(CompareQuotes,_RX$Component);
 function CompareQuotes(props){_classCallCheck(this,CompareQuotes);var _this=_possibleConstructorReturn(this,(CompareQuotes.__proto__||Object.getPrototypeOf(CompareQuotes)).call(this,
 props));_this.
@@ -117403,7 +117417,7 @@ props));_this.
 
 
 onChangePostCompare=function(){
-_this.props.onNavigateFourty(liability,resJson,quoteid,premium,allResponse);
+_this.props.onNavigateFourty(liability,resJson,quoteid,premium,allResponse,token);
 
 
 };_this.
@@ -117440,62 +117454,39 @@ resJson=this.props.navigatorRoute.resJson;
 quoteid=this.props.navigatorRoute.quoteid;
 premium=this.props.navigatorRoute.premium;
 allResponse=this.props.navigatorRoute.allResponse;
+token=this.props.navigatorRoute.token;
+console.log(token,"token");
 console.log("comparequotes",liability);
 console.log("resJson",resJson);
 console.log("quoteiid",quoteid);
 console.log("premium",premium);
 console.log("allResponse",allResponse);
 return(
-_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.scroll,__source:{fileName:_jsxFileName,lineNumber:249}},
-_react2.default.createElement(_reactxp2.default.View,{style:styles.container,__source:{fileName:_jsxFileName,lineNumber:250}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.welcome,__source:{fileName:_jsxFileName,lineNumber:251}},'Compare Quotes')),
+_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.scroll,__source:{fileName:_jsxFileName,lineNumber:252}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.container,__source:{fileName:_jsxFileName,lineNumber:253}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.welcome,__source:{fileName:_jsxFileName,lineNumber:254}},'Compare Quotes')),
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.clientSec,__source:{fileName:_jsxFileName,lineNumber:255}},
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:256}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:257}}),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.clientSec,__source:{fileName:_jsxFileName,lineNumber:258}},
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:259}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:260}}),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:261}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:264}},
 
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/royal.jpg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:263}})),
-
-
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:266}},
-
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/icici.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:268}})),
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/royal.jpg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:266}})),
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:271}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:269}},
 
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Sbi.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:273}}))),
-
-
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/icici.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:271}})),
 
 
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:274}},
 
-
-
-
-
-
-
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:285}},
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:286}},
-
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Bharti.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:288}})),
-
-
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:291}},
-
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/icici.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:293}})),
-
-
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:296}},
-
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Sbi.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:298}}))),
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Sbi.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:276}}))),
 
 
 
@@ -117507,29 +117498,54 @@ _react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Sbi.png
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:310}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:311}}),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:288}},
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:289}},
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:313}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:314}},'Royal Sundaram')),
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Bharti.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:291}})),
+
+
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:294}},
+
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/icici.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:296}})),
+
+
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:299}},
+
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Sbi.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:301}}))),
+
+
+
+
+
+
+
+
+
+
+
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:313}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:314}}),
 
 _react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:316}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:317}},'Ergo Insurance')),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:317}},'Royal Sundaram')),
 
 _react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:319}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:320}},'Oriental Insurance'))),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:320}},'Ergo Insurance')),
+
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:322}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:323}},'Oriental Insurance'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:324}},
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:325}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:326}},'Bharati Insurance')),
-
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:327}},
 _react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:328}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:329}},'Ergo Insurance')),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:329}},'Bharati Insurance')),
 
 _react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:331}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:332}},'Oriental Insurance'))),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:332}},'Ergo Insurance')),
+
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:334}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:335}},'Oriental Insurance'))),
 
 
 
@@ -117548,181 +117564,180 @@ _react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:351}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:352}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:353}},'Basic Permium:')),
-
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:355}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:356}},liability.BASIC_PREMIUM_INCLUDING_PREMIUM_FOR_TPPD)),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:354}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:355}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:356}},'Basic Permium:')),
 
 _react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:358}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:359}},'3,17,402')),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:359}},liability.BASIC_PREMIUM_INCLUDING_PREMIUM_FOR_TPPD)),
 
 _react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:361}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:362}},'3,41,402')),'sic'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:362}},'3,17,402')),
+
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:364}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:365}},'3,41,402')),'sic'),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:366}},
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:367}},
-_react2.default.createElement('div',{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:368}},'Sum Insured'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:369}},'3,21,402')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:369}},
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:370}},
+_react2.default.createElement('div',{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:371}},'Sum Insured'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:372}},'3,21,402')),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:371}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:372}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:373}},'3,17,402')),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:374}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:375}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:376}},'3,17,402')),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:375}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:376}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:377}},'3,41,402'))),
-
-
-
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:381}},
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:382}},
-_react2.default.createElement('div',{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:383}},'Health Checkup'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:384}},'3,21,402')),
-
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:386}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:387}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:388}},'3,17,402')),
-
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:390}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:391}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:392}},'3,41,402'))),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:378}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:379}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:380}},'3,41,402'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:396}},
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:397}},
-_react2.default.createElement('div',{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:398}},'Cancer Care Live'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:399}},'3,21,402')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:384}},
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:385}},
+_react2.default.createElement('div',{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:386}},'Health Checkup'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:387}},'3,21,402')),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:401}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:402}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:403}},'3,17,402')),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:389}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:390}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:391}},'3,17,402')),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:405}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:406}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:407}},'3,41,402'))),
-
-
-
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:411}},
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:412}},
-_react2.default.createElement('div',{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:413}},'Dengue Feaver'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:414}},'3,21,402')),
-
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:416}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:417}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:418}},'3,17,402')),
-
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:420}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:421}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:422}},'3,41,402'))),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:393}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:394}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:395}},'3,41,402'))),
 
 
 
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:399}},
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:400}},
+_react2.default.createElement('div',{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:401}},'Cancer Care Live'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:402}},'3,21,402')),
+
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:404}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:405}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:406}},'3,17,402')),
+
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:408}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:409}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:410}},'3,41,402'))),
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:428}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:429}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:430}},' Cover To Paid Driver')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:432}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:433}},liability.PA_COVER_TO_PAID_DRIVER)),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:414}},
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:415}},
+_react2.default.createElement('div',{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:416}},'Dengue Feaver'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:417}},'3,21,402')),
+
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:419}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:420}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:421}},'3,17,402')),
+
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:423}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:424}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:425}},'3,41,402'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:437}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:438}},'20%')),
+
+
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:431}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:432}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:433}},' Cover To Paid Driver')),
+
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:435}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:436}},liability.PA_COVER_TO_PAID_DRIVER)),
+
+
 
 _react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:440}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:441}},'35%'))),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:441}},'20%')),
+
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:443}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:444}},'35%'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:445}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:446}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:447}},'Total Liability premium')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:448}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:449}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:450}},'Total Liability premium')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:449}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:450}},liability.TOTAL_LIABILITY_PREMIUM)),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:452}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:453}},liability.TOTAL_LIABILITY_PREMIUM)),
 
 
-
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:454}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:455}},'20%')),
 
 _react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:457}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:458}},'35%'))),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:458}},'20%')),
+
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:460}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:461}},'35%'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:462}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:463}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:464}},'Employees')),
-
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:466}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:467}},liability.TO_EMPLOYESES)),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:465}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:466}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:467}},'Employees')),
 
 _react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:469}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:470}},'Nil')),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:470}},liability.TO_EMPLOYESES)),
 
 _react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:472}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:473}},'Nil'))),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:473}},'Nil')),
+
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:475}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:476}},'Nil'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:477}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:478}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:479}},'Paid Drivers')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:480}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:481}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:482}},'Paid Drivers')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:481}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:482}},liability.TO_PAID_DRIVERS)),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:484}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:485}},liability.TO_PAID_DRIVERS)),
 
 
-
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:486}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:487}},'Nil')),
 
 _react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:489}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:490}},'Nil'))),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:490}},'Nil')),
+
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:492}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:493}},'Nil'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:494}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:495}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:496}},'Owner Driver')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:497}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:498}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:499}},'Owner Driver')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:498}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:499}},liability.UNDER_SECTION_III_OWNER_DRIVER,':')),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:501}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:502}},liability.UNDER_SECTION_III_OWNER_DRIVER,':')),
 
 
-
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:503}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:504}},'Nil')),
 
 _react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:506}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:507}},'Nil'))),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:507}},'Nil')),
+
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:509}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:510}},'Nil'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:511}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:512}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:513}},'Umnnamed Passengers')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:514}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:515}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:516}},'Umnnamed Passengers')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:515}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:516}},liability.UNNAMED_PASSENGRS)),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:518}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:519}},liability.UNNAMED_PASSENGRS)),
 
 
-
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:520}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:521}},'Nil')),
 
 _react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:523}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:524}},'Nil')))),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:524}},'Nil')),
 
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:526}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:527}},'Nil')))),
 
 
 
@@ -117936,11 +117951,12 @@ _react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__s
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.clientNorm,__source:{fileName:_jsxFileName,lineNumber:739}}),
 
-_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.BUTTON4,onPress:function onPress(){return _this2.onChangePostCompare();},__source:{fileName:_jsxFileName,lineNumber:741}},'>',
+_react2.default.createElement(_reactxp2.default.View,{style:styles.clientNorm,__source:{fileName:_jsxFileName,lineNumber:742}}),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.buttonText,__source:{fileName:_jsxFileName,lineNumber:743}},'NEXT'))));
+_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.BUTTON4,onPress:function onPress(){return _this2.onChangePostCompare();},__source:{fileName:_jsxFileName,lineNumber:744}},'>',
+
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.buttonText,__source:{fileName:_jsxFileName,lineNumber:746}},'NEXT'))));
 
 
 
@@ -118156,7 +118172,8 @@ var message;
 var quoteid;
 var premium;
 var odpremium;
-var allResponse;var
+var allResponse;
+var token;var
 CompareQuotes=function(_RX$Component){_inherits(CompareQuotes,_RX$Component);
 function CompareQuotes(props){_classCallCheck(this,CompareQuotes);var _this=_possibleConstructorReturn(this,(CompareQuotes.__proto__||Object.getPrototypeOf(CompareQuotes)).call(this,
 props));_this.
@@ -118181,7 +118198,7 @@ props));_this.
 
 
 onChangePostCompare=function(){
-_this.props.onNavigateCompare(allResponse,liability,resJson,message,quoteid,premium,odpremium);
+_this.props.onNavigateCompare(allResponse,liability,resJson,message,quoteid,premium,odpremium,token);
 
 
 };_this.
@@ -118219,7 +118236,8 @@ quoteid=this.props.navigatorRoute.quoteid;
 premium=this.props.navigatorRoute.premium;
 odpremium=this.props.navigatorRoute.odpremium;
 allResponse=this.props.navigatorRoute.allResponse;
-
+token=this.props.navigatorRoute.token;
+console.log(token,"token");
 console.log("comparequotes",liability);
 console.log("resJson",resJson);
 console.log("quoteiid",quoteid);
@@ -118227,33 +118245,33 @@ console.log("premium",premium);
 console.log("odpremium",odpremium);
 
 return(
-_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.scroll,__source:{fileName:_jsxFileName,lineNumber:264}},
-_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:265}},
-_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateTen,__source:{fileName:_jsxFileName,lineNumber:266}},_react2.default.createElement(_reactxp2.default.Image,{
+_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.scroll,__source:{fileName:_jsxFileName,lineNumber:266}},
+_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:267}},
+_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateTen,__source:{fileName:_jsxFileName,lineNumber:268}},_react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Back.svg',__source:{fileName:_jsxFileName,lineNumber:266}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:269}},'Compare Quotes '))),
+source:'./src/img/Back.svg',__source:{fileName:_jsxFileName,lineNumber:268}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:271}},'Compare Quotes '))),
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.clientSec,__source:{fileName:_jsxFileName,lineNumber:272}},
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:273}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:274}}),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.clientSec,__source:{fileName:_jsxFileName,lineNumber:274}},
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:275}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:276}}),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:278}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:280}},
 
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/royal.jpg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:280}})),
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/royal.jpg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:282}})),
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:283}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:285}},
 
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/icici.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:285}})),
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/icici.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:287}})),
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:288}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:290}},
 
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Sbi.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:290}}))),
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Sbi.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:292}}))),
 
 
 
@@ -118265,20 +118283,20 @@ _react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Sbi.png
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:302}},
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:303}},
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:304}},
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:305}},
 
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Bharti.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:305}})),
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Bharti.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:307}})),
 
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:308}},
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:310}},
 
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/icici.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:310}})),
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/icici.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:312}})),
 
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:313}},
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:315}},
 
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Sbi.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:315}}))),
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Sbi.png',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:317}}))),
 
 
 
@@ -118290,29 +118308,29 @@ _react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Sbi.png
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:327}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:328}}),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:329}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:330}}),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:330}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:331}},'Royal Sundaram')),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:332}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:333}},'Royal Sundaram')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:333}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:334}},'Ergo Insurance')),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:335}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:336}},'Ergo Insurance')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:336}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:337}},'Oriental Insurance'))),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:338}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:339}},'Oriental Insurance'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:341}},
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:342}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:343}},'Bharati Insurance')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:343}},
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:344}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:345}},'Bharati Insurance')),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:345}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:346}},'Ergo Insurance')),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:347}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:348}},'Ergo Insurance')),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:348}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:349}},'Oriental Insurance'))),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:350}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:351}},'Oriental Insurance'))),
 
 
 
@@ -118331,180 +118349,180 @@ _react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:368}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:369}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:370}},'Basic Permium:')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:370}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:371}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:372}},'Basic Permium:')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:372}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:373}},liability.BASIC_PREMIUM_INCLUDING_PREMIUM_FOR_TPPD)),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:374}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:375}},liability.BASIC_PREMIUM_INCLUDING_PREMIUM_FOR_TPPD)),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:375}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:376}},'3,17,402')),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:377}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:378}},'3,17,402')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:378}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:379}},'3,41,402')),'sic'),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:380}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:381}},'3,41,402')),'sic'),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:383}},
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:384}},
-_react2.default.createElement('div',{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:385}},'Sum Insured'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:386}},'3,21,402')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:385}},
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:386}},
+_react2.default.createElement('div',{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:387}},'Sum Insured'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:388}},'3,21,402')),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:388}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:389}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:390}},'3,17,402')),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:390}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:391}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:392}},'3,17,402')),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:392}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:393}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:394}},'3,41,402'))),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:394}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:395}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:396}},'3,41,402'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:398}},
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:399}},
-_react2.default.createElement('div',{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:400}},'Health Checkup'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:401}},'3,21,402')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:400}},
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:401}},
+_react2.default.createElement('div',{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:402}},'Health Checkup'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:403}},'3,21,402')),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:403}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:404}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:405}},'3,17,402')),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:405}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:406}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:407}},'3,17,402')),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:407}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:408}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:409}},'3,41,402'))),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:409}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:410}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:411}},'3,41,402'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:413}},
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:414}},
-_react2.default.createElement('div',{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:415}},'Cancer Care Live'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:416}},'3,21,402')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:415}},
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:416}},
+_react2.default.createElement('div',{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:417}},'Cancer Care Live'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:418}},'3,21,402')),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:418}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:419}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:420}},'3,17,402')),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:420}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:421}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:422}},'3,17,402')),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:422}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:423}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:424}},'3,41,402'))),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:424}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:425}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:426}},'3,41,402'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:428}},
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:429}},
-_react2.default.createElement('div',{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:430}},'Dengue Feaver'),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:431}},'3,21,402')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-lg',__source:{fileName:_jsxFileName,lineNumber:430}},
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:431}},
+_react2.default.createElement('div',{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:432}},'Dengue Feaver'),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:433}},'3,21,402')),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:433}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:434}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:435}},'3,17,402')),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:435}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:436}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:437}},'3,17,402')),
 
-_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:437}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:438}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:439}},'3,41,402'))),
+_react2.default.createElement(_reactBootstrap.Col,{xs:4,style:_AppStyles2.default.marTop40,__source:{fileName:_jsxFileName,lineNumber:439}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientTextxs],__source:{fileName:_jsxFileName,lineNumber:440}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:441}},'3,41,402'))),
 
 
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:445}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:446}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:447}},' Cover To Paid Driver')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:447}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:448}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:449}},' Cover To Paid Driver')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:449}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:450}},liability.PA_COVER_TO_PAID_DRIVER)),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:451}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:452}},liability.PA_COVER_TO_PAID_DRIVER)),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:454}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:455}},'20%')),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:456}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:457}},'20%')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:457}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:458}},'35%'))),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:459}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:460}},'35%'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:462}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:463}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:464}},'Total Liability premium')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:464}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:465}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:466}},'Total Liability premium')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:466}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:467}},liability.TOTAL_LIABILITY_PREMIUM)),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:468}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:469}},liability.TOTAL_LIABILITY_PREMIUM)),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:471}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:472}},'20%')),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:473}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:474}},'20%')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:474}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:475}},'35%'))),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:476}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:477}},'35%'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:479}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:480}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:481}},'Employees')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:481}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:482}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:483}},'Employees')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:483}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:484}},liability.TO_EMPLOYESES)),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:485}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:486}},liability.TO_EMPLOYESES)),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:486}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:487}},'Nil')),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:488}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:489}},'Nil')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:489}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:490}},'Nil'))),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:491}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:492}},'Nil'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:494}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:495}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:496}},'Paid Drivers')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:496}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:497}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:498}},'Paid Drivers')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:498}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:499}},liability.TO_PAID_DRIVERS)),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:500}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:501}},liability.TO_PAID_DRIVERS)),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:503}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:504}},'Nil')),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:505}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:506}},'Nil')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:506}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:507}},'Nil'))),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:508}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:509}},'Nil'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:511}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:512}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:513}},'Owner Driver')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:513}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:514}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:515}},'Owner Driver')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:515}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:516}},liability.UNDER_SECTION_III_OWNER_DRIVER,':')),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:517}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:518}},liability.UNDER_SECTION_III_OWNER_DRIVER,':')),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:520}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:521}},'Nil')),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:522}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:523}},'Nil')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:523}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:524}},'Nil'))),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:525}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:526}},'Nil'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:528}},
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:529}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:530}},'Umnnamed Passengers')),
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:530}},
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTopcs,__source:{fileName:_jsxFileName,lineNumber:531}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.clientText],__source:{fileName:_jsxFileName,lineNumber:532}},'Umnnamed Passengers')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:532}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:533}},liability.UNNAMED_PASSENGRS)),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:534}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:535}},liability.UNNAMED_PASSENGRS)),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:537}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:538}},'Nil')),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:539}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:540}},'Nil')),
 
-_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:540}},
-_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:541}},'Nil')))),
+_react2.default.createElement(_reactBootstrap.Col,{md:3,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:542}},
+_react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__source:{fileName:_jsxFileName,lineNumber:543}},'Nil')))),
 
 
 
@@ -118719,10 +118737,10 @@ _react2.default.createElement(_reactxp2.default.Text,{style:[styles.subText],__s
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.clientNorm,__source:{fileName:_jsxFileName,lineNumber:756}}),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.clientNorm,__source:{fileName:_jsxFileName,lineNumber:758}}),
 
 
-_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.BUTTON4,onPress:function onPress(){return _this2.onChangePostCompare();},__source:{fileName:_jsxFileName,lineNumber:759}},'Next')));
+_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.BUTTON4,onPress:function onPress(){return _this2.onChangePostCompare();},__source:{fileName:_jsxFileName,lineNumber:761}},'Next')));
 
 
 
@@ -119216,7 +119234,7 @@ _this.setState({password:newText});
 
 _onChangeTest=function(newText){
 _this.setState({password:newText});
-};_this.state={quoteid:_this.props.navigatorRoute.quoteid,premium:_this.props.navigatorRoute.mypremium,title:'Ms',firstname:'Neelima',lastname:'Rani',emailId:'neeluneelima67@gmail.com',mobileNo:'9553715856',dateofbirth:'02/12/1994',occupation:'Student',nomineeName:'Harini',nomineeAge:'50',relationshipWithNominee:'Cousin',guardianName:'Prakhya',guardianAge:'60',relationshipwithGuardian:'Sister',permanentAddress1:'Guntupalli',permanentAddress2:'Vijayawada',permanentAddress3:'Krishna',permanentAddress4:'Ibrahimpatnam',permanentCity:'Chennai',permanentPincode:'600034',sameAdressReg:'No',ResidenceAddressOne:'Hyderabad',ResidenceAddressTwo:'Guntupalli',ResidenceAddressThree:'Krishna',ResidenceAddressFour:'Kurnool',ResidenceCity:'Chennai',ResidencePinCode:'600032',strStdCode:'0866',strPhoneNo:'2831608',vehicleModelCode:'ZWTV310',planOpted:'Fixed Plan',yearOfManufacture:'2017',drivingExperience:'1',voluntaryDeductible:'0',vehicleManufacturerName:'TVS',idv:'87164',policyStartDate:'29/03/2018',vehicleMostlyDrivenOn:'Roads',vehicleRegDate:'29/03/2018',vehicleRegisteredInTheNameOf:'Company',modelName:'APACHE RTR ABS-2 Seater',productName:'BrandNewTwoWheeler',companyNameForCar:'xerago',engineNumber:'565465466',chassisNumber:'56546546',isTwoWheelerFinanced:'No',vehicleSubLine:'motorCycle',registrationchargesRoadtax:'No',fuelType:'Petrol',automobileAssociationMembership:'No',region:'East Region',carRegisteredCity:'24PARGANAS',isProductCheck:'No',engineCapacityAmount:'153 CC',personalAccidentCoverForUnnamedPassengers:'5000',accidentCoverForPaidDriver:'5000',legalliabilityToPaidDriver:'Yes',legalliabilityToEmployees:'Yes',cover_elec_acc:'Yes',NameOfElectronicAccessories:'Tyre',MakeModel:'TVS',Value:'345',NameOfElectronicAccessories:'Handle',MakeModel:'HONDA',Value:'365',secureTextEntry:true};_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(VehicleDetails,[{key:'render',value:function render(){var _this2=this;var quoteid=this.props.navigatorRoute.quoteid;var mypremium=this.props.navigatorRoute.mypremium;token=this.props.navigatorRoute.token;console.log(token,"token");return _react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:219}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:220}},_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateSuper,__source:{fileName:_jsxFileName,lineNumber:221}},_react2.default.createElement(_reactxp2.default.Image,{style:_styles.HomeScrollImageLogo,source:'./src/img/Back.svg',__source:{fileName:_jsxFileName,lineNumber:221}}),_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:224}},'Gproposal Details'))),_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:234}},_react2.default.createElement('div',{'class':'jumbotron',__source:{fileName:_jsxFileName,lineNumber:262}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:263}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:264}},'Quote ID'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:267}},_react2.default.createElement(_reactxp2.default.TextInput,{type:'Quote ID',style:_AppStyles2.default.Form,placeholder:'Quote Id',value:quoteid,onChangeText:this.onChangequoteid,__source:{fileName:_jsxFileName,lineNumber:269}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:280}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:281}},'Premium'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:284}},_react2.default.createElement(_reactxp2.default.TextInput,{type:'Premium',style:_AppStyles2.default.Form,placeholder:'Premium',value:mypremium,onChangeText:this.onChangepremium,__source:{fileName:_jsxFileName,lineNumber:286}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:301}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:302}},'Email id'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:305}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Email id',value:this.state.emailId,onChangeText:this.onChangeemailId,__source:{fileName:_jsxFileName,lineNumber:308}}))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:321}},_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop10,__source:{fileName:_jsxFileName,lineNumber:322}},_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.BUTTON7,onPress:function onPress(){return _this2.onChangePost();},__source:{fileName:_jsxFileName,lineNumber:324}},'Buy Policy'))))));}},{key:'handleChange',value:function handleChange(){this.setState({Model:''});}},{key:'handlechange',value:function handlechange(date){this.setState({startDate:date});}},{key:'handleSelect',value:function handleSelect(date){this.setState({startDate:date});}}]);return VehicleDetails;}(_react2.default.Component);exports.default=VehicleDetails;
+};_this.state={quoteid:_this.props.navigatorRoute.quoteid,premium:_this.props.navigatorRoute.mypremium,title:'Ms',firstname:'Neelima',lastname:'Rani',emailId:'neeluneelima67@gmail.com',mobileNo:'9553715856',dateofbirth:'02/12/1994',occupation:'Student',nomineeName:'Harini',nomineeAge:'50',relationshipWithNominee:'Cousin',guardianName:'Prakhya',guardianAge:'60',relationshipwithGuardian:'Sister',permanentAddress1:'Guntupalli',permanentAddress2:'Vijayawada',permanentAddress3:'Krishna',permanentAddress4:'Ibrahimpatnam',permanentCity:'Chennai',permanentPincode:'600034',sameAdressReg:'No',ResidenceAddressOne:'Hyderabad',ResidenceAddressTwo:'Guntupalli',ResidenceAddressThree:'Krishna',ResidenceAddressFour:'Kurnool',ResidenceCity:'Chennai',ResidencePinCode:'600032',strStdCode:'0866',strPhoneNo:'2831608',vehicleModelCode:'ZWTV310',planOpted:'Fixed Plan',yearOfManufacture:'2017',drivingExperience:'1',voluntaryDeductible:'0',vehicleManufacturerName:'TVS',idv:'87164',policyStartDate:'30/03/2018',vehicleMostlyDrivenOn:'Roads',vehicleRegDate:'30/03/2018',vehicleRegisteredInTheNameOf:'Company',modelName:'APACHE RTR ABS-2 Seater',productName:'BrandNewTwoWheeler',companyNameForCar:'xerago',engineNumber:'565465466',chassisNumber:'56546546',isTwoWheelerFinanced:'No',vehicleSubLine:'motorCycle',registrationchargesRoadtax:'No',fuelType:'Petrol',automobileAssociationMembership:'No',region:'East Region',carRegisteredCity:'24PARGANAS',isProductCheck:'No',engineCapacityAmount:'153 CC',personalAccidentCoverForUnnamedPassengers:'5000',accidentCoverForPaidDriver:'5000',legalliabilityToPaidDriver:'Yes',legalliabilityToEmployees:'Yes',cover_elec_acc:'Yes',NameOfElectronicAccessories:'Tyre',MakeModel:'TVS',Value:'345',NameOfElectronicAccessories:'Handle',MakeModel:'HONDA',Value:'365',secureTextEntry:true};_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(VehicleDetails,[{key:'render',value:function render(){var _this2=this;var quoteid=this.props.navigatorRoute.quoteid;var mypremium=this.props.navigatorRoute.mypremium;token=this.props.navigatorRoute.token;console.log(token,"token");return _react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:219}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:220}},_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateSuper,__source:{fileName:_jsxFileName,lineNumber:221}},_react2.default.createElement(_reactxp2.default.Image,{style:_styles.HomeScrollImageLogo,source:'./src/img/Back.svg',__source:{fileName:_jsxFileName,lineNumber:221}}),_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:224}},'Gproposal Details'))),_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:234}},_react2.default.createElement('div',{'class':'jumbotron',__source:{fileName:_jsxFileName,lineNumber:262}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:263}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:264}},'Quote ID'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:267}},_react2.default.createElement(_reactxp2.default.TextInput,{type:'Quote ID',style:_AppStyles2.default.Form,placeholder:'Quote Id',value:quoteid,onChangeText:this.onChangequoteid,__source:{fileName:_jsxFileName,lineNumber:269}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:280}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:281}},'Premium'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:284}},_react2.default.createElement(_reactxp2.default.TextInput,{type:'Premium',style:_AppStyles2.default.Form,placeholder:'Premium',value:mypremium,onChangeText:this.onChangepremium,__source:{fileName:_jsxFileName,lineNumber:286}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:301}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:302}},'Email id'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:305}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Email id',value:this.state.emailId,onChangeText:this.onChangeemailId,__source:{fileName:_jsxFileName,lineNumber:308}}))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:321}},_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop10,__source:{fileName:_jsxFileName,lineNumber:322}},_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.BUTTON7,onPress:function onPress(){return _this2.onChangePost();},__source:{fileName:_jsxFileName,lineNumber:324}},'Buy Policy'))))));}},{key:'handleChange',value:function handleChange(){this.setState({Model:''});}},{key:'handlechange',value:function handlechange(date){this.setState({startDate:date});}},{key:'handleSelect',value:function handleSelect(date){this.setState({startDate:date});}}]);return VehicleDetails;}(_react2.default.Component);exports.default=VehicleDetails;
 
 /***/ }),
 /* 977 */
@@ -119388,6 +119406,11 @@ translateY:_this._translationValue}]});return _this;
 console.log(token,"tokenab");
 this.props.onPressSuper(token);
 
+}},{key:'onChangePostt',value:function onChangePostt()
+{
+console.log(token,"tokenab");
+this.props.onNavigateSuperCar(token);
+
 }},{key:'componentDidMount',value:function componentDidMount()
 {
 var animation=_reactxp2.default.Animated.timing(this._translationValue,{
@@ -119406,55 +119429,55 @@ token=this.props.navigatorRoute.token;
 console.log("token",token);
 return(
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollViewContainer,__source:{fileName:_jsxFileName,lineNumber:185}},
-_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollImage,__source:{fileName:_jsxFileName,lineNumber:186}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollViewContainer,__source:{fileName:_jsxFileName,lineNumber:190}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollImage,__source:{fileName:_jsxFileName,lineNumber:191}},
 
 
 
 
 
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Logo.svg',style:[styles.IMage],__source:{fileName:_jsxFileName,lineNumber:192}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.policy,__source:{fileName:_jsxFileName,lineNumber:193}}),
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Logo.svg',style:[styles.IMage],__source:{fileName:_jsxFileName,lineNumber:197}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.policy,__source:{fileName:_jsxFileName,lineNumber:198}}),
 
 
 
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.policy,__source:{fileName:_jsxFileName,lineNumber:197}},'Plan your insurance on this platform and get RS 100 off your first policy')),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.policy,__source:{fileName:_jsxFileName,lineNumber:202}},'Plan your insurance on this platform and get RS 100 off your first policy')),
 
 
-_react2.default.createElement('div',{className:'row',__source:{fileName:_jsxFileName,lineNumber:200}}),
-_react2.default.createElement('div',{className:'col-xs-4 col-sm-4 col-md-4',__source:{fileName:_jsxFileName,lineNumber:201}}),
-_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:202}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'auto'},__source:{fileName:_jsxFileName,lineNumber:203}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:20,marginLeft:250},__source:{fileName:_jsxFileName,lineNumber:204}},
+_react2.default.createElement('div',{className:'row',__source:{fileName:_jsxFileName,lineNumber:205}}),
+_react2.default.createElement('div',{className:'col-xs-4 col-sm-4 col-md-4',__source:{fileName:_jsxFileName,lineNumber:206}}),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:207}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'auto'},__source:{fileName:_jsxFileName,lineNumber:208}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:20,marginLeft:250},__source:{fileName:_jsxFileName,lineNumber:209}},
 
-_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateSuperCar,__source:{fileName:_jsxFileName,lineNumber:206}},_react2.default.createElement(_reactxp2.default.Image,{
+_react2.default.createElement(_reactxp2.default.Button,{onPress:function onPress(){return _this2.onChangePostt();},__source:{fileName:_jsxFileName,lineNumber:211}},'post',_react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Car.svg',__source:{fileName:_jsxFileName,lineNumber:206}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:209}},'Car'))),
+source:'./src/img/Car.svg',__source:{fileName:_jsxFileName,lineNumber:211}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:214}},'Car'))),
 
 
 
-_react2.default.createElement('div',{className:'row',__source:{fileName:_jsxFileName,lineNumber:213}}),
-_react2.default.createElement('div',{className:'col-xs-4 col-sm-4 col-md-4',__source:{fileName:_jsxFileName,lineNumber:214}}),
-_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:215}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:216}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:10,marginLeft:200},__source:{fileName:_jsxFileName,lineNumber:217}},
-_react2.default.createElement(_reactxp2.default.Button,{onPress:function onPress(){return _this2.onChangePost();},__source:{fileName:_jsxFileName,lineNumber:218}},'Post'),_react2.default.createElement(_reactxp2.default.Image,{
+_react2.default.createElement('div',{className:'row',__source:{fileName:_jsxFileName,lineNumber:218}}),
+_react2.default.createElement('div',{className:'col-xs-4 col-sm-4 col-md-4',__source:{fileName:_jsxFileName,lineNumber:219}}),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:220}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:221}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:10,marginLeft:200},__source:{fileName:_jsxFileName,lineNumber:222}},
+_react2.default.createElement(_reactxp2.default.Button,{onPress:function onPress(){return _this2.onChangePost();},__source:{fileName:_jsxFileName,lineNumber:223}},'Post'),_react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Bike.svg',__source:{fileName:_jsxFileName,lineNumber:218}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:221}},'Two Wheeler')),
+source:'./src/img/Bike.svg',__source:{fileName:_jsxFileName,lineNumber:223}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:226}},'Two Wheeler')),
 
 
 
-_react2.default.createElement('div',{className:'row',__source:{fileName:_jsxFileName,lineNumber:225}}),
-_react2.default.createElement('div',{className:'col-xs-4 col-sm-4 col-md-4',__source:{fileName:_jsxFileName,lineNumber:226}}),
-_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:227}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'rowRpqb',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:228}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginLeft:200},__source:{fileName:_jsxFileName,lineNumber:229}},
+_react2.default.createElement('div',{className:'row',__source:{fileName:_jsxFileName,lineNumber:230}}),
+_react2.default.createElement('div',{className:'col-xs-4 col-sm-4 col-md-4',__source:{fileName:_jsxFileName,lineNumber:231}}),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.scrollBox,__source:{fileName:_jsxFileName,lineNumber:232}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'rowRpqb',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:233}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginLeft:200},__source:{fileName:_jsxFileName,lineNumber:234}},
 _react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Term.svg',__source:{fileName:_jsxFileName,lineNumber:230}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:233}},'Term Insurance')))))))),
+source:'./src/img/Term.svg',__source:{fileName:_jsxFileName,lineNumber:235}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:238}},'Term Insurance')))))))),
 
 
 
@@ -119462,35 +119485,35 @@ _react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText
 
 
 
-_react2.default.createElement('div',{className:'row',__source:{fileName:_jsxFileName,lineNumber:241}}),
-_react2.default.createElement('div',{className:'col-xs-4 col-sm-4 col-md-4',__source:{fileName:_jsxFileName,lineNumber:242}}),
-_react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:243}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:244}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:20,marginLeft:250},__source:{fileName:_jsxFileName,lineNumber:245}},
+_react2.default.createElement('div',{className:'row',__source:{fileName:_jsxFileName,lineNumber:246}}),
+_react2.default.createElement('div',{className:'col-xs-4 col-sm-4 col-md-4',__source:{fileName:_jsxFileName,lineNumber:247}}),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:248}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:249}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:20,marginLeft:250},__source:{fileName:_jsxFileName,lineNumber:250}},
 _react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Health.svg',__source:{fileName:_jsxFileName,lineNumber:246}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:249}},'Health Insurance')),
+source:'./src/img/Health.svg',__source:{fileName:_jsxFileName,lineNumber:251}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:254}},'Health Insurance')),
 
-_react2.default.createElement('div',{className:'row',__source:{fileName:_jsxFileName,lineNumber:251}}),
-_react2.default.createElement('div',{className:'col-xs-4 col-sm-4 col-md-4',__source:{fileName:_jsxFileName,lineNumber:252}}),
-_react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:253}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:254}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:10,marginLeft:200},__source:{fileName:_jsxFileName,lineNumber:255}},
+_react2.default.createElement('div',{className:'row',__source:{fileName:_jsxFileName,lineNumber:256}}),
+_react2.default.createElement('div',{className:'col-xs-4 col-sm-4 col-md-4',__source:{fileName:_jsxFileName,lineNumber:257}}),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:258}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:259}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginTop:10,marginLeft:200},__source:{fileName:_jsxFileName,lineNumber:260}},
 _react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Travell.svg',__source:{fileName:_jsxFileName,lineNumber:256}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:259}},'Travel Insurance')),
+source:'./src/img/Travell.svg',__source:{fileName:_jsxFileName,lineNumber:261}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:264}},'Travel Insurance')),
 
-_react2.default.createElement('div',{className:'row',__source:{fileName:_jsxFileName,lineNumber:261}}),
-_react2.default.createElement('div',{className:'col-xs-4 col-sm-4 col-md-4',__source:{fileName:_jsxFileName,lineNumber:262}}),
-_react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:263}},
-_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:264}},
-_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginLeft:200},__source:{fileName:_jsxFileName,lineNumber:265}},
+_react2.default.createElement('div',{className:'row',__source:{fileName:_jsxFileName,lineNumber:266}}),
+_react2.default.createElement('div',{className:'col-xs-4 col-sm-4 col-md-4',__source:{fileName:_jsxFileName,lineNumber:267}}),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.ScrollBox,__source:{fileName:_jsxFileName,lineNumber:268}},
+_react2.default.createElement(_reactxp2.default.View,{style:{flex:1,flexDirection:'row',justifyContent:'space-between'},__source:{fileName:_jsxFileName,lineNumber:269}},
+_react2.default.createElement(_reactxp2.default.View,{style:{width:100,height:100,backgroundColor:'white',marginLeft:200},__source:{fileName:_jsxFileName,lineNumber:270}},
 _react2.default.createElement(_reactxp2.default.Image,{
 style:styles.HomeScrollImageLogo,
-source:'./src/img/Add Existing Insurance.svg',__source:{fileName:_jsxFileName,lineNumber:266}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:269}},'Add Existing Policy')))))))),
+source:'./src/img/Add Existing Insurance.svg',__source:{fileName:_jsxFileName,lineNumber:271}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText,__source:{fileName:_jsxFileName,lineNumber:274}},'Add Existing Policy')))))))),
 
 
 
@@ -119501,36 +119524,36 @@ _react2.default.createElement(_reactxp2.default.Text,{style:styles.scrollBoxText
 
 
 
-_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.container,__source:{fileName:_jsxFileName,lineNumber:280}},
-_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:281}},
-_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:282}}),
+_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.container,__source:{fileName:_jsxFileName,lineNumber:285}},
+_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid hidden-xs',__source:{fileName:_jsxFileName,lineNumber:286}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:287}}),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:286}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:291}},
 
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Home.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:288}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:289}},'Home')),
-
-
-_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:292}},
-
-_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateRole,__source:{fileName:_jsxFileName,lineNumber:294}},_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/MyPolicies.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:294}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:295}},'My Policies'))),
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Home.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:293}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:294}},'Home')),
 
 
+_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:297}},
 
-_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:299}},
-
-_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateOne,__source:{fileName:_jsxFileName,lineNumber:301}},'   ',_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Remainder.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:301}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:302}},'Remainder'))),
+_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateRole,__source:{fileName:_jsxFileName,lineNumber:299}},_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/MyPolicies.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:299}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:300}},'My Policies'))),
 
 
 
-_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:306}},
+_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:304}},
 
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Settings.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:308}}),
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:309}},'Settings'))))));
+_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateOne,__source:{fileName:_jsxFileName,lineNumber:306}},'   ',_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Remainder.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:306}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:307}},'Remainder'))),
+
+
+
+_react2.default.createElement(_reactBootstrap.Col,{md:2,style:_AppStyles2.default.marTop,__source:{fileName:_jsxFileName,lineNumber:311}},
+
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/Settings.svg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:313}}),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.ScrollBoxText,__source:{fileName:_jsxFileName,lineNumber:314}},'Settings'))))));
 
 
 
@@ -119631,8 +119654,8 @@ return fetch('http://localhost:8082/calculatecarpremium',{
 method:'POST',
 headers:{
 'Accept':'application/json',
-'Content-Type':'application/json'},
-
+'Content-Type':'application/json',
+'x-access-token':token},
 
 
 
@@ -119643,7 +119666,6 @@ authenticationDetails:{
 agentId:"BA502092",
 apikey:"310ZQmv/bYJMYrWQ1iYa7s43084="},
 
-isNewUser:"Yes",
 proposerDetails:{
 addressFour:"North Street",
 addressOne:"No1",
@@ -119681,7 +119703,7 @@ carRegisteredCity:"CHENNAI",
 region:"South Region",
 vehicleManufacturerName:"BMW",
 vehicleModelCode:"CMB65",
-vehicleregDate:"29/03/2018",
+vehicleregDate:"30/03/2018",
 idv:"3025465",
 engineCapacityAmount:"1995 CC",
 drivingExperience:"2",
@@ -119801,7 +119823,7 @@ console.log("message",message);
 console.log("premium",premium);
 console.log("odpremium",odpremium);
 
-_this.props.onNavigateTwenty(allResponse,resJson,liability,message,quoteid,premium,odpremium);
+_this.props.onNavigateTwenty(allResponse,resJson,liability,message,quoteid,premium,odpremium,token);
 
 
 
@@ -119845,7 +119867,7 @@ onChangeEmail=function(value){
 _this.setState({email:value});
 _this.props.onUpdate(value);
 console.log(_this.state.email,"email");
-};_this.state={emailId:'neeluneelima67@gmail.com',mobileNo:'9553715856',yearOfManufacture:'2017',vehicleMostlyDrivenOn:'Roads',carRegisteredCity:'24PARGANAS',vehicleManufacturerName:'TVS',vehicleModelCode:'ZWTV310',vehicleRegDate:'29/03/2018',lastname:'Rani'};_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(InsuranceAddons,[{key:'componentDidMount',value:function componentDidMount()
+};_this.state={emailId:'neeluneelima67@gmail.com',mobileNo:'9553715856',yearOfManufacture:'2017',vehicleMostlyDrivenOn:'Roads',carRegisteredCity:'24PARGANAS',vehicleManufacturerName:'TVS',vehicleModelCode:'ZWTV310',vehicleRegDate:'30/03/2018',lastname:'Rani'};_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(InsuranceAddons,[{key:'componentDidMount',value:function componentDidMount()
 {
 var animation=_reactxp2.default.Animated.timing(this._translationValue,{
 toValue:0,
@@ -119858,7 +119880,8 @@ animation.start();
 }},{key:'render',value:function render()
 
 {var _this2=this;
-
+token=this.props.navigatorRoute.token;
+console.log(token,"token");
 return(
 _react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:301}},
 _react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:302}},
@@ -120222,7 +120245,7 @@ firstName:"testxerago",
 lastName:"name",
 emailId:"neeluneelima67@gmail.com",
 mobileNo:"7898732798",
-dateOfBirth:"29/11/1987",
+dateOfBirth:"30/11/1987",
 occupation:"Student",
 nomineeName:"nomineename",
 nomineeAge:"43",
@@ -120254,9 +120277,9 @@ drivingExperience:"1",
 voluntaryDeductible:"0",
 vehicleManufacturerName:"TVS",
 idv:"65478",
-policyStartDate:"29/03/2018",
+policyStartDate:"30/03/2018",
 vehicleMostlyDrivenOn:"City roads",
-vehicleRegDate:"29/03/2018",
+vehicleRegDate:"30/03/2018",
 vehicleRegisteredInTheNameOf:"Company",
 modelName:"APACHE RTR ABS-2 Seater",
 productName:"BrandNewTwoWheeler",
@@ -120362,7 +120385,7 @@ onChangeemailId=function(value){
 _this.setState({emailId:value});
 _this.props.onUpdate(value);
 console.log(_this.state.emailId,"email");
-};_this.state={emailId:'neeluneelima67@gmail.com',mobileNo:'9553715856',yearOfManufacture:'2017',vehicleMostlyDrivenOn:'Roads',carRegisteredCity:'24PARGANAS',vehicleManufacturerName:'TVS',vehicleModelCode:'ZWTV310',vehicleRegDate:'29/03/2018',lastname:'Rani'};_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(InsuranceAddons,[{key:'handleChange',value:function handleChange(
+};_this.state={emailId:'neeluneelima67@gmail.com',mobileNo:'9553715856',yearOfManufacture:'2017',vehicleMostlyDrivenOn:'Roads',carRegisteredCity:'24PARGANAS',vehicleManufacturerName:'TVS',vehicleModelCode:'ZWTV310',vehicleRegDate:'30/03/2018',lastname:'Rani'};_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(InsuranceAddons,[{key:'handleChange',value:function handleChange(
 date){
 this.setState({
 startDate:date});
@@ -122529,13 +122552,13 @@ Radio:_reactxp2.default.Styles.createViewStyle({
 borderRadius:10,
 backgroundColor:'white',
 marginLeft:1181,
-marginTop:-22})};var
+marginTop:-22})};
 
 
 
 
 
-
+var token;var
 PaymentScreen=function(_RX$Component){_inherits(PaymentScreen,_RX$Component);
 function PaymentScreen(props){_classCallCheck(this,PaymentScreen);var _this=_possibleConstructorReturn(this,(PaymentScreen.__proto__||Object.getPrototypeOf(PaymentScreen)).call(this,
 props));
@@ -122568,99 +122591,101 @@ animation.start();
 
 
 {
+token=this.props.navigatorRoute.token;
+console.log(token,"token");
 return(
-_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.scroll,__source:{fileName:_jsxFileName,lineNumber:296}},
-_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:297}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.welcome,__source:{fileName:_jsxFileName,lineNumber:298}},'Payments')),
+_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.scroll,__source:{fileName:_jsxFileName,lineNumber:298}},
+_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:299}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.welcome,__source:{fileName:_jsxFileName,lineNumber:300}},'Payments')),
 
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.client,__source:{fileName:_jsxFileName,lineNumber:303}},
-_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/royal.jpg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:304}}),
-_react2.default.createElement('div',{style:styles.TryHead,__source:{fileName:_jsxFileName,lineNumber:305}},'View Details'),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.client,__source:{fileName:_jsxFileName,lineNumber:305}},
+_react2.default.createElement(_reactxp2.default.Image,{source:'./src/img/royal.jpg',style:[styles.image],__source:{fileName:_jsxFileName,lineNumber:306}}),
+_react2.default.createElement('div',{style:styles.TryHead,__source:{fileName:_jsxFileName,lineNumber:307}},'View Details'),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.sideHead,__source:{fileName:_jsxFileName,lineNumber:307}},'Royal Sundaram',
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.sideHead,__source:{fileName:_jsxFileName,lineNumber:309}},'Royal Sundaram',
 
-_react2.default.createElement('div',{style:styles.tryHead,__source:{fileName:_jsxFileName,lineNumber:309}},'IDV: Rs.1,25,300')),
+_react2.default.createElement('div',{style:styles.tryHead,__source:{fileName:_jsxFileName,lineNumber:311}},'IDV: Rs.1,25,300')),
 
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.ncb,__source:{fileName:_jsxFileName,lineNumber:311}},'Rs. 21,900')),
-
-
-
-_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.scroll,__source:{fileName:_jsxFileName,lineNumber:315}},
-_react2.default.createElement(_reactxp2.default.View,{style:styles.Container,__source:{fileName:_jsxFileName,lineNumber:316}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.Welcome,__source:{fileName:_jsxFileName,lineNumber:317}},'Select Payment Method')),
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.ncb,__source:{fileName:_jsxFileName,lineNumber:313}},'Rs. 21,900')),
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:321}},
-_react2.default.createElement(_reactxp2.default.View,{style:styles.flute,__source:{fileName:_jsxFileName,lineNumber:322}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.head,__source:{fileName:_jsxFileName,lineNumber:323}},'Credit/Debit/AtmCard'),
+_react2.default.createElement(_reactxp2.default.ScrollView,{style:styles.scroll,__source:{fileName:_jsxFileName,lineNumber:317}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.Container,__source:{fileName:_jsxFileName,lineNumber:318}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.Welcome,__source:{fileName:_jsxFileName,lineNumber:319}},'Select Payment Method')),
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.Radio,__source:{fileName:_jsxFileName,lineNumber:326}},' ',_react2.default.createElement('input',{type:'radio',
+
+_react2.default.createElement(_reactxp2.default.View,{style:styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:323}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.flute,__source:{fileName:_jsxFileName,lineNumber:324}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.head,__source:{fileName:_jsxFileName,lineNumber:325}},'Credit/Debit/AtmCard'),
+
+
+_react2.default.createElement(_reactxp2.default.View,{style:styles.Radio,__source:{fileName:_jsxFileName,lineNumber:328}},' ',_react2.default.createElement('input',{type:'radio',
 value:'radio1',
 name:'radioGroup',
-onClick:this.addFunction,__source:{fileName:_jsxFileName,lineNumber:326}})))),
+onClick:this.addFunction,__source:{fileName:_jsxFileName,lineNumber:328}})))),
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.Container,__source:{fileName:_jsxFileName,lineNumber:333}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.Welcome,__source:{fileName:_jsxFileName,lineNumber:334}})),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.Container,__source:{fileName:_jsxFileName,lineNumber:335}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.Welcome,__source:{fileName:_jsxFileName,lineNumber:336}})),
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:337}},
-_react2.default.createElement(_reactxp2.default.View,{style:styles.flute,__source:{fileName:_jsxFileName,lineNumber:338}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.head,__source:{fileName:_jsxFileName,lineNumber:339}},'Internet Banking'),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:339}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.flute,__source:{fileName:_jsxFileName,lineNumber:340}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.head,__source:{fileName:_jsxFileName,lineNumber:341}},'Internet Banking'),
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.Radio,__source:{fileName:_jsxFileName,lineNumber:342}},' ',_react2.default.createElement('input',{type:'radio',
+_react2.default.createElement(_reactxp2.default.View,{style:styles.Radio,__source:{fileName:_jsxFileName,lineNumber:344}},' ',_react2.default.createElement('input',{type:'radio',
 value:'radio2',
 name:'radioGroup',
-onClick:this.addFunction,__source:{fileName:_jsxFileName,lineNumber:342}})))),
+onClick:this.addFunction,__source:{fileName:_jsxFileName,lineNumber:344}})))),
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.Container,__source:{fileName:_jsxFileName,lineNumber:349}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.Welcome,__source:{fileName:_jsxFileName,lineNumber:350}})),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.Container,__source:{fileName:_jsxFileName,lineNumber:351}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.Welcome,__source:{fileName:_jsxFileName,lineNumber:352}})),
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:353}},
-_react2.default.createElement(_reactxp2.default.View,{style:styles.flute,__source:{fileName:_jsxFileName,lineNumber:354}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.head,__source:{fileName:_jsxFileName,lineNumber:355}},'UPI'),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:355}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.flute,__source:{fileName:_jsxFileName,lineNumber:356}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.head,__source:{fileName:_jsxFileName,lineNumber:357}},'UPI'),
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.Radio,__source:{fileName:_jsxFileName,lineNumber:358}},' ',_react2.default.createElement('input',{type:'radio',
+_react2.default.createElement(_reactxp2.default.View,{style:styles.Radio,__source:{fileName:_jsxFileName,lineNumber:360}},' ',_react2.default.createElement('input',{type:'radio',
 value:'radio3',
 name:'radioGroup',
-onClick:this.addFunction,__source:{fileName:_jsxFileName,lineNumber:358}})))),
+onClick:this.addFunction,__source:{fileName:_jsxFileName,lineNumber:360}})))),
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.Container,__source:{fileName:_jsxFileName,lineNumber:365}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.Welcome,__source:{fileName:_jsxFileName,lineNumber:366}})),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.Container,__source:{fileName:_jsxFileName,lineNumber:367}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.Welcome,__source:{fileName:_jsxFileName,lineNumber:368}})),
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:369}},
-_react2.default.createElement(_reactxp2.default.View,{style:styles.flute,__source:{fileName:_jsxFileName,lineNumber:370}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.head,__source:{fileName:_jsxFileName,lineNumber:371}},'Wallets'),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.pageAlign,__source:{fileName:_jsxFileName,lineNumber:371}},
+_react2.default.createElement(_reactxp2.default.View,{style:styles.flute,__source:{fileName:_jsxFileName,lineNumber:372}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.head,__source:{fileName:_jsxFileName,lineNumber:373}},'Wallets'),
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.Radio,__source:{fileName:_jsxFileName,lineNumber:374}},' ',_react2.default.createElement('input',{type:'radio',
+_react2.default.createElement(_reactxp2.default.View,{style:styles.Radio,__source:{fileName:_jsxFileName,lineNumber:376}},' ',_react2.default.createElement('input',{type:'radio',
 value:'radio1',
 name:'radioGroup',
-onClick:this.addFunction,__source:{fileName:_jsxFileName,lineNumber:374}})))),
+onClick:this.addFunction,__source:{fileName:_jsxFileName,lineNumber:376}})))),
 
 
 
-_react2.default.createElement(_reactxp2.default.View,{style:styles.Container,__source:{fileName:_jsxFileName,lineNumber:381}},
-_react2.default.createElement(_reactxp2.default.Text,{style:styles.Welcome,__source:{fileName:_jsxFileName,lineNumber:382}})),
+_react2.default.createElement(_reactxp2.default.View,{style:styles.Container,__source:{fileName:_jsxFileName,lineNumber:383}},
+_react2.default.createElement(_reactxp2.default.Text,{style:styles.Welcome,__source:{fileName:_jsxFileName,lineNumber:384}})),
 
 
 
-_react2.default.createElement(_reactxp2.default.Button,{style:styles.Button,__source:{fileName:_jsxFileName,lineNumber:386}},
-_react2.default.createElement(_reactxp2.default.Link,{style:styles.buttonText,url:'https://www.royalsundaram.net/web/test/makepayment?quoteId=QVMN0011943',__source:{fileName:_jsxFileName,lineNumber:387}},'After selecting please click here to proceed')))));
+_react2.default.createElement(_reactxp2.default.Button,{style:styles.Button,__source:{fileName:_jsxFileName,lineNumber:388}},
+_react2.default.createElement(_reactxp2.default.Link,{style:styles.buttonText,url:'https://www.royalsundaram.net/web/test/makepayment?quoteId=QVMN0011943',__source:{fileName:_jsxFileName,lineNumber:389}},'After selecting please click here to proceed')))));
 
 
 
@@ -125126,7 +125151,7 @@ carRegisteredCity:"CHENNAI",
 region:"South Region",
 vehicleManufacturerName:"REVA",
 vehicleModelCode:"CMB65",
-vehicleregDate:"29/03/2018",
+vehicleregDate:"30/03/2018",
 idv:_this.state.idv,
 engineCapacityAmount:"1995 CC",
 drivingExperience:"2",
@@ -126426,7 +126451,7 @@ _this.setState({password:newText});
 
 _onChangeTest=function(newText){
 _this.setState({password:newText});
-};_this.state={quoteid:_this.props.navigatorRoute.quoteid,mypremium:_this.props.navigatorRoute.premium,title:'Ms',firstname:'Neelima',lastname:'Rani',emailId:'neeluneelima67@gmail.com',mobileNo:'9553715856',dateofbirth:'02/12/1994',occupation:'Student',nomineeName:'Harini',nomineeAge:'50',relationshipWithNominee:'Cousin',guardianName:'Prakhya',guardianAge:'60',relationshipwithGuardian:'Sister',permanentAddress1:'Guntupalli',permanentAddress2:'Vijayawada',permanentAddress3:'Krishna',permanentAddress4:'Ibrahimpatnam',permanentCity:'Chennai',permanentPincode:'600034',sameAdressReg:'No',ResidenceAddressOne:'Hyderabad',ResidenceAddressTwo:'Guntupalli',ResidenceAddressThree:'Krishna',ResidenceAddressFour:'Kurnool',ResidenceCity:'Chennai',ResidencePinCode:'600032',strStdCode:'0866',strPhoneNo:'2831608',vehicleModelCode:'ZWTV310',planOpted:'Fixed Plan',yearOfManufacture:'2017',drivingExperience:'1',voluntaryDeductible:'0',vehicleManufacturerName:'TVS',idv:'4520250.0',policyStartDate:'29/03/2018',vehicleMostlyDrivenOn:'Roads',vehicleRegDate:'29/03/2018',vehicleRegisteredInTheNameOf:'Company',modelName:'APACHE RTR ABS-2 Seater',productName:'BrandNewTwoWheeler',companyNameForCar:'xerago',engineNumber:'565465466',chassisNumber:'56546546',isTwoWheelerFinanced:'No',vehicleSubLine:'motorCycle',registrationchargesRoadtax:'No',fuelType:'Petrol',automobileAssociationMembership:'No',region:'East Region',carRegisteredCity:'24PARGANAS',isProductCheck:'No',engineCapacityAmount:'153 CC',personalAccidentCoverForUnnamedPassengers:'5000',accidentCoverForPaidDriver:'5000',legalliabilityToPaidDriver:'Yes',legalliabilityToEmployees:'Yes',cover_elec_acc:'Yes',NameOfElectronicAccessories:'Tyre',MakeModel:'TVS',Value:'345',NameOfElectronicAccessories:'Handle',MakeModel:'HONDA',Value:'365',secureTextEntry:true};_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(VehicleDetails,[{key:'render',value:function render(){var _this2=this;quoteid=this.props.navigatorRoute.quoteid;mypremium=this.props.navigatorRoute.premium;console.log("quoteid",quoteid);console.log("premium",mypremium);return _react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:682}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:683}},_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateSuper,__source:{fileName:_jsxFileName,lineNumber:684}},_react2.default.createElement(_reactxp2.default.Image,{style:_styles.HomeScrollImageLogo,source:'./src/img/Back.svg',__source:{fileName:_jsxFileName,lineNumber:684}}),_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:687}},'New Car Insurance'))),_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:697}},_react2.default.createElement(_reactBootstrap.Row,{className:'clearfix',__source:{fileName:_jsxFileName,lineNumber:719}},_react2.default.createElement(_reactBootstrap.Col,{md:8,__source:{fileName:_jsxFileName,lineNumber:720}}),_react2.default.createElement(_reactBootstrap.Col,{md:8,__source:{fileName:_jsxFileName,lineNumber:721}},_react2.default.createElement(_reactBootstrap.Tabs,{defaultActiveKey:1,style:_styles.read,id:'left-tabs-example',__source:{fileName:_jsxFileName,lineNumber:723}},_react2.default.createElement(_reactBootstrap.Tab,{eventKey:1,style:_styles.read,title:'New',className:'myClass',__source:{fileName:_jsxFileName,lineNumber:724}},_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:727}},_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:728}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:729}},_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:730}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:731}},'Quote ID'),_react2.default.createElement(_reactxp2.default.TextInput,{type:'Quote ID',style:_AppStyles2.default.Form,placeholder:'Quote Id',value:quoteid,onChangeText:this.onChangequoteid,__source:{fileName:_jsxFileName,lineNumber:733}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:744}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:745}},'Premium'),_react2.default.createElement(_reactxp2.default.TextInput,{type:'Premium',style:_AppStyles2.default.Form,placeholder:'Premium',value:mypremium,onChangeText:this.onChangepremium,__source:{fileName:_jsxFileName,lineNumber:747}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:757}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:758}},'Title'),_react2.default.createElement(_reactxp2.default.TextInput,{type:'title',style:_AppStyles2.default.Form,placeholder:'Title',value:this.state.title,onChangeText:this.onChangetitle,__source:{fileName:_jsxFileName,lineNumber:761}}))))),_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:773}},_react2.default.createElement('div',{'class':'jumbotron',style:_styles.SCROLL,__source:{fileName:_jsxFileName,lineNumber:774}},_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:775}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:776}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.SIDETEXT,__source:{fileName:_jsxFileName,lineNumber:778}},'Personal Details'))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:782}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:783}},_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:784}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:785}},'First Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'First Name',value:this.state.firstname,onChangeText:this.onChangefirstName,__source:{fileName:_jsxFileName,lineNumber:789}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:801}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:802}},'Last Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Last Name',value:this.state.lastname,onChangeText:this.onChangelastName,__source:{fileName:_jsxFileName,lineNumber:805}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:813}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:814}},'Email ID'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Email id',value:this.state.emailId,onChangeText:this.onChangeemailId,__source:{fileName:_jsxFileName,lineNumber:817}})))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:828}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:831}},_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:832}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:833}},'Mobile No'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Mobile no',value:this.state.mobileNo,onChangeText:this.onChangemobileNo,__source:{fileName:_jsxFileName,lineNumber:836}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:844}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:845}},'Date Of Birth'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Date of Birth',value:this.state.dateofbirth,onChangeText:this.onChangedateofbirth,__source:{fileName:_jsxFileName,lineNumber:849}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:860}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:861}},'Occupation'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Occupation',value:this.state.occupation,onChangeText:this.onChangeoccupation,__source:{fileName:_jsxFileName,lineNumber:864}})))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:875}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:876}},_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:877}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:878}},'Nominee Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Nominee Name',value:this.state.nomineeName,onChangeText:this.onChangenomineeName,__source:{fileName:_jsxFileName,lineNumber:880}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:891}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:892}},'Nominee Age'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Nominee age',value:this.state.nomineeAge,onChangeText:this.onChangenomineeAge,__source:{fileName:_jsxFileName,lineNumber:896}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:905}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:906}},'Relation with Nominee'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'RelationshipWithNominee',value:this.state.relationshipWithNominee,onChangeText:this.onChangerelationshipWithNominee,__source:{fileName:_jsxFileName,lineNumber:909}})))),_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:923}},_react2.default.createElement('div',{'class':'jumbotron',style:_styles.SCROLL,__source:{fileName:_jsxFileName,lineNumber:924}},_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:926}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:927}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.SIDETEXT,__source:{fileName:_jsxFileName,lineNumber:929}},'Vehicle Details'))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:933}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:935}},_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:936}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:937}},'Vehicle Model code'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Vehicle model code',value:this.state.vehicleModelCode,onChangeText:this.onChangevehicleModelCode,__source:{fileName:_jsxFileName,lineNumber:940}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:948}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:949}},'Plan Opted'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Plan opted',value:this.state.planOpted,onChangeText:this.onChangeplanOpted,__source:{fileName:_jsxFileName,lineNumber:950}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:958}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:959}},'year Of Manufacturer'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:' Year of manufacturer',value:this.state.yearOfManufacture,onChangeText:this.onChangeyearOfManufacture,__source:{fileName:_jsxFileName,lineNumber:961}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:971}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:972}},'Driving Experience'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Driving experience',value:this.state.drivingExperience,onChangeText:this.onChangedrivingExperience,__source:{fileName:_jsxFileName,lineNumber:977}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:986}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:987}},'Voluntary Detuctable'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Voluntary detuctable',value:this.state.voluntaryDeductible,onChangeText:this.onChangevoluntaryDeductible,__source:{fileName:_jsxFileName,lineNumber:991}}))),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1003}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1004}},'Voluntary Detuctable'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Vehicle manufacturer name',value:this.state.vehicleManufacturerName,onChangeText:this.onChangevehicleManufacturerName,__source:{fileName:_jsxFileName,lineNumber:1006}}))))),_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:1018}},_react2.default.createElement('div',{'class':'jumbotron',style:_styles.SCROLL,__source:{fileName:_jsxFileName,lineNumber:1019}},_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1020}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:1021}},_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1022}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1023}},'IDV'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'IDV',value:this.state.idv,onChangeText:this.onChangeidv,__source:{fileName:_jsxFileName,lineNumber:1025}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1035}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1036}},'Start Policy'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:' start Policy',value:this.state.policyStartDate,onChangeText:this.onChangepolicyStartDate,__source:{fileName:_jsxFileName,lineNumber:1037}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1046}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1047}},'Vehicle Mostly driven '),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'vehicle mostly driven on',value:this.state.vehicleMostlyDrivenOn,onChangeText:this.onChangevehicleMostlyDrivenOn,__source:{fileName:_jsxFileName,lineNumber:1049}}))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1061}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:1062}},_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1063}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1064}},'Vehicle Registered Date'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Vehicle register date',value:this.state.vehicleRegDate,onChangeText:this.onChangevehicleRegDate,__source:{fileName:_jsxFileName,lineNumber:1066}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1075}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1076}},'Vehicle Registered'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Vehicle registered in the name of',value:this.state.vehicleRegisteredInTheNameOf,onChangeText:this.onChangevehicleRegisteredInTheNameOf,__source:{fileName:_jsxFileName,lineNumber:1078}})))),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1089}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1090}},'Model Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'model name',value:this.state.modelName,onChangeText:this.onChangemodelName,__source:{fileName:_jsxFileName,lineNumber:1092}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1101}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1102}},'Product Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Product name',value:this.state.productName,onChangeText:this.onChangeproductName,__source:{fileName:_jsxFileName,lineNumber:1104}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1113}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1114}},'Company Name for car'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Company name for car',value:this.state.companyNameForCar,onChangeText:this.onChangecompanyNameForCar,__source:{fileName:_jsxFileName,lineNumber:1116}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1125}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1126}},'Enginee Number'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'enginee number',value:this.state.engineNumber,onChangeText:this.onChangeengineNumber,__source:{fileName:_jsxFileName,lineNumber:1128}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1136}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1137}},'chassis Number'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Chassis Number',value:this.state.chassisNumber,onChangeText:this.onChangechassisNumber,__source:{fileName:_jsxFileName,lineNumber:1139}}))))))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:1230}},_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop10,__source:{fileName:_jsxFileName,lineNumber:1231}},_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.BUTTON6,onPress:function onPress(){return _this2.onChangePost();},__source:{fileName:_jsxFileName,lineNumber:1233}},'Next')))),_react2.default.createElement(_reactBootstrap.Tab,{eventKey:2,style:_styles.read,title:'Renew',__source:{fileName:_jsxFileName,lineNumber:1246}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1247}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1248}},'Registration No'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1251}},_react2.default.createElement(_reactxp2.default.TextInput,{controlId:'formBasicText',type:'email',style:_AppStyles2.default.Form,placeholder:'Enter Registration No',value:this.state.name,onChangeText:this.onChangeName,__source:{fileName:_jsxFileName,lineNumber:1254}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1267}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1268}},'Manufacturer'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1271}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Enter Manufacturer',value:this.state.phone,onChangeText:this.onChangePhone,__source:{fileName:_jsxFileName,lineNumber:1272}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1283}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1284}},'Model'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1287}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Enter Model',value:this.state.email,onChangeText:this.onChangeEmail,__source:{fileName:_jsxFileName,lineNumber:1288}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1298}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1299}},'Variant'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1302}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Enter Variant',value:this.state.regAreaCode,onChangeText:this.onChangeArea,__source:{fileName:_jsxFileName,lineNumber:1303}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1313}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1314}},'Registration Year'),_react2.default.createElement('div',{className:'form-group',__source:{fileName:_jsxFileName,lineNumber:1319}},_react2.default.createElement('div',{className:'input-group date',id:'datetimepicker1',__source:{fileName:_jsxFileName,lineNumber:1320}},_react2.default.createElement('input',{type:'text',className:'form-control',__source:{fileName:_jsxFileName,lineNumber:1321}}),_react2.default.createElement('span',{className:'input-group-addon',__source:{fileName:_jsxFileName,lineNumber:1322}},_react2.default.createElement('span',{className:'glyphicon-calendar glyphicon',__source:{fileName:_jsxFileName,lineNumber:1323}}))))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1331}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1332}},'RTO Location'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1335}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'RTO Location',value:this.state.registrationYear,onChangeText:this.onChangeReg,__source:{fileName:_jsxFileName,lineNumber:1336}}))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:1418}},_react2.default.createElement(_reactBootstrap.Col,{md:10,__source:{fileName:_jsxFileName,lineNumber:1419}},_react2.default.createElement('code',{style:_AppStyles2.default.mobFont,__source:{fileName:_jsxFileName,lineNumber:1420}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:1420}},'No Claims Last Year')),_react2.default.createElement('code',{style:_AppStyles2.default.mobFont,__source:{fileName:_jsxFileName,lineNumber:1421}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:1421}},'I Don\'t Know My Policy Expiry Date')))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:1426}},_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop10,__source:{fileName:_jsxFileName,lineNumber:1427}},_react2.default.createElement(_Button2.default,{style:_AppStyles2.default.btnMaxWidth,bsStyle:'primary',__source:{fileName:_jsxFileName,lineNumber:1429}},'Next'),_react2.default.createElement(_reactxp2.default.Button,{style:_styles.roundButton,onPress:this.props.onNavigateEight,__source:{fileName:_jsxFileName,lineNumber:1431}},_react2.default.createElement(_reactxp2.default.Text,{style:_styles.buttonText,__source:{fileName:_jsxFileName,lineNumber:1432}},'NEXT'))))))))));}},{key:'handleChange',value:function handleChange(){this.setState({Model:''});}},{key:'handlechange',value:function handlechange(date){this.setState({startDate:date});}},{key:'handleSelect',value:function handleSelect(date){this.setState({startDate:date});}}]);return VehicleDetails;}(_react2.default.Component);exports.default=VehicleDetails;
+};_this.state={quoteid:_this.props.navigatorRoute.quoteid,mypremium:_this.props.navigatorRoute.premium,title:'Ms',firstname:'Neelima',lastname:'Rani',emailId:'neeluneelima67@gmail.com',mobileNo:'9553715856',dateofbirth:'02/12/1994',occupation:'Student',nomineeName:'Harini',nomineeAge:'50',relationshipWithNominee:'Cousin',guardianName:'Prakhya',guardianAge:'60',relationshipwithGuardian:'Sister',permanentAddress1:'Guntupalli',permanentAddress2:'Vijayawada',permanentAddress3:'Krishna',permanentAddress4:'Ibrahimpatnam',permanentCity:'Chennai',permanentPincode:'600034',sameAdressReg:'No',ResidenceAddressOne:'Hyderabad',ResidenceAddressTwo:'Guntupalli',ResidenceAddressThree:'Krishna',ResidenceAddressFour:'Kurnool',ResidenceCity:'Chennai',ResidencePinCode:'600032',strStdCode:'0866',strPhoneNo:'2831608',vehicleModelCode:'ZWTV310',planOpted:'Fixed Plan',yearOfManufacture:'2017',drivingExperience:'1',voluntaryDeductible:'0',vehicleManufacturerName:'TVS',idv:'4520250.0',policyStartDate:'30/03/2018',vehicleMostlyDrivenOn:'Roads',vehicleRegDate:'30/03/2018',vehicleRegisteredInTheNameOf:'Company',modelName:'APACHE RTR ABS-2 Seater',productName:'BrandNewTwoWheeler',companyNameForCar:'xerago',engineNumber:'565465466',chassisNumber:'56546546',isTwoWheelerFinanced:'No',vehicleSubLine:'motorCycle',registrationchargesRoadtax:'No',fuelType:'Petrol',automobileAssociationMembership:'No',region:'East Region',carRegisteredCity:'24PARGANAS',isProductCheck:'No',engineCapacityAmount:'153 CC',personalAccidentCoverForUnnamedPassengers:'5000',accidentCoverForPaidDriver:'5000',legalliabilityToPaidDriver:'Yes',legalliabilityToEmployees:'Yes',cover_elec_acc:'Yes',NameOfElectronicAccessories:'Tyre',MakeModel:'TVS',Value:'345',NameOfElectronicAccessories:'Handle',MakeModel:'HONDA',Value:'365',secureTextEntry:true};_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(VehicleDetails,[{key:'render',value:function render(){var _this2=this;quoteid=this.props.navigatorRoute.quoteid;mypremium=this.props.navigatorRoute.premium;console.log("quoteid",quoteid);console.log("premium",mypremium);return _react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:682}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:683}},_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateSuper,__source:{fileName:_jsxFileName,lineNumber:684}},_react2.default.createElement(_reactxp2.default.Image,{style:_styles.HomeScrollImageLogo,source:'./src/img/Back.svg',__source:{fileName:_jsxFileName,lineNumber:684}}),_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:687}},'New Car Insurance'))),_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:697}},_react2.default.createElement(_reactBootstrap.Row,{className:'clearfix',__source:{fileName:_jsxFileName,lineNumber:719}},_react2.default.createElement(_reactBootstrap.Col,{md:8,__source:{fileName:_jsxFileName,lineNumber:720}}),_react2.default.createElement(_reactBootstrap.Col,{md:8,__source:{fileName:_jsxFileName,lineNumber:721}},_react2.default.createElement(_reactBootstrap.Tabs,{defaultActiveKey:1,style:_styles.read,id:'left-tabs-example',__source:{fileName:_jsxFileName,lineNumber:723}},_react2.default.createElement(_reactBootstrap.Tab,{eventKey:1,style:_styles.read,title:'New',className:'myClass',__source:{fileName:_jsxFileName,lineNumber:724}},_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:727}},_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:728}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:729}},_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:730}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:731}},'Quote ID'),_react2.default.createElement(_reactxp2.default.TextInput,{type:'Quote ID',style:_AppStyles2.default.Form,placeholder:'Quote Id',value:quoteid,onChangeText:this.onChangequoteid,__source:{fileName:_jsxFileName,lineNumber:733}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:744}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:745}},'Premium'),_react2.default.createElement(_reactxp2.default.TextInput,{type:'Premium',style:_AppStyles2.default.Form,placeholder:'Premium',value:mypremium,onChangeText:this.onChangepremium,__source:{fileName:_jsxFileName,lineNumber:747}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:757}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:758}},'Title'),_react2.default.createElement(_reactxp2.default.TextInput,{type:'title',style:_AppStyles2.default.Form,placeholder:'Title',value:this.state.title,onChangeText:this.onChangetitle,__source:{fileName:_jsxFileName,lineNumber:761}}))))),_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:773}},_react2.default.createElement('div',{'class':'jumbotron',style:_styles.SCROLL,__source:{fileName:_jsxFileName,lineNumber:774}},_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:775}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:776}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.SIDETEXT,__source:{fileName:_jsxFileName,lineNumber:778}},'Personal Details'))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:782}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:783}},_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:784}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:785}},'First Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'First Name',value:this.state.firstname,onChangeText:this.onChangefirstName,__source:{fileName:_jsxFileName,lineNumber:789}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:801}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:802}},'Last Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Last Name',value:this.state.lastname,onChangeText:this.onChangelastName,__source:{fileName:_jsxFileName,lineNumber:805}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:813}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:814}},'Email ID'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Email id',value:this.state.emailId,onChangeText:this.onChangeemailId,__source:{fileName:_jsxFileName,lineNumber:817}})))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:828}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:831}},_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:832}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:833}},'Mobile No'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Mobile no',value:this.state.mobileNo,onChangeText:this.onChangemobileNo,__source:{fileName:_jsxFileName,lineNumber:836}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:844}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:845}},'Date Of Birth'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Date of Birth',value:this.state.dateofbirth,onChangeText:this.onChangedateofbirth,__source:{fileName:_jsxFileName,lineNumber:849}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:860}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:861}},'Occupation'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Occupation',value:this.state.occupation,onChangeText:this.onChangeoccupation,__source:{fileName:_jsxFileName,lineNumber:864}})))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:875}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:876}},_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:877}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:878}},'Nominee Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Nominee Name',value:this.state.nomineeName,onChangeText:this.onChangenomineeName,__source:{fileName:_jsxFileName,lineNumber:880}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:891}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:892}},'Nominee Age'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Nominee age',value:this.state.nomineeAge,onChangeText:this.onChangenomineeAge,__source:{fileName:_jsxFileName,lineNumber:896}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:905}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:906}},'Relation with Nominee'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'RelationshipWithNominee',value:this.state.relationshipWithNominee,onChangeText:this.onChangerelationshipWithNominee,__source:{fileName:_jsxFileName,lineNumber:909}})))),_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:923}},_react2.default.createElement('div',{'class':'jumbotron',style:_styles.SCROLL,__source:{fileName:_jsxFileName,lineNumber:924}},_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:926}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:927}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.SIDETEXT,__source:{fileName:_jsxFileName,lineNumber:929}},'Vehicle Details'))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:933}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:935}},_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:936}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:937}},'Vehicle Model code'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Vehicle model code',value:this.state.vehicleModelCode,onChangeText:this.onChangevehicleModelCode,__source:{fileName:_jsxFileName,lineNumber:940}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:948}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:949}},'Plan Opted'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Plan opted',value:this.state.planOpted,onChangeText:this.onChangeplanOpted,__source:{fileName:_jsxFileName,lineNumber:950}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:958}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:959}},'year Of Manufacturer'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:' Year of manufacturer',value:this.state.yearOfManufacture,onChangeText:this.onChangeyearOfManufacture,__source:{fileName:_jsxFileName,lineNumber:961}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:971}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:972}},'Driving Experience'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Driving experience',value:this.state.drivingExperience,onChangeText:this.onChangedrivingExperience,__source:{fileName:_jsxFileName,lineNumber:977}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:986}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:987}},'Voluntary Detuctable'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Voluntary detuctable',value:this.state.voluntaryDeductible,onChangeText:this.onChangevoluntaryDeductible,__source:{fileName:_jsxFileName,lineNumber:991}}))),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1003}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1004}},'Voluntary Detuctable'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Vehicle manufacturer name',value:this.state.vehicleManufacturerName,onChangeText:this.onChangevehicleManufacturerName,__source:{fileName:_jsxFileName,lineNumber:1006}}))))),_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:1018}},_react2.default.createElement('div',{'class':'jumbotron',style:_styles.SCROLL,__source:{fileName:_jsxFileName,lineNumber:1019}},_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1020}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:1021}},_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1022}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1023}},'IDV'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'IDV',value:this.state.idv,onChangeText:this.onChangeidv,__source:{fileName:_jsxFileName,lineNumber:1025}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1035}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1036}},'Start Policy'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:' start Policy',value:this.state.policyStartDate,onChangeText:this.onChangepolicyStartDate,__source:{fileName:_jsxFileName,lineNumber:1037}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1046}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1047}},'Vehicle Mostly driven '),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'vehicle mostly driven on',value:this.state.vehicleMostlyDrivenOn,onChangeText:this.onChangevehicleMostlyDrivenOn,__source:{fileName:_jsxFileName,lineNumber:1049}}))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1061}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:1062}},_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1063}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1064}},'Vehicle Registered Date'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Vehicle register date',value:this.state.vehicleRegDate,onChangeText:this.onChangevehicleRegDate,__source:{fileName:_jsxFileName,lineNumber:1066}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1075}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1076}},'Vehicle Registered'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Vehicle registered in the name of',value:this.state.vehicleRegisteredInTheNameOf,onChangeText:this.onChangevehicleRegisteredInTheNameOf,__source:{fileName:_jsxFileName,lineNumber:1078}})))),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1089}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1090}},'Model Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'model name',value:this.state.modelName,onChangeText:this.onChangemodelName,__source:{fileName:_jsxFileName,lineNumber:1092}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1101}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1102}},'Product Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Product name',value:this.state.productName,onChangeText:this.onChangeproductName,__source:{fileName:_jsxFileName,lineNumber:1104}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1113}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1114}},'Company Name for car'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Company name for car',value:this.state.companyNameForCar,onChangeText:this.onChangecompanyNameForCar,__source:{fileName:_jsxFileName,lineNumber:1116}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1125}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1126}},'Enginee Number'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'enginee number',value:this.state.engineNumber,onChangeText:this.onChangeengineNumber,__source:{fileName:_jsxFileName,lineNumber:1128}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1136}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1137}},'chassis Number'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Chassis Number',value:this.state.chassisNumber,onChangeText:this.onChangechassisNumber,__source:{fileName:_jsxFileName,lineNumber:1139}}))))))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:1230}},_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop10,__source:{fileName:_jsxFileName,lineNumber:1231}},_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.BUTTON6,onPress:function onPress(){return _this2.onChangePost();},__source:{fileName:_jsxFileName,lineNumber:1233}},'Next')))),_react2.default.createElement(_reactBootstrap.Tab,{eventKey:2,style:_styles.read,title:'Renew',__source:{fileName:_jsxFileName,lineNumber:1246}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1247}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1248}},'Registration No'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1251}},_react2.default.createElement(_reactxp2.default.TextInput,{controlId:'formBasicText',type:'email',style:_AppStyles2.default.Form,placeholder:'Enter Registration No',value:this.state.name,onChangeText:this.onChangeName,__source:{fileName:_jsxFileName,lineNumber:1254}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1267}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1268}},'Manufacturer'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1271}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Enter Manufacturer',value:this.state.phone,onChangeText:this.onChangePhone,__source:{fileName:_jsxFileName,lineNumber:1272}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1283}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1284}},'Model'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1287}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Enter Model',value:this.state.email,onChangeText:this.onChangeEmail,__source:{fileName:_jsxFileName,lineNumber:1288}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1298}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1299}},'Variant'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1302}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Enter Variant',value:this.state.regAreaCode,onChangeText:this.onChangeArea,__source:{fileName:_jsxFileName,lineNumber:1303}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1313}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1314}},'Registration Year'),_react2.default.createElement('div',{className:'form-group',__source:{fileName:_jsxFileName,lineNumber:1319}},_react2.default.createElement('div',{className:'input-group date',id:'datetimepicker1',__source:{fileName:_jsxFileName,lineNumber:1320}},_react2.default.createElement('input',{type:'text',className:'form-control',__source:{fileName:_jsxFileName,lineNumber:1321}}),_react2.default.createElement('span',{className:'input-group-addon',__source:{fileName:_jsxFileName,lineNumber:1322}},_react2.default.createElement('span',{className:'glyphicon-calendar glyphicon',__source:{fileName:_jsxFileName,lineNumber:1323}}))))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1331}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1332}},'RTO Location'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1335}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'RTO Location',value:this.state.registrationYear,onChangeText:this.onChangeReg,__source:{fileName:_jsxFileName,lineNumber:1336}}))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:1418}},_react2.default.createElement(_reactBootstrap.Col,{md:10,__source:{fileName:_jsxFileName,lineNumber:1419}},_react2.default.createElement('code',{style:_AppStyles2.default.mobFont,__source:{fileName:_jsxFileName,lineNumber:1420}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:1420}},'No Claims Last Year')),_react2.default.createElement('code',{style:_AppStyles2.default.mobFont,__source:{fileName:_jsxFileName,lineNumber:1421}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:1421}},'I Don\'t Know My Policy Expiry Date')))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:1426}},_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop10,__source:{fileName:_jsxFileName,lineNumber:1427}},_react2.default.createElement(_Button2.default,{style:_AppStyles2.default.btnMaxWidth,bsStyle:'primary',__source:{fileName:_jsxFileName,lineNumber:1429}},'Next'),_react2.default.createElement(_reactxp2.default.Button,{style:_styles.roundButton,onPress:this.props.onNavigateEight,__source:{fileName:_jsxFileName,lineNumber:1431}},_react2.default.createElement(_reactxp2.default.Text,{style:_styles.buttonText,__source:{fileName:_jsxFileName,lineNumber:1432}},'NEXT'))))))))));}},{key:'handleChange',value:function handleChange(){this.setState({Model:''});}},{key:'handlechange',value:function handlechange(date){this.setState({startDate:date});}},{key:'handleSelect',value:function handleSelect(date){this.setState({startDate:date});}}]);return VehicleDetails;}(_react2.default.Component);exports.default=VehicleDetails;
 
 /***/ }),
 /* 992 */
@@ -127875,7 +127900,7 @@ _this.setState({password:newText});
 
 _onChangeTest=function(newText){
 _this.setState({password:newText});
-};_this.state={quoteid:_this.props.navigatorRoute.quoteid,mypremium:_this.props.navigatorRoute.premium,title:'Ms',firstname:'Neelima',lastname:'Rani',emailId:'neeluneelima67@gmail.com',mobileNo:'9553715856',dateofbirth:'02/12/1994',occupation:'Student',nomineeName:'Harini',nomineeAge:'50',relationshipWithNominee:'Cousin',guardianName:'Prakhya',guardianAge:'60',relationshipwithGuardian:'Sister',permanentAddress1:'Guntupalli',permanentAddress2:'Vijayawada',permanentAddress3:'Krishna',permanentAddress4:'Ibrahimpatnam',permanentCity:'Chennai',permanentPincode:'600034',sameAdressReg:'No',ResidenceAddressOne:'Hyderabad',ResidenceAddressTwo:'Guntupalli',ResidenceAddressThree:'Krishna',ResidenceAddressFour:'Kurnool',ResidenceCity:'Chennai',ResidencePinCode:'600032',strStdCode:'0866',strPhoneNo:'2831608',vehicleModelCode:'ZWTV310',planOpted:'Fixed Plan',yearOfManufacture:'2017',drivingExperience:'1',voluntaryDeductible:'0',vehicleManufacturerName:'TVS',idv:'87164',policyStartDate:'29/03/2018',vehicleMostlyDrivenOn:'Roads',vehicleRegDate:'29/03/2018',vehicleRegisteredInTheNameOf:'Company',modelName:'APACHE RTR ABS-2 Seater',productName:'BrandNewTwoWheeler',companyNameForCar:'xerago',engineNumber:'565465466',chassisNumber:'56546546',isTwoWheelerFinanced:'No',vehicleSubLine:'motorCycle',registrationchargesRoadtax:'No',fuelType:'Petrol',automobileAssociationMembership:'No',region:'East Region',carRegisteredCity:'24PARGANAS',isProductCheck:'No',engineCapacityAmount:'153 CC',personalAccidentCoverForUnnamedPassengers:'5000',accidentCoverForPaidDriver:'5000',legalliabilityToPaidDriver:'Yes',legalliabilityToEmployees:'Yes',cover_elec_acc:'Yes',NameOfElectronicAccessories:'Tyre',MakeModel:'TVS',Value:'345',NameOfElectronicAccessories:'Handle',MakeModel:'HONDA',Value:'365',secureTextEntry:true};_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(VehicleDetails,[{key:'render',value:function render(){var _this2=this;quoteid=this.props.navigatorRoute.quoteid;mypremium=this.props.navigatorRoute.premium;token=this.props.navigatorRoute.token;console.log(token,"token");console.log("quoteid",quoteid);console.log("premium",mypremium);return _react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:616}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:617}},_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateSixth,__source:{fileName:_jsxFileName,lineNumber:618}},_react2.default.createElement(_reactxp2.default.Image,{style:_styles.HomeScrollImageLogo,source:'./src/img/Back.svg',__source:{fileName:_jsxFileName,lineNumber:618}}),_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:621}},'New Car Insurance'))),_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:631}},_react2.default.createElement(_reactBootstrap.Row,{className:'clearfix',__source:{fileName:_jsxFileName,lineNumber:653}},_react2.default.createElement(_reactBootstrap.Col,{md:8,__source:{fileName:_jsxFileName,lineNumber:654}}),_react2.default.createElement(_reactBootstrap.Col,{md:8,__source:{fileName:_jsxFileName,lineNumber:655}},_react2.default.createElement(_reactBootstrap.Tabs,{defaultActiveKey:1,style:_styles.read,id:'left-tabs-example',__source:{fileName:_jsxFileName,lineNumber:657}},_react2.default.createElement(_reactBootstrap.Tab,{eventKey:1,style:_styles.read,title:'New',className:'myClass',__source:{fileName:_jsxFileName,lineNumber:658}},_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:661}},_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:662}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:663}},_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:664}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:665}},'Quote ID'),_react2.default.createElement(_reactxp2.default.TextInput,{type:'Quote ID',style:_AppStyles2.default.Form,placeholder:'Quote Id',value:quoteid,onChangeText:this.onChangequoteid,__source:{fileName:_jsxFileName,lineNumber:667}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:678}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:679}},'Premium'),_react2.default.createElement(_reactxp2.default.TextInput,{type:'Premium',style:_AppStyles2.default.Form,placeholder:'Premium',value:mypremium,onChangeText:this.onChangepremium,__source:{fileName:_jsxFileName,lineNumber:681}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:691}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:692}},'Title'),_react2.default.createElement(_reactxp2.default.TextInput,{type:'title',style:_AppStyles2.default.Form,placeholder:'Title',value:this.state.title,onChangeText:this.onChangetitle,__source:{fileName:_jsxFileName,lineNumber:695}}))))),_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:707}},_react2.default.createElement('div',{'class':'jumbotron',style:_styles.SCROLL,__source:{fileName:_jsxFileName,lineNumber:708}},_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:709}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:710}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.SIDETEXT,__source:{fileName:_jsxFileName,lineNumber:712}},'Personal Details'))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:716}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:717}},_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:718}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:719}},'First Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'First Name',value:this.state.firstname,onChangeText:this.onChangefirstName,__source:{fileName:_jsxFileName,lineNumber:723}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:735}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:736}},'Last Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Last Name',value:this.state.lastname,onChangeText:this.onChangelastName,__source:{fileName:_jsxFileName,lineNumber:739}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:747}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:748}},'Email ID'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Email id',value:this.state.emailId,onChangeText:this.onChangeemailId,__source:{fileName:_jsxFileName,lineNumber:751}})))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:762}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:765}},_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:766}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:767}},'Mobile No'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Mobile no',value:this.state.mobileNo,onChangeText:this.onChangemobileNo,__source:{fileName:_jsxFileName,lineNumber:770}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:778}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:779}},'Date Of Birth'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Date of Birth',value:this.state.dateofbirth,onChangeText:this.onChangedateofbirth,__source:{fileName:_jsxFileName,lineNumber:783}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:794}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:795}},'Occupation'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Occupation',value:this.state.occupation,onChangeText:this.onChangeoccupation,__source:{fileName:_jsxFileName,lineNumber:798}})))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:809}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:810}},_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:811}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:812}},'Nominee Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Nominee Name',value:this.state.nomineeName,onChangeText:this.onChangenomineeName,__source:{fileName:_jsxFileName,lineNumber:814}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:825}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:826}},'Nominee Age'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Nominee age',value:this.state.nomineeAge,onChangeText:this.onChangenomineeAge,__source:{fileName:_jsxFileName,lineNumber:830}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:839}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:840}},'Relation with Nominee'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'RelationshipWithNominee',value:this.state.relationshipWithNominee,onChangeText:this.onChangerelationshipWithNominee,__source:{fileName:_jsxFileName,lineNumber:843}})))),_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:857}},_react2.default.createElement('div',{'class':'jumbotron',style:_styles.SCROLL,__source:{fileName:_jsxFileName,lineNumber:858}},_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:860}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:861}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.SIDETEXT,__source:{fileName:_jsxFileName,lineNumber:863}},'Vehicle Details'))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:867}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:869}},_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:870}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:871}},'Vehicle Model code'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Vehicle model code',value:this.state.vehicleModelCode,onChangeText:this.onChangevehicleModelCode,__source:{fileName:_jsxFileName,lineNumber:874}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:882}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:883}},'Plan Opted'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Plan opted',value:this.state.planOpted,onChangeText:this.onChangeplanOpted,__source:{fileName:_jsxFileName,lineNumber:884}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:892}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:893}},'year Of Manufacturer'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:' Year of manufacturer',value:this.state.yearOfManufacture,onChangeText:this.onChangeyearOfManufacture,__source:{fileName:_jsxFileName,lineNumber:895}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:905}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:906}},'Driving Experience'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Driving experience',value:this.state.drivingExperience,onChangeText:this.onChangedrivingExperience,__source:{fileName:_jsxFileName,lineNumber:911}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:920}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:921}},'Voluntary Detuctable'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Voluntary detuctable',value:this.state.voluntaryDeductible,onChangeText:this.onChangevoluntaryDeductible,__source:{fileName:_jsxFileName,lineNumber:925}}))),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:937}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:938}},'Voluntary Detuctable'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Vehicle manufacturer name',value:this.state.vehicleManufacturerName,onChangeText:this.onChangevehicleManufacturerName,__source:{fileName:_jsxFileName,lineNumber:940}}))))),_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:952}},_react2.default.createElement('div',{'class':'jumbotron',style:_styles.SCROLL,__source:{fileName:_jsxFileName,lineNumber:953}},_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:954}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:955}},_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:956}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:957}},'IDV'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'IDV',value:this.state.idv,onChangeText:this.onChangeidv,__source:{fileName:_jsxFileName,lineNumber:959}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:969}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:970}},'Start Policy'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:' start Policy',value:this.state.policyStartDate,onChangeText:this.onChangepolicyStartDate,__source:{fileName:_jsxFileName,lineNumber:971}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:980}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:981}},'Vehicle Mostly driven '),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'vehicle mostly driven on',value:this.state.vehicleMostlyDrivenOn,onChangeText:this.onChangevehicleMostlyDrivenOn,__source:{fileName:_jsxFileName,lineNumber:983}}))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:995}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:996}},_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:997}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:998}},'Vehicle Registered Date'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Vehicle register date',value:this.state.vehicleRegDate,onChangeText:this.onChangevehicleRegDate,__source:{fileName:_jsxFileName,lineNumber:1000}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1009}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1010}},'Vehicle Registered'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Vehicle registered in the name of',value:this.state.vehicleRegisteredInTheNameOf,onChangeText:this.onChangevehicleRegisteredInTheNameOf,__source:{fileName:_jsxFileName,lineNumber:1012}})))),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1023}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1024}},'Model Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'model name',value:this.state.modelName,onChangeText:this.onChangemodelName,__source:{fileName:_jsxFileName,lineNumber:1026}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1035}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1036}},'Product Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Product name',value:this.state.productName,onChangeText:this.onChangeproductName,__source:{fileName:_jsxFileName,lineNumber:1038}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1047}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1048}},'Company Name for car'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Company name for car',value:this.state.companyNameForCar,onChangeText:this.onChangecompanyNameForCar,__source:{fileName:_jsxFileName,lineNumber:1050}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1059}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1060}},'Enginee Number'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'enginee number',value:this.state.engineNumber,onChangeText:this.onChangeengineNumber,__source:{fileName:_jsxFileName,lineNumber:1062}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1070}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1071}},'chassis Number'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Chassis Number',value:this.state.chassisNumber,onChangeText:this.onChangechassisNumber,__source:{fileName:_jsxFileName,lineNumber:1073}}))))))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:1164}},_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop10,__source:{fileName:_jsxFileName,lineNumber:1165}},_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.BUTTON6,onPress:function onPress(){return _this2.onChangePost();},__source:{fileName:_jsxFileName,lineNumber:1167}},'Next')))),_react2.default.createElement(_reactBootstrap.Tab,{eventKey:2,style:_styles.read,title:'Renew',__source:{fileName:_jsxFileName,lineNumber:1180}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1181}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1182}},'Registration No'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1185}},_react2.default.createElement(_reactxp2.default.TextInput,{controlId:'formBasicText',type:'email',style:_AppStyles2.default.Form,placeholder:'Enter Registration No',value:this.state.name,onChangeText:this.onChangeName,__source:{fileName:_jsxFileName,lineNumber:1188}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1201}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1202}},'Manufacturer'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1205}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Enter Manufacturer',value:this.state.phone,onChangeText:this.onChangePhone,__source:{fileName:_jsxFileName,lineNumber:1206}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1217}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1218}},'Model'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1221}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Enter Model',value:this.state.email,onChangeText:this.onChangeEmail,__source:{fileName:_jsxFileName,lineNumber:1222}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1232}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1233}},'Variant'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1236}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Enter Variant',value:this.state.regAreaCode,onChangeText:this.onChangeArea,__source:{fileName:_jsxFileName,lineNumber:1237}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1247}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1248}},'Registration Year'),_react2.default.createElement('div',{className:'form-group',__source:{fileName:_jsxFileName,lineNumber:1253}},_react2.default.createElement('div',{className:'input-group date',id:'datetimepicker1',__source:{fileName:_jsxFileName,lineNumber:1254}},_react2.default.createElement('input',{type:'text',className:'form-control',__source:{fileName:_jsxFileName,lineNumber:1255}}),_react2.default.createElement('span',{className:'input-group-addon',__source:{fileName:_jsxFileName,lineNumber:1256}},_react2.default.createElement('span',{className:'glyphicon-calendar glyphicon',__source:{fileName:_jsxFileName,lineNumber:1257}}))))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1265}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1266}},'RTO Location'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1269}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'RTO Location',value:this.state.registrationYear,onChangeText:this.onChangeReg,__source:{fileName:_jsxFileName,lineNumber:1270}}))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:1352}},_react2.default.createElement(_reactBootstrap.Col,{md:10,__source:{fileName:_jsxFileName,lineNumber:1353}},_react2.default.createElement('code',{style:_AppStyles2.default.mobFont,__source:{fileName:_jsxFileName,lineNumber:1354}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:1354}},'No Claims Last Year')),_react2.default.createElement('code',{style:_AppStyles2.default.mobFont,__source:{fileName:_jsxFileName,lineNumber:1355}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:1355}},'I Don\'t Know My Policy Expiry Date')))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:1360}},_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop10,__source:{fileName:_jsxFileName,lineNumber:1361}},_react2.default.createElement(_Button2.default,{style:_AppStyles2.default.btnMaxWidth,bsStyle:'primary',__source:{fileName:_jsxFileName,lineNumber:1363}},'Next'),_react2.default.createElement(_reactxp2.default.Button,{style:_styles.roundButton,onPress:this.props.onNavigateEight,__source:{fileName:_jsxFileName,lineNumber:1365}},_react2.default.createElement(_reactxp2.default.Text,{style:_styles.buttonText,__source:{fileName:_jsxFileName,lineNumber:1366}},'NEXT'))))))))));}},{key:'handleChange',value:function handleChange(){this.setState({Model:''});}},{key:'handlechange',value:function handlechange(date){this.setState({startDate:date});}},{key:'handleSelect',value:function handleSelect(date){this.setState({startDate:date});}}]);return VehicleDetails;}(_react2.default.Component);exports.default=VehicleDetails;
+};_this.state={quoteid:_this.props.navigatorRoute.quoteid,mypremium:_this.props.navigatorRoute.premium,title:'Ms',firstname:'Neelima',lastname:'Rani',emailId:'neeluneelima67@gmail.com',mobileNo:'9553715856',dateofbirth:'02/12/1994',occupation:'Student',nomineeName:'Harini',nomineeAge:'50',relationshipWithNominee:'Cousin',guardianName:'Prakhya',guardianAge:'60',relationshipwithGuardian:'Sister',permanentAddress1:'Guntupalli',permanentAddress2:'Vijayawada',permanentAddress3:'Krishna',permanentAddress4:'Ibrahimpatnam',permanentCity:'Chennai',permanentPincode:'600034',sameAdressReg:'No',ResidenceAddressOne:'Hyderabad',ResidenceAddressTwo:'Guntupalli',ResidenceAddressThree:'Krishna',ResidenceAddressFour:'Kurnool',ResidenceCity:'Chennai',ResidencePinCode:'600032',strStdCode:'0866',strPhoneNo:'2831608',vehicleModelCode:'ZWTV310',planOpted:'Fixed Plan',yearOfManufacture:'2017',drivingExperience:'1',voluntaryDeductible:'0',vehicleManufacturerName:'TVS',idv:'87164',policyStartDate:'30/03/2018',vehicleMostlyDrivenOn:'Roads',vehicleRegDate:'30/03/2018',vehicleRegisteredInTheNameOf:'Company',modelName:'APACHE RTR ABS-2 Seater',productName:'BrandNewTwoWheeler',companyNameForCar:'xerago',engineNumber:'565465466',chassisNumber:'56546546',isTwoWheelerFinanced:'No',vehicleSubLine:'motorCycle',registrationchargesRoadtax:'No',fuelType:'Petrol',automobileAssociationMembership:'No',region:'East Region',carRegisteredCity:'24PARGANAS',isProductCheck:'No',engineCapacityAmount:'153 CC',personalAccidentCoverForUnnamedPassengers:'5000',accidentCoverForPaidDriver:'5000',legalliabilityToPaidDriver:'Yes',legalliabilityToEmployees:'Yes',cover_elec_acc:'Yes',NameOfElectronicAccessories:'Tyre',MakeModel:'TVS',Value:'345',NameOfElectronicAccessories:'Handle',MakeModel:'HONDA',Value:'365',secureTextEntry:true};_this._translationValue=_reactxp2.default.Animated.createValue(-100);_this._animatedStyle=_reactxp2.default.Styles.createAnimatedTextStyle({transform:[{translateY:_this._translationValue}]});return _this;}_createClass(VehicleDetails,[{key:'render',value:function render(){var _this2=this;quoteid=this.props.navigatorRoute.quoteid;mypremium=this.props.navigatorRoute.premium;token=this.props.navigatorRoute.token;console.log(token,"token");console.log("quoteid",quoteid);console.log("premium",mypremium);return _react2.default.createElement(_reactxp2.default.ScrollView,{style:_styles.scroll,__source:{fileName:_jsxFileName,lineNumber:616}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.container,__source:{fileName:_jsxFileName,lineNumber:617}},_react2.default.createElement(_reactxp2.default.Button,{onPress:this.props.onNavigateSixth,__source:{fileName:_jsxFileName,lineNumber:618}},_react2.default.createElement(_reactxp2.default.Image,{style:_styles.HomeScrollImageLogo,source:'./src/img/Back.svg',__source:{fileName:_jsxFileName,lineNumber:618}}),_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.welcome,__source:{fileName:_jsxFileName,lineNumber:621}},'New Car Insurance'))),_react2.default.createElement(_reactBootstrap.Grid,{__source:{fileName:_jsxFileName,lineNumber:631}},_react2.default.createElement(_reactBootstrap.Row,{className:'clearfix',__source:{fileName:_jsxFileName,lineNumber:653}},_react2.default.createElement(_reactBootstrap.Col,{md:8,__source:{fileName:_jsxFileName,lineNumber:654}}),_react2.default.createElement(_reactBootstrap.Col,{md:8,__source:{fileName:_jsxFileName,lineNumber:655}},_react2.default.createElement(_reactBootstrap.Tabs,{defaultActiveKey:1,style:_styles.read,id:'left-tabs-example',__source:{fileName:_jsxFileName,lineNumber:657}},_react2.default.createElement(_reactBootstrap.Tab,{eventKey:1,style:_styles.read,title:'New',className:'myClass',__source:{fileName:_jsxFileName,lineNumber:658}},_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:661}},_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:662}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:663}},_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:664}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:665}},'Quote ID'),_react2.default.createElement(_reactxp2.default.TextInput,{type:'Quote ID',style:_AppStyles2.default.Form,placeholder:'Quote Id',value:quoteid,onChangeText:this.onChangequoteid,__source:{fileName:_jsxFileName,lineNumber:667}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:678}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:679}},'Premium'),_react2.default.createElement(_reactxp2.default.TextInput,{type:'Premium',style:_AppStyles2.default.Form,placeholder:'Premium',value:mypremium,onChangeText:this.onChangepremium,__source:{fileName:_jsxFileName,lineNumber:681}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:691}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:692}},'Title'),_react2.default.createElement(_reactxp2.default.TextInput,{type:'title',style:_AppStyles2.default.Form,placeholder:'Title',value:this.state.title,onChangeText:this.onChangetitle,__source:{fileName:_jsxFileName,lineNumber:695}}))))),_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:707}},_react2.default.createElement('div',{'class':'jumbotron',style:_styles.SCROLL,__source:{fileName:_jsxFileName,lineNumber:708}},_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:709}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:710}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.SIDETEXT,__source:{fileName:_jsxFileName,lineNumber:712}},'Personal Details'))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:716}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:717}},_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:718}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:719}},'First Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'First Name',value:this.state.firstname,onChangeText:this.onChangefirstName,__source:{fileName:_jsxFileName,lineNumber:723}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:735}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:736}},'Last Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Last Name',value:this.state.lastname,onChangeText:this.onChangelastName,__source:{fileName:_jsxFileName,lineNumber:739}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:747}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:748}},'Email ID'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Email id',value:this.state.emailId,onChangeText:this.onChangeemailId,__source:{fileName:_jsxFileName,lineNumber:751}})))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:762}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:765}},_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:766}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:767}},'Mobile No'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Mobile no',value:this.state.mobileNo,onChangeText:this.onChangemobileNo,__source:{fileName:_jsxFileName,lineNumber:770}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:778}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:779}},'Date Of Birth'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Date of Birth',value:this.state.dateofbirth,onChangeText:this.onChangedateofbirth,__source:{fileName:_jsxFileName,lineNumber:783}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:794}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:795}},'Occupation'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Occupation',value:this.state.occupation,onChangeText:this.onChangeoccupation,__source:{fileName:_jsxFileName,lineNumber:798}})))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:809}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:810}},_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:811}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:812}},'Nominee Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Nominee Name',value:this.state.nomineeName,onChangeText:this.onChangenomineeName,__source:{fileName:_jsxFileName,lineNumber:814}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:825}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:826}},'Nominee Age'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Nominee age',value:this.state.nomineeAge,onChangeText:this.onChangenomineeAge,__source:{fileName:_jsxFileName,lineNumber:830}})),_react2.default.createElement('div',{'class':'form-group col-md-4',__source:{fileName:_jsxFileName,lineNumber:839}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:840}},'Relation with Nominee'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'RelationshipWithNominee',value:this.state.relationshipWithNominee,onChangeText:this.onChangerelationshipWithNominee,__source:{fileName:_jsxFileName,lineNumber:843}})))),_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:857}},_react2.default.createElement('div',{'class':'jumbotron',style:_styles.SCROLL,__source:{fileName:_jsxFileName,lineNumber:858}},_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:860}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:861}},_react2.default.createElement('label',{'for':'inputEmail4',style:_AppStyles2.default.SIDETEXT,__source:{fileName:_jsxFileName,lineNumber:863}},'Vehicle Details'))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:867}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:869}},_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:870}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:871}},'Vehicle Model code'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Vehicle model code',value:this.state.vehicleModelCode,onChangeText:this.onChangevehicleModelCode,__source:{fileName:_jsxFileName,lineNumber:874}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:882}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:883}},'Plan Opted'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Plan opted',value:this.state.planOpted,onChangeText:this.onChangeplanOpted,__source:{fileName:_jsxFileName,lineNumber:884}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:892}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:893}},'year Of Manufacturer'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:' Year of manufacturer',value:this.state.yearOfManufacture,onChangeText:this.onChangeyearOfManufacture,__source:{fileName:_jsxFileName,lineNumber:895}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:905}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:906}},'Driving Experience'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Driving experience',value:this.state.drivingExperience,onChangeText:this.onChangedrivingExperience,__source:{fileName:_jsxFileName,lineNumber:911}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:920}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:921}},'Voluntary Detuctable'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Voluntary detuctable',value:this.state.voluntaryDeductible,onChangeText:this.onChangevoluntaryDeductible,__source:{fileName:_jsxFileName,lineNumber:925}}))),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:937}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:938}},'Voluntary Detuctable'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Vehicle manufacturer name',value:this.state.vehicleManufacturerName,onChangeText:this.onChangevehicleManufacturerName,__source:{fileName:_jsxFileName,lineNumber:940}}))))),_react2.default.createElement(_reactxp2.default.View,{style:_styles.client,__source:{fileName:_jsxFileName,lineNumber:952}},_react2.default.createElement('div',{'class':'jumbotron',style:_styles.SCROLL,__source:{fileName:_jsxFileName,lineNumber:953}},_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:954}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:955}},_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:956}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:957}},'IDV'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'IDV',value:this.state.idv,onChangeText:this.onChangeidv,__source:{fileName:_jsxFileName,lineNumber:959}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:969}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:970}},'Start Policy'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:' start Policy',value:this.state.policyStartDate,onChangeText:this.onChangepolicyStartDate,__source:{fileName:_jsxFileName,lineNumber:971}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:980}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:981}},'Vehicle Mostly driven '),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'vehicle mostly driven on',value:this.state.vehicleMostlyDrivenOn,onChangeText:this.onChangevehicleMostlyDrivenOn,__source:{fileName:_jsxFileName,lineNumber:983}}))),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:995}},_react2.default.createElement('div',{'class':'form-row',__source:{fileName:_jsxFileName,lineNumber:996}},_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:997}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:998}},'Vehicle Registered Date'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Vehicle register date',value:this.state.vehicleRegDate,onChangeText:this.onChangevehicleRegDate,__source:{fileName:_jsxFileName,lineNumber:1000}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1009}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1010}},'Vehicle Registered'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Vehicle registered in the name of',value:this.state.vehicleRegisteredInTheNameOf,onChangeText:this.onChangevehicleRegisteredInTheNameOf,__source:{fileName:_jsxFileName,lineNumber:1012}})))),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1023}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1024}},'Model Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'model name',value:this.state.modelName,onChangeText:this.onChangemodelName,__source:{fileName:_jsxFileName,lineNumber:1026}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1035}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1036}},'Product Name'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Product name',value:this.state.productName,onChangeText:this.onChangeproductName,__source:{fileName:_jsxFileName,lineNumber:1038}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1047}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1048}},'Company Name for car'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Company name for car',value:this.state.companyNameForCar,onChangeText:this.onChangecompanyNameForCar,__source:{fileName:_jsxFileName,lineNumber:1050}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1059}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1060}},'Enginee Number'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'enginee number',value:this.state.engineNumber,onChangeText:this.onChangeengineNumber,__source:{fileName:_jsxFileName,lineNumber:1062}})),_react2.default.createElement('div',{'class':'form-group col-md-6',__source:{fileName:_jsxFileName,lineNumber:1070}},_react2.default.createElement('label',{'for':'inputPassword4',style:_AppStyles2.default.siDeText,__source:{fileName:_jsxFileName,lineNumber:1071}},'chassis Number'),_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Chassis Number',value:this.state.chassisNumber,onChangeText:this.onChangechassisNumber,__source:{fileName:_jsxFileName,lineNumber:1073}}))))))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:1164}},_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop10,__source:{fileName:_jsxFileName,lineNumber:1165}},_react2.default.createElement(_reactxp2.default.Button,{style:_AppStyles2.default.BUTTON6,onPress:function onPress(){return _this2.onChangePost();},__source:{fileName:_jsxFileName,lineNumber:1167}},'Next')))),_react2.default.createElement(_reactBootstrap.Tab,{eventKey:2,style:_styles.read,title:'Renew',__source:{fileName:_jsxFileName,lineNumber:1180}},_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1181}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1182}},'Registration No'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1185}},_react2.default.createElement(_reactxp2.default.TextInput,{controlId:'formBasicText',type:'email',style:_AppStyles2.default.Form,placeholder:'Enter Registration No',value:this.state.name,onChangeText:this.onChangeName,__source:{fileName:_jsxFileName,lineNumber:1188}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1201}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1202}},'Manufacturer'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1205}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Enter Manufacturer',value:this.state.phone,onChangeText:this.onChangePhone,__source:{fileName:_jsxFileName,lineNumber:1206}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1217}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1218}},'Model'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1221}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Enter Model',value:this.state.email,onChangeText:this.onChangeEmail,__source:{fileName:_jsxFileName,lineNumber:1222}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1232}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1233}},'Variant'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1236}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'Enter Variant',value:this.state.regAreaCode,onChangeText:this.onChangeArea,__source:{fileName:_jsxFileName,lineNumber:1237}}))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1247}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1248}},'Registration Year'),_react2.default.createElement('div',{className:'form-group',__source:{fileName:_jsxFileName,lineNumber:1253}},_react2.default.createElement('div',{className:'input-group date',id:'datetimepicker1',__source:{fileName:_jsxFileName,lineNumber:1254}},_react2.default.createElement('input',{type:'text',className:'form-control',__source:{fileName:_jsxFileName,lineNumber:1255}}),_react2.default.createElement('span',{className:'input-group-addon',__source:{fileName:_jsxFileName,lineNumber:1256}},_react2.default.createElement('span',{className:'glyphicon-calendar glyphicon',__source:{fileName:_jsxFileName,lineNumber:1257}}))))),_react2.default.createElement(_reactxp2.default.View,{style:_AppStyles2.default.sideMar,__source:{fileName:_jsxFileName,lineNumber:1265}},_react2.default.createElement(_reactxp2.default.Text,{style:_AppStyles2.default.sideText,__source:{fileName:_jsxFileName,lineNumber:1266}},'RTO Location'),_react2.default.createElement('form',{__source:{fileName:_jsxFileName,lineNumber:1269}},_react2.default.createElement(_reactxp2.default.TextInput,{style:_AppStyles2.default.Form,placeholder:'RTO Location',value:this.state.registrationYear,onChangeText:this.onChangeReg,__source:{fileName:_jsxFileName,lineNumber:1270}}))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:1352}},_react2.default.createElement(_reactBootstrap.Col,{md:10,__source:{fileName:_jsxFileName,lineNumber:1353}},_react2.default.createElement('code',{style:_AppStyles2.default.mobFont,__source:{fileName:_jsxFileName,lineNumber:1354}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:1354}},'No Claims Last Year')),_react2.default.createElement('code',{style:_AppStyles2.default.mobFont,__source:{fileName:_jsxFileName,lineNumber:1355}},_react2.default.createElement(_reactBootstrap.Checkbox,{__source:{fileName:_jsxFileName,lineNumber:1355}},'I Don\'t Know My Policy Expiry Date')))),_react2.default.createElement(_reactBootstrap.Row,{className:'show-grid',__source:{fileName:_jsxFileName,lineNumber:1360}},_react2.default.createElement(_reactBootstrap.Col,{md:12,style:_AppStyles2.default.marTop10,__source:{fileName:_jsxFileName,lineNumber:1361}},_react2.default.createElement(_Button2.default,{style:_AppStyles2.default.btnMaxWidth,bsStyle:'primary',__source:{fileName:_jsxFileName,lineNumber:1363}},'Next'),_react2.default.createElement(_reactxp2.default.Button,{style:_styles.roundButton,onPress:this.props.onNavigateEight,__source:{fileName:_jsxFileName,lineNumber:1365}},_react2.default.createElement(_reactxp2.default.Text,{style:_styles.buttonText,__source:{fileName:_jsxFileName,lineNumber:1366}},'NEXT'))))))))));}},{key:'handleChange',value:function handleChange(){this.setState({Model:''});}},{key:'handlechange',value:function handlechange(date){this.setState({startDate:date});}},{key:'handleSelect',value:function handleSelect(date){this.setState({startDate:date});}}]);return VehicleDetails;}(_react2.default.Component);exports.default=VehicleDetails;
 
 /***/ }),
 /* 993 */

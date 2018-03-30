@@ -191,6 +191,7 @@ var quoteid
 var premium
 var odpremium
 var allResponse
+var token
 export default class CompareQuotes extends RX.Component{
     constructor(props) {
         super(props);
@@ -215,7 +216,7 @@ export default class CompareQuotes extends RX.Component{
         animation.start();
     }
     onChangePostCompare = () => {
-        this.props.onNavigateCompare(allResponse,liability,resJson,message,quoteid,premium,odpremium);
+        this.props.onNavigateCompare(allResponse,liability,resJson,message,quoteid,premium,odpremium,token);
     
     
     }
@@ -253,7 +254,8 @@ export default class CompareQuotes extends RX.Component{
          premium = this.props.navigatorRoute.premium
          odpremium = this.props.navigatorRoute.odpremium
          allResponse = this.props.navigatorRoute.allResponse
-         
+         token = this.props.navigatorRoute.token
+         console.log(token,"token")
         console.log("comparequotes",liability)
         console.log("resJson",resJson)
         console.log("quoteiid",quoteid)

@@ -46,7 +46,7 @@ export default class InsuranceAddons extends RX.Component{
             carRegisteredCity: '24PARGANAS',
             vehicleManufacturerName: 'TVS',
             vehicleModelCode: 'ZWTV310',
-            vehicleRegDate: '29/03/2018',
+            vehicleRegDate: '30/03/2018',
             lastname: 'Rani',
         };
         this._translationValue = RX.Animated.createValue(-100);
@@ -70,7 +70,7 @@ console.log("hittinh.......")
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                
+                'x-access-token': token
                 // 'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNWExYmFhNTYyYzZiOTEzNzYzMmM3ZWVjIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiJqWmFlNzI3SzA4S2FPbUtTZ09hR3p3dy9YVnFHci9QS0VnSU1ranJjYkpJPSIsInJhcGlkSUQiOiJCd2JNd0E2YjFIaEUxNC91TFdweVJXS3EzMytBVUJINnd6UjZtQzh0OUowPSIsInVzZXJPYmplY3QiOnsiZm5hbWUiOiJhcnVuIiwibG5hbWUiOiJob3NzYW1hbmkiLCJwaG9uZSI6IjkxODM2OTk2NDU4MiJ9LCJ1c2VydHlwZSI6IkRpcmVjdCBDbGllbnRzIiwib3RwIjoxMTAwLCJlbmNvZGVkTWFpbCI6IllYSjFiaTVvYjNOellXMWhibWxBY21Gd2FXUnhkV0psTG1OdmJRPT0iLCJjcmVhdGVkX2F0IjoiTW9uIE5vdiAyNyAyMDE3IDExOjMxOjU4IEdNVCswNTMwIChJU1QpIiwiY291bnQiOjAsIl9fdiI6MCwic3RhdHVzIjpbInBob25lIiwiZW1haWwiXX1dLCJpYXQiOjE1MTUwNTA3NDcsImV4cCI6MTUxNTExMDc0N30.xZ_K-mE7WfAszkFrGMATmm9EpCmtYgdOyydVL4HGPVk'
             },
             
@@ -81,7 +81,6 @@ console.log("hittinh.......")
                         agentId: "BA502092",
                         apikey: "310ZQmv/bYJMYrWQ1iYa7s43084="
                       },
-                      isNewUser: "Yes",
                       proposerDetails: {
                         addressFour: "North Street",
                         addressOne: "No1",
@@ -119,7 +118,7 @@ console.log("hittinh.......")
                         region: "South Region",
                         vehicleManufacturerName: "BMW",
                         vehicleModelCode: "CMB65",
-                        vehicleregDate: "29/03/2018",
+                        vehicleregDate: "30/03/2018",
                         idv: "3025465",
                         engineCapacityAmount: "1995 CC",
                         drivingExperience: "2",
@@ -239,7 +238,7 @@ console.log("hittinh.......")
                  console.log("premium",premium)
                  console.log("odpremium",odpremium)
                 //  swal(message)
-                          this.props.onNavigateTwenty(allResponse,resJson,liability,message,quoteid,premium,odpremium); 
+                          this.props.onNavigateTwenty(allResponse,resJson,liability,message,quoteid,premium,odpremium,token); 
                         //  this.props.onNavigateBack (liability,message);
                          // this.props.onNavigateDetail(liability,message);
                      //   idv = resJson.PREMIUMDETAILS.DATA.IDV
@@ -296,7 +295,8 @@ console.log("hittinh.......")
     }
 
     render() {
-       // console.log(this.props.user,"user");
+        token = this.props.navigatorRoute.token
+        console.log(token,"token")
         return (
             <RX.ScrollView style={ _styles.scroll }>
             <RX.View style={ styling.container }>

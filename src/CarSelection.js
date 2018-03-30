@@ -410,7 +410,7 @@ export default class QuotesSelection  extends RX.Component {
     }
 
     onChangeliability  = () => {
-        this.props.onNavigateThirty(liability,resJson,quoteid,premium,allResponse,odpremium);
+        this.props.onNavigateThirty(liability,resJson,quoteid,premium,allResponse,odpremium,token);
         
         
 
@@ -424,6 +424,8 @@ export default class QuotesSelection  extends RX.Component {
      quoteid =  this.props.navigatorRoute.quoteid
      premium = this.props.navigatorRoute.premium
      odpremium = this.props.navigatorRoute.odpremium
+     token = this.props.navigatorRoute.token
+     console.log(token,"token")
     console.log("idvvvvv",resJson)
     console.log("liablity",liability)
    // console.log("message",message)

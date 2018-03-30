@@ -165,6 +165,11 @@ export default class RegisterPage extends RX.Component{
         this.props.onPressSuper(token);
         
     }
+    onChangePostt  () {
+        console.log(token,"tokenab")
+        this.props.onNavigateSuperCar(token);
+        
+    }
     componentDidMount() {
         let animation = RX.Animated.timing(this._translationValue, {
                 toValue: 0,
@@ -203,7 +208,7 @@ style={styles.remo}
                      <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'auto'}}>
                      <RX.View style={{width: 100, height: 100, backgroundColor: 'white', marginTop:20,marginLeft:250}} >
                      
-                     <RX.Button  onPress={ this.props.onNavigateSuperCar }><RX.Image
+                     <RX.Button  onPress={()=> this.onChangePostt() }>post<RX.Image
                              style={styles.HomeScrollImageLogo}
                              source={'./src/img/Car.svg'}/>
                         <RX.Text style={styles.scrollBoxText}>Car</RX.Text>

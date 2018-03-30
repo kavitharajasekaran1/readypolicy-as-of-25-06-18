@@ -199,6 +199,7 @@ var message
 var quoteid
 var premium
 var allResponse
+var token
 export default class QuotesSelection  extends RX.Component {
 
 
@@ -238,7 +239,7 @@ export default class QuotesSelection  extends RX.Component {
                         // alert(''+message+'')
                         console.log("quoteiid",quoteid)
                         console.log("premium",premium)
-                         this.props.onNavigateTwo(quoteid,premium); 
+                         this.props.onNavigateTwo(quoteid,premium,token); 
                     //    this.props.onNavigateBack (liability,message);
                     //  idv = resJson.PREMIUMDETAILS.DATA.IDV
                   
@@ -256,6 +257,8 @@ export default class QuotesSelection  extends RX.Component {
      quoteid = this.props.navigatorRoute.quoteid
      premium = this.props.navigatorRoute.premium
      allResponse = this.props.navigatorRoute.allResponse
+     token = this.props.navigatorRoute.token
+     console.log(token,"token")
     console.log("idvvvvv",resJson)
     console.log("liablity",liability)
    // console.log("message",message)

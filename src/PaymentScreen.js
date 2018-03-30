@@ -259,7 +259,7 @@ const styles = {
 
 
 
-
+var token
 export default class PaymentScreen extends RX.Component{
     constructor(props) {
         super(props);
@@ -292,6 +292,8 @@ export default class PaymentScreen extends RX.Component{
 
 
     render() {
+        token = this.props.navigatorRoute.token
+        console.log(token,"token")
         return (
             <RX.ScrollView style={ styles.scroll }>
                 <RX.View style={ styling.container }>
