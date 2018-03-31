@@ -169,7 +169,7 @@ export default class App extends RX.Component {
                 return <QuoteDetails onNavigateDetail={ this._onPressDetail } onNavigateNinety={ this._onPressNinety }  navigatorRoute={navigatorRoute}/>;
 
                 case NavigationRouteId.QuotesSelection:
-                return <QuotesSelection onNavigateSixth={ this._onPressSixth } onNavigateTen={ this._onPressTen }  navigatorRoute={navigatorRoute}/>;
+                return <QuotesSelection onNavigateSixth={ this._onPressSixth }  onNavigateTen={ this._onPressTen } onNavigateTen={ this._onPressTen }  navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.Location:
                 return <Location onNavigateSeven={ this._onPressSeven }/>;
@@ -198,7 +198,7 @@ export default class App extends RX.Component {
                 return <CarDetails onNavigateTwo={ this._onPressTwo }  navigatorRoute={navigatorRoute}/>;
 
                  case NavigationRouteId.Addons:
-                return <Addons onNavigateNinety={ this._onPressNinety } onNavigateSuper={ this._onPressHome} navigatorRoute={navigatorRoute}/>;
+                return <Addons onNavigateNinety={ this._onPressNinety} onPressSuper={ this._onPressHome} onNavigateSuper={ this._onPressHome} navigatorRoute={navigatorRoute}/>;
 
                 case NavigationRouteId.InsuranceAddons:
                 return <InsuranceAddons onNavigateTen={ this._onPressTen } onPressNavigate={ this._onPressNavigate } navigatorRoute={navigatorRoute}/>;

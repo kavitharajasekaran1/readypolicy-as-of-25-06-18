@@ -54,7 +54,7 @@ console.log("hittinh.......")
         // let usersPath = "motorIssuePolicy"
         // console.log(password,"password");
        // console.log(Rest.ApiUrl,"RestApiUrl");
-      return  fetch('http://192.168.0.94:8082/calculatepremium', {
+      return  fetch('http://localhost:8082/calculatepremium', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -172,7 +172,7 @@ console.log("hittinh.......")
                     })               
               
     }
-    onChangePostt  () {
+    onChangePost  () {
         console.log(token,"tokenab")
         this.props.onPressSuper(token);
         
@@ -194,7 +194,7 @@ console.log("hittinh.......")
         return (
               <RX.ScrollView style={ _styles.scroll }>
             <RX.View style={ styling.container }>
-            <RX.Button  onPress={()=> this.onChangePostt()}><RX.Image
+            <RX.Button  onPress={()=> this.onChangePost()}><RX.Image
                          style={_styles.HomeScrollImageLogo}
                          source={'./src/img/Back.svg'}/>
                     <RX.Text style={styling.welcome }>New Bike Insurance </RX.Text>
