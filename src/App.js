@@ -291,15 +291,17 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressproposal(res,quoteid,premium,) {
+    _onPressproposal(res,quoteid,premium,token) {
         console.log("quoteid",quoteid)
         console.log("premium",premium)
+        console.log("token",token)
         this._navigator.push({
             routeId: NavigationRouteId.InsuranceAddons,
             sceneConfigType: "FloatFromRight",
             quoteid:quoteid,
             premium:premium,
             res:res,
+            token:token,
             customSceneConfig: {
                 hideShadow: true
             }
@@ -489,12 +491,15 @@ export default class App extends RX.Component {
 
         });
     }
-    _onPressNine(res) {
+    _onPressNine(res,token) {
         console.log(res,"res");
+        console.log(token,"token");
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.InsuranceAddons,
             sceneConfigType: "FloatFromRight",
+            res:res,
+            token:token,
             customSceneConfig: {
                 hideShadow: true
             }

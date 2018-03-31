@@ -76,7 +76,7 @@ console.log("hittinh.......")
                         lastName: "name",
                         emailId: "neeluneelima67@gmail.com",
                         mobileNo: "7898732798",
-                        dateOfBirth: "30/11/1987",
+                        dateOfBirth: "31/11/1987",
                         occupation: "Student",
                         nomineeName: "nomineename",
                         nomineeAge: "43",
@@ -108,9 +108,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "30/03/2018",
+                        policyStartDate: "31/03/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "30/03/2018",
+                        vehicleRegDate: "31/03/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -172,6 +172,11 @@ console.log("hittinh.......")
                     })               
               
     }
+    onChangePostt  () {
+        console.log(token,"tokenab")
+        this.props.onPressSuper(token);
+        
+    }
     componentDidMount() {
         let animation = RX.Animated.timing(this._translationValue, {
                 toValue: 0,
@@ -189,7 +194,7 @@ console.log("hittinh.......")
         return (
               <RX.ScrollView style={ _styles.scroll }>
             <RX.View style={ styling.container }>
-            <RX.Button  onPress={ this.props.onNavigateSuper}><RX.Image
+            <RX.Button  onPress={()=> this.onChangePostt()}><RX.Image
                          style={_styles.HomeScrollImageLogo}
                          source={'./src/img/Back.svg'}/>
                     <RX.Text style={styling.welcome }>New Bike Insurance </RX.Text>
