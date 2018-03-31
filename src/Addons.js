@@ -172,10 +172,9 @@ console.log("hittinh.......")
                     })               
               
     }
-    onChangePostt  () {
-        console.log(token,"tokenab")
-        this.props.onPressSuper(token);
-        
+    onChangePostt = () => {
+        console.log(token,"my token")
+        this.props.onNavigateTen(token);
     }
     componentDidMount() {
         let animation = RX.Animated.timing(this._translationValue, {
