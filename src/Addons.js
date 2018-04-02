@@ -54,7 +54,7 @@ console.log("hittinh.......")
         // let usersPath = "motorIssuePolicy"
         // console.log(password,"password");
        // console.log(Rest.ApiUrl,"RestApiUrl");
-      return  fetch('http://192.168.0.94:8082/calculatepremium', {
+      return  fetch('http://localhost:8082/calculatepremium', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -76,7 +76,7 @@ console.log("hittinh.......")
                         lastName: "name",
                         emailId: "neeluneelima67@gmail.com",
                         mobileNo: "7898732798",
-                        dateOfBirth: "31/11/1987",
+                        dateOfBirth: "02/11/1987",
                         occupation: "Student",
                         nomineeName: "nomineename",
                         nomineeAge: "43",
@@ -108,9 +108,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "31/03/2018",
+                        policyStartDate: "02/04/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "31/03/2018",
+                        vehicleRegDate: "02/04/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -172,9 +172,10 @@ console.log("hittinh.......")
                     })               
               
     }
-    onChangePostt = () => {
-        console.log(token,"my token")
-        this.props.onNavigateTen(token);
+    onChangePost  () {
+        console.log(token,"tokenab")
+        this.props.onPressSuper(token);
+        
     }
     componentDidMount() {
         let animation = RX.Animated.timing(this._translationValue, {
@@ -193,7 +194,7 @@ console.log("hittinh.......")
         return (
               <RX.ScrollView style={ _styles.scroll }>
             <RX.View style={ styling.container }>
-            <RX.Button  onPress={()=> this.onChangePostt()}><RX.Image
+            <RX.Button  onPress={()=> this.onChangePost()}><RX.Image
                          style={_styles.HomeScrollImageLogo}
                          source={'./src/img/Back.svg'}/>
                     <RX.Text style={styling.welcome }>New Bike Insurance </RX.Text>

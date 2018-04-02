@@ -396,7 +396,10 @@ export default class QuotesSelection  extends RX.Component {
             
         
     }
-
+    onChangePost(){
+        console.log("navigate",token)
+        this.props.onNavigateTen(token); 
+    }
     componentWillUnmount() {
         this._stopProgressIndicator();
     }
@@ -436,7 +439,7 @@ export default class QuotesSelection  extends RX.Component {
         return (
             <RX.ScrollView style={ _styles.scroll }>
             <RX.View style={ styling.container }>
-            <RX.Button  onPress={ this.props.onNavigateTen}><RX.Image
+            <RX.Button   onPress={()=> this.onChangePost()}><RX.Image
                      style={_styles.HomeScrollImageLogo}
                      source={'./src/img/Back.svg'}/>
                 <RX.Text style={ styling.welcome }>New Motor Insurance </RX.Text>
