@@ -208,7 +208,7 @@ style={styles.remo}
                      <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'auto'}}>
                      <RX.View style={{width: 100, height: 100, backgroundColor: 'white', marginTop:20,marginLeft:250}} >
                      
-                     <RX.Button  onPress={()=> this.onChangePostt() }>post<RX.Image
+                     <RX.Button  onPress={()=> this.onChangePostt() }><RX.Image
                              style={styles.HomeScrollImageLogo}
                              source={'./src/img/Car.svg'}/>
                         <RX.Text style={styles.scrollBoxText}>Car</RX.Text>
@@ -220,11 +220,11 @@ style={styles.remo}
                      <RX.View style={styles.scrollBox}>
                      <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
                      <RX.View style={{width: 100, height: 100, backgroundColor: 'white',marginTop:10,marginLeft:200 }} >
-                     <RX.Button  onPress= {()=> this.onChangePost() }>Post</RX.Button><RX.Image
+                     <RX.Button  onPress= {()=> this.onChangePost() }><RX.Image
                              style={styles.HomeScrollImageLogo}
                              source={'./src/img/Bike.svg'}/>
                         <RX.Text style={styles.scrollBoxText}>Two Wheeler</RX.Text>
-                        
+                        </RX.Button>
                      </RX.View>
  
                      <div className="row"></div>

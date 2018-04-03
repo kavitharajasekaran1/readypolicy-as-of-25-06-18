@@ -462,6 +462,7 @@ export default class OtpPage extends RX.Component{
                                                 />
                                             </FormGroup>
                                         </form>
+                                      
                                      
                 
                     </RX.Text>
@@ -480,14 +481,14 @@ export default class OtpPage extends RX.Component{
                     style={ [styles.button1, this.state.button1Hover && styles.button1Hover] }
                     onHoverStart={ () => { this.setState({ button1Hover: true }) } }
                     onHoverEnd={ () => { this.setState({ button1Hover: false }) } }
-                    onPress={this.props.onPressNavigate }
+                    onPress={()=> this.onChangePost() }
                 >
                     <RX.Text style={ [styles.button1Text, this.state.button1Hover && styles.button1TextHover] }>
                         { 'Next' }
                     </RX.Text>
                 </RX.Button>
                 </RX.View>
-                <Row className="show-grid">
+                {/* <Row className="show-grid">
                                         <Col  md={6}>
                                             <RX.Button bsStyle="primary"  onPress={()=> this.onChangePost() }>Post</RX.Button>
                                         </Col>
@@ -496,7 +497,7 @@ export default class OtpPage extends RX.Component{
                                         </Col>
 
                                     </Row>
-                
+                 */}
             </RX.ScrollView>
 
         );
