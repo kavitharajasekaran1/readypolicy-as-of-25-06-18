@@ -44,6 +44,24 @@ const styles = {
         backgroundColor:'#9ca4ab;'
 
     }),
+    CONTAINER: RX.Styles.createViewStyle({
+        marginTop:300,
+        justifyContent: 'center',
+        position: 'absolute',
+        display: 'flex',
+        flexdirection: 'column',
+        flexgrow: 1,
+        flexshrink: 1,
+        overflow: 'hidden',
+        alignitems: 'stretch',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        top: 0,
+        backgroundColor:'#9ca4ab;'
+
+    }),
+    
     
     helloWorld: RX.Styles.createTextStyle({
         fontSize: 48,
@@ -215,14 +233,30 @@ export default class MainPanel extends RX.Component{
             fluidalt="Responsive Image"
             style={[styles.backgroundImage]}
         >
+                   <marquee Height="200px" direction= "right" scrollamount="30">
+
+   
+
+<img src="./src/img/CAR.png"/>
+
+
+
+
+</marquee>
+
                <RX.View style={ styles.container }>
                 <RX.Text style={ styles.welcome }>
                
                         <RX.Image source={ './src/img/Logo.svg' } style={ [styles.image] } />
                        
                     </RX.Text>
-                                       <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
-                    <RX.Button
+                                       <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text>
+                                      <RX.View style={ styles.CONTAINER }>
+                                        <marquee Height="200px" direction= "right" scrollamount="30"> 
+<img src="./src/img/BiKe.png"/>
+</marquee> 
+</RX.View>
+                 <RX.Button 
                     style={ [styles.button1, this.state.button1Hover && styles.button1Hover] }
                     onHoverStart={ () => { this.setState({ button1Hover: true }) } }
                     onHoverEnd={ () => { this.setState({ button1Hover: false }) } }

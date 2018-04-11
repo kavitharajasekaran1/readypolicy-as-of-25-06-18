@@ -265,9 +265,12 @@ export default class QuotesSelection  extends RX.Component {
                 secondParam: 'yourOtherValue',*/
             
     }
-
+    onChangePostt(){
+        console.log("navigate",token)
+        this.props.onNavigateNinety(resJson,liability,message,quoteid,premium,odpremium,token); 
+    }
     render() {
-        resJson = this.props.navigatorRoute.resJson
+     resJson = this.props.navigatorRoute.resJson
      liability = this.props.navigatorRoute.liability
      message = this.props.navigatorRoute.message
      quoteid = this.props.navigatorRoute.quoteid
@@ -286,7 +289,7 @@ export default class QuotesSelection  extends RX.Component {
         return (
             <RX.ScrollView style={ _styles.scroll }>
             <RX.View style={ styling.container }>
-            <RX.Button  onPress={ this.props.onNavigateNinety}><RX.Image
+            <RX.Button onPress={()=> this.onChangePostt()}><RX.Image
                      style={_styles.HomeScrollImageLogo}
                      source={'./src/img/Back.svg'}/>
                 <RX.Text style={ styling.welcome }>Quote Details</RX.Text>

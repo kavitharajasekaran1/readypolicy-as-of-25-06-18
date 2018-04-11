@@ -278,6 +278,10 @@ export default class PaymentScreen extends RX.Component{
             ]
         });
     }
+    onChangePost() {
+        this.props. onNavigatePayment(token);
+    
+    }
 
     componentDidMount() {
         let animation = RX.Animated.timing(this._translationValue, {
@@ -289,7 +293,7 @@ export default class PaymentScreen extends RX.Component{
 
         animation.start();
     }
-
+   
 
     render() {
         token = this.props.navigatorRoute.token
@@ -385,11 +389,10 @@ export default class PaymentScreen extends RX.Component{
                     </RX.Text>
                     </RX.View>
                    
-                    <RX.Button style={ styles.Button }>
-                        <RX.Link style={ styles.buttonText }  url={ 'https://www.royalsundaram.net/web/test/makepayment?quoteId=QVMN0011943' }>
-                            After selecting please click here to proceed
-                        </RX.Link>
-                    </RX.Button>
+                    <RX.Button style={ styles.Button }  onPress={()=> this.onChangePost() }>After selecting please click here to proceed</RX.Button>
+                        {/* <RX.Link style={ styles.buttonText }  url={ 'https://www.royalsundaram.net/web/test/makepayment?quoteId=QVMN0011943' }> */}
+                           
+                        {/* </RX.Link> */}
                        
             </RX.ScrollView>
             </RX.ScrollView>

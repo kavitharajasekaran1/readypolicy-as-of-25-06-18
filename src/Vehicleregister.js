@@ -5,598 +5,639 @@
 import React from 'react';
 import RX from 'reactxp';
 import styling from './AppStyles';
-import Rest from './RestConfig';
-import QuotesSelection from './QuotesSelection';
-import { Navigator } from 'reactxp-navigation';
-import DatePicker from 'react-datepicker';
-import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,StyleSheet,FormControl,minDate,maxDate,HelpBlock,DateTimeField,Checkbox} from 'react-bootstrap';
 import Button from 'react-bootstrap/lib/Button';
-import moment from 'moment';
-
+import ToggleSwitch from './ToggleSwitch';
 
 /*const {
     Welcome
 } = TodoStyles;*/
-const _styles = {
+const styles = {
     scroll: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
-        backgroundColor: '#ffffff'
+        backgroundColor: '#c4c3c7'
+    }),
+    container: RX.Styles.createViewStyle({
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor:'#1a153b',
+        padding:5
+    }),
+    Container: RX.Styles.createViewStyle({
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor:'#c4c3c7',
+        padding:5
+    }),
+    welcome: RX.Styles.createScrollViewStyle({
+        top: 5,
+        fontSize: 25,
+        color: 'white',
+        textAlign:'center',
+     margintop:95
+
+    }),
+    Welcome: RX.Styles.createTextStyle({
+        fontSize: 38,
+        color: 'Black',
+        alignItems: 'center'
+    }),
+    sideHead: RX.Styles.createScrollViewStyle({
+        fontSize: 18,
+        color: '#3e376d',
+        textTransform:'capitalize',
+        marginLeft:54,
+        marginTop:41
+    }),
+    
+    SideHead: RX.Styles.createScrollViewStyle({
+        fontSize: 20,
+        color: '#3e376d',
+        textTransform:'capitalize',
+        marginLeft:389,
+        marginTop:51
+    }),
+    quotes: RX.Styles.createScrollViewStyle({
+        fontSize: 15,
+        color: '#101010',
+        textTransform:'capitalize',
+        backgroundColor:"#c7c7c7",
+        marginTop:41,
+        height:41,
+        width:169,
+        padding:4,
+        marginLeft:71
+    }),
+    quoted: RX.Styles.createScrollViewStyle({
+        fontSize: 15,
+        color: '#101010',
+        textTransform:'capitalize',
+        backgroundColor:"#c7c7c7",
+        marginTop:41,
+        height:41,
+        width:169,
+        padding:4,
+        marginLeft:92
+    }),
+    subQuotes: RX.Styles.createScrollViewStyle({
+        fontSize: 15,
+        color: '#101010',
+        textTransform:'capitalize',
+        backgroundColor:"#c7c7c7",
+        marginTop:41,
+        height:41,
+        width:169
+
+    }),
+    ncb: RX.Styles.createScrollViewStyle({
+        fontSize: 18,
+        color: '#101010',
+        textTransform:'capitalize',
+        backgroundColor:"white",
+        marginTop:41,
+        alignItems:'left',
+        height:41,
+        padding:4,
+        marginLeft:62
+    }),
+    Ncb: RX.Styles.createScrollViewStyle({
+        fontSize: 18,
+        color: '#101010',
+        textTransform:'capitalize',
+        backgroundColor:"white",
+        marginTop:41,
+        alignItems:'left',
+        height:41,
+        padding:4,
+        marginLeft:592
+    }),
+    subNcb: RX.Styles.createScrollViewStyle({
+        fontSize: 15,
+        color: '#101010',
+        textTransform:'capitalize',
+        backgroundColor:"#c7c7c7",
+        marginTop:41,
+        alignItems:'left',
+        height:41
+    }),
+    tryHead: RX.Styles.createScrollViewStyle({
+        fontSize: 15,
+        color: '#3e376d',
+        textTransform:'capitalize'
+    }),
+    TryHead: RX.Styles.createScrollViewStyle({
+        fontSize: 15,
+        color: 'RED',
+        marginTop: 'auto',
+        textTransform:'capitalize'
+    }),
+    
+    
+        
+    client: RX.Styles.createViewStyle({
+        justifyContent: 'center',
+        alignItems: 'left',
+        backgroundColor:'#ffffff',
+        padding:5,
+        flex:1,
+        flexDirection:'row',
+        borderBottomWidth:1,
+        borderColor:"#cccccc"
+    }),
+    Client: RX.Styles.createViewStyle({
+        justifyContent: 'center',
+        alignItems: 'left',
+        backgroundColor:'#ffffff',
+        padding:5,
+        flex:1,
+        flexDirection:'row',
+        borderBottomWidth:1,
+        borderColor:"#cccccc"
+    }),
+    btn: RX.Styles.createViewStyle({
+        justifyContent: 'left',
+        alignItems: 'left',
+        backgroundColor:'#ffffff',
+        padding:5,
+        flex:1,
+        flexDirection:'row'
+    }),
+    nextBtn: RX.Styles.createViewStyle({
+        marginTop:30,
+        marginLeft:62
+    }),
+    titleText: RX.Styles.createTextStyle({
+        fontSize: 16,
+        textAlign: 'center',
+        marginTop: 12,
+        color: 'black'
+    }),
+    videoTitleText: RX.Styles.createTextStyle({
+        marginBottom: 8
+    }),
+    progressMargin: RX.Styles.createViewStyle({
+        margin: 8
+    }),
+    video: RX.Styles.createViewStyle({
+        height: 176,
+        width: 320
     }),
     roundButton: RX.Styles.createViewStyle({
         margin: 16,
+        borderRadius: 5,
+        backgroundColor: '#2ecc71'
+    }),
+    buyButton: RX.Styles.createViewStyle({
+        margin: 16,
         borderRadius: 16,
-        backgroundColor: '#ff0000ab',
-        justifyContent: 'CENTER'
-        }),
-        read:RX.Styles.createScrollViewStyle({
-            borderRadius:15,
-            width:"100%",
-            marginLeft:20,
-            align:'center'
-        }),
+        backgroundColor: '#7d88a9'
+    }),
+    buttonText: RX.Styles.createTextStyle({
+        fontSize: 18,
+        marginVertical: 12,
+        marginHorizontal: 12,
+        color: 'black',
+        margin:30,
+        marginLeft: 474
         
-}
+    }),
+    buybuttonText: RX.Styles.createTextStyle({
+        fontSize: 16,
+        marginVertical: 6,
+        marginHorizontal: 12,
+        color: 'white',
+        justifyContent: 'center'
+    }),
+    image: RX.Styles.createViewStyle({
+        height: 100,
+        width: 150,
+        backgroundColor:'#FFFFFF',
+        marginTop:10
+    }),
+    flute: RX.Styles.createViewStyle({
+        justifyContent: 'center',
+        alignItems: 'left',
+        backgroundColor:'WHITE',
+        padding:13
+    }),
+    head: RX.Styles.createScrollViewStyle({
+        fontSize: 18,
+        color: '#3b3751',
+        textTransform:'capitalize',
+        marginLeft: 60
+    }),
+    pageAlign: RX.Styles.createScrollViewStyle({
+        backgroundColor: '#ffffff',
+        justifyContent:'center',
+        borderRadius: 5,
+        marginRight: 20,
+        marginLeft: 20
+
+    }),
+    Button: RX.Styles.createViewStyle({
+        margin: 16,
+        style: 'rounded square',
+        backgroundColor: '#80808000',
+        margin:30,
+        marginLeft:506
+    }),
+    radiobutton: RX.Styles.createViewStyle({
+        borderRadius: 10,
+
+    }),
+    buttoninside: RX.Styles.createViewStyle({
+        borderRadius: 10,
+        backgroundColor: '#cdcdcd'
+
+    }),
+    Radio: RX.Styles.createViewStyle({
+        borderRadius: 10,
+        backgroundColor: 'white',
+        marginLeft:1181,
+        marginTop:-22
+       }),
+};
 
 
 
-export default class Vehicleregister extends React.Component{
-    _navigator
+var token
+export default class PaymentScreen extends RX.Component{
     constructor(props) {
         super(props);
+        this._onChangeToggle = this._onChangeToggle.bind(this);
         this.state = {
-            value: null,
+            toggleValue: true,
+            progressValue: 0
         };
-        this.state = {
-            startDate: moment()
-          };
-          this.handlechange = this.handlechange.bind(this);
-        }
-    renderSquare(i) {
-        return <QuotesSelection value={i} />;
+        
+        this._translationValue = RX.Animated.createValue(-100);
+        this._animatedStyle = RX.Styles.createAnimatedTextStyle({
+            transform: [
+                {
+                    translateY: this._translationValue
+                }
+            ]
+        });
     }
 
-   
-    
+    componentDidMount() {
+        let animation = RX.Animated.timing(this._translationValue, {
+                toValue: 0,
+                easing: RX.Animated.Easing.OutBack(),
+                duration: 500
+            }
+        );
 
-
-    onChangeDummy = () => {
-        this.state = {
-            name: 'arun',
-            email:'arun.hossamani@rapidqube.com',
-            phone:'918369964582',
-            regAreaCode:'DL01AB1245',
-            previousPolicyExpiry:'15/11/2017',
-            registrationYear:'2010',
-            carModel:'maruti',
-            fuelType:'Petrol',
-            carVariant:'AC 4 SPEED(796CC)',
-            existingInsurer:'BAJAJ ALLIANCE'
-        };
-    }
-
-    onChangePost = () => {
-        let {
-            name='name',
-            phone='phone',
-            email='email',
-            regAreaCode='regAreaCode',
-            previousPolicyExpiry='previousPolicyExpiry',
-            registrationYear ='registrationYear',
-            carModel='carModel',
-            fuelType='fuelType',
-            carVariant='carVariant',
-            existingInsurer='existingInsurer',
-        } = this.state;
-        let status='new';
-        let _id='';
-        let password = "donkeybrains";
-        let usersPath = "motorfetchPolicyQuotes"
-        console.log(name,"name");
-        console.log(phone,"phone");
-        console.log(email,"email");
-        console.log(date,"date");
-        console.log(regAreaCode,"regAreaCode");
-        console.log(previousPolicyExpiry,"previousPolicyExpiry");
-        console.log(registrationYear,"registrationYear");
-        console.log(carModel,"carModel");
-        console.log(fuelType,"fuelType");
-        console.log(carVariant,"carVariant");
-        console.log(existingInsurer,"existingInsurer");
-        console.log(JSON.stringify({
-            status, _id, name, phone,email,regAreaCode,previousPolicyExpiry,registrationYear,carModel,fuelType,carVariant,existingInsurer
-            /*firstParam: 'yourValue',
-            secondParam: 'yourOtherValue',*/
-        }));
-// var res="data";
-        var res = {
-            items: [{
-                id: 0,
-                name: "Buy milk"
-            }, {
-                id: 1,
-                name: "Write unit tests"
-            }, {
-                id: 2,
-                name: "Cook a meal"
-            }]
-        }
-
-        this.props.onNavigateEight(res);
-
-      /*  console.log(Rest.ApiUrl,"RestApiUrl");
-        return fetch(`${Rest.ApiUrl}/${usersPath}`, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNWExYmFhNTYyYzZiOTEzNzYzMmM3ZWVjIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiJqWmFlNzI3SzA4S2FPbUtTZ09hR3p3dy9YVnFHci9QS0VnSU1ranJjYkpJPSIsInJhcGlkSUQiOiJCd2JNd0E2YjFIaEUxNC91TFdweVJXS3EzMytBVUJINnd6UjZtQzh0OUowPSIsInVzZXJPYmplY3QiOnsiZm5hbWUiOiJhcnVuIiwibG5hbWUiOiJob3NzYW1hbmkiLCJwaG9uZSI6IjkxODM2OTk2NDU4MiJ9LCJ1c2VydHlwZSI6IkRpcmVjdCBDbGllbnRzIiwib3RwIjoxMTAwLCJlbmNvZGVkTWFpbCI6IllYSjFiaTVvYjNOellXMWhibWxBY21Gd2FXUnhkV0psTG1OdmJRPT0iLCJjcmVhdGVkX2F0IjoiTW9uIE5vdiAyNyAyMDE3IDExOjMxOjU4IEdNVCswNTMwIChJU1QpIiwiY291bnQiOjAsIl9fdiI6MCwic3RhdHVzIjpbInBob25lIiwiZW1haWwiXX1dLCJpYXQiOjE1MTUwNTA3NDcsImV4cCI6MTUxNTExMDc0N30.xZ_K-mE7WfAszkFrGMATmm9EpCmtYgdOyydVL4HGPVk'
-            },
-            body: JSON.stringify({
-                status,_id,name, phone,email,regAreaCode,previousPolicyExpiry,registrationYear,carModel,fuelType,carVariant,existingInsurer
-
-            })
-        }).then((response) => response.json()).then((responseJson) => {
-            var res = responseJson.message;
-            console.log(res,"res");
-            this.props.onNavigateEight(res);
-        })*/
-    }
-
-    onChangeTextValue = (value) => {
-        this.setState({ inputValue: value });
-        console.log(this.state.inputValue,"inputValue");
-    }
-
-
-    onChangeName = (value) => {
-        const length = this.state.name.length;
-        console.log(length,"length");
-
-        console.log(this.state.name,"name");
-    }
-
-    validateEmail(value) {
-        let regex = /\w[-._\w]*@[-._\w]*\w\.\w{2,5}/;
-        if (regex.test(value) === true) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    getValidationState(name) {
-        console.log(this.state.name,"this.state.name");
-        // const length = this.state.name.length;
-        const value = this.state.name;
-        if (this.validateEmail(value)) return 'success';
-        else if (length > 5 && !this.validateEmail(value)) return 'warning';
-        else if (length > 2 && !this.validateEmail(value)) return 'error';
-        return null;
-    }
-
-    onChangePhone = (value) => {
-        this.setState({ phone: value });
-        console.log(this.state.phone,"phone");
-    }
-
-    onChangeEmail = (value) => {
-        this.setState({ email: value });
-        this.props.onUpdate(value);
-        console.log(this.state.email,"email");
-    }
-  onChangeArea = (value) => {
-        this.setState({ regAreaCode: value });
-        console.log(this.state.regAreaCode,"regAreaCode");
-    }
-
-    onChangePolicy = (value) => {
-        this.setState({ previousPolicyExpiry: value });
-        console.log(this.state.previousPolicyExpiry,"previousPolicyExpiry");
-    }
-
-
-    onChangeReg = (value) => {
-        this.setState({ registrationYear: value });
-        console.log(this.state.registrationYear,"registrationYear");
-    }
-
-    onChangeModel = (value) => {
-        this.setState({ carModel: value });
-        console.log(this.state.carModel,"model");
-    }
-
-    onChangeFuel = (value) => {
-        this.setState({ fuelType: value });
-        console.log(this.state.fuelType,"fuelType");
-    }
-
-    onChangeCar = (value) => {
-        this.setState({ carVariant: value });
-        console.log(this.state.carVariant,"carVariant");
-    }
-
-    onChangeInsurer = (value) => {
-        this.setState({ existingInsurer: value });
-        console.log(this.state.existingInsurer,"existingInsurer");
-    }
-
-    onChangeRestValue = (value) => {
-        this.setState({ testValue: value });
-        console.log(this.state.testValue,"testValue");
+        animation.start();
     }
 
 
     render() {
-        // this.props.onNavigateSixth(function(res) { return (res); })
-        // this.props.QuotesSelection
-       
-
-
+        token = this.props.navigatorRoute.token
+        console.log(token,"token")
         return (
-            <RX.ScrollView style={ _styles.scroll }>
+            <RX.ScrollView style={ styles.scroll }>
                 <RX.View style={ styling.container }>
-                <RX.Button  onPress={ this.props.onNavigateSuper }><RX.Image
-                             style={_styles.HomeScrollImageLogo}
-                             source={'./src/img/Back.svg'}/>
-                        <RX.Text style={styling.welcome }>
-                        New Car Insurance
-                    </RX.Text>
-                       </RX.Button>
-                   
-                    {/*<RX.Button style={ Button } this._onChangeVaronPress={ this.props.onNavigateThirteen }>
-                        <RX.Text style={ styling.buttonText }>
-                            Go Back
-                        </RX.Text>
-                    </RX.Button>*/}
-                </RX.View>
-                <Grid>
-                    {/*<Row className="show-grid">
-                        <Col  md={2}></Col>
-                        <Col md={4} style={styling.marTop10}>
-                            <RX.Button   onPress={()=> this.onChangePost() }>Submit</RX.Button>
-                            <Button  style={styling.btnMaxWidth} bsStyle="primary">Next</Button>
-
-                        </Col>
-                        <Col md={4} style={styling.marTop10}>
-                            <RX.Button   onPress={()=> this.onChangePost() }>Submit</RX.Button>
-                            <Button  style={styling.btnMaxWidth} bsStyle="primary">Next</Button>
-
-                        </Col>
-                        <Col  md={6} style={styling.marTop}>
-                                            <RX.Button onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
-                                            <RX.Button style={styling.button} onPress={ this.props.onNavigateEleven }>
-                                                try
-                                            </RX.Button>
-
-                                        </Col>
-                    </Row>*/}
-
-                    <Row className="clearfix" >
-                        <Col  md={8}></Col>
-                        <Col  md={8}>
-                        <div class="container">
-                        <div class="btn-pref btn-group btn-group-justified btn-group-sm" role="group" style={styling.sideMar}aria-label="...">
-        <div class="btn-group" role="group">
-            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <div class="hidden-xs">New</div>
-            </button>
-        </div>
-        <div class="btn-group" role="group"  style={styling.sideMar}  >
-            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                <div class="hidden-xs">Renew</div>
-            </button>
-        </div>
-        </div>
-        </div>
+                    <RX.Text style={styles.welcome }>
                     
-                            <Tabs defaultActiveKey={1} style={_styles.read} id="left-tabs-example">
-                                <Tab eventKey={1} style={_styles.read}title="New" className="myClass">
-                                
-                                    {/*<code>&lt;{'Col xs={12} md={8}'} /&gt;</code>*/}
-                                    <RX.View style={styling.sideMar}>
-                                    <RX.Text style={ styling.sideText}>
-                                            Vehicle Details
-                                        </RX.Text>
-                                        </RX.View>
+                    <RX.Button style={ styles.Button }>
+                        <RX.Link style={ styles.buttonText }  url={ 'https://www.royalsundaram.net/web/test/makepayment?quoteId=QVMN0011943' }>
+                            After selecting please click here to proceed
+                        </RX.Link>
+                    </RX.Button>
+                    </RX.Text>
 
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText}>
-                                            Registration No
-                                        </RX.Text>
-                                        <form>
-                                            <FormGroup
-                                                controlId="formBasicText"
-                                                validationState={this.getValidationState()}
-                                            >
-                                                {/*<FormControl/>*/}
-                                                <RX.TextInput
-                                                    controlId="formBasicText"
-                                                    type="email"
-                                                    style={styling.Form}
-                                                    placeholder="Enter Registration No"
-                                                    value={ this.state.name }
-                                                    onChangeText={this.onChangeName}
-                                                    // defaultValue={ this.state.inputValue }
-                                                />
-                                                <FormControl.Feedback/>
-                                            </FormGroup>
-                                        </form>
-                                    </RX.View>
+                    </RX.View>
+                    <RX.View style={ styles.client }>
+                        <RX.Image source={ './src/img/royal.jpg' } style={ [styles.image] } />
+                        <div style={styles.TryHead}>View Details</div>
 
-                                    {/*<RX.View style={styling.sideMar}>*/}
-                                        {/*<RX.Text style={ styling.sideText }>*/}
-                                            {/*Vehicle Model*/}
-                                        {/*</RX.Text>*/}
-                                        {/*<form>*/}
-                                            {/*<RX.TextInput*/}
-                                                {/*style={styling.Form}*/}
-                                                {/*placeholder="Model"*/}
-                                                {/*value={ this.state.carModel }*/}
-                                                {/*onChangeText={this.onChangeModel}*/}
-                                                {/*// defaultValue={ this.state.inputValue }*/}
-                                            {/*/>*/}
-                                        {/*</form>*/}
-                                    {/*</RX.View>*/}
-
-                                   {/* <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                            Fuel Type
-                                        </RX.Text>
-                                        <form>
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Fuel Type"
-                                                value={ this.state.fuelType }
-                                                onChangeText={this.onChangeFuel}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                        </form>
-                                    </RX.View>*/}
-
-                                    {/*<RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                            Car Variant
-                                        </RX.Text>
-                                        <form>
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Car Variant"
-                                                value={ this.state.carVariant }
-                                                onChangeText={this.onChangeCar}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                        </form>
-                                    </RX.View>*/}
-
-                                    {/*<RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                            Previous Insurer
-                                        </RX.Text>
-                                        <form>
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Car Variant"
-                                                value={ this.state.existingInsurer }
-                                                onChangeText={this.onChangeInsurer}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                        </form>
-                                    </RX.View>*/}
-                                   {/* <Row className="show-grid">
-                                        <Col  md={6} style={styling.marTop}>
-                                            <RX.Button   onPress={()=> this.onChangePost() }>Submit</RX.Button>
-                                        </Col>
-                                        <Col  md={6} style={styling.marTop}>
-                                            <RX.Button onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
-                                            <RX.Button style={styling.button} onPress={ this.props.onNavigateEleven }>
-                                                try
-                                            </RX.Button>
-
-                                        </Col>
-                                    </Row>*/}
-
-                                    <Row className="show-grid">
-                                        <Col md={12} style={styling.marTop10}>
-                                            {/*<RX.Button   onPress={()=> this.onChangePost() }>Submit</RX.Button>*/}
-                                            <Button  style={styling.btnMaxWidth} bsStyle="primary">Next</Button>
-
-                                        </Col>
-                                        {/*<Col  md={6} style={styling.marTop}>
-                                            <RX.Button onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
-                                            <RX.Button style={styling.button} onPress={ this.props.onNavigateEleven }>
-                                                try
-                                            </RX.Button>
-
-                                        </Col>*/}
-                                    </Row>
-
-                                </Tab>
-                                <Tab eventKey={2} style={_styles.read}  title="Renew">
-                                <RX.View style={styling.sideMar}>
-                                    <RX.Text style={ styling.sideText}>
-                                            Vehicle Details
-                                        </RX.Text>
-                                        </RX.View>
-                                    <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText}>
-                                            Registration No
-                                        </RX.Text>
-                                        <form>
-                                            <FormGroup
-                                                controlId="formBasicText"
-                                                validationState={this.getValidationState()}
-                                            >
-                                                {/*<FormControl/>*/}
-                                                <RX.TextInput
-                                                    controlId="formBasicText"
-                                                    type="email"
-                                                    style={styling.Form}
-                                                    placeholder="Enter Registration No"
-                                                    value={ this.state.name }
-                                                    onChangeText={this.onChangeName}
-                                                    // defaultValue={ this.state.inputValue }
-                                                />
-                                                <FormControl.Feedback/>
-                                            </FormGroup>
-                                        </form>
-                                    </RX.View>
-
-                                    
-                                    {/*<RX.View style={styling.sideMar}>*/}
-                                    {/*<RX.Text style={ styling.sideText }>*/}
-                                    {/*Vehicle Model*/}
-                                    {/*</RX.Text>*/}
-                                    {/*<form>*/}
-                                    {/*<RX.TextInput*/}
-                                    {/*style={styling.Form}*/}
-                                    {/*placeholder="Model"*/}
-                                    {/*value={ this.state.carModel }*/}
-                                    {/*onChangeText={this.onChangeModel}*/}
-                                    {/*// defaultValue={ this.state.inputValue }*/}
-                                    {/*/>*/}
-                                    {/*</form>*/}
-                                    {/*</RX.View>*/}
-
-                                    {/* <RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                            Fuel Type
-                                        </RX.Text>
-                                        <form>
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Fuel Type"
-                                                value={ this.state.fuelType }
-                                                onChangeText={this.onChangeFuel}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                        </form>
-                                    </RX.View>*/}
-
-                                    {/*<RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                            Car Variant
-                                        </RX.Text>
-                                        <form>
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Car Variant"
-                                                value={ this.state.carVariant }
-                                                onChangeText={this.onChangeCar}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                        </form>
-                                    </RX.View>*/}
-
-                                    {/*<RX.View style={styling.sideMar}>
-                                        <RX.Text style={ styling.sideText }>
-                                            Previous Insurer
-                                        </RX.Text>
-                                        <form>
-                                            <RX.TextInput
-                                                style={styling.Form}
-                                                placeholder="Car Variant"
-                                                value={ this.state.existingInsurer }
-                                                onChangeText={this.onChangeInsurer}
-                                                // defaultValue={ this.state.inputValue }
-                                            />
-                                        </form>
-                                    </RX.View>*/}
-                                    {/* <Row className="show-grid">
-                                        <Col  md={6} style={styling.marTop}>
-                                            <RX.Button   onPress={()=> this.onChangePost() }>Submit</RX.Button>
-                                        </Col>
-                                        <Col  md={6} style={styling.marTop}>
-                                            <RX.Button onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
-                                            <RX.Button style={styling.button} onPress={ this.props.onNavigateEleven }>
-                                                try
-                                            </RX.Button>
-
-                                        </Col>
-                                    </Row>*/}
-
-                                    <Row className="show-grid">
-                                        <Col md={12} style={styling.marTop10}>
-                                            {/*<RX.Button   onPress={()=> this.onChangePost() }>Submit</RX.Button>*/}
-                                            <Button  style={styling.btnMaxWidth} bsStyle="primary">Next</Button>
-                                            <RX.Button bsStyle="info" onPress={()=> this._onChangeVar() }>Primary</RX.Button>
-           <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigatefont}>
-        <RX.Text style={ _styles.buttonText }>
-       NEXT
-        </RX.Text>
-        </RX.Button>
-
-                                        </Col>
-                                        {/*<Col  md={6} style={styling.marTop}>
-                                            <RX.Button onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
-                                            <RX.Button style={styling.button} onPress={ this.props.onNavigateEleven }>
-                                                try
-                                            </RX.Button>
-
-                                        </Col>*/}
-                                    </Row>
-
-
-                                </Tab>
-                            </Tabs>
-                        </Col>
-                    </Row>
-                </Grid>
-
-                {/*<RX.Text style={styling.Text }>
-                    {this.state.joke}
-                </RX.Text>*/}
-                {/*<form>
-                    <FormGroup
-                        controlId="formBasicText"
-
-                    >
-                        <ControlLabel>Input</ControlLabel>
-                        <RX.TextInput
-                            type="text"
-                            placeholder="Enter text"
-                            value={ this.state.Model }
-                            onChange={this.handleChange}
-                        />
-                        <FormControl.Feedback />
-                    </FormGroup>
-                </form>*/}
-
-
-                {/*
-                <RX.Button bsStyle="danger" onPress={()=> this._onChangeVar() }>Primary</RX.Button>
-*/}
+                        <RX.Text style={ styles.sideHead }>
+                            Royal Sundaram
+                            <div style={styles.tryHead}>IDV: Rs.1,25,300</div>
+                        </RX.Text>
+                        <RX.Text style={ styles.ncb }>
+                            Rs. 21,900
+                               </RX.Text>
+                      </RX.View>
+                      <RX.ScrollView style={ styles.scroll }>
+                <RX.View style={ styles.Container }>
+                    <RX.Text style={styles.Welcome }>
+                        Select Payment Method
+                    </RX.Text>
+                    </RX.View>
+                    <RX.View style={ styles.pageAlign }>
+                    <RX.View style={ styles.flute }>
+                        <RX.Text style={ styles.head }>
+                            Credit/Debit/AtmCard
+                            </RX.Text>
+                            <RX.View style={ styles.Radio}> <input type="radio"
+                             value="radio1"
+                              name="radioGroup"
+                               onClick={this.addFunction} />  
+                               </RX.View>       
+                    </RX.View>
+                    </RX.View>
+                    <RX.View style={ styles.Container }>
+                    <RX.Text style={styles.Welcome }>
+                    </RX.Text>
+                    </RX.View>
+                    <RX.View style={ styles.pageAlign }>
+                    <RX.View style={ styles.flute }>
+                        <RX.Text style={ styles.head }>
+                            Internet Banking
+                            </RX.Text>
+                            <RX.View  style={ styles.Radio}> <input type="radio"
+                             value="radio2"
+                              name="radioGroup"
+                               onClick={this.addFunction} />  
+                               </RX.View>       
+                    </RX.View>
+                    </RX.View>
+                    <RX.View style={ styles.Container }>
+                    <RX.Text style={styles.Welcome }>
+                    </RX.Text>
+                    </RX.View>
+                    <RX.View style={ styles.pageAlign }>
+                    <RX.View style={ styles.flute }>
+                        <RX.Text style={ styles.head }>
+                            UPI
+                            </RX.Text>
+                            <RX.View style={ styles.Radio}> <input type="radio"
+                             value="radio3"
+                              name="radioGroup"
+                               onClick={this.addFunction} />  
+                               </RX.View>       
+                    </RX.View>
+                    </RX.View>
+                    <RX.View style={ styles.Container }>
+                    <RX.Text style={styles.Welcome }>
+                    </RX.Text>
+                    </RX.View>
+                    <RX.View style={ styles.pageAlign }>
+                    <RX.View style={ styles.flute }>
+                        <RX.Text style={ styles.head }>
+                           Wallets
+                           </RX.Text> 
+                            <RX.View style={ styles.Radio}> <input type="radio"
+                             value="radio1"
+                              name="radioGroup"
+                               onClick={this.addFunction} />  
+                               </RX.View>      
+                    </RX.View>
+                    </RX.View>
+                    <RX.View style={ styles.Container }>
+                    <RX.Text style={styles.Welcome }>
+                    </RX.Text>
+                    </RX.View>
+                   
+                    <RX.Button style={ styles.Button }>
+                        <RX.Link style={ styles.buttonText }  >
+                            After selecting please click here to proceed
+                        </RX.Link>
+                    </RX.Button>
+                       
+            </RX.ScrollView>
             </RX.ScrollView>
 
         );
     }
 
-
-    _onChangeReg = () => {
-        this.setState({ Model: this.state.Model });
-    }
-
-    handleChange() {
-        this.setState({ Model:'' });
-    }
-    handlechange(date) {
-        this.setState({
-          startDate: date
-        });
-
-      }
-      handleSelect(date) {
-        this.setState({
-          startDate: date
-        });
-      }
-      
-
-    _onChangeText = (newText) => {
-        this.setState({ password: newText });
-    }
-
-    _onChangeTest = (newText) => {
-        this.setState({ password: newText });
-    }
-    
+_onChangeToggle(newValue) {
+    this.setState({toggleValue: newValue});
 }
+}
+// travel
+/*
+ * This file demonstrates a basic ReactXP app.
+ */
+
+// import React from 'react';
+// import RX from 'reactxp';
+// import styling from './AppStyles';
+// import Rest from './RestConfig';
+// import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,DateTimeField} from 'react-bootstrap';
+// import Button from 'react-bootstrap/lib/Button';
+
+// /*const {
+//     Welcome
+// } = TodoStyles;*/
+// const _styles = {
+//     scroll: RX.Styles.createScrollViewStyle({
+//         alignSelf: 'stretch',
+//         backgroundColor: '#ffffff'
+//     }),
+// };
+
+
+
+// export default class TravelInsuranceReg extends React.Component{
+//     constructor(props) {
+//         super(props);
+
+//         this.state = {
+//             inputValue: '',
+//             testValue:''
+//         };
+//     }
+
+//     onChangePost = () => {
+//         let {
+//             testValue = 'testValue'
+//         } = this.state;
+
+//         let email = "joe@example.com";
+//         let password = "donkeybrains";
+//         let myApiUrl = "http://www.example.com/api"
+//         let usersPath = "users"
+//         console.log(testValue,"testValue");
+//         console.log(password,"password");
+//         console.log(Rest.ApiUrl,"RestApiUrl");
+//         fetch(`${Rest.ApiUrl}/${usersPath}`, {
+//             method: 'POST',
+//             headers: {
+//                 'Accept': 'application/json',
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify({
+//                 user: {email, password}
+//                 /*firstParam: 'yourValue',
+//                 secondParam: 'yourOtherValue',*/
+//             })
+//         });
+//     }
+
+//     onChangeTextValue = (value) => {
+//         this.setState({ inputValue: value });
+//         console.log(this.state.inputValue,"inputValue");
+//     }
+
+
+//     onChangeRestValue = (value) => {
+//         this.setState({ testValue: value });
+//         console.log(this.state.testValue,"testValue");
+//     }
+//     render() {
+//         return (
+//             <RX.ScrollView style={ _styles.scroll }>
+//                 <RX.View style={ styling.container }>
+//                     <RX.Text style={styling.welcome }>
+//                         New Travel Insurance
+//                     </RX.Text>
+//                     {/*<RX.Button style={ Button } this._onChangeVaronPress={ this.props.onNavigateThirteen }>
+//                         <RX.Text style={ styling.buttonText }>
+//                             Go Back
+//                         </RX.Text>
+//                     </RX.Button>*/}
+//                 </RX.View>
+//                 <Grid>
+//                     <Row className="show-grid">
+//                         <Col  md={2}></Col>
+//                         <Col  md={8}>
+//                             <Tabs defaultActiveKey={1} id="tab">
+//                                 <Tab eventKey={1} title="Self" className="myClass">
+//                                     {/*<code>&lt;{'Col xs={12} md={8}'} /&gt;</code>*/}
+//                                     <RX.View style={styling.sideMar}>
+//                                         <RX.Text style={ styling.sideText }>
+//                                             Travelling Start Date
+//                                         </RX.Text>
+//                                         <form>
+//                                             <RX.TextInput
+//                                                 style={styling.Form}
+//                                                 placeholder="Start Date"
+//                                                 value={ this.state.testValue }
+//                                                 onChangeText={this.onChangeRestValue}
+//                                                 // defaultValue={ this.state.inputValue }
+//                                             />
+
+//                                         </form>
+//                                     </RX.View>
+
+//                                     <RX.View style={styling.sideMar}>
+//                                         <RX.Text style={ styling.sideText }>
+//                                             Travelling End Date
+//                                         </RX.Text>
+//                                         <form>
+//                                         <RX.TextInput
+//                                             style={styling.Form}
+//                                             placeholder="End Date"
+//                                             value={ this.state.inputValue }
+//                                             onChangeText={this.onChangeTextValue}
+//                                             // defaultValue={ this.state.inputValue }
+//                                         />
+//                                         </form>
+//                                     </RX.View>
+//                                      {/* <RX.View>
+//                                         <RX.TextInput
+//                                             placeholder="Placeholder"
+//                                             value={ this.state.testValue }
+//                                             onChangeText={this.onChangeRestValue}
+//                                             // defaultValue={ this.state.inputValue }
+//                                         />
+
+//                                     </RX.View>*/}
+
+//                                     <RX.View style={styling.sideMar}>
+//                                         <RX.Text style={ styling.sideText }>
+//                                             Cover Amount
+//                                         </RX.Text>
+//                                         <form>
+//                                             <FormGroup
+//                                                 controlId="formBasicText"
+//                                             >
+//                                                 {/*<ControlLabel>Working example with validation</ControlLabel>*/}
+//                                                 <FormControl
+//                                                     type="text"
+//                                                     value={this.state.value}
+//                                                     placeholder="Enter Amount"
+//                                                 />
+//                                             </FormGroup>
+//                                         </form>
+//                                     </RX.View>
+
+//                                     <RX.View style={styling.sideMar}>
+//                                         <RX.Text style={ styling.sideText }>
+//                                             Country Travelling To
+//                                         </RX.Text>
+//                                         <form>
+//                                             <FormGroup controlId="formControlsSelect">
+//                                                 <FormControl componentClass="select" placeholder="select">
+//                                                     <option value="select">United States</option>
+//                                                     <option value="other">Australia</option>
+//                                                     <option value="other">India</option>
+//                                                 </FormControl>
+//                                             </FormGroup>
+//                                         </form>
+//                                     </RX.View>
+
+//                                     <RX.View style={styling.sideMar}>
+//                                         <RX.Text style={ styling.sideText }>
+//                                             Age of Traveller
+//                                         </RX.Text>
+//                                         <form>
+//                                             <FormGroup
+//                                                 controlId="formBasicText"
+//                                             >
+//                                                 {/*<ControlLabel>Working example with validation</ControlLabel>*/}
+//                                                 <FormControl
+//                                                     type="text"
+//                                                     value={this.state.value}
+//                                                     placeholder="Age"
+//                                                 />
+//                                             </FormGroup>
+//                                         </form>
+//                                         <Button bsStyle="primary"  onPress={()=> this.onChangePost() }>Post</Button>
+//                                     </RX.View>
+
+//                                 </Tab>
+//                                 <Tab eventKey={2} title="Group">Tab 2 content</Tab>
+//                             </Tabs>
+//                         </Col>
+//                     </Row>
+//             </Grid>
+
+//                 {/*<RX.Text style={styling.Text }>
+//                     {this.state.joke}
+//                 </RX.Text>*/}
+//                 {/*<form>
+//                     <FormGroup
+//                         controlId="formBasicText"
+
+//                     >
+//                         <ControlLabel>Input</ControlLabel>
+//                         <RX.TextInput
+//                             type="text"
+//                             placeholder="Enter text"
+//                             value={ this.state.Model }
+//                             onChange={this.handleChange}
+//                         />
+//                         <FormControl.Feedback />
+//                     </FormGroup>
+//                 </form>*/}
+
+
+// {/*
+//                 <RX.Button bsStyle="danger" onPress={()=> this._onChangeVar() }>Primary</RX.Button>
+// */}
+//             </RX.ScrollView>
+
+//         );
+//     }
+
+
+//     _onChangeReg = () => {
+//         this.setState({ Model: this.state.Model });
+//     }
+
+//     handleChange() {
+//         this.setState({ Model:'' });
+//     }
+
+//     _onChangeText = (newText) => {
+//         this.setState({ password: newText });
+//     }
+
+//     _onChangeTest = (newText) => {
+//         this.setState({ password: newText });
+//     }
+// }
+

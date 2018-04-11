@@ -102,9 +102,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '03/04/2018',
+                      policyStartDate: '11/04/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '03/04/2018',
+                      vehicleRegDate: '11/04/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -266,7 +266,10 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
 
         })
      }
-        
+     onChangePostt(){
+        console.log("navigate",token)
+        this.props.onNavigateSixth(resJson,liability,message,quoteid,premium,odpremium,token); 
+    }  
     onChangeTextValue = (value) => {
         this.setState({ inputValue: value });
         console.log(this.state.inputValue,"inputValue");
@@ -615,7 +618,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
         return (
             <RX.ScrollView style={ _styles.scroll }>
                 <RX.View style={ styling.container }>
-                <RX.Button  onPress={ this.props.onNavigateSixth }><RX.Image
+                <RX.Button  onPress={()=> this.onChangePostt()}><RX.Image
                              style={_styles.HomeScrollImageLogo}
                              source={'./src/img/Back.svg'}/>
                         <RX.Text style={styling.welcome }>

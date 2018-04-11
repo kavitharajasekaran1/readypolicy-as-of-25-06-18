@@ -49,6 +49,14 @@ const _styles = {
             marginLeft:-1200,
             marginTop:12
         }),
+        // loader:RX.Styles.createScrollViewStyle({
+        //     border: '16px solid #f3f3f3', /* Light grey */
+        //     bordertop: '16px solid #3498db', /* Blue */
+        //     borderradius: '50%',
+        //     width: '120px',
+        //     height: '120px',
+        //     animation: 'spin 2s linear infinite'
+        // }),
     
         
 }
@@ -98,9 +106,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '03/04/2018',
+                      policyStartDate: '10/04/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '03/04/2018',
+                      vehicleRegDate: '10/04/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -214,6 +222,7 @@ export default class VehicleDetails extends React.Component{
         var mypremium = this.props.navigatorRoute.mypremium
        token = this.props.navigatorRoute.token
         console.log(token,"token")
+
 
         return (
             <RX.ScrollView style={ _styles.scroll }>
@@ -350,6 +359,7 @@ export default class VehicleDetails extends React.Component{
                                    </div>          
                        
                 </Grid>
+                {/* <div class="loader" style={_styles.loader}></div> */}
 
                 {/*<RX.Text style={styling.Text }>
                     {this.state.joke}

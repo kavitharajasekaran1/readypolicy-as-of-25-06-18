@@ -560,7 +560,9 @@ export default class QuotesSelection  extends RX.Component {
 
     _startProgressIndicator() {
         this._progressTimerToken = window.setInterval(() =>{
-            const newProgressValue = (this.state.progressValue + 0.02) % 1;
+            const newProgressValue = (this.state.progressValue + 0.
+            
+            ) % 1;
             this.setState({progressValue: newProgressValue});
         }, 1000 / 15);
     }

@@ -122,7 +122,7 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.LoginPage,
+            routeId: NavigationRouteId.MainPanel,
             sceneConfigType: "Fade"
         }]);
     }
@@ -606,20 +606,13 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressEleven() {
-        // this._navigator.pop();
-        this._navigator.push({
-            routeId: NavigationRouteId.PaymentScreen,
-            sceneConfigType: "FloatFromRight",
-            customSceneConfig: {
-                hideShadow: true
-            }
-        });
-    }
-    _onPressPayment() {
+   
+    _onPressPayment(token) {
+        console.log("token",token)
         this._navigator.push({
             routeId: NavigationRouteId.TravelInsuranceReg,
             sceneConfigType: "FloatFromRight",
+            token:token,
             customSceneConfig: {
                 hideShadow: true
             }
@@ -702,7 +695,7 @@ export default class App extends RX.Component {
             sceneConfigType: "FloatFromRight",
             token:token,
             customSceneConfig: {
-                hideShadow: true  
+                hideShadow: true 
     }
 });
     }

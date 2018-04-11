@@ -193,6 +193,7 @@ export default class RegisterPage extends RX.Component{
 style={styles.remo}
             resizeMode="cover"
             source={'./src/img/Farmer.png'}> */}
+         
                 
             <RX.Image source={ './src/img/Logo.svg' } style={ [styles.IMage] }/>
             <RX.Text style={ styles.policy }></RX.Text> 
@@ -201,9 +202,11 @@ style={styles.remo}
             
               <RX.Text style={ styles.policy }>Plan your insurance on this platform and get RS 100 off your first policy</RX.Text> 
                 </RX.View>
+     
     
                 <div className="row"></div>
                 <div className="col-xs-4 col-sm-4 col-md-4"></div>
+
                 <RX.View style={styles.scrollBox}>
                      <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'auto'}}>
                      <RX.View style={{width: 100, height: 100, backgroundColor: 'white', marginTop:20,marginLeft:250}} >
@@ -214,7 +217,6 @@ style={styles.remo}
                         <RX.Text style={styles.scrollBoxText}>Car</RX.Text>
                       </RX.Button>
                      </RX.View>
-               
                      <div className="row"></div>
                 <div className="col-xs-4 col-sm-4 col-md-4"></div>
                      <RX.View style={styles.scrollBox}>

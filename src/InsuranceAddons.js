@@ -24,7 +24,7 @@ const _styles = {
     }),
     SCROLL: RX.Styles.createScrollViewStyle({
         alignSelf: 'stretch',
-        backgroundColor: '#52525636'
+        backgroundColor: '#2222c357'
     }),
     HomeScrollImageLogo: RX.Styles.createImageStyle({
         width:5000,
@@ -48,7 +48,7 @@ export default class InsuranceAddons extends RX.Component{
                 carRegisteredCity: '24PARGANAS',
                 vehicleManufacturerName: 'TVS',
                 vehicleModelCode: 'ZWTV310',
-                vehicleRegDate: '03/04/2018',
+                vehicleRegDate: '11/04/2018',
                 lastname: 'Rani',
             };
             this._translationValue = RX.Animated.createValue(-100);
@@ -121,9 +121,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "03/04/2018",
+                        policyStartDate: "11/04/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "03/04/2018",
+                        vehicleRegDate: "11/04/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",

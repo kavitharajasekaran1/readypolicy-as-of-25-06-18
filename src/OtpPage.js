@@ -247,13 +247,13 @@ const styles = {
 
     }),
     Form:RX.Styles.createViewStyle({
-        width: '25%',
+        width: '21%',
          float:'left',
           margin: '5px',
            backgroundcolor:  '#fff',
     }),
     Form1:RX.Styles.createViewStyle({
-        width: '25%',
+        width: '21%',
         float:'left',
          margin: '5px',
           backgroundcolor:  '#fff',
@@ -261,13 +261,21 @@ const styles = {
     }),
 
     Form2:RX.Styles.createViewStyle({
-        width: '25%',
+        width: '21%',
         float:'left',
          margin: '5px',
           backgroundcolor:  '#fff',
      
     }),
-   
+    // element:RX.Styles.createViewStyle({
+    //     width: '21%',
+    //     float:'left',
+    //      margin: '5px',
+    //      margintop: '4px',
+    //      marginleft: '-2px',
+    //       backgroundcolor:  '#fff',
+     
+    // }),
     textInput1: RX.Styles.createTextInputStyle({
         flex: 1,
         maxWidth: 200,
@@ -330,10 +338,9 @@ const styles = {
             color:'Red',
             justifyContent: 'center',
             position: 'absolute',
-            alignSelf: 'center',
             marginLeft: 1,
             marginTop:-48,
-            textAlign: 'center'
+           
             }),
 
         POlicy:RX.Styles.createTextStyle({
@@ -348,6 +355,13 @@ const styles = {
 
     
         }),
+       lock:RX.Styles.createTextStyle({
+            fontSize: 18,
+            color:'black',
+            width:55,
+          
+            }),
+    
     
 };
 var token
@@ -419,53 +433,20 @@ export default class OtpPage extends RX.Component{
          
                 <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
             <RX.Text style={styles.Policy}>Waiting to automatically detect an SMS to 9640266349.<RX.Text style={styles.POLICY}>WrongNumber?</RX.Text></RX.Text>
-            <RX.Text style={styles.POlicy}>       
+            <RX.Text style={styles.POlicy}>      
             <form>
-                                            <FormGroup
-                                                controlId="formBasicText"
-                                            >
-                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
-                                                <FormControl
-                                                    type="text"
-                                                    style={styles.Form}
-                                                    value={this.state.value}
-                                                    placeholder="00"
-                                                    secureTextEntry= {true}
-                                                />
-                                            </FormGroup>
-                                        </form>
-                                        <form>
-                                            <FormGroup
-                                                controlId="formBasicText"
-                                            >
-                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
-                                                <FormControl
-                                                    type="text"
-                                                    style={styles.Form1}
-                                                    value={this.state.value}
-                                                    placeholder="01"
-                                                    secureTextEntry= {true}
-                                                />
-                                            </FormGroup>
-                                        </form>
-                                        <form>
-                                            <FormGroup
-                                                controlId="formBasicText"
-                                            >
-                                                {/*<ControlLabel>Working example with validation</ControlLabel>*/}
-                                                <FormControl
-                                                    type="text"
-                                                    style={styles.Form2}
-                                                    value={this.state.value}
-                                                    placeholder="02"
-                                                    secureTextEntry= {true}
-                                                />
-                                            </FormGroup>
-                                        </form>
-                                      
-                                     
                 
-                    </RX.Text>
+                <input type="number" style={styles.lock} placeholder="01"/>
+              
+                 <input type="number" style={styles.lock}  placeholder="02"/>
+                 
+                 <input type="number" style={styles.lock} placeholder="03"/>
+              
+                 <input type="number" style={styles.lock} placeholder="04"/>
+                 s
+               
+              </form>        
+              </RX.Text>  
                     <RX.Text style={ styles.otp}>
                         Enter OTP code
                     </RX.Text>

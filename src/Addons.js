@@ -108,9 +108,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "03/04/2018",
+                        policyStartDate: "11/04/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "03/04/2018",
+                        vehicleRegDate: "11/04/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -216,7 +216,7 @@ console.log("hittinh.......")
                             <code style={styling.assitance}><Checkbox>24X7 Road Side Assistance</Checkbox></code>
                             <code style={styling.assitance}><Checkbox>Zero Depreciation</Checkbox></code>
                             <code style={styling.assitance}><Checkbox>Engine Protection Cover</Checkbox></code>
-                            <code style={styling.assitance}><Checkbox>NCB Protactor</Checkbox></code>
+                            <code style={styling.assitance}><Checkbox>NCB Protector</Checkbox></code>
                             <code style={styling.assitance}><Checkbox>Key and Lock Replacements</Checkbox></code>
                             <code style={styling.assitance}><Checkbox>Consumables</Checkbox></code>
                             <code style={styling.assitance}><Checkbox>External Accessories-Electrical</Checkbox></code>
@@ -225,7 +225,7 @@ console.log("hittinh.......")
                             <code style={styling.assitanceMob}><Checkbox>24X7 Road Side Assistance</Checkbox></code>
                             <code style={styling.assitanceMob}><Checkbox>Zero Depreciation</Checkbox></code>
                             <code style={styling.assitanceMob}><Checkbox>Engine Protection Cover</Checkbox></code>
-                            <code style={styling.assitanceMob}><Checkbox>NCB Protactor</Checkbox></code>
+                            <code style={styling.assitanceMob}><Checkbox>NCB Protector</Checkbox></code>
                             <code style={styling.assitanceMob}><Checkbox>Key and Lock Replacements</Checkbox></code>
                             <code style={styling.assitanceMob}><Checkbox>Consumables</Checkbox></code>
                             <code style={styling.assitanceMob}><Checkbox>External Accessories-Electrical</Checkbox></code>
