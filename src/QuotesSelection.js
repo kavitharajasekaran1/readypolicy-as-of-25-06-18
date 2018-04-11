@@ -398,7 +398,7 @@ export default class QuotesSelection  extends RX.Component {
     }
     onChangePost(){
         console.log("navigate",token)
-        this.props.onNavigateTen(token); 
+        this.props.onNavigateTen(resJson,liability,message,quoteid,premium,odpremium,token); 
     }
     componentWillUnmount() {
         this._stopProgressIndicator();

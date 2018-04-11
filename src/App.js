@@ -122,7 +122,7 @@ export default class App extends RX.Component {
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.LoginPage,
+            routeId: NavigationRouteId.MyPolicy,
             sceneConfigType: "Fade"
         }]);
     }
