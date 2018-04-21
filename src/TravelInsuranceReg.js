@@ -310,7 +310,7 @@ export default class PaymentScreen extends RX.Component{
 
                         <RX.Link style={ styles.buttonText }  url={ 'https://www.royalsundaram.net/web/test/makepayment?quoteId=QVMN0011943' }> */}
                            
-                        </RX.Link> */}
+                        </RX.Link> 
                        </RX.Text>
             </RX.ScrollView>
        

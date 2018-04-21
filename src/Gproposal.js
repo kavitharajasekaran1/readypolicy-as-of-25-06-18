@@ -40,7 +40,11 @@ const _styles = {
         }),
         SCROLL: RX.Styles.createScrollViewStyle({
             alignSelf: 'stretch',
-            backgroundColor: '#1a153b'
+            backgroundColor: '#2222c357',
+            marginTop:62,
+            width:1126,
+            justifyContent:'center'
+
         }),
         HomeScrollImageLogo: RX.Styles.createImageStyle({
             width:5000,
@@ -49,14 +53,22 @@ const _styles = {
             marginLeft:-1200,
             marginTop:12
         }),
-        // loader:RX.Styles.createScrollViewStyle({
-        //     border: '16px solid #f3f3f3', /* Light grey */
-        //     bordertop: '16px solid #3498db', /* Blue */
-        //     borderradius: '50%',
-        //     width: '120px',
-        //     height: '120px',
-        //     animation: 'spin 2s linear infinite'
-        // }),
+       Form:RX.Styles.createScrollViewStyle({
+                display: 'block',
+                 width: '80%',
+                 height: 34,
+                 // padding: 6px 12px;
+                  fontSize: 14,
+                // line: 1.42857143;
+                color: "#555",
+                backgroundColor: "white",
+                borderWidth:1,
+                borderColor:"#ccc",
+                borderRadius: 4,
+                marginLeft: 296,
+                textAlign: 'center'
+            
+        }),
     
         
 }
@@ -106,9 +118,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '11/04/2018',
+                      policyStartDate: '21/04/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '11/04/2018',
+                      vehicleRegDate: '21/04/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -225,6 +237,7 @@ export default class VehicleDetails extends React.Component{
 
 
         return (
+            
             <RX.ScrollView style={ _styles.scroll }>
             <RX.View style={ styling.container }>
             <RX.Button  onPress={ this.props.onNavigateSuper }><RX.Image
@@ -268,22 +281,24 @@ export default class VehicleDetails extends React.Component{
                                 <Tab eventKey={1} style={_styles.read}title="" className="myClass"> */}
                                 
                                     {/*<code>&lt;{'Col xs={12} md={8}'} /&gt;</code>*/}
-                                    <div class="jumbotron" >
+                                    <div class="jumbotron" style={ _styles.SCROLL}> 
                                     <RX.View style={styling.sideMar}>
                                         <RX.Text style={ styling.siDeText}>
                                             Quote ID
                                         </RX.Text>
                                         <form>
-
+                                        <div class="form-row">
+                                        <div class="form-group col-md-6">
                                             <RX.TextInput
                                                 type="Quote ID"
-                                                style={styling.Form}
+                                                style={ _styles.Form}
                                                 placeholder="Quote Id"
                                                 value={ quoteid }
                                                 onChangeText={this.onChangequoteid}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                              
+                                            </div>
+                                         </div>     
                                         </form>
                                     </RX.View>
                                     <RX.View style={styling.sideMar}>
@@ -291,16 +306,18 @@ export default class VehicleDetails extends React.Component{
                                             Premium 
                                         </RX.Text>
                                         <form>
-
+                                        <div class="form-row">
+    <div class="form-group col-md-6">
                                             <RX.TextInput
                                                 type="Premium"
-                                                style={styling.Form}
+                                                style={_styles.Form}
                                                 placeholder="Premium"
                                                 value={mypremium}
                                                 onChangeText={this.onChangepremium}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                              
+                                            </div>
+                                            </div>  
                                         </form>
                                     
                                         </RX.View>
@@ -312,16 +329,19 @@ export default class VehicleDetails extends React.Component{
                                             Email id
                                         </RX.Text>
                                         <form>
-                                       
+                                        <div class="form-row">
+    <div class="form-group col-md-6">
+                                        
 
                                             <RX.TextInput
-                                                style={styling.Form}
+                                                style={_styles.Form}
                                                 placeholder="Email id"
                                                 value={ this.state.emailId }
                                                 onChangeText={this.onChangeemailId}
                                                 // defaultValue={ this.state.inputValue }
                                             />
-                                            
+                                            </div>
+                                            </div>
                                         </form>
                                       
                                     </RX.View>

@@ -46,7 +46,7 @@ export default class InsuranceAddons extends RX.Component{
             carRegisteredCity: '24PARGANAS',
             vehicleManufacturerName: 'TVS',
             vehicleModelCode: 'ZWTV310',
-            vehicleRegDate: '11/04/2018',
+            vehicleRegDate: '21/04/2018',
             lastname: 'Rani',
         };
         this._translationValue = RX.Animated.createValue(-100);
@@ -92,7 +92,7 @@ console.log("hittinh.......")
                         contactAddress4: "North Street",
                         contactCity: "Chennai",
                         contactPincode: "600001",
-                        dateOfBirth: "12/08/1990",
+                        dateOfBirth: "21/08/1990",
                         guardianAge: "54",
                         guardianName: "tqzukzy",
                         nomineeAge: "13",
@@ -118,7 +118,7 @@ console.log("hittinh.......")
                         region: "South Region",
                         vehicleManufacturerName: "BMW",
                         vehicleModelCode: "CMB65",
-                        vehicleregDate: "11/04/2018",
+                        vehicleregDate: "21/04/2018",
                         idv: "3025465",
                         engineCapacityAmount: "1995 CC",
                         drivingExperience: "2",

@@ -389,11 +389,11 @@ export default class PaymentScreen extends RX.Component{
                     </RX.Text>
                     </RX.View>
                    
-                    <RX.Button style={ styles.Button }  onPress={()=> this.onChangePost() }>After selecting please click here to proceed</RX.Button>
-                        {/* <RX.Link style={ styles.buttonText }  url={ 'https://www.royalsundaram.net/web/test/makepayment?quoteId=QVMN0011943' }> */}
-                           
-                        {/* </RX.Link> */}
-                       
+                     <RX.Button style={ styles.Button } >
+                        <RX.Link style={ styles.buttonText }  url={ 'https://www.royalsundaram.net/web/test/makepayment?quoteId=QVMN0011943' }>
+                          After selecting please click here to proceed  
+                         </RX.Link>
+                         </RX.Button> 
             </RX.ScrollView>
             </RX.ScrollView>
 

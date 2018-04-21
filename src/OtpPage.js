@@ -443,7 +443,6 @@ export default class OtpPage extends RX.Component{
                  <input type="number" style={styles.lock} placeholder="03"/>
               
                  <input type="number" style={styles.lock} placeholder="04"/>
-                 s
                
               </form>        
               </RX.Text>  

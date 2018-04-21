@@ -48,7 +48,7 @@ export default class InsuranceAddons extends RX.Component{
                 carRegisteredCity: '24PARGANAS',
                 vehicleManufacturerName: 'TVS',
                 vehicleModelCode: 'ZWTV310',
-                vehicleRegDate: '11/04/2018',
+                vehicleRegDate: '21/04/2018',
                 lastname: 'Rani',
             };
             this._translationValue = RX.Animated.createValue(-100);
@@ -121,9 +121,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: "TVS",
                         idv: "65478",
-                        policyStartDate: "11/04/2018",
+                        policyStartDate: "21/04/2018",
                         vehicleMostlyDrivenOn: "City roads",
-                        vehicleRegDate: "11/04/2018",
+                        vehicleRegDate: "21/04/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -323,17 +323,11 @@ console.log("hittinh.......")
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4"  style={ styling.sideText }>Vehicle Register Date</label> 
-                                    
-                                        
-                                             <RX.TextInput
-                                                 style={styling.Form}
-                                                 placeholder="Vehicle register date"
-                                                 value={ this.state.vehicleRegDate }
-                                                 onChangeText={this.onChangevehicleRegDate }
-                                                 // defaultValue={ this.state.inputValue }
-                                             />
-                                          </div>  
-                                     
+      <div class="form-row">
+      
+                                    <input type="date" id="party"  style={ styling.Form } name="party"  min="2017-apr-01" max="2030-apr-20" required/>
+                                        </div>  
+                                     </div>
                                           <div class="form-group col-md-6">
       <label for="inputPassword4" style={ styling.sideText }>Vehicle Manufacturer Name</label>                                     
                                              <RX.TextInput
@@ -347,7 +341,7 @@ console.log("hittinh.......")
                                               </div>
                                               </form>
   <form>
-  <div class="form-row">
+ <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4" style={ styling.sideText }>Vehicle Model Code</label> 
                                     

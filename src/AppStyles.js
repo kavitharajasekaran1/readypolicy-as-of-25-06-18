@@ -263,7 +263,9 @@ module.exports = {
     siDeText:RX.Styles.createTextStyle({
         fontSize: 16,
         color: 'Black',
-        fontWeight:'bold'
+        fontWeight:'bold',
+        textAlign:'center',
+        justifyContent:'center'
 
     }),
     SIDETEXT:RX.Styles.createTextStyle({
@@ -495,7 +497,7 @@ module.exports = {
         borderWidth:1,
         borderColor:"#ccc",
         borderRadius: 4,
-        marginLeft:322,
+        marginLeft:444,
         marginTop:-8,
         padding:5
  
