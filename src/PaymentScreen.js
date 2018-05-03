@@ -375,7 +375,7 @@ export default class PaymentScreen extends RX.Component{
                     <RX.View style={ styles.pageAlign }>
                     <RX.View style={ styles.flute }>
                         <RX.Text style={ styles.head }>
-                           Wallets
+                           wallets
                            </RX.Text> 
                             <RX.View style={ styles.Radio}> <input type="radio"
                              value="radio1"
@@ -391,7 +391,7 @@ export default class PaymentScreen extends RX.Component{
                    
                      <RX.Button style={ styles.Button } >
                         <RX.Link style={ styles.buttonText }  url={ 'https://www.royalsundaram.net/web/test/makepayment?quoteId=QVMN0011943' }>
-                          After selecting please click here to proceed  
+                         After selecting please click here to proceed
                          </RX.Link>
                          </RX.Button> 
             </RX.ScrollView>

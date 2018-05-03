@@ -246,8 +246,7 @@ export default class MainPanel extends RX.Component{
 
                <RX.View style={ styles.container }>
                 <RX.Text style={ styles.welcome }>
-               
-                        <RX.Image source={ './src/img/Logo.svg' } style={ [styles.image] } />
+                              <RX.Image source={ './src/img/Logo.svg' } style={ [styles.image] } />
                        
                     </RX.Text>
                                        <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text>
