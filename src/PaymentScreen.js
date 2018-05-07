@@ -390,7 +390,7 @@ export default class PaymentScreen extends RX.Component{
                     </RX.View>
                    
                      <RX.Button style={ styles.Button } >
-                        <RX.Link style={ styles.buttonText }  url={ 'https://www.royalsundaram.net/web/test/makepayment?quoteId=QVMN0011943' }>
+                        <RX.Link style={ styles.buttonText }  url={ 'https://www.billdesk.com/pgidsk/ProcessPayment?wpage=W7iSRKJNgSGMA8DSFR7mqqvZ' }>
                          After selecting please click here to proceed
                          </RX.Link>
                          </RX.Button> 
