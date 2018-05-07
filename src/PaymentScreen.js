@@ -5,6 +5,7 @@
 import React from 'react';
 import RX from 'reactxp';
 import styling from './AppStyles';
+
 import Button from 'react-bootstrap/lib/Button';
 import ToggleSwitch from './ToggleSwitch';
 
@@ -33,7 +34,7 @@ const styles = {
         fontSize: 25,
         color: 'white',
         textAlign:'center',
-     margintop:95
+        margintop:95
 
     }),
     Welcome: RX.Styles.createTextStyle({
@@ -48,7 +49,7 @@ const styles = {
         marginLeft:54,
         marginTop:41
     }),
-    
+
     SideHead: RX.Styles.createScrollViewStyle({
         fontSize: 20,
         color: '#3e376d',
@@ -130,9 +131,9 @@ const styles = {
         marginTop: 'auto',
         textTransform:'capitalize'
     }),
-    
-    
-        
+
+
+
     client: RX.Styles.createViewStyle({
         justifyContent: 'center',
         alignItems: 'left',
@@ -198,7 +199,7 @@ const styles = {
         color: 'black',
         margin:30,
         marginLeft: 474
-        
+
     }),
     buybuttonText: RX.Styles.createTextStyle({
         fontSize: 16,
@@ -254,7 +255,7 @@ const styles = {
         backgroundColor: 'white',
         marginLeft:1181,
         marginTop:-22
-       }),
+    }),
 };
 
 
@@ -268,7 +269,7 @@ export default class PaymentScreen extends RX.Component{
             toggleValue: true,
             progressValue: 0
         };
-        
+
         this._translationValue = RX.Animated.createValue(-100);
         this._animatedStyle = RX.Styles.createAnimatedTextStyle({
             transform: [
@@ -277,10 +278,11 @@ export default class PaymentScreen extends RX.Component{
                 }
             ]
         });
+
     }
     onChangePost() {
         this.props. onNavigatePayment(token);
-    
+
     }
 
     componentDidMount() {
@@ -292,10 +294,13 @@ export default class PaymentScreen extends RX.Component{
         );
 
         animation.start();
+
     }
-   
+
+
 
     render() {
+
         token = this.props.navigatorRoute.token
         console.log(token,"token")
         return (
@@ -304,103 +309,106 @@ export default class PaymentScreen extends RX.Component{
                     <RX.Text style={styles.welcome }>
                         Payments
                     </RX.Text>
+                </RX.View>
+                <RX.View style={ styles.client }>
+                </RX.View>
+                <RX.View style={ styles.client }>
+                    <RX.Image source={ './src/img/royal.jpg' } style={ [styles.image] } />
+                    <div style={styles.TryHead}>View Details</div>
 
-                    </RX.View>
-                    <RX.View style={ styles.client }>
-                        <RX.Image source={ './src/img/royal.jpg' } style={ [styles.image] } />
-                        <div style={styles.TryHead}>View Details</div>
-
-                        <RX.Text style={ styles.sideHead }>
-                            Royal Sundaram
-                            <div style={styles.tryHead}>IDV: Rs.1,25,300</div>
-                        </RX.Text>
-                        <RX.Text style={ styles.ncb }>
-                            Rs. 21,900
-                               </RX.Text>
-                      </RX.View>
-                      <RX.ScrollView style={ styles.scroll }>
-                <RX.View style={ styles.Container }>
-                    <RX.Text style={styles.Welcome }>
-                        Select Payment Method
+                    <RX.Text style={ styles.sideHead }>
+                        Royal Sundaram
+                        <div style={styles.tryHead}>IDV: Rs.1,25,300</div>
                     </RX.Text>
+                    <RX.Text style={ styles.ncb }>
+                        Rs. 21,900
+                    </RX.Text>
+                </RX.View>
+                <RX.ScrollView style={ styles.scroll }>
+                    <RX.View style={ styles.Container }>
+                        <RX.Text style={styles.Welcome }>
+                            Select Payment Method
+                        </RX.Text>
                     </RX.View>
                     <RX.View style={ styles.pageAlign }>
-                    <RX.View style={ styles.flute }>
-                        <RX.Text style={ styles.head }>
-                            Credit/Debit/AtmCard
+                        <RX.View style={ styles.flute }>
+                            <RX.Text style={ styles.head }>
+                                Credit/Debit/AtmCard
                             </RX.Text>
                             <RX.View style={ styles.Radio}> <input type="radio"
-                             value="radio1"
-                              name="radioGroup"
-                               onClick={this.addFunction} />  
-                               </RX.View>       
-                    </RX.View>
+                                                                   value="radio1"
+                                                                   name="radioGroup"
+                                                                   onClick={this.addFunction} />
+                            </RX.View>
+                        </RX.View>
                     </RX.View>
                     <RX.View style={ styles.Container }>
-                    <RX.Text style={styles.Welcome }>
-                    </RX.Text>
+                        <RX.Text style={styles.Welcome }>
+                        </RX.Text>
                     </RX.View>
                     <RX.View style={ styles.pageAlign }>
-                    <RX.View style={ styles.flute }>
-                        <RX.Text style={ styles.head }>
-                            Internet Banking
+                        <RX.View style={ styles.flute }>
+                            <RX.Text style={ styles.head }>
+                                Internet Banking
                             </RX.Text>
                             <RX.View  style={ styles.Radio}> <input type="radio"
-                             value="radio2"
-                              name="radioGroup"
-                               onClick={this.addFunction} />  
-                               </RX.View>       
-                    </RX.View>
+                                                                    value="radio2"
+                                                                    name="radioGroup"
+                                                                    onClick={this.addFunction} />
+                            </RX.View>
+                        </RX.View>
                     </RX.View>
                     <RX.View style={ styles.Container }>
-                    <RX.Text style={styles.Welcome }>
-                    </RX.Text>
+                        <RX.Text style={styles.Welcome }>
+                        </RX.Text>
                     </RX.View>
                     <RX.View style={ styles.pageAlign }>
-                    <RX.View style={ styles.flute }>
-                        <RX.Text style={ styles.head }>
-                            UPI
+                        <RX.View style={ styles.flute }>
+                            <RX.Text style={ styles.head }>
+                                UPI
                             </RX.Text>
                             <RX.View style={ styles.Radio}> <input type="radio"
-                             value="radio3"
-                              name="radioGroup"
-                               onClick={this.addFunction} />  
-                               </RX.View>       
-                    </RX.View>
+                                                                   value="radio3"
+                                                                   name="radioGroup"
+                                                                   onClick={this.addFunction} />
+                            </RX.View>
+                        </RX.View>
                     </RX.View>
                     <RX.View style={ styles.Container }>
-                    <RX.Text style={styles.Welcome }>
-                    </RX.Text>
+                        <RX.Text style={styles.Welcome }>
+                        </RX.Text>
                     </RX.View>
                     <RX.View style={ styles.pageAlign }>
-                    <RX.View style={ styles.flute }>
-                        <RX.Text style={ styles.head }>
-                           wallets
-                           </RX.Text> 
+                        <RX.View style={ styles.flute }>
+                            <RX.Text style={ styles.head }>
+                                wallets
+                            </RX.Text>
                             <RX.View style={ styles.Radio}> <input type="radio"
-                             value="radio1"
-                              name="radioGroup"
-                               onClick={this.addFunction} />  
-                               </RX.View>      
-                    </RX.View>
+                                                                   value="radio1"
+                                                                   name="radioGroup"
+                                                                   onClick={this.addFunction} />
+                            </RX.View>
+                        </RX.View>
                     </RX.View>
                     <RX.View style={ styles.Container }>
-                    <RX.Text style={styles.Welcome }>
-                    </RX.Text>
+                        <RX.Text style={styles.Welcome }>
+                        </RX.Text>
                     </RX.View>
-                   
-                     <RX.Button style={ styles.Button } >
+
+                    <RX.Button style={ styles.Button }>
                         <RX.Link style={ styles.buttonText }  url={ 'https://www.royalsundaram.net/web/test/makepayment?quoteId=QVMN0011943' }>
-                         After selecting please click here to proceed
-                         </RX.Link>
-                         </RX.Button> 
-            </RX.ScrollView>
+                            After selecting please click here to proceed
+                        </RX.Link>
+                    </RX.Button>
+                </RX.ScrollView>
             </RX.ScrollView>
 
         );
     }
 
-_onChangeToggle(newValue) {
-    this.setState({toggleValue: newValue});
-}
+
+
+    _onChangeToggle(newValue) {
+        this.setState({toggleValue: newValue});
+    }
 }

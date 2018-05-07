@@ -34,6 +34,7 @@ import CarDetails from './CarDetails'
 import CarGproposal from './CarGproposal'
 import Addons from './Addons'
 import Remainders from './Remainders'
+import RoyalSundaramPayment from './RoyalSundaramPayment'
 
 
 
@@ -69,7 +70,9 @@ let NavigationRouteId = {
     CarDetails:"CarDetails",
     CarGproposal:"CarGproposal",
     Addons:"Addons",
-    Remainders:"Remainders"
+    Remainders:"Remainders",
+    RoyalSundaramPayment:"RoyalSundaramPayment"
+
 };
 
 const styles = {
@@ -117,12 +120,14 @@ export default class App extends RX.Component {
         this._onPressNinety = this._onPressNinety.bind(this);
         this._onPressRole = this._onPressRole.bind(this);
         this._onPressOne = this._onPressOne.bind(this);
+        this._onPressSundaram = this._onPressSundaram.bind(this);
+
 
     }
 
     componentDidMount() {
         this._navigator.immediatelyResetRouteStack([{
-            routeId: NavigationRouteId.MainPanel,
+            routeId: NavigationRouteId.RoyalSundaramPayment,
             sceneConfigType: "Fade"
         }]);
     }
@@ -210,7 +215,7 @@ export default class App extends RX.Component {
                 return <EleventhPanel onNavigateEleven={ this._onPressEleven } navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.PaymentScreen:
-                return <PaymentScreen onNavigatePayment={ this._onPressPayment } navigatorRoute={navigatorRoute}/>;
+                return <PaymentScreen onNavigatePayment={ this._onPressPayment }  navigatorRoute={navigatorRoute}/>;
 
 
             case NavigationRouteId.TravelInsuranceReg:
@@ -227,6 +232,9 @@ export default class App extends RX.Component {
 
                 case NavigationRouteId.Gproposal:
                 return <Gproposal onNavigateEleven={ this._onPressEleven} navigatorRoute={navigatorRoute}/>;
+
+            case NavigationRouteId.RoyalSundaramPayment:
+                return <RoyalSundaramPayment onNavigateSundarm={ this._onPressSundaram} navigatorRoute={navigatorRoute}/>;
 
         }
 
@@ -731,6 +739,16 @@ export default class App extends RX.Component {
             resJson:resJson,
             token:token,
             liability:liability,
+            customSceneConfig: {
+                hideShadow: true
+            }
+        });
+    }
+
+    _onPressSundaram() {
+        this._navigator.push({
+            routeId: NavigationRouteId.MainPanel,
+            sceneConfigType: "FloatFromRight",
             customSceneConfig: {
                 hideShadow: true
             }
