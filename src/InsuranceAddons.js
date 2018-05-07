@@ -48,7 +48,7 @@ export default class InsuranceAddons extends RX.Component{
                 carRegisteredCity: '24PARGANAS',
                 vehicleManufacturerName: 'TVS',
                 vehicleModelCode: 'ZWTV310',
-                vehicleRegDate: '02/05/2018',
+                vehicleRegDate: '07/05/2018',
                 lastName: 'Rani',
             };
             this._translationValue = RX.Animated.createValue(-100);
@@ -121,9 +121,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: this.state.vehicleManufacturerName,
                         idv: "65478",
-                        policyStartDate: "04/05/2018",
+                        policyStartDate: "07/05/2018",
                         vehicleMostlyDrivenOn: this.state.vehicleMostlyDrivenOn,
-                        vehicleRegDate: "04/05/2018",
+                        vehicleRegDate: "07/05/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
