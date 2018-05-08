@@ -394,7 +394,6 @@ export default class PaymentScreen extends RX.Component{
                         <RX.Text style={styles.Welcome }>
                         </RX.Text>
                     </RX.View>
-<<<<<<< HEAD
 
                     <RX.Button style={ styles.Button }>
                         <RX.Link style={ styles.buttonText }  url={ 'https://www.royalsundaram.net/web/test/makepayment?quoteId=QVMN0011943' }>
@@ -402,15 +401,8 @@ export default class PaymentScreen extends RX.Component{
                         </RX.Link>
                     </RX.Button>
                 </RX.ScrollView>
-=======
-                   
-                     <RX.Button style={ styles.Button } >
-                        <RX.Link style={ styles.buttonText }  url={ 'https://www.billdesk.com/pgidsk/ProcessPayment?wpage=W7iSRKJNgSGMA8DSFR7mqqvZ' }>
-                         After selecting please click here to proceed
-                         </RX.Link>
-                         </RX.Button> 
-            </RX.ScrollView>
->>>>>>> da9ad23db01b5b98068a3fa3043f829d9226619d
+
+
             </RX.ScrollView>
 
         );
