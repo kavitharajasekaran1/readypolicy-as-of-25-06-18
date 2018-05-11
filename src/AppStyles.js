@@ -502,6 +502,25 @@ module.exports = {
         padding:5
  
     }),
+    BUTTON13:RX.Styles.createViewStyle({
+        display: 'block',
+         width: '14%',
+         height: 41,
+         justifyContent: 'center',
+        alignItems: 'center',
+         // padding: 6px 12px;
+          fontSize: 20,
+        // line: 1.42857143;
+        color: "White",
+        backgroundColor: "blue",
+        borderWidth:1,
+        borderColor:"#ccc",
+        borderRadius: 4,
+        marginLeft:593,
+        marginTop:14,
+        padding:5
+ 
+    }),
     nextbutton:RX.Styles.createViewStyle({
         display: 'block',
          width: '50%',

@@ -102,9 +102,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '08/05/2018',
+                      policyStartDate: '11/05/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '08/05/2018',
+                      vehicleRegDate: '11/05/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -654,8 +654,8 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                     </Row>*/}
 
                     <Row className="clearfix" >
-                        <Col  md={8}></Col>
-                        <Col  md={8}>
+                        <Col  md={12}></Col>
+                        <Col  md={12}>
 
                             <Tabs defaultActiveKey={1} style={_styles.read} id="left-tabs-example">
                                 <Tab eventKey={1} style={_styles.read}title="New" className="myClass">
