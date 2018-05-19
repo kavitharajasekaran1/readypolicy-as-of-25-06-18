@@ -265,6 +265,14 @@ export default class LoginPage extends RX.Component{
             console.log(res,"res");
             console.log(otp,"otp");
            swal(''+res+'')
+           if(res == "OTP verified"){
+             this.props.onNavigateForth(res,token);
+            console.log("idsguygyfs")
+            alert(''+result+'');  
+           }else{
+             swal("Enter 10 digit mobile number ") 
+           }
+                        
             this.props.onNavigateForth(res,token);
         })
     }
@@ -296,7 +304,7 @@ export default class LoginPage extends RX.Component{
             <RX.Image source={ './src/img/Logo.svg' } style={ [styles.image] } />
         
          </RX.Text>
-                <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
+            <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
             <RX.Text style={styles.Policy}>Please Enter Your phone Number To Login/Register</RX.Text>
             <RX.Text style={styles.POlicy}>
             <form>
@@ -308,7 +316,10 @@ export default class LoginPage extends RX.Component{
                                                     type="text"
                                                     value={this.state.value}
                                                     placeholder="+91"
+                                                    pattern="[1-9]{1}[0-9]{9}"
+                                                    title="Enter 10 digit mobile number"
                                                     secureTextEntry= {true}
+                                                    icon="phone" 
                                                 />
                                             </FormGroup>
                                         </form>

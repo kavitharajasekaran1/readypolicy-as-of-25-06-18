@@ -48,7 +48,7 @@ export default class InsuranceAddons extends RX.Component{
                 carRegisteredCity: '24PARGANAS',
                 vehicleManufacturerName: 'TVS',
                 vehicleModelCode: 'ZWTV310',
-                vehicleRegDate: '11/05/2018',
+                vehicleRegDate: '19/05/2018',
                 lastName: 'Rani',
             };
             this._translationValue = RX.Animated.createValue(-100);
@@ -121,9 +121,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: this.state.vehicleManufacturerName,
                         idv: "65478",
-                        policyStartDate: "11/05/2018",
+                        policyStartDate: "19/05/2018",
                         vehicleMostlyDrivenOn: this.state.vehicleMostlyDrivenOn,
-                        vehicleRegDate: "11/05/2018",
+                        vehicleRegDate: "19/05/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -259,7 +259,9 @@ console.log("hittinh.......")
             <RX.Button  onPress={()=> this.onChangePost()}><RX.Image
                          style={_styles.HomeScrollImageLogo}
                          source={'./src/img/Back.svg'}/>
-                    <RX.Text style={styling.welcome }>Get Quote </RX.Text>
+                   <RX.Animated.Text style={ [styling.welcome, this._animatedStyle] }>
+                     Get Quote
+                    </RX.Animated.Text>
                    </RX.Button>
                 {/*<RX.Button style={ Button } this._onChangeVaronPress={ this.props.onNavigateThirteen }>
                     <RX.Text style={ styling.buttonText }>
@@ -295,14 +297,16 @@ console.log("hittinh.......")
                  <form>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputEmail4" style={ styling.sideText }>Manufacturer Year</label>
+      <label for="inputEmail4" style={ styling.sideText }>Manufacturer Year</label> 
                                          <RX.TextInput
                                                  style={styling.Form}
                                                  placeholder=" Year of manufacturer"
                                                  value={ this.state.yearOfManufacture}
                                                  onChangeText={this.onChangeyearOfManufacture}
+                                                
                                                  // defaultValue={ this.state.inputValue }
                                              />
+                                              
                                     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4" style={ styling.sideText }>Car Registered City</label>

@@ -227,6 +227,8 @@ export default class MainPanel extends RX.Component{
 
     render() {
         return (
+            
+           
             <RX.Image
             source={ ('./src/img/policy.png' )}
             resizeMode="cover"
@@ -244,12 +246,17 @@ export default class MainPanel extends RX.Component{
 
 </marquee>
 
+
                <RX.View style={ styles.container }>
+              
                 <RX.Text style={ styles.welcome }>
                               <RX.Image source={ './src/img/Logo.svg' } style={ [styles.image] } />
                        
                     </RX.Text>
-                                       <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text>
+                    <RX.Animated.Text style={ [styles.policy, this._animatedStyle] }>
+                      Your Policy Partner
+                    </RX.Animated.Text>
+                                      
                                       <RX.View style={ styles.CONTAINER }>
                                         <marquee Height="200px" direction= "right" scrollamount="30"> 
 <img src="./src/img/BiKe.png"/>

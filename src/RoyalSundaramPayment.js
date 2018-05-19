@@ -319,7 +319,7 @@ export default class PaymentScreen extends RX.Component{
     }
     iframe () {
         return {
-            __html: '<iframe src="file:///home/rpqb-desk-002/Documents/Untitled%20Document%201.html" width="750" height="750"></iframe>'
+            __html: '<iframe src="file:///home/rpqb-desk-002/Documents/Untitled%20Document%201.html" width="750" height="900"></iframe>'
         }
     }
 

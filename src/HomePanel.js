@@ -5,6 +5,7 @@
 import React from 'react';
 import RX from 'reactxp';
 import styling from './AppStyles';
+import {default as RXVideo} from 'reactxp-video';
 
 import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,DateTimeField} from 'react-bootstrap';
 /*const {
@@ -14,6 +15,11 @@ const styles = {
     scrollContainer:  RX.Styles.createViewStyle({
         flex: 1,
         backgroundColor: 'emerald',
+    }),
+    video: RX.Styles.createViewStyle({
+        height: 150,
+        width: 1302,
+
     }),
     scrollViewContainer: RX.Styles.createViewStyle({
         flex:1,
@@ -193,16 +199,16 @@ export default class RegisterPage extends RX.Component{
 style={styles.remo}
             resizeMode="cover"
             source={'./src/img/Farmer.png'}> */}
-         
-                
-            <RX.Image source={ './src/img/Logo.svg' } style={ [styles.IMage] }/>
+       
+            <RX.Image source={ './src/img/Logo.svg' } style={ [styles.IMage] }/> 
             <RX.Text style={ styles.policy }></RX.Text> 
+            
            
             {/* </RX.Image> */}
             
               <RX.Text style={ styles.policy }>Plan your insurance on this platform and get RS 100 off your first policy</RX.Text> 
                 </RX.View>
-     
+    
     
                 <div className="row"></div>
                 <div className="col-xs-4 col-sm-4 col-md-4"></div>
@@ -337,5 +343,29 @@ style={styles.remo}
   </RX.View>
  
     );
+}
+_playVideo() {
+    if (this._mountedVideo) {
+        this._mountedVideo.mute(true);
+        this._mountedVideo.play();
+    }
+}
+
+_onMountVideo(component) {
+    this._mountedVideo = component;
+}
+
+_startProgressIndicator() {
+    this._progressTimerToken = window.setInterval(() =>{
+        const newProgressValue = (this.state.progressValue + 0.02) % 1;
+        this.setState({progressValue: newProgressValue});
+    }, 1000 / 15);
+}
+
+_stopProgressIndicator() {
+    if (this._progressTimerToken) {
+        window.clearInterval(this._progressTimerToken);
+        this._progressTimerToken = undefined;
+    }
 }
 }

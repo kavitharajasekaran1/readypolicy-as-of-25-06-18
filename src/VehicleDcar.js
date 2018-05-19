@@ -106,9 +106,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '4520250.0',
-                      policyStartDate: '11/05/2018',
+                      policyStartDate: '19/05/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '10/05/2018',
+                      vehicleRegDate: '19/05/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -161,7 +161,7 @@ console.log("quoteid",this.state.quoteid)
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
                 
-            },
+            },                                            
         
             body: JSON.stringify({
                     CALCULATEPREMIUMREQUEST: {
@@ -207,7 +207,7 @@ console.log("quoteid",this.state.quoteid)
                         region: "South Region",
                         vehicleManufacturerName: "REVA",
                         vehicleModelCode: "CMB65",
-                        vehicleregDate: "11/05/2018",
+                        vehicleregDate: "18/05/2018",
                         idv: this.state.idv, 
                         engineCapacityAmount: "1995 CC",
                         drivingExperience: "2",
