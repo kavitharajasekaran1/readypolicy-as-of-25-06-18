@@ -197,11 +197,11 @@ export default class RegisterPage extends RX.Component{
                 </RX.View>
                 
                 <div class="container">
-  <form>
-    <div class="form-group row">
-      <label for="lgFormGroupInput" style={styles.sideText}  class="col-sm-2 col-form-label col-form-label-lg">Full Name</label>
-      <div class="col-sm-10">
-        <input type="email" style={styles.sideText} class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Full Name"/>
+                <form>
+                <div class="form-group row">
+                <label for="lgFormGroupInput" style={styles.sideText}  class="col-sm-2 col-form-label col-form-label-lg">Full Name</label>
+                <div class="col-sm-10">
+                <input type="email" style={styles.sideText} class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Full Name"/>
       </div>
     </div>
     </form>

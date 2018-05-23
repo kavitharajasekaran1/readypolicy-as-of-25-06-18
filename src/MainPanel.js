@@ -1,11 +1,9 @@
 /*
  * This file demonstrates a basic ReactXP app.
  */
-
 import React from 'react';
 import RX from 'reactxp';
 import styling from './AppStyles';
-
 import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,DateTimeField} from 'react-bootstrap';
 /*const {
     Welcome
@@ -42,7 +40,6 @@ const styles = {
         bottom: 0,
         top: 0,
         backgroundColor:'#9ca4ab;'
-
     }),
     CONTAINER: RX.Styles.createViewStyle({
         marginTop:300,
@@ -59,7 +56,6 @@ const styles = {
         bottom: 0,
         top: 0,
         backgroundColor:'#9ca4ab;'
-
     }),
     
     
@@ -92,7 +88,6 @@ const styles = {
         alignItems:'center',
         fontSize:35,
        
-
     }),
     policy:RX.Styles.createTextStyle({
         fontSize: 18,
@@ -111,7 +106,6 @@ const styles = {
         marginBottom: 30,
         color: 'white',
     }),
-
     instructions: RX.Styles.createTextStyle({
         fontSize: 16,
         color: '#aaa',
@@ -188,7 +182,6 @@ const styles = {
         height: 100,
         width:'100%',
         marginTop:'20'
-
        
     }), 
     backgroundImage:RX.Styles.createViewStyle({
@@ -197,7 +190,6 @@ const styles = {
     }),
     
 };
-
 export default class MainPanel extends RX.Component{
     constructor(props) {
         super(props);
@@ -213,7 +205,6 @@ export default class MainPanel extends RX.Component{
             ]
         });
     }
-
     componentDidMount() {
         let animation = RX.Animated.timing(this._translationValue, {
                 toValue: 0,
@@ -221,14 +212,10 @@ export default class MainPanel extends RX.Component{
                 duration: 500
             }
         );
-
         animation.start();
     }
-
     render() {
         return (
-            
-           
             <RX.Image
             source={ ('./src/img/policy.png' )}
             resizeMode="cover"
@@ -236,27 +223,16 @@ export default class MainPanel extends RX.Component{
             style={[styles.backgroundImage]}
         >
                    <marquee Height="200px" direction= "right" scrollamount="30">
-
    
-
 <img src="./src/img/CAR.png"/>
-
-
-
-
 </marquee>
-
-
                <RX.View style={ styles.container }>
               
                 <RX.Text style={ styles.welcome }>
                               <RX.Image source={ './src/img/Logo.svg' } style={ [styles.image] } />
                        
                     </RX.Text>
-                    <RX.Animated.Text style={ [styles.policy, this._animatedStyle] }>
-                      Your Policy Partner
-                    </RX.Animated.Text>
-                                      
+                                       <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text>
                                       <RX.View style={ styles.CONTAINER }>
                                         <marquee Height="200px" direction= "right" scrollamount="30"> 
 <img src="./src/img/BiKe.png"/>
@@ -272,6 +248,8 @@ export default class MainPanel extends RX.Component{
                         { 'Next' }
                     </RX.Text>
                 </RX.Button>
+               
+      
                 </RX.View> 
                     </RX.Image>
         );

@@ -314,12 +314,14 @@ export default class LoginPage extends RX.Component{
                                                 {/*<ControlLabel>Working example with validation</ControlLabel>*/}
                                                 <FormControl
                                                     type="text"
-                                                    value={this.state.value}
+                                                    value={this.state.phone}
                                                     placeholder="+91"
                                                     pattern="[1-9]{1}[0-9]{9}"
                                                     title="Enter 10 digit mobile number"
                                                     secureTextEntry= {true}
                                                     icon="phone" 
+                                                    onChangeText={this.onChangePhone}
+                                                
                                                 />
                                             </FormGroup>
                                         </form>

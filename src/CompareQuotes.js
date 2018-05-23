@@ -450,8 +450,7 @@ export default class CompareQuotes extends RX.Component{
                         </Col>
                         <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>{liability.PA_COVER_TO_PAID_DRIVER}
-
-</RX.Text>
+                            </RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>20%</RX.Text>
@@ -468,7 +467,7 @@ export default class CompareQuotes extends RX.Component{
                         <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>{liability.TOTAL_LIABILITY_PREMIUM}
 
-</RX.Text>
+                            </RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>20%</RX.Text>
@@ -499,8 +498,7 @@ export default class CompareQuotes extends RX.Component{
                         </Col>
                         <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>{liability.TO_PAID_DRIVERS}
-
-</RX.Text>
+                        </RX.Text>
                         </Col>
                         <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>Nil</RX.Text>
