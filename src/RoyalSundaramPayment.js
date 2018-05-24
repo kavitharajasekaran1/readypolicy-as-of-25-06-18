@@ -255,7 +255,7 @@ const styles = {
 
     }),
     Button: RX.Styles.createViewStyle({
-        margin: 16,
+        margin:16,
         style: 'rounded square',
         backgroundColor: '#80808000',
         margin:30,
@@ -332,7 +332,7 @@ export default class PaymentScreen extends RX.Component{
                         style={_styles.HomeScrollImageLogo}
                         source={'./src/img/Back.svg'}/>
                         <RX.Text style={styling.welcome }>
-                            Final Payment
+                            Final Payments
                         </RX.Text>
                     </RX.Button>
                 </RX.View>
