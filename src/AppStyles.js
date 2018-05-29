@@ -478,7 +478,7 @@ module.exports = {
         borderWidth:1,
         borderColor:"#ccc",
         borderRadius: 4,
-        marginLeft:322,
+        marginLeft:455,
         marginTop:-133,
         padding:5
  

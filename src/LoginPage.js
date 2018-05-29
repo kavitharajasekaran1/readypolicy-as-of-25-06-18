@@ -270,7 +270,7 @@ export default class LoginPage extends RX.Component{
             console.log("idsguygyfs")
             alert(''+result+'');  
            }else{
-             swal("Enter 10 digit mobile number ") 
+             swal("Please verify and enter a valid otp number ") 
            }
                         
             this.props.onNavigateForth(res,token);
@@ -283,7 +283,7 @@ export default class LoginPage extends RX.Component{
     }
 
     onChangePhone = (value) => {
-        this.setState({ phone: value });
+        this.setState({ value: value });
         console.log(this.state.phone,"phone");
     }
         
@@ -314,7 +314,7 @@ export default class LoginPage extends RX.Component{
                                                 {/*<ControlLabel>Working example with validation</ControlLabel>*/}
                                                 <FormControl
                                                     type="text"
-                                                    value={this.state.phone}
+                                                    value={this.state.value}
                                                     placeholder="+91"
                                                     pattern="[1-9]{1}[0-9]{9}"
                                                     title="Enter 10 digit mobile number"

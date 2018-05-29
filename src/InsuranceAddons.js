@@ -41,15 +41,15 @@ export default class InsuranceAddons extends RX.Component{
     constructor(props) {
         super(props);
         this.state = {
-                emailId: 'neeluneelima67@gmail.com',
-                mobileNo: '9553715856',
-                yearOfManufacture: '2017',
-                vehicleMostlyDrivenOn: 'Roads',
-                carRegisteredCity: '24PARGANAS',
-                vehicleManufacturerName: 'TVS',
-                vehicleModelCode: 'ZWTV310',
+                emailId: '',
+                mobileNo: '',
+                yearOfManufacture: '',
+                vehicleMostlyDrivenOn: '',
+                carRegisteredCity: '',
+                vehicleManufacturerName: '',
+                vehicleModelCode: '',
                 vehicleRegDate: '22/05/2018',
-                lastName: 'Rani',
+                lastName: '',
             };
             this._translationValue = RX.Animated.createValue(-100);
             this._animatedStyle = RX.Styles.createAnimatedTextStyle({
@@ -114,16 +114,16 @@ console.log("hittinh.......")
                         strPhoneNo: "2456984"
                       },
                       vehicleDetails: {
-                        vehicleModelCode: "ZWTV310",
+                        vehicleModelCode: this.state.vehicleModelCode,
                         planOpted: "Flexi Plan",
                         yearOfManufacture: this.state.yearOfManufacture,
                         drivingExperience: "1",
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: this.state.vehicleManufacturerName,
                         idv: "65478",
-                        policyStartDate: "24/05/2018",
+                        policyStartDate: "29/05/2018",
                         vehicleMostlyDrivenOn: this.state.vehicleMostlyDrivenOn,
-                        vehicleRegDate: "24/05/2018",
+                        vehicleRegDate: "29/05/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",

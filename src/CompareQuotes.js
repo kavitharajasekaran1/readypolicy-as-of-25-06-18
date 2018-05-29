@@ -195,6 +195,22 @@ var token
 export default class CompareQuotes extends RX.Component{
     constructor(props) {
         super(props);
+        this.state = {
+            data:[
+               {
+                  component: 'First...',
+                  id: 1
+               },
+               {
+                  component: 'Second...',
+                  id: 2
+               },
+               {
+                  component: 'Third...',
+                  id: 3
+               }
+            ]
+         }
         this._translationValue = RX.Animated.createValue(-100);
         this._animatedStyle = RX.Styles.createAnimatedTextStyle({
             transform: [
@@ -204,6 +220,15 @@ export default class CompareQuotes extends RX.Component{
             ]
         });
     }
+    render(){
+        <div>
+        <div>
+           {this.state.data.map((dynamicComponent, i) => <Content 
+              key = {i} componentData = {dynamicComponent}/>)}
+        </div>
+     </div>
+    }
+
 
     componentDidMount() {
         let animation = RX.Animated.timing(this._translationValue, {
@@ -245,6 +270,7 @@ export default class CompareQuotes extends RX.Component{
             })
         });
     }
+    
 
     render() {
          liability = this.props.navigatorRoute.liability
@@ -263,6 +289,11 @@ export default class CompareQuotes extends RX.Component{
         console.log("odpremium",odpremium)
         
         return (
+            <div>
+            <div>{this.props.componentData.component}</div>
+            <div>{this.props.componentData.id}</div>
+        
+        
             <RX.ScrollView style={ styles.scroll }>
             <RX.View style={ styling.container }>
             <RX.Button  onPress={ this.props.onNavigateTen}><RX.Image
@@ -770,7 +801,7 @@ export default class CompareQuotes extends RX.Component{
                     </RX.Button>
                 </RX.View>*/}
             </RX.ScrollView>
-
+            </div>
         );
     }
 }
