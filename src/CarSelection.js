@@ -263,6 +263,7 @@ var quoteid
 var premium
 var allResponse 
 var odpremium
+var token
 export default class QuotesSelection  extends RX.Component {
 
 
@@ -416,6 +417,14 @@ export default class QuotesSelection  extends RX.Component {
 
        
     }
+    onChangePost  = () => {
+        console.log(token,"tokenab")
+        this.props.onNavigateSuperCar(token);
+        
+        
+
+       
+    }
 
     render() {
      resJson = this.props.navigatorRoute.resJson
@@ -425,7 +434,7 @@ export default class QuotesSelection  extends RX.Component {
      premium = this.props.navigatorRoute.premium
      odpremium = this.props.navigatorRoute.odpremium
      token = this.props.navigatorRoute.token
-     console.log(token,"token")
+        console.log(token,"token")
     console.log("idvvvvv",resJson)
     console.log("liablity",liability)
    // console.log("message",message)
@@ -436,13 +445,12 @@ export default class QuotesSelection  extends RX.Component {
         return (
             <RX.ScrollView style={ _styles.scroll }>
                 <RX.View style={ styling.container }>
-                <RX.Button  onPress={ this.props.onNavigateNinety}><RX.Image
+                <RX.Button  onPress={()=> this.onChangePost()}><RX.Image
                          style={_styles.HomeScrollImageLogo}
                          source={'./src/img/Back.svg'}/>
-                    <RX.Text style={ _styles.welcome }>New Motor Insurance </RX.Text>
+                    <RX.Text style={styling.welcome }>New Motor Insurance </RX.Text>
                     </RX.Button>
-                    <RX.Text style={ _styles.welcome }>
-                    </RX.Text>
+                    
                 </RX.View>
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.flute }>

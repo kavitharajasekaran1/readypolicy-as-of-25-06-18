@@ -102,9 +102,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '29/05/2018',
+                      policyStartDate: '07/06/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '29/05/2018',
+                      vehicleRegDate: '07/06/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -1357,7 +1357,6 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                             <code style={styling.mobFont}><Checkbox>No Claims Last Year</Checkbox></code>
                                             <code style={styling.mobFont}><Checkbox>I Don't Know My Policy Expiry Date</Checkbox></code>
                                         </Col>
-
                                         {/*<Col xs={10} md={10}><code></code></Col>*/}
                                     </Row>
                                     <Row className="show-grid">
@@ -1365,14 +1364,12 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
                                             {/*<RX.Button   onPress={()=> this.onChangePost() }>Submit</RX.Button>*/}
                                             <Button  style={styling.btnMaxWidth} bsStyle="primary">Next</Button>
                                             
-           <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateEight }>
-        <RX.Text style={ _styles.buttonText }>
-       NEXT
-        </RX.Text>
-        </RX.Button>
-       
-
-                                        </Col>
+                                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateEight }>
+                                            <RX.Text style={ _styles.buttonText }>
+                                            NEXT
+                                            </RX.Text>
+                                            </RX.Button>
+                                            </Col>
                                         {/*<Col  md={6} style={styling.marTop}>
                                             <RX.Button onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
                                             <RX.Button style={styling.button} onPress={ this.props.onNavigateEleven }>
@@ -1381,9 +1378,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
 
                                         </Col>*/}
                                     </Row>
-
-
-                                </Tab>
+                                 </Tab>
                             </Tabs>
                         </Col>
                     </Row>
@@ -1432,6 +1427,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
 
       }
       handleSelect(date) {
+      
         this.setState({
           startDate: date
         });

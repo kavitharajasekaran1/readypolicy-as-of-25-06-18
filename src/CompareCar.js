@@ -17,6 +17,13 @@ const styles = {
         backgroundColor:'#1a153b',
         padding:5
     }),
+    HomeScrollImageLogo: RX.Styles.createImageStyle({
+        width:5000,
+        height: 72,
+        paddingVertical:20,
+        marginLeft:-1200,
+        marginTop:12
+    }),
     helloWorld: RX.Styles.createTextStyle({
         fontSize: 48,
         fontWeight: 'bold',
@@ -208,6 +215,9 @@ export default class CompareQuotes extends RX.Component{
     
     
     }
+    onChangePost = () => {
+        this.props.onNavigateTwenty(allResponse,resJson,liability,message,quoteid,premium,token);
+    }
     onNavigateSixth = () => {
         let {
             testValue = 'read'
@@ -250,10 +260,14 @@ export default class CompareQuotes extends RX.Component{
         console.log("allResponse",allResponse)
         return (
             <RX.ScrollView style={ styles.scroll }>
-                <RX.View style={ styles.container }>
-                    <RX.Text style={ styles.welcome }>
-                        Compare Quotes
-                    </RX.Text>
+            <RX.View style={ styling.container }>
+            <RX.Button  onPress={()=> this.onChangePost()}><RX.Image
+                     style={styles.HomeScrollImageLogo}
+                     source={'./src/img/Back.svg'}/>
+                <RX.Text style={ styling.welcome }>
+                   Compare Quotes
+                </RX.Text>
+                </RX.Button>
                 </RX.View>
                 <RX.View style={styles.clientSec}>
                     <Row className="show-grid hidden-xs">

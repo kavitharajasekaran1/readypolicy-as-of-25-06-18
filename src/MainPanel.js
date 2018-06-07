@@ -147,23 +147,43 @@ const styles = {
        
     }),
     button1Hover: RX.Styles.createButtonStyle({
-        backgroundColor: '#EF5350'
+        backgroundColor: '#EF5350',
+        position: 'fixed',
+        backgroundcolor: 'red',
+        marginVertical:6,
+        marginHorizontal:15,
+    }),
+    footer: RX.Styles.createViewStyle({
+        position: 'absolute',
+        
+        width: '100%',
+        backgroundColor: 'rgba(26,153,228,.97)',
+        justifyContent:'center',
+        alignSelf:'center',
+        height:'50',
+        bottom:'0',
+        marginTop:'40'
+        
+    }),
+    footerText: RX.Styles.createTextStyle({
+        fontSize: 20,
+        marginVertical: 6,
+        marginHorizontal: 12,
+        color: 'white',
+        alignSelf:'center'
     }),
     button1Text: RX.Styles.createTextStyle({
-        fontSize: 14,
-        color: '#EF5350',
-        justifyContent: 'center',
-        textAlign:'CENTER',
-        alignSelf:'center'
+       
+       marginTop: 652,
+        backgroundcolor: 'red',
+        marginVertical:6,
+        marginHorizontal:15,
     }),
     button1TextHover: RX.Styles.createTextStyle({
-        fontSize: 14,
-        color: 'White',
-        justifyContent: 'center',
-        margingright:50,
-        justifyContent: 'center',
-        textAlign:'CENTER',
-        alignSelf:'center'
+        position: 'fixed',
+        backgroundcolor: 'red',
+        marginVertical:6,
+        marginHorizontal:15,
         
     }),
     button1: RX.Styles.createButtonStyle({
@@ -238,16 +258,17 @@ export default class MainPanel extends RX.Component{
 <img src="./src/img/BiKe.png"/>
 </marquee> 
 </RX.View>
-                 <RX.Button 
-                    style={ [styles.button1, this.state.button1Hover && styles.button1Hover] }
-                    onHoverStart={ () => { this.setState({ button1Hover: true }) } }
-                    onHoverEnd={ () => { this.setState({ button1Hover: false }) } }
-                    onPress={this.props.onNavigateForward}
-                >
-                    <RX.Text style={ [styles.button1Text, this.state.button1Hover && styles.button1TextHover] }>
-                        { 'Next' }
-                    </RX.Text>
-                </RX.Button>
+                
+                <RX.View style={styles.footer}>
+
+    <RX.Button
+   /* // style={ [sty]} */
+    onPress={this.props.onNavigateForward}
+  > {/* // onPress={() => navigate('OtpPage'), { phone: this.state.phone }} */}
+      <RX.Text style={styles.footerText} >{'NEXT'}
+     </RX.Text>
+      </RX.Button>
+       </RX.View>
                
       
                 </RX.View> 

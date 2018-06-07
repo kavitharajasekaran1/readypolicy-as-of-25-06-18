@@ -155,7 +155,7 @@ export default class App extends RX.Component {
                 return <OtpPage onPressNavigate={ this._onPressNavigate } navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.CompareQuotes:
-                return <CompareQuotes onNavigateCompare={ this._onPressCompare }  navigatorRoute={navigatorRoute}/>;
+                return <CompareQuotes onNavigateCompare={ this._onPressCompare }   navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.MainPanel:
                 return <MainPanel onNavigateForward={ this._onPressForward }/>;
@@ -194,13 +194,13 @@ export default class App extends RX.Component {
                 return <MyPolicy onNavigateRole={ this._onPressRole } onPressNavigate={ this._onPressNavigate } navigatorRoute={navigatorRoute}/>;
             
                 case NavigationRouteId.CarSelection:
-                return <CarSelection onNavigateThirty={ this._onPressThirty }  navigatorRoute={navigatorRoute}/>;
+                return <CarSelection onNavigateThirty={ this._onPressThirty } onNavigateSuperCar={ this._onPressHome1 } navigatorRoute={navigatorRoute}/>;
 
                 case NavigationRouteId.CompareCar:
-                return <CompareCar onNavigateFourty={ this._onPressFourty }  navigatorRoute={navigatorRoute}/>;
+                return <CompareCar onNavigateFourty={ this._onPressFourty }  onNavigateTwenty={ this._onPressTwenty } navigatorRoute={navigatorRoute}/>;
 
                 case NavigationRouteId.CarDetails:
-                return <CarDetails onNavigateTwo={ this._onPressTwo }  navigatorRoute={navigatorRoute}/>;
+                return <CarDetails onNavigateTwo={ this._onPressTwo } onNavigateThirty={ this._onPressThirty } navigatorRoute={navigatorRoute}/>;
 
                  case NavigationRouteId.Addons:
                 return <Addons onNavigateNinety={ this._onPressNinety} onPressSuper={ this._onPressHome} onNavigateSuper={ this._onPressHome} navigatorRoute={navigatorRoute}/>;
@@ -209,7 +209,7 @@ export default class App extends RX.Component {
                 return <InsuranceAddons onNavigateTen={ this._onPressTen } onPressNavigate={ this._onPressNavigate } navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.InsuranceFourWheeler:
-                return <InsuranceFourWheeler onNavigateTwenty={ this._onPressTwenty } navigatorRoute={navigatorRoute}/>;
+                return <InsuranceFourWheeler onNavigateTwenty={ this._onPressTwenty } onPressNavigate={ this._onPressNavigate }navigatorRoute={navigatorRoute}/>;
 
             case NavigationRouteId.EleventhPanel:
                 return <EleventhPanel onNavigateEleven={ this._onPressEleven } navigatorRoute={navigatorRoute}/>;

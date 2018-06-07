@@ -34,7 +34,7 @@ const _styles = {
 
 };
 
-
+var token
 export default class InsuranceAddons extends RX.Component{
     constructor(props) {
         super(props);
@@ -46,7 +46,7 @@ export default class InsuranceAddons extends RX.Component{
             carRegisteredCity: '24PARGANAS',
             vehicleManufacturerName: 'TVS',
             vehicleModelCode: 'ZWTV310',
-            vehicleRegDate: '29/05/2018',
+            vehicleRegDate: '07/06/2018',
             lastname: 'Rani',
         };
         this._translationValue = RX.Animated.createValue(-100);
@@ -118,7 +118,7 @@ console.log("hittinh.......")
                         region: "South Region",
                         vehicleManufacturerName: "BMW",
                         vehicleModelCode: "CMB65",
-                        vehicleregDate: "29/05/2018",
+                        vehicleregDate: "07/06/2018",
                         idv: "3025465",
                         engineCapacityAmount: "1995 CC",
                         drivingExperience: "2",
@@ -257,6 +257,10 @@ console.log("hittinh.......")
         this.setState({carRegisteredCity: value });
         console.log(this.state.carRegisteredCity,"carRegisteredCity");
     }
+    onChangePost = () => {
+        console.log(token,"my token")
+        this.props.onPressNavigate(token);
+    }
     onChangevehicleRegDate = (value) => {
         this.setState({vehicleRegDate  : value });
         console.log(this.state.vehicleRegDate ,"vehicleRegDate ");
@@ -300,7 +304,7 @@ console.log("hittinh.......")
         return (
             <RX.ScrollView style={ _styles.scroll }>
             <RX.View style={ styling.container }>
-            <RX.Button  onPress={ this.props.onNavigateSuper }><RX.Image
+            <RX.Button  onPress={()=> this.onChangePost()}><RX.Image
                          style={_styles.HomeScrollImageLogo}
                          source={'./src/img/Back.svg'}/>
                     <RX.Text style={styling.welcome }>

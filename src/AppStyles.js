@@ -257,7 +257,7 @@ module.exports = {
     sideText:RX.Styles.createTextStyle({
         fontSize: 16,
         color: 'black',
-        fontWeight:'bold'
+        fontWeight:'bold',
 
     }),
     siDeText:RX.Styles.createTextStyle({

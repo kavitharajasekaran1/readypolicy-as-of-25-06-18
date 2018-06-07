@@ -121,9 +121,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: this.state.vehicleManufacturerName,
                         idv: "65478",
-                        policyStartDate: "29/05/2018",
+                        policyStartDate: "06/06/2018",
                         vehicleMostlyDrivenOn: this.state.vehicleMostlyDrivenOn,
-                        vehicleRegDate: "29/05/2018",
+                        vehicleRegDate: "06/06/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",
@@ -398,6 +398,7 @@ console.log("hittinh.......")
  
                                              <RX.TextInput
                                                  style={styling.Form}
+                                                 pattern=".+@beststartupever.com"
                                                  placeholder="Email id"
                                                  value={ this.state.emailId }
                                                  onChangeText={this.onChangeemailId}
@@ -419,9 +420,10 @@ console.log("hittinh.......")
                                            </div>   
                                          </form>
                
-                                    
-                                     <RX.Button style={styling.button} onPress={()=> this.onChangePostt()}>Get Quote</RX.Button>
-                   </div>                 
+                                         <RX.Button style={styling.button} onPress={()=> this.onChangePostt()}>Get Quote</RX.Button>            
+                                   
+                   </div>   
+              
                  </Grid>
  
  

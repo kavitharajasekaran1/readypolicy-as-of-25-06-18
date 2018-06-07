@@ -5,6 +5,8 @@
 import React from 'react';
 import RX from 'reactxp';
 
+
+
 import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,DateTimeField} from 'react-bootstrap';
 
 const styles = {
@@ -26,6 +28,7 @@ const styles = {
         right: 0,
         bottom: 0,
         top: 0,
+        backgroundColor:'#535394a6'
     }),
     welcome: RX.Styles.createTextStyle({
         color: 'Red',
@@ -177,6 +180,25 @@ const styles = {
         marginHorizontal: 12,
         color: 'white'
     }),
+    footer: RX.Styles.createViewStyle({
+        position: 'absolute',
+        
+        width: '100%',
+        backgroundColor: 'rgba(26,153,228,.97)',
+        justifyContent:'center',
+        alignSelf:'center',
+        height:'50',
+        bottom:'0',
+        marginTop:'40'
+        
+    }),
+    footerText: RX.Styles.createTextStyle({
+        fontSize: 20,
+        marginVertical: 6,
+        marginHorizontal: 12,
+        color: 'white',
+        alignSelf:'center'
+    }),
     quotes: RX.Styles.createTextStyle({
         position: 'absolute',
         fontSize: 15,
@@ -224,6 +246,10 @@ const styles = {
         width:59,
         padding:13,
         marginLeft:-75
+    }),
+    backgroundImage:RX.Styles.createViewStyle({
+        flex: 1,
+        alignSelf: "stretch",
     }),
     otp: RX.Styles.createTextStyle({
         
@@ -286,9 +312,9 @@ const styles = {
     }),
     phone: RX.Styles.createViewStyle({
         height: 42,
-        width: 37,
+        width: 30,
         marginTop:46,
-        marginLeft:154
+        marginLeft:244
     }),
     resend: RX.Styles.createScrollViewStyle({
         fontSize: 18,
@@ -312,35 +338,47 @@ const styles = {
         marginTop:130
     }),
     policy: RX.Styles.createScrollViewStyle({
-    fontSize: 18,
+    fontSize: 26,
     marginBottom: 16,
     color:'White',
     justifyContent: 'center',
     position: 'absolute',
     alignSelf: 'center',
-    marginLeft: 1,
-    marginTop:-122
+    marginLeft: -10,
+    marginTop:-148
     }),
     Policy: RX.Styles.createScrollViewStyle({
-        fontSize: 18,
+        fontSize: 24,
         marginBottom: 16,
         color:'White',
         justifyContent: 'center',
         position: 'absolute',
         alignSelf: 'center',
-        marginLeft: 1,
-        marginTop:-48,
+        marginLeft: 2,
+        marginTop:-95,
         textAlign: 'center'
         }),
-        POLICY: RX.Styles.createScrollViewStyle({
-            fontSize: 18,
+        P0LIcy: RX.Styles.createScrollViewStyle({
+            fontSize: 24,
             marginBottom: 16,
-            color:'Red',
+            color:'White',
             justifyContent: 'center',
             position: 'absolute',
-            marginLeft: 1,
-            marginTop:-48,
-           
+            alignSelf: 'center',
+            marginLeft: -89,
+            marginTop:-57,
+            textAlign: 'center'
+            }),
+            TryHead: RX.Styles.createScrollViewStyle({
+                fontSize: 15,
+                color: 'WHITE',
+                marginTop: 'auto',
+                textTransform:'capitalize'
+            }),
+        POLICY: RX.Styles.createScrollViewStyle({
+            fontcolor:'red',
+            marginTop: -34,
+            marginLeft: 418
             }),
 
         POlicy:RX.Styles.createTextStyle({
@@ -355,11 +393,50 @@ const styles = {
 
     
         }),
+        image:RX.Styles.createViewStyle({
+            height: 100,
+            width:'100%',
+            marginTop: '77px',
+    marginLeft: '-7px',
+    backgroundcolor: '#62629cb0'
+           
+        }), 
+    IMAGE:RX.Styles.createViewStyle({
+            height: 100,
+            width:'23%',
+            marginTop: '14px',
+    marginLeft: '29px',
+    backgroundcolor: '#62629cb0'
+           
+        }),
+        aren:RX.Styles.createTextStyle({ 
+            marginTop: -76,
+        marginLeft: 67
+        }),
+        areN:RX.Styles.createTextStyle({ 
+        marginLeft: 279,
+    marginTop: -39,
+    }),
        lock:RX.Styles.createTextStyle({
-            fontSize: 18,
-            color:'black',
-            width:55,
+        display: 'block',
+        backgroundcolor: 'black',
+        width: 50,
+        float: 'left',
+        padding: 8,
+        position:'center',
+        marginLeft:'15px',
+        color: "#555",
           
+            }),
+            hoat:RX.Styles.createTextStyle({
+                display: 'block',
+                backgroundcolor: 'grey',
+                width: 200,
+                float: 'left',
+                padding: 10,
+                marginLeft:50
+                
+
             }),
     
     
@@ -373,6 +450,7 @@ export default class OtpPage extends RX.Component{
             phone1:'',
             phone2:'',
             phone3:'',
+            onFocus:'',
         };
         this._translationValue = RX.Animated.createValue(-100);
         this._animatedStyle = RX.Styles.createAnimatedTextStyle({
@@ -401,6 +479,15 @@ export default class OtpPage extends RX.Component{
         this.setState({ value: value });
         
     }
+    onFocus() {
+        let {
+            errors = {}
+        } = this.state;
+
+        
+
+       
+    }
     onChangePhone = (value) => {
         this.setState({ phone: value });
         console.log(this.state.phone,"phone");
@@ -422,27 +509,34 @@ export default class OtpPage extends RX.Component{
         token = this.props.navigatorRoute.token
         console.log(token,"token")
         return (
-            <RX.ScrollView style={ styles.scroll }>
+            <RX.Image
+            source={ ('./src/img/policy.png' )}
+            resizeMode="cover"
+            fluidalt="Responsive Image"
+            style={[styles.backgroundImage]}
+        >
+            {/* <RX.ScrollView style={ styles.scroll }> */}
             <RX.View style={ styles.container }>
             
-                 
+            <RX.Image source={ './src/img/Logo.svg' }style={ [styles.image] }/>   
                
-            <RX.Text style={ styles.welcome }>Ready</RX.Text>
+            {/* <RX.Text style={ styles.welcome }>Ready</RX.Text>
             
             <RX.Text style={ styles.Welcome }>Policy</RX.Text>
-         
+          */}
                 <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
-            <RX.Text style={styles.Policy}>Waiting to automatically detect an SMS to 9640266349.<RX.Text style={styles.POLICY}>WrongNumber?</RX.Text></RX.Text>
-            <RX.Text style={styles.POlicy}>      
+            <RX.Text style={styles.Policy}>Waiting to automatically detect an SMS</RX.Text><RX.Text style={styles.P0LIcy}> sent to +9650266349.<p  class="text-danger" style={styles.POLICY} >WrongNumber?</p></RX.Text>
+            <RX.Text style={styles.POlicy}> 
+       
             <form>
                 
-                <input type="number" style={styles.lock} placeholder="01"/>
+                <input type="text" style={styles.lock} placeholder="01" onFocus={this.onFocus} maxlength="2"/>
               
-                 <input type="number" style={styles.lock}  placeholder="02"/>
+                 <input type="text" style={styles.lock}  placeholder="02" onFocus={this.onFocus} maxlength="2"/>
                  
-                 <input type="number" style={styles.lock} placeholder="03"/>
+                 <input type="text" style={styles.lock} placeholder="03" onFocus={this.onFocus} maxlength="2"/>
               
-                 <input type="number" style={styles.lock} placeholder="04"/>
+                 <input type="text" style={styles.lock} placeholder="04" onFocus={this.onFocus} maxlength="2"/>
                
               </form>        
               </RX.Text>  
@@ -450,12 +544,13 @@ export default class OtpPage extends RX.Component{
                         Enter OTP code
                     </RX.Text>
                     <RX.Text style={ styles.resend }>
-                        <RX.Image source={ './src/img/logo.png' } style={ [styles.image] } />
-                        Resend
+                        <RX.Image source={ './src/img/mess.png' } style={ [styles.IMAGE] } /><p style={styles.aren}>Resend</p>
+                       
                     </RX.Text>
+                  
                     <RX.Text style={ styles.Resend }>
-                        <RX.Image source={ './src/img/download.jpeg' } style={ [styles.phone] } />
-                        Phone
+                        <RX.Image source={ './src/img/phonee.png' } style={ [styles.phone] } /><p style={styles.areN} >Phone</p>
+
                     </RX.Text>
                     <RX.Button
                     style={ [styles.button1, this.state.button1Hover && styles.button1Hover] }
@@ -468,6 +563,17 @@ export default class OtpPage extends RX.Component{
                     </RX.Text>
                 </RX.Button>
                 </RX.View>
+                <RX.View style={styles.footer}>
+
+<RX.Button
+/* // style={ [sty]} */
+onPress={()=> this.onChangePost()}
+> {/* // onPress={() => navigate('OtpPage'), { phone: this.state.phone }} */}
+  <RX.Text style={styles.footerText} >{'NEXT'}
+ </RX.Text>
+  </RX.Button>
+   </RX.View>
+
                 {/* <Row className="show-grid">
                                         <Col  md={6}>
                                             <RX.Button bsStyle="primary"  onPress={()=> this.onChangePost() }>Post</RX.Button>
@@ -478,8 +584,8 @@ export default class OtpPage extends RX.Component{
 
                                     </Row>
                  */}
-            </RX.ScrollView>
-
+            {/* </RX.ScrollView> */}
+</RX.Image>
         );
     }
 }

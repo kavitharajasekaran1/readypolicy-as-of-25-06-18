@@ -65,6 +65,25 @@ const styles = {
         position: 'absolute'
 
     }),
+    footer: RX.Styles.createViewStyle({
+        position: 'absolute',
+        
+        width: '100%',
+        backgroundColor: 'rgba(26,153,228,.97)',
+        justifyContent:'center',
+        alignSelf:'center',
+        height:'50',
+        bottom:'0',
+        marginTop:'40'
+        
+    }),
+    footerText: RX.Styles.createTextStyle({
+        fontSize: 20,
+        marginVertical: 6,
+        marginHorizontal: 12,
+        color: 'white',
+        alignSelf:'center'
+    }),
     policy:RX.Styles.createTextStyle({
         fontSize: 18,
         marginBottom: 16,
@@ -326,27 +345,19 @@ export default class LoginPage extends RX.Component{
                                             </FormGroup>
                                         </form>
                                         </RX.Text>
-                   <RX.Button
-                    style={ [styles.button1, this.state.button1Hover && styles.button1Hover] }
-                    onHoverStart={ () => { this.setState({ button1Hover: true }) } }
-                    onHoverEnd={ () => { this.setState({ button1Hover: false }) } }
-                    onPress={()=> this.onChangePost() }
-                >
-                    <RX.Text style={ [styles.button1Text, this.state.button1Hover && styles.button1TextHover] }>
-                        { 'Next' }
-                    </RX.Text>
-                </RX.Button>
+                 
                 </RX.View>
-                {/* <Row className="show-grid">
-                                        <Col  md={6}>
-                                            <RX.Button bsStyle="primary"  onPress={()=> this.onChangePost() }>Post</RX.Button>
-                                        </Col>
-                                        <Col  md={6}>
-                                            <RX.Button bsStyle="warning"  onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
-                                        </Col>
+                <RX.View style={styles.footer}>
 
-                                    </Row>
-                 */}
+<RX.Button
+/* // style={ [sty]} */
+onPress={()=> this.onChangePost()}
+> {/* // onPress={() => navigate('OtpPage'), { phone: this.state.phone }} */}
+  <RX.Text style={styles.footerText} >{'NEXT'}
+ </RX.Text>
+  </RX.Button>
+   </RX.View>
+                
        
 </RX.Image>
         );

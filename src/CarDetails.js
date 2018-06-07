@@ -160,6 +160,13 @@ const _styles = {
         borderRadius: 16,
         backgroundColor: '#7d88a9'
     }),
+    HomeScrollImageLogo: RX.Styles.createImageStyle({
+        width:5000,
+        height: 72,
+        paddingVertical:20,
+        marginLeft:-1200,
+        marginTop:12
+    }),
     buttonText: RX.Styles.createTextStyle({
         fontSize: 16,
         marginVertical: 6,
@@ -231,7 +238,9 @@ export default class QuotesSelection  extends RX.Component {
             fieldVal: value
         })
     }
-
+    onChangePostt = ()=> {
+       this.props.onNavigateThirty (liability,resJson,quoteid,premium,allResponse,token)
+    }
    
     onChangePost = () => {
         console.log("Rahul")
@@ -268,12 +277,12 @@ export default class QuotesSelection  extends RX.Component {
        // console.log(this.props,"value");
         return (
             <RX.ScrollView style={ _styles.scroll }>
-                <RX.View style={ _styles.container }>
-                    <RX.Text style={ _styles.welcome }>
-                        QuoteDetails
-                    </RX.Text>
-                    <RX.Text style={ _styles.welcome }>
-                    </RX.Text>
+                <RX.View style={ styling.container }>
+                <RX.Button  onPress={()=> this.onChangePostt()}><RX.Image
+                         style={_styles.HomeScrollImageLogo}
+                         source={'./src/img/Back.svg'}/>
+                    <RX.Text style={styling.welcome }>Quote Details </RX.Text>
+                    </RX.Button>
                 </RX.View>
                 <RX.View style={ _styles.pageAlign }>
                     <Grid className="hidden-xs">

@@ -245,6 +245,11 @@ export default class CompareQuotes extends RX.Component{
     
     
     }
+    onChangePost = () => {
+        this.props.onNavigateTwenty(allResponse,resJson,liability,message,quoteid,premium,odpremium,token);
+    
+    
+    }
     onNavigateSixth = () => {
         let {
             testValue = 'read'
@@ -293,14 +298,15 @@ export default class CompareQuotes extends RX.Component{
             <div>{this.props.componentData.component}</div>
             <div>{this.props.componentData.id}</div>
         
-        
             <RX.ScrollView style={ styles.scroll }>
-            <RX.View style={ styling.container }>
-            <RX.Button  onPress={ this.props.onNavigateTen}><RX.Image
+                <RX.View style={ styling.container }>
+                <RX.Button  onPress={()=> this.onChangePost()}><RX.Image
                          style={styles.HomeScrollImageLogo}
                          source={'./src/img/Back.svg'}/>
-                    <RX.Text style={styling.welcome }>Compare Quotes </RX.Text>
-                   </RX.Button>
+                    <RX.Text style={ styles.welcome }>
+                       COMPARE QUOTES
+                    </RX.Text>
+                    </RX.Button>
                 </RX.View>
                 <RX.View style={styles.clientSec}>
                     <Row className="show-grid hidden-xs">
