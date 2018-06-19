@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import RX from 'reactxp';
+import RX, { TextInput } from 'reactxp';
 import OtpPage from './OtpPage';
 import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,DateTimeField,Checkbox,Button} from 'react-bootstrap';
 
@@ -271,11 +271,14 @@ export default class QuotesSelection  extends RX.Component {
     constructor(props) {
         super(props);
 
+        this.textInput = React.createRef(),
+
         this._playVideo = this._playVideo.bind(this);
         this._onChangeToggle = this._onChangeToggle.bind(this);
         this.state = {
             toggleValue: true,
-            progressValue: 0
+            progressValue: 0,
+            TextInput:''
         };
     }
 
@@ -396,6 +399,49 @@ export default class QuotesSelection  extends RX.Component {
             
         
     }
+
+    save=(value)=> {
+        // console.log(this.refs.check_me.checked);
+        var input= new Array()
+         input[1]=this.refs.check_me1.checked;
+    
+         input[2]=this.refs.check_me2.checked;
+    
+         input[3]=this.refs.check_me3.checked;
+    
+         input[4]=this.refs.check_me4.checked;
+
+         input[5]=this.refs.check_me5.checked;
+
+        //  if(input[1] || input[2] || input[3] || input[4] ||input[5] ==false)
+        //     {
+        //  this.setState({TextValue : "0  selected"}) ;
+        //     }
+    
+        var count =0;
+        this.setState({TextValue : +count +"  selected"}) ;
+        for(i=0;i<6;i++)
+        {
+       
+        if(input[i]==true)
+        {
+        count =count + 1;
+        }
+       
+        
+        } 
+        console.log(+count + "is checked")
+        this.setState({TextValue : +count +"  selected"}) ;
+        
+    }
+
+
+
+
+
+
+
+
     onChangePost(){
         console.log("navigate",token)
         this.props.onNavigateTen(resJson,liability,message,quoteid,premium,odpremium,token); 
@@ -412,7 +458,34 @@ export default class QuotesSelection  extends RX.Component {
         })
     }
 
-    onChangeliability  = () => {
+    onChangeliability = (value) => {
+        var input= new Array()
+
+
+        input[2]=this.refs.check_me1.checked;
+        console.log(this.refs.check_me1.checked)
+       
+    
+        input[3]=this.refs.check_me2.checked;
+    
+        input[4]=this.refs.check_me3.checked;
+        if(this.refs.check_me1.checked)
+        {
+            global.index=1
+            console.log(global.index);
+           }
+        else{
+            global.index=0
+            console.log(global.index);
+        }
+        if(this.refs.check_me2.checked)
+        {
+            global.index1=1
+        }
+        if(this.refs.check_me3.checked)
+        {
+            global.index2=1
+        }
         this.props.onNavigateSixth(liability,resJson,message,quoteid,premium,odpremium,token);
         
         
@@ -454,7 +527,7 @@ export default class QuotesSelection  extends RX.Component {
                     <Grid className="hidden-xs">
                     <RX.View style={ _styles.client }>
                         <RX.Image source={ './src/img/royal.jpg' } style={ [_styles.imAge] } >
-                        <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
+                        <div  className="checkbox" style={_styles.check}><input type="checkbox" ref="check_me1" onClick={this.save}/>Compare</div>
                          </RX.Image>
                         <RX.Text style={ _styles.sideHead }>
                             Royal Sundaram
@@ -470,7 +543,7 @@ export default class QuotesSelection  extends RX.Component {
                             <div>{odpremium.PACKAGE_PREMIUM}</div>
                         </RX.Text>
                         <RX.View style={_styles.nextBtn}>
-                            <RX.Button style={ _styles.roundButton } onPress={()=> this.onChangeliability()}>
+                            <RX.Button style={ _styles.roundButton } onPress={()=> this.onChangeliabilityy()}>
                                 <RX.Text style={ _styles.buybuttonText }>
                                     Rs.{odpremium.GROSS_PREMIUM}
                                 </RX.Text>
@@ -484,7 +557,8 @@ export default class QuotesSelection  extends RX.Component {
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
                         <RX.Image source={ './src/img/icici.png' } style={ [_styles.icic] } >
-                        <div style={_styles.Check}><Checkbox>Compare</Checkbox></div>
+                        {/* <div style={_styles.Check}><Checkbox ref="check_me2">Compare</Checkbox></div> */}
+                        <div  className="checkbox" style={_styles.check}><input type="checkbox" ref="check_me2" onClick={this.save} />Compare</div>
                          </RX.Image>
                         <RX.Text style={ _styles.SideHead }>
                              ICICI LOMBARD
@@ -513,7 +587,8 @@ export default class QuotesSelection  extends RX.Component {
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
                         <RX.Image source={ './src/img/tata.png' } style={ [styling.JUKE] } >
-                        <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
+                        {/* <div style={_styles.check}><Checkbox ref="check_me3">Compare</Checkbox></div> */}
+                        <div  className="checkbox" style={_styles.check}><input type="checkbox" ref="check_me3" onClick={this.save}/>Compare</div>
                          </RX.Image>
                         <RX.Text style={ _styles.SideHead }>
                            Tata AIG
@@ -542,7 +617,9 @@ export default class QuotesSelection  extends RX.Component {
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
                         <RX.Image source={ './src/img/Sbi.png' } style={ [_styles.image] } >
-                        <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
+                        {/* <div style={_styles.check}><Checkbox ref="check_me4">Compare</Checkbox></div> */}
+
+                        <div  className="checkbox" style={_styles.check}><input type="checkbox" ref="check_me4" onClick={this.save} />Compare</div>
                          </RX.Image>
                         <RX.Text style={ _styles.SideHead }>
                           Bharathi AXP
@@ -571,7 +648,9 @@ export default class QuotesSelection  extends RX.Component {
                 <RX.View style={ _styles.pageAlign }>
                     <RX.View style={ _styles.client }>
                         <RX.Image source={ './src/img/Bharti.png' } style={ [_styles.image] } >
-                        <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
+                        {/* <div style={_styles.check} ref="check_me"><Checkbox ref="check_me5">Compare</Checkbox></div> */}
+
+                        <div  className="checkbox" style={_styles.check}><input type="checkbox" ref="check_me5" onClick={this.save} />Compare</div>
                          </RX.Image>
                         <RX.Text style={ _styles.SideHead }>
                             Reliance AXP
@@ -692,8 +771,38 @@ export default class QuotesSelection  extends RX.Component {
                     </RX.View>
                 </Grid>
 
+                {/* <div> */}
+          {/* <RX.Text  placeholder="0 selected" style={ styling.sideText1 } > { this.state.TextValue }  </RX.Text> */}
+            {/* <button className="btn btn-default" style={styling.BUTTON4}   >Submit</button>
+            </div> */}
+
+
+<RX.View style={ styling.container }>
+{/* <RX.Button   onPress={()=> this.onChangePost()}><RX.Image */}
+
+            <RX.Text  placeholder="0 selected" style={ styling.sideText1 } > { this.state.TextValue }  </RX.Text>
+
+       
+
+            <RX.Button className="btn btn-default" style={styling.BUTTON41} onPress={()=> this.onChangeliability()}>Compare
+
+         {/* style={_styles.HomeScrollImageLogo}
+         source={'./src/img/Back.svg'}/>
+    <RX.Text style={ styling.welcome }>New Motor Insurance </RX.Text> */}
+    </RX.Button>
+    
+    
+    </RX.View>
+
+
             </RX.ScrollView>
+
+
         );
+
+
+
+
     }
 
     _playVideo() {

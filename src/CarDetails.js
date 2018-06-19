@@ -207,6 +207,7 @@ var quoteid
 var premium
 var allResponse
 var token
+
 export default class QuotesSelection  extends RX.Component {
 
 

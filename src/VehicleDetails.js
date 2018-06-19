@@ -102,9 +102,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '87164',
-                      policyStartDate: '07/06/2018',
+                      policyStartDate: '19/06/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '07/06/2018',
+                      vehicleRegDate: '19/06/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -268,7 +268,7 @@ console.log("quoteid_",this.props.navigatorRoute.quoteid)
      }
      onChangePostt(){
         console.log("navigate",token)
-        this.props.onNavigateSixth(resJson,liability,message,quoteid,premium,odpremium,token); 
+        this.props.onNavigatePush(resJson,liability,message,quoteid,premium,odpremium,token); 
     }  
     onChangeTextValue = (value) => {
         this.setState({ inputValue: value });

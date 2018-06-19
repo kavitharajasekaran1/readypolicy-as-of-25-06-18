@@ -16,6 +16,41 @@ module.exports = {
         justifyContent:'center',
 
     }),
+    BUTTON41 :RX.Styles.createViewStyle({
+        display: 'block',
+        width: '10%',
+        height: 41,
+        justifyContent: 'center',
+       alignItems: 'center',
+        // padding: 6px 12px;
+         fontSize: 20,
+       // line: 1.42857143;
+       color: "White",
+       backgroundColor: "#2ecc71",
+       borderWidth:1,
+       borderColor:"#ccc",
+       borderRadius: 4,
+       marginLeft:750,
+       marginTop:83,
+       padding:5
+ 
+    }),
+    sideText1:RX.Styles.createTextStyle({
+        fontSize: 20,
+        color: 'white',
+        fontWeight:'bold',
+        marginBottom:-120,
+        backgroundColor:'#1a153b',
+        width: '14%',
+         height: 41,
+         justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft:-750,
+        marginTop:-42,
+        padding:5,
+        
+ 
+    }),
     welcome: RX.Styles.createScrollViewStyle({
         top: -50,
         fontSize: 25,
@@ -393,6 +428,21 @@ module.exports = {
         borderColor:"#ccc",
         borderRadius: 4
     }),
+    Form10:RX.Styles.createViewStyle({
+        display: 'block',
+         width: '100%',
+         height: 34,
+         textAlign:"center",
+         // padding: 6px 12px;
+          fontSize: 14,
+          color:'#060505',
+        // line: 1.42857143;
+        
+        backgroundColor: "white",
+        borderWidth:1,
+        borderColor:"#ccc",
+        borderRadius: 4
+    }),
     FOrm:RX.Styles.createViewStyle({
         display: 'block',
          width: '80%',
@@ -556,6 +606,10 @@ module.exports = {
     marTop:RX.Styles.createViewStyle({
       marginTop:20,
     }),
+    marTOP:RX.Styles.createViewStyle({
+        marginTop:20,
+        marginLeft:250,
+      }),
     marTop40:RX.Styles.createViewStyle({
         marginTop:40,
     }),

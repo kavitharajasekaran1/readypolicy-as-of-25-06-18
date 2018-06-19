@@ -244,17 +244,15 @@ export default class QuotesSelection  extends RX.Component {
    
     onChangePost = () => {
         console.log("Rahul")
-            if(message==="Premium Calculated and Quote Saved Successfully"){
-                       swal(''+message+'')
+           
                         console.log("quoteiid",quoteid)
                         console.log("premium",premium)
                         console.log("odpremium",odpremium)
                         console.log("token",token)
 
                         this.props.onNavigateDetail(quoteid,premium,odpremium,token);
-            }else{
-                swal(''+message+'')
-            } 
+          
+            
                       //  this.props.onNavigateBack (liability,message);
                    //   idv = resJson.PREMIUMDETAILS.DATA.IDV
                   
@@ -267,7 +265,7 @@ export default class QuotesSelection  extends RX.Component {
     }
     onChangePostt(){
         console.log("navigate",token)
-        this.props.onNavigateNinety(resJson,liability,message,quoteid,premium,odpremium,token); 
+        this.props.onNavigateSixth(resJson,liability,message,quoteid,premium,odpremium,token); 
     }
     render() {
      resJson = this.props.navigatorRoute.resJson

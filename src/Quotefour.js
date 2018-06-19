@@ -4,32 +4,12 @@
 
 import React from 'react';
 import RX from 'reactxp';
-import OtpPage from './OtpPage';
+import styling from './AppStyles';
 import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,DateTimeField,Checkbox,Button} from 'react-bootstrap';
-
-
-
-import {default as RXVideo} from 'reactxp-video';
-
-import ProgressIndicator from './ProgressIndicator';
-import ToggleSwitch from './ToggleSwitch';
-import Rest from "./RestConfig";
-import styling from "./AppStyles";
-
-const _styles = {
+const styles = {
     scroll: RX.Styles.createScrollViewStyle({
-        backgroundColor: '#ffffff',
-        alignSelf: 'stretch'
-
-    }),
-    pageAlign: RX.Styles.createScrollViewStyle({
-        backgroundColor: '#ffffff',
-        justifyContent:'center'
-
-    }),
-    welcome: RX.Styles.createScrollViewStyle({
-        fontSize: 32,
-        color: 'white',
+        alignSelf: 'stretch',
+        backgroundColor: '#f5fcff'
     }),
     container: RX.Styles.createViewStyle({
         justifyContent: 'center',
@@ -37,127 +17,33 @@ const _styles = {
         backgroundColor:'#1a153b',
         padding:5
     }),
-    flute: RX.Styles.createViewStyle({
-        justifyContent: 'center',
-        alignItems: 'left',
-        backgroundColor:'#f5f5f3',
-        padding:5
+    HomeScrollImageLogo: RX.Styles.createImageStyle({
+        width:5000,
+        height: 72,
+        paddingVertical:20,
+        marginLeft:-1200,
+        marginTop:12
     }),
-    head: RX.Styles.createScrollViewStyle({
-        fontSize: 30,
-        color: '#3b3751',
-        textTransform:'capitalize',
-        justifyContent:'center',
-        alignself:'center',
-        textAlign:'center'
+    helloWorld: RX.Styles.createTextStyle({
+        fontSize: 48,
+        fontWeight: 'bold',
+        marginBottom: 28
     }),
-    sideHead: RX.Styles.createScrollViewStyle({
-        fontSize: 18,
-        color: '#3e376d',
-        textTransform:'capitalize',
-        marginLeft:54,
-        marginTop:41
+    welcome: RX.Styles.createTextStyle({
+        fontSize: 40,
+        color: 'white',
     }),
-    quotes: RX.Styles.createScrollViewStyle({
-        fontSize: 15,
-        color: '#101010',
-        textTransform:'capitalize',
-        backgroundColor:"#c7c7c7",
-        marginTop:41,
-        height:41,
-        width:169,
-        padding:4,
-        marginLeft:71
-    }),
-    quoted: RX.Styles.createScrollViewStyle({
-        fontSize: 15,
-        color: '#101010',
-        textTransform:'capitalize',
-        backgroundColor:"#c7c7c7",
-        marginTop:41,
-        height:41,
-        width:169,
-        padding:4,
-        marginLeft:92
-    }),
-    subQuotes: RX.Styles.createScrollViewStyle({
-        fontSize: 15,
-        color: '#101010',
-        textTransform:'capitalize',
-        backgroundColor:"#c7c7c7",
-        marginTop:41,
-        height:41,
-        width:169
-
-    }),
-    ncb: RX.Styles.createScrollViewStyle({
-        fontSize: 15,
-        color: '#101010',
-        textTransform:'capitalize',
-        backgroundColor:"#c7c7c7",
-        marginTop:41,
-        alignItems:'left',
-        height:41,
-        padding:4
-    }),
-    subNcb: RX.Styles.createScrollViewStyle({
-        fontSize: 15,
-        color: '#101010',
-        textTransform:'capitalize',
-        backgroundColor:"#c7c7c7",
-        marginTop:41,
-        alignItems:'left',
-        height:41
-    }),
-    tryHead: RX.Styles.createScrollViewStyle({
-        fontSize: 15,
-        color: '#3e376d',
-        textTransform:'capitalize'
-    }),
-    client: RX.Styles.createViewStyle({
-        justifyContent: 'center',
-        alignItems: 'left',
-        backgroundColor:'#ffffff',
-        padding:5,
-        flex:1,
-        flexDirection:'row',
-        borderBottomWidth:1,
-        borderColor:"#cccccc"
-    }),
-    btn: RX.Styles.createViewStyle({
-        justifyContent: 'left',
-        alignItems: 'left',
-        backgroundColor:'#ffffff',
-        padding:5,
-        flex:1,
-        flexDirection:'row'
-    }),
-    nextBtn: RX.Styles.createViewStyle({
-        marginTop:30,
-        marginLeft:62
-    }),
-    titleText: RX.Styles.createTextStyle({
+    instructions: RX.Styles.createTextStyle({
         fontSize: 16,
-        textAlign: 'center',
-        marginTop: 12,
-        color: 'black'
+        color: '#aaa',
+        marginBottom: 16
     }),
-    videoTitleText: RX.Styles.createTextStyle({
-        marginBottom: 8
-    }),
-    progressMargin: RX.Styles.createViewStyle({
-        margin: 8
-    }),
-    video: RX.Styles.createViewStyle({
-        height: 176,
-        width: 320
+    docLink: RX.Styles.createLinkStyle({
+        fontSize: 16,
+        color: 'blue',
+        marginBottom: 16
     }),
     roundButton: RX.Styles.createViewStyle({
-        margin: 16,
-        borderRadius: 5,
-        backgroundColor: '#2ecc71'
-    }),
-    buyButton: RX.Styles.createViewStyle({
         margin: 16,
         borderRadius: 16,
         backgroundColor: '#7d88a9'
@@ -168,503 +54,776 @@ const _styles = {
         marginHorizontal: 12,
         color: 'white'
     }),
-    buybuttonText: RX.Styles.createTextStyle({
-        fontSize: 16,
-        marginVertical: 6,
-        marginHorizontal: 12,
-        color: 'white'
+    client: RX.Styles.createViewStyle({
+        justifyContent: 'center',
+        alignItems: 'left',
+        backgroundColor:'#ffffff',
+        padding:5,
+        flex:1,
+        flexDirection:'row',
+        // borderBottomWidth:1,
+        // borderColor:"#cccccc"
     }),
-    editTodoItem: RX.Styles.createTextStyle({
-        margin: 8,
-        height: 18,
-        fontSize: 14,
-        alignSelf: 'stretch',
-        backgroundColor: 'transparent',
-        borderWidth:1 ,
-        borderRightWidth:0,
-        borderTopWidth:0,
-        borderLeftWidth:0,
-        borderStyle:'solid',
-        borderColor:'#ccc'
+    clientSec: RX.Styles.createViewStyle({
+        justifyContent: 'center',
+        // alignItems: 'center',
+        backgroundColor:'#ffffff',
+        // padding:5,
+        // flex:1,
+        // flexDirection:'row',
+        // borderBottomWidth:1,
+        // borderColor:"#cccccc"
     }),
+    clientNorm: RX.Styles.createViewStyle({
+        justifyContent: 'center',
+        alignItems: 'left',
+        backgroundColor:'#ffffff',
+        padding:5,
+        flex:1,
+        flexDirection:'row',
+        // borderBottomWidth:1,
+        // borderColor:"#cccccc"
+    }),
+    clientName: RX.Styles.createViewStyle({
+        justifyContent: 'center',
+        alignItems: 'left',
+        backgroundColor:'#ffffff',
+        padding:5,
+        flex:1,
+        flexDirection:'row',
+        // borderBottomWidth:1,
+        // borderColor:"#cccccc"
+    }),
+    clientText: RX.Styles.createViewStyle({
+        color:'#413a6f',
+        fontSize:'10',
+        alignItems:'right'
+        // borderBottomWidth:1,
+        // borderColor:"#cccccc"
+    }),
+    clientTextxs: RX.Styles.createViewStyle({
+        color:'#413a6f',
+        fontSize:'8',
+        marginBottom:'15'
+        // borderBottomWidth:1,
+        // borderColor:"#cccccc"
+    }),
+    clientedText: RX.Styles.createViewStyle({
+        color:'#000000',
+        fontSize:'10'
+        // borderBottomWidth:1,
+        // borderColor:"#cccccc"
+    }),
+    clientTexted: RX.Styles.createViewStyle({
+        color:'#413a6f',
+        fontSize:'10',
+        marginTop:'39'
+        // borderBottomWidth:1,
+        // borderColor:"#cccccc"
+    }),
+    clientNcb: RX.Styles.createViewStyle({
+        color:'#413a6f',
+        fontSize:'10',
+        marginTop:42
+        // borderBottomWidth:1,
+        // borderColor:"#cccccc"
+    }),
+    subText: RX.Styles.createViewStyle({
+        color:'#fa774d',
+        fontSize:'10',
+        marginTop:22
+
+        // borderBottomWidth:1,
+        // borderColor:"#cccccc"
+    }),
+    subPer: RX.Styles.createViewStyle({
+        color:'#546e7a',
+        fontSize:'10',
+        marginTop:42
+
+        // borderBottomWidth:1,
+        // borderColor:"#cccccc"
+    }),
+    imageAlign: RX.Styles.createViewStyle({
+        marginLeft:100
+    }),
+    imageAlignement: RX.Styles.createViewStyle({
+        marginLeft:100,
+        marginTop:168
+    }),
+    imageAlignementxs: RX.Styles.createViewStyle({
+        marginTop:168
+    }),
+    imageAligned: RX.Styles.createViewStyle({
+        marginLeft:105
+    }),
+    /* sideHead: RX.Styles.createScrollViewStyle({
+         fontSize: 18,
+         color: '#3e376d',
+         textTransform:'capitalize',
+         marginLeft:54,
+         marginTop:41
+     }),
+     tryHead: RX.Styles.createScrollViewStyle({
+         fontSize: 15,
+         color: '#3e376d',
+         textTransform:'capitalize'
+     }),*/
     image: RX.Styles.createViewStyle({
         height: 100,
         width: 100,
         backgroundColor:'#FFFFFF',
         marginTop:10
     }),
-    Assitance: RX.Styles.createTextStyle({
-        position: "relative", 
-        width: "100",
-         height: "100",
-          float: "left" ,
-          marginleft: 10,
-          marginTop:20 
+    marTopxs:RX.Styles.createViewStyle({
+        marginTop:58,
+        color:'#fa774d'
     }),
-check: RX.Styles.createTextStyle({
-    fontSize: 20,
-    textTransform:'capitalize',
-    marginTop:62
-    }),
-}; 
-var idv
+};
+var liability
 var resJson
+var message
 var quoteid
 var premium
-var liability
 var allResponse
-export default class QuotesSelection  extends RX.Component {
+var token
 
-
-    _progressTimerToken;
-
+export default class CompareQuotes extends RX.Component{
     constructor(props) {
         super(props);
-
-        this._playVideo = this._playVideo.bind(this);
-        this._onChangeToggle = this._onChangeToggle.bind(this);
-        this.state = {
-            toggleValue: true,
-            progressValue: 0
-        };
+        this.state={
+            showme:false,
+           showme1:false,
+           showme2:false
+        },
+        this._translationValue = RX.Animated.createValue(-100);
+        this._animatedStyle = RX.Styles.createAnimatedTextStyle({
+            transform: [
+                {
+                    translateY: this._translationValue
+                }
+            ]
+        });
     }
 
     componentDidMount() {
-    //     console.log(this.props.triggerPost,'function');
+        if( global.index==1)
+           {
+               console.log("hisp")
+               this.setState({ showme:!this.state.showme})
+               
+               
+           }
 
 
-    //     let email = "joe@example.com";
-    //     let password = "donkeybrains";
-    //     let usersPath = "motorIssuePolicy"
-    //     console.log(password,"password");
-    //    // console.log(Rest.ApiUrl,"RestApiUrl");
-    //     fetch('http://192.168.1.7:3000/calculatepremium', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json',
-                
-    //             // 'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNWExYmFhNTYyYzZiOTEzNzYzMmM3ZWVjIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiJqWmFlNzI3SzA4S2FPbUtTZ09hR3p3dy9YVnFHci9QS0VnSU1ranJjYkpJPSIsInJhcGlkSUQiOiJCd2JNd0E2YjFIaEUxNC91TFdweVJXS3EzMytBVUJINnd6UjZtQzh0OUowPSIsInVzZXJPYmplY3QiOnsiZm5hbWUiOiJhcnVuIiwibG5hbWUiOiJob3NzYW1hbmkiLCJwaG9uZSI6IjkxODM2OTk2NDU4MiJ9LCJ1c2VydHlwZSI6IkRpcmVjdCBDbGllbnRzIiwib3RwIjoxMTAwLCJlbmNvZGVkTWFpbCI6IllYSjFiaTVvYjNOellXMWhibWxBY21Gd2FXUnhkV0psTG1OdmJRPT0iLCJjcmVhdGVkX2F0IjoiTW9uIE5vdiAyNyAyMDE3IDExOjMxOjU4IEdNVCswNTMwIChJU1QpIiwiY291bnQiOjAsIl9fdiI6MCwic3RhdHVzIjpbInBob25lIiwiZW1haWwiXX1dLCJpYXQiOjE1MTUwNTA3NDcsImV4cCI6MTUxNTExMDc0N30.xZ_K-mE7WfAszkFrGMATmm9EpCmtYgdOyydVL4HGPVk'
-    //         },
+
+           if( global.index1==1)
+           {
+               console.log("hisp")
+               this.setState({ showme1:!this.state.showme})
+               
+               
+           }
+
+           if( global.index2==1)
+           {
+               console.log("hisp")
+               this.setState({ showme2:!this.state.showme})
+               
+               
+           }
+
+    //    this._startProgressIndicator();
+
+       
+   
+        let animation = RX.Animated.timing(this._translationValue, {
+                toValue: 0,
+                easing: RX.Animated.Easing.OutBack(),
+                duration: 500
+            }
             
-    //         body: JSON.stringify({
+        );
 
-    //                 CALCULATEPREMIUMREQUEST: {
-    //                   authenticationDetails: {
-    //                     apiKey: "310ZQmv/bYJMYrWQ1iYa7s43084=",
-    //                     agentId: "RSAI"
-    //                   },
-    //                   proposerDetails: {
-    //                     title: "Ms",
-    //                     firstName: "testxerago",
-    //                     lastName: "name",
-    //                     emailId: "test@xerago.com",
-    //                     mobileNo: "7898732798",
-    //                     dateOfBirth: "26/11/1987",
-    //                     occupation: "Student",
-    //                     nomineeName: "nomineename",
-    //                     nomineeAge: "43",
-    //                     relationshipWithNominee: "Cousin",
-    //                     guardianName: "guardianname",
-    //                     guardianAge: "54",
-    //                     relationshipwithGuardian: "Mother",
-    //                     permanentAddress1: "address1",
-    //                     permanentAddress2: "address2",
-    //                     permanentAddress3: "address3",
-    //                     permanentAddress4: "address4",
-    //                     permanentCity: "Chennai",
-    //                     permanentPincode: "600032",
-    //                     sameAdressReg: "No",
-    //                     ResidenceAddressOne: "addressone",
-    //                     ResidenceAddressTwo: "addresstwo",
-    //                     ResidenceAddressThree: "addressthree",
-    //                     ResidenceAddressFour: "addressfour",
-    //                     ResidenceCity: "Chennai",
-    //                     ResidencePinCode: "600034",
-    //                     strStdCode: "044",
-    //                     strPhoneNo: "2456984"
-    //                   },
-    //                   vehicleDetails: {
-    //                     vehicleModelCode: "ZWTV310",
-    //                     planOpted: "Flexi Plan",
-    //                     yearOfManufacture: "2017",
-    //                     drivingExperience: "1",
-    //                     voluntaryDeductible: "0",
-    //                     vehicleManufacturerName: "TVS",
-    //                     idv: "65478",
-    //                     policyStartDate: "09/02/2018",
-    //                     vehicleMostlyDrivenOn: "City roads",
-    //                     vehicleRegDate: "09/02/2018",
-    //                     vehicleRegisteredInTheNameOf: "Company",
-    //                     modelName: "APACHE RTR ABS-2 Seater",
-    //                     productName: "BrandNewTwoWheeler",
-    //                     companyNameForCar: "xerago",
-    //                     engineNumber: "565465466",
-    //                     chassisNumber: "5654656",
-    //                     isTwoWheelerFinanced: "No",
-    //                     vehicleSubLine: "motorCycle",
-    //                     fuelType: "Petrol",
-    //                     automobileAssociationMembership: "No",
-    //                     region: "East Region",
-    //                     carRegisteredCity: "24PARGANAS",
-    //                     averageMonthlyMileageRun: "1000",
-    //                     engineCapacityAmount: "153 CC",
-    //                     personalAccidentCoverForUnnamedPassengers: "50000",
-    //                     accidentCoverForPaidDriver: "50000",
-    //                     legalliabilityToPaidDriver: "Yes",
-    //                     legalliabilityToEmployees: "Yes",
-    //                     cover_elec_acc: "Yes",
-    //                     nonElectricalAccesories: {
-    //                       nonelectronicAccessoriesDetails: {
-    //                         NameOfElectronicAccessories: "Tyre",
-    //                         MakeModel: "TVS",
-    //                         Value: "345"
-    //                       }
-    //                     },
-    //                     electricalAccessories: {
-    //                       electronicAccessoriesDetails: {
-    //                         NameOfElectronicAccessories: "Headlight",
-    //                         MakeModel: "Philips",
-    //                         Value: "300"
-    //                       }
-    //                     },
-    //                   }
-    //                 }
-    //                 }),
-    //                 }).then((response) => response.json()).then((responseJson) => {
-    //              var res = responseJson.response;
-    //              resJson = JSON.parse(res)
-    //                     console.log(resJson.PREMIUMDETAILS.DATA.IDV,"xvzksdvmkdcfasdc");
-    //                    // this.props.onNavigateEight(res);
-    //                     idv = resJson.PREMIUMDETAILS.DATA.IDV
-    //                     console.log("idididid",idv)
-    //                 })
-                    
-                
+        animation.start();
+    }
+    onChangePostCompare = () => {
+        this.props.onNavigatePush(liability,resJson,message,quoteid,premium,odpremium,token);
+    
+    
+    }
+    onChangePost = () => {
+        
+   
+        this.props.onNavigateNinety(resJson,liability,message,quoteid,premium,odpremium,token);
+    }
+    onNavigateSixth = () => {
+        let {
+            testValue = 'read'
+        } = this.state;
+
+        let email = "joe@example.com";
+        let password = "donkeybrains";
+        let myApiUrl = "http://www.example.com/api"
+        let usersPath = "users"
+        console.log(testValue,"testValue");
+        console.log(password,"password");
+        console.log(Rest.ApiUrl,"RestApiUrl");
+        fetch(`${Rest.ApiUrl}/${usersPath}`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                user: {email, password}
                 /*firstParam: 'yourValue',
                 secondParam: 'yourOtherValue',*/
-            
-        
-    }
-
-    componentWillUnmount() {
-        this._stopProgressIndicator();
-    }
-
-    onUpdate = (value) =>{
-        console.log(value,"value");
-
-        this.setState({
-            fieldVal: value
-        })
-    }
-
-    onChangeliability  = () => {
-        this.props.onNavigatePush(allResponse,liability,resJson,message,quoteid,premium);
-        
+            })
+        });
     }
 
     render() {
-     resJson = this.props.navigatorRoute.resJson
-     liability = this.props.navigatorRoute.liability
-     message = this.props.navigatorRoute.message
-     quoteid =  this.props.navigatorRoute.quoteid
-     premium = this.props.navigatorRoute.premium
-     allResponse = this.props.navigatorRoute.allResponse
-    console.log("idvvvvv",resJson)
-    console.log("liablity",liability)
-    console.log("message",message)
-    console.log("quoteiid",quoteid)
-    console.log("premium",premium)
-    console.log("allResponse",allResponse)
+        
+         liability = this.props.navigatorRoute.liability
+         resJson = this.props.navigatorRoute.resJson
+        // message = this.props.navigatorRoute.message
+         quoteid = this.props.navigatorRoute.quoteid
+         premium = this.props.navigatorRoute.premium
+         odpremium = this.props.navigatorRoute.odpremium
+         token = this.props.navigatorRoute.token
+        
+        console.log(token,"token")
+        console.log("comparequotes",liability)
+        console.log("resJson",resJson)
+        console.log("quoteiid",quoteid)
+        console.log("premium",premium)
+        console.log("odpremium",odpremium)
+      
         return (
-            <RX.ScrollView style={ _styles.scroll }>
-                <RX.View style={ _styles.container }>
-                    <RX.Text style={ _styles.welcome }>
-                        New Motor Insurance
-                       
-                    </RX.Text>
-                    <RX.Text style={ _styles.welcome }>
-                    </RX.Text>
+            <RX.ScrollView style={ styles.scroll }>
+            <RX.View style={ styling.container }>
+            <RX.Button  onPress={()=> this.onChangePost()}><RX.Image
+                     style={styles.HomeScrollImageLogo}
+                     source={'./src/img/Back.svg'}/>
+                <RX.Text style={ styling.welcome }>
+                   Compare Quotes
+                </RX.Text>
+                </RX.Button>
                 </RX.View>
-                <RX.View style={ _styles.pageAlign }>
-                    <RX.View style={ _styles.flute }>
-                        <RX.Text style={ _styles.head }>
-                            view and compare quotes
-                        </RX.Text>
-                    </RX.View>
-                    <Grid className="hidden-xs">
-                    <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/royal.jpg' } style={ [_styles.image] } >
-                        <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
-                         </RX.Image>
-                        <RX.Text style={ _styles.sideHead }>
-                            Royal Sundaram
-                            <div style={_styles.tryHead}>Single Year Cover Only</div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.quotes }>
-                          IDV:{resJson}
-                            <div>NCB</div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.ncb }>
-                            Rs. 20,347
-                            <div>NIL</div>
-                        </RX.Text>
-                        <RX.View style={_styles.nextBtn}>
-                            <RX.Button style={ _styles.roundButton } onPress={()=> this.onChangeliability()}>
-                                <RX.Text style={ _styles.buybuttonText }>
-                                    Rs.1,322*
-                                </RX.Text>
-                            </RX.Button>
-                        </RX.View>
-                    </RX.View>
-                    </Grid>
-                </RX.View>
+                <div>
+    <RX.Image source={ './src/img/royal.jpg' }   ref="img1"></RX.Image>
+        <RX.Image source={ './src/img/icici.png' }   ref="img2" ></RX.Image>
+        <RX.Image source={ './src/img/tata.png' }   ref="img3"></RX.Image>
+        <RX.Image source={ './src/img/Sbi.png' }   ref="img4"></RX.Image>
+       
+   </div>
 
-                <Grid className="hidden-lg">
-                <RX.View style={ _styles.client }>
-                        <Row className="show-grid" style={styling.clientLeft} >
-
-                            <Col xs={4}>
-                                <RX.Image source={ './src/img/bajaj.png' } style={ [styling.image] } />
-                            </Col>
-                            <Col  xs={4} style={styling.marTop17 }>
-                                <div style={styling.clientHeadxs}>Bajaj Allianz</div>
-                                <RX.Text style={ styling.sideHeadxs }>
-                                    <div style={styling.tryHeadxs}>IDV: 1,25,300</div>
-                                </RX.Text>
-
-                            </Col>
-                            <Col   xs={4} >
-                                <RX.Button style={ styling.roundButton } onPress={ this.props.onNavigateSixth }>
-                                    <RX.Text style={ styling.buybuttonText }>
-                                        Rs.1,322*
-                                    </RX.Text>
-                                </RX.Button>
-                            </Col>
-                        </Row>
-                </RX.View>
-                </Grid>
-                <Grid className="hidden-lg">
-                    <RX.View style={ _styles.client }>
-                        <Row className="show-grid" style={styling.clientLeft} >
-
-                            <Col xs={4}>
-                                <RX.Image source={ './src/img/icici.png' } style={ [styling.image] } />
-                            </Col>
-                            <Col  xs={4} style={styling.marTop17 }>
-                                <div style={styling.clientHeadxs}>Bajaj Allianz</div>
-                                <RX.Text style={ styling.sideHeadxs }>
-                                    <div style={styling.tryHeadxs}>IDV: 1,25,300</div>
-                                </RX.Text>
-
-                            </Col>
-                            <Col   xs={4} >
-                                <RX.Button style={ styling.roundButton } onPress={ this.props.onNavigateBack }>
-                                    <RX.Text style={ styling.buybuttonText }>
-                                        Rs.1,322*
-                                    </RX.Text>
-                                </RX.Button>
-                            </Col>
-                        </Row>
-                    </RX.View>
-                </Grid>
-                <Grid className="hidden-lg">
-                <RX.View style={ _styles.client }>
-                    <Row className="show-grid" style={styling.clientLeft} >
-
-                        <Col xs={4}>
-                            <RX.Image source={ './src/img/tata.png' } style={ [styling.image] } />
+                <RX.View style={styles.clientSec}>
+                  <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTop}>
+                            {/*<RX.Text>Test</RX.Text>*/}
+                            {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
                         </Col>
-                        <Col  xs={4} style={styling.marTop17 }>
-                            <div style={styling.clientHeadxs}>Bajaj Allianz</div>
-                            <RX.Text style={ styling.sideHeadxs }>
-                                <div style={styling.tryHeadxs}>IDV: 1,25,300</div>
-                            </RX.Text>
+                        {this.state.showme ?  <Col   md={3} style={styling.marTop}>
+                            {/*<RX.Text>Test1</RX.Text>*/}
+                            <RX.Image source={ './src/img/royal.jpg' } style={ [styles.image ] } />
+                            {/* <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
+                        </Col>:null}
+                        {this.state.showme1 ? <Col  md={3} style={styling.marTop}>
+                            {/*<RX.Text>Test2</RX.Text>*/}
+                            <RX.Image source={ './src/img/icici.png' } style={ [styles.image] } />
+                            {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
+                        </Col>:null}
+                        {this.state.showme2 ? <Col  md={3} style={styling.marTop}>
+                            {/*<RX.Text>Test3</RX.Text>*/}
+                            <RX.Image source={ './src/img/Sbi.png' } style={ [styles.image] } />
+                            {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
+                        </Col>:null}
 
-                        </Col>
-                        <Col   xs={4} >
-                            <RX.Button style={ styling.roundButton } onPress={ this.props.onNavigateBack }>
-                                <RX.Text style={ styling.buybuttonText }>
-                                    Rs.1,322*
-                                </RX.Text>
+                        {/*<Col  md={6} style={styling.marTop}>
+                            <RX.Button onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
+                            <RX.Button style={styling.button} onPress={ this.props.onNavigateEleven }>
+                                try
                             </RX.Button>
+
+                        </Col>*/}
+                    </Row>
+
+                    <Row className="show-grid hidden-lg">
+                        <Col  xs={4} style={styling.marTop}>
+                            {/*<RX.Text>Test1</RX.Text>*/}
+                            <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                            {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
+                        </Col>
+                        <Col  xs={4} style={styling.marTop}>
+                            {/*<RX.Text>Test2</RX.Text>*/}
+                            <RX.Image source={ './src/img/icici.png' } style={ [styles.image] } />
+                            {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
+                        </Col>
+                        <Col  xs={4} style={styling.marTop}>
+                            {/*<RX.Text>Test3</RX.Text>*/}
+                            <RX.Image source={ './src/img/Sbi.png' } style={ [styles.image] } />
+                            {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
+                        </Col>
+                        {/*<Col  md={6} style={styling.marTop}>
+                            <RX.Button onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
+                            <RX.Button style={styling.button} onPress={ this.props.onNavigateEleven }>
+                                try
+                            </RX.Button>
+
+                        </Col>*/}
+                    </Row>
+
+                    <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTop}>
+                        </Col>
+                        {this.state.showme ?  <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.clientText]}>Royal Sundaram</RX.Text>
+                        </Col>:null}
+                        {this.state.showme1 ?  <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.clientText]}>Ergo Insurance</RX.Text>
+                        </Col>:null}
+                        {this.state.showme2 ? <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.clientText]}>Oriental Insurance</RX.Text>
+                        </Col>:null}
+
+                    </Row>
+                    <Row className="show-grid hidden-lg">
+                        <Col  xs={4} style={styling.marTop}>
+                            <RX.Text style={[styles.clientTextxs]}>Bharati Insurance</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop}>
+                            <RX.Text style={[styles.clientTextxs]}>Ergo Insurance</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop}>
+                            <RX.Text style={[styles.clientTextxs]}>Oriental Insurance</RX.Text>
+                        </Col>
+
+                    </Row>
+
+                    {/* <Row className="show-grid">
+                        <Col  md={3} style={styling.marTop}>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.clientText]}>Ergo Insurance</RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.clientText]}>Oriental Insurance</RX.Text>
+                        </Col>
+                    </Row>*/}
+
+                    <Row className="show-grid hidden-xs">
+                   <Col  md={3} style={styling.marTopcs}>
+                            <RX.Text style={[styles.clientText]}>Basic Permium:</RX.Text>
+                        </Col>:
+                        {this.state.showme ?  <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>{liability.BASIC_PREMIUM_INCLUDING_PREMIUM_FOR_TPPD}</RX.Text>
+                        </Col>:null}
+                        {this.state.showme1? <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
+                        </Col>:null}
+                        {this.state.showme2 ?<Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>3,41,402</RX.Text>
+                        </Col>:null}
+                    </Row>
+
+                    <Row className="show-grid hidden-lg">
+                        <Col  xs={4} style={styling.marTop}>
+                            <div style={[styles.clientTextxs]}>Sum Insured</div>
+                            <RX.Text style={[styles.subText]}>3,21,402</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop40}>
+                            <RX.Text style={[styles.clientTextxs]}></RX.Text>
+                            <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop40}>
+                            <RX.Text style={[styles.clientTextxs]}></RX.Text>
+                            <RX.Text style={[styles.subText]}>3,41,402</RX.Text>
                         </Col>
                     </Row>
+
+                    <Row className="show-grid hidden-lg">
+                        <Col  xs={4} style={styling.marTop}>
+                            <div style={[styles.clientTextxs]}>Health Checkup</div>
+                            <RX.Text style={[styles.subText]}>3,21,402</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop40}>
+                            <RX.Text style={[styles.clientTextxs]}></RX.Text>
+                            <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop40}>
+                            <RX.Text style={[styles.clientTextxs]}></RX.Text>
+                            <RX.Text style={[styles.subText]}>3,41,402</RX.Text>
+                        </Col>
+                    </Row>
+
+                    <Row className="show-grid hidden-lg">
+                        <Col  xs={4} style={styling.marTop}>
+                            <div style={[styles.clientTextxs]}>Cancer Care Live</div>
+                            <RX.Text style={[styles.subText]}>3,21,402</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop40}>
+                            <RX.Text style={[styles.clientTextxs]}></RX.Text>
+                            <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop40}>
+                            <RX.Text style={[styles.clientTextxs]}></RX.Text>
+                            <RX.Text style={[styles.subText]}>3,41,402</RX.Text>
+                        </Col>
+                    </Row>
+
+                    <Row className="show-grid hidden-lg">
+                        <Col  xs={4} style={styling.marTop}>
+                            <div style={[styles.clientTextxs]}>Dengue Feaver</div>
+                            <RX.Text style={[styles.subText]}>3,21,402</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop40}>
+                            <RX.Text style={[styles.clientTextxs]}></RX.Text>
+                            <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop40}>
+                            <RX.Text style={[styles.clientTextxs]}></RX.Text>
+                            <RX.Text style={[styles.subText]}>3,41,402</RX.Text>
+                        </Col>
+                    </Row>
+
+
+
+                    <Row className="show-grid hidden-xs">
+                  <Col  md={3} style={styling.marTopcs}>
+                            <RX.Text style={[styles.clientText]}> Cover To Paid Driver</RX.Text>
+                        </Col>
+                        {this.state.showme ? <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>{liability.PA_COVER_TO_PAID_DRIVER}
+
+</RX.Text>
+                        </Col>:null}
+                        {this.state.showme1 ?<Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>20%</RX.Text>
+                        </Col>:null}
+                        {this.state.showme2 ? <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>35%</RX.Text>
+                        </Col>:null}
+                    </Row>
+
+                    <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTopcs}>
+                            <RX.Text style={[styles.clientText]}>Total Liability premium</RX.Text>
+                        </Col>
+                        {this.state.showme ?     <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>{liability.TOTAL_LIABILITY_PREMIUM}
+                            </RX.Text>
+                        </Col>:null}
+                        {this.state.showme1 ?  <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>20%</RX.Text>
+                        </Col>:null}
+                        {this.state.showme2 ?  <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>35%</RX.Text>
+                        </Col>:null}
+                    </Row>
+
+                    <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTopcs}>
+                            <RX.Text style={[styles.clientText]}>Employees</RX.Text>
+                        </Col>
+                        {this.state.showme ?  <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>{liability.TO_EMPLOYESES}</RX.Text>
+                        </Col>:null}
+                       {this.state.showme1 ?   <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>:null}
+                        {this.state.showme2?   <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>:null}
+                    </Row>
+
+                    <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTopcs}>
+                            <RX.Text style={[styles.clientText]}>Paid Drivers</RX.Text>
+                        </Col>
+                        {this.state.showme ?<Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>{liability.TO_PAID_DRIVERS}
+
+</RX.Text>
+                        </Col>:null}
+                        {this.state.showme1 ? <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>:null}
+                          {this.state.showme2 ?<Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>:null}
+                    </Row>
+
+                    <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTopcs}>
+                            <RX.Text style={[styles.clientText]}>Owner Driver</RX.Text>
+                        </Col>
+                        {this.state.showme ? <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>{liability.UNDER_SECTION_III_OWNER_DRIVER}
+:
+</RX.Text>
+                        </Col>:null}
+                         {this.state.showme1 ? <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>:null}
+                        {this.state.showme2 ?<Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>:null}
+                    </Row>
+
+                    <Row className="show-grid hidden-xs">
+                        <Col  md={3} style={styling.marTopcs}>
+                            <RX.Text style={[styles.clientText]}>Umnnamed Passengers</RX.Text>
+                        </Col>
+                        {this.state.showme ? <Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>{liability.UNNAMED_PASSENGRS}
+
+</RX.Text>
+                        </Col>:null}
+                          {this.state.showme1 ?<Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>:null}
+                        {this.state.showme2 ?<Col  md={3} style={styling.marTop}>
+                            <RX.Text style={[styles.subText]}>Nil</RX.Text>
+                        </Col>:null}
+                    </Row>
                 </RX.View>
-            </Grid>
-                <Grid className="hidden-lg">
-                    <RX.View style={ _styles.client }>
-                        <Row className="show-grid" style={styling.clientLeft} >
+                {/*<RX.View style={ styles.client }>
+                    <Row className="show-grid" className="hidden-xs">
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.View style={[styles.imageAlignement]}>
+                                <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                                <RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>
+                                <RX.Text style={[styles.clientTexted]}>Sum Insured</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Health Checkup</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Cancer Care Liver</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Denuge Care</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Hospitalistaion at Home</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Organ Donor Expenes</RX.Text>
+                            </RX.View>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.View style={[styles.imageAlign]}>
+                                <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                                <RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>
+                                <RX.Text style={[styles.subText]}>3,21,402</RX.Text>
+                                <RX.Text style={[styles.subPer]}>10%</RX.Text>
+                                <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                                <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                                <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                                <RX.Text style={[styles.subPer]}>2 Claims Per Year</RX.Text>
+                            </RX.View>
 
-                            <Col xs={4}>
-                                <RX.Image source={ './src/img/bajaj.png' } style={ [styling.image] } />
-                            </Col>
-                            <Col  xs={4} style={styling.marTop17 }>
-                                <div style={styling.clientHeadxs}>Bajaj Allianz</div>
-                                <RX.Text style={ styling.sideHeadxs }>
-                                    <div style={styling.tryHeadxs}>IDV: 1,25,300</div>
-                                </RX.Text>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.View style={[styles.imageAlign]}>
 
-                            </Col>
-                            <Col   xs={4} >
-                                <RX.Button style={ styling.roundButton } onPress={ this.props.onNavigateBack }>
-                                    <RX.Text style={ styling.buybuttonText }>
-                                        Rs.1,322*
-                                    </RX.Text>
-                                </RX.Button>
-                            </Col>
-                        </Row>
+                                <RX.Image source={ './src/img/ergo.png' } style={ [styles.image] } />
+                                <RX.Text style={[styles.clientText]}>Ergo Insurance</RX.Text>
+                                <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
+                                <RX.Text style={[styles.subPer]}>15%</RX.Text>
+                                <RX.Text style={[styles.subPer]}>3 Garages Near You</RX.Text>
+                                <RX.Text style={[styles.subPer]}>3,45,000</RX.Text>
+                                <RX.Text style={[styles.subPer]}>3,45,000</RX.Text>
+                                <RX.Text style={[styles.subPer]}>1 Claims Per Year</RX.Text>
+                            </RX.View>
+                        </Col>
+                        <Col  md={3} style={styling.marTop}>
+                            <RX.View style={[styles.imageAlign]}>
+
+                                <RX.Image source={ './src/img/oriental.png' } style={ [styles.image] } />
+                                <RX.Text style={[styles.clientText]}>Oriental Insurance</RX.Text>
+                                <RX.Text style={[styles.subText]}>3,10,402</RX.Text>
+                                <RX.Text style={[styles.subPer]}>20%</RX.Text>
+                                <RX.Text style={[styles.subPer]}>2 Garages Near You</RX.Text>
+                                <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                                <RX.Text style={[styles.subPer]}>3.60,000</RX.Text>
+                                <RX.Text style={[styles.subPer]}>3 Claims Per Year</RX.Text>
+                            </RX.View>
+                        </Col>
+                    </Row>
+                    <Row className="show-grid" className="hidden-lg">
+                        <Col  xs={3} style={styling.marTop}>
+                            <RX.View style={[styles.imageAlignementxs]}>
+                                <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                                <RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>
+                                <RX.Text style={[styles.clientTexted]}>Sum Insured</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Health Checkup</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Cancer Care Liver</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Denuge Care</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Hospitalistaion at Home</RX.Text>
+                                <RX.Text style={[styles.clientNcb]}>Organ Donor Expenes</RX.Text>
+
+                            </RX.View>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop}>
+                            <RX.View>
+                                <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                                <RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>
+                                <RX.Text style={[styles.clientedText]}>Sum Insured</RX.Text>
+                                <RX.Text style={[styles.subText]}>3,21,402</RX.Text>
+                                <RX.Text style={[styles.clientedText]}>Health Checkup</RX.Text>
+                                <RX.Text style={[styles.subPer]}>10%</RX.Text>
+                                <RX.Text style={[styles.clientedText]}>Cancer Care Liver</RX.Text>
+                                <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                                <RX.Text style={[styles.clientedText]}>Denuge Care</RX.Text>
+                                <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                                <RX.Text style={[styles.clientedText]}>Hospitalistaion at Home</RX.Text>
+                                <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                                <RX.Text style={[styles.clientedText]}>Organ Donor Expenes</RX.Text>
+                                <RX.Text style={[styles.subPer]}>2 Claims Per Year</RX.Text>
+                            </RX.View>
+
+                        </Col>
+                        <Col  xs={4} style={styling.marTop}>
+                            <RX.View>
+
+                                <RX.Image source={ './src/img/ergo.png' } style={ [styles.image] } />
+                                <RX.Text style={[styles.clientText]}>Ergo Insurance</RX.Text>
+                                <RX.Text style={[styles.clientText]}></RX.Text>
+                                <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>15%</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>3 Garages Near You</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>3,45,000</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>3,45,000</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>1 Claims Per Year</RX.Text>
+                            </RX.View>
+                        </Col>
+                        <Col  xs={4} style={styling.marTop}>
+                            <RX.View>
+
+                                <RX.Image source={ './src/img/oriental.png' } style={ [styles.image] } />
+                                <RX.Text style={[styles.clientText]}>Oriental Insurance</RX.Text>
+                                <RX.Text style={[styles.clientText]}></RX.Text>
+                                <RX.Text style={[styles.subText]}>3,10,402</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>20%</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>2 Garages Near You</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>3.60,000</RX.Text>
+                                <RX.Text style={[styles.clientedText]}></RX.Text>
+                                <RX.Text style={[styles.subPer]}>3 Claims Per Year</RX.Text>
+                            </RX.View>
+                        </Col>
+                    </Row>
+                </RX.View>*/}
+
+
+
+
+                {/*<RX.View style={ styles.client }>
+                    <RX.View style={[styles.imageAlignement]}>
+                        <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                        <RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>
+                        <RX.Text style={[styles.clientTexted]}>Insured Declared Value</RX.Text>
+                        <RX.Text style={[styles.clientNcb]}>NCB</RX.Text>
+                        <RX.Text style={[styles.clientNcb]}>Cashless Garage</RX.Text>
+                        <RX.Text style={[styles.clientNcb]}>Advance Cash</RX.Text>
+                        <RX.Text style={[styles.clientNcb]}>TP Permium</RX.Text>
+                        <RX.Text style={[styles.clientNcb]}>Zero Depreciation</RX.Text>
+                        <RX.Text style={[styles.clientNcb]}>Already Included Addons</RX.Text>
+                        <RX.Text style={[styles.clientNcb]}>Own Damage</RX.Text>
+                        <RX.Text style={[styles.clientNcb]}>Owner / Driver PA Cover</RX.Text>
+                        <RX.Text style={[styles.clientNcb]}>Unnamed Passenger Cover</RX.Text>
+
                     </RX.View>
-                </Grid>
-                <Grid className="hidden-xs">
-                <RX.View style={ _styles.pageAlign }>
-                    <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/icici.png' } style={ [_styles.image] } >
-                        <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
-                         </RX.Image>
-                        <RX.Text style={ _styles.sideHead }>
-                             ICICI LOMBARD
-                            <div style={_styles.tryHead}>Two Year Cover Only</div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.quotes }>
-                            IDV
-                            <div>NCB</div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.ncb }>
-                            Rs. 20,347
-                            <div>NIL</div>
-                        </RX.Text>
-                        <RX.View style={_styles.nextBtn}>
-                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
-                                <RX.Text style={ _styles.buybuttonText }>
-                                    Rs.1,634*
-                                </RX.Text>
-                            </RX.Button>
-                        </RX.View>
-                    </RX.View>
-                </RX.View>
-                </Grid>
 
-                <Grid className="hidden-xs">
-                <RX.View style={ _styles.pageAlign }>
-                    <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/tata.png' } style={ [_styles.image] } >
-                        <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
-                         </RX.Image>
-                        <RX.Text style={ _styles.sideHead }>
-                           Tata AIG
-                            <div style={_styles.tryHead}>Two Year Cover Only</div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.quoted }>
-                            IDV
-                            <div>NCB</div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.ncb }>
-                            Rs. 23,347
-                            <div>NIL</div>
-                        </RX.Text>
-                        <RX.View style={_styles.nextBtn}>
-                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
-                                <RX.Text style={ _styles.buybuttonText }>
-                                    Rs.1,834*
-                                </RX.Text>
-                            </RX.Button>
-                        </RX.View>
+                    <RX.View style={[styles.imageAlign]}>
+                        <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />
+                        <RX.Text style={[styles.clientText]}>Bharati Insurance</RX.Text>
+                        <RX.Text style={[styles.subText]}>3,21,402</RX.Text>
+                        <RX.Text style={[styles.subPer]}>10%</RX.Text>
+                        <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                        <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                        <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                        <RX.Text style={[styles.subPer]}>2 Claims Per Year</RX.Text>
+                        <RX.Text style={[styles.subPer]}>NIL</RX.Text>
+                        <RX.Text style={[styles.subPer]}>N/A</RX.Text>
+                        <RX.Text style={[styles.subPer]}>Accessible</RX.Text>
+                        <RX.Text style={[styles.subPer]}>N/A</RX.Text>
                     </RX.View>
-                </RX.View>
-                </Grid>
 
-                <Grid className="hidden-xs">
-                <RX.View style={ _styles.pageAlign }>
-                    <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/Sbi.png' } style={ [_styles.image] } >
-                        <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
-                         </RX.Image>
-                        <RX.Text style={ _styles.sideHead }>
-                          Bharathi AXP
-                            <div style={_styles.tryHead}>Two Year Cover Only</div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.quoted }>
-                            IDV
-                            <div>NCB</div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.ncb }>
-                            Rs. 28,347
-                            <div>NIL</div>
-                        </RX.Text>
-                        <RX.View style={_styles.nextBtn}>
-                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
-                                <RX.Text style={ _styles.buybuttonText }>
-                                    Rs.1,934*
-                                </RX.Text>
-                            </RX.Button>
-                        </RX.View>
+                    <RX.View style={[styles.imageAlign]}>
+
+                        <RX.Image source={ './src/img/ergo.png' } style={ [styles.image] } />
+                        <RX.Text style={[styles.clientText]}>Ergo Insurance</RX.Text>
+                        <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
+                        <RX.Text style={[styles.subPer]}>15%</RX.Text>
+                        <RX.Text style={[styles.subPer]}>3 Garages Near You</RX.Text>
+                        <RX.Text style={[styles.subPer]}>3,45,000</RX.Text>
+                        <RX.Text style={[styles.subPer]}>3,45,000</RX.Text>
+                        <RX.Text style={[styles.subPer]}>1 Claims Per Year</RX.Text>
+                        <RX.Text style={[styles.subPer]}>NIL</RX.Text>
+                        <RX.Text style={[styles.subPer]}>NIL</RX.Text>
+                        <RX.Text style={[styles.subPer]}>Accessible</RX.Text>
+                        <RX.Text style={[styles.subPer]}>N/A</RX.Text>
                     </RX.View>
-                </RX.View>
-                </Grid>
+                    <RX.View style={[styles.imageAlign]}>
 
-                <Grid className="hidden-xs">
-                <RX.View style={ _styles.pageAlign }>
-                    <RX.View style={ _styles.client }>
-                        <RX.Image source={ './src/img/icici.png' } style={ [_styles.image] } >
-                        <div style={_styles.check}><Checkbox>Compare</Checkbox></div>
-                         </RX.Image>
-                        <RX.Text style={ _styles.sideHead }>
-                            Reliance Life Insurance
-                            <div style={_styles.tryHead}>Two Year Cover Only</div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.quoted }>
-                            IDV
-                            <div>NCB</div>
-                        </RX.Text>
-                        <RX.Text style={ _styles.ncb }>
-                            Rs. 23,347
-                            <div>NIL</div>
-                        </RX.Text>
-                        <RX.View style={_styles.nextBtn}>
-                            <RX.Button style={ _styles.roundButton } onPress={ this.props.onNavigateSixth }>
-                                <RX.Text style={ _styles.buybuttonText }>
-                                    Rs.1,834*
-                                </RX.Text>
-                            </RX.Button>
-                        </RX.View>
+                        <RX.Image source={ './src/img/oriental.png' } style={ [styles.image] } />
+                        <RX.Text style={[styles.clientText]}>Oriental Insurance</RX.Text>
+                        <RX.Text style={[styles.subText]}>3,10,402</RX.Text>
+                        <RX.Text style={[styles.subPer]}>20%</RX.Text>
+                        <RX.Text style={[styles.subPer]}>2 Garages Near You</RX.Text>
+                        <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                        <RX.Text style={[styles.subPer]}>3.60,000</RX.Text>
+                        <RX.Text style={[styles.subPer]}>3 Claims Per Year</RX.Text>
+                        <RX.Text style={[styles.subPer]}>NIL</RX.Text>
+                        <RX.Text style={[styles.subPer]}>N/A</RX.Text>
+                        <RX.Text style={[styles.subPer]}>Accessible</RX.Text>
+                        <RX.Text style={[styles.subPer]}>N/A</RX.Text>
                     </RX.View>
-                </RX.View>
-                </Grid>
+                    <RX.View style={[styles.imageAligned]}>
 
+                        <RX.Image source={ './src/img/united.png' } style={ [styles.image] } />
+                        <RX.Text style={[styles.clientText]}>United Insurance</RX.Text>
+                        <RX.Text style={[styles.subText]}>3,08,402</RX.Text>
+                        <RX.Text style={[styles.subPer]}>25%</RX.Text>
+                        <RX.Text style={[styles.subPer]}>NIL</RX.Text>
+                        <RX.Text style={[styles.subPer]}>Nil</RX.Text>
+                        <RX.Text style={[styles.subPer]}>3,55,789</RX.Text>
+                        <RX.Text style={[styles.subPer]}>1 Claims Per Year</RX.Text>
+                        <RX.Text style={[styles.subPer]}>NIL</RX.Text>
+                        <RX.Text style={[styles.subPer]}>N/A</RX.Text>
+                        <RX.Text style={[styles.subPer]}>Accessible</RX.Text>
+                        <RX.Text style={[styles.subPer]}>N/A</RX.Text>
+                    </RX.View>
+
+
+                </RX.View>*/}
+                <RX.View style={ styles.clientNorm }></RX.View>
+
+                <RX.Button style={styling.BUTTON4}  onPress={()=> this.onChangePostCompare() }>
+>
+                    <RX.Text style={ styles.buttonText }>
+                        NEXT
+                    </RX.Text>
+                </RX.Button>
+
+                {/*<RX.View style={ styles.container }>
+                    <RX.Text style={ styles.welcome }>
+                        Page 3
+                    </RX.Text>
+                    <RX.Button style={ styles.roundButton } onPress={ this.props.onNavigateForward }>
+                        <RX.Text style={ styles.buttonText }>
+                            Next
+                        </RX.Text>
+                    </RX.Button>
+                </RX.View>*/}
             </RX.ScrollView>
+
         );
-    }
-
-    _playVideo() {
-        const video = this.refs['video'];
-        if (video) {
-            video.mute(true);
-            video.play();
-        }
-    }
-
-    _startProgressIndicator() {
-        this._progressTimerToken = window.setInterval(() =>{
-            const newProgressValue = (this.state.progressValue + 0.02) % 1;
-            this.setState({progressValue: newProgressValue});
-        }, 1000 / 15);
-    }
-
-    _stopProgressIndiacator() {
-        if (this._progressTimerToken) {
-            window.clearInterval(this._progressTimerToken);
-            this._progressTimerToken = undefined;
-        }
-    }
-
-    // Note that we define this as a variable rather than a normal method. Using this
-    // method, we prebind the method to this component instance. This prebinding ensures
-    // that each time we pass the variable as a prop in the render function, it will
-    // not change. We want to avoid unnecessary prop changes because this will trigger
-    // extra work within React's virtual DOM diffing mechanism.
-    _onChangeToggle(newValue) {
-        this.setState({toggleValue: newValue});
     }
 }

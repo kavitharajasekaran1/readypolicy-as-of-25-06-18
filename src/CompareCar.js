@@ -187,9 +187,15 @@ var quoteid
 var premium
 var allResponse
 var token
+
 export default class CompareQuotes extends RX.Component{
     constructor(props) {
         super(props);
+        this.state={
+            showme:false,
+           showme1:false,
+           showme2:false
+        },
         this._translationValue = RX.Animated.createValue(-100);
         this._animatedStyle = RX.Styles.createAnimatedTextStyle({
             transform: [
@@ -201,11 +207,42 @@ export default class CompareQuotes extends RX.Component{
     }
 
     componentDidMount() {
+        if( global.index==1)
+           {
+               console.log("hisp")
+               this.setState({ showme:!this.state.showme})
+               
+               
+           }
+
+
+
+           if( global.index1==1)
+           {
+               console.log("hisp")
+               this.setState({ showme1:!this.state.showme})
+               
+               
+           }
+
+           if( global.index2==1)
+           {
+               console.log("hisp")
+               this.setState({ showme2:!this.state.showme})
+               
+               
+           }
+
+    //    this._startProgressIndicator();
+
+       
+   
         let animation = RX.Animated.timing(this._translationValue, {
                 toValue: 0,
                 easing: RX.Animated.Easing.OutBack(),
                 duration: 500
             }
+            
         );
 
         animation.start();
@@ -216,6 +253,8 @@ export default class CompareQuotes extends RX.Component{
     
     }
     onChangePost = () => {
+        
+   
         this.props.onNavigateTwenty(allResponse,resJson,liability,message,quoteid,premium,token);
     }
     onNavigateSixth = () => {
@@ -245,6 +284,7 @@ export default class CompareQuotes extends RX.Component{
     }
 
     render() {
+        
          liability = this.props.navigatorRoute.liability
          resJson = this.props.navigatorRoute.resJson
         // message = this.props.navigatorRoute.message
@@ -252,6 +292,7 @@ export default class CompareQuotes extends RX.Component{
          premium = this.props.navigatorRoute.premium
          allResponse = this.props.navigatorRoute.allResponse
          token = this.props.navigatorRoute.token
+        
         console.log(token,"token")
         console.log("comparequotes",liability)
         console.log("resJson",resJson)
@@ -269,27 +310,36 @@ export default class CompareQuotes extends RX.Component{
                 </RX.Text>
                 </RX.Button>
                 </RX.View>
+                <div>
+    <RX.Image source={ './src/img/royal.jpg' }   ref="img1"></RX.Image>
+        <RX.Image source={ './src/img/icici.png' }   ref="img2" ></RX.Image>
+        <RX.Image source={ './src/img/tata.png' }   ref="img3"></RX.Image>
+        <RX.Image source={ './src/img/Sbi.png' }   ref="img4"></RX.Image>
+       
+   </div>
+
                 <RX.View style={styles.clientSec}>
-                    <Row className="show-grid hidden-xs">
+                  <Row className="show-grid hidden-xs">
                         <Col  md={3} style={styling.marTop}>
                             {/*<RX.Text>Test</RX.Text>*/}
                             {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
                         </Col>
-                       <Col  md={3} style={styling.marTop}>
+                        {this.state.showme ?  <Col   md={3} style={styling.marTop}>
                             {/*<RX.Text>Test1</RX.Text>*/}
                             <RX.Image source={ './src/img/royal.jpg' } style={ [styles.image ] } />
                             {/* <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                        {this.state.showme1 ? <Col  md={3} style={styling.marTop}>
                             {/*<RX.Text>Test2</RX.Text>*/}
                             <RX.Image source={ './src/img/icici.png' } style={ [styles.image] } />
                             {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                        {this.state.showme2 ? <Col  md={3} style={styling.marTop}>
                             {/*<RX.Text>Test3</RX.Text>*/}
                             <RX.Image source={ './src/img/Sbi.png' } style={ [styles.image] } />
                             {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
-                        </Col>
+                        </Col>:null}
+
                         {/*<Col  md={6} style={styling.marTop}>
                             <RX.Button onPress={()=> this.onChangeDummy() }>Dummy</RX.Button>
                             <RX.Button style={styling.button} onPress={ this.props.onNavigateEleven }>
@@ -327,15 +377,15 @@ export default class CompareQuotes extends RX.Component{
                     <Row className="show-grid hidden-xs">
                         <Col  md={3} style={styling.marTop}>
                         </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        {this.state.showme ?  <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.clientText]}>Royal Sundaram</RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                        {this.state.showme1 ?  <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.clientText]}>Ergo Insurance</RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                        {this.state.showme2 ? <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.clientText]}>Oriental Insurance</RX.Text>
-                        </Col>
+                        </Col>:null}
 
                     </Row>
                     <Row className="show-grid hidden-lg">
@@ -366,18 +416,18 @@ export default class CompareQuotes extends RX.Component{
                     </Row>*/}
 
                     <Row className="show-grid hidden-xs">
-                        <Col  md={3} style={styling.marTopcs}>
+                   <Col  md={3} style={styling.marTopcs}>
                             <RX.Text style={[styles.clientText]}>Basic Permium:</RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:
+                        {this.state.showme ?  <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>{liability.BASIC_PREMIUM_INCLUDING_PREMIUM_FOR_TPPD}</RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                        {this.state.showme1? <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>3,17,402</RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                        {this.state.showme2 ?<Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>3,41,402</RX.Text>
-                        </Col>sic 
+                        </Col>:null}
                     </Row>
 
                     <Row className="show-grid hidden-lg">
@@ -443,102 +493,102 @@ export default class CompareQuotes extends RX.Component{
 
 
                     <Row className="show-grid hidden-xs">
-                        <Col  md={3} style={styling.marTopcs}>
+                  <Col  md={3} style={styling.marTopcs}>
                             <RX.Text style={[styles.clientText]}> Cover To Paid Driver</RX.Text>
                         </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        {this.state.showme ? <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>{liability.PA_COVER_TO_PAID_DRIVER}
 
 </RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                        {this.state.showme1 ?<Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>20%</RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                        {this.state.showme2 ? <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>35%</RX.Text>
-                        </Col>
+                        </Col>:null}
                     </Row>
 
                     <Row className="show-grid hidden-xs">
                         <Col  md={3} style={styling.marTopcs}>
                             <RX.Text style={[styles.clientText]}>Total Liability premium</RX.Text>
                         </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        {this.state.showme ?     <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>{liability.TOTAL_LIABILITY_PREMIUM}
                             </RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                        {this.state.showme1 ?  <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>20%</RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                        {this.state.showme2 ?  <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>35%</RX.Text>
-                        </Col>
+                        </Col>:null}
                     </Row>
 
                     <Row className="show-grid hidden-xs">
                         <Col  md={3} style={styling.marTopcs}>
                             <RX.Text style={[styles.clientText]}>Employees</RX.Text>
                         </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        {this.state.showme ?  <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>{liability.TO_EMPLOYESES}</RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                       {this.state.showme1 ?   <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>Nil</RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                        {this.state.showme2?   <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>Nil</RX.Text>
-                        </Col>
+                        </Col>:null}
                     </Row>
 
                     <Row className="show-grid hidden-xs">
                         <Col  md={3} style={styling.marTopcs}>
                             <RX.Text style={[styles.clientText]}>Paid Drivers</RX.Text>
                         </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        {this.state.showme ?<Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>{liability.TO_PAID_DRIVERS}
 
 </RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                        {this.state.showme1 ? <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>Nil</RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                          {this.state.showme2 ?<Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>Nil</RX.Text>
-                        </Col>
+                        </Col>:null}
                     </Row>
 
                     <Row className="show-grid hidden-xs">
                         <Col  md={3} style={styling.marTopcs}>
                             <RX.Text style={[styles.clientText]}>Owner Driver</RX.Text>
                         </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        {this.state.showme ? <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>{liability.UNDER_SECTION_III_OWNER_DRIVER}
 :
 </RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                         {this.state.showme1 ? <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>Nil</RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                        {this.state.showme2 ?<Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>Nil</RX.Text>
-                        </Col>
+                        </Col>:null}
                     </Row>
 
                     <Row className="show-grid hidden-xs">
                         <Col  md={3} style={styling.marTopcs}>
                             <RX.Text style={[styles.clientText]}>Umnnamed Passengers</RX.Text>
                         </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        {this.state.showme ? <Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>{liability.UNNAMED_PASSENGRS}
 
 </RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                          {this.state.showme1 ?<Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>Nil</RX.Text>
-                        </Col>
-                        <Col  md={3} style={styling.marTop}>
+                        </Col>:null}
+                        {this.state.showme2 ?<Col  md={3} style={styling.marTop}>
                             <RX.Text style={[styles.subText]}>Nil</RX.Text>
-                        </Col>
+                        </Col>:null}
                     </Row>
                 </RX.View>
                 {/*<RX.View style={ styles.client }>

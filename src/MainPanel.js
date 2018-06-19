@@ -39,7 +39,7 @@ const styles = {
         right: 0,
         bottom: 0,
         top: 0,
-        backgroundColor:'#9ca4ab;'
+        backgroundColor:'#00000094'
     }),
     CONTAINER: RX.Styles.createViewStyle({
         marginTop:300,

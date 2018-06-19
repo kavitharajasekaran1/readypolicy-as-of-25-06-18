@@ -6,6 +6,7 @@ import React from 'react';
 import RX from 'reactxp';
 import Rest from './RestConfig';
 import SweetAlert from 'react-swal';
+import styling from './AppStyles';
 import {Tabs,Tab,Grid,Row,Col,FormGroup,form,ControlLabel,FormControl,HelpBlock,} from 'react-bootstrap';
 /*const {
     Welcome
@@ -29,6 +30,7 @@ const styles = {
         right: 0,
         bottom: 0,
         top: 0,
+        backgroundColor:'#00000094'
        
     }),
     helloWorld: RX.Styles.createTextStyle({
@@ -226,7 +228,7 @@ const styles = {
         color: 'WHITE'
     }),
     image:RX.Styles.createViewStyle({
-        height: 45,
+        height: 75,
         width:221,
         fontsize:30,
         backgroundColor:'#654e4e00',
@@ -244,38 +246,41 @@ export default class LoginPage extends RX.Component{
         this.state = {
             phone:'',
         };
+        this._translationValue = RX.Animated.createValue(-100);
+            this._animatedStyle = RX.Styles.createAnimatedTextStyle({
+                transform: [
+                    {
+                        translateY: this._translationValue
+                    }
+                ]
+            });
     }
 
-    onChangeDummy = () => {
-        this.state = {
+    // onChangeDummy = () => {
+    //     this.state = {
             
-            phone:'9553715856',
+    //         phone:'',
           
-        };
-    }
+    //     };
+    // }
 
     onChangePost = () => {
-        let {
-            testValue = 'testValue',
-            phone='phone',
-            
-        } = this.state;
-
-        let password = "donkeybrains";
-        let myApiUrl = 'http://localhost:8082/newLogin1';
-        console.log(phone,"phone");
-        console.log(myApiUrl,"myApiUrl");
+        
+    //     let password = "donkeybrains";
+    //     let myApiUrl = 'http://localhost:8082/newLogin1';
+    //     console.log(phone,"phone");
+    //     console.log(myApiUrl,"myApiUrl");
 
 
         console.log("RestApiUrl");
-        fetch('http://localhost:8082/newLogin1', {
+        return  fetch('http://localhost:8082/newLogin1', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
                 //  'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNWExYmFhNTYyYzZiOTEzNzYzMmM3ZWVjIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiJqWmFlNzI3SzA4S2FPbUtTZ09hR3p3dy9YVnFHci9QS0VnSU1ranJjYkpJPSIsInJhcGlkSUQiOiJCd2JNd0E2YjFIaEUxNC91TFdweVJXS3EzMytBVUJINnd6UjZtQzh0OUowPSIsInVzZXJPYmplY3QiOnsiZm5hbWUiOiJhcnVuIiwibG5hbWUiOiJob3NzYW1hbmkiLCJwaG9uZSI6IjkxODM2OTk2NDU4MiJ9LCJ1c2VydHlwZSI6IkRpcmVjdCBDbGllbnRzIiwib3RwIjoxMTAwLCJlbmNvZGVkTWFpbCI6IllYSjFiaTVvYjNOellXMWhibWxBY21Gd2FXUnhkV0psTG1OdmJRPT0iLCJjcmVhdGVkX2F0IjoiTW9uIE5vdiAyNyAyMDE3IDExOjMxOjU4IEdNVCswNTMwIChJU1QpIiwiY291bnQiOjAsIl9fdiI6MCwic3RhdHVzIjpbInBob25lIiwiZW1haWwiXX1dLCJpYXQiOjE1MTUwNTA3NDcsImV4cCI6MTUxNTExMDc0N30.xZ_K-mE7WfAszkFrGMATmm9EpCmtYgdOyydVL4HGPVk'
             },
-            body: JSON.stringify({phone:"919553715856"})
+            body: JSON.stringify({phone:this.state.phone})
         }).then((response) => response.json()).then((responseJson) => {
             var res = responseJson.message;
             token = responseJson.token;
@@ -284,15 +289,21 @@ export default class LoginPage extends RX.Component{
             console.log(res,"res");
             console.log(otp,"otp");
            swal(''+res+'')
-           if(res == "OTP verified"){
-             this.props.onNavigateForth(res,token);
-            console.log("idsguygyfs")
-            alert(''+result+'');  
+           if(this.state.phone==""){
+
+  swal("Please Enter your mobile number")
            }else{
-             swal("Please verify and enter a valid otp number ") 
+            this.props.onNavigateForth(res,token,otp);
            }
+        //    if(phone == "OTP verified"){
+        //      this.props.onNavigateForth(res,token);
+        //     console.log("idsguygyfs")
+        //     alert(''+result+'');  
+        //    }else{
+        //      swal("Please verify and enter a valid otp number ") 
+        //    }
                         
-            this.props.onNavigateForth(res,token);
+            
         })
     }
 
@@ -302,7 +313,7 @@ export default class LoginPage extends RX.Component{
     }
 
     onChangePhone = (value) => {
-        this.setState({ value: value });
+        this.setState({ phone: value });
         console.log(this.state.phone,"phone");
     }
         
@@ -331,13 +342,13 @@ export default class LoginPage extends RX.Component{
                                                 controlId="formBasicText"
                                             >
                                                 {/*<ControlLabel>Working example with validation</ControlLabel>*/}
-                                                <FormControl
+                                                <RX.TextInput
                                                     type="text"
-                                                    value={this.state.value}
+                                                    style={styling.Form10}
+                                                    value={this.state.phone}
                                                     placeholder="+91"
                                                     pattern="[1-9]{1}[0-9]{9}"
                                                     title="Enter 10 digit mobile number"
-                                                    secureTextEntry= {true}
                                                     icon="phone" 
                                                     onChangeText={this.onChangePhone}
                                                 
@@ -349,13 +360,7 @@ export default class LoginPage extends RX.Component{
                 </RX.View>
                 <RX.View style={styles.footer}>
 
-<RX.Button
-/* // style={ [sty]} */
-onPress={()=> this.onChangePost()}
-> {/* // onPress={() => navigate('OtpPage'), { phone: this.state.phone }} */}
-  <RX.Text style={styles.footerText} >{'NEXT'}
- </RX.Text>
-  </RX.Button>
+<RX.Button style={styles.footerText}onPress={()=> this.onChangePost()}>Next</RX.Button>
    </RX.View>
                 
        

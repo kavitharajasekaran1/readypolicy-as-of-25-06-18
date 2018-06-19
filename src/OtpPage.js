@@ -28,7 +28,7 @@ const styles = {
         right: 0,
         bottom: 0,
         top: 0,
-        backgroundColor:'#535394a6'
+        backgroundColor:'#00000094'
     }),
     welcome: RX.Styles.createTextStyle({
         color: 'Red',
@@ -419,13 +419,15 @@ const styles = {
     }),
        lock:RX.Styles.createTextStyle({
         display: 'block',
-        backgroundcolor: 'black',
+        backgroundColor: '#e2dadad1',
         width: 50,
         float: 'left',
         padding: 8,
         position:'center',
         marginLeft:'15px',
-        color: "#555",
+        color: "#080808eb",
+        justifyContent: 'center',
+        textAlign:'center'
           
             }),
             hoat:RX.Styles.createTextStyle({
@@ -442,14 +444,16 @@ const styles = {
     
 };
 var token
+var otp
 export default class OtpPage extends RX.Component{
     constructor(props) {
         super(props);
+        this.textInput = React.createRef(),
         this.state = {
-            phone:'',
-            phone1:'',
-            phone2:'',
-            phone3:'',
+            check4:'',
+            check1:'',
+            check2:'',
+            check3:'',
             onFocus:'',
         };
         this._translationValue = RX.Animated.createValue(-100);
@@ -462,8 +466,59 @@ export default class OtpPage extends RX.Component{
         });
     }
     onChangePost() {
+        
         this.props.onPressNavigate(token);
     }
+
+
+
+    
+    GetValueFunction4 = (ValueHolder) =>{
+                      
+        var Value = ValueHolder.length.toString() ;
+        console.log(+Value)
+        if(Value>=1)
+        {
+    this.refs.check1.focus();
+        }
+    
+           }
+                
+                
+                       GetValueFunction1 = (ValueHolder) =>{
+                      
+                        var Value = ValueHolder.length.toString() ;
+                        console.log(+Value)
+                        if(Value>=1)
+                        {
+                    this.refs.check2.focus();
+                        }
+                    
+                           }
+                
+                
+                           GetValueFunction2 = (ValueHolder) =>{
+                      
+                            var Value = ValueHolder.length.toString() ;
+                            console.log(+Value)
+                            if(Value>=1)
+                            {
+                        this.refs.check3.focus();
+                            }
+                        
+                               }
+                
+                
+                               GetValueFunction3 = (ValueHolder) =>{
+                      
+                                var Value = ValueHolder.length.toString() ;
+                                console.log(+Value)
+                                if(Value>=1)
+                                {
+                            this.refs.check4.focus();
+                                }
+                            
+                                   }
 
     componentDidMount() {
         let animation = RX.Animated.timing(this._translationValue, {
@@ -479,15 +534,16 @@ export default class OtpPage extends RX.Component{
         this.setState({ value: value });
         
     }
-    onFocus() {
-        let {
-            errors = {}
-        } = this.state;
+    // onFocus() {
+    //     let {
+    //         errors = {}
+    //     } = this.state;
 
         
 
        
-    }
+    
+                   
     onChangePhone = (value) => {
         this.setState({ phone: value });
         console.log(this.state.phone,"phone");
@@ -507,7 +563,9 @@ export default class OtpPage extends RX.Component{
 
     render() {
         token = this.props.navigatorRoute.token
+      
         console.log(token,"token")
+
         return (
             <RX.Image
             source={ ('./src/img/policy.png' )}
@@ -524,22 +582,45 @@ export default class OtpPage extends RX.Component{
             
             <RX.Text style={ styles.Welcome }>Policy</RX.Text>
           */}
-                <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
+                 <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
             <RX.Text style={styles.Policy}>Waiting to automatically detect an SMS</RX.Text><RX.Text style={styles.P0LIcy}> sent to +9650266349.<p  class="text-danger" style={styles.POLICY} >WrongNumber?</p></RX.Text>
-            <RX.Text style={styles.POlicy}> 
+            <RX.Text style={styles.POlicy}>  
        
-            <form>
-                
-                <input type="text" style={styles.lock} placeholder="01" onFocus={this.onFocus} maxlength="2"/>
+            
+{/*                  
+              <RX.TextInput
+             
+            
+         
+              onChangeText={ ValueHolder => this.GetValueFunction(ValueHolder) }
+         
+             style={styles.lock}
+           /> */}
+                 <RX.TextInput type="text" style={styles.lock} ref="check4"    onChangeText={ ValueHolder => this.GetValueFunction4(ValueHolder) }/>
               
-                 <input type="text" style={styles.lock}  placeholder="02" onFocus={this.onFocus} maxlength="2"/>
+                 <RX.TextInput type="text" style={styles.lock}   ref="check1"  onChangeText={ ValueHolder => this.GetValueFunction1(ValueHolder) }/>
                  
-                 <input type="text" style={styles.lock} placeholder="03" onFocus={this.onFocus} maxlength="2"/>
+                  <RX.TextInput type="text" style={styles.lock}  ref="check2" onChangeText={ ValueHolder => this.GetValueFunction2(ValueHolder) }/>
               
-                 <input type="text" style={styles.lock} placeholder="04" onFocus={this.onFocus} maxlength="2"/>
-               
-              </form>        
-              </RX.Text>  
+                  <RX.TextInput type="text" style={styles.lock}  ref="check3" maxLength="1"/> 
+  
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+                
+                    
+              </RX.Text>   
                     <RX.Text style={ styles.otp}>
                         Enter OTP code
                     </RX.Text>

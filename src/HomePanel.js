@@ -214,7 +214,7 @@ style={styles.remo}
                 <div className="col-xs-4 col-sm-4 col-md-4"></div>
 
                 <RX.View style={styles.scrollBox}>
-                     <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'auto'}}>
+                     <RX.View style={{flex: 1, flexShrink: 4,flexDirection: 'row',   justifyContent: 'auto'}}>
                      <RX.View style={{width: 100, height: 100, backgroundColor: 'white', marginTop:20,marginLeft:250}} >
                      
                      <RX.Button  onPress={()=> this.onChangePostt() }><RX.Image

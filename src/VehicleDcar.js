@@ -65,6 +65,10 @@ var liability
 var idv
 var resJson
 var allResponse
+var token
+var index
+var index1
+var index2
 export default class VehicleDetails extends React.Component{
    constructor(props) {
         super(props);
@@ -106,9 +110,9 @@ export default class VehicleDetails extends React.Component{
                       voluntaryDeductible:'0',
                       vehicleManufacturerName: 'TVS',
                       idv: '4520250.0',
-                      policyStartDate: '07/06/2018',
+                      policyStartDate: '19/06/2018',
                       vehicleMostlyDrivenOn: 'Roads',
-                      vehicleRegDate: '07/06/2018',
+                      vehicleRegDate: '19/06/2018',
                       vehicleRegisteredInTheNameOf: 'Company',
                       modelName: 'APACHE RTR ABS-2 Seater',
                       productName: 'BrandNewTwoWheeler',
@@ -160,7 +164,7 @@ console.log("quoteid",this.state.quoteid)
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                
+                'x-access-token': token
             },                                            
         
             body: JSON.stringify({
@@ -327,7 +331,10 @@ console.log("quoteid",this.state.quoteid)
 
         })
      }
-        
+     onChangePosttt(){
+        console.log("navigate",token)
+        this.props.onNavigateFourty(liability,resJson,quoteid,premium,allResponse,token); 
+    } 
     onChangeTextValue = (value) => {
         this.setState({ inputValue: value });
         console.log(this.state.inputValue,"inputValue");
@@ -342,7 +349,7 @@ console.log("quoteid",this.state.quoteid)
         this.setState({mypremium: value });
         console.log({premium},"premium");
     }
-
+   
 
     onChangetitle = (value) => {
         this.setState({ title: value });
@@ -668,6 +675,8 @@ console.log("quoteid",this.state.quoteid)
      //   message = this.props.navigatorRoute.message
         quoteid = this.props.navigatorRoute.quoteid
          mypremium = this.props.navigatorRoute.premium
+         token = this.props.navigatorRoute.token
+         console.log(token,"token")
        //  liability = this.props.navigatorRoute.liability
          //idv = this.props.navigatorRoute.idv
          //resJson = this.props.navigatorRoute.resJson
@@ -681,7 +690,7 @@ console.log("quoteid",this.state.quoteid)
         return (
             <RX.ScrollView style={ _styles.scroll }>
             <RX.View style={ styling.container }>
-            <RX.Button  onPress={ this.props.onNavigateSuper }><RX.Image
+            <RX.Button  onPress={()=> this.onChangePosttt()}><RX.Image
                          style={_styles.HomeScrollImageLogo}
                          source={'./src/img/Back.svg'}/>
                     <RX.Text style={styling.welcome }>
