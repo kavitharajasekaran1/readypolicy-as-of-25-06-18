@@ -348,16 +348,18 @@ export default class App extends RX.Component {
             }
         });
     }
-    _onPressForth(res,token,otp) {
+    _onPressForth(res,token,otp,phone) {
         console.log("res",res)
         console.log("token",token)
         console.log("otp",otp)
+        console.log("phone",phone)
         // this._navigator.pop();
         this._navigator.push({
             routeId: NavigationRouteId.OtpPage,
             sceneConfigType: "FloatFromRight",
             res:res,
             otp:otp,
+            phone:phone,
             token:token,
             customSceneConfig: {
                 hideShadow: true

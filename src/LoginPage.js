@@ -239,7 +239,8 @@ const styles = {
         alignSelf: "stretch",
     }),
 };
-  var token  
+  var token 
+  var phone 
 export default class LoginPage extends RX.Component{
     constructor(props) {
         super(props);
@@ -285,6 +286,8 @@ export default class LoginPage extends RX.Component{
             var res = responseJson.message;
             token = responseJson.token;
             var otp = responseJson.otp;
+            var phone = responseJson.phone;
+            console.log(phone,"phone")
             console.log(token,"response")
             console.log(res,"res");
             console.log(otp,"otp");
@@ -293,7 +296,7 @@ export default class LoginPage extends RX.Component{
 
   swal("Please Enter your mobile number")
            }else{
-            this.props.onNavigateForth(res,token,otp);
+            this.props.onNavigateForth(res,token,otp,phone);
            }
         //    if(phone == "OTP verified"){
         //      this.props.onNavigateForth(res,token);

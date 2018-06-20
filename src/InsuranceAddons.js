@@ -42,15 +42,15 @@ export default class InsuranceAddons extends RX.Component{
     constructor(props) {
         super(props);
         this.state = {
-                emailId: '',
-                mobileNo: '',
-                yearOfManufacture: '',
-                vehicleMostlyDrivenOn: '',
-                carRegisteredCity: '',
-                vehicleManufacturerName: '',
-                vehicleModelCode: '',
-                vehicleRegDate: '',
-                lastName: '',
+                emailId: 'neeluneelima67@gmail.com',
+                mobileNo: '9553715856',
+                yearOfManufacture: '2017',
+                vehicleMostlyDrivenOn: 'ROADS',
+                carRegisteredCity: '24PARGANAS',
+                vehicleManufacturerName: 'TVS',
+                vehicleModelCode: 'ZWTV310',
+                vehicleRegDate: '20/06/2018',
+                lastName: 'Rani',
             };
             this._translationValue = RX.Animated.createValue(-100);
             this._animatedStyle = RX.Styles.createAnimatedTextStyle({
@@ -122,9 +122,9 @@ console.log("hittinh.......")
                         voluntaryDeductible: "0",
                         vehicleManufacturerName: this.state.vehicleManufacturerName,
                         idv: "65478",
-                        policyStartDate: "19/06/2018",
+                        policyStartDate: "20/06/2018",
                         vehicleMostlyDrivenOn: this.state.vehicleMostlyDrivenOn,
-                        vehicleRegDate: "19/06/2018",
+                        vehicleRegDate: "20/06/2018",
                         vehicleRegisteredInTheNameOf: "Company",
                         modelName: "APACHE RTR ABS-2 Seater",
                         productName: "BrandNewTwoWheeler",

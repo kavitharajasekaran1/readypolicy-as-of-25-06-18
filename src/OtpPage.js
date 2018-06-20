@@ -444,7 +444,7 @@ const styles = {
     
 };
 var token
-var otp
+var phone
 export default class OtpPage extends RX.Component{
     constructor(props) {
         super(props);
@@ -562,10 +562,11 @@ export default class OtpPage extends RX.Component{
     }
 
     render() {
+        res=this.props.navigatorRoute.res
         token = this.props.navigatorRoute.token
-      
+      phone=this.props.navigatorRoute.phone
         console.log(token,"token")
-
+        console.log(phone,"phone")
         return (
             <RX.Image
             source={ ('./src/img/policy.png' )}
@@ -583,7 +584,7 @@ export default class OtpPage extends RX.Component{
             <RX.Text style={ styles.Welcome }>Policy</RX.Text>
           */}
                  <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
-            <RX.Text style={styles.Policy}>Waiting to automatically detect an SMS</RX.Text><RX.Text style={styles.P0LIcy}> sent to +9650266349.<p  class="text-danger" style={styles.POLICY} >WrongNumber?</p></RX.Text>
+            <RX.Text style={styles.Policy}>Waiting to automatically detect an SMS</RX.Text><RX.Text style={styles.P0LIcy}> sent to { phone}<p  class="text-danger" style={styles.POLICY} >WrongNumber?</p></RX.Text>
             <RX.Text style={styles.POlicy}>  
        
             
