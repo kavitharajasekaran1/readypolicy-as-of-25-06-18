@@ -71,15 +71,36 @@ homeScrollImageLogo: RX.Styles.createImageStyle({
     justifyContent: 'space-between',
 }),
 image:RX.Styles.createViewStyle({
+    height: 50,
+    width:50,
+    marginTop:'20',
+    alignItems:'center',
+    justifyContent:'center',
+    marginLeft:10
+}),
+imagey:RX.Styles.createViewStyle({
     height: 25,
-    width:'25%',
-    marginTop:'20'
+    width:25,
+    marginTop:'20',
+    alignItems:'center'
 }),
+// IMage:RX.Styles.createViewStyle({
+//     width:"100%",
+//     height:201,
+//    backgroundColor: 'grey'
+// }),
 IMage:RX.Styles.createViewStyle({
-    width:"100%",
-    height:201,
-   backgroundColor: '#1d6779a8'
-}),
+    //     width:"100%",
+    //     height:72,
+    //    backgroundColor: '#1d6779a8'
+    height: 63,
+           width: 325,
+           marginTop:-84,
+           marginLeft:-38,
+           display:'flex',
+           position:'relative'
+           
+    }),
 Image:RX.Styles.createViewStyle({
     height: 50,
     width:'50%',
@@ -90,7 +111,7 @@ Image:RX.Styles.createViewStyle({
         height: 72,
         paddingVertical:20,
         marginLeft:3,
-        marginTop:-9
+        marginTop:51
     }),
     
         scroll: RX.Styles.createScrollViewStyle({
@@ -109,18 +130,32 @@ marTop:RX.Styles.createViewStyle({
     marginTop:10,
 }),
 policy:RX.Styles.createTextStyle({
-    fontSize: 18,
+    fontSize: 17,
     marginBottom: 16,
-    backgroundColor:'#1d6779a8',
+    backgroundColor:'#grey',
     color:'White',
     justifyContent: 'center',
     position: 'absolute',
     alignSelf: 'center',
-    marginLeft: 1,
-    marginTop:152,
+    marginLeft: -20,
+    marginTop:19,
     textAlign:'CENTER',
    
    
+}),
+footer: RX.Styles.createViewStyle({
+    position: 'absolute',
+    
+    minWidth: '100%',
+    backgroundColor: 'rgba(26,153,228,.97)',
+
+    justifyContent:'center',
+    alignSelf:'center',
+    height:'10',
+    bottom:'0',
+    marginTop:'40',
+    clear:'both'
+    
 }),
  
 scrollBoxText: RX.Styles.createTextStyle({
@@ -128,8 +163,21 @@ scrollBoxText: RX.Styles.createTextStyle({
     alignItems: 'center',
     textAlign:'Center',
    color:'#1a153b',
+   
+
 
 }),
+web: RX.Styles.createTextStyle({
+   maxWidth:'100%',
+   padding:30
+  
+}),
+fert: RX.Styles.createTextStyle({
+  margin: 'auto',
+  width:'80%',
+
+ }),
+
 ScrollBoxText: RX.Styles.createTextStyle({
     justifyContent: 'center',
     alignItems: 'center',
@@ -147,6 +195,149 @@ remo:RX.Styles.createTextStyle({
 read: RX.Styles.createScrollViewStyle({
     width:'100%'
 }),
+rega: RX.Styles.createScrollViewStyle({
+
+    margin:'auto',
+}),
+container123: RX.Styles.createViewStyle({
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor:'#423f56c4',
+    height:149,
+    padding:-10,
+}),
+squarebutton:RX.Styles.createViewStyle({
+    color:'white',
+    width:'100',
+    height:50,
+    marginLeft:-14,
+    marginTop:-40
+
+}),
+button1Text:RX.Styles.createButtonStyle({
+    
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign:'Center',
+}),
+button1: RX.Styles.createButtonStyle({
+    backgroundColor: 'white',
+    borderWidth: 1,
+    margin: 20,
+    padding: 12,
+    borderRadius: 50,
+    borderColor: 'white',
+    borderRadius: 0,
+    height:100,
+    width:100,
+    marginLeft:300,
+    marginTop:-160
+}),
+button11: RX.Styles.createButtonStyle({
+    backgroundColor: 'white',
+    borderWidth: 1,
+    margin: 20,
+    padding: 12,
+    borderRadius: 50,
+    borderColor: 'white',
+    borderRadius: 0,
+    height:100,
+    width:100,
+    marginLeft:300,
+    marginTop:-100,
+    
+}),
+button2: RX.Styles.createButtonStyle({
+    backgroundColor: 'white',
+    borderWidth: 1,
+    margin: 20,
+    padding: 12,
+    borderRadius: 50,
+    borderColor: 'white',
+    borderRadius: 0,
+    height:100,
+    width:100,
+    marginTop:-160,
+    marginLeft:200
+}),
+button22: RX.Styles.createButtonStyle({
+    backgroundColor: 'white',
+    borderWidth: 1,
+    margin: 20,
+    padding: 12,
+    borderRadius: 50,
+    borderColor: 'white',
+    borderRadius: 0,
+    height:100,
+    width:100,
+    marginTop:-100,
+    marginLeft:200
+}),
+button3: RX.Styles.createButtonStyle({
+    backgroundColor: 'white',
+    borderWidth: 1,
+    margin: 20,
+    padding: 12,
+    borderRadius: 50,
+    borderColor: 'white',
+    borderRadius: 0,
+    height:100,
+    width:100,
+    marginLeft:200,            
+    marginTop:-160
+}),
+button33: RX.Styles.createButtonStyle({
+    backgroundColor: 'white',
+    borderWidth: 1,
+    margin: 20,
+    padding: 12,
+    borderRadius: 50,
+    borderColor: 'white',
+    borderRadius: 0,
+    height:100,
+    width:100,
+    marginLeft:200,            
+    marginTop:-100
+}),
+button1Hover: RX.Styles.createButtonStyle({
+    borderRadius: '500%',
+    backgroundColor:'#776fce',
+    
+}),
+button2Hover: RX.Styles.createButtonStyle({
+    borderRadius: '500%',
+    backgroundColor:'#de6d75'
+}),
+button3Hover: RX.Styles.createButtonStyle({
+    borderRadius: '500%',
+   backgroundColor:'pink'
+}),
+button11Hover: RX.Styles.createButtonStyle({
+    borderRadius: '500%',
+    backgroundColor:'pink'
+}),
+button22Hover: RX.Styles.createButtonStyle({
+    borderRadius: '500%',
+    backgroundColor:'pink'
+}),
+button33Hover: RX.Styles.createButtonStyle({
+    borderRadius: '500%',
+   backgroundColor:'pink'
+}),
+navbar:RX.Styles.createViewStyle({
+
+overflow: 'hidden',
+  backgroundColor: '#333',
+  position: 'fixed',
+  top: 0,
+  width: '100%'
+}),
+navbarHover:RX.Styles.createViewStyle({
+    background: '#ddd',
+  color: 'black',
+}),
+    
+
 };
 var token
 export default class RegisterPage extends RX.Component{
@@ -192,105 +383,166 @@ export default class RegisterPage extends RX.Component{
         token = this.props.navigatorRoute.token
         console.log("token",token)
         return (
+
+
+            
            
-            <RX.View style={styles.scrollViewContainer}>
+<RX.View class="mobile-skin ipnone6 black portrait" style={styles.scrollViewContainer}>
                 <RX.View style={styles.scrollImage}>
                 {/* <RX.Image
 style={styles.remo}
             resizeMode="cover"
             source={'./src/img/Farmer.png'}> */}
        
-            <RX.Image source={ './src/img/Logo.svg' } style={ [styles.IMage] }/> 
-            <RX.Text style={ styles.policy }></RX.Text> 
+       <RX.View style={ styles.container123 }>
+           <RX.Image source={ './src/img/Logo.svg' } style={ [styles.IMage] }/>
+            {/* <RX.Text style={ styles.policy }></RX.Text>  */}
             
            
             {/* </RX.Image> */}
             
-              <RX.Text style={ styles.policy }>Plan your insurance on this platform and get RS 100 off your first policy</RX.Text> 
-                </RX.View>
+              <RX.Text style={ styles.policy }>Plan your insurance on this platform{'\n'}and get RS 100 off your first policy</RX.Text> 
+              </RX.View>
+              </RX.View>
     
+    {/* <div class="container bg-primary">
+    <div style={styles.rega}>
+    <img src="./src/img/Car.svg" style={styles.web} class="shadow" />
+    <img src="./src/img/Bike.svg"  style={styles.web} class="shadow" />
+       <img src="./src/img/Term.svg" style={styles.web}  class=" shadow" />
+       </div>
+    </div>
+
+               
+    <div>
+    <div style ={styles.fert} class=" mt-5 bg-dark">
+        <div>
+         <img src="./src/img/Car.svg" style={styles.web} class="shadow" />
+        <img src="./src/img/Bike.svg"  style={styles.web} class="shadow" />
+       <img src="./src/img/Term.svg" style={styles.web}  class=" shadow" />
+  
+        </div>
+        <div>
+         <img src="./src/img/Car.svg" style={styles.web} class="shadow" />
+        <img src="./src/img/Bike.svg"  style={styles.web} class="shadow" />
+       <img src="./src/img/Term.svg" style={styles.web}  class=" shadow" />
+  
+        </div>
+       
+    </div>
     
-                <div className="row"></div>
-                <div className="col-xs-4 col-sm-4 col-md-4"></div>
-
-                <RX.View style={styles.scrollBox}>
-                     <RX.View style={{flex: 1, flexShrink: 4,flexDirection: 'row',   justifyContent: 'auto'}}>
-                     <RX.View style={{width: 100, height: 100, backgroundColor: 'white', marginTop:20,marginLeft:250}} >
-                     
-                     <RX.Button  onPress={()=> this.onChangePostt() }><RX.Image
-                             style={styles.HomeScrollImageLogo}
-                             source={'./src/img/Car.svg'}/>
-                        <RX.Text style={styles.scrollBoxText}>Car</RX.Text>
-                      </RX.Button>
-                     </RX.View>
-                     <div className="row"></div>
-                <div className="col-xs-4 col-sm-4 col-md-4"></div>
-                     <RX.View style={styles.scrollBox}>
-                     <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
-                     <RX.View style={{width: 100, height: 100, backgroundColor: 'white',marginTop:10,marginLeft:200 }} >
-                     <RX.Button  onPress= {()=> this.onChangePost() }><RX.Image
-                             style={styles.HomeScrollImageLogo}
-                             source={'./src/img/Bike.svg'}/>
-                        <RX.Text style={styles.scrollBoxText}>Two Wheeler</RX.Text>
-                        </RX.Button>
-                     </RX.View>
- 
-                     <div className="row"></div>
-                <div className="col-xs-4 col-sm-4 col-md-4"></div>
-                     <RX.View style={styles.scrollBox}>
-                     <RX.View style={{flex: 1, flexDirection: 'rowRpqb',   justifyContent: 'space-between'}}>
-                     <RX.View style={{width: 100, height: 100, backgroundColor: 'white', marginLeft:200}} >
-                         <RX.Image
-                             style={styles.HomeScrollImageLogo}
-                             source={'./src/img/Term.svg'}/>
-                        <RX.Text style={styles.scrollBoxText}>Term Insurance</RX.Text>
-                    </RX.View>
-                     </RX.View>
-                     </RX.View>
-                     </RX.View>
-                     </RX.View>
-                     </RX.View>
-                     </RX.View>
-                     <div className="row"></div>
-                <div className="col-xs-4 col-sm-4 col-md-4"></div>
-                     <RX.View style={styles.ScrollBox}>
-                     <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
-                     <RX.View style={{width: 100, height: 100, backgroundColor: 'white',marginTop:20,marginLeft:250}} >
-                         <RX.Image
-                             style={styles.HomeScrollImageLogo}
-                             source={'./src/img/Health.svg'}/>
-                        <RX.Text style={styles.scrollBoxText}>Health Insurance</RX.Text>
-                     </RX.View>
-                     <div className="row"></div>
-                <div className="col-xs-4 col-sm-4 col-md-4"></div>
-                     <RX.View style={styles.ScrollBox}>
-                     <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
-                     <RX.View style={{width: 100, height: 100, backgroundColor: 'white',marginTop:10,marginLeft:200}} >
-                     <RX.Image
-                             style={styles.HomeScrollImageLogo}
-                             source={'./src/img/Travell.svg'}/>
-                        <RX.Text style={styles.scrollBoxText}>Travel Insurance</RX.Text>
-                     </RX.View>
-                     <div className="row"></div>
-                <div className="col-xs-4 col-sm-4 col-md-4"></div>
-                   <RX.View style={styles.ScrollBox}>
-                      <RX.View style={{flex: 1, flexDirection: 'row',   justifyContent: 'space-between'}}>
-                      <RX.View style={{width: 100, height: 100, backgroundColor: 'white',marginLeft:200}} >
-                          <RX.Image
-                              style={styles.HomeScrollImageLogo}
-                              source={'./src/img/Add Existing Insurance.svg'}/>
-                         <RX.Text style={styles.scrollBoxText}>Add Existing Policy</RX.Text>
-                      </RX.View>
-
-                      </RX.View>
-                      </RX.View>
-                      </RX.View>
-                      </RX.View>
-                      </RX.View>
-                      </RX.View>
+    </div>
+    <div>
+  
+    </div> */}
+     
+    
+   
+               
+     <RX.Button
+                    style={ [styles.button1, this.state.button1Hover && styles.button1Hover] }
+                    onHoverStart={ () => { this.setState({ button1Hover: true }); } }
+                    onHoverEnd={ () => { this.setState({ button1Hover: false }); } }
+                    onPress={()=> this.onChangePostt() }
+                        // no-op
+                    
+                >
+            <RX.Image source={ './src/img/Car.svg' } style={ [styles.image] } />
+                    <RX.Text style={ [styles.button1Text, this.state.button1Hover && styles.button1TextHover] }>
+                        { 'car Insurance' }
+                    </RX.Text>
+                </RX.Button>
                 
                 
-                    <RX.ScrollView style={ styles.container}>
+                <RX.Button
+                    style={ [styles.button2, this.state.button2Hover && styles.button2Hover] }
+                    onHoverStart={ () => { this.setState({ button2Hover: true }); } }
+                    onHoverEnd={ () => { this.setState({ button2Hover: false }); } }
+                    onPress= {()=> this.onChangePost() }
+                        // no-op
+                    
+                >
+            <RX.Image source={ './src/img/Bike.svg' } style={ [styles.image] } />
+                    <RX.Text style={ [styles.button1Text, this.state.button1Hover && styles.button1TextHover] }>
+                        { 'Two Wheeler' }
+                    </RX.Text>
+                </RX.Button>
+                
+                
+                <RX.Button
+                    style={ [styles.button3, this.state.button3Hover && styles.button1Hover] }
+                    onHoverStart={ () => { this.setState({ button3Hover: true }); } }
+                    onHoverEnd={ () => { this.setState({ button3Hover: false }); } }
+                    onPress={ () => {this.save()
+                        // no-op
+                    } }
+                >
+            <RX.Image source={'./src/img/Term.svg'} style={ [styles.image] } />
+                    <RX.Text style={ [styles.button1Text, this.state.button1Hover && styles.button1TextHover] }>
+                        { 'Term Insurance' }
+                    </RX.Text>
+                </RX.Button>
+                
+                
+
+                 <RX.Button
+                    style={ [styles.button11, this.state.button11Hover && styles.button1Hover] }
+                    onHoverStart={ () => { this.setState({ button11Hover: true }); } }
+                    onHoverEnd={ () => { this.setState({ button11Hover: false }); } }
+                    onPress={ () => {this.save()
+                        // no-op
+                    } }
+                >
+            <RX.Image source={'./src/img/Health.svg'} style={ [styles.image] } />
+                    <RX.Text style={ [styles.button1Text, this.state.button1Hover && styles.button1TextHover] }>
+                        { 'Health Insurance' }
+                    </RX.Text>
+                </RX.Button>
+                
+                
+                <RX.Button
+                    style={ [styles.button22, this.state.button22Hover && styles.button22Hover] }
+                    onHoverStart={ () => { this.setState({ button22Hover: true }); } }
+                    onHoverEnd={ () => { this.setState({ button22Hover: false }); } }
+                    onPress={ () => {this.save()
+                        // no-op
+                    } }
+                >
+            <RX.Image source={'./src/img/Travell.svg'} style={ [styles.image] } />
+                    <RX.Text style={ [styles.button1Text, this.state.button1Hover && styles.button1TextHover] }>
+                        { 'Travel Insurance' }
+                    </RX.Text>
+                </RX.Button>
+                
+                <RX.Button
+                    style={ [styles.button33, this.state.button33Hover && styles.button33Hover] }
+                    onHoverStart={ () => { this.setState({ button33Hover: true }); } }
+                    onHoverEnd={ () => { this.setState({ button33Hover: false }); } }
+                    onPress={ () => {this.save()
+                        // no-op
+                    } }
+                >
+            <RX.Image source={'./src/img/Add Existing Insurance.svg'} style={ [styles.image] } />
+                    <RX.Text style={ [styles.button1Text, this.state.button1Hover && styles.button1TextHover] }>
+                        { ' Existing policy' }
+                    </RX.Text>
+                </RX.Button>
+
+
+
+
+
+
+
+
+
+
+                
+                
+                    {/* <RX.ScrollView style={ styles.container}> */}
+                    <RX.View style={styles.footer}>
+
+
                     <Row className="show-grid hidden-xs">
                         <Col  md={2} style={styling.marTop}>
                             {/*<RX.Text>Test</RX.Text>*/}
@@ -298,27 +550,27 @@ style={styles.remo}
                         </Col>
                        <Col  md={2} style={styling.marTop}>
                             {/*<RX.Text>Test1</RX.Text>*/}
-                            <RX.Image source={ './src/img/Home.svg' } style={ [styles.image ] } />
+                            <RX.Image source={ './src/img/Home.svg' } style={ [styles.imagey ] } />
                             <RX.Text style={styles.ScrollBoxText}>Home</RX.Text>
                             {/* <RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
                         </Col>
                         <Col  md={2} style={styling.marTop}>
                             {/*<RX.Text>Test2</RX.Text>*/}
-                            <RX.Button  onPress={ this.props.onNavigateRole }><RX.Image source={ './src/img/MyPolicies.svg' } style={ [styles.image] } />
+                            <RX.Button  onPress={ this.props.onNavigateRole }><RX.Image source={ './src/img/MyPolicies.svg' } style={ [styles.imagey] } />
                             <RX.Text style={styles.ScrollBoxText}>My Policies</RX.Text>
                             {/*<RX.Image source={ './src08/img/Bharti.png' } style={ [styles.image ] } />*/}
                             </RX.Button>
                         </Col>
                         <Col  md={2} style={styling.marTop}>
                             {/*<RX.Text>Test3</RX.Text>*/}
-                            <RX.Button  onPress={ this.props.onNavigateOne }>   <RX.Image source={ './src/img/Remainder.svg' } style={ [styles.image] } />
+                            <RX.Button  onPress={ this.props.onNavigateOne }>   <RX.Image source={ './src/img/Remainder.svg' } style={ [styles.imagey] } />
                             <RX.Text style={styles.ScrollBoxText}>Remainder</RX.Text>
                             {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
                         </RX.Button>
                         </Col>
                         <Col  md={2} style={styling.marTop}>
                             {/*<RX.Text>Test3</RX.Text>*/}
-                            <RX.Image source={ './src/img/Settings.svg' } style={ [styles.image] } />
+                            <RX.Image source={ './src/img/Settings.svg' } style={ [styles.imagey] } />
                             <RX.Text style={styles.ScrollBoxText}>Settings</RX.Text>
                             {/*<RX.Image source={ './src/img/Bharti.png' } style={ [styles.image ] } />*/}
                         </Col>
@@ -338,7 +590,7 @@ style={styles.remo}
                     </Row>
                     
                   
-                </RX.ScrollView>
+                    </RX.View>
             
   </RX.View>
  

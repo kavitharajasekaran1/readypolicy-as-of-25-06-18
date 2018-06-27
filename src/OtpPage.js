@@ -28,7 +28,7 @@ const styles = {
         right: 0,
         bottom: 0,
         top: 0,
-        backgroundColor:'#00000094'
+        backgroundColor:'#000000c2'
     }),
     welcome: RX.Styles.createTextStyle({
         color: 'Red',
@@ -253,14 +253,14 @@ const styles = {
     }),
     otp: RX.Styles.createTextStyle({
         
-            fontSize: 30,
+            fontSize: 18,
             marginBottom: 16,
             color:'White',
             justifyContent: 'center',
             position: 'absolute',
             alignSelf: 'center',
             marginLeft: 1,
-            marginTop:82,
+            marginTop:52,
             textAlign: 'center'
           
     }),
@@ -311,10 +311,11 @@ const styles = {
         borderColor: 'red'
     }),
     phone: RX.Styles.createViewStyle({
-        height: 42,
+        height: 120,
         width: 30,
-        marginTop:46,
-        marginLeft:244
+        marginTop:-39,
+        marginLeft:148,
+        marginBottom:29
     }),
     resend: RX.Styles.createScrollViewStyle({
         fontSize: 18,
@@ -338,7 +339,7 @@ const styles = {
         marginTop:130
     }),
     policy: RX.Styles.createScrollViewStyle({
-    fontSize: 26,
+    fontSize: 18,
     marginBottom: 16,
     color:'White',
     justifyContent: 'center',
@@ -348,7 +349,7 @@ const styles = {
     marginTop:-148
     }),
     Policy: RX.Styles.createScrollViewStyle({
-        fontSize: 24,
+        fontSize: 18,
         marginBottom: 16,
         color:'White',
         justifyContent: 'center',
@@ -359,14 +360,14 @@ const styles = {
         textAlign: 'center'
         }),
         P0LIcy: RX.Styles.createScrollViewStyle({
-            fontSize: 24,
+            fontSize: 18,
             marginBottom: 16,
             color:'White',
             justifyContent: 'center',
             position: 'absolute',
             alignSelf: 'center',
-            marginLeft: -89,
-            marginTop:-57,
+            marginLeft: -73,
+            marginTop:-62,
             textAlign: 'center'
             }),
             TryHead: RX.Styles.createScrollViewStyle({
@@ -377,8 +378,8 @@ const styles = {
             }),
         POLICY: RX.Styles.createScrollViewStyle({
             fontcolor:'red',
-            marginTop: -34,
-            marginLeft: 418
+            marginTop: -26,
+            marginLeft: 331
             }),
 
         POlicy:RX.Styles.createTextStyle({
@@ -394,28 +395,33 @@ const styles = {
     
         }),
         image:RX.Styles.createViewStyle({
-            height: 100,
+            height: 69,
             width:'100%',
             marginTop: '77px',
-    marginLeft: '-7px',
+    marginLeft: '-6px',
     backgroundcolor: '#62629cb0'
            
         }), 
     IMAGE:RX.Styles.createViewStyle({
             height: 100,
-            width:'23%',
-            marginTop: '14px',
-    marginLeft: '29px',
+            width:'9%',
+            marginTop: '99px',
+    marginLeft: '146px',
     backgroundcolor: '#62629cb0'
            
         }),
         aren:RX.Styles.createTextStyle({ 
             marginTop: -76,
-        marginLeft: 67
+        marginLeft: 67,
+        height:116,
+        width:173,
+        marginTop:-71,
+        marginLeft:193,
+        marginBottom:56
         }),
         areN:RX.Styles.createTextStyle({ 
-        marginLeft: 279,
-    marginTop: -39,
+        marginLeft: 183,
+    marginTop: -101,
     }),
        lock:RX.Styles.createTextStyle({
         display: 'block',
@@ -584,7 +590,7 @@ export default class OtpPage extends RX.Component{
             <RX.Text style={ styles.Welcome }>Policy</RX.Text>
           */}
                  <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
-            <RX.Text style={styles.Policy}>Waiting to automatically detect an SMS</RX.Text><RX.Text style={styles.P0LIcy}> sent to { phone}<p  class="text-danger" style={styles.POLICY} >WrongNumber?</p></RX.Text>
+            <RX.Text style={styles.Policy}>Waiting to automatically detect an SMS</RX.Text><RX.Text style={styles.P0LIcy}> sent to { phone}.<p  class="text-danger" style={styles.POLICY} >WrongNumber?</p></RX.Text>
             <RX.Text style={styles.POlicy}>  
        
             

@@ -39,7 +39,8 @@ const styles = {
         right: 0,
         bottom: 0,
         top: 0,
-        backgroundColor:'#00000094'
+        backgroundColor:'#000000c2',
+        borderColor:"#ff0000"
     }),
     CONTAINER: RX.Styles.createViewStyle({
         marginTop:300,
@@ -199,7 +200,7 @@ const styles = {
         marginTop:20,
     }),
     image:RX.Styles.createViewStyle({
-        height: 100,
+        height: 70,
         width:'100%',
         marginTop:'20'
        
@@ -207,6 +208,7 @@ const styles = {
     backgroundImage:RX.Styles.createViewStyle({
         flex: 1,
         alignSelf: "stretch",
+        
     }),
     
 };
@@ -238,7 +240,7 @@ export default class MainPanel extends RX.Component{
         return (
             <RX.Image
             source={ ('./src/img/policy.png' )}
-            resizeMode="cover"
+            resizeMode='cover'
             fluidalt="Responsive Image"
             style={[styles.backgroundImage]}
         >

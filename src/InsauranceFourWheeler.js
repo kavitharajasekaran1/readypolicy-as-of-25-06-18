@@ -46,7 +46,7 @@ export default class InsuranceAddons extends RX.Component{
             carRegisteredCity: '24PARGANAS',
             vehicleManufacturerName: 'TVS',
             vehicleModelCode: 'ZWTV310',
-            vehicleRegDate: '20/06/2018',
+            vehicleRegDate: '27/06/2018',
             lastname: 'Rani',
         };
         this._translationValue = RX.Animated.createValue(-100);
@@ -118,7 +118,7 @@ console.log("hittinh.......")
                         region: "South Region",
                         vehicleManufacturerName: "BMW",
                         vehicleModelCode: "CMB65",
-                        vehicleregDate: "20/06/2018",
+                        vehicleregDate: "27/06/2018",
                         idv: "3025465",
                         engineCapacityAmount: "1995 CC",
                         drivingExperience: "2",

@@ -94,7 +94,7 @@ const styles = {
         position: 'absolute',
         alignSelf: 'center',
         marginLeft: 1,
-        marginTop:-122
+        marginTop:-131
     }),
     Policy:RX.Styles.createTextStyle({
         fontSize: 18,
@@ -104,7 +104,7 @@ const styles = {
         position: 'absolute',
         alignSelf: 'center',
         marginLeft: 1,
-        marginTop:3,
+        marginTop:-45,
         textAlign: 'center'
 
     }),
@@ -232,7 +232,7 @@ const styles = {
         width:221,
         fontsize:30,
         backgroundColor:'#654e4e00',
-        marginTop:10
+        marginTop:-10
     }),
     backgroundImage :RX.Styles.createViewStyle({
         flex: 1,
@@ -338,7 +338,7 @@ export default class LoginPage extends RX.Component{
         
          </RX.Text>
             <RX.Text style={ styles.policy }>Your Policy Patner</RX.Text> 
-            <RX.Text style={styles.Policy}>Please Enter Your phone Number To Login/Register</RX.Text>
+            <RX.Text style={styles.Policy}>Please Enter Your phone Number  To {"\n"}Login/Register</RX.Text>
             <RX.Text style={styles.POlicy}>
             <form>
                                             <FormGroup

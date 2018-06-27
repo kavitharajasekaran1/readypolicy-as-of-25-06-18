@@ -430,17 +430,22 @@ module.exports = {
     }),
     Form10:RX.Styles.createViewStyle({
         display: 'block',
-         width: '100%',
+         width: '54%',
          height: 34,
-         textAlign:"center",
+         textAlign:"justify",
          // padding: 6px 12px;
-          fontSize: 14,
-          color:'#060505',
+          fontSize: 18,
+        //   color:'#060505',
+        fontColor:"white",
+        marginLeft:72,
+          backgroundColor:"#9d9d9d",
+          
+ 
         // line: 1.42857143;
+      marginBottom:138,
         
-        backgroundColor: "white",
         borderWidth:1,
-        borderColor:"#ccc",
+        borderColor:"#9d9d9d",
         borderRadius: 4
     }),
     FOrm:RX.Styles.createViewStyle({
